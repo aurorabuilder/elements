@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Criminal</name>
+		<description>Criminal Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="background-criminal.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/background-criminal.xml" />
+		</update>
+	</info>
+
+	
+
+
+
+  <element name="Criminal" type="Background" source="Player’s Handbook" id="ID_BACKGROUND_CRIMINAL">
+    <supports />
+    <requirements />
+    <description>
+      <p>You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.</p>
+      <p>
+        <span class="emphasis">Skill Proficiencies:</span>Deception, Stealth<br />
+        <span class="emphasis">Tool Proficiencies:</span>One type of gaming set, thieves’ tools.<br />
+        <span class="emphasis">Equipment:</span>A crowbar, a set of dark common clothes including a hood, and a belt pouch containing 15 gp<br />
+      </p>
+      <h5>CRIMINAL SPECIALTY</h5>
+      <p>There are many kinds of criminals, and within a thieves’ guild or similar criminal organization, individual members have particular specialties. Even criminals who operate outside of such organizations have strong preferences for certain kinds of crimes over others. Choose the role you played in your criminal life, or roll on the table below.</p>
+      <table>
+        <thead>
+          <tr><td>d8</td><td>Specialty</td></tr>
+        </thead>
+        <tr><td>1</td><td>Blackmailer</td></tr>
+        <tr><td>2</td><td>Burglar</td></tr>
+        <tr><td>3</td><td>Enforcer</td></tr>
+        <tr><td>4</td><td>Fence</td></tr>
+        <tr><td>5</td><td>Highway robber</td></tr>
+        <tr><td>6</td><td>Hired killer</td></tr>
+        <tr><td>7</td><td>Pickpocket</td></tr>
+        <tr><td>8</td><td>Smuggler</td></tr>
+      </table>
+      <div element="ID_BACKGROUND_FEATURE_CRIMINAL_CONTACT" />
+      <h5>SUGGESTED CHARACTERISTICS</h5>
+      <p>Criminals might seem like villains on the surface, and many of them are villainous to the core. But some have an abundance of endearing, if not redeeming, characteristics. There might be honor among thieves, but criminals rarely show any respect for law or authority.</p>
+      <h5>VARIANT CRIMINAL: SPY</h5>
+      <p>Although your capabilities are not much different from those of a burglar or smuggler, you learned and practiced them in a very different context: as an espionage agent. You might have been an officially sanctioned agent of the crown, or perhaps you sold the secrets you uncovered to the highest bidder.</p>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_DECEPTION" />
+      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_STEALTH" />
+      <select type="Proficiency" name="Gaming Set (Criminal)" supports="Gaming Set" />
+      <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+      <grant type="Background Feature" name="ID_BACKGROUND_FEATURE_CRIMINAL_CONTACT" />
+      <select type="List" name="Criminal Specialty" optional="true">
+        <item id="1">Blackmailer</item>
+        <item id="2">Burglar</item>
+        <item id="3">Enforcer</item>
+        <item id="4">Fence</item>
+        <item id="5">Highway robber</item>
+        <item id="6">Hired killer</item>
+        <item id="7">Pickpocket</item>
+        <item id="8">Smuggler</item>
+      </select>
+      <select type="List" name="Personality Trait" number="2">
+        <item id="1">I always have a plan for what to do when things go wrong.</item>
+        <item id="2">I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.</item>
+        <item id="3">The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.</item>
+        <item id="4">I would rather make a new friend than a new enemy.</item>
+        <item id="5">I am incredibly slow to trust. Those who seem the fairest often have the most to hide.</item>
+        <item id="6">I don’t pay attention to the risks in a situation. Never tell me the odds.</item>
+        <item id="7">The best way to get me to do something is to tell me I can’t do it.</item>
+        <item id="8">I blow up at the slightest insult.</item>
+      </select>
+      <select type="List" name="Ideal">
+        <item id="1">Honor. I don’t steal from others in the trade. (Lawful)</item>
+        <item id="2">Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)</item>
+        <item id="3">Charity. I steal from the wealthy so that I can help people in need. (Good)</item>
+        <item id="4">Greed. I will do whatever it takes to become wealthy. (Evil)</item>
+        <item id="5">People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)</item>
+        <item id="6">Redemption. There’s a spark of good in everyone. (Good)</item>
+      </select>
+      <select type="List" name="Bond">
+        <item id="1">I’m trying to pay off an old debt I owe to a generous benefactor.</item>
+        <item id="2">My ill-gotten gains go to support my family.</item>
+        <item id="3">Something important was taken from me, and I aim to steal it back.</item>
+        <item id="4">I will become the greatest thief that ever lived.</item>
+        <item id="5">I’m guilty of a terrible crime. I hope I can redeem myself for it.</item>
+        <item id="6">Someone I loved died because of I mistake I made. That will never happen again.</item>
+      </select>
+      <select type="List" name="Flaw">
+        <item id="1">When I see something valuable, I can’t think about anything but how to steal it.</item>
+        <item id="2">When faced with a choice between money and my friends, I usually choose the money.</item>
+        <item id="3">If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it.</item>
+        <item id="4">I have a “tell” that reveals when I’m lying.</item>
+        <item id="5">I turn tail and run when things look bad.</item>
+        <item id="6">An innocent person is in prison for a crime that I committed. I’m okay with that.</item>
+      </select>
+    </rules>
+  </element>
+
+  <element name="Feature: Criminal Contact" type="Background Feature" source="Player’s Handbook" id="ID_BACKGROUND_FEATURE_CRIMINAL_CONTACT">
+    <requirements />
+    <content/>
+    <description>
+      <p>You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.</p>
+    </description>
+    <rules />
+  </element>
+
+  <!--
+  <element name="Variant Criminal: Spy" type="Background Feature" source="Player’s Handbook" id="ID_BACKGROUND_FEATURE_CRIMINAL_CONTACT">
+    <supports>Criminal</supports>
+    <description>
+      <p>Although your capabilities are not much different from those of a burglar or smuggler, you learned and practiced them in a very different context: as an espionage agent. You might have been an officially sanctioned agent of the crown, or perhaps you sold the secrets you uncovered to the highest bidder.</p>
+    </description>
+  </element>
+-->
+
+
+</elements>
