@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Clan Crafter</name>
+		<description>Clan Crafter Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.1">
+			<file name="background-clancrafter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/backgrounds/background-clancrafter.xml" />
+		</update>
+	</info>
+
+  <element name="Clan Crafter" type="Background" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_CLAN_CRAFTER">
+    <description>
+      <p>The Stout Folk are well known for their artisanship and the worth of their handiworks, and you have been trained in that ancient tradition. For years you labored under a dwarf master of the craft, enduring long hours. and dismissive, sour-tempered treatment in order to gain the fine skills you possess today.</p>
+      <p class="indent">You are most likely a dwarf, but not necessarily- particularly in the North, the shield dwarf clans learned long ago that only proud fools who are more concerned for their egos than their craft turn away promising apprentices, even those of other races. If you aren't a dwarf, however, you have taken a solemn oath never to take on an apprentice in the craft: it is not for nondwarves to pass on the s kills of Moradin’s favored children. You would have no difficulty, however, finding a dwarf master who was willing to receive potential apprentices who came with your recommendation.</p>
+			<p>
+					<span class="feature">Skill Proficiencies:</span>History, Insight<br/>
+					<span class="feature">Tool Proficiencies:</span>One type of artisan's tools<br/>
+					<span class="feature">Languages:</span>Dwarvish or one other of your choice if you already speak Dwarvish<br/>
+					<span class="feature">Equipment:</span>A set of artisan's tools with which you are proficient, a maker's mark chisel used to mark your handiwork with the symbol of the clan of crafters you learned your skill from, a set of traveler's clothes, and a pouch containing 5 gp and a gem worth 10 gp<br/>
+			</p>
+			<div element="ID_SCAG_BACKGROUND_CLAN_CRAFTER_RESPECTSTOUTFOLK" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Use the tables for the guild artisan background in the Player's Handbook as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a clan crafter. (For instance, consider the words "guild" and "clan" to be interchangeable.)</p>
+			<p class="indent">Your bond is almost certainly related to the master or the clan that taught you, or else to the work that you produce. Your ideal might have to do with maintaining the high quality of your work or preserving the dwarven traditions of craftsmanship.</p>
+    </description>
+    <rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<select type="Proficiency" name="Tool Proficiency (Clan Crafter)" supports="Artisan tools" />
+      
+			<!-- todo: implement something like a default-behaviour attribute hide and selection when default is available, but when unable to set default -> allow user selection -->
+			<select type="Language" name="Language (Clan Crafter)" default="ID_LANGUAGE_DWARVISH" default-behaviour="force" />
+
+			<grant type="Background Feature" id="ID_SCAG_BACKGROUND_CLAN_CRAFTER_RESPECTSTOUTFOLK" />
+			<select name="Personality Trait" type="List" number="2">
+        <item id="1">I believe that anything worth doing is worth doing right. I can’t help it— I’m a perfectionist.</item>
+        <item id="2">I’m a snob who looks down on those who can’t appreciate fine art.</item>
+        <item id="3">I always want to know how things work and what makes people tick.</item>
+        <item id="4">I’m full of witty aphorisms and have a proverb for every occasion.</item>
+        <item id="5">I’m rude to people who lack my commitment to hard work and fair play.</item>
+        <item id="6">I like to talk at length about my profession.</item>
+        <item id="7">I don’t part with my money easily and will haggle tirelessly to get the best deal possible.</item>
+        <item id="8">I’m well known for my work, and I want to make sure everyone appreciates it. I’m always taken aback when people haven’t heard of me.</item>
+      </select>
+      <select name="Ideal" type="List">
+        <item id="1">Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)</item>
+        <item id="2">Generosity. My talents were given to me so that I could use them to benefit the world. (Good)</item>
+        <item id="3">Freedom. Everyone should be free to pursue his or her own livelihood. (Chaotic)</item>
+        <item id="4">Greed. I’m only in it for the money. (Evil)</item>
+        <item id="5">People. I’m committed to the people I care about, not to ideals. (Neutral)</item>
+        <item id="6">Aspiration. I work hard to be the best there is at my craft.</item>
+      </select>
+      <select name="Bond" type="List">
+        <item id="1">The workshop where I learned my trade is the most important place in the world to me.</item>
+        <item id="2">I created a great work for someone, and then found them unworthy to receive it. I’m still looking for someone worthy.</item>
+        <item id="3">I owe my guild a great debt for forging me into the person I am today.</item>
+        <item id="4">I pursue wealth to secure someone’s love.</item>
+        <item id="5">One day I will return to my guild and prove that I am the greatest artisan of them all.</item>
+        <item id="6">I will get revenge on the evil forces that destroyed my place of business and ruined my livelihood.</item>
+      </select>
+      <select name="Flaw" type="List">
+        <item id="1">I’ll do anything to get my hands on something rare or priceless.</item>
+        <item id="2">I’m quick to assume that someone is trying to cheat me.</item>
+        <item id="3">No one must ever learn that I once stole money from guild coffers.</item>
+        <item id="4">I’m never satisfied with what I have— I always want more.</item>
+        <item id="5">I would kill to acquire a noble title.</item>
+        <item id="6">I’m horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I’m surrounded by rivals.</item>
+      </select>
+		</rules>
+  </element>
+
+  <element name="Feature: Respect of the Stout Folk" type="Background Feature" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_CLAN_CRAFTER_RESPECTSTOUTFOLK">
+		<description>
+			<p>As well respected as clan crafters are among outsiders, no one esteems them quite so highly as dwarves do. You always have free room and board in any place where shield dwarves or gold dwarves dwell, and the individuals in such a settlement might vie among themselves to determine who can offer you (and possibly your compatriots) the finest accommodations and assistance.</p>
+		</description>
+	</element>
+
+</elements>

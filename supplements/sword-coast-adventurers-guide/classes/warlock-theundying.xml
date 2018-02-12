@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>The Undying</name>
+    <description>The Undying archetype from the Sword Coast Adventurer’s Guide.</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
+    <update version="0.0.2">
+      <file name="warlock-theundying.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/warlock-theundying.xml" />
+    </update>
+  </info>
+
+  <element name="The Undying" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_UNDYING">
+    <supports>Otherworldly Patron</supports>
+    <description>
+      <p>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.</p>
+      <p class="indent">In the Realms, Undying patrons include Larloch the Shadow King, legendary master of Warlock's Crypt, and Gilgeam, the God-King of Unther.</p>
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" />
+    </description>
+    <sheet>
+      <description>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="3"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="9"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="13"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="17"/>
+    </rules>
+  </element>
+
+  <element name="Expanded Spell List" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST">
+    <description>
+      <p>The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+      <h5>Undying Expanded Spells</h5>
+      <table>
+        <thead>
+          <tr><td>Spell Level</td><td>Spells</td></tr>
+        </thead>
+        <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+        <tr><td>2nd</td><td><em>blindness/deafness, silence</em></td></tr>
+        <tr><td>3rd</td><td><em>feign death, speak with dead</em></td></tr>
+        <tr><td>4th</td><td><em>aura of life, death ward</em></td></tr>
+        <tr><td>5th</td><td><em>contagion, legend lore</em></td></tr>
+      </table>  
+    </description>
+    <sheet>
+      <description>The Undying lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+    </sheet>
+    <rules>
+      <!-- todo implement rules to add spells to list -->
+    </rules>
+  </element>
+
+  <element name="Among the Dead" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD">
+    <description>
+      <p>Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.</p>
+      <p class="indent">Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.</p>
+    </description>
+    <sheet>
+      <description>You have advantage on saving throws against any disease. If an undead targets you directly with an attack or a harmful spell, that creature must make a DC%spellcasting:dc:wis% Wisdom saving throw. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" />
+    </rules>
+  </element>
+
+  <element name="Defy Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH">
+    <description>
+      <p>Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</p>
+      <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description>You can regain hit points equal to 1d8+%defy death:modifier% when you succeed on a death saving throw or when you stabilize a creature with spare the dying. (1/LR)</description>
+    </sheet>
+    <rules>
+      <stat name="defy death:modifier" value="1" bonus="defy death" />
+      <stat name="defy death:modifier" value="Constitution Modifier" bonus="defy death" />
+    </rules>
+  </element>
+
+  <element name="Undying Nature" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE">
+    <description>
+      <p>Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.</p>
+      <p class="indent">In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</p>
+    </description>
+    <sheet>
+      <description>You can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests. In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Indestructable Life" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE">
+    <description>
+      <p>When you reach 14th level, you partake of some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</p>
+      <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+    </description>
+    <sheet>
+      <description>On your turn, you can use a bonus action to regain hit points equal to 1d8+%level:warlock%. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches. (1/SR)</description>
+    </sheet>
+    <rules />
+  </element>
+
+
+</elements>

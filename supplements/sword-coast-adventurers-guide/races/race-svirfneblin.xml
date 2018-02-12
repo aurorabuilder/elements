@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Svirfneblin</name>
+    <description>Svirfneblin Subrace from the Sword Coast Adventurer’s Guide.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.1.3">
+			<file name="race-svirfneblin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/races/race-svirfneblin.xml" />
+		</update>
+	</info>
+
+  <element name="Svirfneblin" type="Sub Race" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SUBRACE_SVIRFNEBLIN">
+    <supports>Gnome</supports>
+    <requirements />
+    <description>
+      <p>Also known as svirfneblin, the deep gnomes of the Underdark are a stark contrast to their surface kin, dour and serious compared to the cheerful and generally optimistic rock gnomes and forest gnomes. They share their cousins' obsession with privacy, and their homes below the surface of FaerOn are well guarded and deeply hidden.</p>
+      <p class="indent">Owing to the hostility of their Underdark neighbors, particularly the drow, the settlements and kingdoms of svirfneblin are in constant danger of being relocated, conquered, or destroyed. Such was the fate of Blingdenstone, one of the grandest deep gnome strongholds, which existed for more than two thousand years until it was overrun a little more than a century ago by the dark elves of Menzoberranzan. The deep gnomes recently reclaimed their old home, and now struggle to rid it of malign influences that have crept into the tunnels and warrens in their absence.</p>
+      <p class="indent">Deep gnomes are lean with dark, earthen skin tones of gray. Males are bald and beardless, while females have hair on their heads. Both sexes have little or no body hair and a stone-like look to their skin.</p>
+      <p class="indent">Deep gnome adventurers are just as curious and daring as those of other races. Some find their purpose living among other subterranean races, and a few make their way to the surface. Those who study the arcane arts of illusion in particular often range far from home, seeking knowledge unavailable in their own lands.</p>
+      <p>
+        <span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 1.<br />
+        <span class="feature">Superior Darkvision.</span>Your darkvision has a radius of 120 feet.<br />
+        <span class="feature">Stone Camouflage.</span>You have advantage on Dexterity (Stealth) checks to hide in rocky terrain.<br />
+        <span class="feature">Extra Language.</span>You can speak, read, and write Undercommon.<br />
+      </p>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="Dexterity" value="+1" />
+      <grant type="Vision" name="ID_VISION_SUPERIORDARKVISION" />
+      <grant type="Racial Trait" name="ID_SCAG_RACIAL_TRAIT_SVIRFNEBLIN_STONE_CAMOUFLAGE" />
+      <grant type="Language" name="ID_LANGUAGE_UNDERCOMMON" />
+    </rules>
+  </element>
+  
+  <element name="Stone Camouflage" type="Racial Trait" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_RACIAL_TRAIT_SVIRFNEBLIN_STONE_CAMOUFLAGE">
+    <description>
+      <p>You have advantage on Dexterity (Stealth) checks to hide in rocky terrain.</p>
+    </description>
+    <sheet>
+      <description>You have advantage on Stealth checks to hide in rocky terrain.</description>
+    </sheet>
+    <rules />
+  </element>
+  
+  <element name="Svirfneblin Magic" type="Feat" source="Sword Coast Adventurer’s Guide" id="ID_FEAT_SVIRFNEBLIN_MAGIC">
+    <supports />
+    <prerequisite>Svirfneblin</prerequisite>
+    <requirements>ID_SCAG_SUBRACE_SVIRFNEBLIN</requirements>
+    <description>
+      <p><i>Prerequisite: Svirfneblin</i></p>
+      <p>You have inherited the innate spellcasting ability of your ancestors. This ability allows you to cast nondetection on yourself at will, without needing a material component. You can also cast each of the following spells once with this ability: blindness/deafness, blur, and disguise self. You regain the ability to cast these spells when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+    </description>
+    <sheet>
+      <description>Cast nondetection on yourself at will. Cast each of the following spells once: blindness/deafness, blur, and disguise self. (1/LG) (Intelligence)</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" />
+      <grant type="Spell" id="ID_PHB_SPELL_BLINDNESS_DEAFNESS" />
+      <grant type="Spell" id="ID_PHB_SPELL_BLUR" />
+      <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" />
+    </rules>
+  </element>
+</elements>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Arcana Domain</name>
+    <description>Arcana Domain archetype from the Sword Coast Adventurer’s Guide.</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
+    <update version="0.0.2">
+      <file name="cleric-arcanadomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/cleric-arcanadomain.xml" />
+    </update>
+  </info>
+
+  <element name="Arcana Domain" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_Arcana_Domain_">
+    <supports>Divine Domain</supports>
+    <description>
+      <p>Magic is an energy that suffuses the multiverse and that fuels both destruction and creation. Gods of the Arcana domain know the secrets and potential of magic intimately. For some of these gods, magical knowledge is a great responsibility that comes with a special understanding of the nature of reality. Other gods of Arcana see magic as pure power, to be used as its wielder sees fit.</p>
+      <p class="indent">The gods of this domain are often associated with knowledge, as learning and arcane power tend to go hand-in-hand. In the Realms, deities of this domain include Azuth and Mystra, as well as Corellon Larethian of the elven pantheon. In other worlds, this domain includes Hecate, Math Mathonwy, and Isis; the triple moon gods of Solinari, Lunitari, and Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.</p>
+      <h5>ARCANA DOMAIN SPELLS</h5>
+      <table>
+        <thead>
+          <tr><td>Cleric Level</td><td>Spells</td></tr>
+        </thead>
+        <tr><td>1st</td><td><em>detect magic, magic missile</em></td></tr>
+        <tr><td>3rd</td><td><em>magic weapon, Nystul's magic aura</em></td></tr>
+        <tr><td>5th</td><td><em>dispel magic, magic circle</em></td></tr>
+        <tr><td>7th</td><td><em>arcane eye,, Leomund's secret chest</em></td></tr>
+        <tr><td>9th</td><td><em>planar binding, teleportation circle</em></td></tr>
+      </table>
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_POTENT_SPELLCASTING" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" />
+    </description>
+    <sheet>
+      <description>Magic is an energy that suffuses the multiverse and that fuels both destruction and creation.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" name="ID_PHB_SPELL_DETECT_MAGIC" level="1" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_MISSILE" level="1" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" />
+      <grant type="Spell" name="ID_PHB_SPELL_NYSTULS_MAGIC_AURA" level="3" />
+      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_CIRCLE" level="5" />
+      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" />
+      <grant type="Spell" name="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST" level="7" />
+      <grant type="Spell" name="ID_PHB_SPELL_PLANAR_BINDING" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="9" />
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" level="1"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION" level="2"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" level="6"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_POTENT_SPELLCASTING" level="8"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" level="17"/>
+    </rules>
+  </element>
+
+  <element name="Arcane Initiate" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE">
+    <description>
+      <p>When you choose this domain at 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips.</p>
+    </description>
+    <sheet>
+      <description></description>
+    </sheet>
+    <rules>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+      <select type="Spell" name="Arcane Initiate" supports="Wizard,0" number="2" />
+    </rules>
+  </element>
+  
+  <element name="Channel Divinity: Arcane Abjuration" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION">
+    <description>
+      <p>Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.</p>
+      <p class="indent">As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+      <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.</p>
+      <p class="indent">After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p>
+      <h5>Arcane Banishment</h5>
+      <table>
+        <thead><tr><td>Cleric Level</td><td>Banishes Creatures of CR ...</td></tr></thead>
+        <tr><td>5th</td><td>1/2 or lower</td></tr>
+        <tr><td>8th</td><td>1 or lower</td></tr>
+        <tr><td>11th</td><td>2 or lower</td></tr>
+        <tr><td>14th</td><td>3 or lower</td></tr>
+        <tr><td>17th</td><td>4 or lower</td></tr>
+      </table>
+    </description>
+    <sheet>
+      <description level="5">You can use your Channel Divinity to abjure otherworldly creatures of CR 1/2 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
+      <description level="8">You can use your Channel Divinity to abjure otherworldly creatures of CR 1 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
+      <description level="11">You can use your Channel Divinity to abjure otherworldly creatures of CR 2 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
+      <description level="14">You can use your Channel Divinity to abjure otherworldly creatures of CR 3 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
+      <description level="17">You can use your Channel Divinity to abjure otherworldly creatures of CR 4 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Spell Breaker" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER">
+    <description>
+      <p>Starting at 6th level, when you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell of your choice on that creature. The level of the spell you end must be equal to or lower than the level of the spell slot you use to cast the healing spell.</p>
+    </description>
+    <sheet>
+      <description>When you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell of your choice on that creature. The level of the spell you end must be equal to or lower than the level of the spell slot you use to cast the healing spell.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Potent Spellcasting" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_POTENT_SPELLCASTING">
+    <description>
+      <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+    </description>
+    <sheet>
+      <description>You add your Wisdom modifier (+%Wisdom Modifier%) to the damage you deal with any cleric cantrip.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Arcane Mastery" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY">
+    <description>
+      <p>At 17th level, you choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th. You add them to your list of domain spells. Like your other domain spells, they are always prepared and count as cleric spells for you.</p>
+    </description>
+    <sheet display="false">
+      <description>You choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th.</description>
+    </sheet>
+    <rules>
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,6" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,7" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,8" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,9" />
+    </rules>
+  </element>
+
+</elements>

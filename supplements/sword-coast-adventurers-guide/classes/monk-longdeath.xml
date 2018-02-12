@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Way of the Long Death</name>
+    <description>Way of the Long Death archetype from the Sword Coast Adventurer’s Guide.</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
+    <update version="0.0.1">
+      <file name="monk-longdeath.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/monk-longdeath.xml" />
+    </update>
+  </info>
+
+  <element name="Way of the Long Death" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_WAY_OF_THE_LONG_DEATH">
+    <supports>Monastic Tradition</supports>
+    <description>
+      <p>Monks of the Way of the Long Death are obsessed with the meaning and mechanics of dying. They capture creatures and prepare elaborate experiments to capture, record, and understand the moments of their demise. They then use this knowledge to guide their understanding of martial arts, yielding a deadly fighting style.</p>
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_DEATH" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_HOUR_OF_REAPING" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_MASTERY_OF_DEATH" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_THE_LONG_DEATH" />
+    </description>
+    <sheet>
+      <description>Monks of the Way of the Long Death are obsessed with the meaning and mechanics of dying.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_DEATH" level="3"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_HOUR_OF_REAPING" level="6"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_MASTERY_OF_DEATH" level="11"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_THE_LONG_DEATH" level="17"/>
+    </rules>
+  </element>
+
+  <element name="Touch of Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_DEATH">
+    <description>
+      <p>Starting when you choose this tradition at 3rd level, your study of death allows you to extract vitality from a nother creature as it nears its demise. When you reduce a creature within 5 feet of you to 0 hit points, you gain temporary hit points equal to your Wisdom modifier + your monk level (minimum of 1 temporary hit point).</p>
+    </description>
+    <sheet>
+      <description>When you reduce a creature within 5 feet of you to 0 hit points, you gain %touch of death:hp% temporary hit points.</description>
+    </sheet>
+    <rules>
+      <stat name="touch of death:hp" value="Wisdom Modifier" />
+      <stat name="touch of death:hp" value="level:monk" />
+    </rules>
+  </element>
+
+  <element name="Hour of Reaping" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_HOUR_OF_REAPING">
+    <description>
+      <p>At 6th level, you gain the ability to unsettle or terrify those around you as an action, for your soul has been touched by the shadow of death. When you take this action, each creature within 30 feet of you that can see you must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</p>
+    </description>
+    <sheet>
+      <description>When you take this action, each creature within 30 feet of you that can see you must succeed on a %spellcasting:dc:wis% Wisdom saving throw or be frightened of you until the end of your next turn.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Mastery of Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_MASTERY_OF_DEATH">
+    <description>
+      <p>Beginning at 11th level, you use your familiarity with death to escape its grasp. When you are reduced to 0 hit points, you can expend 1 ki point (no action required) to have 1 hit point instead.</p>
+      <p class="indent"></p>
+    </description>
+    <sheet>
+      <description>When you are reduced to 0 hit points, you can expend 1 ki point (no action required) to have 1 hit point instead.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Touch of the Long Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_TOUCH_OF_THE_LONG_DEATH">
+    <description>
+      <p>Starting at 17th level, your touch can channel the energy of death into a creature. As an action, you touch one creature within 5 feet of you, and you expend 1 to 10 ki points. The target must make a Constitution saving throw, and it takes 2d10 necrotic damage per ki point spent on a failed save, or half as much damage on a successful one.</p>
+      <p class="indent"></p>
+    </description>
+    <sheet>
+      <description>As an action, you touch one creature within 5 feet of you, and you expend 1 to 10 ki points. The target must make a Constitution saving throw, and it takes 2d10 necrotic damage per ki point spent on a failed save, or half as much damage on a successful one.</description>
+    </sheet>
+    <rules />
+  </element>
+
+</elements>
