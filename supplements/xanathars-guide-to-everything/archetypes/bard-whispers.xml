@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>College of Whispers</name>
+    <description>The College of Whispers from Xanathar’s Guide to Everything</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+    <update version="0.0.2">
+      <file name="bard-whispers.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/bard-whispers.xml" />
+    </update>
+  </info>
+  <element name="College of Whispers" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_COLLEGE_OF_WHISPERS">
+    <supports>Bard College</supports>
+    <description>
+      <p>Most folk are happy to welcome a bard into their midst. Bards of the College of Whispers use this to their advantage. They appear to be like other bards, sharing news, singing songs, and telling tales to the audiences they gather. In truth, the College of Whispers teaches its students that they are wolves among sheep. These bards use their knowledge and magic to uncover secrets and turn them against others through extortion and threats.</p>
+      <p class="indent">Many other bards hate the College of Whispers, viewing it as a parasite that uses a bard’s reputation to acquire wealth and power. For this reason, members of this college rarely reveal their true nature. They typically claim to follow some other college, or they keep their actual calling secret in order to infiltrate and exploit royal courts and other settings of power.</p>
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_WORDS_OF_TERROR" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE" />
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES" level="3" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_WORDS_OF_TERROR" level="3" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS" level="6" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE" level="14" />
+    </rules>
+  </element>
+  <element name="Psychic Blades" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES">
+    <description>
+      <p>When you join the College of Whispers at 3rd level, you gain the ability to make your weapon attacks magically toxic to a creature’s mind.</p>
+      <p class="indent">When you hit a creature with a weapon attack, you can expend one use of your Bardic Inspiration to deal an extra 2d6 psychic damage to that target. You can do so only once per round on your turn.</p>
+      <p class="indent">The psychic damage increases when you reach certain levels in this class, increasing to 3d6 at 5th level, 5d6 at 10th level, and 8d6 at 15th level.</p>
+    </description>
+    <sheet>
+      <description>Expend one use of Bardic Inspiration to deal an extra %psychic-blades:dice% psychic damage on a hit with a weapon attack.</description>
+    </sheet>
+    <rules>
+      <stat name="psychic-blades:dice" value="2d6" inline="true" bonus="psychic blades" />
+      <stat name="psychic-blades:dice" value="3d6" inline="true" bonus="psychic blades" level="5" />
+      <stat name="psychic-blades:dice" value="5d6" inline="true" bonus="psychic blades" level="10" />
+      <stat name="psychic-blades:dice" value="8d6" inline="true" bonus="psychic blades" level="15" />
+    </rules>
+  </element>
+  <element name="Words of Terror" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_WORDS_OF_TERROR">
+    <description>
+      <p>At 3rd level, you learn to infuse innocent-seeming words with an insidious magic that can inspire terror.</p>
+      <p class="indent">If you speak to a humanoid alone for at least 1 minute, you can attempt to seed paranoia in its mind. At the end of the conversation, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened of you or another creature of your choice. The target is frightened in this way for 1 hour, until it is attacked or damaged, or until it witnesses its allies being attacked or damaged.</p>
+      <p class="indent">If the target succeeds on its saving throw, the target has no hint that you tried to frighten it.</p>
+      <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+    </description>
+    <sheet>
+      <description>When speeking to a humanoid for 1 minute, you can try to frighten it. At the end of the minute, it makes a DC%bard:spell:dc% Wisdom saving throw. On a fail, it is frightened of you, or another creaute of your choice, for 1 hour(or until it is attacked, damaged, or sees its allies being attacked or damaged.) On a succes, it has no idea you tried to frighten it.(1/rest)</description>
+    </sheet>
+    <rules></rules>
+  </element>
+  <element name="Mantle of Whispers" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS">
+    <description>
+      <p>At 6th level, you gain the ability to adopt a humanoid’s persona. When a humanoid dies within 30 feet of you, you can magically capture its shadow using your reaction. You retain this shadow until you use it or you finish a long rest.</p>
+      <p class="indent">You can use the shadow as an action. When you do so, it vanishes, magically transforming into a disguise that appears on you. You now look like the dead person, but healthy and alive. This disguise lasts for 1 hour or until you end it as a bonus action.</p>
+      <p class="indent">While you’re in the disguise, you gain access to all information that the humanoid would freely share with a casual acquaintance. Such information includes general details on its background and personal life, but doesn’t include secrets. The information is enough that you can pass yourself off as the person by drawing on its memories.</p>
+      <p class="indent">Another creature can see through this disguise by succeeding on a Wisdom (Insight) check contested by your Charisma (Deception) check. You gain a +5 bonus to your check.</p>
+      <p class="indent">Once you capture a shadow with this feature, you can’t capture another one with it until you finish a short or long rest.</p>
+    </description>
+    <sheet>
+      <description>Reaction: When a humanoid dies within 30ft of you, you can capture its shadow. You retain it until you use it, or finish a long rest. You can use this shadow as action, making you look like the dead person for 1 hour. You know all things it would freely share, in order to pass off as the person. A creature can try to look through the disguise with a Insight check vs your Deception+5. 1/rest </description>
+    </sheet>
+    <rules></rules>
+  </element>
+  <element name="Shadow Lore" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE">
+    <description>
+      <p>At 14th level, you gain the ability to weave dark magic into your words and tap into a creature’s deepest fears.</p>
+      <p class="indent">As an action, you magically whisper a phrase that only one creature of your choice within 30 feet of you can hear. The target must make a Wisdom saving throw against your spell save DC. It automatically succeeds if it doesn’t share a language with you or if it can’t hear you. On a successful saving throw, your whisper sounds like unintelligible mumbling and has no effect.</p>
+      <p class="indent">On a failed saving throw, the target is charmed by you for the next 8 hours or until you or your allies attack it, damage it, or force it to make a saving throw. It interprets the whispers as a description of its most mortifying secret. You gain no knowledge of this secret, but the target is convinced you know it.</p>
+      <p class="indent">The charmed creature obeys your commands for fear that you will reveal its secret. It won’t risk its life for you or fight for you, unless it was already inclined to do so. It grants you favors and gifts it would offer to a close friend.</p>
+      <p class="indent">When the effect ends, the creature has no understanding of why it held you in such fear.</p>
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description>Action: Magically whisper that only 1 creature of your choice within 30ft can hear. It makes a DC%bard:spell:dc% Wisdom save(auto-succeeds if it doesn't share a language or cant hear you). On a fail, it is charmed for 8 hours(or until you or your allies attack, damage, or force it to make a saving throw). It hears the whisper as a description of its deepest secret and is convinced you know it. On a succes it hears only unintelligble mumbling.(1/long rest)</description>
+    </sheet>
+  </element>
+</elements>

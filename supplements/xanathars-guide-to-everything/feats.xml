@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Feats</name>
+        <description>The Feats from Xanathar’s Guide to Everything</description>
+        <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+        <update version="0.0.2">
+            <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/feats.xml" />
+        </update>
+    </info>
+    <element name="Bountiful Luck" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_BOUNTIFUL_LUCK">
+        <prerequisite>Halfling</prerequisite>
+        <requirements>ID_RACE_HALFLING</requirements>
+        <description>
+            <p><i>Prerequisite: Halfling</i></p>
+            <p>Your people have extraordinary luck, which you have learned to mystically lend to your companions when you see them falter. You’re not sure how you do it; you just wish it, and it happens. Surely a sign of fortune’s favor!</p>
+            <p class="indent">When an ally you can see within 30 feet of you rolls a 1 on the d20 for an attack roll, an ability check, or a saving throw, you can use your reaction to let the ally reroll the die. The ally must use the new roll.</p>
+            <p class="indent">When you use this ability, you can’t use your Lucky racial trait before the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When an ally you can see within 30 feet of you rolls a 1 on the d20 for an attack roll, an ability check, or a saving throw, you can use your reaction to let the ally reroll the die. The ally must use the new roll. When you use this ability, you can’t use your Lucky racial trait before the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Dragon Fear" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DRAGON_FEAR">
+        <prerequisite>Dragonborn</prerequisite>
+        <requirements>ID_RACE_DRAGONBORN</requirements>
+        <description>
+            <p><i>Prerequisite: Dragonborn</i></p>
+            <p>When angered, you can radiate menace. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Constitution, or Charisma score by 1, to a maximum of 20.</li>
+                <li>Instead of exhaling destructive energy, you can expend a use of your Breath Weapon trait to roar, forcing each creature of your choice within 30 feet of you to make a Wisdom saving throw (DC 8 + your proficiency bonus + your Charisma modifier). A target automatically succeeds on the save if it can’t hear or see you. On a failed save, a target becomes frightened of you for 1 minute. If the frightened target takes any damage, it can repeat the saving throw, ending the effect on itself on a success.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Instead of exhaling destructive energy, you can expend a use of your Breath Weapon trait to roar, forcing each creature of your choice within 30 feet of you to make a Wisdom saving throw (DC %dragon fear:dc%). A target automatically succeeds on the save if it can’t hear or see you. On a failed save, a target becomes frightened of you for 1 minute. If the frightened target takes any damage, it can repeat the saving throw, ending the effect on itself on a success.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Dragon Fear)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            <stat name="dragon fear:dc" value="8" />
+            <stat name="dragon fear:dc" value="Proficiency" />
+            <stat name="dragon fear:dc" value="Charisma Modifier" />
+        </rules>
+    </element>
+    <element name="Dragon Hide" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DRAGON_HIDE">
+        <prerequisite>Dragonborn</prerequisite>
+        <requirements>ID_RACE_DRAGONBORN</requirements>
+        <description>
+            <p><i>Prerequisite: Dragonborn</i></p>
+            <p>You manifest scales and claws reminiscent of your draconic ancestors. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Constitution, or Charisma score by 1, to a maximum of 20.</li>
+                <li>Your scales harden. While you aren’t wearing armor, you can calculate your AC as 13 + your Dexterity modifier. You can use a shield and still gain this benefit.</li>
+                <li>You grow retractable claws from the tips of your fingers. Extending or retracting the claws requires no action. The claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the normal bludgeoning damage for an unarmed strike.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Dragon Hide)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            <stat name="AC" value="13" bonus="base" equipped="[armor:none]"/>
+        </rules>
+    </element>
+    <element name="Drow High Magic" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DROW_HIGH_MAGIC">
+        <prerequisite>Elf (drow)</prerequisite>
+        <requirements>ID_SUB_RACE_DARK_ELF</requirements>
+        <description>
+            <p><i>Prerequisite: Elf (drow)</i></p>
+            <p>You learn more of the magic typical of dark elves. You learn the detect magic spell and can cast it at will, without expending a spell slot. You also learn levitate and dispei magic, each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a long rest. Charisma is your spellcasting ability for all three spells.</p>
+        </description>
+        <sheet>
+            <description>You learn the detect magic spell and can cast it at will, without expending a spell slot. You also learn levitate and dispei magic, each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a long rest. Charisma is your spellcasting ability for all three spells.</description>
+        </sheet>
+    </element>
+    <element name="Dwarven Fortitude" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DWARVEN_FORTITUDE">
+        <prerequisite>Dwarf</prerequisite>
+        <requirements>ID_SRD_RACE_DWARF</requirements>
+        <description>
+            <p><i>Prerequisite: Dwarf</i></p>
+            <p>You have the blood of dwarf heroes flowing through your veins. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution score by 1, to a maximum of 20.</li>
+                <li>Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. Roll the die, add your Constitution modifier, and regain a number of hit points equal to the total (minimum of 1).</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. Roll the die, add %Constitution Modifier%, and regain a number of hit points equal to the total (minimum of 1).</description>
+        </sheet>
+        <rules>
+            <stat name="Constitution" value="1" />
+        </rules>
+    </element>
+    <element name="Elven Accuracy" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_ELVEN_ACCURACY">
+        <prerequisite>Elf or half-elf</prerequisite>
+        <requirements>ID_RACE_ELF||ID_RACE_HALFELF</requirements>
+        <description>
+            <p><i>Prerequisite: Elf or half-elf</i></p>
+            <p>The accuracy of elves is legendary, especially that of elf archers and spellcasters. You have uncanny aim with attacks that rely on precision rather than brute force. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity, Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</li>
+                <li>Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Elven Accuracy)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Fade Away" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_FADE_AWAY">
+        <prerequisite>Gnome</prerequisite>
+        <requirements>ID_RACE_GNOME</requirements>
+        <description>
+            <p><i>Prerequisite: Gnome</i></p>
+            <p>Your people are Clever, with a knack for illusion magic. You have learned a magical trick for fading away when you suffer harm. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity or Intelligence score by l, to a maximum of 20.</li>
+                <li>Immediately after you take damage, you can use a reaction to magically become invisible until the end of your next turn or until you attack, deal damage, or force someone to make a saving throw. Once you use this ability, you can’t do so again until you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Immediately after you take damage, you can use a reaction to magically become invisible until the end of your next turn or until you attack, deal damage, or force someone to make a saving throw. (1/SR)</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Fade Away)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_INTELLIGENCE" />
+        </rules>
+    </element>
+    <element name="Fey Teleportation" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_FEY_TELEPORTATION">
+        <prerequisite>Elf (high)</prerequisite>
+        <requirements>ID_SUB_RACE_HIGH_ELF</requirements>
+        <description>
+            <p><i>Prerequisite: Elf (high)</i></p>
+            <p>Your study of high elven lore has unlocked fey power that few other elves possess, except your eladrin cousins. Drawing on your fey ancestry, you can momentarily stride through the Feywild to shorten your path from one place to another. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence or Charisma score by 1, to a maximum of 20.</li>
+                <li>You learn to speak, read, and write Sylvan.</li>
+                <li>You learn the misty step spell and can cast it once without expending a spell slot. You regain the ability to cast it in this way when you finish a short or long rest. Intelligence is your spellcasting ability for this spell.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You learn the misty step spell and can cast it once without expending a spell slot. You regain the ability to cast it in this way when you finish a short or long rest. Intelligence is your spellcasting ability for this spell.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Fey Teleportation)" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_CHARISMA" />
+            <grant type="Language" name="ID_LANGUAGE_SYLVAN" />
+            <grant type="Spell" name="ID_PHB_SPELL_MISTY_STEP" />
+        </rules>
+    </element>
+    <element name="Flames of Phlegethos" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_FLAMES_OF_PHLEGETHOS">
+        <prerequisite>Tiefling</prerequisite>
+        <requirements>ID_RACE_TIEFLING</requirements>
+        <description>
+            <p><i>Prerequisite: Tiefling</i></p>
+            <p>You learn to call on hellfire to serve your commands. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence or Charisma score by 1, to a maximum of 20.</li>
+                <li>When you roll fire damage for a spell you cast, you can reroll any roll of 1 on the fire damage dice, but you must use the new roll, even if it is another 1.</li>
+                <li>Whenever you cast a spell that deals fire damage, you can cause flames to wreathe you until the end of your next turn. The flames don’t harm you or your possessions, and they shed bright light out to 30 feet and dim light for an additional 30 feet. While the flames are present, any creature within 5 feet of you that hits you with a melee attack takes 1d4 fire damage.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you roll fire damage for a spell you cast, you can reroll any roll of 1 on the fire damage dice, but you must use the new roll, even if it is another 1. Whenever you cast a spell that deals fire damage, you can cause flames to wreathe you until the end of your next turn. The flames don’t harm you or your possessions, and they shed bright light out to 30 feet and dim light for an additional 30 feet. While the flames are present, any creature within 5 feet of you that hits you with a melee attack takes 1d4 fire damage.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Flames of Phlegethos)" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Infernal Constitution" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_INFERNAL_CONSTITUTION">
+        <prerequisite>Tiefling</prerequisite>
+        <requirements>ID_RACE_TIEFLING</requirements>
+        <description>
+            <p><i>Prerequisite: Tiefling</i></p>
+            <p>Fiendish blood runs strong in you, unlocking a resild ience akin to that possessed by some fiends. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution score by l, to a maximum of 20.</li>
+                <li>You have resistance to cold damage and poison damage.</li>
+                <li>You have advantage on saving throws against being poisoned.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have resistance to cold damage and poison damage. You have advantage on saving throws against being poisoned.</description>
+        </sheet>
+        <rules>
+            <stat name="Constitution" value="1" />
+        </rules>
+    </element>
+    <element name="Orcish Fury" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_ORCISH_FURY">
+        <prerequisite>Half-orc</prerequisite>
+        <requirements>ID_RACE_HALFORC</requirements>
+        <description>
+            <p><i>Prerequisite: Half-orc</i></p>
+            <p>Your inner fury burns tirelessly. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength or Constitution score by l, to a maximum of 20.</li>
+                <li>When you hit with an attack using a simple or martial weapon, you can roll one of the weapon’s damage dice an additional time and add it as extra damage of the weapon’s damage type. Once you use this ability, you can’t use it again until you finish a short or long rest.</li>
+                <li>Immediately after you use your Relentless Endurance trait, you can use your reaction to make one weapon attack.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you hit with an attack using a simple or martial weapon, you can roll one of the weapon’s damage dice an additional time and add it as extra damage of the weapon’s damage type. (1/SR) - Immediately after you use your Relentless Endurance trait, you can use your reaction to make one weapon attack.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Orcish Fury)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
+        </rules>
+    </element>
+    <element name="Prodigy" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_PRODIGY">
+        <prerequisite>Half-elf half-orc, or human</prerequisite>
+        <requirements>ID_RACE_HALFELF||ID_RACE_HALFORC||ID_RACE_HUMAN</requirements>
+        <description>
+            <p><i>Prerequisite: Half-elf half-orc, or human</i></p>
+            <p>You have a knack for learning new things. You gain the following benefits:</p>
+            <ul>
+                <li>You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.</li>
+                <li>Choose one skill in which you have proficiency. You gain expertise with that skill, which means your proficiency bonus is doubled for any ability check you make with it. The skill you choose must be one that isn’t already benefiting from a feature, such as Expertise, that doubles your proficiency bonus.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have a knack for learning new things.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Prodigy" supports="Skill" />
+            <select type="Proficiency" name="Prodigy" supports="Tool" />
+            <select type="Language" name="Prodigy" />
+            <select type="Class Feature" name="Prodigy" supports="Skill,Expertise" />
+        </rules>
+    </element>
+    <element name="Second Chance" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_SECOND_CHANCE">
+        <prerequisite>Halfling</prerequisite>
+        <requirements>ID_RACE_HALFLING</requirements>
+        <description>
+            <p><i>Prerequisite: Halfling</i></p>
+            <p>Fortune favors you when someone tries to strike you. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity, Constitution, or Charisma score by 1, to a maximum of 20.</li>
+                <li>When a creature you can see hits you with an attack roll, you can use your reaction to force that creature to reroll. Once you use this ability, you can’t use it again until you roll initiative at the start of combat or until you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When a creature you can see hits you with an attack roll, you can use your reaction to force that creature to reroll. Once you use this ability, you can’t use it again until you roll initiative at the start of combat or until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Second Chance)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Squat Nimbleness" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_SQUAT_NIMBLENESS">
+        <prerequisite>Dwarf or a Small race</prerequisite>
+        <requirements>ID_SRD_RACE_DWARF||ID_SIZE_SMALL</requirements>
+        <description>
+            <p><i>Prerequisite: Dwarf or a Small race</i></p>
+            <p>You are uncommonly nimble for your race. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength or Dexterity score by l, to a maximum of 20.</li>
+                <li>Increase your walking speed by 5 feet.</li>
+                <li>You gain proficiency in the Acrobatics or Athletics skill (your choice).</li>
+                <li>You have advantage on any Strength (Athletics) or Dexterity (Acrobatics) check you make to escape from being grappled.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on any Athletics or Acrobatics check you make to escape from being grappled.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Squat Nimbleness)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+            <stat name="Speed" value="5" />
+            <select type="Proficiency" name="Squat Nimbleness" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS" />
+        </rules>
+    </element>
+    <element name="Wood Elf Magic" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_WOOD_ELF_MAGIC">
+        <prerequisite>Elf (wood)</prerequisite>
+        <requirements>ID_SUB_RACE_WOOD_ELF</requirements>
+        <description>
+            <p><i>Prerequisite: Elf (wood)</i></p>
+            <p>You learn the magic of the primeval woods, which are revered and protected by your people. You learn one druid cantrip of your choice. You also learn the long strider and pass Without trace spells, each of which you can cast once without expending a spell slot. You regain the ability to cast these two spells in this way when you finish a long rest. Wisdom is your spellcasting ability for all three spells.</p>
+        </description>
+        <sheet>
+            <description>You also learn the long strider and pass without trace spells, each of which you can cast once without expending a spell slot. (1/LR) Wisdom is your spellcasting ability for all three spells.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Cantrip (Wood Elf Magic)" supports="Druid,0" />
+            <grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" />
+            <grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" />
+        </rules>
+    </element>
+</elements>

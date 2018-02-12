@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Circle of the Shepherd</name>
+    <description>The Circle of the Shepherd from Xanathar’s Guide to Everything</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+    <update version="0.0.2">
+      <file name="druid-shepherd.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/druid-shepherd.xml" />
+    </update>
+  </info>
+  <element name="Circle of the Shepherd" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_CIRCLE_OF_THE_SHEPHERD">
+    <supports>Druid Circle</supports>
+    <description>
+      <p>Druids of the Circle of the Shepherd commune with the spirits of nature, especially the spirits of beasts and the fey, and call to those spirits for aid. These druids recognize that all living things play a role in the natural world, yet they focus on protecting animals and fey creatures that have difficulty defending themselves. Shepherds, as they are known, see such creatures as their charges. They ward off monsters that threaten them, rebuke hunters who kill more prey than necessary, and prevent civilization from encroaching on rare animal habitats and on sites sacred to the fey. Many of these druids are happiest far from cities and towns, content to spend their days in the company of animals and the fey creatures of the wilds.</p>
+      <p class="indent">Members of this circle become adventurers to oppose forces that threaten their charges or to seek knowledge and power that will help them safeguard their charges better. Wherever these druids go, the spirits of the wilderness are with them.</p>
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPEECH_OF_THE_WOODS" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPIRIT_TOTEM" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_MIGHTY_SUMMONER" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_GUARIDAN_SPIRIT" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_FAITHFUL_SUMMONS" />
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPEECH_OF_THE_WOODS" level="2" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPIRIT_TOTEM" level="2" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_MIGHTY_SUMMONER" level="6" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_GUARIDAN_SPIRIT" level="10" />
+      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_FAITHFUL_SUMMONS" level="14" />
+    </rules>
+  </element>
+  <element name="Speech of the Woods" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPEECH_OF_THE_WOODS">
+    <description>
+      <p>At 2nd level, you gain the ability to converse with beasts and many fey.</p>
+      <p class="indent">You learn to speak, read, and write Sylvan. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn’t grant you friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character.</p>
+    </description>
+    <sheet>
+      <description>Beasts understand you, and you can decipher noises and motions from them.</description>
+    </sheet>
+    <rules>
+      <grant type="Language" name="ID_LANGUAGE_SYLVAN" />
+    </rules>
+  </element>
+  <element name="Spirit Totem" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_SPIRIT_TOTEM">
+    <description>
+      <p>Starting at 2nd level, you can call forth nature spirits to influence the world around you. As a bonus action, you can magically summon an incorporeal spirit to a point you can see within 60 feet of you. The spirit creates an aura in a 30-foot radius around that point. It counts as neither a creature nor an object, though it has the spectral appearance of the creature it represents.</p>
+      <p class="indent">As a bonus action, you can move the spirit up to 60 feet to a point you can see.</p>
+      <p class="indent">The spirit persists for 1 minute or until you’re incapacitated. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+      <p class="indent">The effect of the spirit’s aura depends on the type of spirit you summon from the options below.</p>
+      <p class="indent">
+        <b>Bear Spirit.</b> The bear spirit grants you and your allies its might and endurance. Each creature of your choice in the aura when the spirit appears gains temporary hit points equal to 5 + your druid level. In addition, you and your allies gain advantage on Strength checks and Strength saving throws while in the aura.
+      </p>
+      <p class="indent">
+        <b>Hawk Spirit.</b>The hawk spirit is a consummate hunter, aiding you and your allies with its keen sight. When a creature makes an attack roll against a target in the spirit’s aura, you can use your reaction to grant advantage to that attack roll. In addition, you and your allies have advantage on Wisdom (Perception) checks while in the aura.
+      </p>
+      <p class="indent">
+        <b>Unicorn Spirit.</b>The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures in the spirit’s aura. In addition, if you cast a spell using a spell slot that restores hit points to any creature inside or outside the aura, each creature of your choice in the aura also regains hit points equal to your druid level.
+      </p>
+    </description>
+    <sheet>
+      <description>Bonus action: Summon a spirit aura within 60ft. It creates a 30ft radius aura, and can be moved up to 60ft as a bonus action on your turn. Choose 1 spirit of the following to gain its benefits: Bear(Each creature you choose in the aura gains %bear-spirit:temphp% temporary HP, and have advantage on Strength checks and saving throws), Hawk(Use your reaction to grant an attacking creature in the aura advantage on its attack, and you and allies have advantage on Perception checks while in the aura), or Unicorn(Advantage on all checks to detect creatures in the aura, if you use a spell slot to restore HP, creatures of your choice heal an extra %Level%HP</description>
+    </sheet>
+    <rules>
+      <stat name="bear-spirit:temphp" value="+5" />
+      <stat name="bear-spirit:temphp" value="+Level" />
+    </rules>
+  </element>
+  <element name="Mighty Summoner" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_MIGHTY_SUMMONER">
+    <description>
+      <p>Starting at 6th level, beasts and fey that you conjure are more resilient than normal. Any beast or fey summoned or created by a spell that you cast gains the following benefits:</p>
+      <li>- The creature appears with more hit points than normal: 2 extra hit points per Hit Die it has.</li>
+      <li>- The damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage.</li>
+    </description>
+    <sheet>
+      <description>Beasts and fey you conjure have an extra 2HP/Hit die it has, and its attacks are considered magical. </description>
+    </sheet>
+    <rules />
+  </element>
+  <element name="Guardian Spirit" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_GUARIDAN_SPIRIT">
+    <description>
+      <p>Beginning at 10th level, your Spirit Totem safeguards the beasts and fey that you call forth with your magic. When a beast or fey that you summoned or created with a spell ends its turn in your Spirit Totem aura, that creature regains a number of hit points equal to half your druid level.</p>
+    </description>
+    <sheet>
+      <description>When a beast or fey you conjured ends its turn in your Spirit Totem aura, it regains %hack half level%HP.</description>
+    </sheet>
+    <rules>
+      <stat name="hacky half level" value="0" />
+      <stat name="hacky half level" value="1" level="2" />
+      <stat name="hacky half level" value="1" level="4" />
+      <stat name="hacky half level" value="1" level="6" />
+      <stat name="hacky half level" value="1" level="8" />
+      <stat name="hacky half level" value="1" level="10" />
+      <stat name="hacky half level" value="1" level="12" />
+      <stat name="hacky half level" value="1" level="14" />
+      <stat name="hacky half level" value="1" level="16" />
+      <stat name="hacky half level" value="1" level="18" />
+      <stat name="hacky half level" value="1" level="20" />
+    </rules>
+  </element>
+  <element name="Faithful Summons" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHEPHERD_FAITHFUL_SUMMONS">
+    <description>
+      <p>Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are incapacitated against your will, you can immediately gain the benefits of conjure animals as if it were cast using a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).</p>
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description>When you are reduced to 0HP, summon 4 beasts of CR 2 or lower within 20ft of you for 1 hour. If you give them no commands, they protect you from harm and attack your foes.(1/long rest)</description>
+    </sheet>
+    <rules />
+  </element>
+</elements>
