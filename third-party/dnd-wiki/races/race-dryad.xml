@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dryad</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.1">
+            <file name="race-dryad.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/races/race-dryad.xml" />
+        </update>
+    </info>
+
+    <element name="Dryad" type="Race" source="D&amp;D Wiki" id="ID_WIKI_RACE_DRYAD">
+        <description>
+            <h4>PHYSICAL DESCRIPTION</h4>
+            <p>Dryads resemble highly humanoid beings only made out of smooth, brown-green wood, and with grass and leaves for hair. In some cases you will see that some Dryad's have both hair and eye's that change with the seasons.</p>
+            <h4>HISTORY</h4>
+            <p>Not many know the origin of Dryads. The majority of what is known about these amazing creatures is that they prefer to stay in the woods where they can observe nature and be at peace. It is also known that if the forest is brought to danger most of the Tree-Kin will do their best to defend the forest.</p>
+            <h4>SOCIETY</h4>
+            <p>Although most Dryad's prefer to stay away from town's and cities they thrive with each other in the forest. The Dryad's happily go day to day talking with other Dryad's and Fey Folk.</p>
+            <h4>DRYAD NAMES</h4>
+            <p>A Dryad takes their name from something in Nature or a name that their parent chooses.</p>
+            <p>
+                <b>Male: </b>Dryope, Erato, Eurydice<br/>
+                <b>Female: </b>Chrysopeleia, Phigalia, Tithorea            
+            </p>
+            <h4>DRYAD TRAITS</h4>
+            <p>Humanoids made of Wood. Guardians of the Forest. Elders of Nature.</p>
+            <p>
+                <span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 2. Either your Strength or Intelligence score increases by 1.<br />
+                <span class="feature">Age.</span>You age just like a tree, very slowly, which means you can live anywhere from a few hundred years to a few thousands.<br />
+                <span class="feature">Alignment.</span>Dryads tend to be lawful and are rarely evil, following and protecting the "law" of the forest.<br />
+                <span class="feature">Size.</span>Dryads come in many sizes, ranging from just under 6 feet to almost 7 feet. Your size is Medium.<br />
+                <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br />
+                <span class="feature">Blend In.</span>You have advantage on Stealth checks made to hide amongst foliage or near a huge group of trees.<br />
+                <span class="feature">Nature Whisperer.</span>After living in the forest for your whole life you can communicate with beasts and plants as if they share a language.<br />
+                <span class="feature">Photosynthesis.</span>Being a plant based life form, you create your food through Photosynthesis, being in sunlight will regenerate 1d4 health per hour, likewise, if you aren't in sunlight for two days you will start to decay.<br />
+                <span class="feature">Tree Stride.</span>Over time you have learned the skill of using trees as a type of transportation. Once a turn, You can use 10 feet of your movement to step magically into one living tree within your reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be Large or bigger.<br />
+                <span class="feature">Languages.</span>You can speak, read, and write Common and Sylvan.<br />
+            </p>
+        </description>
+        <setters>
+            <set name="names" type="male">Dryope, Erato, Eurydice</set>
+            <set name="names" type="female">Chrysopeleia, Phigalia, Tithorea</set>
+            <set name="names-format">$(name)</set>
+            <set name="height" modifier="2d12">5'7"</set>
+            <set name="weight" modifier="1">140</set>
+        </setters>
+        <sheet display="false">
+            <description>Dryads resemble highly humanoid beings only made out of smooth, brown-green wood, and with grass and leaves for hair.</description>
+        </sheet>
+        <rules>
+            <stat name="Wisdom" value="2" />
+            <select type="Ability Score Improvement" name="Dryad" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_INTELLIGENCE" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="Speed" value="30" bonus="base" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_DRYAD_BLEND_IN" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_DRYAD_NATURE_WHISPERER" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_DRYAD_PHOTOSYNTHESIS" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_DRYAD_TREE_STRIDE" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+        </rules>
+    </element>
+    <element name="Blend In" type="Racial Trait" source="" id="ID_WIKI_RACIAL_TRAIT_DRYAD_BLEND_IN">
+        <description>
+            <p>You have advantage on Stealth checks made to hide amongst foliage or near a huge group of trees.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on Stealth checks made to hide amongst foliage or near a huge group of trees.</description>
+        </sheet>
+    </element>
+    <element name="Nature Whisperer" type="Racial Trait" source="" id="ID_WIKI_RACIAL_TRAIT_DRYAD_NATURE_WHISPERER">
+        <description>
+            <p>After living in the forest for your whole life you can communicate with beasts and plants as if they share a language.</p>
+        </description>
+        <sheet>
+            <description>You can communicate with beasts and plants as if they share a language.</description>
+        </sheet>
+    </element>
+    <element name="Photosynthesis" type="Racial Trait" source="" id="ID_WIKI_RACIAL_TRAIT_DRYAD_PHOTOSYNTHESIS">
+        <description>
+            <p>Being a plant based life form, you create your food through Photosynthesis, being in sunlight will regenerate 1d4 health per hour, likewise, if you aren't in sunlight for two days you will start to decay.</p>
+        </description>
+        <sheet>
+            <description>You create your food through Photosynthesis, being in sunlight will regenerate 1d4 health per hour, likewise, if you aren't in sunlight for two days you will start to decay.</description>
+        </sheet>
+    </element>
+    <element name="Tree Stride" type="Racial Trait" source="" id="ID_WIKI_RACIAL_TRAIT_DRYAD_TREE_STRIDE">
+        <description>
+            <p>Over time you have learned the skill of using trees as a type of transportation. Once a turn, You can use 10 feet of your movement to step magically into one living tree within your reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be Large or bigger.</p>
+        </description>
+        <sheet>
+            <description>You can use 10 feet of your movement to step magically into one living tree within your reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. (1/Turn)</description>
+        </sheet>
+    </element>
+</elements>
