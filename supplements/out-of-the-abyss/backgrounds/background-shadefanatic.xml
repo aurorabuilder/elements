@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shade Fanatic</name>
+		<description>The Shade Fanatic background from Out of the Abyss</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/outoftheabyss">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-shadefanatic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/out-of-the-abyss/backgrounds/background-shadefanatic.xml" />
+		</update>
+	</info>
+	<element name="Shade Fanatic" type="Background" source="Rage of Demons" id="ID_WOTC_ROD_BACKGROUND_SHADE_FANATIC">
+		<description>
+			<p>You grew up at a time when the wizards of Netheril were at war with the elves of Cormanthor. You recall sitting cross- legged hearing the stories of the glorious Thultanthar, also called the Shade Enclave and the City of Shade, and aspired to study there and maybe even did, for a time. Your dreams came crashing down a few years ago when Thultanthar fell from the sky upon Myth Drannor. You know that there was a Netherese Garrison stationed near Hillsfar and have heard rumors that its downfall came from traitors within the ranks. You remain loyal to Netheril and seek other Shade loyalists and fanatics in the Cormanthor forest and the areas surrounding Hillsfar.</p>
+			<p>
+				<b>Skill Proficiencies: </b>Deception, Intimidation<br/>
+				<b>Tool Proficiencies: </b>Forgery Kit<br/>
+				<b>Languages: </b> Netherese and one language of your choice<br/>
+				<b>Equipment: </b>A forgery kit, a transparent cylinder of shadow that has no opening, a signet ring, a set of fine clothes, and 15 gp.
+			</p>
+			<div element="ID_WOTC_ROD_BACKGROUND_SHADE_FANATIC_FEATURE_SECRET_SOCIETY" />
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+			<grant type="Language" id="ID_WOTC_ROD_LANGUAGE_NETHERESE" />
+			<select type="Language" name="Language (Shade Fanatic)" />
+			<grant type="Background Feature" id="ID_WOTC_ROD_BACKGROUND_SHADE_FANATIC_FEATURE_SECRET_SOCIETY" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I am a bully; I try to hide it though.</item>
+				<item id="2">I let my actions speak for themselves</item>
+				<item id="3">I am important; I will not let anyone forget that.</item>
+				<item id="4">You are either with me or against me.</item>
+				<item id="5">I know it is only a time before I am betrayed by those I care for.</item>
+				<item id="6">I never understand why people get so emotional.</item>
+				<item id="7">They are out to get me. It is only my cunning that keeps me ahead of them</item>
+				<item id="8">Everyone has a choice, the one I make is always right though.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Hope: I know even if I need do evil acts, history will be my redemption. (Chaos)</item>
+				<item id="2">Dedicated: I can do anything I put my mind to (Lawful)</item>
+				<item id="3">Exciting: I have found the truth of the Shadovar and want to share it with everyone. (Any)</item>
+				<item id="4">Frugal: I horde my possessions knowing that someday I will be called upon to give everything I have to the cause (Any)</item>
+				<item id="5">Eloquent: I use my words to sway others to my beliefs. (Any)</item>
+				<item id="6">Compassionate: It is through love that others will join In our cause. (Good)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">They say the Shade broke the bonds of mortality; I want to find out how.</item>
+				<item id="2">The whispers in my head remind me that there is power to be found in the shadows.</item>
+				<item id="3">For the glory of Netheril, I will grow in power.</item>
+				<item id="4">I once lived in Hillsfar, I was chased out before I was able to say farewell.</item>
+				<item id="5">My true love was a killed by the Red Plumes; I plot to make them suffer.</item>
+				<item id="6">I had a loved one die in the arena at Hillsfar; I am out to prove I am stronger than them!</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I always over exaggerate my abilities.</item>
+				<item id="2">I cannot bear to let those I care for out of my sight.</item>
+				<item id="3">I am incapable of standing up for myself.</item>
+				<item id="4">The group I am with has committed atrocities; I am always worried their actions will become public.</item>
+				<item id="5">I always enjoy a good mug of ale ... or five.</item>
+				<item id="6">I know what I do is wrong, but am afraid to speak up about it.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Secret Society" type="Background Feature" source="Rage of Demons" id="ID_WOTC_ROD_BACKGROUND_SHADE_FANATIC_FEATURE_SECRET_SOCIETY">
+		<description>
+			<p>You have a special way of communicating with others who feel the same way you do about the Shade. When you enter a village or larger city you can identify contact who will give you information on those that would hinder your goals and those would help you simply because of your desire to see the Shade Enclave return in all its glory.</p>
+		</description>
+	</element>
+	<element name="Netherese" type="Language" source="Rage of Demons" id="ID_WOTC_ROD_LANGUAGE_NETHERESE">
+		<supports>ID_INTERNAL_SUPPORT_LANGUAGE_EXOTIC, Exotic</supports>
+		<description>
+			<p>Typically spoken by inhabitants of Netheril.</p>
+		</description>
+		<setters>
+			<set name="Speakers">Netheril</set>
+			<set name="Script"></set>
+			<set name="Exotic">true</set>
+		</setters>
+	</element>
+</elements>
