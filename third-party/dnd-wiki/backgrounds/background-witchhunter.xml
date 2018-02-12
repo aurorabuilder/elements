@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Witch Hunter</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.2" revised="2017/06/07">
+            <file name="background-witchhunter.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-witchhunter.xml" />
+        </update>
+    </info>
+    <element name="Witch Hunter" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_WITCHHUNTER">
+        <description>
+            <p>All your life you have found Necromancers, Hags, Fiendish Warlocks and all other practitioners of evil magic abhorrent. You seek to root out and slay these monstrosities wherever they may hide. Witch hunters all have different reasons for taking up their profession. Were you hired by a king or other noble to protect their city from an evil deity or cult? Or maybe you are a cleric or paladin dedicated to seeking out all those who endorse the abomination of arcane magic? Think about what led you to develop such a hatred. Perhaps your younger sister was abducted by a hag, and replaced with a changeling that you were then forced to kill, or your mother and father were sacrificed then raised again by a wicked mage. What are your methods? Do you imprison those you capture in pits? Burn them? Or even drag them back to your lordly master for a public execution?</p>
+            <p>
+                <span class="feature">Skill Proficiencies:</span>Any two of: Insight, Intimidation, Investigation, Perception, Survival<br/>
+                <span class="feature">Tool Proficiencies:</span>Alchemist's tools, One type of gaming set<br/>
+                <span class="feature">Languages:</span>You can choose two of the exotic languages<br/>
+                <span class="feature">Equipment:</span>Alchemist tools, a set of dark traveler's clothes including a cape with a hood or puritan hat, a book that contains all Fey, Fiend or Undead creatures and their descriptions and weaknesses, a crowbar, holy water, and a pouch of 20 gp
+            </p>
+            <div element="ID_WIKI_BACKGROUND_WITCHHUNTER_EVIL_RECOGNITION" />
+        </description>
+        <setters>
+            <set name="sourceUrl">https://www.dandwiki.com/wiki/Witch_Hunter_(5e_Background)</set>
+        </setters>
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency (Witch Hunter)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+            <select type="Proficiency" name="Gaming Set (Witch Hunter)" supports="Gaming Set" />
+            <select type="Language" name="Language (Witch Hunter)" number="2" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_WITCHHUNTER_EVIL_RECOGNITION" />
+            <select name="Personality Trait" type="List" number="2">
+                <item id="1">I travel from place to place a lot - evil must be fought everywhere.</item>
+                <item id="2">I constantly guide my allies away from the Dark Ways - I would hate to have to kill them.</item>
+                <item id="3">I barely ever sleep or rest, so intent am I upon seeking out evil.</item>
+                <item id="4">My wise words have often convinced another to step back into the light.</item>
+                <item id="5">I do not work for money - rich and poor alike can succumb to the temptations of Black Magic.</item>
+                <item id="6">I look carefully over everything I see - the Dark is cunning, and but one lapse could doom the world.</item>
+                <item id="7">I prefer to hunt my foes alone - there are many pitfalls for those less skilled than me to fall foul of.</item>
+                <item id="8">I am suspicious of everyone, especially those who dislike me.</item>
+            </select>
+            <select name="Ideal" type="List">
+                <item id="1">Redemption. If my foe wishes to repent, I am willing to help them return to the light. (Good)</item>
+                <item id="2">Freedom. I do not knuckle under authority - that would only slow me down. (Chaotic)</item>
+                <item id="3">Law. The law is all that keeps evil at bay. (Lawful)</item>
+                <item id="4">Skill. I fight the darkness to prove I can, and I constantly challenge myself to get better at it. (Neutral)</item>
+                <item id="5">Mercilessness. once you have turned to the dark, there is no turning back - not in my eyes. (Neutral)</item>
+                <item id="6">Pain. I take a perverse pleasure in inflicting pain on my captives. (Evil)</item>
+            </select>
+            <select name="Bond" type="List">
+                <item id="1">Civilization is a beacon in the night that must remain burning.</item>
+                <item id="2">I once showed mercy to a young warlock, whom I fell deeply in love with. I still wonder if I did the right thing.</item>
+                <item id="3">My family and friends are always there to fall back on when all seems lost, to rekindle the light in me.</item>
+                <item id="4">My only bond is to the silver in my sword.</item>
+                <item id="5">Pursuing this dangerous path has forced me to leave behind those I love, if only to protect them.</item>
+                <item id="6">My only kin are those of my Witch Hunting brotherhood.</item>
+            </select>
+            <select name="Flaw" type="List">
+                <item id="1">Once I start killing, I cannot stop.</item>
+                <item id="2">I am overly aggressive/prejudiced toward all magic wielders, excluding myself.</item>
+                <item id="3">I will pursue a target no matter the cost.</item>
+                <item id="4">My lust for revenge/avarice spurs me to be brash and reckless.</item>
+                <item id="5">I will kill any monster, good or evil.</item>
+                <item id="6">I will risk the lives of innocents to catch my target.</item>
+            </select>
+        </rules>
+    </element>
+    <element name="Feature: Evil Recognition" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_WITCHHUNTER_EVIL_RECOGNITION">
+        <description>
+            <p>You have advantage on Wisdom (Perception) checks to identify necromancy, fiendish or fey magic, or a practitioner of any of these techniques (this includes identifiying a Fey, Fiend or Undead, even if they do not directly practice that type of magic). Also you can roll on intelligence checks to recall information about them.</p>
+        </description>
+    </element>
+</elements>
