@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Unearthed Arcana: Three Subclasses</name>
+        <description>We kick off 2018 with three new subclasses to try out in Unearthed Arcana: the Circle of Spores for the druid, the Brute for the fighter, and the School of Invention for the wizard.</description>
+        <author url="http://dnd.wizards.com/articles/unearthed-arcana/three-subclasses">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="20180108.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2018/20180108.xml" />
+        </update>
+    </info>
+    <!-- Circle of Spores -->
+
+    <!-- Martial Archetype: Brute -->
+    <element name="Brute" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_BRUTE">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Brutes are simple warriors who rely on mighty attacks and their own durability to overcome their enemies. Some brutes combine this physical might with tactical cunning. Others just hit things until those things stop hitting back.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTE_FORCE"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTISH_DURABILITY"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_ADDITIONAL_FIGHTING_STYLE"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_DEVASTATING_CRITICAL"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_SURVIVOR"/>
+        </description>
+        <setters>
+            <set name="sourceUrl">http://dnd.wizards.com/articles/unearthed-arcana/three-subclasses</set>
+        </setters>
+        <sheet>
+            <description>Brutes are simple warriors who rely on mighty attacks and their own durability to overcome their enemies.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTE_FORCE" level="3"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTISH_DURABILITY" level="7"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_ADDITIONAL_FIGHTING_STYLE" level="10"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_DEVASTATING_CRITICAL" level="15"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_SURVIVOR" level="18"/>
+        </rules>
+    </element>
+    <element name="Brute Force" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTE_FORCE">
+        <description>
+            <p>Starting at 3rd level, you’re able to strike with your weapons with especially brutal force. Whenever you hit with a weapon that you’re proficient with and deal damage, the weapon’s damage increases by an amount based on your level in this class, as shown on the Brute Bonus Damage table.</p>
+            <h5>BRUTE BONUS DAMAGE</h5>
+            <table>
+                <thead>
+                    <tr><td>Fighter Level</td><td>Damage Increase</td></tr>
+                </thead>                
+                <tr><td>3rd</td><td>1d4</td></tr>
+                <tr><td>10th</td><td>1d6</td></tr>
+                <tr><td>16th</td><td>1d8</td></tr>
+                <tr><td>20th</td><td>1d10</td></tr>
+            </table>
+        </description>
+        <sheet>
+            <description>Whenever you hit with a weapon that you’re proficient with and deal damage, the weapon’s damage increases by 1d$(brute force:damage).</description>
+        </sheet>
+        <rules>
+            <stat name="brute force:damage" value="4" bonus="brute force" level="3" />
+            <stat name="brute force:damage" value="6" bonus="brute force" level="10" />
+            <stat name="brute force:damage" value="8" bonus="brute force" level="16" />
+            <stat name="brute force:damage" value="10" bonus="brute force" level="20" />
+        </rules>
+    </element>
+    <element name="Brutish Durability" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_BRUTISH_DURABILITY">
+        <description>
+            <p>Beginning at 7th level, your toughness allows you to shrug off assaults that would devastate others.</p>
+            <p class="indent">Whenever you make a saving throw, roll 1d6 and add the die to your saving throw total. If applying this bonus to a death saving throw increases the total to 20 or higher, you gain the benefits of rolling a 20 on the d20.</p>
+        </description>
+        <sheet>
+            <description>Whenever you make a saving throw, roll 1d6 and add the die to your saving throw total. If applying this bonus to a death saving throw increases the total to 20 or higher, you gain the benefits of rolling a 20 on the d20.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Additional Fighting Style" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_ADDITIONAL_FIGHTING_STYLE">
+        <description>
+            <p>At 10th level, you can choose a second option from the Fighting Style feature.</p>
+        </description>
+        <sheet>
+            <description>You can choose a second option from the Fighting Style feature.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Additional Fighting Style" supports="Fighting Style" level="10"/>
+        </rules>
+    </element>
+    <element name="Devastating Critical" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_DEVASTATING_CRITICAL">
+        <description>
+            <p>Starting at 15th level, when you score a critical hit with a weapon attack, you gain a bonus to that weapon’s damage roll equal to your level in this class.</p>
+        </description>
+        <sheet>
+            <description>When you score a critical hit with a weapon attack, you gain a +$(level:fighter) bonus to that weapon’s damage roll.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Survivor" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_BRUTE_SURVIVOR">
+        <description>
+            <p>At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns in combat, you regain hit points equal to 5 + your Constitution modifier (minimum of 1 hit point). You don’t gain this benefit if you have 0 hit points or if you have more than half of your hit points left.</p>
+        </description>
+        <sheet>
+            <description>At the start of each of your turns in combat, you regain $(survivor:hp) hit points. You don’t gain this benefit if you have 0 hit points or if you have more than half of your hit points left.</description>
+        </sheet>
+        <rules>
+            <stat name="survivor:hp:mod" value="1" bonus="mod" />
+            <stat name="survivor:hp:mod" value="Constitution Modifier" bonus="mod" />
+            
+            <stat name="survivor:hp" value="5" />
+            <stat name="survivor:hp" value="survivor:hp:mod" />
+        </rules>
+    </element>
+    <!-- School of Invention -->
+</elements>
