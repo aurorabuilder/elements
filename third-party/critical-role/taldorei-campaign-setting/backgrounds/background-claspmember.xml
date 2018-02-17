@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Clasp Member</name>
+        <description>The Clasp Member background from the Tal’Dorei Campaign Setting.</description>
+        <author url="https://geekandsundry.com/shows/critical-role/">Tal’Dorei Campaign Setting</author>
+        <update version="0.0.1">
+            <file name="background-claspmember.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/taldorei-campaign-setting/backgrounds/background-claspmember.xml" />
+        </update>
+    </info>
+    <element name="Clasp Member" type="Background" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_BACKGROUND_CLASP_MEMBER">
+        <description>
+            <p>Whether you grew up in the slum-run streets of Kymal bamboozling foolish gamblers out of their fortune, or spent your youth pilfering loose coin from the pockets of the less-attentive travelers throughout Emon, your lifestyle of deceiving-to-survive eventually drew the attention of the Clasp: the most organized, and dangerous, crime syndicate across Tal’Dorei. Offering protection, a modicum of kinship, and a number of useful resources to further develop your craft as a criminal, you agree to receive the brand of the Clasp and join their ranks.</p>
+            <p class="indent">You might have been working the guild’s lower ranks, wandering the alleys as a simple cutpurse to fill the meager coffers with wayward gold until the opportunity arose to climb the professional ladder. Or you may have been ordained a Spook, a clever actor and liar whose skill in blending in with all facets of society has made you an indispensable agent of information gathering. Perhaps your technique with a blade and swiftness of action led you to become a feared hitman for a Clasp Spireling, sending you on the occasional contract to snuff the life of some unfortunate soul who crossed the Clasp. Regardless, while the threat of the law is ever looming, the advantages to having a foot in such a powerful cartel can greatly outweigh the paranoia.</p>
+            <p>
+                <span class="emphasis">Skill Proficiencies:</span>Deception, plus your choice of one between Sleight of Hand or Stealth.<br/>
+                <span class="emphasis">Tool Proficiencies:</span>Your choice of one from Thieves’ Tools, Forgery Kit, or Disguise Kit.<br/>
+                <span class="emphasis">Languages:</span>Thieves’ Cant<br/>
+                <span class="emphasis">Equipment:</span>A set of dark common clothes including a hood, a set of tools to match your choice of tool proficiency, and a belt pouch containing 10g.
+            </p>
+            <div element="ID_CRIT_TCS_BACKGROUND_FEATURE_CLASP_MEMBER_A_FAVOR_IN_TURN" />
+            <h5>VARIANT: MYRIAD OPERATIVE</h5>
+            <p>While the skill sets are similar in many ways, working with the Myriad brings some different benefits and challenges. The Myriad specializes in slavery and exotic trade, so you have access to servants and rare materials at times without using your A Favor In Turn ability. However, your access to contacts is far more limited, and should you be found out as Myriad by a member of the Clasp, you will quickly find yourself hunted.</p>
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Use the tables for the Criminal background in the PHB as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a member of the Clasp. Your bond is likely associated with your fellow Clasp members or the individual who introduced you to the organization. Your ideal probably involves establishing your importance and indispensability within the Clasp. You joined to improve your livelihood and sense of purpose.</p>
+        </description>
+        <rules>
+            <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_DECEPTION" />
+            <select type="Proficiency" name="Skill Proficiency (Clasp Member)" supports="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_STEALTH" />
+            <select type="Proficiency" name="Tool Proficiency (Clasp Member)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+            <!-- create thieves cant as a language? -->
+            <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_THIEVES_CANT" />
+            <grant type="Background Feature" name="ID_CRIT_TCS_BACKGROUND_FEATURE_CLASP_MEMBER_A_FAVOR_IN_TURN" />
+
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I always have a plan for what to do when things go wrong.</item>
+                <item id="2">I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.</item>
+                <item id="3">The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.</item>
+                <item id="4">I would rather make a new friend than a new enemy.</item>
+                <item id="5">I am incredibly slow to trust. Those who seem the fairest often have the most to hide.</item>
+                <item id="6">I don’t pay attention to the risks in a situation. Never tell me the odds.</item>
+                <item id="7">The best way to get me to do something is to tell me I can’t do it.</item>
+                <item id="8">I blow up at the slightest insult.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Honor. I don’t steal from others in the trade. (Lawful)</item>
+                <item id="2">Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)</item>
+                <item id="3">Charity. I steal from the wealthy so that I can help people in need. (Good)</item>
+                <item id="4">Greed. I will do whatever it takes to become wealthy. (Evil)</item>
+                <item id="5">People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)</item>
+                <item id="6">Redemption. There’s a spark of good in everyone. (Good)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I’m trying to pay off an old debt I owe to a generous benefactor.</item>
+                <item id="2">My ill-gotten gains go to support my family.</item>
+                <item id="3">Something important was taken from me, and I aim to steal it back.</item>
+                <item id="4">I will become the greatest thief that ever lived.</item>
+                <item id="5">I’m guilty of a terrible crime. I hope I can redeem myself for it.</item>
+                <item id="6">Someone I loved died because of I mistake I made. That will never happen again.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">When I see something valuable, I can’t think about anything but how to steal it.</item>
+                <item id="2">When faced with a choice between money and my friends, I usually choose the money.</item>
+                <item id="3">If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it.</item>
+                <item id="4">I have a “tell” that reveals when I’m lying.</item>
+                <item id="5">I turn tail and run when things look bad.</item>
+                <item id="6">An innocent person is in prison for a crime that I committed. I’m okay with that.</item>
+            </select>
+        </rules>
+    </element>
+    <element name="Feature: A Favor In Turn" type="Background Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_BACKGROUND_FEATURE_CLASP_MEMBER_A_FAVOR_IN_TURN">
+        <description>
+            <p>You have gained enough clout within the Clasp that you can call in a favor from your contacts, should you be close enough to a center of Clasp activity. A request for a favor can be no longer than 20 words, and is passed up the chain to an undisclosed Spireling for approval. This favor can take a shape up to the DM’s discretion depending on the request, with varying speeds of fulfillment: If muscle is requested, an NPC Clasp minion can temporarily aid the party. If money is needed, a small loan can be provided. If you’ve been imprisoned, they can look into breaking you free, or paying off the jailer.</p>
+            <p class="indent">The turn comes when a favor is asked to be repaid. The favor debt can be called in without warning, and many times with intended immediacy. Perhaps the player is called to commit a specific burglary without the option to decline. Maybe they must press a dignitary for a specific secret at an upcoming ball. The Clasp could even request a hit on an NPC, no questions asked or answered. The DM is to provide a debt call proportionate to the favor fulfilled. If a favor is not repaid within a reasonable period of time, membership to the Clasp can be revoked, and if the debt is large enough, the player may become the next hit contract to make the rounds.</p>
+        </description>
+        <sheet alt="A Favor In Turn" />
+    </element>
+</elements>
