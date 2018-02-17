@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of the Immortal Flame</name>
+        <description>The Way of the Immortal Flame archetype.</description>
+        <author url="http://mfov.magehandpress.com/2017/09/way-of-immortal-flame.html">Mage Hand Press</author>
+        <update version="0.1">
+            <file name="monk-immortalflame.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/monk-immortalflame.xml" />
+        </update>
+    </info>
+    <element name="Way of the Immortal Flame" type="Archetype" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_MONK_WAY_OF_THE_IMMORTAL_FLAME">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks everywhere study and train to bring discipline and order to their lives, and enlighten their minds. For some the only path to enlightenment is wading into chaos and immersing themselves in tongues of fire. The monks who follow the Way of the Immortal Flame see fire as the purest, most undiluted form of chaos in the universe, and seek to understand and master it, to bend it to their will. These monks believe that when a follower of the Immortal Flame can impose their will upon a living flame, they have truly mastered themselves, and brought peace where there was previously disorder.</p>
+            <div element="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_EXPLOSIVE_FIST" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_MASTER_OF_THE_INFERNO" />
+        </description>
+        <sheet>
+            <description>Monks everywhere study and train to bring discipline and order to their lives, and enlighten their minds.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN" level="3"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE" level="6"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_EXPLOSIVE_FIST" level="11"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_MASTER_OF_THE_INFERNO" level="17"/>
+        </rules>
+    </element>
+    <element name="Fire Within" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN">
+        <description>
+            <p>When you choose this tradition at 3rd level, you gain the ability to unleash the inferno that burns within your soul. As a bonus action, you can spend 3 ki points to reveal your fiery nature. This transformation lasts for 1 minute, until you drop to 0 hit points, or you dismiss it (no action required). You gain the following benefits in this form:</p>
+            <ul>
+                <li>Your entire body is consumed by flame, and transmuted into a fiery phantasm. You have resistance to fire damage, if you did not already have it.</li>
+                <li>You shed bright light within 30 feet of you, and dim light for another 30 feet.</li>
+                <li>Instead of walking on the ground, you hover a few inches above it. You retain your movement speed, propelled by the flames that you have manifested, and you ignore difficult terrain.</li>
+                <li>Your unarmed strikes deal fire damage. When you make an unarmed strike, you can choose to instead hurl the flame at a distant target. When you do so, your unarmed strike becomes a ranged weapon attack with a range of 30/90 feet.</li>
+                <li>When you are hit by a melee weapon attack, the creature that attacked you takes fire damage equal to your Wisdom modifier.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>As a bonus action, spend 3 ki points: you have fire resistance, you shed bright/dim light 30/60 ft., you hover instead of walking, ranged fire unarmed strikes, %fire within:damage% fire damage when attacked by melee weapon attack.</description>
+        </sheet>
+        <rules>
+            <stat name="fire within:damage" value="0" bonus="fire within" />
+            <stat name="fire within:damage" value="Wisdom Modifier" bonus="fire within" />
+        </rules>
+    </element>
+    <element name="Student of the Blaze" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE">
+        <description>
+            <p>Starting at 6th level, your flames burn hotter than ordinary fire. When you deal damage to a creature with resistance or immunity to fire damage, you can channel your ki into the target. The target must make a Wisdom saving throw against your ki save DC, or lose its fire resistance or immunity for 1 hour, as your ki interrupts any natural or magical protection from the blaze.</p>
+        </description>
+        <sheet>
+            <description>When you deal damage to a creature with resistance or immunity to fire damage, you can channel your ki into the target. The target must make a Wisdom saving throw against your ki save DC, or lose its fire resistance or immunity for 1 hour, as your ki interrupts any natural or magical protection from the blaze.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Explosive Fist" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_EXPLOSIVE_FIST">
+        <description>
+            <p>Starting at 11th level, once per turn when hit with an unarmed strike, you can expend a number of ki points, equal to half your level (rounded down) to channel your ki into your target. The target must make a Constitution saving throw. On a failed save, the target takes 1d10 fire damage for each ki point expended, is knocked back 10 feet, and falls prone. Additionally, each creature within 5 feet of the target must make a Dexterity saving throw or take half the damage dealt.</p>
+        </description>
+        <sheet>
+            <description>Once per turn when hit with an unarmed strike, you can expend a number of ki points, equal to half your level (rounded down) to channel your ki into your target. The target must make a Constitution saving throw. On a failed save, the target takes 1d10 fire damage for each ki point expended, is knocked back 10 feet, and falls prone. Additionally, each creature within 5 feet of the target must make a Dexterity saving throw or take half the damage dealt.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Master of the Inferno" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_MASTER_OF_THE_INFERNO">
+        <description>
+            <p>Starting at 17th level, you wield complete authority over the flames, an exemplar of the monastic training that brings order to the purest chaos. As a demonstration of this mastery over the blaze you can spend 6 ki points to cast the spell conjure elemental as a bonus action on your turn, without using a spell slot or spell components. Unless you have learned this spell from some other source, you can only conjure a fire elemental with this spell. Otherwise, your casting of the conjure elemental spell follows all the rules of the spell.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>You can spend 6 ki points to cast the spell conjure elemental as a bonus action on your turn, without using a spell slot or spell components. Unless you have learned this spell from some other source, you can only conjure a fire elemental with this spell. Otherwise, your casting of the conjure elemental spell follows all the rules of the spell. (1/LR)</description>
+        </sheet>
+        <rules />
+    </element>
+</elements>
