@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Divine Soul</name>
+		<description>The Divine Soul Sorcerous Origin from Xanathar’s Guide to Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+		<update version="0.0.1">
+			<file name="sorcerer-divinesoul.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/sorcerer-divinesoul.xml" />
+		</update>
+	</info>
+
+	<element name="Divine Soul" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_SORCERER_ARCHETYPE_DIVINE_SOUL">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Sometimes the spark of magic that fuels a sorcerer comes from a divine source that glimmers within the soul. Having such a blessed soul is a sign that your innate magic might come from a distant but powerful familial connection to a divine being. Perhaps your ancestor was an angel, transformed into a mortal and sent to fight in a god’s name. Or your birth might align with an ancient prophecy, marking you as a servant of the gods or a chosen vessel of divine magic.</p>
+			<p class="indent">A Divine Soul, with a natural magnetism, is seen as a threat by some religious hierarchies. As an outsider who commands sacred power, a Divine Soul can undermine an existing order by claiming a direct tie to the divine.</p>
+			<p class="indent">In some cultures, only those who can claim the power of a Divine Soul may command religious power. In these lands, ecclesiastical positions are dominated by a few bloodlines and preserved over generations.</p>			
+			<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_DIVINE_MAGIC" />
+			<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_FAVORED_BY_THE_GODS" />
+			<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_EMPOWERED_HEALING" />
+			<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_OTHERWORLDLY_WINGS" />
+			<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_UNEARTHLY_RECOVERY" />
+		</description>
+		<sheet>
+			<description>Sometimes the spark of magic that fuels a sorcerer comes from a divine source that glimmers within the soul.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_DIVINE_MAGIC" level="1" />
+			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_FAVORED_BY_THE_GODS" level="1" />
+			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_EMPOWERED_HEALING" level="6" />
+			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_OTHERWORLDLY_WINGS" level="14" />
+			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_UNEARTHLY_RECOVERY" level="18" />
+		</rules>
+	</element>
+	<element name="Divine Magic" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_DIVINE_MAGIC">
+		<description>
+			<p>Your link to the divine allows you to learn spells from the cleric class. When your Spellcasting feature lets you learn or replace a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the cleric spell list or the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+			<p class="indent">In addition, choose an affinity for the source of your divine power: good, evil, law, chaos, or neutrality. You learn an additional spell based on that affinity, as shown below. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<table>
+				<thead>
+					<tr><td>Affinity</td><td>Spell</td></tr>
+				</thead>
+				<tr><td>Good</td><td><i>cure wounds</i></td></tr>
+				<tr><td>Evil</td><td><i>inflict wounds</i></td></tr>
+				<tr><td>Law</td><td><i>bless</i></td></tr>
+				<tr><td>Chaos</td><td><i>bone</i></td></tr>
+				<tr><td>Neutrality</td><td><i>protectionfrom evil and good</i></td></tr>
+			</table>
+		</description>
+		<spellcasting name="Sorcerer" extend="true">
+			<extend>Cleric</extend>
+		</spellcasting>
+		<sheet display="false"/>
+		<rules>
+			<select type="Archetype Feature" name="Affinity" supports="Divine Soul Affinity" />
+		</rules>
+	</element>
+
+	<element name="Good" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_GOOD">
+		<supports>Divine Soul Affinity</supports>
+		<description>
+			<p>You learn the <i>cure wounds</i> spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<div element="ID_PHB_SPELL_CURE_WOUNDS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Evil" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_EVIL">
+		<supports>Divine Soul Affinity</supports>
+		<description>
+			<p>You learn the <i>inflict wounds</i> spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<div element="ID_PHB_SPELL_INFLICT_WOUNDS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Law" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_LAW">
+		<supports>Divine Soul Affinity</supports>
+		<description>
+			<p>You learn the <i>bless</i> spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<div element="ID_PHB_SPELL_BLESS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Chaos" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_CHAOS">
+		<supports>Divine Soul Affinity</supports>
+		<description>
+			<p>You learn the <i>bane</i> spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<div element="ID_PHB_SPELL_BANE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BANE" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Neutrality" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_NEUTRALITY">
+		<supports>Divine Soul Affinity</supports>
+		<description>
+			<p>You learn the <i>protection from evil and good</i> spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a Spell from the cleric spell list.</p>
+			<div element="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" />
+		</description>
+		<sheet display="false">
+			<description>You learn the <i>protection from evil and good</i> spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Favored by the Gods" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_FAVORED_BY_THE_GODS">
+		<description>
+			<p>Starting at 1st level, divine power guards your destiny. If you fail a saving throw or miss with an attack roll, you can roll 2d4 and add it to the total, possibly changing the outcome. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>If you fail a saving throw or miss with an attack roll, you can roll 2d4 and add it to the total, possibly changing the outcome. (1/SR)</description>
+		</sheet>
+	</element>
+	<element name="Empowered Healing" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_EMPOWERED_HEALING">
+		<description>
+			<p>Starting at 6th level, the divine energy coursing through you can empower healing spells. Whenever you or an ally within 5 feet of you rolls dice to determine the number of hit points a spell restores, you can spend 1 sorcery point to reroll any number of those dice once, provided you aren't incapacitated. You can use this feature only once per turn.</p>
+		</description>
+		<sheet>
+			<description>Whenever you or an ally within 5 feet of you rolls dice to determine the number of hit points a spell restores, you can spend 1 sorcery point to reroll any number of those dice once, provided you aren't incapacitated. You can use this feature only once per turn.</description>
+		</sheet>
+	</element>
+	<element name="Otherworldly Wings" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_OTHERWORLDLY_WINGS">
+		<description>
+			<p>Starting at 14th level, you can use a bonus action to manifest a pair of spectral wings from your back. While the wings are present, you have a flying speed of 30 feet. The wings last until you're incapacitated, you die, or you dismiss them as a bonus action.</p>
+			<p class="indent">The affinity you chose for your Divine Magic feature determines the appearance of the spectral wings: eagle wings for good or law, bat wings for evil or chaos, and dragonfly wings for neutrality.</p>
+		</description>
+		<sheet>
+			<description>You can use a bonus action to manifest a pair of spectral $(otherworldly wings appearance) from your back. While the wings are present, you have a flying speed of 30 feet. The wings last until you're incapacitated, you die, or you dismiss them as a bonus action.</description>
+		</sheet>
+		<rules>
+			<stat name="otherworldly wings appearance" value="eagle wings" inline="true" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_GOOD||ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_LAW" />
+			<stat name="otherworldly wings appearance" value="bat wings" inline="true" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_EVIL||ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_CHAOS" />
+			<stat name="otherworldly wings appearance" value="dragonfly wings" inline="true" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_AFFINITY_NEUTRALITY" />
+		</rules>
+	</element>
+	<element name="Unearthly Recovery" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DIVINE_SOUL_UNEARTHLY_RECOVERY">
+		<description>
+			<p>At 18th level, you gain the ability to overcome grievous injuries. As a bonus action when you have fewer than half of your hit points remaining, you can regain a number of hit points equal to half your hit point maximum.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action when you have fewer than half of your hit points remaining, you can regain a number of hit points equal to half your hit point maximum. (1/LR)</description>
+		</sheet>
+	</element>
+</elements>
