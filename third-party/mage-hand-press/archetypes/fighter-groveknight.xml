@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Grove Knight</name>
+        <description>The Grove Knight archetype.</description>
+        <author url="http://mfov.magehandpress.com/2018/03/grove-knight.html">Mage Hand Press</author>
+        <update version="0.0.1">
+            <file name="fighter-groveknight.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/fighter-groveknight.xml" />
+        </update>
+    </info>
+    
+    <element name="Grove Knight" type="Archetype" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FIGHTER_GROVE_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>While seemingly similar to rangers, the grove knights are far less concerned with foraging and trailblazing and much more interested in protecting the woods at all costs. Often found taking down clearcutters, poachers, and  those who destroy natural wilderness with casual disregard, grove knights are never to be taken lightly.</p>
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_SPELLCASTING" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURES_FORCE" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_WILD_SLASH" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH" />
+        </description>
+        <setters>
+            <set name="sourceUrl">http://mfov.magehandpress.com/2018/03/grove-knight.html</set>
+        </setters>
+        <sheet>
+            <description>The grove knight is interested in protecting the woods at all costs.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_SPELLCASTING" level="3"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURES_FORCE" level="3"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_WILD_SLASH" level="7"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE" level="10"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK" level="15"/>
+            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH" level="18"/>
+            
+            <!-- counts as 1/3 for multiclassing like the eldritch knight -->
+            <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+        </rules>
+    </element>
+
+    <element name="Spellcasting" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_SPELLCASTING">
+        <description>
+            <p>When you reach 3rd level, you augment your martial prowess with the ability to cast spells.</p>
+            <p class="indent">Cantrips. You learn two cantrips of your choice from the druid spell list. You learn an additional druid cantrip of your choice at 10th level.</p>
+            <p class="indent">Preparing and Casting Spells. The Grove Knight spellcasting table shows how many spell slots you have to cast your spells. To cast one of your grove knight spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.</p>
+            <p class="indent">You prepare the list of grove knight spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + half your fighter level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
+            <p class="indent">You can change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.</p>
+            <p class="indent">Spellcasting Ability. Wisdom is your spellcasting ability for your druid spells, since you prepare them through prayer and meditation. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.</p>
+            <p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Wisdom modifier</p>
+            <p><strong>Spell attack modifier</strong> = your proficiency bonus + your Wisdom modifier</p>
+        </description>
+        <sheet>
+            <description>You augment your martial prowess with the ability to cast spells.</description>
+        </sheet>
+        <spellcasting name="Grove Knight" ability="Wisdom" prepare="true">
+            <list known="true">Druid</list>
+        </spellcasting>
+        <rules>
+            <!-- prepare -->
+            <stat name="grove knight:spellcasting:prepare" value="Wisdom Modifier" />
+            <stat name="grove knight:spellcasting:prepare" value="level:fighter:half" />
+
+            <!-- slots -->
+            <stat name="grove knight:spellcasting:slots:1" value="2" level="3" />
+            <stat name="grove knight:spellcasting:slots:1" value="1" level="4" />
+            <stat name="grove knight:spellcasting:slots:1" value="1" level="7" />
+            <stat name="grove knight:spellcasting:slots:2" value="2" level="7" />
+            <stat name="grove knight:spellcasting:slots:2" value="1" level="10" />
+            <stat name="grove knight:spellcasting:slots:3" value="2" level="13" />
+            <stat name="grove knight:spellcasting:slots:3" value="1" level="16" />
+            <stat name="grove knight:spellcasting:slots:4" value="1" level="19" />
+
+            <!-- cantrips -->
+            <select type="Spell" name="Cantrip (Grove Knight)" supports="$(spellcasting:list),0" level="3" number="2" spellcasting="Grove Knight" />
+            <select type="Spell" name="Cantrip (Grove Knight)" supports="$(spellcasting:list),0" level="10" number="1" spellcasting="Grove Knight" />
+        </rules>
+    </element>
+    <element name="Nature’s Force" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURES_FORCE">
+        <description>
+            <p>At 3rd level, you learn the shillelagh cantrip, which does not count against your number of grove knight cantrips known. You can target any weapon you wield with the spell, and the spells duration is increased to 24 hours. If the weapon you target with shillelagh has a damage die that is 1d8 or larger, its damage die does not change.</p>
+        </description>
+        <sheet>
+            <description>You can target any weapon you wield with the shillelagh spell, and the spells duration is increased to 24 hours. If the weapon you target with shillelagh has a damage die that is 1d8 or larger, its damage die does not change.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SHILLELAGH" spellcasting="Grove Knight" prepared="true">
+                <!-- todo -->
+                <set name="duration">24 hours</set>
+            </grant>
+        </rules>
+    </element>
+    <element name="Wild Slash" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_WILD_SLASH">
+        <description>
+            <p>At 7th level, you gain the ability to grow a natural weapon and attack with it at a moment’s notice. When you use your action to take the Attack action or to cast a cantrip, you can make an additional unarmed strike at a creature within reach as a bonus action. This unarmed strike deals 1d6 bludgeoning, piercing, or slashing damage (your choice) and is treated as magical for the purposes of overcoming resistance and immunity to non-magical attacks and damage.</p>
+        </description>
+        <sheet>
+            <description>When you use your action to take the Attack action or to cast a cantrip, you can make an additional unarmed strike at a creature within reach as a bonus action. This unarmed strike deals 1d6 bludgeoning, piercing, or slashing damage (your choice) and is treated as magical for the purposes of overcoming resistance and immunity to non-magical attacks and damage.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Natural Resilience" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE">
+        <description>
+            <p>Starting at 10th level, you can use a bonus action on your turn to regain a number of hit points equal to 5 + your Wisdom modifier. You cannot use this ability if you have more than half your maximum hit points remaining, or if you are unconscious.</p>
+        </description>
+        <sheet>
+            <description>You can use a bonus action on your turn to regain $(grove knight:natural resilience) hit points. You cannot use this ability if you have more than half your maximum hit points remaining, or if you are unconscious.</description>
+        </sheet>
+        <rules>
+            <stat name="grove knight:natural resilience" value="5" />
+            <stat name="grove knight:natural resilience" value="Wisdom Modifier" />
+        </rules>
+    </element>
+    <element name="Nature Walk" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK">
+        <description>
+            <p>Starting at 15th level, you gain a climb speed and a swim speed equal to your movement speed. Additionally, you can breathe underwater, and your movement is unaffected by difficult terrain.</p>
+        </description>
+        <sheet>
+            <description>You gain a climb speed and a swim speed equal to your movement speed ($(Speed)). Additionally, you can breathe underwater, and your movement is unaffected by difficult terrain.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:climb" value="Speed" bonus="base" />
+            <stat name="speed:swim" value="Speed" bonus="base" />
+        </rules>
+    </element>
+    <element name="Frenzy Slash" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH">
+        <description>
+            <p>At 18th level, when you use your Wild Slash ability, you can make two unarmed strikes instead of one.</p>
+        </description>
+        <sheet>
+            <description>When you use your Wild Slash ability, you can make two unarmed strikes instead of one.</description>
+        </sheet>
+        <rules />
+    </element>
+
+</elements>

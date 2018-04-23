@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Shadow Cabal</name>
+        <description>The Shadow Cabal archetype.</description>
+        <author url="http://mfov.magehandpress.com/2018/04/the-shadow-cabal.html">Mage Hand Press</author>
+        <update version="0.1">
+            <file name="warlock-shadowcabal.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/warlock-shadowcabal.xml" />
+        </update>
+    </info>
+    
+    <element name="The Shadow Cabal" type="Archetype" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_WARLOCK_THE_SHADOW_CABAL">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is a council of beings who magically bolstered and corrupted your body to make you into their chosen operative, a vicarious embodiment of their will. Your new powers grant you supernatural speed and stealth, as well as a ghastly form that strikes fear into the heart of your enemies. Patrons of this sort can be any number of shadowy organizations, such as the Dark Powers of Ravenloft, the Gloaming Court, the Mage Hand Press, the Red Wizards of Thay, the Shadow Enclave Proclamation, the Treaty of Ascended Lords from the Otherworldly Nexus, and the Umbral Council.</p>
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_EXPANDED_SPELL_LIST" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_WALKS_AMONG_YOU" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_SHADOW_WALK" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_WRAITH_FORM" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_THE_REAPING" />
+            <div element="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_BLOSSOM" />
+        </description>
+        <sheet>
+            <description>Your patron is a council of beings who magically bolstered and corrupted your body to make you into their chosen operative, a vicarious embodiment of their will.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_WALKS_AMONG_YOU" level="1" />
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_SHADOW_WALK" level="1" />
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_WRAITH_FORM" level="6" />
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_THE_REAPING" level="10" />
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_BLOSSOM" level="14" />
+        </rules>
+    </element>
+    <element name="Expanded Spell List" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_EXPANDED_SPELL_LIST">
+        <description>
+            <p>Your pact with the Cabal allows you to choose from an expanded list of spells when you learn a new spell. The following spells are added to the warlock spell list for you.</p>
+            <h5>Shadow Cabal One Expanded Spells</h5>
+            <table>
+                <thead>
+                <tr><td>Spell Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>bane, inflict wounds</em></td></tr>
+                <tr><td>2nd</td><td><em>pass without trace, silence</em></td></tr>
+                <tr><td>3rd</td><td><em>bestow curse, feign death</em></td></tr>
+                <tr><td>4th</td><td><em>death ward, locate creature</em></td></tr>
+                <tr><td>5th</td><td><em>dominate person, seeming</em></td></tr>
+            </table> 
+        </description>
+        <sheet display="false">
+            <description>Your pact with the Cabal allows you to choose from an expanded list of spells when you learn a new spell.</description>
+        </sheet>
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_BANE</extend>
+            <extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+            <extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+            <extend>ID_PHB_SPELL_SILENCE</extend>            
+            <extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+            <extend>ID_PHB_SPELL_FEIGN_DEATH</extend>            
+            <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+            <extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>            
+            <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+            <extend>ID_PHB_SPELL_SEEMING</extend>
+        </spellcasting>
+        <rules>
+
+        </rules>
+    </element>
+    <element name="Death Walks Among You" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_WALKS_AMONG_YOU">
+        <description>
+            <p>At 1st level, you gain proficiency with the Intimidation skill. If you already proficient in it, you gain proficiency with one of the following skills of your choice: Athletics, Deception, Insight, or Stealth.</p>
+            <p class="indent">When you make a Charisma (Intimidation) check, your proficiency bonus is doubled.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" /> -->
+            <select type="Proficiency" name="Death Walks Among You" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_INTIMIDATION" default="ID_PROFICIENCY_SKILL_INTIMIDATION" default-behaviour="force" />
+
+            <stat name="Intimidation Proficiency" value="Proficiency" bonus="doubled" />
+        </rules>
+    </element>
+    <element name="Shadow Walk" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_SHADOW_WALK">
+        <description>
+            <p>Also at 1st level, while you are in dim light or darkness, you become one with the shadows. Your speed increases by 10 feet, and you can climb without expending additional movement. You do not need handholds to climb along a surface while using this feature.</p>
+        </description>
+        <sheet>
+            <description>While you are in dim light or darkness, you become one with the shadows. Your speed increases by 10 feet, and you can climb without expending additional movement. You do not need handholds to climb along a surface while using this feature.</description>
+        </sheet>
+    </element>
+    <element name="Wraith Form" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_WRAITH_FORM">
+        <description>
+            <p>At 6th level, as a reaction when you are hit by an attack you can become a haunting, incorporeal phantasm. You gain resistance to that attack and all damage until the end of your next turn, and you can then move 60 feet to an unoccupied space that you can see.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>As a reaction when you are hit by an attack you can become a haunting, incorporeal phantasm. You gain resistance to that attack and all damage until the end of your next turn, and you can then move 60 feet to an unoccupied space that you can see. (1/SR)</description>
+        </sheet>
+    </element>
+    <element name="The Reaping" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_THE_REAPING">
+        <description>
+            <p>At 10th level, when you go on the offensive, the dark forces that empower you grant you a defensive boon. Once per turn, when you deal damage to a hostile creature, you can regain hit points equal to your Charisma modifier.</p>
+        </description>
+        <sheet>
+            <description>Once per turn, when you deal damage to a hostile creature, you can regain $(the reaping:hp) hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="the reaping:hp" value="Charisma Modifier" />
+        </rules>
+    </element>
+    <element name="Death Blossom" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_BLOSSOM">
+        <description>
+            <p>At 14th level, as an action on your turn you can unleash a deadly barrage of eldritch energy in a 30-foot radius around you. Creatures you choose in this area must make a Dexterity saving throw against your warlock spell save DC. On a failed save, a creature takes force damage equal to 4d10 + your Charisma modifier, or half as much damage on a successful save.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>As an action on your turn you can unleash a deadly barrage of eldritch energy in a 30-foot radius around you. Creatures you choose in this area must make a DC$(spellcasting:dc:cha) Dexterity saving throw. On a failed save, a creature takes force damage equal to 4d10 + $(Charisma Modifier), or half as much damage on a successful save. (1/LR)</description>
+        </sheet>
+    </element>
+</elements>
