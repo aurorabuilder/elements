@@ -4,7 +4,7 @@
     <name>Arcana Domain</name>
     <description>Arcana Domain archetype from the Sword Coast Adventurer’s Guide.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.0.2">
+    <update version="0.1">
       <file name="cleric-arcanadomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/cleric-arcanadomain.xml" />
     </update>
   </info>
@@ -35,16 +35,16 @@
       <description>Magic is an energy that suffuses the multiverse and that fuels both destruction and creation.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DETECT_MAGIC" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_MISSILE" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_NYSTULS_MAGIC_AURA" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_CIRCLE" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_PLANAR_BINDING" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_DETECT_MAGIC" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_MISSILE" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_NYSTULS_MAGIC_AURA" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_CIRCLE" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_PLANAR_BINDING" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION" level="2"/>
       <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" level="6"/>
@@ -57,12 +57,12 @@
     <description>
       <p>When you choose this domain at 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips.</p>
     </description>
-    <sheet>
-      <description></description>
+    <sheet display="false">
+      <description>You gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips.</description>
     </sheet>
     <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
-      <select type="Spell" name="Arcane Initiate" supports="Wizard,0" number="2" />
+      <select type="Spell" name="Arcane Initiate" supports="Wizard,0" number="2" spellcasting="Cleric" />
     </rules>
   </element>
   
@@ -82,7 +82,7 @@
         <tr><td>17th</td><td>4 or lower</td></tr>
       </table>
     </description>
-    <sheet>
+    <sheet alt="Arcane Abjuration">
       <description level="5">You can use your Channel Divinity to abjure otherworldly creatures of CR 1/2 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
       <description level="8">You can use your Channel Divinity to abjure otherworldly creatures of CR 1 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
       <description level="11">You can use your Channel Divinity to abjure otherworldly creatures of CR 2 or lower for 1 minute DC $(spellcasting:dc:wis) Wisdom saving throw.</description>
@@ -120,10 +120,10 @@
       <description>You choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th.</description>
     </sheet>
     <rules>
-      <select type="Spell" name="Arcane Mastery" supports="Wizard,6" />
-      <select type="Spell" name="Arcane Mastery" supports="Wizard,7" />
-      <select type="Spell" name="Arcane Mastery" supports="Wizard,8" />
-      <select type="Spell" name="Arcane Mastery" supports="Wizard,9" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,6" spellcasting="Cleric" prepared="true" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,7" spellcasting="Cleric" prepared="true" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,8" spellcasting="Cleric" prepared="true" />
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,9" spellcasting="Cleric" prepared="true" />
     </rules>
   </element>
 
