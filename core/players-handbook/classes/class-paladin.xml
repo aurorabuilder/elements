@@ -4,7 +4,7 @@
     <name>Paladin</name>
     <description>The Paladin class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1">
+    <update version="0.2">
       <file name="class-paladin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-paladin.xml" />
     </update>
   </info>
@@ -74,8 +74,8 @@
       <set name="hd">d10</set>
       <set name="spellcastingAbility">Charisma</set>
     </setters>
-    <rules>      
-        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+    <rules>
+        <!-- <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/> -->
       <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D10" /> -->
 
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
@@ -158,7 +158,7 @@
       <p>At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.</p>
     </description>
     <rules>
-      <select type="Class Feature" name="Fighting Style" supports="Fighting Style&amp;&amp;Paladin" />
+      <select type="Class Feature" name="Fighting Style" supports="Fighting Style,Paladin" />
     </rules>
   </element>
   <element name="Spellcasting" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_SPELLCASTING">
@@ -171,31 +171,35 @@
       <p class="indent">You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.</p>
       <h5>SPELLCASTING ABILITY</h5>
       <p>Charisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.</p>
-      <p><b>Spell save DC</b> = 8 + your proficiency bonus +your Charisma modifier</p>
-      <p><b>Spell attack modifier</b> = your proficiency bonus +your Charisma modifier</p>
+      <p><b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
+      <p><b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier</p>
        <h5>SPELLCASTING FOCUS</h5>
       <p>You can use a holy symbol (found in chapter 5) as a spellcasting focus for your paladin spells.</p>
     </description>
     <sheet display="false">
       <description>You have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does.</description>
     </sheet>
+    <spellcasting name="Paladin" ability="Charisma" prepare="true">
+      <list known="true">Paladin</list>
+    </spellcasting>
     <rules>
-      <stat name="spell:slots:1" value="2" level="2" />
-      <stat name="spell:slots:1" value="1" level="3" />
-      <stat name="spell:slots:1" value="1" level="5" />
-
-      <stat name="spell:slots:2" value="2" level="5" />
-      <stat name="spell:slots:2" value="1" level="7" />
-
-      <stat name="spell:slots:3" value="2" level="9" />
-      <stat name="spell:slots:3" value="1" level="11" />
-
-      <stat name="spell:slots:4" value="1" level="13" />
-      <stat name="spell:slots:4" value="1" level="15" />
-      <stat name="spell:slots:4" value="1" level="17" />
-
-      <stat name="spell:slots:5" value="1" level="17" />
-      <stat name="spell:slots:5" value="1" level="19" />
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+    
+      <stat name="paladin:spellcasting:slots:1" value="2" level="2" />
+      <stat name="paladin:spellcasting:slots:1" value="1" level="3" />
+      <stat name="paladin:spellcasting:slots:1" value="1" level="5" />
+      <stat name="paladin:spellcasting:slots:2" value="2" level="5" />
+      <stat name="paladin:spellcasting:slots:2" value="1" level="7" />
+      <stat name="paladin:spellcasting:slots:3" value="2" level="9" />
+      <stat name="paladin:spellcasting:slots:3" value="1" level="11" />
+      <stat name="paladin:spellcasting:slots:4" value="1" level="13" />
+      <stat name="paladin:spellcasting:slots:4" value="1" level="15" />
+      <stat name="paladin:spellcasting:slots:4" value="1" level="17" />
+      <stat name="paladin:spellcasting:slots:5" value="1" level="17" />
+      <stat name="paladin:spellcasting:slots:5" value="1" level="19" />
+      
+      <stat name="paladin:spellcasting:prepare" value="Charisma Modifier" />
+      <stat name="paladin:spellcasting:prepare" value="level:paladin:half" />
     </rules>
   </element>
   <element name="Divine Smite" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_DIVINE_SMITE">
@@ -308,7 +312,7 @@
   </element>
 
 
-
+  <!-- Oath of Devotion -->
   <element name="Oath of Devotion" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_PALADIN_OATH_OF_DEVOTION">
     <supports>Sacred Oath</supports>
     <description>
@@ -327,7 +331,7 @@
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_HOLY_NIMBUS" level="20" />
     </rules>
   </element>
-
+<!-- split tenets and oath spells -->
   <element name="Tenets of Devotion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_TENETS_OF_DEVOTION">
     <description>
       <p>Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets. Honesty. Don’t lie or cheat. Let your word be your promise.<br/>
@@ -369,16 +373,20 @@
       </table>      
     </description>
     <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_ZONE_OF_TRUTH" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_COMMUNE" level="17" />
-      <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="17" />
+      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" level="3" spellcasting="Paladin" prepared="true">
+        <set name="spellcasting">Paladin</set>
+        <!-- <set name="spellcasting:known">true</set> -->
+        <set name="spellcasting:prepared">true</set>
+      </grant>
+      <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="5" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_ZONE_OF_TRUTH" level="5" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="9" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="9" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="13" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="13" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_COMMUNE" level="17" spellcasting="Paladin" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="17" spellcasting="Paladin" prepared="true" />
     </rules>
   </element>
   <element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_CHANNEL_DIVINITY">
@@ -487,16 +495,16 @@
       </table>      
     </description>
     <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_ENSNARING_STRIKE" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" level="17" />
-      <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" level="17" />
+      <grant type="Spell" id="ID_PHB_SPELL_ENSNARING_STRIKE" level="3" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="3" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="5" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="9" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="13" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" level="17" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" level="17" spellcasting="Paladin" prepared="true"/>
     </rules>      
   </element>
   <element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY">
@@ -609,16 +617,16 @@
       </table>      
     </description>
     <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_BANE" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" level="3" />
-      <grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" />
-      <grant type="Spell" id="ID_PHB_SPELL_HASTE" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" />
-      <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="13" />
-      <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" />
-      <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="17" />
+      <grant type="Spell" id="ID_PHB_SPELL_BANE" level="3" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" level="3" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="5" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_HASTE" level="9" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" level="13" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="13" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" spellcasting="Paladin" prepared="true"/>
+      <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="17" spellcasting="Paladin" prepared="true"/>
     </rules>      
   </element>
   <element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY">

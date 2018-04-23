@@ -4,7 +4,7 @@
     <name>Sorcerer</name>
     <description>Sorcerer from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1">
+    <update version="0.2">
       <file name="class-sorcerer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-sorcerer.xml" />
     </update>
   </info>
@@ -72,7 +72,6 @@
       <set name="spellcastingAbility">Charisma</set>
     </setters>
     <rules>
-        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
       <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D6" /> -->
       <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" requirements="!ID_WOTC_PHB_MULTICLASS_SORCERER"/>
       <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART" requirements="!ID_WOTC_PHB_MULTICLASS_SORCERER"/>
@@ -108,16 +107,23 @@
   <element name="Spellcasting" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SPELLCASTING_SORCERER">
     <supports>ID_INTERNAL_SUPPORT_SPELLCASTING,Sorcerer</supports>
     <requirements />
-    <!--<information>
-      <![CDATA[{"items":[{"element":"p","content":[""]},{"element":"emphasis","content":["Cantrips"]},{"element":"p","content":["
-      At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table."]},{"element":"emphasis","content":["Spell Slots"]},{"element":"p","content":["The Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.","For example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot."]},{"element":"emphasis","content":["Spells Known of 1st Level and Higher"]},{"element":"p","content":["You know two 1st-level spells of your choice from the sorcerer spell list.","The Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.","Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots."]},{"element":"emphasis","content":["Spellcasting Ability"]},{"element":"p","content":["Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your w ill into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one."]},{"element":"list","content":["[b]Spell save DC [/b]= 8 + your proficiency bonus + your Charisma modifier","[b]Spell attack modifier [/b]= your proficiency bonus + your Charisma modifier"]},{"element":"emphasis","content":["Spellcasting Focus"]},{"element":"p","content":["You can use an arcane focus (found in chapter 5) as a spellcasting focus for your sorcerer spells."]}]}]]>
-    </information>-->
     <description>
       <p>An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.</p>
-
-
-
-      
+      <h5>CANTRIPS</h5>
+      <p>At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.</p>
+      <h5>SPELL SLOTS</h5>
+      <p>The Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+      <p class="indent">For example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot.</p>
+      <h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
+      <p>You know two 1st-level spells of your choice from the sorcerer spell list.</p>
+      <p class="indent">The Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.</p>
+      <p class="indent">Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.</p>
+      <h5>SPELLCASTING ABILITY</h5>
+      <p>Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your w ill into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.</p>
+      <p class="indent">Spell save DC = 8 + your proficiency bonus + your Charisma modifier</p>
+      <p class="indent">Spell attack modifier = your proficiency bonus + your Charisma modifier</p>
+      <h5>SPELLCASTING FOCUS</h5>
+      <p>You can use an arcane focus as a spellcasting focus for your sorcerer spells.</p>
     </description>
     <sheet display="false">
       <description>You have the ability to cast spells.</description>
@@ -126,70 +132,50 @@
       <set name="spellcastingClass">Sorcerer</set>
       <set name="spellcastingAbility">Charisma</set>
     </setters>
+    <spellcasting name="Sorcerer" ability="Charisma">
+      <list>Sorcerer</list>
+    </spellcasting>
     <rules>
-      <stat name="spell:attack" value="+Proficiency" />
-      <stat name="spell:attack" value="+Charisma Modifier" />
-      
-      <stat name="spell:dc" value="+8" />
-      <stat name="spell:dc" value="+Proficiency" />
-      <stat name="spell:dc" value="+Charisma Modifier" />
-      
-      <stat name="spells:known" value="+2" level="1" />
-      <stat name="spells:known" value="+1" level="2" />
-      <stat name="spells:known" value="+1" level="3" />
-      <stat name="spells:known" value="+1" level="4" />
-      <stat name="spells:known" value="+1" level="5" />
-      <stat name="spells:known" value="+1" level="6" />
-      <stat name="spells:known" value="+1" level="7" />
-      <stat name="spells:known" value="+1" level="8" />
-      <stat name="spells:known" value="+1" level="9" />
-      <stat name="spells:known" value="+1" level="10" />
-      <stat name="spells:known" value="+1" level="11" />
-      <stat name="spells:known" value="+1" level="13" />
-      <stat name="spells:known" value="+1" level="15" />
-      <stat name="spells:known" value="+1" level="17" />
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
 
-      <stat name="spells:slot1" value="+2" level="1" />
-      <stat name="spells:slot1" value="+1" level="2" />
-      <stat name="spells:slot1" value="+1" level="3" />
-      <stat name="spells:slot2" value="+2" level="3" />
-      <stat name="spells:slot2" value="+1" level="4" />
-      <stat name="spells:slot3" value="+2" level="5" />
-      <stat name="spells:slot3" value="+1" level="6" />
-      <stat name="spells:slot4" value="+1" level="7" />
-      <stat name="spells:slot4" value="+1" level="8" />
-      <stat name="spells:slot4" value="+1" level="9" />
-      <stat name="spells:slot5" value="+1" level="9" />
-      <stat name="spells:slot5" value="+1" level="10" />
-      <stat name="spells:slot5" value="+1" level="18" />
-      <stat name="spells:slot6" value="+1" level="11" />
-      <stat name="spells:slot6" value="+1" level="19" />
-      <stat name="spells:slot7" value="+1" level="13" />
-      <stat name="spells:slot7" value="+1" level="20" />
-      <stat name="spells:slot8" value="+1" level="15" />
-      <stat name="spells:slot9" value="+1" level="17" />
-
+      <stat name="sorcerer:spellcasting:slots:1" value="+2" level="1" />
+      <stat name="sorcerer:spellcasting:slots:1" value="+1" level="2" />
+      <stat name="sorcerer:spellcasting:slots:1" value="+1" level="3" />
+      <stat name="sorcerer:spellcasting:slots:2" value="+2" level="3" />
+      <stat name="sorcerer:spellcasting:slots:2" value="+1" level="4" />
+      <stat name="sorcerer:spellcasting:slots:3" value="+2" level="5" />
+      <stat name="sorcerer:spellcasting:slots:3" value="+1" level="6" />
+      <stat name="sorcerer:spellcasting:slots:4" value="+1" level="7" />
+      <stat name="sorcerer:spellcasting:slots:4" value="+1" level="8" />
+      <stat name="sorcerer:spellcasting:slots:4" value="+1" level="9" />
+      <stat name="sorcerer:spellcasting:slots:5" value="+1" level="9" />
+      <stat name="sorcerer:spellcasting:slots:5" value="+1" level="10" />
+      <stat name="sorcerer:spellcasting:slots:5" value="+1" level="18" />
+      <stat name="sorcerer:spellcasting:slots:6" value="+1" level="11" />
+      <stat name="sorcerer:spellcasting:slots:6" value="+1" level="19" />
+      <stat name="sorcerer:spellcasting:slots:7" value="+1" level="13" />
+      <stat name="sorcerer:spellcasting:slots:7" value="+1" level="20" />
+      <stat name="sorcerer:spellcasting:slots:8" value="+1" level="15" />
+      <stat name="sorcerer:spellcasting:slots:9" value="+1" level="17" />
+     
+      <select type="Spell" name="Cantrip (Sorcerer)" supports="$(spellcasting:list),0" level="1" number="4" spellcasting="Sorcerer" />
+      <select type="Spell" name="Cantrip (Sorcerer)" supports="$(spellcasting:list),0" level="4" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Cantrip (Sorcerer)" supports="$(spellcasting:list),0" level="10" spellcasting="Sorcerer"/>
       
-      
-      <select type="Spell" name="Cantrip (Sorcerer)" supports="0,Sorcerer" level="1" number="4" />
-      <select type="Spell" name="Cantrip (Sorcerer)" supports="0,Sorcerer" level="4" />
-      <select type="Spell" name="Cantrip (Sorcerer)" supports="0,Sorcerer" level="10" />
-      
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1),Sorcerer" level="1" number="2"/>
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1),Sorcerer" level="2" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2),Sorcerer" level="3" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2),Sorcerer" level="4" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3),Sorcerer" level="5" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3),Sorcerer" level="6" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4),Sorcerer" level="7" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4),Sorcerer" level="8" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5),Sorcerer" level="9" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5),Sorcerer" level="10" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5||6),Sorcerer" level="11" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5||6||7),Sorcerer" level="13" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5||6||7||8),Sorcerer" level="15" />
-      <select type="Spell" name="Spell (Sorcerer)" supports="(1||2||3||4||5||6||7||8||9),Sorcerer" level="17" />
-      
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="2"  spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="6" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="8" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="10" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Sorcerer"/>
+      <select type="Spell" name="Spell (Sorcerer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Sorcerer"/>
     </rules>
   </element>
 
@@ -218,33 +204,13 @@
         <span class="feature">Creating Spell Slots.</span>You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.
       </p>
       <h6>CREATING SPELLSLOTS</h6>
-      <table>
-        <thead>
-          <tr>
-            <td>Spell Slot Level</td>
-            <td>Sorcery Point Cost</td>
-          </tr>
-        </thead>
-        <tr>
-          <td>1st</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>2nd</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>3rd</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>4th</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>5th</td>
-          <td>7</td>
-        </tr>
+      <table> 
+        <thead><tr><td>Spell Slot Level</td><td>Sorcery Point Cost</td></tr></thead> 
+        <tr><td>1st</td><td>2</td></tr>
+        <tr><td>2nd</td><td>3</td></tr>
+        <tr><td>3rd</td><td>5</td></tr>
+        <tr><td>4th</td><td>6</td></tr>
+        <tr><td>5th</td><td>7</td></tr>
       </table>
       <p>
         <span class="feature">Converting a Spell Slot to Sorcery Points.</span>As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot’s level.

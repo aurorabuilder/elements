@@ -4,7 +4,7 @@
     <name>Cleric</name>
     <description>The Cleric class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2">
+    <update version="0.3">
       <file name="class-cleric.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-cleric.xml" />
     </update>
   </info>
@@ -108,9 +108,7 @@
       <set name="spellcaster">true</set>
       <set name="spellcastingAbility">Wisdom</set>
     </setters>
-    <rules>
-        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
-        
+    <rules>        
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
@@ -141,49 +139,64 @@
   </element>
   <element name="Spellcasting (Cleric)" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC">
     <description>
-      <p>As a conduit for divine power, you can cast cleric spells.</p>
+      <p>As a conduit for divine power, you can cast cleric spells.</p>      
+      <h5>CANTRIPS</h5>
+      <p>At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.</p>
+      <h5>PREPARING AND CASTING SPELLS</h5>
+      <p>The Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+      <p class="indent">You prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
+      <p class="indent">For example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn’t remove it from your list of prepared spells.</p>
+      <p class="indent">You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.</p>
+      <h5>SPELLCASTING ABILITY</h5>
+      <p>Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your W isdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.</p>
+      <p class="indent"><b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier</p>
+      <p class="indent"><b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier</p>
+      <h5>RITUAL CASTING</h5>
+      <p>You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
+      <h5>SPELLCASTING FOCUS</h5>
+      <p>You can use a holy symbol as a spellcasting focus for your cleric spells.</p>
     </description>
     <sheet>
-      <description>You can cast cleric spells as rituals. You can prepare %spell:prepare:count:cleric% spells from the cleric spell list. You can use a holy symbol as your spellcasting focus.</description>
+      <description>You can cast cleric spells as rituals. You can prepare %cleric:spellcasting:prepare% spells from the cleric spell list. You can use a holy symbol as your spellcasting focus.</description>
     </sheet>
     <setters>
       <set name="spellcastingClass">Cleric</set>
       <set name="spellcastingAbility">Wisdom</set>
     </setters>
-    <rules>
+    <spellcasting name="Cleric" ability="Wisdom" prepare="true">
+      <list known="true">Cleric</list>
+    </spellcasting>
+    <rules>     
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
       <grant type="Grants" name="ID_INTERNAL_RITUAL_CASTING" />
       <grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
-      <stat name="spell:prepare:count:cleric" value="level:cleric" />
-      <stat name="spell:prepare:count:cleric" value="Wisdom Modifier" />
-      <stat name="spell:attack" value="Proficiency" />
-      <stat name="spell:attack" value="Wisdom Modifier" />
-      <stat name="spell:dc" value="8" />
-      <stat name="spell:dc" value="Proficiency" />
-      <stat name="spell:dc" value="Wisdom Modifier" />
-      <!-- slots -->
-      <stat name="spell:slots:1" value="2" level="1" />
-      <stat name="spell:slots:1" value="1" level="2" />
-      <stat name="spell:slots:1" value="1" level="3" />
-      <stat name="spell:slots:2" value="2" level="3" />
-      <stat name="spell:slots:2" value="1" level="4" />
-      <stat name="spell:slots:3" value="2" level="5" />
-      <stat name="spell:slots:3" value="1" level="6" />
-      <stat name="spell:slots:4" value="1" level="7" />
-      <stat name="spell:slots:4" value="1" level="8" />
-      <stat name="spell:slots:4" value="1" level="9" />
-      <stat name="spell:slots:5" value="1" level="9" />
-      <stat name="spell:slots:5" value="1" level="10" />
-      <stat name="spell:slots:5" value="1" level="18" />
-      <stat name="spell:slots:6" value="1" level="11" />
-      <stat name="spell:slots:6" value="1" level="19" />
-      <stat name="spell:slots:7" value="1" level="13" />
-      <stat name="spell:slots:7" value="1" level="20" />
-      <stat name="spell:slots:8" value="1" level="15" />
-      <stat name="spell:slots:9" value="1" level="17" />
-      <select type="Spell" name="Cantrip (Cleric 1)" supports="Cleric,0" level="1" number="3"/>
-      <select type="Spell" name="Cantrip (Cleric 4)" supports="Cleric,0" level="4" />
-      <select type="Spell" name="Cantrip (Cleric 10)" supports="Cleric,0" level="10" />
-      <!-- prepare X spells where x is level+wis mod-->
+
+      <stat name="cleric:spellcasting:slots:1" value="2" level="1" />
+      <stat name="cleric:spellcasting:slots:1" value="1" level="2" />
+      <stat name="cleric:spellcasting:slots:1" value="1" level="3" />
+      <stat name="cleric:spellcasting:slots:2" value="2" level="3" />
+      <stat name="cleric:spellcasting:slots:2" value="1" level="4" />
+      <stat name="cleric:spellcasting:slots:3" value="2" level="5" />
+      <stat name="cleric:spellcasting:slots:3" value="1" level="6" />
+      <stat name="cleric:spellcasting:slots:4" value="1" level="7" />
+      <stat name="cleric:spellcasting:slots:4" value="1" level="8" />
+      <stat name="cleric:spellcasting:slots:4" value="1" level="9" />
+      <stat name="cleric:spellcasting:slots:5" value="1" level="9" />
+      <stat name="cleric:spellcasting:slots:5" value="1" level="10" />
+      <stat name="cleric:spellcasting:slots:5" value="1" level="18" />
+      <stat name="cleric:spellcasting:slots:6" value="1" level="11" />
+      <stat name="cleric:spellcasting:slots:6" value="1" level="19" />
+      <stat name="cleric:spellcasting:slots:7" value="1" level="13" />
+      <stat name="cleric:spellcasting:slots:7" value="1" level="20" />
+      <stat name="cleric:spellcasting:slots:8" value="1" level="15" />
+      <stat name="cleric:spellcasting:slots:9" value="1" level="17" />
+
+      <stat name="cleric:spellcasting:prepare" value="Wisdom Modifier" />
+      <stat name="cleric:spellcasting:prepare" value="level:cleric" />
+
+      <select type="Spell" name="Cantrip (Cleric)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Cleric" />
+      <select type="Spell" name="Cantrip (Cleric)" supports="$(spellcasting:list), 0" level="4" number="1" spellcasting="Cleric" />
+      <select type="Spell" name="Cantrip (Cleric)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Cleric" />
     </rules>
   </element>
   <element name="Divine Domain" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEDOMAIN">
@@ -326,16 +339,16 @@
     </sheet>
     <rules>
       <!-- Spells put into a 'life domain spells' grant -->
-      <grant type="Spell" name="ID_PHB_SPELL_BLESS" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_CURE_WOUNDS" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_LESSER_RESTORATION" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_BEACON_OF_HOPE" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_REVIVIFY" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_DEATH_WARD" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_RAISE_DEAD" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_BLESS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_CURE_WOUNDS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_BEACON_OF_HOPE" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_RAISE_DEAD" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BONUSPROFICIENCY" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_CHANNELDIVINITY_PRESERVELIFE" level="2"/>
@@ -460,16 +473,16 @@
       <description>The gods of knowledge value learning and understanding above all.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_COMMAND" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_IDENTIFY" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_AUGURY" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_NONDETECTION" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_CONFUSION" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_LEGEND_LORE" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_COMMAND" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_IDENTIFY" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_AUGURY" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_NONDETECTION" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES" level="2"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" level="6"/>
@@ -561,7 +574,7 @@
       <description>As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature fails its save, you can read its surface thoughts when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</description>
     </sheet>
     <rules>
-      <!-- <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" /> -->
+      <!-- <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" />spellcasting="Cleric" prepared="true" -->
       <!-- <set target="ID_PHB_SPELL_SUGGESTION" parent="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" field="name" value="Read Thoughts: Suggestion" /> -->
     </rules>
   </element>
@@ -649,16 +662,16 @@
       <description>Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_BURNING_HANDS" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_FAERIE_FIRE" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAMING_SPHERE" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCORCHING_RAY" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_DAYLIGHT" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_FIREBALL" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_WALL_OF_FIRE" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_BURNING_HANDS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FLAMING_SPHERE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SCORCHING_RAY" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DAYLIGHT" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FIREBALL" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_WALL_OF_FIRE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_BONUS_CANTRIP" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CD_Radiance_of_the_Dawn" level="2"/>
@@ -675,7 +688,7 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_LIGHT" />
+      <grant type="Spell" name="ID_PHB_SPELL_LIGHT" spellcasting="Cleric" />
     </rules>
   </element>
   <element name="Warding Flare" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE">
@@ -783,16 +796,16 @@
       <description>Gods of nature are as varied as the natural w orld itself, from inscrutable gods of the deep forests to friendly deities associated with particular springs and groves.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_BARKSKIN" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIKE_GROWTH" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_PLANT_GROWTH" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_WIND_WALL" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_BEAST" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_GRASPING_VINE" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_TREE_STRIDE" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_BARKSKIN" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_PLANT_GROWTH" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_WIND_WALL" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_BEAST" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_GRASPING_VINE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_TREE_STRIDE" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_ACOLYTE_OF_NATURE" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_BONUS_PROFICIENCY" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_CD_CHARM_ANIMALS_AND_PLANTS" level="2"/>
@@ -807,7 +820,7 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <select type="Spell" name="Acolyte of Nature" supports="Druid,0" />
+      <select type="Spell" name="Acolyte of Nature" supports="Druid,0" spellcasting="Cleric" />
       <select type="Proficiency" name="Acolyte of Nature" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_SURVIVAL" />
     </rules>
   </element>
@@ -913,16 +926,16 @@
       <description>Gods whose portfolios include the Tempest domain govern storms, sea, and sky.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_FOG_CLOUD" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_THUNDERWAVE" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUST_OF_WIND" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SHATTER" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_CALL_LIGHTNING" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_SLEET_STORM" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_CONTROL_WATER" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_ICE_STORM" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_FOG_CLOUD" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_THUNDERWAVE" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SHATTER" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_CALL_LIGHTNING" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" level="2"/>
@@ -1048,16 +1061,16 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_CHARM_PERSON" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_MIRROR_IMAGE" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_BLINK" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_DIMENSION_DOOR" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_POLYMORPH" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_PERSON" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_MODIFY_MEMORY" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_CHARM_PERSON" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MIRROR_IMAGE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_BLINK" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DIMENSION_DOOR" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_POLYMORPH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MODIFY_MEMORY" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" level="2"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" level="6"/>
@@ -1170,16 +1183,16 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DIVINE_FAVOR" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_SHIELD_OF_FAITH" level="1" />
-      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" />
-      <grant type="Spell" name="ID_PHB_SPELL_CRUSADERS_MANTLE" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" />
-      <grant type="Spell" name="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_STONESKIN" level="7" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" />
-      <grant type="Spell" name="ID_PHB_SPELL_HOLD_MONSTER" level="9" />
+      <grant type="Spell" name="ID_PHB_SPELL_DIVINE_FAVOR" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SHIELD_OF_FAITH" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_CRUSADERS_MANTLE" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_STONESKIN" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" name="ID_PHB_SPELL_HOLD_MONSTER" level="9" spellcasting="Cleric" prepared="true" />
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_WAR_PRIEST" level="1"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_GUIDED_STRIKE" level="2"/>

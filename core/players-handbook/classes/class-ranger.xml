@@ -4,7 +4,7 @@
     <name>Ranger</name>
     <description>The Ranger class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1.1">
+    <update version="0.2.0">
       <file name="class-ranger.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-ranger.xml" />
     </update>
   </info>
@@ -96,7 +96,7 @@
       <set name="spellcastingAbility">Wisdom</set>
     </setters>
     <rules>
-        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+        <!-- <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/> -->
       <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D10" /> -->
 
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_RANGER" />
@@ -376,45 +376,35 @@
     <sheet display="false">
       <description></description>
     </sheet>
+    <spellcasting name="Ranger" ability="Wisdom">
+      <list>Ranger</list>
+    </spellcasting>
     <rules>
-      <stat name="spell:keyability" value="Wisdom" />
-      <stat name="spell:attack" value="Proficiency" />
-      <stat name="spell:attack" value="Wisdom Modifier" />
-      <stat name="spell:dc" value="8" />
-      <stat name="spell:dc" value="Proficiency" />
-      <stat name="spell:dc" value="Wisdom Modifier" />
-      <stat name="spellcasting:spells known" value="+2" level="2" />
-      <stat name="spellcasting:spells known" value="+1" level="3" />
-      <stat name="spellcasting:spells known" value="+1" level="5" />
-      <stat name="spellcasting:spells known" value="+1" level="7" />
-      <stat name="spellcasting:spells known" value="+1" level="9" />
-      <stat name="spellcasting:spells known" value="+1" level="11" />
-      <stat name="spellcasting:spells known" value="+1" level="13" />
-      <stat name="spellcasting:spells known" value="+1" level="15" />
-      <stat name="spellcasting:spells known" value="+1" level="17" />
-      <stat name="spellcasting:spells known" value="+1" level="19" />
-      <stat name="spellcasting:slots:1" value="+2" level="2" />
-      <stat name="spellcasting:slots:1" value="+1" level="3" />
-      <stat name="spellcasting:slots:1" value="+1" level="5" />
-      <stat name="spellcasting:slots:2" value="+2" level="5" />
-      <stat name="spellcasting:slots:2" value="+1" level="7" />
-      <stat name="spellcasting:slots:3" value="+2" level="9" />
-      <stat name="spellcasting:slots:3" value="+1" level="11" />
-      <stat name="spellcasting:slots:4" value="+1" level="13" />
-      <stat name="spellcasting:slots:4" value="+1" level="15" />
-      <stat name="spellcasting:slots:4" value="+1" level="17" />
-      <stat name="spellcasting:slots:5" value="+1" level="17" />
-      <stat name="spellcasting:slots:5" value="+1" level="19" />
-      <select type="Spell" name="Spell (Ranger Level 2)" supports="Ranger,(1)" level="2" number="2" />
-      <select type="Spell" name="Spell (Ranger Level 3)" supports="Ranger,(1)" level="3" />
-      <select type="Spell" name="Spell (Ranger Level 5)" supports="Ranger,(1||2)" level="5" />
-      <select type="Spell" name="Spell (Ranger Level 7)" supports="Ranger,(1||2)" level="7" />
-      <select type="Spell" name="Spell (Ranger Level 9)" supports="Ranger,(1||2||3)" level="9" />
-      <select type="Spell" name="Spell (Ranger Level 11)" supports="Ranger,(1||2||3)" level="11" />
-      <select type="Spell" name="Spell (Ranger Level 13)" supports="Ranger,(1||2||3||4)" level="13" />
-      <select type="Spell" name="Spell (Ranger Level 15)" supports="Ranger,(1||2||3||4)" level="15" />
-      <select type="Spell" name="Spell (Ranger Level 17)" supports="Ranger,(1||2||3||4||5)" level="17" />
-      <select type="Spell" name="Spell (Ranger Level 19)" supports="Ranger,(1||2||3||4||5)" level="19" />
+        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
+        <stat name="ranger:spellcasting:slots:1" value="+2" level="2" />
+        <stat name="ranger:spellcasting:slots:1" value="+1" level="3" />
+        <stat name="ranger:spellcasting:slots:1" value="+1" level="5" />
+        <stat name="ranger:spellcasting:slots:2" value="+2" level="5" />
+        <stat name="ranger:spellcasting:slots:2" value="+1" level="7" />
+        <stat name="ranger:spellcasting:slots:3" value="+2" level="9" />
+        <stat name="ranger:spellcasting:slots:3" value="+1" level="11" />
+        <stat name="ranger:spellcasting:slots:4" value="+1" level="13" />
+        <stat name="ranger:spellcasting:slots:4" value="+1" level="15" />
+        <stat name="ranger:spellcasting:slots:4" value="+1" level="17" />
+        <stat name="ranger:spellcasting:slots:5" value="+1" level="17" />
+        <stat name="ranger:spellcasting:slots:5" value="+1" level="19" />
+
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" number="2" spellcasting="Ranger"/>
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Ranger" />
+        <select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Ranger" />
     </rules>
   </element>
   <element name="Ranger Archetype" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_RANGER_ARCHETYPE">

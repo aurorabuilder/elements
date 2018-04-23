@@ -4,7 +4,7 @@
     <name>Wizard</name>
     <description>The Wizard class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1">
+    <update version="0.2">
       <file name="class-wizard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-wizard.xml" />
     </update>
   </info>
@@ -114,27 +114,18 @@
       </rules>
     </multiclass>
   </element>
-
-
-
   <element name="Spellcasting (Wizard)" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELLCASTING_WIZARD">
     <description>
       <p>As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.</p>
-
       <h5>CANTRIPS</h5>
       <p>At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.</p>
-
       <h5>SPELLBOOK</h5>
       <p>At 1st level, you have a spellbook containing six 1st-­level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.</p>
-
-
       <h5>PREPARING AND CASTING SPELLS</h5>
       <p>The Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
       <p>You prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
       <p>For example, if you’re a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn’t remove it from your list of prepared spells.</p>
       <p>You can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.</p>
-
-
       <h5>SPELLCASTING ABILITY</h5>
       <p>Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.</p>
       <p>
@@ -143,32 +134,78 @@
       <p>
         <strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier
       </p>
-
-
       <h5>RITUAL CASTING</h5>
       <p>You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don’t need to have the spell prepared.</p>
-
-
       <h5>SPELLCASTING FOCUS</h5>
       <p>You can use an arcane focus as a spellcasting focus for your wizard spells.</p>
-
-
       <h5>LEARNING SPELLS OF 1ST LEVEL AND HIGHER</h5>
       <p>Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the “Your Spellbook” sidebar).</p>
-
-
-
-
-
-
-
     </description>
     <sheet display="true">
       <description>You can prepare %spell:prepare:count:wizard% spells from the your spellbook. You use an arcane focus to cast spells. and can also cast wizard spells as a ritual.</description>
     </sheet>
+    <spellcasting name="Wizard" ability="Intelligence" prepare="true">
+      <list>Wizard</list>
+    </spellcasting>
     <rules>
       <grant type="Grants" name="ID_INTERNAL_RITUAL_CASTING" />
       <grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
+
+      <stat name="wizard:spellcasting:slots:1" value="2" level="1" />
+      <stat name="wizard:spellcasting:slots:1" value="1" level="2" />
+      <stat name="wizard:spellcasting:slots:1" value="1" level="3" />
+      
+      <stat name="wizard:spellcasting:slots:2" value="2" level="3" />
+      <stat name="wizard:spellcasting:slots:2" value="1" level="4" />
+      <stat name="wizard:spellcasting:slots:3" value="2" level="5" />
+      <stat name="wizard:spellcasting:slots:3" value="1" level="6" />
+      <stat name="wizard:spellcasting:slots:4" value="1" level="7" />
+      <stat name="wizard:spellcasting:slots:4" value="1" level="8" />
+      <stat name="wizard:spellcasting:slots:4" value="1" level="9" />
+      <stat name="wizard:spellcasting:slots:5" value="1" level="9" />
+      <stat name="wizard:spellcasting:slots:5" value="1" level="10" />
+      <stat name="wizard:spellcasting:slots:5" value="1" level="18" />
+      <stat name="wizard:spellcasting:slots:6" value="1" level="11" />
+      <stat name="wizard:spellcasting:slots:6" value="1" level="19" />
+      <stat name="wizard:spellcasting:slots:7" value="1" level="13" />
+      <stat name="wizard:spellcasting:slots:7" value="1" level="20" />
+      <stat name="wizard:spellcasting:slots:8" value="1" level="15" />
+      <stat name="wizard:spellcasting:slots:9" value="1" level="17" />
+
+      <stat name="wizard:spellcasting:prepare" value="Intelligence Modifier" />
+      <stat name="wizard:spellcasting:prepare" value="level:wizard" />
+
+
+      <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Wizard" />
+      <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="4" number="1" spellcasting="Wizard" />
+      <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Wizard" />
+      
+      <select type="Spell" name="Spellbook (Wizard)" supports="Wizard, 1" level="1" number="6" spellcasting="Wizard" />
+      
+      <!--<select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), 1" level="1" number="2" spellcasting="Wizard" />-->
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="2" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="5" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="6" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="9" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="12" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="15" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="17" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="18" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" number="2" spellcasting="Wizard" />
+      <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" number="2" spellcasting="Wizard" />
+
+
+
+<!-- 
 
       <stat name="spell:prepare:count:wizard" value="level:wizard" />
       <stat name="spell:prepare:count:wizard" value="Intelligence Modifier" />
@@ -181,7 +218,6 @@
       <stat name="spell:dc" value="+Proficiency" />
       <stat name="spell:dc" value="+Intelligence Modifier" />
 
-      <!-- slots -->
       <stat name="spell:slots:1" value="2" level="1" />
       <stat name="spell:slots:1" value="1" level="2" />
       <stat name="spell:slots:1" value="1" level="3" />
@@ -202,30 +238,30 @@
       <stat name="spell:slots:8" value="1" level="15" />
       <stat name="spell:slots:9" value="1" level="17" />
 
-      <select type="Spell" name="Cantrip (Wizard)" supports="0&amp;&amp;Wizard" level="1" number="3"/>
-      <select type="Spell" name="Cantrip (Wizard)" supports="0&amp;&amp;Wizard" level="4" />
-      <select type="Spell" name="Cantrip (Wizard)" supports="0&amp;&amp;Wizard" level="10" />
+      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="1" number="3"/>
+      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="4" />
+      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="10" />
 
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;1" level="1" number="6"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;1" level="2" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2)" level="3" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2)" level="4" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3)" level="5" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3)" level="6" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4)" level="7" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4)" level="8" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5)" level="9" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5)" level="10" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6)" level="11" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6)" level="12" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7)" level="13" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7)" level="14" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8)" level="15" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8)" level="16" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8||9)" level="17" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8||9)" level="18" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8||9)" level="19" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard&amp;&amp;(1||2||3||4||5||6||7||8||9)" level="20" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,1" level="1" number="6"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,1" level="2" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2)" level="3" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2)" level="4" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3)" level="5" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3)" level="6" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4)" level="7" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4)" level="8" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5)" level="9" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5)" level="10" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6)" level="11" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6)" level="12" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7)" level="13" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7)" level="14" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8)" level="15" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8)" level="16" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="17" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="18" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="19" number="2"/>
+      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="20" number="2"/> -->
     </rules>
   </element>
   <element name="Arcane Recovery" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY">
@@ -708,7 +744,7 @@
     <description>When you cast minor illusion, you can create both a sound and an image with a single casting of the spell.</description>
   </sheet>
   <rules>
-    <select type="Spell" name="Improved Minor Illusion" supports="Wizard&amp;&amp;0" default="ID_PHB_SPELL_MINOR_ILLUSION" default-selection="force" />
+    <select type="Spell" name="Improved Minor Illusion" supports="Wizard,0" spellcasting="Wizard" default="ID_PHB_SPELL_MINOR_ILLUSION" default-behaviour="force" />
   </rules>
 </element>
 <element name="Malleable Illusions" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS">
@@ -801,7 +837,7 @@
     <description>When you cast animate dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate. The creature’s hit point maximum is increased by an amount equal to your wizard level and adds your proficiency bonus to its weapon damage rolls.</description>
   </sheet>
   <rules>
-    <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" />
+    <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Wizard"/>
   </rules>
 </element>
 <element name="Inured to Undead" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD">
@@ -899,7 +935,7 @@
     <description>You can cast polymorph without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower. (1/SR-LR)</description>
   </sheet>
   <rules>
-    <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" />
+    <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" spellcasting="Wizard"/>
   </rules>
 </element>
 <element name="Master Transmuter" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_MASTER_TRANSMUTER">

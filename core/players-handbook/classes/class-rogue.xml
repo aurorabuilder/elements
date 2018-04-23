@@ -4,7 +4,7 @@
     <name>Rogue</name>
     <description>The Rogue class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1">
+    <update version="0.2">
       <file name="class-rogue.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-rogue.xml" />
     </update>
   </info>
@@ -147,7 +147,7 @@
       <p>The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.</p>
     </description>
     <sheet>
-      <description>You can deal an extra %sneak-attack:count%d%sneak-attack:dice-amount% damage to one creature you hit with an attack if you have advantage on the attack roll.</description>
+      <description>You can deal an extra %sneak-attack:count%d%sneak-attack:die% damage to one creature you hit with an attack if you have advantage on the attack roll.</description>
     </sheet>
     <setters>
 
@@ -163,7 +163,7 @@
       <stat name="sneak-attack:count" value="+1" level="15" />
       <stat name="sneak-attack:count" value="+1" level="17" />
       <stat name="sneak-attack:count" value="+1" level="19" />
-      <stat name="sneak-attack:dice-amount" value="6" bonus="dice" />
+      <stat name="sneak-attack:die" value="6" bonus="die" />
     </rules>
   </element>
   <element name="Thieves’ Cant" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_THIEVES_CANT">
@@ -431,9 +431,140 @@
     <rules />
   </element>
 
-<!-- arcane trickster!! -->
+  <!-- Arcane Trickster -->
+  <element name="Arcane Trickster" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_ARCANE_TRICKSTER">
+    <supports>Roguish Archetype</supports>
+    <description>
+      <p>Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers.</p>
+      <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELLCASTING" />
+      <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" />
+      <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" />
+      <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" />
+      <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF" />
+    </description>
+    <sheet>
+      <description>You enhance you fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELLCASTING" level="3"/>
+      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" level="3"/>
+      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" level="9"/>
+      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" level="13"/>
+      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF" level="17"/>      
 
-<!-- <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS" /> -->
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
+    </rules>
+  </element>
 
+  <element name="Spellcasting" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELLCASTING">
+    <description>
+      <p>When you reach 3rd level, you gain the ability to cast spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the wizard spell list.</p>
+      <p class="indent"><b><i>Cantrips.</i></b> You learn three cantrips: mage hand and two other cantrips of your choice from the wizard spell list. You learn another wizard cantrip of your choice at 10th level.</p>
+      <p class="indent"><b><i>Spell Slots.</i></b> The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.</p>
+      <p class="indent">For example, if you know the 1st-level spell charm person and have a 1st-level and a 2nd-level spell slot available, you can cast charm person using either slot.</p>
+      <p class="indent"><b><i>Spells Known of 1st-Level and Higher.</i></b> You know three 1st-level wizard spells of your choice, two of which you must choose from the enchantment and illusion spells on the wizard spell list.</p>
+      <p class="indent">The Spells Known column of the Arcane Trickster Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an enchantment or illusion spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+      <p class="indent">The spells you learn at 8th, 14th, and 20th level can come from any school of magic.</p>
+      <p class="indent">Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must b e of a level for which you have spell slots, and it must be an enchantment or illusion spell, unless you’re replacing the spell you gained at 8th, 14th, or 20th level.</p>
+      <p class="indent"><b><i>Spellcasting Ability.</i></b> Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.</p>
+      <p class="center"><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+      <p class="center"><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+    </description>
+    <sheet display="false">
+      <description></description>
+    </sheet>
+    <spellcasting name="Arcane Trickster" ability="Intelligence">
+      <list>Wizard,(Enchantment||Illusion)</list>
+    </spellcasting>
+    <rules>        
+      <!-- slots -->
+      <stat name="arcane trickster:spellcasting:slots:1" value="2" level="3" />
+      <stat name="arcane trickster:spellcasting:slots:1" value="1" level="4" />
+      <stat name="arcane trickster:spellcasting:slots:1" value="1" level="7" />
+      <stat name="arcane trickster:spellcasting:slots:2" value="2" level="7" />
+      <stat name="arcane trickster:spellcasting:slots:2" value="1" level="10" />
+      <stat name="arcane trickster:spellcasting:slots:3" value="2" level="13" />
+      <stat name="arcane trickster:spellcasting:slots:3" value="1" level="16" />
+      <stat name="arcane trickster:spellcasting:slots:4" value="1" level="19" />
+      <!-- <stat name="arcane trickster:spellcasting:slots:4" value="1" level="20" /> -->
+
+      <!-- mage hand -->
+      <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" level="3">
+        <set name="spellcasting">Arcane Trickster</set>
+      </grant>
+
+      <select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="3" number="2" spellcasting="Arcane Trickster" />
+      <select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="10" number="1" spellcasting="Arcane Trickster" />
+      
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="Wizard, 1" level="3" number="1" spellcasting="Arcane Trickster" />
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), 1" level="3" number="2" spellcasting="Arcane Trickster" />
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="8" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="14" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Arcane Trickster"/>
+      <select type="Spell" name="Spell (Arcane Trickster)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="20" spellcasting="Arcane Trickster"/>
+
+      <!-- todo: replace spells -->
+      
+    </rules>
+  </element>
+
+  <element name="Mage Hand Legerdemain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN">
+    <description>
+      <p>Starting at 3rd level, when you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:</p>
+      <ul>
+        <li>You can stow one object the hand is holding in a container worn or carried by another creature.</li>
+        <li>You can retrieve an object in a container worn or carried by another creature.</li>
+        <li>You can use thieves’ tools to pick locks and disarm traps at range.</li>
+      </ul>
+      <p>You can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature’s Wisdom (Perception) check.</p>
+      <p class="indent">In addition, you can use the bonus action granted by your Cunning Action to control the hand.</p>
+    </description>
+    <sheet>
+      <description>
+        <text>When you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it.</text>
+      </description>
+    </sheet>
+    <rules>
+      <!-- implement: set details on the mage hand spell -->
+    </rules>
+  </element>
+
+  <element name="Magical Ambush" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGICAL_AMBUSH">
+    <description>
+      <p>Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn.</p>
+    </description>
+    <sheet>
+      <description>If you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Versatile Trickster" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER">
+    <description>
+      <p>At 13th level, you gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.</p>
+    </description>
+    <sheet>
+      <description>As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.</description>
+    </sheet>
+    <rules />
+  </element>
+
+  <element name="Spell Thief" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF">
+    <description>
+      <p>At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.</p>
+      <p class="indent">Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell’s effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn’t need to be a wizard spell). For the next 8 hours, you know the spell and can cast it using your spell slots. The creature can’t cast that spell until the 8 hours have passed.</p>
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description>You gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.</description>
+    </sheet>
+    <rules />
+  </element>
 
 </elements>

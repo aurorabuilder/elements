@@ -4,7 +4,7 @@
     <name>Fighter</name>
     <description>The fighter class and the champion archetype from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2">
+    <update version="0.3">
       <file name="class-fighter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-fighter.xml" />
     </update>
   </info>
@@ -650,7 +650,6 @@
       <description>The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic.</description>
     </sheet>
     <rules>
-      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_SPELLCASTING" level="3"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WEAPON_BOND" level="3"/>
       <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WAR_MAGIC" level="7"/>
@@ -686,35 +685,39 @@
     <sheet>
       <description>You augment your martial prowess with the ability to cast spells.</description>
     </sheet>
+    <spellcasting name="Eldritch Knight" ability="Intelligence" prepare="false">
+      <list>Wizard,(Abjuration||Evocation)</list>
+    </spellcasting>
     <rules>
-      <stat name="spell:attack" value="Proficiency" />
-      <stat name="spell:attack" value="Intelligence Modifier" />
-      <stat name="spell:dc" value="8" />
-      <stat name="spell:dc" value="Proficiency" />
-      <stat name="spell:dc" value="Intelligence Modifier" />
-      <!-- slots -->
-      <stat name="spell:slots:1" value="2" level="3" />
-      <stat name="spell:slots:1" value="1" level="4" />
-      <stat name="spell:slots:1" value="1" level="7" />
-      <stat name="spell:slots:2" value="2" level="7" />
-      <stat name="spell:slots:2" value="1" level="10" />
-      <stat name="spell:slots:3" value="2" level="13" />
-      <stat name="spell:slots:3" value="1" level="16" />
-      <stat name="spell:slots:4" value="1" level="19" />
-      <select type="Spell" name="Cantrip (Eldritch Knight)" supports="0,Wizard" level="3" number="2"/>
-      <select type="Spell" name="Cantrip (Eldritch Knight)" supports="0,Wizard" level="10" />
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,1,(Abjuration||Evocation)" level="3" number="2"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,1" level="3" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,1" level="4" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2),(Abjuration||Evocation)" level="7" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2)" level="8" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2),(Abjuration||Evocation)" level="10" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2),(Abjuration||Evocation)" level="11" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2||3),(Abjuration||Evocation)" level="13" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2||3)" level="14" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2||3),(Abjuration||Evocation)" level="16" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2||3||4),(Abjuration||Evocation)" level="19" number="1"/>
-      <select type="Spell" name="Spell (Eldritch Knight)" supports="Wizard,(1||2||3||4)" level="20" number="1"/>
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
+      <stat name="eldritch knight:spellcasting:slots:1" value="2" level="3" />
+      <stat name="eldritch knight:spellcasting:slots:1" value="1" level="4" />
+      <stat name="eldritch knight:spellcasting:slots:1" value="1" level="7" />
+      <stat name="eldritch knight:spellcasting:slots:2" value="2" level="7" />
+      <stat name="eldritch knight:spellcasting:slots:2" value="1" level="10" />
+      <stat name="eldritch knight:spellcasting:slots:3" value="2" level="13" />
+      <stat name="eldritch knight:spellcasting:slots:3" value="1" level="16" />
+      <stat name="eldritch knight:spellcasting:slots:4" value="1" level="19" />
+
+      <!-- <stat name="eldritch knight:spellcasting:prepare" value="Intelligence Modifier" />
+      <stat name="eldritch knight:spellcasting:prepare" value="level:fighter" /> -->
+
+      <select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="3" number="2" spellcasting="Eldritch Knight" />
+      <select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="10" number="1" spellcasting="Eldritch Knight" />
+
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="Wizard, 1" level="3" number="1" spellcasting="Eldritch Knight" />
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), 1" level="3" number="2" spellcasting="Eldritch Knight" />
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="8" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="14" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Eldritch Knight"/>
+      <select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="20" spellcasting="Eldritch Knight"/>
     </rules>
   </element>
   <element name="Weapon Bond" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WEAPON_BOND">

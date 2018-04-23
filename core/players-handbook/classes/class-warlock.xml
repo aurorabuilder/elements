@@ -4,7 +4,7 @@
     <name>Warlock</name>
     <description>The Warlock class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.1.3">
+    <update version="0.2">
       <file name="class-warlock.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-warlock.xml" />
     </update>
   </info>
@@ -80,7 +80,6 @@
       <set name="spellcastingAbility">Charisma</set>
     </setters>
     <rules>
-        <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
       <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D8" /> -->
 
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
@@ -111,8 +110,6 @@
     </multiclass>
   </element>
 
-
-
   <!-- Warlock Class Features -->
   <element name="Otherworldly Patron" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_OTHERWORLDLY_PATRON">
     <supports>Warlock</supports>
@@ -130,47 +127,84 @@
     <requirements />
     <description>
       <p>Your arcane research and the magic bestowed on you by your patron have given you facility with spells.</p>
+      <h5>CANTRIPS</h5>
+      <p>You know two cantrips of your choice from the warlock spell list. You learn additional warlock cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Warlock table.</p>
+      <h5>SPELL SLOTS</h5>
+      <p>The Warlock table shows how many spell slots you have. The table also shows what the level of those slots is; all of your spell slots are the same level. To cast one of your warlock spells of 1st level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.</p>
+      <p class="indent">For example, when you are 5th level, you have two 3rd-level spell slots. To cast the 1st-level spell thunderwave, you must spend one of those slots, and you cast it as a 3rd-level spell.</p>
+      <h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
+      <p>At 1st level, you know two 1st-level spells of your choice from the warlock spell list.</p>
+      <p class="indent">The Spells Known column of the Warlock table shows when you learn more warlock spells of your choice of 1st level and higher. A spell you choose must be of a level no higher than what’s shown in the table's Slot Level column for your level. When you reach 6th level, for example, you learn a new warlock spell, which can be 1st, 2nd, or 3rd level.</p>
+      <p class="indent">Additionally, when you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.</p>
+      <h5>SPELLCASTING ABILITY</h5>
+      <p>Charisma is your spellcasting ability for your warlock spells, so you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a warlock spell you cast and when making an attack roll with one.</p>
+      <p class="indent"><b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
+      <p class="indent"><b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier</p>
+      <h5>SPELLCASTING FOCUS</h5>
+      <p>You can use an arcane focus as a spellcasting focus for your warlock spells.</p>      
     </description>
     <sheet display="false">
-      <description>Your arcane research and the magic bestowed on you by your patron have given you facility with spells. You have %warlock:spellcasting:slots% slots of level %warlock:spellcasting:slot%</description>
+      <description>Your arcane research and the magic bestowed on you by your patron have given you facility with spells. You have %warlock:spellcasting:slots:count% slots of level %warlock:spellcasting:slot%</description>
     </sheet>
     <setters>
       <set name="spellcastingClass">Warlock</set>
       <set name="spellcastingAbility">Charisma</set>
     </setters>
+    <spellcasting name="Warlock" ability="Charisma">
+      <list>Warlock</list>
+    </spellcasting>
     <rules>
-      <!--  todo: apply new spellcasting statistics -->
-      <stat name="spell:attack" value="Proficiency" />
-      <stat name="spell:attack" value="Charisma Modifier" />
-      <stat name="spell:dc" value="8" />
-      <stat name="spell:dc" value="Proficiency" />
-      <stat name="spell:dc" value="Charisma Modifier" />
-      <stat name="warlock:spellcasting:slots" value="1" level="1"/>
-      <stat name="warlock:spellcasting:slots" value="1" level="2"/>
-      <stat name="warlock:spellcasting:slots" value="1" level="11"/>
-      <stat name="warlock:spellcasting:slots" value="1" level="17"/>
-      <stat name="warlock:spellcasting:slot" value="+1" level="1" />
-      <stat name="warlock:spellcasting:slot" value="+1" level="3" />
-      <stat name="warlock:spellcasting:slot" value="+1" level="5" />
-      <stat name="warlock:spellcasting:slot" value="+1" level="7" />
-      <stat name="warlock:spellcasting:slot" value="+1" level="9" />
-      <select type="Spell" name="Cantrip (Warlock)" supports="Warlock,0" level="1" number="4" />
-      <select type="Spell" name="Cantrip (Warlock)" supports="Warlock,0" level="4" />
-      <select type="Spell" name="Cantrip (Warlock)" supports="Warlock,0" level="10" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1)" level="1" number="2"/>
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1)" level="2" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2)" level="3" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2)" level="4" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3)" level="5" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3)" level="6" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4)" level="7" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4)" level="8" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5)" level="9" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5)" level="10" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5||6)" level="11" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5||6||7)" level="13" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5||6||7||8)" level="15" />
-      <select type="Spell" name="Spell (Warlock)" supports="Warlock,(1||2||3||4||5||6||7||8||9)" level="17" />
+      <!-- add not full but single _not counting as multiclass spellcaster due to pact magic -->
+      <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_SOLO" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
+      <stat name="warlock:spellcasting:slots:count" value="1" level="1"/>
+      <stat name="warlock:spellcasting:slots:count" value="1" level="2"/>
+      <stat name="warlock:spellcasting:slots:count" value="1" level="11"/>
+      <stat name="warlock:spellcasting:slots:count" value="1" level="17"/>
+
+      <stat name="warlock:spellcasting:slot" value="1" level="1" />
+      <stat name="warlock:spellcasting:slot" value="1" level="3" />
+      <stat name="warlock:spellcasting:slot" value="1" level="5" />
+      <stat name="warlock:spellcasting:slot" value="1" level="7" />
+      <stat name="warlock:spellcasting:slot" value="1" level="9" />
+      
+      <!-- negative count to remove slots -->
+      <stat name="warlock:spellcasting:slots:1" value="warlock:spellcasting:slots:count" level="1" />
+      <stat name="warlock:spellcasting:slots:1" value="-warlock:spellcasting:slots:count" level="3" />
+      <stat name="warlock:spellcasting:slots:2" value="warlock:spellcasting:slots:count" level="3" />
+      <stat name="warlock:spellcasting:slots:2" value="-warlock:spellcasting:slots:count" level="5" />
+      <stat name="warlock:spellcasting:slots:3" value="warlock:spellcasting:slots:count" level="5" />
+      <stat name="warlock:spellcasting:slots:3" value="-warlock:spellcasting:slots:count" level="7" />
+      <stat name="warlock:spellcasting:slots:4" value="warlock:spellcasting:slots:count" level="7" />
+      <stat name="warlock:spellcasting:slots:4" value="-warlock:spellcasting:slots:count" level="9" />
+      <stat name="warlock:spellcasting:slots:5" value="warlock:spellcasting:slots:count" level="9" />
+      <stat name="warlock:spellcasting:slots:5" value="-warlock:spellcasting:slots:count" level="11" />
+      <stat name="warlock:spellcasting:slots:6" value="warlock:spellcasting:slots:count" level="11" />
+      <stat name="warlock:spellcasting:slots:6" value="-warlock:spellcasting:slots:count" level="12" />
+      <stat name="warlock:spellcasting:slots:7" value="warlock:spellcasting:slots:count" level="13" />
+      <stat name="warlock:spellcasting:slots:7" value="-warlock:spellcasting:slots:count" level="15" />
+      <stat name="warlock:spellcasting:slots:8" value="warlock:spellcasting:slots:count" level="15" />
+      <stat name="warlock:spellcasting:slots:8" value="-warlock:spellcasting:slots:count" level="17" />
+      <stat name="warlock:spellcasting:slots:9" value="warlock:spellcasting:slots:count" level="17" />
+
+      <select type="Spell" name="Cantrip (Warlock)" supports="$(spellcasting:list),0" level="1" number="2" spellcasting="Warlock" />
+      <select type="Spell" name="Cantrip (Warlock)" supports="$(spellcasting:list),0" level="4" spellcasting="Warlock" />
+      <select type="Spell" name="Cantrip (Warlock)" supports="$(spellcasting:list),0" level="10" spellcasting="Warlock" />
+ 
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="2" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="6" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="8" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="10" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Warlock"/>
     </rules>
   </element>
   <element name="Eldritch Invocations" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_INVOCATIONS">
@@ -232,10 +266,10 @@
       <description>You can cast your arcanum spells once without expending a spell slot. (1/LR)</description>
     </sheet>
     <rules>
-      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="Warlock,6" level="11"/>
-      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="Warlock,7" level="13" />
-      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="Warlock,8" level="15" />
-      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="Warlock,9" level="17" />
+      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="$(spellcasting:list),6" level="11" spellcasting="warlock" />
+      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="$(spellcasting:list),7" level="13" spellcasting="warlock" />
+      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="$(spellcasting:list),8" level="15" spellcasting="warlock" />
+      <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="$(spellcasting:list),9" level="17" spellcasting="warlock" />
     </rules>
   </element>
   <element name="Eldritch Master" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_MASTER">
@@ -342,7 +376,7 @@
       <description>You can now inscribe magical rituals in your Book of Shadows.</description>
     </sheet>
     <rules>
-      <select type="Spell" name="Book of Ancient Secrets" supports="1,Ritual" number="2" />
+      <select type="Spell" name="Book of Ancient Secrets" supports="1,Ritual" number="2" spellcasting="Warlock"/>
     </rules>
   </element>
   <element name="Chains of Carceri" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_CHAINS_OF_CARCERI">
@@ -709,7 +743,7 @@
       <description>Your patron gives you a grimoire called a Book of Shadows.</description>
     </sheet>
     <rules>
-      <select type="Spell" name="Pact of the Tome" supports="0" level="1" number="3" />
+      <select type="Spell" name="Cantrip (Pact of the Tome)" supports="0" level="1" number="3" spellcasting="Warlock"/>
     </rules>
   </element>
   <element name="Pact of the Blade" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE">
@@ -725,12 +759,13 @@
     </sheet>
     <rules />
   </element>
+
   <!-- Otherworldly Patrons -->
   <element name="The Fiend" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND">
     <supports>Otherworldly Patron</supports>
     <requirements />
     <description>
-      <p>You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz’Urb-luu, and Baphomet; archdevils such as A smodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.</p>
+      <p>You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz’Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.</p>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_EXPANDED_SPELL_LIST"/>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESBLESSING"/>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESOWNLUCK"/>
@@ -764,11 +799,18 @@
     <sheet display="false">
       <description>The Fiend lets you choose from an expanded list of spells when you learn a warlock spell.</description>
     </sheet>
-    <rules>
-      <!-- implement spell list expansion -->
-      <!-- <grant type="Expanded Spell" id="ID_PHB_SPELL_BURNING_HANDS" supports="Warlock" /> -->
-      <!-- <grant type="Expanded Spell" id="ID_PHB_SPELL_COMMAND" supports="Warlock" /> -->
-    </rules>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_BURNING_HANDS</extend>
+      <extend>ID_PHB_SPELL_COMMAND</extend>
+      <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+      <extend>ID_PHB_SPELL_SCORCHING_RAY</extend>
+      <extend>ID_PHB_SPELL_FIREBALL</extend>
+      <extend>ID_PHB_SPELL_STINKING_CLOUD</extend>
+      <extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+      <extend>ID_PHB_SPELL_WALL_OF_FIRE</extend>
+      <extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+    </spellcasting>
+    <rules />
   </element>
   <element name="Dark One’s Blessing" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESBLESSING">
     <supports>Warlock</supports>
@@ -804,6 +846,7 @@
 
 
 
+  <!-- Archfey -->
   <element name="The Archfey" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_The_Archfey">
     <supports>Otherworldly Patron</supports>
     <requirements />
@@ -842,12 +885,22 @@
         <tr><td>5th</td><td><em>dominate person, seeming</em></td></tr>
       </table>
     </description>
-    <sheet>
+    <sheet display="false">
       <description>The Archfey lets you choose from an expanded list of spells when you learn a warlock spell.</description>
     </sheet>
-    <rules>
-      <!-- todo -->
-    </rules>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_FAERIE_FIRE</extend>
+      <extend>ID_PHB_SPELL_SLEEP</extend>
+      <extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+      <extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+      <extend>ID_PHB_SPELL_BLINK</extend>
+      <extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+      <extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+      <extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+      <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+      <extend>ID_PHB_SPELL_SEEMING</extend>
+    </spellcasting>
+    <rules />
   </element>
   <element name="Fey Presence" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_Fey_Presence">
     <description>
@@ -896,7 +949,7 @@
 
 
 
-
+  <!-- Great Old One -->
   <element name="The Great Old One" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE">
     <supports>Otherworldly Patron</supports>
     <requirements />
@@ -936,9 +989,21 @@
         <tr><td>5th</td><td><em>dominate person, telekinesis</em></td></tr>
       </table>      
     </description>
-    <sheet>
-      <description></description>
+    <sheet display="false">
+      <description>The Great Old One lets you choose from an expanded list of spells when you learn a warlock spell.</description>
     </sheet>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_DISSONANT_WHISPERS</extend>
+      <extend>ID_PHB_SPELL_TASHAS_HIDEOUS_LAUGHTER</extend>
+      <extend>ID_PHB_SPELL_DETECT_THOUGHTS</extend>
+      <extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+      <extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+      <extend>ID_PHB_SPELL_SENDING</extend>
+      <extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+      <extend>ID_PHB_SPELL_EVARDS_BLACK_TENTACLES</extend>
+      <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+      <extend>ID_PHB_SPELL_TELEKINESIS</extend>
+    </spellcasting>
     <rules />
   </element>
   <element name="Awakend Mind" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_Awakend_Mind">
