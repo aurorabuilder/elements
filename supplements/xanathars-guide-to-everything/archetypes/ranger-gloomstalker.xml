@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Gloom Stalker</name>
+        <description>The Gloom Stalker from Xanathar’s Guide to Everything</description>
+        <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+        <update version="0.0.1">
+            <file name="ranger-gloomstalker.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/ranger-gloomstalker.xml" />
+        </update>
+    </info>
+    <element name="Gloom Stalker" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_RANGER_GLOOM_STALKER">
+        <supports>Ranger Archetype, Ranger Conclave</supports>
+        <description>
+            <p>Gloom Stalkers are at home in the darkest places: deep under the earth, in gloomy alleyways, in primeval forests, and wherever else the light dims. Most folk enter such places with trepidation, but a Gloom Stalker ventures boldly into the darkness, seeking to ambush threats before they can reach the broader world. Such rangers are often found in the Underdark, but they will go any place where evil lurks in the shadows.</p>
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_GLOOM_STALKER_MAGIC" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_DREAD_AMBUSHER" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_UMBRAL_SIGHT" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_IRON_MIND" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_STALKERS_FURY" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_SHADOWY_DODGE" />
+        </description>
+        <sheet>
+            <description>Gloom Stalkers are at home in the darkest places: deep under the earth, in gloomy alleyways, in primeval forests, and wherever else the light dims.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_GLOOM_STALKER_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_DREAD_AMBUSHER" level="3" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_UMBRAL_SIGHT" level="3" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_IRON_MIND" level="7" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_STALKERS_FURY" level="11" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_SHADOWY_DODGE" level="15" />
+        </rules>
+    </element>
+    <element name="Gloom Stalker Magic" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_GLOOM_STALKER_MAGIC">
+        <description>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Gloom Stalker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.</p>       
+            <h5>GLOOM STALKER SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>disguise self</em></td></tr>
+                <tr><td>5rd</td><td><em>rope trick</em></td></tr>
+                <tr><td>9th</td><td><em>fear</em></td></tr>
+                <tr><td>13th</td><td><em>greater invisibility</em></td></tr>
+                <tr><td>17th</td><td><em>seeming</em></td></tr>
+            </table>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="3" spellcasting="Ranger"/>
+            <grant type="Spell" name="ID_PHB_SPELL_ROPE_TRICK" level="5" spellcasting="Ranger" />
+            <grant type="Spell" name="ID_PHB_SPELL_FEAR" level="9" spellcasting="Ranger" />
+            <grant type="Spell" name="ID_PHB_SPELL_GREATER_INVISIBILITY" level="13" spellcasting="Ranger" />
+            <grant type="Spell" name="ID_PHB_SPELL_SEEMING" level="17" spellcasting="Ranger" />
+        </rules>
+    </element>
+    <element name="Dread Ambusher" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_DREAD_AMBUSHER">
+        <description>
+            <p>At 3rd level, you master the art of the ambush. You can give yourself a bonus to your initiative rolls equal to your Wisdom modifier.</p>
+            <p class="indent">At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the Attack action on that turn, you can make one additional weapon attack as part of that action. If that attack hits, the target takes an extra 1d8 damage of the weapons damage type.</p>
+        </description>
+        <sheet>
+            <description>At the start of your first turn, your walking speed increases by 10ft until the end of that turn. If you attack that turn, make one additional weapon attack. If it hits, the target takes an extra 1d8 damage.</description>
+        </sheet>
+        <rules>
+            <stat name="Initiative" value="Wisdom Modifier" />
+        </rules>
+    </element>
+    <element name="Umbral Sight" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_UMBRAL_SIGHT">
+        <description>
+            <p>At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet.</p>
+            <p class="indent">You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness.</p>
+        </description>
+        <sheet>
+            <description>While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness.</description>
+        </sheet>
+        <rules>
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+    <element name="Iron Mind" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_IRON_MIND">
+        <description>
+            <p>By 7th level, you have honed your ability to resist the mind—altering powers of your prey. You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice).</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Proficiency" name="Saving Throw Proficiency (Gloom Stalker)" supports="ID_PROFICIENCY_SAVINGTHROW_WISDOM|ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" default="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+        </rules>
+    </element>
+    <element name="Stalker's Flurry" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_STALKERS_FURY">
+        <description>
+            <p>At 11th level, you learn to attack with such unexpected speed that you can turn a miss into another strike. Once on each of your turns when you miss with a weapon attack, you can make another weapon attack as part of the same action.</p>
+        </description>
+        <sheet>
+            <description>1/turn when you miss with a weapon attack, make another weapon attack as part of the same action.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Shadowy Dodge" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_SHADOWY_DODGE">
+        <description>
+            <p>Starting at 15th level, you can dodge in unforeseen ways, with wisps of supernatural shadow around you. Whenever a creature makes an attack roll against you and doesn’t have advantage on the roll, you can use your reaction to impose disadvantage on it. You must use this feature before you know the outcome of the attack roll.</p>
+        </description>
+        <sheet>
+            <description>Reaction: When a creature makes an attack roll against you and doesn’t have advantage on the roll, impose disadvantage on it (before knowing the outcome of the attack roll).</description>
+        </sheet>
+        <rules />
+    </element>
+</elements>
