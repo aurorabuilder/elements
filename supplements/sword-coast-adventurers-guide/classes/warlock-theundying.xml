@@ -4,11 +4,10 @@
     <name>The Undying</name>
     <description>The Undying archetype from the Sword Coast Adventurer’s Guide.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.0.2">
+    <update version="0.0.3">
       <file name="warlock-theundying.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/warlock-theundying.xml" />
     </update>
   </info>
-
   <element name="The Undying" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_UNDYING">
     <supports>Otherworldly Patron</supports>
     <description>
@@ -25,13 +24,12 @@
     </sheet>
     <rules>
       <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="9"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="13"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="17"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="1"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="6"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="10"/>
+      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="14"/>
     </rules>
   </element>
-
   <element name="Expanded Spell List" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST">
     <description>
       <p>The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
@@ -40,21 +38,29 @@
         <thead>
           <tr><td>Spell Level</td><td>Spells</td></tr>
         </thead>
-        <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
-        <tr><td>2nd</td><td><em>blindness/deafness, silence</em></td></tr>
-        <tr><td>3rd</td><td><em>feign death, speak with dead</em></td></tr>
-        <tr><td>4th</td><td><em>aura of life, death ward</em></td></tr>
-        <tr><td>5th</td><td><em>contagion, legend lore</em></td></tr>
-      </table>  
+          <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+          <tr><td>2nd</td><td><em>blindness/deafness, silence</em></td></tr>
+          <tr><td>3rd</td><td><em>feign death, speak with dead</em></td></tr>
+          <tr><td>4th</td><td><em>aura of life, death ward</em></td></tr>
+          <tr><td>5th</td><td><em>contagion, legend lore</em></td></tr>
+      </table>
     </description>
     <sheet>
       <description>The Undying lets you choose from an expanded list of spells when you learn a warlock spell.</description>
     </sheet>
-    <rules>
-      <!-- todo implement rules to add spells to list -->
-    </rules>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+      <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+      <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+      <extend>ID_PHB_SPELL_SILENCE</extend>
+      <extend>ID_PHB_SPELL_FEIGN_DEATH</extend>
+      <extend>ID_PHB_SPELL_SPEAK_WITH_DEAD</extend>
+      <extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+      <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+      <extend>ID_PHB_SPELL_CONTAGION</extend>
+      <extend>ID_PHB_SPELL_LEGEND_LORE</extend>
+    </spellcasting>
   </element>
-
   <element name="Among the Dead" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD">
     <description>
       <p>Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.</p>
@@ -64,10 +70,9 @@
       <description>You have advantage on saving throws against any disease. If an undead targets you directly with an attack or a harmful spell, that creature must make a DC%spellcasting:dc:wis% Wisdom saving throw. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell.</description>
     </sheet>
     <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Warlock" />
     </rules>
   </element>
-
   <element name="Defy Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH">
     <description>
       <p>Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</p>
@@ -81,7 +86,6 @@
       <stat name="defy death:modifier" value="Constitution Modifier" bonus="defy death" />
     </rules>
   </element>
-
   <element name="Undying Nature" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE">
     <description>
       <p>Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.</p>
@@ -92,7 +96,6 @@
     </sheet>
     <rules />
   </element>
-
   <element name="Indestructable Life" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE">
     <description>
       <p>When you reach 14th level, you partake of some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</p>
@@ -103,6 +106,4 @@
     </sheet>
     <rules />
   </element>
-
-
 </elements>
