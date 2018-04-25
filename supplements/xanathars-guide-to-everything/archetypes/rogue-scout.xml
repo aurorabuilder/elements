@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Scout</name>
+        <description>The Scout from Xanathar’s Guide to Everything</description>
+        <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+        <update version="0.0.1">
+            <file name="rogue-scout.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/rogue-scout.xml" />
+        </update>
+    </info>
+    <element name="Scout" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_SCOUT">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>You are skilled in stealth and surviving far from the streets of a city, allowing you to scout ahead of your companions during expeditions. Rogues who embrace this archetype are at home in the wilderness and among barbarians and rangers, and many Scouts serve as the eyes and ears of war bands. Ambusher, spy, bounty hunter—these are just a few of the roles that Scouts assume as they range the world.</p>
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SKIRMISHER" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SURVIVALIST" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUPERIOR_MOBILITY" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_AMBUSH_MASTER" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUDDEN_STRIKE" />
+        </description>
+        <sheet>
+            <description>Combines stealth with a knack for survival</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SKIRMISHER" level="1"/>
+            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SURVIVALIST" level="3"/>
+            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUPERIOR_MOBILITY" level="9"/>
+            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_AMBUSH_MASTER" level="13"/>
+            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUDDEN_STRIKE" level="17"/>
+        </rules>
+    </element>
+    <element name="Skirmisher" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SKIRMISHER">
+        <description>
+            <p>Starting at 3rd level, you are difficult to pin down during a fight. You can move up to half your speed as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn’t provoke opportunity attacks.</p>
+        </description>
+        <sheet>
+            <description>Reaction: Move up to half your speed when an enemy ends its turn within 5ft. This doesn't provoke opportunity attacks.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Survivalist" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SURVIVALIST">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills if you don’t already have it. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" requirements="!ID_PROFICIENCY_SKILL_NATURE"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <!-- ability checks, not standard skill checks -->
+            <!-- <stat name="Nature Proficiency" value="Proficiency" bonus="expertise" /> -->
+            <!-- <stat name="Survival Proficiency" value="Proficiency" bonus="expertise" /> -->
+        </rules>
+    </element>
+    <element name="Superior Moblility" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUPERIOR_MOBILITY">
+        <description>
+            <p>At 9th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well.</p>
+        </description>
+        <sheet display="false">
+            <description>Your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well.</description>
+        </sheet>
+        <rules>
+            <stat name="Speed" value="10" bonus="superior mobility" />
+            <!-- todo: stat requirements -->
+            <!-- <stat name="speed:climb" value="10" bonus="superior mobility" />
+            <stat name="speed:swim" value="10" bonus="superior mobility" /> -->
+        </rules>
+    </element>
+    <element name="Ambush Master" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_AMBUSH_MASTER">
+        <description>
+            <p>Starting at 13th level, you excel at leading ambushes and acting first in a fight.</p>
+            <p class="indent">You have advantage on initiative rolls. In addition, the first creature you hit during the first round of a combat becomes easier for you and others to strike; attack rolls against that target have advantage until the start of your next turn.</p>
+        </description>
+        <sheet>
+            <description>Advantage on initiative. The 1st creature you hit during the first round of combat becomes easier to hit. Attacks against it have advantage until the start of your next turn.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Sudden Strike" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SCOUT_SUDDEN_STRIKE">
+        <description>
+            <p>Starting at 17th level, you can strike with deadly speed. If you take the Attack action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but you can’t use your Sneak Attack against the same target more than once in a turn.</p>
+        </description>
+        <sheet>
+            <description>Bonus action: If you attack, make one additional attack. This attack can gain Sneak Attack even if you already used it this turn, but not on the same target.</description>
+        </sheet>
+        <rules />
+    </element>
+</elements>
