@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Kensei</name>
+        <description>The Kensei archetype from Xanathar’s Guide to Everything</description>
+        <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
+        <update version="0.0.1">
+            <file name="monk-kensei.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/monk-kensei.xml" />
+        </update>
+    </info>
+    <!-- note: the kensei has weapon selections that have not yet been implemented by the builder -->
+    
+    <element name="Way of the Kensei" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_WAY_OF_THE_KENSEI">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks of the Way of the Kensei train relentlessly with their weapons, to the point where the weapon becomes an extension of the body. Founded on a mastery of sword fighting, the tradition has expanded to include many different weapons.</p>
+            <p class="indent">A kensei sees a weapon in much the same way a calligrapher or painter regards a pen or brush. Whatever the weapon, the kensei views it as a tool used to express the beauty and precision of the martial arts. That such mastery makes a kensei a peerless warrior is but a side effect of intense devotion, practice, and study.</p>
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY" />
+        </description>
+        <sheet>
+            <description>Channels ki through a set of mastered weapons</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI" level="3"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE" level="6"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE" level="11"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY" level="17"/>
+        </rules>
+    </element>
+    <element name="Path of the Kensei" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI">
+        <description>
+            <p>When you choose this tradition at 3rd level, your special martial arts training leads you to master the use of certain weapons. This path also includes instruction in the deft strokes of calligraphy or painting. You gain the following benefits.</p>
+            <p class="indent"><b><i>Kensei Weapons. </i></b>Choose two types of weapons to be your kensei weapons: one melee weapon and one ranged weapon. Each of these weapons can be any simple or martial weapon that lacks the heavy and special properties. The longbow is also a valid choice. You gain proficiency with these weapons if you don’t already have it. Weapons of the chosen types are monk weapons for you. Many of this tradition’s features work only with your kensei weapons. When you reach 6th, 11th, and 17th level in this class. you can choose another type of weapon—either melee or ranged—to be a kensei weapon for you following the criteria above.</p>
+            <p class="indent"><b><i>Agile Parry. </i></b>If you make an unarmed strike as part of the Attack action on your turn and are holding a kensei weapon, you can use it to defend yourself if it is a melee weapon. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't incapacitated.</p>
+            <p class="indent"><b><i>Kensei’s Shot. </i></b>You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra 1d4 damage of the weapons type. You retain this benefit until the end of the current turn.</p>
+            <p class="indent"><b><i>Way of the Brush. </i></b>You gain proficiency with your choice of calligrapher's supplies or painter's supplies.</p>
+        </description>
+        <sheet>
+            <description level="3">You have 2 kensei weapons, one melee, one ranged. (any non-Heavy, non-Special weapon) You gain proficiency with these weapons, and they are monk weapons. If you make an unarmed strike in an Attack action while holding a melee kensei weapon, gain a +2 bonus to AC until the start of your next turn. Bonus action: Make your ranged weapon more deadly, until the end of the current turn, ranged weapons deal an extra 1d4 damage.</description>
+            <description level="6">You have 3 kensei weapons, at least one melee and one ranged. (any non-Heavy, non-Special weapon) You gain proficiency with these weapons, and they are monk weapons. If you make an unarmed strike in an Attack action while holding a melee kensei weapon, gain a +2 bonus to AC until the start of your next turn. Bonus action: Make your ranged weapon more deadly, until the end of the current turn, ranged weapons deal an extra 1d4 damage.</description>
+            <description level="11">You have 4 kensei weapons, at least one melee and one ranged. (any non-Heavy, non-Special weapon) You gain proficiency with these weapons, and they are monk weapons. If you make an unarmed strike in an Attack action while holding a melee kensei weapon, gain a +2 bonus to AC until the start of your next turn. Bonus action: Make your ranged weapon more deadly, until the end of the current turn, ranged weapons deal an extra 1d4 damage.</description>
+            <description level="17">You have 5 kensei weapons, at least one melee and one ranged. (any non-Heavy, non-Special weapon) You gain proficiency with these weapons, and they are monk weapons. If you make an unarmed strike in an Attack action while holding a melee kensei weapon, gain a +2 bonus to AC until the start of your next turn. Bonus action: Make your ranged weapon more deadly, until the end of the current turn, ranged weapons deal an extra 1d4 damage.</description>
+        </sheet>
+        <rules>
+            <!-- can't be implemented yet, requires various equipment implementations that are not done, rely on description for now -->
+            <select type="Proficiency" name="Way of the Brush (Kensei)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES"/>
+        </rules>
+    </element>
+    <element name="One with the Blade" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE">
+        <description>
+            <p>At 6th level, you extend your ki into your kensei weapons, granting you the following benefits.</p>
+            <p class="indent"><b><i>Magic Kensei Weapons. </i></b>Your attacks with your kensei weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+            <p class="indent"><b><i>Deft Strike. </i></b>When you hit a target with a kensei weapon, you can spend 1 ki point to cause the weapon to deal extra damage to the target equal to your Martial Arts die. You can use this feature only once on each of your turns.</p>
+        </description>
+        <sheet>
+            <description>Attacks with kensei weapons are considered magical. When you hit a target with a kensei weapon, spend 1 ki point to cause an extra $(martial arts:dice) damage (1/turn).</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Sharpen the Blade" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE">
+        <description>
+            <p>At 11th level, you gain the ability to augment your weapons further with your ki. As a bonus action, you can expend up to 3 ki points to grant one kensei weapon you touch a bonus to attack and damage rolls when you attack with it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute or until you use this feature again. This feature has no effect on a magic weapon that already has a bonus to attack and damage rolls.</p>
+        </description>
+        <sheet>
+            <description>Bonus action: Expend up to 3 ki point to grant one kensei weapon you touch a bonus to attack and damage, equal to the ki points spent, for 1 minute. (no effect on magic weapons that already have a bonus)</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Unerring Accuracy" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY">
+        <description>
+            <p>At 17th level, your mastery of weapons grants you extraordinary accuracy. If you miss with an attack roll using a monk weapon on your turn, you can reroll it. You can use this feature only once on each of your turns.</p>
+        </description>
+        <sheet>
+            <description>1/turn reroll if you miss with a monk weapon.</description>
+        </sheet>
+        <rules />
+    </element>
+</elements>
