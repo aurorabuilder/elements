@@ -4,7 +4,7 @@
 		<name>Tiefling</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.3">
+		<update version="0.1.4">
 			<file name="race-tiefling.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-tiefling.xml" />
 		</update>
 	</info>
@@ -14,14 +14,11 @@
     <requirements />
     <description>
       <p class="flavor">To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children’s children will always be held accountable.</p>
-
       <h4>INFERNAL BLOODLINE</h4>
       <p>Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance. Tieflings have large horns that take any of a variety of shapes: some have curling horns like a ram, others have straight and tall horns like a gazelle’s, and some spiral upward like an antelopes’ horns. They have thick tails, four to five feet long, which lash or coil around their legs when they get upset or nervous. Their canine teeth are sharply pointed, and their eyes are solid colors—black, red, white, silver, or gold—with no visible sclera or pupil. Their skin tones cover the full range of human coloration, but also include various shades of red. Their hair, cascading down from behind their horns, is usually dark, from black or brown to dark red, blue, or purple.</p>
-
       <h4>SELF-RELIANT AND SUSPICIOUS</h4>
       <p>Tieflings subsist in small minorities found mostly in human cities or towns, often in the roughest quarters of those places, where they g row up to be swindlers, thieves, or crime lords. Sometimes they live among other minority populations in enclaves where they are treated with more respect.</p>
       <p class="indent">Lacking a homeland, tieflings know that they have to make their own way in the w orld and that they have to be strong to survive. They are not quick to trust anyone w ho claims to be a friend, but when a tiefling’s companions demonstrate that they trust him or her, the tiefling learns to extend the same trust to them. And once a tiefling gives someone loyalty, the tiefling is a firm friend or ally for life.</p>
-
       <h4>TIEFLING NAMES</h4>
       <p>Tiefling names fall into three broad categories. Tieflings born into another culture typically have names reflective o f that culture. Some have names derived from the Infernal language, passed down through generations, that reflect their fiendish heritage. And some younger tieflings, striving to find a place in the world, adopt a name that signifies a virtue or other concept and then try to embody that concept. For some, the chosen name is a noble quest. For others, it’s a grim destiny.</p>
       <p>
@@ -53,16 +50,18 @@
       <set name="weight" modifier="2d4">110 lb.</set>
     </setters>
     <rules>      
-      <stat name="Intelligence" value="+1"/>
-      <stat name="Charisma" value="+2"/>
+      <stat name="Intelligence" value="+1" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
+      <stat name="Charisma" value="+2" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
       <stat name="Speed" value="+30"/>
       <grant name="ID_SIZE_MEDIUM" type="Size" />
       <grant name="ID_VISION_DARKVISION" type="Vision" />
       <grant name="ID_LANGUAGE_COMMON" type="Language" />
       <grant name="ID_LANGUAGE_INFERNAL" type="Language" />
       <grant name="ID_RACIAL_TRAIT_HELLISH_RESISTANCE" type="Racial Trait" />
-      <grant name="ID_RACIAL_TRAIT_INFERNAL_LEGACY" type="Racial Trait" />
-      <!--<select type="Race Variant" name="Tiefling Variant" supports="Tiefling" default="ID_RACE_VARIANT_TIEFLING"/>-->
+      <grant name="ID_RACIAL_TRAIT_INFERNAL_LEGACY" type="Racial Trait" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
+      <select type="Sub Race" name="Tiefling Subrace" supports="Tiefling" optional="true" /> 
+
+      <!--<select type="Race Variant" name="Tiefling Variant" supports="Tiefling" optional="true"/>-->
     </rules>
   </element>
 
@@ -76,11 +75,10 @@
       <description>You have resistance to fire damage.</description>
     </sheet>
     <rules>
+      
     </rules>
   </element>
   <element name="Infernal Legacy" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY">
-    <supports />
-    <requirements />
     <description>
       <p>You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>
     </description>
@@ -94,25 +92,16 @@
     </rules>
   </element>
 
+  <!-- an element that you should grant in a subrace so that you can override stats/infernal legacy -->
+  <element name="Tiefling Subrace" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
+
+
+
 
   <!-- Variant SCAG -->
 <!-- 
-  <element name="Tiefling Trait" type="Race Variant" source="Player’s Handbook" id="ID_RACE_VARIANT_TIEFLING">
-    <supports>Tiefling</supports>
-    <requirements />
-    <description>
-      <p>
-        <span class="feature">Ability Score Increase.</span>Your Intelligence score increases by 1, and your Charisma score increases by 2.<br/>
-      </p>
-      <div element="ID_RACIAL_TRAIT_INFERNAL_LEGACY" />
-    </description>
-    <sheet display="false" />
-    <rules>
-      <stat name="Intelligence" value="+1"/>
-      <stat name="Charisma" value="+2"/>
-      <grant name="ID_RACIAL_TRAIT_INFERNAL_LEGACY" type="Racial Trait" />
-    </rules>
-  </element>
+  
+  
 
   <element name="Tiefling Variant" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_RACE_VARIANT_TIEFLING_1">
     <supports>Tiefling</supports>
