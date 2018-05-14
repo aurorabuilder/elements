@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Sorcerer</name>
         <description>The sorcerer unearths new magical possibilities this week. The class receives four playtest options for the Sorcerous Origin feature: Favored Soul, Phoenix Sorcery, Sea Sorcery, and Stone Sorcery.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/sorcerer">Wizards of the Coast</author>
-        <update version="0.1">
+        <update version="0.1.1">
             <file name="20170206.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170206.xml" />
         </update>
     </info>
@@ -14,10 +14,10 @@
 	<element name="Phoenix Sorcery" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_PHOENIX_SORCERY">
 		<supports>Sorcerous Origin</supports>
 		<description>
-			<p>Your power draws from the immortal flame that fuels the legendary phoenix. You or your ancestors perhaps rendered a phoenix a great service, or you were born in its presence. Wha tever the cause, a shard of the phoenix’s power dwells within you.</p>
+			<p>Your power draws from the immortal flame that fuels the legendary phoenix. You or your ancestors perhaps rendered a phoenix a great service, or you were born in its presence. Whatever the cause, a shard of the phoenix’s power dwells within you.</p>
 			<p class="indent">That power is a mixed blessing. Like the mythical creature, you can invoke fiery energy and gain the ability to cheat death itself. This power comes at a cost. The fire within you seethes, demanding to be unleashed. You sometimes find yourself absentmindedly feeding fires. You can’t bear to allow a fire to sputter out. You feel most comfortable while holding a lit torch or sitting in front of a campfire.</p>
 			<p class="indent">More importantly, this gift comes with no special protection from fire. You are as vulnerable as any other creature to fiery magic, including your own. Phoenix sorcerers can use their powers to pull themselves back from the brink of death, and all too often their own, rash nature or relianc e on destructive magic is what puts them there in the first place.</p>
-			<p class="indent">Such sorcerers are wanderers by necessity. The volatile nature of their magic makes other folk nervous. If a fire breaks out in town, a phoenix sorcerer had best flee, whether guilty or no t. Fire is a dangerous force, and phoenix sorcerers have a reputation (deserved or not) for reckless behavior, confident that the essence of the phoenix can save them.</p>
+			<p class="indent">Such sorcerers are wanderers by necessity. The volatile nature of their magic makes other folk nervous. If a fire breaks out in town, a phoenix sorcerer had best flee, whether guilty or not. Fire is a dangerous force, and phoenix sorcerers have a reputation (deserved or not) for reckless behavior, confident that the essence of the phoenix can save them.</p>
 			<div element="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_IGNITE" />
 			<div element="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_MANTLEOFFLAME" />
 			<div element="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_PHOENIXSPARK" />
@@ -40,10 +40,10 @@
 	</element>
 	<element name="Ignite" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_IGNITE">
 		<description>
-			<p>At 1st level, you gain the ability to start fires with a touch. As an action, you can magically ignite a flammable object you touch with your hand — an object such as a torch, a piece of tinder, or the hem of drapes.</p>
+			<p>At 1st level, you gain the ability to start fires with a touch. As an action, you can magically ignite a flammable object you touch with your hand—an object such as a torch, a piece of tinder, or the hem of drapes.</p>
 		</description>
 		<sheet>
-			<description>You gain the ability to start fires with a touch. As an action, you can magically ignite a flammable object you touch with your hand — an object such as a torch, a piece of tinder, or the hem of drapes.</description>
+			<description>As an action, you can magically ignite a flammable object you touch with your hand—an object such as a torch, a piece of tinder, or the hem of drapes.</description>
 		</sheet>
 	</element>
 	<element name="Mantle of Flame" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_MANTLEOFFLAME">
@@ -55,10 +55,10 @@
 				<li>Any creature takes fire damage equal to your Charisma modifier if it hits you with a melee attack from within 5 feet of you or if it touches you.</li>
 				<li>Whenever you roll fire damage on your turn, the roll gains a bonus to equal to your Charisma modifier.</li>
 			</ul>
-			<p>Once you use this feature, you can’t use it again until you finish a long rest.</p>
+			<p>Once you use this feature, you can’t use it again until you finish a long rest. </p>
 		</description>
 		<sheet>
-			<description>Bonus Action (1 minute): shed bright light in a 30-foot radius and dim light for an additional 30 feet.</description>
+			<description>Bonus Action (1 minute): You shed bright light in a 30-foot radius and dim light for an additional 30 feet. Any creature takes $(Charisma Modifier)fire damage if it hits you with a melee attack from within 5 feet of you or if it touches you. Whenever you roll fire damage on your turn, the roll gains a +$(Charisma Modifier) bonus.</description>
 		</sheet>
 	</element>
 	<element name="Phoenix Spark" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_PHOENIXSPARK">
@@ -69,11 +69,15 @@
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
 		</description>
 		<sheet>
-			<description>If you are reduced to 0 hit points, you can use your reaction to draw on the spark of the phoenix. You are instead reduced to 1 hit point, and each creature within 10 feet of you takes $(phoenix spark:damage) fire damage.</description>
+			<description>If you are reduced to 0 hit points, you can use your reaction to draw on the spark of the phoenix. You are instead reduced to 1 hit point, and each creature within 10 feet of you takes $(phoenix spark:damage) fire damage. If you use this feature while under the effects of your Mantle of Flame, this feature instead deals $(phoenix spark:damage:alt) fire damage, and your Mantle of Flame immediately ends.(1/LR)</description>
 		</sheet>
         <rules>
             <stat name="phoenix spark:damage" value="level:sorcerer:half" />
             <stat name="phoenix spark:damage" value="Charisma Modifier" />
+
+            <stat name="phoenix spark:damage:alt" value="level:sorcerer" />
+            <stat name="phoenix spark:damage:alt" value="Charisma Modifier" />
+            <stat name="phoenix spark:damage:alt" value="Charisma Modifier" />
         </rules>
 	</element>
 	<element name="Nourishing Fire" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_NOURISHINGFIRE">
@@ -81,7 +85,7 @@
 			<p>Starting at 14th level, your fire spells soothe and restore you. When you expend a spell slot to cast a spell that includes a fire damage roll, you regain hit points equal to the slot’s level + your Charisma modifier.</p>
 		</description>
 		<sheet>
-			<description>Your fire spells soothe and restore you. When you expend a spell slot to cast a spell that includes a fire damage roll, you regain hit points equal to the slot’s level + your Charisma modifier.</description>
+			<description>When you expend a spell slot to cast a spell that includes a fire damage roll, you regain hit points equal to the slot’s level + $(Charisma Modifier).</description>
 		</sheet>
 	</element>
 	<element name="Form of the Phoenix" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PHOENIX_SORCERY_FORMOFTHEPHOENIX">
@@ -99,6 +103,7 @@
         <rules>
             <stat name="speed:fly" value="40" bonus="base" />
             <stat name="phoenix spark:damage" value="20" />
+            <stat name="phoenix spark:damage:alt" value="20" />
         </rules>
 	</element>
 
