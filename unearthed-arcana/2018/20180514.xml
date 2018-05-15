@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Unearthed Arcana: Centaurs and Minotaurs</name>
+        <description>Centaurs gallop into Unearthed Arcana this month—a playtest option for when you choose your character’s race. Another type of character from Greek myth joins them: minotaurs. We first showed off minotaurs in a 2015 installment of Unearthed Arcana, and we present revised versions of their traits today.</description>
+        <author url="http://dnd.wizards.com/articles/unearthed-arcana/centaurs-and-minotaurs">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="20180514.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2018/20180514.xml" />
+        </update>
+    </info>
+
+    <!-- Centaur -->
+    <element name="Centaur" type="Race" source="Unearthed Arcana" id="ID_WOTC_UA_RACE_CENTAUR">
+        <description>
+            <p>Roamers at heart, centaurs love open spaces and the freedom to travel. As much as they can, centaurs run. They race the wind, hooves thundering and tails streaming behind them.</p>
+            <h4>NATURE’S CAVALRY</h4>
+            <p>Centaurs have humanoid upper bodies, displaying all the human variety of skin tones and features. In size, they are comparable to a human rider mounted on a horse, and they fill similar roles—as cavalry, messengers, outriders, and scouts.</p>
+            <p class="indent">Centaurs’ ears are slightly pointed, but their faces are more wide and square than those of elves. Below the waist, they have the bodies of horses, with coats tending toward brown shades (chestnut or bay) and darker tails.</p>
+            <h4>NATURE AND COMMUNITY</h4>
+            <p>Centaurs have a strong sense of the interconnectedness of the natural world, and they celebrate family and community as microcosms of that greater connection.</p>
+            <p class="indent">The birth of a foal is always cause for festivities. At the same time, centaurs revere the traditions of the past, preserving old ways and keeping alive the legends of ancestral heroes. They feel a close kinship with wild animals, perhaps because of their own hybrid nature, and delight in the feeling of running alongside herds and packs of beasts.</p>
+            <h4>CENTAUR NAMES</h4>
+            <p>Centaurs’ given names are passed down through family lines. The name given to a new foal is typically the name of the most recently deceased family member of the same gender, keeping alive the memory—and, the centaurs believe, some shard of the spirit—of the departed.</p>
+            <p class="indent">Centaurs rarely use family names, but wear symbols that represent their family membership. These symbols might include graphical representations of plants or animals, printed mottos, braids and beads worn in the hair and tail, or even specific patterns of woven fabric.</p>
+			<h4>CENTAUR TRAITS</h4>
+			<p>The following traits are shared by player characters who are centaurs.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Strength score increases by 2, and your Wisdom score increases by 1.</p>
+			<p class="indent"><b><i>Age. </i></b>Centaurs mature and age at about the same rate as humans.</p>
+			<p class="indent"><b><i>Alignment. </i></b>Centaurs are inclined toward neutrality.</p>
+			<p class="indent"><b><i>Size. </i></b>Your size is Medium, yet you tower over most other humanoids.</p>
+			<p class="indent"><b><i>Speed. </i></b>Your base walking speed is 40 feet.</p>
+			<p class="indent"><b><i>Charge. </i></b>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together. Once you use this ability, you can’t use it again until you finish a short or long rest.</p>
+			<p class="indent"><b><i>Hooves. </i></b>Your hooves are natural melee weapons, with which you’re proficient. If you hit with a hoof, the target takes bludgeoning damage equal to 1d6 + your Strength modifier.</p>
+			<p class="indent"><b><i>Equine Build. </i></b>You count as one size larger when determining your carrying capacity and the weight you can push or drag.</p>
+            <p class="indent">In addition, any climb that requires hands and feet is especially difficult for you because of your hooves. When you make such a climb, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot.</p>
+            <p class="indent">Finally, a Medium or smaller creature can ride on your equine back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</p>
+			<p class="indent"><b><i>Survivor. </i></b>You have proficiency in the Survival skill.</p>
+			<p class="indent"><b><i>Hybrid Nature. </i></b>You have two creature types: humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Sylvan.</p> 
+        </description>
+        <setters>
+			<set name="names" type="male">Vulor, Prifaenon, Zuzo, Purytion, Cibus, Cleban, Ulibor, Uedral,Nyzycarn, Alasotral</set>
+			<set name="names" type="female">Elubeus, Wyniton, Oacates, Blalius, Orotaestus, Blystral, Orilath, Aramorn, Trobobran, Kididor</set>
+			<set name="names-format">$(name)</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+			<stat name="Strength" value="2" />
+			<stat name="Wisdom" value="1" />
+			<stat name="Speed" value="40" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_CHARGE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HOOVES"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_EQUINE_BUILD"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_SURVIVOR"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HYBRID_NATURE"/>
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+        </rules>
+    </element>
+	<element name="Charge" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_CHARGE">
+		<description>
+			<p>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together. Once you use this ability, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together. (1/SR)</description>
+		</sheet>
+		<rules />
+	</element>
+	<element name="Hooves" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HOOVES">
+		<description>
+			<p>Your hooves are natural melee weapons, with which you’re proficient. If you hit with a hoof, the target takes bludgeoning damage equal to 1d6 + your Strength modifier.</p>
+		</description>
+		<sheet>
+			<description>Your hooves are natural melee weapons, with which you’re proficient. 1d6+$(Strength Modifier) bludgeoning damage.</description>
+		</sheet>
+		<rules />
+	</element>
+	<element name="Equine Build" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_EQUINE_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push or drag.</p>
+            <p class="indent">In addition, any climb that requires hands and feet is especially difficult for you because of your hooves. When you make such a climb, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot.</p>
+            <p class="indent">Finally, a Medium or smaller creature can ride on your equine back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</p>
+		</description>
+		<sheet>
+			<description>
+                <text>You count as one size larger when determining your carrying capacity and the weight you can push or drag. </text>
+                <text>When climbing, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot. </text>
+                <text>A Medium or smaller creature can ride on your back.</text>
+            </description>
+		</sheet>
+		<rules />
+	</element>
+	<element name="Survivor" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_SURVIVOR">
+		<description>
+			<p>You have proficiency in the Survival skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Survival skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_SURVIVAL" />
+		</rules>
+	</element>
+	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HYBRID_NATURE">
+		<description>
+			<p>You have two creature types: humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</p>
+		</description>
+		<sheet>
+			<description>You count as humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</description>
+		</sheet>
+		<rules />
+	</element>
+
+	<!-- Minotaur -->
+	<element name="Minotaur" type="Race" source="Unearthed Arcana" id="ID_WOTC_UA_RACE_MINOTAUR">
+		<description>
+			<p class="flavor">In the world of Krynn, the setting of the Dragonlance saga, minotaurs live in an honor‐based society where strength determines power in both the gladiatorial arenas and in daily life. At home on both land and sea, the minotaurs of Krynn are ferocious sea raiders who rank as the ablest and most dangerous sailors in the world</p>
+			<h4>ARROGANT CONQUERORS</h4>
+			<p>Minotaurs embrace the notion that the weak should perish and that the strong must rule—and that they themselves are the strongest and most powerful race on Krynn. They believe their destiny is to rule the world, and that their dominion will be one of conquest and military might. To that end, all minotaurs are trained in weapons, armor, and tactics from a young age.</p>
+			<p class="indent">The minotaurs’ arrogance stems from a combination of strength, cunning, and intellect—three virtues they hold dear, and which they deem the foundation of their greatness. They believe that this combination of traits is what sets them apart from their rivals.</p>
+			<h4>TRIAL BY COMBAT</h4>
+			<p>Minotaur society is built on the principle that might makes right, and that considerations of justice are unnecessary. The minotaurs are led by an emperor served by a council of eight minotaurs called the Supreme Circle. All posts within the government, including the emperor’s, are won by the strongest and cleverest minotaurs, as proved by combat in the Circus.</p>
+			<p class="indent">The Circus is the only means by which a minotaur can rise in society. It is a grand, annual display of single combat in which minotaurs battle each other for supremacy. Minotaur youths must prove themselves in the Circus to earn their passage to adulthood.</p>
+			<p class="indent">Participation in the Circus is yet another reason why minotaurs look down on other folk. To the minotaurs, death and glory in battle are a natural process. Combat is the key to ensuring that the strong survive, and that the weak are set aside before they can undermine their superiors’ grand schemes of conquest.</p>
+			<h4>HONOR ABOVE ALL</h4>
+			<p>For all their cruelty, minotaurs are bound by a powerful sense of honor. Each victory brings greater honor to both individual minotaurs and their families. Defeat invokes a stain that only death can fully wash away.</p>
+			<p class="indent">Honor demands that minotaurs keep their word once it is offered, and each minotaur remains faithful to friends and clan above all else. Minotaurs rarely befriend folk of other races, as they all too often encounter them only in battle. If a minotaur does strike up a friendship, it is typically with other creatures that display the minotaurs’ virtues and love of battle. To such friends, a minotaur becomes an ally whose support will never waver.</p>
+			<h4>SEA REAVERS</h4>
+			<p>In the world of Krynn, the minotaurs rule a chain of islands dominated by the isles of Mithas and Kothas. Bound by the sea on all sides, the minotaurs focused their tenacity, strength, and cunning to become some of the most skilled and ferocious mariners in the world. They range across the water in their ships, raiding and pillaging as they wish. Minotaurs sometimes engage in trade, but they much prefer to take what they want by force. After all, as the strongest of all folk, they deserve the treasures and goods that lesser creatures have gathered.</p>
+			<h4>MINOTAUR NAMES</h4>
+			<p>Minotaur clan names originate with a great hero whose descendants take on that name as their own, doing their best to live up to the ideals of their ancestor. On Krynn, clan names are always preceded by the prefix “es‐” for minotaurs from lands controlled by the island of Mithas, or “de‐” for minotaurs from areas under the sway of Kothas.</p>
+			<p class="indent"><b>Male Names: </b>Beliminorgath, Cinmac, Dastrun, Edder, Galdar, Ganthirogani, Hecariverani, Kyris, Tosher, Zurgas</p>
+			<p class="indent"><b>Female Names: </b>Ayasha, Calina, Fliara, Helati, Keeli, Kyri, Mogara, Sekra, Tariki, Telia</p>
+			<p class="indent"><b>Clan Names: </b>Athak, Bregan, Entragath, Kaziganthi, Lagrangli, Mascun, Orilg, Sumarr, Teskos, Zhakan</p>
+			<h4>MINOTAUR TRAITS</h4>
+			<p>Your minotaur character possesses a number of traits that reflect the power and superiority of your kind.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Strength score increases by 2, and your Constitution increases by 1.</p>
+			<p class="indent"><b><i>Age. </i></b> Minotaurs enter adulthood at around the age of 17 and can live up to 150 years.</p>
+			<p class="indent"><b><i>Alignment. </i></b>Most minotaurs lean toward lawful alignments.</p>
+			<p class="indent"><b><i>Size. </i></b>Minotaurs average over 6 feet in height, and they have strong, stocky builds. Your size is Medium.</p>
+			<p class="indent"><b><i>Speed. </i></b>Your base walking speed is 30 feet.</p>
+			<p class="indent"><b><i>Horns. </i></b>Your horns are natural melee weapons, with which you’re proficient. When you hit with them, the target takes piercing damage equal to 1d6 + your Strength modifier.</p>
+			<p class="indent"><b><i>Goring Rush. </i></b>Immediately after you use the Dash action on your turn and move at least as far as your speed, you can make one melee attack with your horns as a bonus action.</p>
+			<p class="indent"><b><i>Hammering Horns. </i></b>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier. If it fails, you push it up to 5 feet away from you.</p>
+			<p class="indent"><b><i>Menacing. </i></b>You have proficiency in the Intimidation skill.</p>
+			<p class="indent"><b><i>Hybrid Nature. </i></b>You have two creature types: humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Minotaur.</p> 
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Beliminorgath, Cinmac, Dastrun, Edder, Galdar, Ganthirogani, Hecariverani, Kyris, Tosher, Zurgas</set>
+			<set name="names" type="female">Ayasha, Calina, Fliara, Helati, Keeli, Kyri, Mogara, Sekra, Tariki, Telia</set>
+			<set name="names" type="clan">Athak, Bregan, Entragath, Kaziganthi, Lagrangli, Mascun, Orilg, Sumarr, Teskos, Zhakan</set>
+			<set name="names-format">$(name) of clan $(clan)</set>
+		</setters>
+		<rules>
+			<stat name="Strength" value="2" />
+			<stat name="Constitution" value="1" />
+			<stat name="Speed" value="30" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HORNS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_GORING_RUSH"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_MENACING"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HYBRID_NATURE"/>
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_WOTC_UA_LANGUAGE_MINOTAUR" />
+		</rules>
+	</element>
+	<element name="Horns" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HORNS">
+		<description>
+			<p>Your horns are natural melee weapons, with which you’re proficient. When you hit with them, the target takes piercing damage equal to 1d6 + your Strength modifier.</p>
+		</description>
+		<sheet>
+			<description>Your horns are natural melee weapons, with which you’re proficient. 1d6+$(Strength Modifier) piercing damage.</description>
+		</sheet>
+		<rules />
+	</element>
+	<element name="Goring Rush" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_GORING_RUSH">
+		<description>
+			<p>Immediately after you use the Dash action on your turn and move at least as far as your speed, you can make one melee attack with your horns as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you use the Dash action on your turn and move at least as far as your speed, you can make one melee attack with your horns as a bonus action.</description>
+		</sheet>
+		<rules />
+	</element>
+	<element name="Hammering Horns" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS">
+		<description>
+			<p>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier. If it fails, you push it up to 5 feet away from you.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a DC$(hammering horns:dc) Strength saving throw. If it fails, you push it up to 5 feet away from you.</description>
+		</sheet>
+		<rules>
+            <stat name="hammering horns:dc" value="8" />
+            <stat name="hammering horns:dc" value="Proficiency" />
+            <stat name="hammering horns:dc" value="Strength Modifier" />
+        </rules>
+	</element>
+	<element name="Menacing" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_MENACING">
+		<description>
+			<p>You have proficiency in the Intimidation skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Intimidation skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element>
+	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HYBRID_NATURE">
+		<description>
+			<p>You have two creature types: humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</p>
+		</description>
+		<sheet>
+			<description>You count as humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</description>
+		</sheet>
+		<rules />
+	</element>
+    
+    <!-- Minotaur Language -->
+    <element name="Minotaur" type="Language" source="Unearthed Arcana" id="ID_WOTC_UA_LANGUAGE_MINOTAUR">
+        <supports>ID_INTERNAL_SUPPORT_LANGUAGE_EXOTIC, Exotic</supports>
+        <description>
+            <p>Typically spoken by minotaurs.</p>
+        </description>
+        <setters>
+            <set name="Speakers">Minotaurs</set>
+            <set name="Script"></set>
+            <set name="Exotic">true</set>
+        </setters>
+    </element>
+</elements>
