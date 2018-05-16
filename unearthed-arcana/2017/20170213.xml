@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Unearthed Arcana:  Warlock and Wizard</name>
+        <description>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</description>
+        <author url="http://dnd.wizards.com/articles/unearthed-arcana/wild">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="20170213.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170213.xml" />
+        </update>
+    </info>
+    <!-- The Raven Queen -->
+    <element name="The Raven Queen" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>You patron is the Raven Queen, a mysterious being who rules the Shadowfell from a palace of ice deep within that dread realm. The Raven Queen watches over the world, anticipating each creature’s death and ensuring that it meets its end at the proscribed time and place. As the ruler of the Shadowfell, she dwells in a decayed, dark reflection of the world. Her ability to reach into the world is limited. Thus, she turns to mortal warlocks to serve her will. Warlocks sworn to the Raven Queen receive visions and whispers from her in their dreams, sending them on quests and warning them of impending dangers.</p>
+            <p class="indent">The Raven Queen’s followers are expected to serve her will in the world. She concerns herself with ensuring that those fated to die pass from the world as expected, and bids her agents to defeat those who seek to cheat death through undeath or other imitations of immortality. She hates intelligent undead and expects her followers to strike them down, whereas mindless undead such as skeletons and zombies are little more than stumbling automatons in her eyes.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND" />
+        </description>
+        <sheet>
+            <description>You patron is the Raven Queen, a mysterious being who rules the Shadowfell from a palace of ice deep within that dread realm.</description>
+        </sheet>
+        <rules>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN" type="Archetype Feature" level="1"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN" type="Archetype Feature" level="6"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD" type="Archetype Feature" level="10"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND" type="Archetype Feature" level="14"/>
+        </rules>
+    </element>
+    <element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST">
+        <supports>Warlock</supports>
+        <requirements />
+        <description>
+            <p>The Raven Queen lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+            <h5>Raven Queen Expanded Spells</h5>
+            <table>
+                <thead><tr><td>Spell Level</td><td>Spells</td></tr></thead>
+                <tr><td>1st</td><td><em>false life, sanctuary</em></td></tr>
+                <tr><td>2nd</td><td><em>silence, spiritual weapon</em></td></tr>
+                <tr><td>3rd</td><td><em>feign death, speak with dead</em></td></tr>
+                <tr><td>4th</td><td><em>ice storm, locate creature</em></td></tr>
+                <tr><td>5th</td><td><em>commune, cone of cold</em></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description>The Raven Queen lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+        </sheet>
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+            <extend>ID_PHB_SPELL_SANCTUARY</extend>
+            <extend>ID_PHB_SPELL_SILENCE</extend>
+            <extend>ID_PHB_SPELL_SPIRITUAL_WEAPON</extend>
+            <extend>ID_PHB_SPELL_FEIGN_DEATH</extend>
+            <extend>ID_PHB_SPELL_SPEAK_WITH_DEAD</extend>
+            <extend>ID_PHB_SPELL_ICE_STORM</extend>
+            <extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>
+            <extend>ID_PHB_SPELL_COMMUNE</extend>
+            <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+        </spellcasting>
+    </element>
+    <element name="Sentinel Raven" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN">
+        <description>
+            <p>Starting at 1st level, you gain the service of a spirit sent by the Raven Queen to watch over you. The spirit assumes the form and game statistics of a raven, and it always obeys your commands, which you can give telepathically while it is within 100 feet of you.</p>
+            <p class="indent">While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a bonus to your passive Wisdom (Perception) score and to Wisdom (Perception) checks. The bonus equals your Charisma modifier. While perched on your shoulder, the raven can’t be targeted by any attack or other harmful effect; only you can cast spells on it; it can’t take damage; and it is incapacitated.</p>
+            <p class="indent">You can see through the raven’s eyes and hear what it hears while it is within 100 feet of you.</p>
+            <p class="indent">In combat, you roll initiative for the raven and control how it acts. If it is slain by a creature, you gain advantage on all attack rolls against the killer for the next 24 hours.</p>
+            <p class="indent">The raven doesn’t require sleep. While it is within 100 feet of you, it can awaken you from sleep as a bonus action.</p>
+            <p class="indent">The raven vanishes when it dies, if you die, or if the two of you are separated by more than 5 miles.</p>
+            <p class="indent">At the end of a short or long rest, you can call the raven back to you—no matter where it is or whether it died—and it reappears within 5 feet of you.</p>
+        </description>
+        <sheet>
+            <description>While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a +$(seninel raven:perception) bonus to your passive Perception score and to Perception checks.</description>
+        </sheet>
+        <rules>
+            <stat name="seninel raven:perception" value="Charisma Modifier" />
+        </rules>
+    </element>
+    <element name="Soul of the Raven" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN">
+        <description>
+            <p>At 6th level, you gain the ability to merge with your raven spirit. As a bonus action when your raven is perched on your shoulder, your body merges with your raven’s form. While merged, you become Tiny, you replace your speed with the raven’s, and you can use your action only to Dash, Disengage, Dodge, Help, Hide, or Search. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action when your raven is perched on your shoulder, your body merges with your raven’s form. While merged, you become Tiny, you replace your speed with the raven’s, and you can use your action only to Dash, Disengage, Dodge, Help, Hide, or Search. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Raven’s Shield" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD">
+        <description>
+            <p>At 10th level, the Raven Queen grants you a protective blessing. You gain advantage on death saving throws, immunity to the frightened condition, and resistance to necrotic damage.</p>
+        </description>
+        <sheet>
+            <description>You gain advantage on death saving throws, immunity to the frightened condition, and resistance to necrotic damage.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Queen’s Right Hand" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND">
+        <description>
+            <p>Starting at 14th level, you can channel the Raven Queen’s power to slay a creature. You can cast finger of death. After you cast the spell with this feature, you can’t do so again until you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>You can cast finger of death. After you cast the spell with this feature, you can’t do so again until you finish a long rest.</description>
+        </sheet>
+        <rules />
+    </element>
+
+    <!-- Invocations related to the Raven Queen -->
+    <element name="Chronicle of the Raven Queen" type="Class Feature" source="Unearthed Arcana" id="ID_WOTC_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_CHRONICLE_OF_THE_RAVEN_QUEEN">
+        <supports>Eldritch Invocation, Pact of the Tome</supports>
+        <prerequisite>Raven Queen patron, Pact of the Tome feature</prerequisite>
+        <requirements>ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Raven Queen patron, Pact of the Tome feature</p>
+            <p>You can place a corpse’s hand or similar appendage on your Book of Shadows and ask one question aloud. After 1 minute, the answer appears written in blood in your book. The answer is provided by the dead creature’s spirit to the best of its knowledge and is translated into a language of your choice. You must use this ability within 1 minute of a creature’s death, and a given creature can only be asked one question in this manner.</p>
+        </description>
+        <sheet>
+            <description>You can place a corpse’s hand or similar appendage on your Book of Shadows and ask one question aloud. After 1 minute, the answer appears written in blood in your book. The answer is provided by the dead creature’s spirit to the best of its knowledge and is translated into a language of your choice. You must use this ability within 1 minute of a creature’s death, and a given creature can only be asked one question in this manner.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Raven Queen’s Blessing" type="Class Feature" source="Unearthed Arcana" id="ID_WOTC_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_RAVEN_QUEENS_BLESSING">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Raven Queen patron, eldritch blast cantrip</prerequisite>
+        <requirements>ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN, ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <description>
+            <p class="flavor">Raven Queen patron, eldritch blast cantrip</p>
+            <p>When you score a critical hit with your eldritch blast cantrip, pick yourself or an ally you can see within 30 feet of you. The chosen creature can immediately expend a Hit Die to regain hit points equal to the roll + the creature’s Constitution modifier (minimum of 1 hit point).</p>
+        </description>
+        <sheet>
+            <description>When you score a critical hit with your eldritch blast cantrip, pick yourself or an ally you can see within 30 feet of you. The chosen creature can immediately expend a Hit Die to regain hit points equal to the roll + the creature’s Constitution modifier (minimum of 1 hit point).</description>
+        </sheet>
+        <rules />
+    </element>
+</elements>
