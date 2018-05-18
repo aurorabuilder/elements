@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Aetherborn</name>
+        <description>Aetherborn</description>
+        <author url="https://media.wizards.com/2017/downloads/magic/Plane-Shift_Kaladesh.pdf">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="race-aetherborn.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/kaladesh/race-aetherborn.xml" />
+        </update>
+    </info>
+	
+    <element name="Aetherborn" type="Race" source="Plane Shift: Kaladesh" id="ID_WOCT_PSK_RACE_AETHERBORN">
+        <description>
+            <p class="flavor">“A day not spent indulging the senses is a day wasted.”</p>
+            <p>When the events of a lifetime are compressed down to almost nothing, each fleeting moment must be savored—drained of every drop of enjoyment it can offer. This is the philosophy that informs the lives and minds of the aetherborn. Given just a few short years—or sometimes only a few months—to live, each aetherborn views time as exceedingly precious. Each moment spent in a way that does not bring delight is a wasted moment. And though aetherborn differ in their drives and pleasures, nearly all of them share this desire to squeeze the most out of the brief time they are given.</p>
+            <p class="indent">Aetherborn come into being spontaneously as part of the aether refinement process. Their bodies and minds are apparently formed out of some interaction between the volatile elements of aether that are removed during refinement and the psychic impressions created by the people involved in the process. But each aetherborn is a unique individual, not a mere copy of some other person’s mind and shape. This race is little understood, and few aetherborn are willing to waste any of their short lives allowing vedalken scholars to study their biological and psychological characteristics.</p>
+            <h4>AETHERBORN AND GENDER</h4>
+            <p>Aetherborn are a strange living by-product of the process of aether refinement, cast in humanoid form but lacking any of the biological qualities of other races. They don’t eat or sleep, and they don’t reproduce—nor do they have any physical sexual characteristics. Language that categorizes people into male or female categories thus breaks down when it comes to aetherborn. Most aetherborn prefer that others use the pronoun “they” to refer to them, since it doesn’t attribute a gender that they don’t possess. Only a relative few prefer “he” or “she,” having chosen to adopt a gender.</p>
+            <h4>AETHERBORN POLITICS</h4>
+            <p>The relationship between aetherborn and the Consulate is complicated. On the one hand, aetherborn understand that their race wouldn’t exist without the Consulate’s aether refining operations, so they feel at least some motivation to ensure that those operations continue to run smoothly. On the other hand, few aetherborn have any patience for the tedious and cumbersome politics and regulations of the Consulate, which gives them at least a little sympathy with renegade philosophy. Typically, aetherborn are drawn to one side or the other more by the lure of excitement and entertainment than     by any serious political beliefs.</p>
+            <h4>AETHERBORN TRAITS</h4>
+            <p>Your aetherborn character has certain traits deriving from your unusual nature</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.</p>
+            <p class="indent"><b><i>Age. </i></b>Aetherborn come into being as adults and live no more than a few years.</p>
+            <p class="indent"><b><i>Alignment. </i></b>As a rule, aetherborn are driven by hedonism and self-interest, making them neutral at best and thoroughly evil at worst. Neutral aetherborn might devote much of their time (and wealth) to parties and social activity, while evil aetherborn are usually involved in the criminal underworld.</p>
+            <p class="indent"><b><i>Size. </i></b>Aetherborn are about the same size as humans, ranging from 5 to 6 feet tall. They are quite light—only about 100 pounds—and their weight diminishes as they age and more and more of their substance returns to the aethersphere. Your size is Medium.</p>
+            <p class="indent"><b><i>Speed. </i></b>Your base walking speed is 30 feet.</p>
+            <p class="indent"><b><i>Darkvision. </i></b>Accustomed to the night, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray</p>
+            <p class="indent"><b><i>Born of Aether </i></b>You have resistance to necrotic damage.</p>
+            <p class="indent"><b><i>Menacing. </i></b>You gain proficiency in the Intimidation skill.</p>
+            <p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and two other languages of your choice.</p>
+        </description>
+        <setters>
+            <set name="names" type="male">Ander, Blath, Bran, Frath, Geth, Lander, Luth, Malcer, Stor, Taman, Urth</set>
+            <set name="names" type="female">Amafrey, Betha, Cefrey, Kethra, Mara, Olga, Silifrey, Westra</set>
+            <set name="names" type="surname">Brightwood, Helder, Hornraven, Lackman, Stormwind, Windrivver</set>
+            <set name="names-format">$(name) $(surname)</set>
+            <set name="height" modifier="2d10">4'8"</set>
+            <set name="weight" modifier="2d4">90 lb.</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <stat name="Charisma" value="2" />
+            <stat name="Speed" value="30" bonus="base" />
+            <select type="Ability Score Improvement" name="Ability Score Increase (Aetherborn)" supports="Ability Score Improvement, Aetherborn" number="2" />
+            <grant type="Size" name="ID_SIZE_MEDIUM" />
+            <grant type="Vision" name="ID_VISION_DARKVISION" />
+            <grant type="Racial Trait" name="ID_WOTC_PSK_RACIAL_TRAIT_AETHERBORN_BORN_OF_AETHER" />
+            <grant type="Racial Trait" name="ID_WOTC_PSK_RACIAL_TRAIT_AETHERBORN_MENACING" />
+            <grant type="Language" name="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Aetherborn)" number="2" supports="Starting"/>
+        </rules>
+    </element>
+    <element name="Born of Aether" type="Racial Trait" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_RACIAL_TRAIT_AETHERBORN_BORN_OF_AETHER">
+        <description>
+            <p>You have resistance to necrotic damage.</p>
+        </description>
+        <sheet>
+            <description>You have resistance to necrotic damage.</description>
+        </sheet>
+    </element>
+    <element name="Menacing" type="Racial Trait" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_RACIAL_TRAIT_AETHERBORN_MENACING">
+        <description>
+            <p>You gain proficiency in the Intimidation skill.</p>
+        </description>
+        <sheet display="false">
+            <description>You gain proficiency in the Intimidation skill.</description>
+        </sheet>
+		<rules>
+			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+    </element>
+
+    <element name="Strength" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_STRENGTH">
+        <supports>Ability Score Improvement, Aetherborn</supports>
+        <description>
+            <p>Your Strength increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Strength" value="+1"/>
+        </rules>
+    </element>
+    <element name="Dexterity" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_DEXTERITY">
+        <supports>Ability Score Improvement, Aetherborn</supports>
+        <description>
+            <p>Your Dexterity increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Dexterity" value="+1"/>
+        </rules>
+    </element>
+    <element name="Constitution" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_CONSTITUTION">
+        <supports>Ability Score Improvement, Aetherborn</supports>
+        <description>
+            <p>Your Constitution increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Constitution" value="+1"/>
+        </rules>
+    </element>
+    <element name="Intelligence" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_INTELLIGENCE">
+        <supports>Ability Score Improvement, Aetherborn</supports>
+        <description>
+            <p>Your Intelligence increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Intelligence" value="+1"/>
+        </rules>
+    </element>
+    <element name="Wisdom" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_WISDOM">
+        <supports>Ability Score Improvement, Aetherborn</supports>
+        <description>
+            <p>Your Wisdom increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Wisdom" value="+1"/>
+        </rules>
+    </element>
+    <!-- <element name="Charisma" type="Ability Score Improvement" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ASI_AETHERBORN_CHARISMA">
+        <supports>Ability Score Improvement</supports>
+        <description>
+            <p>Your Charisma increases by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="Charisma" value="+1"/>
+        </rules>
+    </element> -->
+</elements>
