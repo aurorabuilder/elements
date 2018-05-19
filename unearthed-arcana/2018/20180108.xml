@@ -4,11 +4,119 @@
         <name>Unearthed Arcana: Three Subclasses</name>
         <description>We kick off 2018 with three new subclasses to try out in Unearthed Arcana: the Circle of Spores for the druid, the Brute for the fighter, and the School of Invention for the wizard.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/three-subclasses">Wizards of the Coast</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="20180108.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2018/20180108.xml" />
         </update>
     </info>
     <!-- Circle of Spores -->
+    <element name="Circle of Spores" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_CIRCLE_SPORES">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>Druids of the Circle of Spores find beauty in decay. They see within mold and other fungi the ability to transform lifeless material into abundant, albeit somewhat strange, life.</p>
+            <p class="indent">These druids believe that life and death are portions of a grand cycle, with one leading to the other and then back again. Death is not the end of life, but instead a change of state that sees life shift into a new form.</p>
+            <p class="indent">Druids of this circle have a complex relationship with the undead. Unlike most other druids, they see nothing inherently wrong with undeath, which they consider to be a companion to life and death. However, these druids believe that the natural cycle is healthiest when each segment of it is vibrant and changing. Undead that seek to replace all life with undeath, or avoid passing to a final rest, violate the cycle and must be thwarted.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_CIRCLE_SPELLS" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_HALO_OF_SPORES"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SYMBIOTIC_ENTITY"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_INFESTATION"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SPREADING_SPORES"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_BODY"/>
+        </description>
+        <rules>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_CIRCLE_SPELLS" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_HALO_OF_SPORES" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SYMBIOTIC_ENTITY" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_INFESTATION" level="6"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SPREADING_SPORES" level="10"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_BODY" level="14" />
+        </rules>
+    </element>
+    <element name="Circle Spells" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_CIRCLE_SPELLS">
+        <description>
+            <p>Your symbiotic link to fungus and your ability to tap into the cycle of life and death grants you access to certain spells. At 2nd level you gain access to the spells listed for that level in the Circle of Spores Spells table.</p>
+            <p class="indent">Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+            <h5>Circle of Spores Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Druid Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>gentle repose, ray of enfeeblement</em></td></tr>
+                <tr><td>5th</td><td><em>animate dead, gaseous form</em></td></tr>
+                <tr><td>7th</td><td><em>blight, confusion</em></td></tr>
+                <tr><td>9th</td><td><em>cloudkill, contagion</em></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+          <description>You gain access to specific spells as you level up.</description>
+        </sheet>
+        <rules>
+          <grant type="Spell" name="ID_PHB_SPELL_CHILL_TOUCH" level="2" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_GENTLE_REPOSE" level="3" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_ANIMATE_DEAD" level="5" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_GASEOUS_FORM" level="5" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_CLOUDKILL" level="9" spellcasting="Druid" prepared="true" />
+          <grant type="Spell" name="ID_PHB_SPELL_CONTAGION" level="9" spellcasting="Druid" prepared="true" />
+        </rules>
+    </element>
+    <element name="Halo of Spores" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_HALO_OF_SPORES">
+        <description>
+            <p>Starting at 2nd level, you can launch toxic spores at other creatures. To do so, you use your reaction on your turn to deal 3 poison damage to one creature you can see within 10 feet of you. This damage increases to 6 at 6th level, 9 at 10th level, and 12 at 14th.</p>
+        </description>
+        <sheet>
+          <description>You can launch toxic spores at other creatures. To do so, you use your reaction on your turn to deal %damage:halo_of_spores% poison damage to one creature you can see within 10 feet of you..</description>
+        </sheet>
+        <rules>
+          <stat name="damage:halo_of_spores" value="+3" level="2" />
+          <stat name="damage:halo_of_spores" value="+3" level="6" />
+          <stat name="damage:halo_of_spores" value="+3" level="10" />
+          <stat name="damage:halo_of_spores" value="+3" level="14" />
+        </rules>
+    </element>
+    <element name="Symbiotic Entity" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SYMBIOTIC_ENTITY">
+        <description>
+            <p>At 2nd level, you gain the ability to channel magic into the spores that infuse you.</p>
+            <p class="indent">When you use your Wild Shape feature, you can awaken those spores, rather than transforming. When you do so, you gain 3 temporary hit points per level you have in this class, the damage of your Halo of Spores feature doubles, and your melee weapon attacks deal an extra 1d6 poison damage to any target they hit. These benefits last for 10 minutes or until you use your Wild Shape again.</p>
+        </description>
+        <sheet>
+          <description>You can awaken your spores instead of transforming when you use Wild Shape. When you do so, you gain %healing:symbiotic_entity% temporary hit points, the damage of your Halo of Spores feature doubles, and your melee weapon attacks deal an extra 1d6 poison damage to any target they hit. Lasts for 10 minutes or until wild shape is used again.</description>
+        </sheet>
+        <rules>
+          <stat name="healing:symbiotic_entity" value="level:druid" />
+          <stat name="healing:symbiotic_entity" value="level:druid" />
+          <stat name="healing:symbiotic_entity" value="level:druid" />
+        </rules>
+    </element>
+    <element name="Fungal Infestation" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_INFESTATION">
+        <description>
+            <p>At 6th level, your spores gain the ability to infest a humanoid corpse and animate it.</p>
+            <p class="indent">If you slay a humanoid with your Halo of Spores damage, the creature rises as a zombie at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the Attack action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies.</p>
+        </description>
+        <sheet>
+          <description>If you slay a humanoid with your Halo of Spores damage, the creature rises as a zombie at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the Attack action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Spreading Spores" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_SPREADING_SPORES">
+        <description>
+            <p>At 10th level, you gain the ability to seed an area with deadly spores. As a bonus action, you hurl fungal spores up to 30 feet away, where they swirl around in a 10-foot cube for 1 minute. While the cube of spores persists, you can't use your Halo of Spores feature, but any creature that starts its turn in the cube takes your Halo of Spores damage. The cube of spores vanishes early if you use this feature again.</p>
+        </description>
+        <sheet>
+          <description>As a bonus action, you hurl fungal spores up to 30 feet away, where they swirl around in a 10-foot cube for 1 minute. While the cube of spores persists, you can't use your Halo of Spores feature, but any creature that starts its turn in the cube takes your Halo of Spores damage. The cube of spores vanishes early if you use this feature again.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Fungal Body" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_CIRCLE_SPORES_FUNGAL_BODY">
+        <description>
+            <p>At 14th level, the fungal spores in your body alter you: you can't be blinded, deafened, frightened, or poisoned, and if an attack is a critical hit against you, it doesn't deal its extra damage to you.</p>
+        </description>
+        <sheet>
+          <description>You can't be blinded, deafened, frightened, or poisoned, and if an attack is a critical hit against you, it doesn't deal its extra damage to you.</description>
+        </sheet>
+        <rules />
+    </element>
 
     <!-- Martial Archetype: Brute -->
     <element name="Brute" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_BRUTE">
@@ -42,7 +150,7 @@
             <table>
                 <thead>
                     <tr><td>Fighter Level</td><td>Damage Increase</td></tr>
-                </thead>                
+                </thead>
                 <tr><td>3rd</td><td>1d4</td></tr>
                 <tr><td>10th</td><td>1d6</td></tr>
                 <tr><td>16th</td><td>1d8</td></tr>
@@ -99,7 +207,7 @@
         <rules>
             <stat name="survivor:hp:mod" value="1" bonus="mod" />
             <stat name="survivor:hp:mod" value="Constitution Modifier" bonus="mod" />
-            
+
             <stat name="survivor:hp" value="5" />
             <stat name="survivor:hp" value="survivor:hp:mod" />
         </rules>
