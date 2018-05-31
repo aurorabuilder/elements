@@ -75,10 +75,12 @@
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" />
 			
-			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND||ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND||Musical Instrument" number="1" />
+			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND|ID_PROFICIENCY_MUSICAL_INSTRUMENT" number="1" />
 			
 			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
 			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+			
+			<select type="Proficiency" name="Skill Proficiency (Gunslinger)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
 			
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_THE_TONGUE" level="1"/>
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_QUICKDRAW" level="1"/>
@@ -100,4 +102,196 @@
 		</rules>
 	</element>
 
-</elements
+	<element name="The Tongue" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_THE_TONGUE">
+		<description>
+		<p>Starting at 1st level, you learn an ancient and ritualized language, practiced often by gunslingers and certain secretive societies of old. It is a deliberate and ritualized code of speech patterns and dialect, each syllable containing complex nuances and multiple meanings. Nowadays, only gunslingers and certain guilds opened by the people of the past still know and actively teach this language. This language can only be understood by those that know the tongue.</p><p> Additionally, you understand and can write in a set of ancient symbols and written jargon that conveys the messages of the tongue in deceptively short inscriptions. This writing is generally used to tell stories or to write down spells and rituals, and books containing the tongue are treasures often sought out by linguists and wizards alike due to the potential of finding lost magic or rich historical lore contained within in their text.</p>
+		</description>
+		<sheet>
+			<description>It is a deliberate and ritualized code of speech patterns and dialect, each syllable containing complex nuances and multiple meanings.</description>
+		</sheet>
+		<rules>
+			<!-- language? -->
+		</rules>
+	</element>
+	
+	<element name="Quickdraw" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_QUICKDRAW">
+		<description>
+			<p>Also at 1st level, your hands are fast as lightning in a shootout. You can stow one weapon and/or draw another as part of your movement or action before needing to take the Use Object action. Additionally, you do not need a free hand to reload weapons with the loading property.</p>
+		</description>
+		<sheet>
+			<description>You can stow one weapon and/or draw another as part of your movement or action before needing to take the Use Object action and you do not need a free hand to reload weapons with the loading property.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Gun Stunts" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUN_STUNTS">
+		<description>
+			<p>Starting at 1st level, you have developed a set of stunts you can use to give you an edge in combat. You gain the following options:</p><h5>Run ‘N Gun.</h5><p>You can use Dash as a bonus action.</p><h5>Slinger’s Senses.</h5><p> You can make a Wisdom(Perception) check as a bonus action if you have a weapon drawn.</p><h5>Stock Strike.</h5><p> When you make a melee weapon attack using a firearm on your turn, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. Additionally, if the attack hits, you can use your bonus action to not provoke opportunity attacks from the target of the attack until the end of your turn.</p>
+		</description>
+		<sheet>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Knack" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_KNACK">
+		<description>
+			<p>At 2nd level, choose a skill or tool you are proficient in. Double your proficiency bonus to checks you make with those skills. When you reach 10th level, you can choose an additional skill or tool proficiency to gain this benefit.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			 <select type="Class Feature" name="Knack (Gunslinger)" level="2" number="1" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
+			 <select type="Class Feature" name="Knack (Gunslinger)" level="10" number="1" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
+		</rules>
+	</element>
+	
+	<element name="Fighting Style" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_FIGHTING_STYLE">
+		<description>
+			<p>At 2nd level, you adopt a particular style of fighting. Choose one of the following options. You cannot choose the same fighting style twice, even if you get to choose again.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Slinger's Trail" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SLINGERS_TRAIL">
+		<description>
+			<p>At 3rd level, you begin to train your slinging to go down a particular style of emulation. You can choose from either Myth Breaker, Virtuoso, Vaquero, or Delver, all detailed at the end of the class description. The trail you choose grants you features at 3rd level, and again at 9th, 13th, and 17th level.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<select type="Archetype" name="Slinger's Trail" supports="Slingers Trail" level="3"/>
+		</rules>
+	</element>
+	
+	<element name="Lucky Item" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_LUCKY_ITEM">
+		<description>
+			<p>When you reach 3rd level, you have taken up a personal effect that grants you uncanny luck in certain situations and says something interesting about you. This can take the form of a lucky hat that you never take off, a scarf given to you by a lost lover, or a cigar that seems to never run dry. Choose a benefit and a quirk from the table. You can use the benefit’s feature once per long rest. If your lucky item is lost or destroyed, it mysteriously reappears on you at the end of your next long rest. When you reach 13th level, you can choose one additional benefit and quirk. You can use either of the benefits twice before you complete a long rest.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Ability Score Improvement (Gunslinger)" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_ABILITYSCOREIMPROVEMENT">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Extra Attack (Gunslinger)" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_EXTRA_ATTACK">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Bullet Time" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_BULLET_TIME">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Evasion" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_EVASION">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Shootout Sense" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SHOOTOUT_SENSE">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Overwatch" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_OVERWATCH">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Final Stand" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_FINAL_STAND">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Superhuman Reflexes" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SUPERHUMAN_REFLEXES">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Gunslinging Supreme" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUNSLINGING_SUPREME">
+		<description>
+		
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+</elements>
