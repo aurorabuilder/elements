@@ -213,4 +213,227 @@
         </rules>
     </element>
     <!-- School of Invention -->
+    <element name="School of Invention" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_SCHOOL_INVENTION">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>The School of Invention claims credit for inventing the other schools of magic - a claim other wizards find absurd. Wizards of this school push magic to its limits. They stretch the known laws of arcane power and strive to reveal important truths about the nature of the multiverse.</p>
+            <p class="indent">Adherents of this school believe that innovation is best served through experimentation. They have a reputation for acting first, thinking second. Most wizards are scholars who have mastered their craft through careful study, rigorous practice, and endless hours of repetition. These wizards would rather throw spells together and see what happens.</p>
+            <p class="indent">Many wizards of this tradition are gnomes, alchemists, or both, and they take pride in the magic-infused armore they don. The armor not only provides protection, but it is also designed to help the wizard channel magic in unpredictable ways.</p>
+            <p class="indent">Wizards of this tradition are regarded as savants to their faces, but wizards of other traditions often think of them as lunatics.</p>
+
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_TOOLS_INVENTOR" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ARCANOMECHANICAL_ARMOR"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_RECKLESS_CASTING"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ALCHEMICAL_CASTING"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_PRODIGIOUS_INSPIRATION"/>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_CONTROLLED_CHAOS"/>
+        </description>
+        <rules>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_TOOLS_INVENTOR" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ARCANOMECHANICAL_ARMOR" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_RECKLESS_CASTING" level="2"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ALCHEMICAL_CASTING" level="6"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_PRODIGIOUS_INSPIRATION" level="10"/>
+          <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_CONTROLLED_CHAOS" level="14" />
+        </rules>
+    </element>
+    <element name="Tools of the Inventor" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_TOOLS_INVENTOR">
+      <description>
+        <p>At 2nd level, you gain proficiency with two tools of your choice.</p>
+      </description>
+      <sheet display="false">
+        <p>You gain proficiency with two tools of your choice.</p>
+      </sheet>
+      <rules>
+        <select type="Proficiency" name="Tool Proficiency" supports="Tool" number="2"/>
+      </rules>
+    </element>
+    <element name="Arcanomechanical Armor" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ARCANOMECHANICAL_ARMOR">
+      <description>
+        <p>Innovation is a dangerous practice, at least as far as members of this school practice it. As a shield against this risk, you have developed a suit of arcane armor.</p>
+        <p class="indent">Starting at 2nd level, you gain proficiency with light armor and gain a suit of arcanomechanical armor - a magic item that only you can attune to. While you are attuned to it and wearing it, it grants you resistance to force damage.</p>
+        <p class="indent">The armor is light armor and provides an AC of 12+your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
+      </description>
+      <sheet>
+        <description>You gain proficiency with light armor and gain a suit of arcanomechanical armor - a magic item that only you can attune to. While you are attuned to it and wearing it, it grants you resistance to force damage.
+			The armor is light armor and provides an AC of %arcanomechanical_armor:AC%. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.
+		</description>
+      </sheet>
+      <rules>
+        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" level="2" />
+        <stat name="arcanomechanical_armor:base" value="12" />
+        <stat name="arcanomechanical_armor:AC" value="arcanomechanical_armor:base" />
+        <stat name="arcanomechanical_armor:AC" value="+Dexterity Modifier" />
+      </rules>
+    </element>
+    <element name="Reckless Casting" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_RECKLESS_CASTING">
+      <description>
+        <p>Starting at 2nd level, you may attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options:</p>
+        <ul>
+          <li>Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action.</li>
+          <li>Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th level table if the slot is 6th level or highter. Pick which of the two results you want to use and cast the resulting spell as part of this action.</li>
+        </ul>
+        <p class="indent">If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.</p>
+        <h5>Reckless Casting</h5>
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>Cantrip</td>
+            </tr>
+          </thead>
+            <tr><td>1</td><td><em>acid splash</em></td></tr>
+            <tr><td>2</td><td><em>chill touch</em></td></tr>
+            <tr><td>3</td><td><em>fire bolt</em></td></tr>
+            <tr><td>4</td><td><em>light</em></td></tr>
+            <tr><td>5</td><td><em>poison spray</em></td></tr>
+            <tr><td>6</td><td><em>ray of frost</em></td></tr>
+            <tr><td>7</td><td><em>shocking grasp</em></td></tr>
+            <tr><td>8</td><td><em>sacred flame</em></td></tr>
+            <tr><td>9</td><td><em>thorn whip</em></td></tr>
+            <tr><td>10</td><td>Roll twice and cast each cantrip, but if you roll another 10 on either die, you cast nothing, wasting your action.</td></tr>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>1st-Level Spell</td>
+            </tr>
+          </thead>
+            <tr><td>1</td><td><em>burning hands</em></td></tr>
+            <tr><td>2</td><td><em>chromatic orb</em></td></tr>
+            <tr><td>3</td><td><em>color spray</em></td></tr>
+            <tr><td>4</td><td><em>faerie fire</em></td></tr>
+            <tr><td>5</td><td><em>false life</em></td></tr>
+            <tr><td>6</td><td><em>fog cloud</em></td></tr>
+            <tr><td>7</td><td><em>jump</em></td></tr>
+            <tr><td>8</td><td><em>magic missile</em></td></tr>
+            <tr><td>9</td><td><em>thunderwave</em></td></tr>
+            <tr><td>10</td><td>Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.</td></tr>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>2nd-Level Spell</td>
+            </tr>
+          </thead>
+		  <tr><td>1</td><td><em>blur</em></td></tr>
+		  <tr><td>2</td><td><em>darkness</em></td></tr>
+		  <tr><td>3</td><td><em>enlarge/reduce</em></td></tr>
+		  <tr><td>4</td><td><em>gust of wind</em></td></tr>
+		  <tr><td>5</td><td><em>invisibility</em></td></tr>
+		  <tr><td>6</td><td><em>levitate</em></td></tr>
+		  <tr><td>7</td><td><em>Melf's acid arrow</em></td></tr>
+		  <tr><td>8</td><td><em>scorching ray</em></td></tr>
+		  <tr><td>9</td><td><em>shatter</em></td></tr>
+  		  <tr><td>10</td><td>Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.</td></tr>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>3rd-Level Spell</td>
+            </tr>
+          </thead>
+          <tr><td>1</td><td><em>blink</em></td></tr>
+          <tr><td>2</td><td><em>fear</em></td></tr>
+          <tr><td>3</td><td><em>feign death</em></td></tr>
+          <tr><td>4</td><td><em>fireball</em></td></tr>
+          <tr><td>5</td><td><em>fly</em></td></tr>
+          <tr><td>6</td><td><em>gaseous form</em></td></tr>
+          <tr><td>7</td><td><em>lightning bolt</em></td></tr>
+          <tr><td>8</td><td><em>sleet storm</em></td></tr>
+          <tr><td>9</td><td><em>stinking cloud</em></td></tr>
+          <tr><td>10</td><td>Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.</td></tr>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>4th-Level Spell</td>
+            </tr>
+          </thead>
+          <tr><td>1</td><td><em>blight</em></td></tr>
+          <tr><td>2</td><td><em>confusion</em></td></tr>
+          <tr><td>3</td><td><em>Evard's black tentacles</em></td></tr>
+          <tr><td>4</td><td><em>fire shield</em></td></tr>
+          <tr><td>5</td><td><em>greater invisibility</em></td></tr>
+          <tr><td>6</td><td><em>ice storm</em></td></tr>
+          <tr><td>7</td><td><em>phantasmal killer</em></td></tr>
+          <tr><td>8</td><td><em>stoneskin</em></td></tr>
+          <tr><td>9</td><td><em>wall of fire</em></td></tr>
+          <tr><td>10</td><td>Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.</td></tr>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <td>d10</td><td>5th-Level Spell</td>
+            </tr>
+          </thead>
+          <tr><td>1</td><td><em>cloudkill</em></td></tr>
+          <tr><td>2</td><td><em>cone of cold</em></td></tr>
+          <tr><td>3</td><td><em>destructive wave</em></td></tr>
+          <tr><td>4</td><td><em>flame strike</em></td></tr>
+          <tr><td>5</td><td><em>hold monster</em></td></tr>
+          <tr><td>6</td><td><em>insect plague</em></td></tr>
+          <tr><td>7</td><td><em>mass cure wounds</em></td></tr>
+          <tr><td>8</td><td><em>wall of force</em></td></tr>
+          <tr><td>9</td><td><em>wall of stone</em></td></tr>
+          <tr><td>10</td><td>Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.</td></tr>
+        </table>
+      </description>
+      <sheet>
+		<description>
+			<p>You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.</p>
+			<p>If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.</p>
+			<p>If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+			Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+			Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+			Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
+			Reckless Casting (3rd-Level): 1 blink 2 fear 3 feign death 4 fireball 5 fly 6 gaseous form 7 lightning bolt 8 sleet storm 9 stinking cloud
+			Reckless Casting (4th-Level): 1 blight 2 confusion 3 Evard's black tentacles 4 fire shield 5 greater invisibility 6 ice storm 7 phantasmal killer 8 stoneskin 9 wall of fire
+			Reckless Casting (5th-Level): 1 cloudkill 2 cone of cold 3 destructive wave 4 flame strike 5 hold monster 6 insect plague 7 mass cure wounds 8 wall of force 9 wall of stone</p>
+		</description>
+      </sheet>
+      <rules>
+      </rules>
+    </element>
+	<element name="Alchemical Casting" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_ALCHEMICAL_CASTING">
+      <description>
+        <p>At 6th level, you learn to channel magic through your arcanomechanical armor to augment spells in a variety of ways. When you cast a spell while wearing that armor and attuned to it, you can expend one additional spell slot of 1st or 2nd level to alter the spell. The effect depends on the spell slot you expend.</p>
+        <p class="indent">A 1st-level slot allows you to manipulate the spell's energy. When you cast a spell that deals acid, cold, fire, lightning, or thunder damage, you can substitute that damage type for another one from that list.</p>
+        <p class="indent">A 2nd-level slot increases the spell's raw force. If you roll damage for the spell when you cast it, increase that damage by 2d10 force damage against one of the spell's targets (your choice) this turn.</p>
+      </description>
+      <sheet>
+		<description>
+			<p>When you cast a spell while wearing your arcanomechanical armor you can expend one additional spell slot of 1st or 2nd level. Expending a 1st-level spell slot when casting a spell that deals acid, cold, fire, lightning, or thunder damage allows you to switch that damage type for another one from that list.
+			Expending a 2nd-level spell slot allows you to increase the damage of the spell by 2d10 force damage against one of the spell's target (your choice) this turn, provided that you roll damage for the spell when you cast it.</p>
+		</description>
+      </sheet>
+      <rules>
+      </rules>
+    </element>
+	<element name="Prodigious Inspiration" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_PRODIGIOUS_INSPIRATION">
+      <description>
+        <p>At 10th level, you have attained a greater mastery of spell preparation. As a bonus action, you can replace one spell you have prepared with another spell from your spellbook. You can't use this ability again until you finish a short or long rest.</p>
+      </description>
+      <sheet>
+		<p>As a bonus action, you can replace one spell you have prepared with another from your spellbook. You can't use this ability again until you finish a short or long rest.</p>
+      </sheet>
+	  <rules>
+      </rules>
+    </element>
+	<element name="Controlled Chaos" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_CONTROLLED_CHAOS">
+      <description>
+        <p>At 14th level, your ability to improvise magic grows stronger. Whenever you roll on a Reckless Casting table for a spell other than a cantrip, you can roll on the table that is one level higher than the expended spell slot.</p>
+      </description>
+      <sheet>
+		<description>
+			<p>Whenever you roll on a Reckless Casting table for a spell other than a cantrip, you can roll on the table that is one level higher than the expended spell slot.</p>
+		</description>
+      </sheet>
+	  <rules>
+      </rules>
+    </element>
 </elements>
