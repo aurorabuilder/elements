@@ -61,8 +61,11 @@
 			<div element="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SUPERHUMAN_REFLEXES" />
 			<div element="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUNSLINGING_SUPREME" />
 		</description>
-		<sheet display="false" />
+		<sheet display="false">
+			<description>A master of firearms, showing their power with skill and style.</description>
+		</sheet>
 		<setters>
+			<set name="short">A master of firearms, showing their power with skill and style.</set>
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
@@ -75,7 +78,7 @@
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" />
 			
-			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND|ID_PROFICIENCY_MUSICAL_INSTRUMENT" number="1" />
+			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="(Tool,Vehicles)||Musical Instrument" number="1" />
 			
 			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
 			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
@@ -265,12 +268,185 @@
 	<element name="Lucky Item" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_LUCKY_ITEM">
 		<description>
 			<p>When you reach 3rd level, you have taken up a personal effect that grants you uncanny luck in certain situations and says something interesting about you. This can take the form of a lucky hat that you never take off, a scarf given to you by a lost lover, or a cigar that seems to never run dry. Choose a benefit and a quirk from the table. You can use the benefit’s feature once per long rest. If your lucky item is lost or destroyed, it mysteriously reappears on you at the end of your next long rest. When you reach 13th level, you can choose one additional benefit and quirk. You can use either of the benefits twice before you complete a long rest.</p>
+			<h5>Benefits and Quirks</h5>
+			<table>
+				<thead><tr><td>Name</td><td>Bonus</td></tr></thead>
+				<tr><td><h6>Benefit</h6></td><td></td></tr>
+				<tr><td>Deft (Delver)</td><td>You get the identify and locate object spells and can cast them as rituals.</td></tr>
+				<tr><td>Fearless</td><td>You can use an action to end one effect on yourself that is causing you to be frightened.</td></tr>
+				<tr><td>Relief</td><td>You can spend one minute meditating with your item in hand, after which you regain hit die equal to one third your gunslinger level (rounded down).</td></tr>
+				<tr><td>Rider (Vaquero)</td><td>You gain the beast bond spell, and can cast it as a ritual.</td></tr>
+				<tr><td>Seeker (Myth Breaker)</td><td>You get the hunter's mark spell, and can cast it once per long rest without expending a spell slot.</td></tr>
+				<tr><td>Sly (Virtuoso)</td><td>You gain one Battlemaster Manoeuvre and treat it as a Virtuoso Trick.</td></tr>
+				<tr><td><h6>Quirk</h6></td><td></td></tr>
+				<tr><td>Adept</td><td>You gain proficiency in two weapons of your choosing.</td></tr>
+				<tr><td>Eloquence</td><td>You learn two languages of your choosing.</td></tr>
+				<tr><td>Socialite</td><td>You gain proficiency in two gaming sets of your choosing.</td></tr>
+				<tr><td>Erudite</td><td></td>You gain proficiency in one skill or tool of your choice.</tr>
+			</table>
+			
 		</description>
 		<sheet>
-			<description></description>
+			<description>You can use the benefit’s feature %lucky-item:benefit-use% per long rest. If your lucky item is lost or destroyed, it mysteriously reappears on you at the end of your next long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="lucky-item:benefit-use" value="once" level="3" />
+			<stat name="lucky-item:benefit-use" value="twice" level="13" />
+			<select type="Class Feature" name="Lucky Item (Benefit)" supports="Lucky Item, Benefit" level="3"/>
+			<select type="Class Feature" name="Lucky Item (Quirk)" supports="Lucky Item, Quirk" level="3"/>
+			<select type="Class Feature" name="Lucky Item (Benefit)" supports="Lucky Item, Benefit" level="13"/>
+			<select type="Class Feature" name="Lucky Item (Quirk)" supports="Lucky Item, Quirk" level="13"/>
+		</rules>
+	</element>
+	
+	<element name="Deft" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_DEFT">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites>Delver</prerequisites>
+		<requirements>ID_RDDT_AA_ARCHETYPE_DELVER</requirements>
+		<description>
+			<p>You get the identify and locate object spells and can cast them as rituals.</p>
+		</description>
+		<sheet>
+			<description>You get the identify and locate object spells and can cast them as rituals.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" name="ID_PHB_SPELL_IDENTIFY" />
+			<grant type="Spell" name="ID_PHB_SPELL_LOCATE_OBJECT" />
+		</rules>
+	</element>
+	
+	<element name="Fearless" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_FEARLESS">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You can use an action to end one effect on yourself that is causing you to be frightened.</p>
+		</description>
+		<sheet>
+			<description>You can use an action to end one effect on yourself that is causing you to be frightened.</description>
 		</sheet>
 		<rules>
 		
+		</rules>
+	</element>
+	
+	<element name="Relief" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_RELIEF">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You can spend one minute meditating with your item in hand, after which you regain hit die equal to one third your gunslinger level (rounded down).</p>
+		</description>
+		<sheet>
+			<description>You can spend one minute meditating with your item in hand, after which you regain hit die equal to one third your gunslinger level (rounded down).</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Rider" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_RIDER">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites>Vaquero</prerequisites>
+		<requirements>ID_RDDT_AA_ARCHETYPE_VAQUERO</requirements>
+		<description>
+			<p>You gain the beast bond spell, and can cast it as a ritual.</p>
+		</description>
+		<sheet>
+			<description>You gain the beast bond spell, and can cast it as a ritual.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" name="ID_PHB_SPELL_BEAST_BOND" />
+		</rules>
+	</element>
+	
+	<element name="Seeker" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_SEEKER">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites>Myth Breaker</prerequisites>
+		<requirements>ID_RDDT_AA_ARCHETYPE_MYTH_BREAKER</requirements>
+		<description>
+			<p>You get the hunter's mark spell, and can cast it once per long rest without expending a spell slot.</p>
+		</description>
+		<sheet>
+			<description>You get the hunter's mark spell, and can cast it once per long rest without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" name="ID_PHB_SPELL_HUNTERS_MARK" />
+		</rules>
+	</element>
+	
+	<element name="Sly" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_BENEFIT_SLY">
+		<supports>Lucky Item, Benefit</supports>
+		<prerequisites>Virtuoso</prerequisites>
+		<requirements>ID_RDDT_AA_ARCHETYPE_VIRTUOSO</requirements>
+		<description>
+			<p>You gain one Battlemaster Manoeuvre and treat it as a Virtuoso Trick.</p>
+		</description>
+		<sheet>
+			<description>You gain one Battlemaster Manoeuvre and treat it as a Virtuoso Trick.</description>
+		</sheet>
+		<rules>
+			  <select type="Archetype Feature" name="Gunslinger Lucky Item (Sly)" supports="Manoeuvre,Battle Master" number="1" />
+		</rules>
+	</element>
+	
+	<element name="Adept" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_QUIRK_ADEPT">
+		<supports>Lucky Item, Quirk</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You gain proficiency in two weapons of your choosing.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in two weapons of your choosing.</description>
+		</sheet>
+		<rules>
+			<select name="Gunslinger Lucky Item (Adept)" type="Proficiency" supports="Weapon" number="2"/>
+		</rules>
+	</element>
+	
+	<element name="Eloquence" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_QUIRK_ELOQUENCE">
+		<supports>Lucky Item, Quirk</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You learn two languages of your choosing.</p>
+		</description>
+		<sheet display="false">
+			<description>You learn two languages of your choosing.</description>
+		</sheet>
+		<rules>
+			<select name="Gunslinger Lucky Item (Eloquence)" type="Language" number="2" />
+		</rules>
+	</element>
+	
+	<element name="Socialite" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_QUIRK_SOCIALITE">
+		<supports>Lucky Item, Quirk</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You gain proficiency in two gaming sets of your choosing.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in two gaming sets of your choosing.</description>
+		</sheet>
+		<rules>
+			<select name="Gunslinger Lucky Item (Socialite)" type="Proficiency" supports="Gaming Set" number="2" />
+		</rules>
+	</element>
+	
+	<element name="Erudite" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_LUCKY_ITEM_QUIRK_ERUDITE">
+		<supports>Lucky Item, Quirk</supports>
+		<prerequisites></prerequisites>
+		<requirements></requirements>
+		<description>
+			<p>You gain proficiency in one skill or tool of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in one skill or tool of your choice.</description>
+		</sheet>
+		<rules>
+			<select name="Gunslinger Lucky Item (Erudite)" type="Proficiency" supports="Skill||Tool" number="1" />
 		</rules>
 	</element>
 	
