@@ -69,21 +69,24 @@
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS"/>
-			<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS"/>
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-			<grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_WEAPON_GROUP_CROSSBOW" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
+			<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
+			<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_WEAPON_GROUP_CROSSBOW" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
 			
-			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="(Tool,Vehicles)||Musical Instrument" number="1" />
+			<select type="Proficiency" name="Tool Proficiency (Gunslinger)" supports="(Tool,Vehicles)||Musical Instrument" number="1" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
 			
-			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER"  />
+			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA"  requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
 			
-			<select type="Proficiency" name="Skill Proficiency (Gunslinger)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
+			<select type="Proficiency" name="Skill Proficiency (Gunslinger)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" number="2"  requirements="!ID_RDDT_AA_MULTICLASS_GUNSLINGER" />
 			
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_THE_TONGUE" level="1"/>
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_QUICKDRAW" level="1"/>
@@ -101,8 +104,22 @@
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_FINAL_STAND" level="15"/>
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SUPERHUMAN_REFLEXES" level="18"/>
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUNSLINGING_SUPREME" level="20"/>	
-			
 		</rules>
+		<multiclass id="ID_WOTC_PHB_MULTICLASS_BARBARIAN">
+			<prerequisite>Dexterity 13, Charisma 13</prerequisite>
+			<requirements>[str:13]</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Light armor, longarms, sidearms, and one vehicle of your choice</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+				<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+				<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS" />
+				<grant type="Proficiency" name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" />
+				<select type="Proficiency" name="Gunslinger Multiclass" supports="(Tool,Vehicles)" number="1" />
+			</rules>
+		</multiclass>
 	</element>
 
 	<element name="The Tongue" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_THE_TONGUE">
@@ -492,10 +509,10 @@
 	
 	<element name="Evasion" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_EVASION">
 		<description>
-		
+			<p>At 7th level, your reflexes are as fast as any bullet you fire from your gun. When you make a Dexterity Saving Throw to take half damage from a damaging effect, such as a shotgun's scattering shells or a black dragon's acid breath, you take no damage on a successful save and only half damage on a failed save.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you make a Dexterity Saving Throw to take half damage from a damaging effect, you take no damage on a successful save and only half damage on a failed save.</description>
 		</sheet>
 		<rules>
 		
@@ -504,10 +521,10 @@
 	
 	<element name="Shootout Sense" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SHOOTOUT_SENSE">
 		<description>
-		
+			<p>By 11th level, you are ready to react to danger at a moment's notice. You gain advantage on initiative rolls.</p><p class="indent">Additionally, you can't be surprised while you are conscious.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You gain advantage on initiative rolls and you can't be surprised while you are conscious.</description>
 		</sheet>
 		<rules>
 		
@@ -516,10 +533,18 @@
 	
 	<element name="Overwatch" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_OVERWATCH">
 		<description>
-		
+			<p>At 14th level, you can use an action to lie in wait to take an action against any enemy that reveals itself. If a creature moves, makes a weapon attack, or casts a spell while within your firearm's range, you can use your reaction to make an attack against them.</p>
+			<h5>Saving Throws</h5><p>Overwatch requires targets to make a saving throw to resist the penalties imposed on them. The Saving throw DC is as follows:</p>
+			<h5>Overwatch Save DC</h5><p>= 8 + your proficiency bonus + your Dexterity modifier.</p>
+			<p>On a hit, the following effects are imposed in addition to the attack's normal effects.</p>
+			<ul>
+				<li>If the attack was triggered by the target's movement, it must make a Dexterity saving throw. On a failed save, its movement speed is reduced by half until the end of your next turn. On a successful save, their speed is only reduced by 10 until the end of your next turn.</li>
+				<li>If the attack was triggered by the creature making a weapon attack, it must make a Constitution saving throw. On a failed save, it has disadvantage on attack rolls until the start of your next turn. On a successful save, it only has disadvantage on the triggering attack.</li>
+				<li>If the attack was triggered by the creature casting a spell, it must make a Constitution save. On a failed save, the target(s) of the spell have advantage on the saving throw to resist the effects of the spell, in addition all targeted creatures gain resistance to the spells damage. If the spell requires a spell attack roll it would be made with disadvantage.</li>				
+			</ul>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You can use an action to lie in wait to take an action against any enemy that reveals itself. If a creature moves, makes a weapon attack, or casts a spell while within your firearm's range, you can use your reaction to make an attack against them.</description>
 		</sheet>
 		<rules>
 		
@@ -528,10 +553,10 @@
 	
 	<element name="Final Stand" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_FINAL_STAND">
 		<description>
-		
+			<p>Starting at 15th level, when you are reduced to 0 hit points and don’t die outright, you can use your reaction before you fall unconscious to make an attack roll at an enemy. This attack is made with disadvantage. If the attack hits, you gain hit points equal to 1d8 + your gunslinger level. Once you use this feature, you cannot use it again until you complete a short or long rest.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you are reduced to 0 hit points and don’t die outright, you can use your reaction to make an attack roll at an enemy. This attack is made with disadvantage. If the attack hits, you gain hit points equal to 1d8 + your gunslinger level. Once you use this feature, you cannot use it again until you complete a short or long rest.</description>
 		</sheet>
 		<rules>
 		
@@ -540,10 +565,21 @@
 	
 	<element name="Superhuman Reflexes" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SUPERHUMAN_REFLEXES">
 		<description>
-		
+			<p>At 18th level, a you have sharpened your reflexes to supersonic proportions. You now get the following benefits:</p>
+			<ul>
+				<li>You can use Disengage as a bonus action.</li>
+				<li>Once per short rest, when you are hit by a ranged attack, you can reduce the damage of that attack to 0.</li>
+				<li>You can use two gun stunts as a bonus action once per short or long rest.</li>
+			</ul>
 		</description>
 		<sheet>
-			<description></description>
+			<description>
+				<ul>
+					<li>You can use Disengage as a bonus action.</li>
+					<li>Once per short rest, when you are hit by a ranged attack, you can reduce the damage of that attack to 0.</li>
+					<li>You can use two gun stunts as a bonus action once per short or long rest.</li>
+				</ul>
+			</description>
 		</sheet>
 		<rules>
 		
@@ -552,7 +588,7 @@
 	
 	<element name="Gunslinging Supreme" type="Class Feature" source="Arcane Artillery" id="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUNSLINGING_SUPREME">
 		<description>
-		
+			<p>By the time you reach 20th level, you have become an undisputed slinger extraordinare. Add your proficiency bonus to damage rolls you make with your firearms, except when making an attack that does not normally apply your ability score modifier to it's damage. (For example, making an offhand attack.)</p><p class="indent">Additionally, if you use the automatic or burst fire area of effect action, you can make one weapon attack as a bonus action.</p>
 		</description>
 		<sheet>
 			<description></description>
