@@ -105,7 +105,7 @@
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_SUPERHUMAN_REFLEXES" level="18"/>
 			<grant type="Class Feature" name="ID_RDDT_AA_CLASS_FEATURE_GUNSLINGER_GUNSLINGING_SUPREME" level="20"/>	
 		</rules>
-		<multiclass id="ID_WOTC_PHB_MULTICLASS_BARBARIAN">
+		<multiclass id="ID_RDDT_AA_MULTICLASS_GUNSLINGER">
 			<prerequisite>Dexterity 13, Charisma 13</prerequisite>
 			<requirements>[str:13]</requirements>
 			<setters>
@@ -151,6 +151,11 @@
 			<p>Starting at 1st level, you have developed a set of stunts you can use to give you an edge in combat. You gain the following options:</p><h5>Run ‘N Gun.</h5><p>You can use Dash as a bonus action.</p><h5>Slinger’s Senses.</h5><p> You can make a Wisdom(Perception) check as a bonus action if you have a weapon drawn.</p><h5>Stock Strike.</h5><p> When you make a melee weapon attack using a firearm on your turn, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. Additionally, if the attack hits, you can use your bonus action to not provoke opportunity attacks from the target of the attack until the end of your turn.</p>
 		</description>
 		<sheet>
+			<description>
+				Run ‘N Gun. You can use Dash as a bonus action.
+				Slinger’s Senses. You can make a Wisdom(Perception) check as a bonus action if you have a weapon drawn.
+				Stock Strike. When you make a melee weapon attack using a firearm on your turn, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. Additionally, if the attack hits, you can use your bonus action to not provoke opportunity attacks from the target of the attack until the end of your turn.
+			</description>
 		</sheet>
 		<rules>
 		
@@ -161,7 +166,7 @@
 		<description>
 			<p>At 2nd level, choose a skill or tool you are proficient in. Double your proficiency bonus to checks you make with those skills. When you reach 10th level, you can choose an additional skill or tool proficiency to gain this benefit.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
 		<rules>
@@ -274,7 +279,7 @@
 		<description>
 			<p>At 3rd level, you begin to train your slinging to go down a particular style of emulation. You can choose from either Myth Breaker, Virtuoso, Vaquero, or Delver, all detailed at the end of the class description. The trail you choose grants you features at 3rd level, and again at 9th, 13th, and 17th level.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
 		<rules>
@@ -304,11 +309,11 @@
 			
 		</description>
 		<sheet>
-			<description>You can use the benefit’s feature %lucky-item:benefit-use% per long rest. If your lucky item is lost or destroyed, it mysteriously reappears on you at the end of your next long rest.</description>
+			<description>You can use the benefit’s feature(s) %lucky-item:benefit-use% time(s) per long rest. If your lucky item is lost or destroyed, it mysteriously reappears on you at the end of your next long rest.</description>
 		</sheet>
 		<rules>
-			<stat name="lucky-item:benefit-use" value="once" level="3" />
-			<stat name="lucky-item:benefit-use" value="twice" level="13" />
+			<stat name="lucky-item:benefit-use" value="+1" level="3" />
+			<stat name="lucky-item:benefit-use" value="+1" level="13" />
 			<select type="Class Feature" name="Lucky Item (Benefit)" supports="Lucky Item, Benefit" level="3"/>
 			<select type="Class Feature" name="Lucky Item (Quirk)" supports="Lucky Item, Quirk" level="3"/>
 			<select type="Class Feature" name="Lucky Item (Benefit)" supports="Lucky Item, Benefit" level="13"/>
@@ -373,7 +378,7 @@
 			<description>You gain the beast bond spell, and can cast it as a ritual.</description>
 		</sheet>
 		<rules>
-			<grant type="Spell" name="ID_PHB_SPELL_BEAST_BOND" />
+			<grant type="Spell" name="ID_XGTE_SPELL_BEAST_BOND" />
 		</rules>
 	</element>
 	
@@ -601,10 +606,230 @@
 	<element name="Myth Breaker" type="Archetype" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_MYTH_BREAKER">
 		<supports>Slingers Trail</supports>
 		<description>
+			<p>Myth Breakers specialize in hunting down and dealing with the most dangerous of beasts. They hunt down anything from ancient dragons to beholders with extreme precision and skill. Determined and well researched in a variety of lore, myth breakers are experts in hunting down that which makes the average person tremble in fear.</p>
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS"/>
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE"/>
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_STRENGTHINKNOWLEDGE"/>
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_LEGENDARYOVERWATCH" />
+		</description>
+		<sheet>
+			<description>Myth Breakers specialize in hunting down and dealing with the most dangerous of beasts.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS" level="3"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE" level="9"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_STRENGTHINKNOWLEDGE" level="13"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_LEGENDARYOVERWATCH" level="17"/>
+		</rules>
+	</element>
+	
+	<element name="Myth Breaker's Tactics" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS">
+		<description>
+			<p>When you choose this trail at 3rd level, you can choose from one of the following tactics that help you slay various monstrosities.</p>
+			<h5>Crowd Control</h5>
+			<p>Your quick trigger finger lends itself well to killing hordes of creatures. Once per turn, when you make a firearm attack roll against a creature, you can make an additional attack against a creature that's within 5 feet of the targeted creature and in range of your firearm.</p>
+			<h5>Legendary Buster</h5>
+			<p>The crack of your gunshot is a symbol of teamwork as you mark powerful targets for death. When you succeed a firearm attack roll against a creature, the next attack made against the offending creature deals an extra d8 damage on a hit. You can only use this ability on one creature per turn.</p>
+			<h5>Leviathan Feller</h5>
+			<p>Your skill with a gun can send even big monstrosities reeling. When you hit with a firearm attack roll against a creature, you can push them back 10 feet from you in the direction you hit them. This forced move can only be done once per turn.</p>
+			<h5>Varmint Slayer</h5>
+			<p>You have a knack for landing precision shots that help you hit small or dodgy pests. You get advantage with firearm attacks on creatures that have moved further than 15 feet or taken the dodge or disengage action before your turn.</p>
+			<h5>Showstopper</h5>
+			<p>Creatures with exotic movements are no match for your expertly placed shots. If you hit with a firearm attack roll on a creature, it must succeed a Strength saving throw or have its flying speed, swim speed, climbing speed, walking speed and burrowing speed reduced by half, or become 0 if it was 5 feet until the end of its next turn. You can only use this ability once per turn.</p><p class="indent">Showstopper Save DC = 8 + your proficiency bonus + your Dexterity or Intelligence modifier.</p>
+		</description>
+		<sheet>
+			
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Myth Breaker's Tactics" supports="Myth Breakers Tactics" number="1"/>
+		</rules>
+	</element>
+	
+	<element name="Crowd Control" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS_CROWDCONTROL">
+		<supports>Myth Breakers Tactics</supports>
+		<description>
+			<p>Your quick trigger finger lends itself well to killing hordes of creatures. Once per turn, when you make a firearm attack roll against a creature, you can make an additional attack against a creature that's within 5 feet of the targeted creature and in range of your firearm.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, when you make a firearm attack roll against a creature, you can make an additional attack against a creature that's within 5 feet of the targeted creature and in range of your firearm.</description>
+		</sheet>
+		<rules>
 		
+		</rules>
+	</element>
+	
+	<element name="Legendary Buster" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS_LEGENDARYBUSTER">
+		<supports>Myth Breakers Tactics</supports>
+		<description>
+			<p>The crack of your gunshot is a symbol of teamwork as you mark powerful targets for death. When you succeed a firearm attack roll against a creature, the next attack made against the offending creature deals an extra d8 damage on a hit. You can only use this ability on one creature per turn.</p>
+		</description>
+		<sheet>
+			<description>When you succeed a firearm attack roll against a creature, the next attack made against the offending creature deals an extra d8 damage on a hit. You can only use this ability on one creature per turn.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Leviathan Feller" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS_LEVIATHANFELLER">
+		<supports>Myth Breakers Tactics</supports>
+		<description>
+			<p>Your skill with a gun can send even big monstrosities reeling. When you hit with a firearm attack roll against a creature, you can push them back 10 feet from you in the direction you hit them. This forced move can only be done once per turn.</p>
+		</description>
+		<sheet>
+			<description>When you hit with a firearm attack roll against a creature, you can push them back 10 feet from you in the direction you hit them. This forced move can only be done once per turn.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Varmint Slayer" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS_VARMINTSLAYER">
+		<supports>Myth Breakers Tactics</supports>
+		<description>
+			<p>You have a knack for landing precision shots that help you hit small or dodgy pests. You get advantage with firearm attacks on creatures that have moved further than 15 feet or taken the dodge or disengage action before your turn.</p>
+		</description>
+		<sheet>
+			<description>You get advantage with firearm attacks on creatures that have moved further than 15 feet or taken the dodge or disengage action before your turn.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Showstopper" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MYTHBREAKERSTACTICS_SHOWSTOPPER">
+		<supports>Myth Breakers Tactics</supports>
+		<description>
+			<p>Creatures with exotic movements are no match for your expertly placed shots. If you hit with a firearm attack roll on a creature, it must succeed a Strength saving throw or have its flying speed, swim speed, climbing speed, walking speed and burrowing speed reduced by half, or become 0 if it was 5 feet until the end of its next turn. You can only use this ability once per turn.</p><p class="indent">Showstopper Save DC = 8 + your proficiency bonus + your Dexterity or Intelligence modifier.</p>
+		</description>
+		<sheet>
+			<description>If you hit with a firearm attack roll on a creature, it must succeed a Strength saving throw or have its flying speed, swim speed, climbing speed, walking speed and burrowing speed reduced by half, or become 0 if it was 5 feet until the end of its next turn. You can only use this ability once per turn.
+			Showstopper Save DC = 8 + your proficiency bonus + your Dexterity or Intelligence modifier.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Monstrous Defense" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE">
+		<description>
+			<p>When you reach 9th level, you can learn one of the following defensive tactics that add to your monster hunting skillset.</p>
+			<h5>Critter Sense</h5>
+			<p>Your dedication to tracking dangerous pests has allowed you to develop senses to help hunt them down. You gain 15 feet of blindsight and tremorsense, and creatures cannot get advantage on attack rolls or benefit from being hidden or invisible while within 15 feet of you, as long as you are not incapacitated.</p>
+			<h5>Uncanny Dodge</h5>
+			<p>You always keep your eyes about you, making surprise attacks from above and below difficult. When a creature damages you with an attack, you can use your reaction to halve that damage against you.</p>
+			<h5>Into the Fray</h5>
+			<p>Creatures that crowd upon you find it quite hard to attack you. When a hostile creature makes an attack roll against you while another hostile creature is within 5 feet of you or it, the creature makes the roll with disadvantage.</p>
+			<h5>Mythical Guardian</h5>
+			<p>When keeping track of legendary creatures, your hunter's senses heighten your defense. You can end one effect on yourself causing you to be charmed or poisoned.</p>
+			<h5>Slayer's Discipline</h5>
+			<p>You are stalwart in the face of any kind of danger. You get proficiency in a saving throw of your choice.</p>
 		</description>
 		<sheet>
 		
+		</sheet>
+		<rules>
+			<select name="Monstrous Defense" type="Archetype Feature" supports="Monstrous Defense" number="1" />
+		</rules>
+	</element>
+	
+	<element name="Critter Sense" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE_CRITTERSENSE">
+		<supports>Monstrous Defense</supports>
+		<description>
+			<p>Your dedication to tracking dangerous pests has allowed you to develop senses to help hunt them down. You gain 15 feet of blindsight and tremorsense, and creatures cannot get advantage on attack rolls or benefit from being hidden or invisible while within 15 feet of you, as long as you are not incapacitated.</p>
+		</description>
+		<sheet>
+			<description>You gain 15 feet of blindsight and tremorsense, and creatures cannot get advantage on attack rolls or benefit from being hidden or invisible while within 15 feet of you, as long as you are not incapacitated.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Uncanny Dodge" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE_UNCANNYDODGE">
+		<supports>Monstrous Defense</supports>
+		<description>
+			<p>You always keep your eyes about you, making surprise attacks from above and below difficult. When a creature damages you with an attack, you can use your reaction to halve that damage against you.</p>
+		</description>
+		<sheet>
+			<description>When a creature damages you with an attack, you can use your reaction to halve that damage against you.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Into the Fray" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE_INTOTHEFRAY">
+		<supports>Monstrous Defense</supports>
+		<description>
+			<p>Creatures that crowd upon you find it quite hard to attack you. When a hostile creature makes an attack roll against you while another hostile creature is within 5 feet of you or it, the creature makes the roll with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>When a hostile creature makes an attack roll against you while another hostile creature is within 5 feet of you or it, the creature makes the roll with disadvantage.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Mythical Guardian" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE_MYTHICALGUARDIAN">
+		<supports>Monstrous Defense</supports>
+		<description>
+			<p>When keeping track of legendary creatures, your hunter's senses heighten your defense. You can end one effect on yourself causing you to be charmed or poisoned.</p>
+		</description>
+		<sheet>
+			<description>When keeping track of legendary creatures, your hunter's senses heighten your defense. You can end one effect on yourself causing you to be charmed or poisoned.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Slayer's Discipline" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_MONSTROUSDEFENCE_SLAYERSDISCIPLINE">
+		<supports>Monstrous Defense</supports>
+		<description>
+			<p>You are stalwart in the face of any kind of danger. You get proficiency in a saving throw of your choice.</p>
+		</description>
+		<sheet>
+			<description>You get proficiency in a saving throw of your choice.</description>
+		</sheet>
+		<rules>
+			<select name="Monstrous Defence (Slayer's Discipline) Saving Throw Proficiency" type="Proficiency" supports="Saving Throw" number="1"/> 
+		</rules>
+	</element>
+	
+	<element name="Strength in Knowledge" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_STRENGTHINKNOWLEDGE">
+		<description>
+			<p>At 13th level, you have augmented your mind and strengthened your resolve against the horrors out in the great beyond. You have advantage on saving throws against being charmed, petrified, paralyzed or poisoned.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being charmed, petrified, paralyzed or poisoned.</description>
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Legendary Overwatch" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_LEGENDARYOVERWATCH">
+		<description>
+			<p>Once you reach 17th level, you are able to stop the most fearsome creatures right in their tracks with nothing but your bullets. If you make a successful overwatch attack against a creature, you can make it suffer the following effects:</p>
+			<ul>
+				<li>If the creature is moving, it is stunned until the end of your next turn.</li>
+				<li>If the creature is making an attack roll, it automatically fails that attack roll and cannot make any more attacks until the end of your next turn.</li>
+				<li>If it is casting a spell or forcing a creature or creatures to make a saving throw, the spell or area of effect attack automatically fails, dealing no damage if it would normally do so. If the creature was casting a spell, the spell slot is wasted.</li>
+			</ul>
+			<p>Once you use this feature, you cannot use it again until you complete a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				<p>Once you reach 17th level, you are able to stop the most fearsome creatures right in their tracks with nothing but your bullets. If you make a successful overwatch attack against a creature, you can make it suffer the following effects:</p>
+				<ul>
+					<li>If the creature is moving, it is stunned until the end of your next turn.</li>
+					<li>If the creature is making an attack roll, it automatically fails that attack roll and cannot make any more attacks until the end of your next turn.</li>
+					<li>If it is casting a spell or forcing a creature or creatures to make a saving throw, the spell or area of effect attack automatically fails, dealing no damage if it would normally do so. If the creature was casting a spell, the spell slot is wasted.</li>
+				</ul>
+				<p>Once you use this feature, you cannot use it again until you complete a short or long rest.</p>
+			</description>
 		</sheet>
 		<rules>
 		
