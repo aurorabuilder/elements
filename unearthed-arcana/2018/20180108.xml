@@ -253,19 +253,45 @@
         <p>Innovation is a dangerous practice, at least as far as members of this school practice it. As a shield against this risk, you have developed a suit of arcane armor.</p>
         <p class="indent">Starting at 2nd level, you gain proficiency with light armor and gain a suit of arcanomechanical armor - a magic item that only you can attune to. While you are attuned to it and wearing it, it grants you resistance to force damage.</p>
         <p class="indent">The armor is light armor and provides an AC of 12+your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
+        <p class="indent"><em>IMPORTANT: You must add the Arcanomechanical Armor to your character from the equipment section</em></p>
       </description>
       <sheet>
-        <description>You gain proficiency with light armor and gain a suit of arcanomechanical armor - a magic item that only you can attune to. While you are attuned to it and wearing it, it grants you resistance to force damage.
-			The armor is light armor and provides an AC of %arcanomechanical_armor:AC%. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.
-		</description>
+        <description>
+          While you are attuned to your arcanomechanical armor and wearing it, you have resistance to force damage. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.
+		    </description>
       </sheet>
       <rules>
         <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" level="2" />
-        <stat name="arcanomechanical_armor:base" value="12" />
-        <stat name="arcanomechanical_armor:AC" value="arcanomechanical_armor:base" />
-        <stat name="arcanomechanical_armor:AC" value="+Dexterity Modifier" />
+        <!-- TODO: Grant the Arcanomechanical Armor Item when equipment support is implemented
+        <add type="armor" name="ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL" level="2" />
+       -->
       </rules>
     </element>
+    <element name="Arcanomechanical Armor" type="Item" source="Unearthed Arcana" id="ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL">
+        <supports>ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+        <!-- TODO: Restrict Archanomechanical Armor so it is only visible to wizards of the School of Invention -->
+        <description>
+            <p><i>Prerequisite: School of Invention arcane tradition</i></p>
+            <p>While you are attuned to it and wearing it, it grants you resistance to force damage.</p>
+            <p>The armor is light armor and provides an AC of 12 + your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
+        </description>
+        <setters>
+            <set name="category">Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="8">8 lb.</set>
+            <set name="container">Light</set>
+            <set name="armor">Light</set>
+            <set name="weapon" />
+            <set name="shield" />
+            <set name="slot">body</set>
+            <set name="range" />
+            <set name="damage" />
+        </setters>
+        <rules>
+            <stat name="AC" value="+2" bonus="Armor"/>
+        </rules>
+  </element>
+
     <element name="Reckless Casting" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_SCHOOL_INVENTION_RECKLESS_CASTING">
       <description>
         <p>Starting at 2nd level, you may attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options:</p>
@@ -384,17 +410,51 @@
         </table>
       </description>
       <sheet>
-		<description>
-			<p>You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.</p>
-			<p>If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.</p>
-			<p>If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
-			Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
-			Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
-			Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
-			Reckless Casting (3rd-Level): 1 blink 2 fear 3 feign death 4 fireball 5 fly 6 gaseous form 7 lightning bolt 8 sleet storm 9 stinking cloud
-			Reckless Casting (4th-Level): 1 blight 2 confusion 3 Evard's black tentacles 4 fire shield 5 greater invisibility 6 ice storm 7 phantasmal killer 8 stoneskin 9 wall of fire
-			Reckless Casting (5th-Level): 1 cloudkill 2 cone of cold 3 destructive wave 4 flame strike 5 hold monster 6 insect plague 7 mass cure wounds 8 wall of force 9 wall of stone</p>
-		</description>
+	      <description>
+    			You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.
+    			If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.
+    			If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+          Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+          Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+        </description>
+  			<description level="3">
+          You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.
+    			If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.
+    			If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+          Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+          Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+          Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
+        </description>
+  			<description level="5">
+          You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.
+    			If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.
+    			If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+          Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+          Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+          Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
+          Reckless Casting (3rd-Level): 1 blink 2 fear 3 feign death 4 fireball 5 fly 6 gaseous form 7 lightning bolt 8 sleet storm 9 stinking cloud
+        </description>
+  			<description level="7">
+          You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.
+    			If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.
+    			If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+          Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+          Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+          Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
+          Reckless Casting (3rd-Level): 1 blink 2 fear 3 feign death 4 fireball 5 fly 6 gaseous form 7 lightning bolt 8 sleet storm 9 stinking cloud
+          Reckless Casting (4th-Level): 1 blight 2 confusion 3 Evard's black tentacles 4 fire shield 5 greater invisibility 6 ice storm 7 phantasmal killer 8 stoneskin 9 wall of fire
+        </description>
+  			<description level="9">
+          You can attempt to cast a spell you don't have prepared. When you use this ability, you use your action and choose one of the following options: 1. Roll on the Reckless Casting table for cantrips and cast the resulting spell as part of this action. 2. Expend a spell slot and roll twice on the Reckless Casting table for its level, or the 5th-level table if the slot is 6th level or higher. Pick which of the two results you want to use and cast the resulting spell as part of this action.
+    			If the spell you cast isn't a wizard spell, it is nonetheless a wizard spell for you when you cast it with this feature.
+    			If the roll you pick is a 10, you can roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot.
+          Reckless Casting (Cantrip): 1 acid splash 2 chill touch 3 fire bolt 4 light 5 poison spray 6 ray of frost 7 shocking grasp 8 sacred flame 9 thorn whip
+          Reckless Casting (1st-Level): 1 burning hands 2 chromatic orb 3 color spray 4 faerie fire 5 false life 6 fog cloud 7 jump 8 magic missile 9 thunderwave
+          Reckless Casting (2nd-Level): 1 blur 2 darkness 3 enlarge/reduce 4 gust of wind 5 invisibility 6 levitate 7 Melf's acid arrow 8 scorching ray 9 shatter
+          Reckless Casting (3rd-Level): 1 blink 2 fear 3 feign death 4 fireball 5 fly 6 gaseous form 7 lightning bolt 8 sleet storm 9 stinking cloud
+          Reckless Casting (4th-Level): 1 blight 2 confusion 3 Evard's black tentacles 4 fire shield 5 greater invisibility 6 ice storm 7 phantasmal killer 8 stoneskin 9 wall of fire
+          Reckless Casting (5th-Level): 1 cloudkill 2 cone of cold 3 destructive wave 4 flame strike 5 hold monster 6 insect plague 7 mass cure wounds 8 wall of force 9 wall of stone
+        </description>
       </sheet>
       <rules>
       </rules>
