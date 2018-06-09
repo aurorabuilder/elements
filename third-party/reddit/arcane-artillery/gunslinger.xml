@@ -839,10 +839,90 @@
 	<element name="Virtuoso" type="Archetype" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_VIRTUOSO">
 		<supports>Slingers Trail</supports>
 		<description>
-		
+			<p>Virtuosos don’t see guns as just a mere tool of destruction, they see them as an art form that they wish to master. Those who chose to train as virtuosos collect and train with as many guns as possible in to become more versatile and powerful shooters whose skill and showmanship is unrivaled.</p>
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_THEARTOFLEAD" />
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_HEADINTHEGAME" />
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" />
+			<div element="ID_RDDT_AA_ARCHETYPE_FEATURE_TRICKPRODIGY" />
 		</description>
 		<sheet>
 		
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_THEARTOFLEAD" level="3"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_HEADINTHEGAME" level="9"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" level="13"/>
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_TRICKPRODIGY" level="17"/> 
+		</rules>
+	</element>
+	
+	<element name="The Art of Lead" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_THEARTOFLEAD" >
+		<supports></supports>
+		<description>
+			<p>Starting when you choose this trail at level 3, Virtuosos get a bevy of special skills enhanced by special dice called superiority dice.</p>
+			<h5>Tricks</h5>
+			<p>You learn three tricks of your choice, which are detailed under "tricks" below. Many tricks enhance an attack or assist allies/debilitate enemies in some way, shape or form. You can only use one trick per attack.</p><p>You learn two additional tricks at 9th level, 13th level, and 17th level. Each time you learn a new trick, you can also replace one Trick you know with a different one.</p>
+			<h5>Superiority Dice</h5>
+			<p>You have four superiority dice, which are d8s, to spend on Tricks. When you use a superiority die, it's expended. You regain all your superiority dice when you finish a short or long rest. You get an additional superiority die at 9th level, and one more at 17th level.</p>
+			<h5>Superiority Dice Improvements</h5>
+			<p>Superiority dice turn into d10s at 9th level and d12s at 17th level.</p>
+			<h5>Saving Throws</h5>
+			<p>Some of your Tricks require your target to make a saving throw to resist the trick's effects. The save DC is calculated as follows:</p><p class="indent">Trick Save DC = 8 + your proficiency bonus + your Dexterity or Charisma modifier.</p>
+		</description>
+		<sheet>
+			<description>You learn tricks that are fueled by special dice called superiority dice. You have %superiority dice:amount% superiority dice which are d%superiority dice:size%s. DC %superiority dice:dc%</description>
+		</sheet>
+		<rules>
+			<stat name="superiority dice:amount" value="4" />
+			<stat name="superiority dice:amount" value="1" level="9" />
+			<stat name="superiority dice:amount" value="1" level="17" />
+			<stat name="superiority dice:dc" value="8" />
+			<stat name="superiority dice:dc" value="2" level="9" />
+			<stat name="superiority dice:dc" value="2" level="17" />
+			<stat name="superiority dice:dc" value="Proficiency" />
+			<stat name="superiority dice:dc:ability" value="Charisma Modifier" bonus="ability"/>
+			<stat name="superiority dice:dc:ability" value="Dexterity Modifier" bonus="ability"/>
+			<stat name="superiority dice:dc" value="superiority dice:dc:ability" />
+			<select name="The Art of Lead (Level 3)" type="Archetype Feature" supports="Virtuoso Tricks" number="3" />
+			<select name="The Art of Lead (Level 9)" type="Archetype Feature" supports="Virtuoso Tricks" number="2" level="9" />
+			<select name="The Art of Lead (Level 13)" type="Archetype Feature" supports="Virtuoso Tricks" number="2" level="13" />
+			<select name="The Art of Lead (Level 17)" type="Archetype Feature" supports="Virtuoso Tricks" number="2" level="17" />
+		</rules>
+	</element>
+	
+	<element name="Head in the Game" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_HEADINTHEGAME" >
+		<supports></supports>
+		<description>
+			<p>At 9th level, you are constantly on top of your game, and are always ready for action. You add your Charisma modifier to your initiative rolls.</p><p class="indent">Additionally, you gain proficiency in Wisdom saving throws.</p>
+		</description>
+		<sheet>
+		
+		</sheet>
+		<rules>
+			<grant name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" type="Proficiency" />
+		</rules>
+	</element>
+	
+	<element name="Skilled & Witty" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" >
+		<supports></supports>
+		<description>
+			<p>Starting at 13th level, you have become an epitome of expertise and sheer skill, both on and off the battlefield. You learn an additional skill, tool, or language of your choice. Alternatively, you can choose a skill or tool you are proficient in. Double your proficiency bonus for checks made using that skill or tool.</p><p class="indent">Additionally, you get advantage on Persuasion and Intimidation checks when trying to defuse a fight.</p>
+		</description>
+		<sheet>
+		
+		</sheet>
+		<rules>
+		
+		</rules>
+	</element>
+	
+	<element name="Trick Prodigy" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_TRICKPRODIGY" >
+		<supports></supports>
+		<description>
+			<p>Once you reach 17th level, you regain 1 superiority die if you roll initiative and have no superiority dice remaining.</p>
+		</description>
+		<sheet>
+			<description>Once you reach 17th level, you regain 1 superiority die if you roll initiative and have no superiority dice remaining.</description>
 		</sheet>
 		<rules>
 		
@@ -858,7 +938,10 @@
 		
 		</sheet>
 		<rules>
-		
+			<grant type="Archetype Feature" name="" level="3"/>
+			<grant type="Archetype Feature" name="" level="9"/>
+			<grant type="Archetype Feature" name="" level="13"/>
+			<grant type="Archetype Feature" name="" level="17"/>
 		</rules>
 	</element>
 	
@@ -871,7 +954,10 @@
 		
 		</sheet>
 		<rules>
-		
+			<grant type="Archetype Feature" name="" level="3"/>
+			<grant type="Archetype Feature" name="" level="9"/>
+			<grant type="Archetype Feature" name="" level="13"/>
+			<grant type="Archetype Feature" name="" level="17"/>
 		</rules>
 	</element>
 	
