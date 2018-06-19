@@ -852,7 +852,7 @@
 			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_THEARTOFLEAD" level="3"/>
 			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_HEADINTHEGAME" level="9"/>
 			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" level="13"/>
-			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_TRICKPRODIGY" level="17"/> 
+			<grant type="Archetype Feature" name="ID_RDDT_AA_ARCHETYPE_FEATURE_TRICKPRODIGY" level="17"/>
 		</rules>
 	</element>
 	
@@ -903,16 +903,64 @@
 		</rules>
 	</element>
 	
-	<element name="Skilled & Witty" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" >
+	<element name="Skilled and Witty" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY" >
 		<supports></supports>
 		<description>
 			<p>Starting at 13th level, you have become an epitome of expertise and sheer skill, both on and off the battlefield. You learn an additional skill, tool, or language of your choice. Alternatively, you can choose a skill or tool you are proficient in. Double your proficiency bonus for checks made using that skill or tool.</p><p class="indent">Additionally, you get advantage on Persuasion and Intimidation checks when trying to defuse a fight.</p>
 		</description>
 		<sheet>
-		
+			<description>You get advantage on Persuasion and Intimidation checks when trying to defuse a fight.</description>
 		</sheet>
 		<rules>
-		
+			<select type="Archetype Feature" name="Skilled and Witty" supports="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWSKILL|ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_EXPERTISE|ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWLANGUAGE|ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWTOOL" />
+		</rules>
+	</element>
+	
+	<element name="Expertise (Skilled and Witty)" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_EXPERTISE" >
+		<description>
+			<p>Choose a skill or tool you are proficient in. Double your proficiency bonus for checks made using that skill or tool.</p>
+		</description>
+		<sheet display="false">
+			
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Expertise (Skilled and Witty)" number="1" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
+		</rules>
+	</element>
+	
+	<element name="Additional Skill (Skilled and Witty)" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWSKILL" >
+		<description>
+			<p>You learn an additional skill, tool, or language of your choice.</p>
+		</description>
+		<sheet display="false">
+			
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Additional Skill (Skilled and Witty)" number="1" supports="Skill" />
+		</rules>
+	</element>
+	
+	<element name="Additional Language (Skilled and Witty)" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWLANGUAGE" >
+		<description>
+			<p>You learn an additional skill, tool, or language of your choice.</p>
+		</description>
+		<sheet display="false">
+			
+		</sheet>
+		<rules>
+			<select type="Language" name="Additional Skill (Skilled and Witty)" number="1" />
+		</rules>
+	</element>
+	
+	<element name="Additional Tool Proficiency (Skilled and Witty)" type="Archetype Feature" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_FEATURE_SKILLEDANDWITTY_NEWTOOL" >
+		<description>
+			<p>You learn an additional skill, tool, or language of your choice.</p>
+		</description>
+		<sheet display="false">
+			
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Additional Skill (Skilled and Witty)" number="1" supports="Tool" />
 		</rules>
 	</element>
 	
@@ -928,6 +976,8 @@
 		
 		</rules>
 	</element>
+	
+	<!-- TODO ADD TRICKS -->
 	
 	<element name="Vaquero" type="Archetype" source="Arcane Artillery" id="ID_RDDT_AA_ARCHETYPE_VAQUERO">
 		<supports>Slingers Trail</supports>
