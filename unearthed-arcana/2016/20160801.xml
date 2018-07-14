@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Unearthed Arcana: The Faithful</name>
+        <description>This month, Unearthed Arcana presents two new options that allow arcane casters to express their faith in the gods. For warlock characters, the Pact of the Seeker defines a bond to a mysterious, inscrutable deity dedicated to gathering knowledge and lore. For wizards, the Theurgy arcane tradition creates a magic-user whose arcane instruction is guided by the teachings of a deity, and who gains the benefits of a divine domain.</description>
+        <author url="http://dnd.wizards.com/articles/features/faithful">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="20160801.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2016/20160801.xml" />
+        </update>
+    </info>
+
+    <!-- The Seeker -->
+    <element name="The Seeker" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_WARLOCK_THE_SEEKER">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is an inscrutable being who travels the Astral Plane in search of knowledge and secrets. In return for your patron’s gifts, you wander the world seeking lore that you can share with the Seeker.</p>
+            <p class="indent">Your patron could be any deity or other powerful entity dedicated to knowledge or forgotten lore. Celestian is an ideal patron for a Greyhawk campaign, and was the inspiration for this concept. In the Forgotten Realms, your patron might be Azuth or Oghma. Aureon makes an excellent patron in Eberron, while in Krynn and the Dragonlance campaign setting, Gilean is a good match for the Seeker’s role.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_EXPANDED_SPELL_LIST" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_SHIELDING_AURORA" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_REFUGE" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_FAR_WANDERER" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_SEQUESTRATION" />
+        </description>
+        <sheet>
+            <description>Your patron is an inscrutable being who travels the Astral Plane in search of knowledge and secrets.</description>
+        </sheet>
+        <rules>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_SHIELDING_AURORA" type="Archetype Feature" level="1"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_REFUGE" type="Archetype Feature" level="6"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_FAR_WANDERER" type="Archetype Feature" level="10"/>
+            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_SEQUESTRATION" type="Archetype Feature" level="14"/>
+        </rules>
+    </element>
+    <element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_EXPANDED_SPELL_LIST">
+        <description>
+            <p>The Seeker lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+            <h5>SEEKER EXPANDED SPELLS</h5>
+            <table>
+                <thead><tr><td>Spell Level</td><td>Spells</td></tr></thead>
+                <tr><td>1st</td><td><em>feather fall, jump</em></td></tr>
+                <tr><td>2nd</td><td><em>levitate, locate object</em></td></tr>
+                <tr><td>3rd</td><td><em>clairvoyance, sending</em></td></tr>
+                <tr><td>4th</td><td><em>arcane eye, locate creature</em></td></tr>
+                <tr><td>5th</td><td><em>legend lore, passwall</em></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description>The Seeker lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+        </sheet>
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_FEATHER_FALL</extend>
+            <extend>ID_PHB_SPELL_JUMP</extend>
+            <extend>ID_PHB_SPELL_LEVITATE</extend>
+            <extend>ID_PHB_SPELL_LOCATE_OBJECT</extend>
+            <extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+            <extend>ID_PHB_SPELL_SENDING</extend>
+            <extend>ID_PHB_SPELL_ARCANE_EYE</extend>
+            <extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>
+            <extend>ID_PHB_SPELL_LEGEND_LORE</extend>
+            <extend>ID_PHB_SPELL_PASSWALL</extend>
+        </spellcasting>
+    </element>
+    <element name="Shielding Aurora" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_SHIELDING_AURORA">
+        <description>
+            <p>Starting at 1st level, you can invoke the Seeker’s power to protect you from harm. As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes radiant damage equal to your warlock level + your Charisma modifier.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes $(shielding aurora:damage) radiant damage. (1/SR)</description>
+        </sheet>
+        <rules>
+            <stat name="shielding aurora:damage" value="Charisma Modifier" />
+            <stat name="shielding aurora:damage" value="level:warlock" />
+        </rules>
+    </element>  
+    <element name="Astral Refuge" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_REFUGE">
+        <description>
+            <p>At 6th level, you gain the ability to step into an astral refuge. As an action, you disappear from the world for a brief moment and enter the Astral Plane, taking advantage of its timeless nature. While in your astral refuge, you can take two actions to cast spells that target only you. After using those two actions, you return to the space you occupied and your turn ends.</p>
+        </description>
+        <sheet>
+            <description>As an action, you disappear from the world for a brief moment and enter the Astral Plane, taking advantage of its timeless nature. While in your astral refuge, you can take two actions to cast spells that target only you. After using those two actions, you return to the space you occupied and your turn ends.</description>
+        </sheet>
+        <rules />
+    </element>  
+    <element name="Far Wanderer" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_FAR_WANDERER">
+        <description>
+            <p>At 10th level, you no longer need to breathe, and you gain resistance to fire damage and cold damage.</p>
+        </description>
+        <sheet>
+            <description>You no longer need to breathe, and you gain resistance to fire damage and cold damage.</description>
+        </sheet>
+        <rules />
+    </element>  
+    <element name="Astral Sequestration" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_SEQUESTRATION">
+        <description>
+            <p>Starting at 14th level, you gain the ability to sequester yourself and your allies on the Astral Plane.</p>
+            <p class="indent">By performing a special ritual over the course of 5 minutes, you shift yourself and up to ten willing creatures you can see to the Astral Plane. You and those creatures gain the benefits of a short rest while sequeste red on the Astral Plane. You then return to the spaces you all occupied when you used this ability, with no time having passed in the world.</p>
+            <p class="indent">During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester.</p>
+            <p class="indent">Once you use this ability, you cannot use it again until you complete a long rest.</p>
+        </description>
+        <sheet>
+            <description>By performing a special ritual over the course of 5 minutes, you shift yourself and up to ten willing creatures you can see to the Astral Plane. You and those creatures gain the benefits of a short rest while sequeste red on the Astral Plane. You then return to the spaces you all occupied when you used this ability, with no time having passed in the world. During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester. (1/LR)</description>
+        </sheet>
+        <rules />
+    </element>  
+
+    <element name="Pact of the Star Chain" type="Class Feature" source="Unearthed Arcana" id="ID_WOTC_UA_CLASS_FEATURE_WARLOCK_THE_SEEKER_PACT_OF_THE_STAR_CHAIN">
+        <supports>Pact Boon</supports>
+        <prerequisite>The Seeker otherworldly patron</prerequisite>
+        <requirements>ID_WOTC_UA_ARCHETYPE_WARLOCK_THE_SEEKER</requirements>         
+        <description>
+            <p class="flavor">Prerequisite: The Seeker otherworldly patron</p>
+            <p>At 3rd level, a character dedicated to the Seeker can select this option instead of one of the warlock’s existing Pact Boon options.</p>
+            <p class="indent">The Seeker grants you a chain forged from starlight, decorated with seven gleaming motes of brightness. While the chain is on your person, you know the augury spell and can cast it as a ritual. The spell doesn’t count against your number of spells known.</p>
+            <p class="indent">Additionally, you can invoke the Seeker’s power to gain advantage on an Intelligence check while you carry this item. Once you use this ability, you cannot use it again until you complete a short or long rest.</p>
+            <p class="indent">If you lose your Star Chain, you can perform a 1-hour ceremony to receive a replacement from the Seeker. The ceremony can be performed during a short or long rest, and it destroys the previous chain. The chain disappears in a flash of light when you die.</p>
+            <p class="indent">The exact form of this item might be different depending on your patron. The Star Chain is inspired by the Greyhawk deity Celestian.</p>
+        </description>
+        <sheet>
+            <description>The Seeker grants you a chain forged from starlight, decorated with seven gleaming motes of brightness. While the chain is on your person, you know the augury spell and can cast it as a ritual. The spell doesn’t count against your number of spells known. Additionally, you can invoke the Seeker’s power to gain advantage on an Intelligence check while you carry this item. (1/SR)</description>
+        </sheet>
+        <rules />
+    </element>  
+
+    <!-- Arcane Tradition: Theurgy -->
+
+</elements>
