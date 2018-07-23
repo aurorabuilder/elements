@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Islander</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.1">
+            <file name="background-islander.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-islander.xml" />
+        </update>
+    </info>
+    <element name="Islander" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_ISLANDER">
+        <description>
+            <p>You’ve spent the majority of your life as an island hopper. You are excellent at getting what you need from the land, but particularly so from bodies of water. Huge, open spaces make you feel at home, as they can make you feel alone even when with others. Civilization is mostly foreign to you, but you know the ways of the wild and the ocean. You have endured great storms on a raft you lashed yourself, sailed for weeks guided by only the stars, and lived happily among the rocks and reefs other seafarer’s see as death. Whether you were a secluded fisherman, a self-imposed castaway, or a sailor whose port was the ocean, your map is the stars and your boat is anything that floats!</p>
+            <p>
+                <span class="emphasis">Skill Proficiencies:</span>Perception, Survival<br/>
+                <span class="emphasis">Tool Proficiencies:</span>One type of musical instrument, Vehicles (water)<br/>
+                <span class="emphasis">Equipment:</span>A fishing rod, a trophy from the sea, a set of traveler’s clothes, and a belt pouch containing 5 gp 
+            </p>
+			<h5>Origin</h5>
+			<p>You’ve been to strange places and seen things that others cannot begin to fathom. Consider some of the distant lands you have visited, and how they impacted you. You can roll on the following table to determine your occupation during your time in the wild, or choose one that best fits your character.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>Fisherman</td></tr>
+				<tr><td>2</td><td>Deserter</td></tr>
+				<tr><td>3</td><td>Castaway</td></tr>
+				<tr><td>4</td><td>Tribal Nomad</td></tr>
+				<tr><td>5</td><td>Guide</td></tr>
+				<tr><td>6</td><td>Long Distance Canoer</td></tr>
+				<tr><td>7</td><td>Exile or Outcast</td></tr>
+				<tr><td>8</td><td>Shaman</td></tr>
+			</table>
+            <div element="ID_WIKI_BACKGROUND_FEATURE_ISLANDER_WANDERER" />
+        </description>
+        <setters>
+            <set name="sourceUrl">https://www.dandwiki.com/wiki/Islander_(5e_Background)</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+      		<select type="Proficiency" name="Musical Intrument (Islander)" supports="Musical Instrument" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_FEATURE_ISLANDER_WANDERER" />
+            <select name="Origin" type="List" optional="true">
+                <item id="1">Fisherman</item>
+                <item id="2">Deserter</item>
+                <item id="3">Castaway</item>
+                <item id="4">Tribal Nomad</item>
+                <item id="5">Guide</item>
+                <item id="6">Long Distance Canoer</item>
+                <item id="7">Exile or Outcast</item>
+                <item id="8">Shaman</item>
+            </select>
+            <select name="Personality Trait" type="List" number="2">
+                <item id="1">I’m so entranced with the stars, that I’d rather sleep by day.</item>
+                <item id="2">If I can’t get all I need from one island, I’m living lavishly.</item>
+                <item id="3">I have a lesson for every situation, drawn from my observations of nature.</item>
+                <item id="4">I’d prefer if everywhere had a view of the ocean.</item>
+                <item id="5">There’s nothing more pleasing than laying on the warm sand while the waves graze my feet.</item>
+                <item id="6">I’m at my best when I’m alone and can hear only nature.</item>
+                <item id="7">I feel far more comfortable among animals than people.</item>
+                <item id="8">I’ve fallen asleep floating and awoken on a new island.</item>
+            </select>
+            <select name="Ideal" type="List">
+                <item id="1">Freedom. The sea is freedom - the freedom to go anywhere as well as do anything. (Chaotic)</item>
+                <item id="2">Survival. If I don’t fight to live on, then I will become part of something else's fight - that's just how things are. (Lawful)</item>
+                <item id="3">Nature. The natural world is more important than all the constructs of civilization. (Neutral)</item>
+                <item id="4">Greater Good. It’s everyone’s responsibility to do their best to be kind to the world. (Good)</item>
+                <item id="5">Destruction. Only the mightiest don’t get weathered. (Evil)</item>
+                <item id="6">Solitude. The best way to live life is alone. (Any)</item>
+            </select>
+            <select name="Bond" type="List">
+                <item id="1">I return to the same island at least once a month to make sure no one else has claimed it.</item>
+                <item id="2">My tribe is gone except for me, but I’ll renew it someday.</item>
+                <item id="3">The ocean is the world’s lifeblood. I won’t see it be fouled up.</item>
+                <item id="4">I want a child, so after I’m gone someone will still watch the sea.</item>
+                <item id="5">The great blue took my parents, but it will never take me.</item>
+                <item id="6">The ocean is in pain, and I must find the source.</item>
+            </select>
+            <select name="Flaw" type="List">
+                <item id="1">There’s no room for caution in a life lived to the fullest.</item>
+                <item id="2">I’ll never stop pursuing someone who leaves anything on an isle that they brought with them.</item>
+                <item id="3">I tend to withdraw when faced with new situations.</item>
+                <item id="4">The ocean takes everything eventually, I just quicken the process.</item>
+                <item id="5">I am slow to trust anybody who seems not to notice nature.</item>
+                <item id="6">Often I talk to myself in public because I forget I’m not alone.</item>
+            </select>
+        </rules>
+    </element>
+    <element name="Feature: Wanderer" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_FEATURE_ISLANDER_WANDERER">
+        <description>
+            <p>You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth</p>
+        </description>
+    </element>
+</elements>
