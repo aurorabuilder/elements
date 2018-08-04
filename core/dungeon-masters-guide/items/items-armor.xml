@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<element name="Armor +1" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_1">
+		<description>
+			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
+		</description>
+		<setters>
+			<set name="keywords" />
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Armor +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_2">
+		<description>
+			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
+		</description>
+		<setters>
+			<set name="keywords" />
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">2</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="2" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Armor +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_3">
+		<description>
+			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
+		</description>
+		<setters>
+			<set name="keywords" />
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Legendary</set>
+			<set name="strength" />
+			<set name="stealth" />
+			<set name="supports" />
+			<set name="enhancement">3</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="3" bonus="armor:enhancement" />
+		</rules>
+	</element>	
+	<element name="Adamantine Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ADAMANTINE_ARMOR">
+		<supports>Armor</supports>
+		<description>
+			<p>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit.</p>
+		</description>
+		<setters>
+			<set name="keywords">medium, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="medium or heavy, but not hide">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">(ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY),!Hide</set>
+			<set name="name-format">Adamantine $(parent)</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Mariner’s Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MARINERS_ARMOR">
+		<description>
+			<p>While wearing this armor, you have a swimming speed equal to your walking speed. In addition, whenever you start your turn underwater with 0 hit points, the armor causes you to rise 60 feet toward the surface. The armor is decorated with fish and shell motifs.</p>
+		</description>
+		<setters>
+			<set name="keywords" />
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT||ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Mariner’s $(parent)</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="Speed" bonus="base" />
+		</rules>
+	</element>
+	<element name="Mithral Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MITHRAL_ARMOR">
+		<description>
+			<p>Mithral is a light, flexible metal. A mithral chain shirt or breastplate can be worn under normal clothes. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.</p>
+		</description>
+		<setters>
+			<set name="keywords">medium, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="medium or heavy, but not hide">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">(ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY),!Hide</set>
+		</setters>
+		<rules />
+	</element>		
+	<element name="Armor of Resistance, Acid" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_ACID">
+		<description>
+			<p>You have resistance to acid damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">acid</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Acid Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Armor of Resistance, Cold" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_COLD">
+		<description>
+			<p>You have resistance to cold damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">cold</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Cold Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Fire" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_FIRE">
+		<description>
+			<p>You have resistance to fire damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">fire</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Fire Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Force" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_FORCE">
+		<description>
+			<p>You have resistance to force damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">force</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Force Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Lightning" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_LIGHTNING">
+		<description>
+			<p>You have resistance to lightning damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">lightning</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Lightning Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Necrotic" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_NECROTIC">
+		<description>
+			<p>You have resistance to necrotic damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">necrotic</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Necrotic Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Poison" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_POISON">
+		<description>
+			<p>You have resistance to poison damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">poison</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Poison Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Psychic" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_PSYCHIC">
+		<description>
+			<p>You have resistance to psychic damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">psychic</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Psychic Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Radiant" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_RADIANT">
+		<description>
+			<p>You have resistance to radiant damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">radiant</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Radiant Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>	
+	<element name="Armor of Resistance, Thunder" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_THUNDER">
+		<description>
+			<p>You have resistance to thunder damage while you wear this armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">thunder</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">$(parent) of Thunder Resistance</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+	<element name="Armor of Vulnerability" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_VULNERABILITY">
+		<description>
+			<p>While wearing this armor, you have resistance to one of the following damage types: bludgeoning, piercing, or slashing. The GM chooses the type or determines it randomly.</p>
+			<p class="indent"><strong><em>Curse. </em></strong>This armor is cursed, a fact that is revealed only when an Identify spell is cast on the armor or you attune to it. Attuning to the armor curses you until you are targeted by the <em>remove curse</em> spell or similar magic; removing the armor fails to end the curse. While cursed, you have vulnerability to two of the three damage types associated with the armor (not the one to which it grants resistance).</p>
+		</description>
+		<setters>
+			<set name="keywords">plate, resistance</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="cursed">true</set>
+			<set name="armor">Plate</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Elven Chain" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ELVEN_CHAIN">
+		<description>
+			<p>You gain a +1 bonus to AC while you wear this armor. You are considered proficient with this armor even if you lack proficiency with medium armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">chain, shirt</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="chain shirt">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">Chain Shirt</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Elven $(parent)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Glamoured Studded Leather" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_GLAMOURED_STUDDED_LEATHER">
+		<description>
+			<p>While wearing this armor, you gain a +1 bonus to AC. You can also use a bonus action to speak the armor's command word and cause the armor to assume the appearance of a normal set of clothing or some other kind of armor. You decide what it looks like, including color, style, and accessories, but the armor retains its normal bulk and weight. The illusory appearance lasts until you use this property again or remove the armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">studded, leather</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="studded leather">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">Studded Leather</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Demon Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DEMON_ARMOR">
+		<description>
+			<p>While wearing this armor, you gain a +1 bonus to AC, and you can understand and speak Abyssal. In addition, the armor's clawed gauntlets turn unarmed strikes with your hands into magic weapons that deal slashing damage, with a +1 bonus to attack rolls and damage rolls and a damage die of 1d8.</p>
+			<p class="indent"><strong><em>Curse. </em></strong>Once you don this cursed armor, you can't doff it unless you are targeted by the <em>remove curse</em> spell or similar magic. While wearing the armor, you have disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.</p>
+		</description>
+		<setters>
+			<set name="keywords">plate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="cursed">true</set>
+			<set name="armor">Plate</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Black" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_BLACK">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">scale, acid</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Blue" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_BLUE">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, lightning</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Brass" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_BRASS">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, fire</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Bronze" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_BRONZE">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, lightning</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Copper" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_COPPER">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, acid</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Gold" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_GOLD">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, fire</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Green" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_GREEN">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, poison</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Red" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_RED">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, fire</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, Silver" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_SILVER">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, cold</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Dragon Scale Mail, White" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_WHITE">
+		<description>
+			<p>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.</p>
+			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
+			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
+			<table>
+				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<tbody>
+					<tr><td>Black</td><td>Acid</td></tr>
+					<tr><td>Blue</td><td>Lightning</td></tr>
+					<tr><td>Brass</td><td>Fire</td></tr>
+					<tr><td>Bronze</td><td>Lightning</td></tr>
+					<tr><td>Copper</td><td>Acid</td></tr>
+					<tr><td>Gold</td><td>Fire</td></tr>
+					<tr><td>Green</td><td>Poison</td></tr>
+					<tr><td>Red</td><td>Fire</td></tr>
+					<tr><td>Silver</td><td>Cold</td></tr>
+					<tr><td>White</td><td>Cold</td></tr></tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">scale, cold</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="scale mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Scale Mail</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Dwarven Plate" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DWARVEN_PLATE">
+		<description>
+			<p>While wearing this armor, you gain a +2 bonus to AC. In addition, if an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.</p>
+		</description>
+		<setters>
+			<set name="keywords">plate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Plate</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="2" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Armor of Invulnerability" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_INVULNERABILITY">
+		<description>
+			<p>You have resistance to nonmagical damage while you wear this armor. Additionally, you can use an action to make yourself immune to nonmagical damage for 10 minutes or until you are no longer wearing the armor. Once this special action is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">plate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="armor">Plate</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Efreeti Chain" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_EFREETI_CHAIN">
+		<description>
+			<p>While wearing this armor, you gain a +3 bonus to AC, you are immune to fire damage, and you can understand and speak Primordial. In addition, you can stand on and walk across molten rock as if it were solid ground.</p>
+		</description>
+		<setters>
+			<set name="keywords">chain</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="chain mail">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="armor">Chain Mail</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="3" bonus="armor:enhancement" />
+		</rules>
+	</element>
+	<element name="Plate Armor of Etherealness" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_PLATE_ARMOR_OF_ETHEREALNESS">
+		<description>
+			<p>While you're wearing this armor, you can speak its command word as an action to gain the effect of the <em>etherealness</em> spell, which last for 10 minutes or until you remove the armor or use an action to speak the command word again. This property of the armor can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">plate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="armor">Plate</set>
+		</setters>
+		<rules />
+	</element>
+
+	<!-- shields -->
+	<element name="Shield +1" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_1">
+		<description>
+			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="1" bonus="enhancement:shield" />
+		</rules>
+	</element>
+	<element name="Shield +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_2">
+		<description>
+			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">2</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="2" bonus="enhancement:shield" />
+		</rules>
+	</element>
+	<element name="Shield +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_3">
+		<description>
+			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">3</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="name-format">$(parent) +$(enhancement)</set>
+		</setters>
+		<rules>
+			<stat name="AC" value="3" bonus="enhancement:shield" />
+		</rules>
+	</element>
+	
+	<element name="Sentinel Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SENTINEL_SHIELD">
+		<description>
+			<p>While holding this shield, you have advantage on initiative rolls and Wisdom (Perception) checks. The shield is emblazoned with a symbol of an eye.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Arrow-Catching Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARROWCATCHING_SHIELD">
+		<description>
+			<p>You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Shield of Missile Attraction" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_OF_MISSILE_ATTRACTION">
+		<description>
+			<p>While holding this shield, you have resistance to damage from ranged weapon attacks.</p>
+			<p>
+				<strong>Curse.</strong> This shield is cursed. Attuning to it curses you until you are targeted by the <em>remove curse</em> spell or similar magic. Removing the shield fails to end the curse on you. Whenever a ranged weapon attack is made against a target within 10 feet of you, the curse causes you to become the target instead.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="cursed">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Animated Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ANIMATED_SHIELD">
+		<description>
+			<p>While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules />
+	</element>
+	<element name="Spellguard Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SPELLGUARD_SHIELD">
+		<description>
+			<p>While holding this shield, you have advantage on saving throws against spells and other magical effects, and spell attacks have disadvantage against you.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules />
+	</element>
+</elements>
