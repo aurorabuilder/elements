@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Three Subclasses</name>
         <description>We kick off 2018 with three new subclasses to try out in Unearthed Arcana: the Circle of Spores for the druid, the Brute for the fighter, and the School of Invention for the wizard.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/three-subclasses">Wizards of the Coast</author>
-        <update version="0.0.3">
+        <update version="0.0.4">
             <file name="20180108.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2018/20180108.xml" />
         </update>
     </info>
@@ -253,42 +253,34 @@
         <p>Innovation is a dangerous practice, at least as far as members of this school practice it. As a shield against this risk, you have developed a suit of arcane armor.</p>
         <p class="indent">Starting at 2nd level, you gain proficiency with light armor and gain a suit of arcanomechanical armor - a magic item that only you can attune to. While you are attuned to it and wearing it, it grants you resistance to force damage.</p>
         <p class="indent">The armor is light armor and provides an AC of 12+your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
-        <p class="indent"><em>IMPORTANT: You must add the Arcanomechanical Armor to your character from the equipment section</em></p>
+        <!-- <p class="indent"><em>IMPORTANT: You must add the Arcanomechanical Armor to your character from the equipment section</em></p> -->
       </description>
       <sheet>
-        <description>
-          While you are attuned to your arcanomechanical armor and wearing it, you have resistance to force damage. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.
-		    </description>
+        <description>While you are attuned to your arcanomechanical armor and wearing it, you have resistance to force damage. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</description>
       </sheet>
       <rules>
         <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" level="2" />
-        <!-- TODO: Grant the Arcanomechanical Armor Item when equipment support is implemented
-        <add type="armor" name="ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL" level="2" />
-       -->
+		<stat name="equipment:ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL" value="1" level="2" />
       </rules>
     </element>
-    <element name="Arcanomechanical Armor" type="Item" source="Unearthed Arcana" id="ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL">
-        <supports>ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
-        <!-- TODO: Restrict Archanomechanical Armor so it is only visible to wizards of the School of Invention -->
+    <element name="Arcanomechanical Armor" type="Magic Item" source="Unearthed Arcana" id="ID_WOTC_UA_ARMOR_LIGHT_ARCANOMECHANICAL">
         <description>
-            <p><i>Prerequisite: School of Invention arcane tradition</i></p>
-            <p>While you are attuned to it and wearing it, it grants you resistance to force damage.</p>
-            <p>The armor is light armor and provides an AC of 12 + your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
+            <!-- <p><i>Prerequisite: School of Invention arcane tradition</i></p> -->
+            <p>While you are attuned to your arcanomechanical armor and wearing it, you have resistance to force damage.</p>
+            <p class="indent">The armor is light armor and provides an AC of 12 + your Dexterity modifier. It weighs 8 pounds. You can create a new suit of it at the end of a long rest by touching a nonmagical suit of studded leather armor, which magically transforms it. Doing so removes the magic from your previous arcanomechanical armor, turning it into nonmagical studded leather.</p>
         </description>
         <setters>
-            <set name="category">Armor</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="8">8 lb.</set>
-            <set name="container">Light</set>
-            <set name="armor">Light</set>
-            <set name="weapon" />
-            <set name="shield" />
-            <set name="slot">body</set>
-            <set name="range" />
-            <set name="damage" />
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="8">8 lb.</set>
+			<set name="type" addition="studded leather">Armor</set>
+			<!-- <set name="rarity">Unique</set> -->
+			<set name="armor">Studded Leather</set>
+			<set name="attunement" addition="by a wizard with the school of invention arcane tradition">true</set>
         </setters>
         <rules>
-            <stat name="AC" value="+2" bonus="Armor"/>
+			<!-- with requirement on condition it will act like regular studded leather on any other character -->
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" requirements="ID_WOTC_UA_ARCHETYPE_SCHOOL_INVENTION" />
         </rules>
   </element>
 
