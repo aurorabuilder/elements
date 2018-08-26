@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Adventurer Background</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.1">
+            <file name="background-adventurer.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-adventurer.xml" />
+        </update>
+    </info>
+    <element name="Adventurer" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_ADVENTURER">
+        <description>
+            <p>You never stopped following your profession- you have always been an adventurer for as long as you have had a profession. Now, "adventuring" in this sense is not the same as the dragon-slaying heroism typical of in-play adventuring. Really, a more accurate description would be along the lines of "helpful grave-robbing", and probably involved a lot more sneaking around, running in terror, setting traps, and possibly taking credit for the work of others, or complete strokes of luck.</p>
+			<p><strong>Examples</strong></p>
+			<ul>
+				<li>Maybe your parents were adventurers</li>
+				<li>Maybe you were rescued by a group of adventurers who then raised you</li>
+				<li>Maybe being an adventurer is a respectable profession in your homeland</li>
+				<li>Maybe you ran away at a young age to become an adventurer</li>
+				<li>Maybe you grew up in an adventurers guild hall</li>
+				<li>Maybe you’re just starting out new and fresh to the profession</li>
+			</ul>
+			<p>Whatever the case is, you are willing and able to do work that nobody in their right mind would even consider. As an adventurer, you have likely traveled extensively, encountered violence and death, are comfortable around magic, and have likely seen many a strange, terrible, and wonderful thing. Many professional adventurers use a sort of professional slang or jargon resembling game terms, such as referring to people by their perceived "level", or ranking enemies by supposed "challenge ratings". What took you down this path, and where has it taken you? Are you pushed by some driving goal, or flee from some terrible thing? Or do you just go wherever the money flows? Are you an experienced party member, or are you more of the loner riding in the back of the cart? Were you trained up to be a professional, or did you learn by experience? What kinds of adventures have you had? What amazing sights have you seen? How have these experiences changed you? </p>
+            <p>			
+				<strong>Skill Proficiencies:</strong> Athletics or Acrobatics, and Insight or Perception<br />
+				<strong>Tool Proficiencies:</strong> Thieves’ Tools.<br/>
+				<strong>Languages:</strong> You may speak two exotic languages, or you may be fully literate with one standard language. <br/>
+				<strong>Equipment:</strong> A wooden training sword, a set of traveler’s clothes, a small pouch containing 5gp, a shovel, a crowbar, one trophy, (such as a trinket from PHB p.160) one cloak.<br/>
+            </p>
+			<h5>PARTY ROLE</h5>
+			<p>No adventurer is as great as the party, for no adventurer is quite alike. They must depend on the unique talents and tactics of their party to succeed in their dangerous world. </p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Party Role</td></tr>
+				</thead>
+				<tr><td>1</td><td>The Brains</td></tr>
+				<tr><td>2</td><td>The Muscle</td></tr>
+				<tr><td>3</td><td>The Professional</td></tr>
+				<tr><td>4</td><td>The Coin</td></tr>
+				<tr><td>5</td><td>The Sneak</td></tr>
+				<tr><td>6</td><td>The Load</td></tr>
+			</table>
+            <div element="ID_WIKI_BACKGROUND_FEATURE_ADVENTURER_WANDERER" />
+        </description>
+        <setters>
+            <set name="sourceUrl">https://www.dandwiki.com/wiki/Adventurer_(5e_Background)</set>
+        </setters>
+        <rules>
+			<select type="Proficiency" name="Skill Proficiency, 1 (Adventurer)" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<select type="Proficiency" name="Skill Proficiency, 2 (Adventurer)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<!-- You may speak two exotic languages, or you may be fully literate with one standard language. -->
+			<select type="Language" name="Language (Adventurer)" supports="Starting" optional="true" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_FEATURE_ADVENTURER_WANDERER" />
+            <select name="Party Role" type="List" optional="true">
+                <item id="1">The Brains</item>
+                <item id="2">The Muscle</item>
+                <item id="3">The Professional</item>
+                <item id="4">The Coin</item>
+                <item id="5">The Sneak</item>
+                <item id="6">The Load</item>
+            </select>
+            <select name="Personality Trait" type="List" number="2">
+                <item id="1">I speak with an accent nobody recognizes.</item>
+                <item id="2">I look at the ceiling every time I enter a room, even if I was just there five seconds ago.</item>
+                <item id="3">I assume every job is a trap.</item>
+                <item id="4">I take notes about everyone and everything I encounter everywhere I go.</item>
+                <item id="5">I leave marks for myself wherever I go, as messages to myself when I return. Their meaning is known only by me.</item>
+                <item id="6">I tell stories about my adventures to anyone who will listen. Even tales of woe and disaster are retold with enthusiasm!</item>
+                <item id="7">I am more accustomed to life on the road or underground than in a settlement or my actual "home".</item>
+                <item id="8">I only respect other adventurers</item>
+            </select>
+            <select name="Ideal" type="List">
+                <item id="1">Virtue. I am the sword of virtue for those in need! (Good)</item>
+                <item id="2">Curiosity. If the job is interesting, I’m in! (Neutral)</item>
+                <item id="3">Control. I’ll do the work, but some day I will return with a request... (Evil)</item>
+                <item id="4">Justice. I fill the cracks crime slips through. (Lawful)</item>
+                <item id="5">Wealth. I’m in it for the money! (Neutral)</item>
+                <item id="6">Boredom. Get me away from this boring life! (Chaotic)</item>
+            </select>
+            <select name="Bond" type="List">
+                <item id="1">The things I have with me are everything I have and everything I am.</item>
+                <item id="2">The people who raised me made me into an adventurer.</item>
+                <item id="3">I am on a quest to obtain some rare or important object.</item>
+                <item id="4">I can never linger anywhere for too long, or my secret will catch up to me.</item>
+                <item id="5">I cannot remember my past before I was an adventurer.</item>
+                <item id="6">I need to be the most famous adventurer alive.</item>
+            </select>
+            <select name="Flaw" type="List">
+                <item id="1">Adventuring has either made me jaded and pessimistic, or paranoid and jumpy.</item>
+                <item id="2">I am almost dangerously greedy.</item>
+                <item id="3">I cannot resist a drink, or the folk who serve it.</item>
+                <item id="4">I egregiously underestimate or overestimate the risks a job represents.</item>
+                <item id="5">I cannot maintain meaningful relationships.</item>
+                <item id="6">I cannot manage money to save my life. </item>
+            </select>
+        </rules>
+    </element>
+    <element name="Beloved Outcast" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_FEATURE_ADVENTURER_WANDERER">
+        <description>
+            <p>You can always find a job, but somehow you can never find a place to sleep. People know you’re good for the work, but the fact that you are indicates that you’re probably not the sort of person they want to have around. People view adventurers in a mixed light with conflicting values. On the one hand, most adventurers are nothing more than murderous, grave-robbing vagrants. On the other hand, who else will rob that grave and murder those local bullies for you? Most common folk consider adventurers to be dangerous, unpredictable, and probably insane... But in a world filled with slavers, mad cults, dragons, walking dead, pit fiends, and extradimensional horrors, just about everyone could find a use for a psychotic sell-sword. Adventurers who survive and reach higher renown may find they have a small following of supporters or fans, but even they may cringe at the idea of that adventurer spending an evening in their home. Most adventurers by profession are members of an adventurers guild through which they can readily attain professional work and contacts in the field.</p>
+        </description>
+    </element>
+</elements>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
