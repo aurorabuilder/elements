@@ -4,7 +4,7 @@
     <name>Gith</name>
     <description>The Gith race from Mordenkainen’s Tome of Foes</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/mordenkainens-tome-foes">Wizards of the Coast</author>
-    <update version="0.0.1">
+    <update version="0.0.2">
       <file name="race-gith.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/mordenkainens-tome-of-foes/races/race-gith.xml" />
     </update>
   </info>
@@ -164,22 +164,20 @@
     </setters>
     <rules />
   </element>
-
-  <!-- equipment not finalized, this is a simple implementation -->
-  <element name="Greater Silver Sword" type="Item" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_WEAPON_GREATER_SILVER_SWORD">
-    <supports> ID_INTERNAL_WEAPON_PROPERTY_MELEE, ID_INTERNAL_WEAPON_PROPERTY_MARTIAL, ID_INTERNAL_DAMAGETYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-    <description>
-      <p><b>Properties: </b>Heavy, two‐handed</p>
-      <p><i>Weapon (greatsword), legendary (requires attunement by a creature that has psionic ability)</i></p>
-      <p>This magic weapon grants a +3 bonus to attack and damage rolls made with it. While you hold the sword, you have advantage on Intelligence, Wisdom, and Charisma saving throws, you are immune to being charmed, and you have resistance to psychic damage. In addition, if you score a critical hit with it against a creature's astral body, you can cut the silvery cord that tethers the target to its material body, instead of dealing damage.</p>
-    </description>
-    <setters>
-      <set name="category">Magic Weapon</set>
-      <set name="cost" currency="gp">0</set>
-      <set name="weight" lb="6">6 lb.</set>
-      <set name="slot">mainhand</set>
-      <set name="damage">2d6 slashing</set>
-      <set name="versatile"></set>
-    </setters>    
-  </element>
+	<element name="Greater Silver Sword" type="Magic Item" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_WEAPON_GREATER_SILVER_SWORD">
+		<description>
+			<p>This magic weapon grants a +3 bonus to attack and damage rolls made with it. While you hold the sword, you have advantage on Intelligence, Wisdom, and Charisma saving throws, you are immune to being charmed, and you have resistance to psychic damage. In addition, if you score a critical hit with it against a creature's astral body, you can cut the silvery cord that tethers the target to its material body, instead of dealing damage.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="greatsword">Weapon</set>
+			<set name="attunement" addition="by a creature that has psionic ability">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">Greatsword</set>
+		</setters> 
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>   
+	</element>
 </elements>
