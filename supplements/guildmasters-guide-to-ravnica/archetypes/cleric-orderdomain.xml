@@ -4,11 +4,126 @@
 		<name>Order Domain</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="cleric-orderdomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/archetypes/cleric-orderdomain.xml" />
 		</update>
 	</info>
-    
-	<!-- placeholder -->
-    
+	
+    <element name="Order Domain" type="Archetype" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_CLERIC_ORDER_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+			<p>The Order Domain represents discipline, as well as devotion to a society or an institution and strict obedience to the laws governing it. On Ravnica, the domain is favored by clerics of the Azorius Senate, who use it to maintain and enforce the law, and of the Orzhov Syndicate, who exploit law and order for their personal gain. On other worlds, gods who grant access to this domain include Bane, Tyr, Majere, Erathis, Pholtus, Weejas, Aureon, Maglubiyet, Nuada, Athena, Anubis, Forseti, and Asmodeus.</p>
+			<p class="indent">The ideal of order is obedience to the law above all else, rather than to a specific individual or the passing influence of emotion or popular rule. Clerics of order are typically concerned with how things are done, rather than whether an action’s results are just. Following the law and obeying its edicts is critical, especially when it benefits these clerics and their guilds or deities.</p>
+			<p class="indent">Law establishes hierarchies. Those selected by the law to lead must be obeyed. Those who obey must do so to the best of their ability. In this manner, law creates an intricate web of obligations that allows society to forge order and security in a chaotic multiverse.</p>
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DOMAIN_SPELLS" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_BONUS_PROFICIENCIES" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_VOICE_OF_AUTHORITY" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_CD_ORDERS_DEMAND" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_EMBODIMENT_OF_THE_LAW" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DIVINE_STRIKE" />
+            <div element="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_ORDERS_WRATH" />
+        </description>
+        <sheet display="false">
+            <description>The Order Domain represents discipline, as well as devotion to a society or an institution and strict obedience to the laws governing it.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DOMAIN_SPELLS" level="1"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_VOICE_OF_AUTHORITY" level="1"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_CD_ORDERS_DEMAND" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_EMBODIMENT_OF_THE_LAW" level="6"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DIVINE_STRIKE" level="8"/>
+            <grant type="Archetype Feature" name="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_ORDERS_WRATH" level="17"/>
+        </rules>
+    </element>
+    <element name="Domain Spells" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DOMAIN_SPELLS">
+        <description>
+			<p>You gain domain spells at the cleric levels listed in the Order Domain Spells table. See the Divine Domain class feature in the Player’s Handbook for how domain spells work.</p>
+            <h5>Order Domain Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Cleric Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>command, heroism</em></td></tr>
+                <tr><td>3rd</td><td><em>hold person, zone of truth</em></td></tr>
+                <tr><td>5th</td><td><em>mass healing word, slow</em></td></tr>
+                <tr><td>7th</td><td><em>compulsion, locate creature</em></td></tr>
+                <tr><td>9th</td><td><em>commune, dominate person</em></td></tr>
+            </table>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" name="ID_PHB_SPELL_COMMAND" level="1" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_HEROISM" level="1" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_HOLD_PERSON" level="3" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_ZONE_OF_TRUTH" level="3" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_MASS_HEALING_WORD" level="5" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_SLOW" level="5" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_COMPULSION" level="7" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_LOCATE_CREATURE" level="7" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_COMMUNE" level="9" spellcasting="Cleric" prepared="true" />
+            <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
+        </rules>
+    </element>
+    <element name="Bonus Proficiencies" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_BONUS_PROFICIENCIES">
+        <description>
+			<p>When you choose this domain at 1st level, you gain proficiency with heavy armor. You also gain proficiency in the Intimidation or Persuasion skill (your choice).</p>
+        </description>
+        <sheet display="false">
+            <description>You gain proficiency with heavy armor. You also gain proficiency in the Intimidation or Persuasion skill.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+			<select type="Proficiency" name="Bonus Skill Proficiency (Order Domain)" supports="ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION" />
+        </rules>
+    </element>
+    <element name="Voice of Authority" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_VOICE_OF_AUTHORITY">
+        <description>
+			<p>Starting at 1st level, you can invoke the power of law to drive an ally to attack. If you cast a spell with a spell slot of 1st level or higher and target an ally with the spell, that ally can use their reaction immediately after the spell to make one weapon attack against a creature of your choice that you can see.</p>
+            <p class="indent">If the spell targets more than one ally, you choose the ally who can make the attack.</p>
+        </description>
+        <sheet>
+            <description>If you cast a spell with a spell slot of 1st level or higher and target an ally with the spell, that ally can use their reaction immediately after the spell to make one weapon attack against a creature of your choice that you can see. If the spell targets more than one ally, you choose the ally who can make the attack.</description>
+        </sheet>
+    </element>
+    <element name="Channel Divinity: Order’s Demand" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_CD_ORDERS_DEMAND">
+        <description>
+            <p>Starting at 2nd level, you can use your Channel Divinity to exert an intimidating presence over others.</p>
+			<p class="indent">As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to drop what they are holding when they fail the saving throw.</p>
+        </description>
+        <sheet>
+            <description>As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to drop what they are holding when they fail the saving throw.</description>
+        </sheet>
+    </element>	
+    <element name="Embodiment of the Law" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_EMBODIMENT_OF_THE_LAW">
+        <description>
+			<p>At 6th level, you become remarkably adept at channeling magical energy to compel others.</p>
+			<p class="indent">If you cast a spell of the enchantment school using a spell slot of 1st level or higher, you can change the spell's casting time to 1 bonus action for this casting, provided the spell's casting time is normally 1 action.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>If you cast a spell of the enchantment school using a spell slot of 1st level or higher, you can change the spell's casting time to 1 bonus action for this casting, provided the spell's casting time is normally 1 action. ($(embodiment of the law:usages)/LR)</description>
+        </sheet>
+		<rules>
+			<stat name="embodiment of the law:usages" value="1" bonus="embodiment of the law" />
+			<stat name="embodiment of the law:usages" value="Wisdom Modifier" bonus="embodiment of the law" />
+		</rules>
+    </element>
+    <element name="Divine Strike" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_DIVINE_STRIKE">
+        <description>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+        </description>
+        <sheet>
+            <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage to the target.</description>
+            <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 psychic damage to the target.</description>
+        </sheet>
+    </element>
+    <element name="Order’s Wrath" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_ARCHETYPE_FEATURE_ORDER_DOMAIN_ORDERS_WRATH">
+        <description>
+			<p>Starting at 17th level, enemies you designate for destruction wilt under the combined efforts of you and your allies. If you deal your Divine Strike damage to a creature on your turn, you can curse that creature until the start of your next turn. The next time one of your allies hits the cursed creature with an attack, the target also takes 2d8 psychic damage, and the curse ends. You can curse a creature in this way only once per turn.</p>
+        </description>
+        <sheet>
+            <description>If you deal your Divine Strike damage to a creature on your turn, you can curse that creature until the start of your next turn. The next time one of your allies hits the cursed creature with an attack, the target also takes 2d8 psychic damage, and the curse ends. You can curse a creature in this way only once per turn.</description>
+        </sheet>
+    </element>
 </elements>
