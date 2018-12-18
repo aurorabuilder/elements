@@ -15,6 +15,3 @@ You can request content by creating an issue with the request and keep track of 
 
 ### Support
 Visit the [website](http://www.dndbuilder.net "Aurora Builder Website") for more information, discuss anything related in the [subreddit](https://www.reddit.com/r/aurorabuilder "Aurora Builder Subreddit"), and feel free support the project on [patreon](https://www.patreon.com/aurorabuilder "Patreon page for Aurora Builder").
-
-## Gitter
-Join the [gitter.im/aurorabuilder](https://gitter.im/aurorabuilder) channel with your github account.
