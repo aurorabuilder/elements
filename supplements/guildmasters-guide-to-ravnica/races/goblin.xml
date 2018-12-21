@@ -4,11 +4,69 @@
 		<name>Goblin</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="goblin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/goblin.xml" />
 		</update>
 	</info>
     
-	<!-- placeholder -->
-    
+	<element name="Goblin" type="Race" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACE_GOBLIN">
+		<description>
+			<p>Whether sniveling in fear, cackling with mad laughter, or snarling in a fury, goblins are wretched and inconsequential—at least in the eyes of most of Ravnica’s other folk. In their own minds, though, they are content to lurk in the shadows only until they fully come into their own and receive the recognition they believe they deserve. They are entitled to some credit for their tenacity, agility, crafty ingenuity, and dumb luck, all of which has enabled them to survive in a world overrun with creatures larger and more powerful than they are.</p>
+			<h4>SMALL AND WIRY</h4>
+			<p>Standing around 3 feet tall and covered in warty green or red skin, goblins have huge noses and ears. Their wiry bodies are surprisingly strong. and their mouths are full of sharp, crooked teeth.</p>
+			<p class="indent">Most goblins are bald, either by heredity or by choice, but a few boast shocks of red or black hair. Their arms and legs are elongated in proportion to their small bodies, and their fingers and toes are also long and slender. Many goblins prefer to go unshod to leave their toes exposed for climbing.</p>
+			<h4>UNFETTERED EMOTION</h4>
+			<p>Creatures of raw impulse, goblins are found among guilds that value that quality, particularly the Tzzet (where they typically serve as attendants for researchers), the Gruul (in camps that form hapless buffers between the clans and civilized regions), the Rakdos (putting their love of explosions to good use), and occasionally the Boros (if they discover a well of discipline and courage within themselves, or find themselves unable to resist the shininess of Boros weapons and armor). Many goblins are guildless and make their way as members of street gangs.</p>
+			<p class="indent">Sometimes driven by wild mood swings, goblins have an inclination toward destruction, which can take a playful form but is often anything but. Some goblins clobber things, others like to light them on fire, and many love to blow things up.</p>
+			<p class="indent">Goblins have an outrageous sense of humor, usually expressed through mischievous pranks. The malicious among them find pleasure in the misfortune of others and tend to cackle maniacally whenever they’re amused. They can act with apparent randomness, sometimes just to confuse and befuddle others.</p>
+			<h4>GOBLIN NAMES</h4>
+			<p>The Goblin language is fond of certain sounds, and goblin names tend to repeat those sounds to form what can sound like nonsense words. A goblin’s name gives no indication of gender.</p>
+			<p><strong>Goblin Names:</strong> Azzinax, Babolax, Blixanix, Crixizix, Dazzaz, Estrix, Finizix,Juzba, Kaluzax, Lyzaxa, Mizzix, Myznar, Nixispix, Paxizaz, Ravixiz, Stixil, Sunnix, Tozinox, Uxivozi, Vazozav, Wexiny, Zizzix</p>
+			<h4>GOBLIN TRAITS</h4>
+			<p>Your goblin character has the following racial traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 2, and your Constitution score increases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Goblins reach adulthood around age 8. They age noticeably faster than humans, and though few goblins live to old age, the most cautious rarely live longer than 60 years.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Most of the goblins of Ravnica are chaotic, with no inclination toward good or evil.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Goblins are between 3 and 4 feet tall and weigh between 40 and 80 pounds. Your size is Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Fury of the Small.</em></strong> When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Nimble Escape.</em></strong> You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Goblin. In Ravnica, Goblin is a simplistic language with a limited vocabulary and fluid rules of grammar, unsuited for any sophisticated conversation.</p>
+		</description>
+		<setters>
+			<set name="names" type="name">Azzinax, Babolax, Blixanix, Crixizix, Dazzaz, Estrix, Finizix,Juzba, Kaluzax, Lyzaxa, Mizzix, Myznar, Nixispix, Paxizaz, Ravixiz, Stixil, Sunnix, Tozinox, Uxivozi, Vazozav, Wexiny, Zizzix</set>
+			<set name="names-format">$(name)</set>
+			<set name="height" modifier="2d4">3'5"</set>
+			<set name="weight" modifier="1">35 lb.</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<stat name="Dexterity" value="2" />
+			<stat name="Constitution" value="1" />
+			<stat name="Speed" value="30" bonus="base" />
+			<grant type="Size" name="ID_SIZE_SMALL" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" name="ID_LANGUAGE_COMMON" />
+			<grant type="Language" name="ID_LANGUAGE_GOBLIN" />
+			<grant type="Racial Trait" name="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
+			<grant type="Racial Trait" name="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
+		</rules>
+	</element>
+	<element name="Fury of the Small" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL">
+		<description>
+			<p>When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal $(level) extra damage to the creature. (1/SR)</description>
+		</sheet>
+	</element>
+	<element name="Nimble Escape" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE">
+		<description>
+			<p>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+		</description>
+		<sheet>
+			<description>You can take the Disengage or Hide action as a bonus action on each of your turns.</description>
+		</sheet>
+	</element>
 </elements>
