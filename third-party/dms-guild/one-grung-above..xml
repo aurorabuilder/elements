@@ -4,7 +4,7 @@
 		<name>One Grung Above</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/223738/One-Grung-Above-5e">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="one-grung-above.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/one-grung-above.xml" />
 		</update>
 	</info>
@@ -60,6 +60,7 @@
 			<stat name="speed:climb" value="25" bonus="base" />
 			<grant type="Size" id="ID_SIZE_SMALL" />
 			<grant type="Language" id="ID_OGA_LANGUAGE_GRUNG" />
+			<grant type="Proficiency" id="ID_WOTC_OGA_PROFICIENCY_TOOL_PROFICIENCY_WHISTLE_STICK" />
 			<grant type="Racial Trait" id="ID_WOTC_OGA_RACIAL_TRAIT_GRUNG_ARBOREAL_ALERTNESS" />
 			<grant type="Racial Trait" id="ID_WOTC_OGA_RACIAL_TRAIT_GRUNG_AMPHIBIOUS" />
 			<grant type="Racial Trait" id="ID_WOTC_OGA_RACIAL_TRAIT_GRUNG_POISON_IMMUNITY" />
@@ -135,5 +136,28 @@
 			<set name="Script">Grung</set>
 			<set name="Exotic">true</set>
 		</setters>
+	</element>
+
+	<!-- Instrument & Proficiency -->
+	<element name="Whistle-Stick" type="Item" source="One Grung Above" id="ID_WOTC_OGA_ITEM_WHISTLE_STICK">
+		<supports>ID_INTERNAL_TOOL_MUSICAL_INSTRUMENT</supports>
+		<description>
+			<p>This is a hollow tube with holes cut throughout, much like a flute. You can play music with it for entertainment, but the grung also swing it about by a sturdy cord (attached) to create a sound recognizable by other grung, so they know each other’s approximate location.</p>
+			<p class="indent">Additionally, grung that know Thieves’ Cant can use a whistle stick in this manner to communicate over distance.</p>
+		</description>
+		<setters>
+			<set name="category">Musical Instruments</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lbs.</set>
+			<set name="slot">onehand</set>
+		</setters>
+	</element>
+	<element name="Tool Proficiency (Whistle-Stick)" type="Proficiency" source="One Grung Above" id="ID_WOTC_OGA_PROFICIENCY_TOOL_PROFICIENCY_WHISTLE_STICK">
+		<supports>Tool, Musical Instrument, ID_PROFICIENCY_MUSICAL_INSTRUMENT</supports>
+		<description>
+			<p>This is a hollow tube with holes cut throughout, much like a flute. You can play music with it for entertainment, but the grung also swing it about by a sturdy cord (attached) to create a sound recognizable by other grung, so they know each other’s approximate location.</p>
+			<p class="indent">Additionally, grung that know Thieves’ Cant can use a whistle stick in this manner to communicate over distance.</p>
+		</description>
+		<sheet alt="Whistle-Stick" />
 	</element>
 </elements>
