@@ -4,13 +4,119 @@
 		<name>Izzet Engineer</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="izzet-engineer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/izzet-engineer.xml" />
 		</update>
 	</info>
     
-	<!-- Izzet Engineer placeholder -->
-    
+	<element name="Izzet Engineer" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_IZZET_ENGINEER">
+		<description>
+			<p>Armed with an inventive intellect, a love of magical technology, and an unquenchable energy, you are an enthusiastic participant in the research work of the Izzet League. Though you’re likely to begin your career as a mere attendant, you can aspire to become a skilled mage or alchemist, a laboratory supervisor, or even a flamethrower-wielding scorchbringer tasked with defending Izzet laboratories. The Izzet are obsessive, brilliant, inspired, and an unpredictable force of chaos in Ravnica, and you epitomize all of those qualities.</p>
+			<p class="indent"></p>
+			<p><strong>Skill Proficiencies:</strong> Arcana, Investigation</p>
+			<p><strong>Languages:</strong> Choose one of Draconic, Goblin, or Vedalken</p>
+			<p><strong>Tool Proficiencies:</strong> One type of artisan’s tools</p>
+			<p><strong>Equipment:</strong> An Izzet insignia, one set of artisan’s tools, the charred and twisted remains of a failed experiment, a hammer, a block and tackle, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</p>
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE" />
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Members of the Izzet League embody some combination of chaotic, frenetic energy with intellectual curiosity, in varying proportions. Some are comm itted to academic pursuits, and others just like explosions.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<select type="Language" name="Language, Izzet Engineer" supports="ID_LANGUAGE_DRACONIC|ID_LANGUAGE_GOBLIN|ID_GGTR_LANGUAGE_VEDALKEN" />
+			<select type="Proficiency" name="Tool Proficiency, Izzet Engineer" supports="Artisan tools" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I have a hard time staying focused on ... oh, and my brain tends to jump from one ... did I mention focus?</item>
+				<item id="2">I get really excited about my ideas and I can’t wait to talk about them and start putting them into practice and tinkering with them and I want to tell you about how exciting it all is!</item>				
+				<item id="3">It’s not magic-or anything, really-if you do it only halfway. Whatever I do, I give it all I’ve got.</item>
+				<item id="4">I do what my gut tells me.</item>
+				<item id="5">Life’s an experiment, and I can’t wait to see what happens.</item>
+				<item id="6">I pepper my speech with the incomprehensible jargon of my trade, like mizzium droplets inserted into a weird, field suspension.</item>
+				<item id="7">Great ideas are fine, but great results are what counts.</item>
+				<item id="8">If you can guess what I’m about to do, that means I’ve run out of imagination.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Guild. My guild is all that real ly matters. (Any)</item>
+				<item id="2">Creativity. Half the world’s troubles come from stodgy thinking, stuck in the past. We need innovative solutions. (Chaotic)</item>
+				<item id="3">Discovery. Every experiment has the potential to reveal more secrets of the multiverse. (Any)</item>
+				<item id="4">Science. A rigorous application of logical principles and protocols will lead us toward progress more surely than any belief system. (Lawful)</item>
+				<item id="5">Fun. I love my job! Despite the dangerous working conditions, there’s nothing I’d rather do. (Chaotic)</item>
+				<item id="6">Power. Someday I’ll find or create the magic that will make me the most powerful being in Ravnica. (Evil)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I have dedicated my life to finding a solution to a scientific problem.</item>
+				<item id="2">I’ll never forget the laboratory where I learned my skills, or the other attendants who learned alongside me.</item>
+				<item id="3">I’m convinced it was sabotage that destroyed my first laboratory and killed many of my friends, and I seek revenge against whoever did it.</item>
+				<item id="4">I have the schematics for an invention that I hope to build one day, once I have the necessary resources.</item>
+				<item id="5">A fellow student and I are racing to solve the same scient ific puzzle.</item>
+				<item id="6">I would do anything the guildmaster told me to do.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">If there’s a plan, I’ll probably forget it. If I don’t forget it, I’ll probably ignore it.</item>
+				<item id="2">I get bored easily, and if nothing is happening I’ll make something happen.</item>
+				<item id="3">Nothing is ever simple, and if it seems simple, I’ll find a way to make it complicated.</item>
+				<item id="4">I tend to ignore sleep for days when I’m conducting research, often at the expense of my own health and safety.</item>
+				<item id="5">I’m convinced there’s not a soul in Ravnica, except maybe the great Niv-Mizzet, who can match my boundless intellect.</item>
+				<item id="6">I’m incapable of admitting a flaw in my logic.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Urban Infrastructure" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE">
+		<supports>Feature</supports>
+		<description>
+			<p>The popular conception of the Izzet League is based on mad inventions, dangerous experiments, and explosive blasts. Much of that perception is accurate, but the league is also involved with mundane tasks of construction and architecture- primarily in crafting the infrastructure that allows Ravnicans to enjoy running water, levitating platforms, and other magical and technological wonders.</p>
+			<p class="indent">You have a basic knowledge of the structure of buildings, including the stuff behind the walls. You can also find blueprints of a specific building in order to learn the details of its construction. Such blueprints might provide knowledge of entry points, structural weaknesses, or secret spaces. Your access to such information isn’t unlimited. If obtaining or using the information gets you in trouble with the law, the guild can’t shield you from the repercussions.</p>
+		</description>
+		<sheet alt="Urban Infrastructure">
+			<description>You have a basic knowledge of the structure of buildings, including the stuff behind the walls. You can also find blueprints of a specific building in order to learn the details of its construction. Such blueprints might provide knowledge of entry points, structural weaknesses, or secret spaces. Your access to such information isn’t unlimited. If obtaining or using the information gets you in trouble with the law, the guild can’t shield you from the repercussions.</description>
+		</sheet>
+	</element>
+	<element name="Izzet Guild Spells" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS">
+		<description>
+			<p><em>Prerequisite: Spellcasting or Pact Magic class feature</em></p>
+			<p>For you, the spells on the Izzet Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>IZZET GUILD SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>produce flame, shocking grasp</em></td></tr>
+				<tr><td>1st</td><td><em>chaos bolt, create or destroy water, unseen servant</em></td></tr>
+				<tr><td>2nd</td><td><em>heat metal, rope trick</em></td></tr>
+				<tr><td>3rd</td><td><em>call lightning, elemental weapon, glyph of warding</em></td></tr>
+				<tr><td>4th</td><td><em>conjure minor elementals, divination, Otiluke’s resilient sphere</em></td></tr>
+				<tr><td>5th</td><td><em>animate objects, conjure elemental</em></td></tr>
+			</table>
+			<p class="indent">Your spells tend to be loud, flashy, or explosive, even when the effect is unremarkable. For example, when you open the portal of a rope trick spell, the portal might be outlined by harmless, showy sparkles.</p>
+			<p class="indent">If you use an arcane focus, it probably takes the form of an intricate device that could include metal gauntlets, glass canisters, copper tubing, and leather straps attaching it to your body. The mizzium apparatus described in chapter 5 is a magical version of this gear.</p>
+			<p class="indent">The chaos bolt spell is a favorite of Izzet spellcasters because of its unpredictable nature.</p>
+		</description>
+		<sheet>
+			<description>Your spells tend to be loud, flashy, or explosive, even when the effect is unremarkable. For example, when you open the portal of a rope trick spell, the portal might be outlined by harmless, showy sparkles.</description>
+		</sheet>
+		<!-- adding spells from outside sources other than class features and to all your current classes needs tweaks to work correct, will be addressed in next build -->
+		<!-- if you need to have them added to for example your Wizard class you can temporary set the name attribute to: name="Wizard" -->
+		<!-- <spellcasting name="" extend="true" all="true">
+			<extend>ID_PHB_SPELL_PRODUCE_FLAME</extend>
+			<extend>ID_PHB_SPELL_SHOCKING_GRASP</extend>
+			<extend>ID_GGTR_SPELL_CHAOS_BOLT</extend>
+			<extend>ID_PHB_SPELL_CREATE_OR_DESTROY_WATER</extend>
+			<extend>ID_PHB_SPELL_UNSEEN_SERVANT</extend>
+			<extend>ID_PHB_SPELL_HEAT_METAL</extend>
+			<extend>ID_PHB_SPELL_ROPE_TRICK</extend>
+			<extend>ID_PHB_SPELL_CALL_LIGHTNING</extend>
+			<extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+			<extend>ID_PHB_SPELL_GLYPH_OF_WARDING</extend>
+			<extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTALS</extend>
+			<extend>ID_PHB_SPELL_DIVINATION</extend>
+			<extend>ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE</extend>
+			<extend>ID_PHB_SPELL_ANIMATE_OBJECTS</extend>
+			<extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+		</spellcasting> -->
 		<rules>
 			<!-- <grant type="Grants" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS_BARD" />
 			<grant type="Grants" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS_CLERIC" />
@@ -24,6 +130,7 @@
 			<grant type="Grants" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS_WIZARD" />
 			<grant type="Grants" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS_ARTIFICER" /> -->
 		</rules>
+	</element>
 
 	<!-- temporary -->
 	<element name="Izzet Guild Spells (Bard)" type="Grants" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS_BARD">
