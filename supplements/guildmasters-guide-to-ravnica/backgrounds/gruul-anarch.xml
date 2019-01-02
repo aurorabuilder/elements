@@ -4,11 +4,109 @@
 		<name>Gruul Anarch</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="gruul-anarch.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/gruul-anarch.xml" />
 		</update>
 	</info>
     
-	<!-- Gruul Anarch placeholder -->
-    
+	<element name="Gruul Anarch" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_Gruul_Anarch">
+		<description>
+			<p>The entire world of Ravnica is a sprawling metropolis, but you are a native of the wild areas that still exist-the abandoned districts, the rubblebelts, the overgrown parks, and the crumbling ruins. You are part of a savage society that clings desperately to the Old Ways-attuned to nature, full of primal rage, and given short shrift by a world consumed with continuing civilization's march of progress.</p><br />
+			<p class="indent"><strong>Skill Proficiencies:</strong> Animal Handling, Athletics</p>
+			<p class="indent"><strong>Skill Proficiencies:</strong> Herbalism kit</p>
+			<p class="indent"><strong>Languages:</strong> Choose one of Draconic, Giant, Goblin, or Sylvan</p>
+			<p class="indent"><strong>Equipment:</strong> A Gruul insignia, a hunting trap, an herbalism kit, the skull of a boar, a beast-hide cloak, a set of travelers clothes, and a belt pouch containing 10 gp (Azorius 1-zino coins)</p>
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_RUBBLEBELT_REFUGE" />
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_GRUUL_GUILD_SPELLS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Gruul ways aren't the ways of civilized folk, and the Gruul have little patience for social niceties. But they do have cherished traditions and values, just as important to them as the different values held by the urban, cosmopolitan culture of Ravnica.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />			
+			<select type="Language" name="Language, Gruul Anarch" supports="ID_LANGUAGE_DRACONIC|ID_LANGUAGE_GIANT|ID_LANGUAGE_GOBLIN|ID_LANGUAGE_SYLVAN" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_RUBBLEBELT_REFUGE" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_GRUUL_GUILD_SPELLS" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">Unlike people, the beasts of the wild are friends who won't stab me in the back.</item>
+				<item id="2">Go ahead and insult me-I dare you.</item>
+				<item id="3">I scorn those who can't survive away from the comforts of the city.</item>
+				<item id="4">Don't tell me I'm not allowed to do something.</item>
+				<item id="5">Laws are for people who are afraid to face their inner beasts.</item>
+				<item id="6">I smear the blood of my enemies over my skin.</item>
+				<item id="7">I was, in fact, raised by maaka.</item>
+				<item id="8">HarrRRAAGGHH! [I rarely form a coherent sentence and prefer to express myself by breaking things.]</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Clan. My clan is all that real ly matters. (Any)</item>
+				<item id="2">Anarchy. No person or law or custom can tell another what to do. (Chaotic)</item>
+				<item id="3">Nature. We weren't born tame or domesticated, so we shouldn't have to live that way. (Neutral)</item>
+				<item id="4">Might. The strongest are meant to dominate the weak. (Evil)</item>
+				<item id="5">Rage. AAAAAARRRRggggh! [To live is to feel and ex· press the rage burning in your belly.] (Chaotic)</item>
+				<item id="6">Tradition. The Old Ways must be preserved and upheld. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I am determined that one day I will lead my clan-or a new one.</item>
+				<item id="2">I would give my life for my clan chieftain.</item>
+				<item id="3">The chieftain of another clan has a grudge against me.</item>
+				<item id="4">I am devoted to a sacred site in the midst of the rubblebelt.</item>
+				<item id="5">My weapon is made from the first raktusk I ever hunted.</item>
+				<item id="6">GrrrRRAAAAGGHH! [I will do anything to prove myself greater than my siblings or ancestors.]</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">If you question my courage, I wi ll never back down.</item>
+				<item id="2">HrrrGGGAAAARRuuuh! [My anger in battle led to the death of a loved one.]</item>
+				<item id="3">I'm as stubborn as a batterboar.</item>
+				<item id="4">I'm so convinced of my superiority over soft, civilized people that I 'II take great risks to prove it.</item>
+				<item id="5">I'm easily manipulated by people I find attractive.</item>
+				<item id="6">I'm not actually all that angry.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Rubblebelt Refuge" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_RUBBLEBELT_REFUGE">
+		<supports>Feature</supports>
+		<description>
+			<p>You are intimately familiar with areas of the city that most people shun: ruined neighborhoods where wurms rampaged, overgrown parks that no hand has tended in decades, and the vast, sprawling rubblebelts of broken terrain that civilized folk have long abandoned. You can find a suitable place for you and your allies to hide or rest in these areas. In addition, you can find food and fresh water in these areas for yourself and up to five other people each day.</p>
+		</description>
+		<sheet alt="Rubblebelt Refuge">
+			<description>You are intimately familiar with areas of the city that most people shun: ruined neighborhoods where wurms rampaged, overgrown parks that no hand has tended in decades, and the vast, sprawling rubblebelts of broken terrain that civilized folk have long abandoned. You can find a suitable place for you and your allies to hide or rest in these areas. In addition, you can find food and fresh water in these areas for yourself and up to five other people each day.</description>
+		</sheet>
+	</element>
+	<element name="Gruul Guild Spells" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GRUUL_ANARCH_GRUUL_GUILD_SPELLS">
+		<description>
+			<p><em>Prerequisite: Spellcasting or Pact Magic class feature</em></p>
+			<p>For you, the spells on the Gruul Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Gruul Guild Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>fire bolt, produce flame</em></td></tr>
+				<tr><td>1st</td><td><em>compelled duel, speak with animals, thunderwave</em></td></tr>
+				<tr><td>2nd</td><td><em>beast sense, shatter</em></td></tr>
+				<tr><td>3rd</td><td><em>conjure animals, conjure barrage</em></td></tr>
+				<tr><td>4th</td><td><em>dominate beast, stoneskin</em></td></tr>
+				<tr><td>5th</td><td><em>destructive wave</em></td></tr>
+			</table>
+			<p class="indent">Fueled by the fire of rage burning in your heart, your magic is almost always accompanied by fiery effects, such as flames smoldering behind your eyes or dancing over your hands.</p>
+		</description>
+		<sheet>
+			<description>Fueled by the fire of rage burning in your heart, your magic is almost always accompanied by fiery effects, such as flames smoldering behind your eyes or dancing over your hands.</description>
+		</sheet>
+		<!-- <spellcasting name="" extend="true" all="true">
+			<extend>ID_PHB_SPELL_FIRE_BOLT</extend>
+			<extend>ID_PHB_SPELL_PRODUCE_FLAME</extend>
+			<extend>ID_PHB_SPELL_COMPELLED_DUEL</extend>
+			<extend>ID_PHB_SPELL_SPEAK_WITH_ANIMALS</extend>
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_BEAST_SENSE</extend>
+			<extend>ID_PHB_SPELL_SHATTER</extend>
+			<extend>ID_PHB_SPELL_CONJURE_ANIMALS</extend>
+			<extend>ID_PHB_SPELL_CONJURE_BARRAGE</extend>
+			<extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+			<extend>ID_PHB_SPELL_STONESKIN</extend>
+			<extend>ID_PHB_SPELL_DESTRUCTIVE_WAVE</extend>
+		</spellcasting> -->
+	</element>
 </elements>
