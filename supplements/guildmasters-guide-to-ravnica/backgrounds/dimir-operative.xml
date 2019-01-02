@@ -4,11 +4,127 @@
 		<name>Dimir Operative</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="dimir-operative.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/dimir-operative.xml" />
 		</update>
 	</info>
     
-	<!-- Dimir Operative placeholder -->
-    
+	<element name="Dimir Operative" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_DIMIR_OPERATIVE">
+		<description>
+			<p>You’re a spy. Secrets and misinformation are your stock in trade. You skulk in the shadows, infiltrate other guilds, and steal the most precious secrets, whether they’re written in locked journals or hidden away in someone’s mind. Even you might not be aware of all the reasons behind the missions you carry out. Sometimes a mission’s sole purpose is to conceal the motivatjon behind another strike performed in a different part of the city, or simply to spread fear.</p>
+			<p class="indent">As part of your covert work for House Dimir, you maintain a false identity as a member of another guild. You can choose your secondary guild or roll to determine it randomly. This secondary guild membership determines a portion of your starting equipment and is also where most of your contacts come from. You infiltrate your secondary guild to learn its secrets, keep tabs on its activities, or perhaps undermine it from within.</p>
+			<br />
+			<p class="indent"><strong>Skill Proficiencies:</strong> Deception, Stealth</p>
+			<p class="indent"><strong>Tool Proficiencies:</strong> Disguise kit</p>
+			<p class="indent"><strong>Languages:</strong> One of your choice</p>
+			<p class="indent"><strong>Equipment:</strong> A Dimir insignia, three small knives, a set of dark-colored common clothes, and the starting equipment of the background described in this chapter for your secondary guild</p>
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY" />
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_DIMIR_GUILD_SPELLS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Skilled at infiltration, disguise, and deception, members of House Dimir appear inscrutable. Your true personality and ideals might never manifest, or they might mark you as a quirky member of your secondary guild.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<select type="Language" name="Language, Dimir Operative" supports="Starting"  />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_DIMIR_GUILD_SPELLS" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I’m good at hiding my true thoughts and feelings.</item>
+				<item id="2">When I’m in doubt about revealing something, I assume it’s a secret, and I don’t share it.</item>
+				<item id="3">I like to sound mysterious, because wisdom hidden grows deeper with time.</item>
+				<item id="4">I have no patience with people who get in my way.</item>
+				<item id="5">I love hearing about other people’s nightmares.</item>
+				<item id="6">Combat is meant to be quick, clean, and one-sided.</item>
+				<item id="7">I like to stick to the shadows.</item>
+				<item id="8">I never show my anger. I just plot my revenge.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Guild. My true guild is all that really matters. (Any)</item>
+				<item id="2">Control. I like pulling the strings. (lawful)</item>
+				<item id="3">Secrets. I collect secrets and never reveal them. (Any)</item>
+				<item id="4">Knowledge. I want to know as much as I can about this city and how it works. (Any)</item>
+				<item id="5">Independence. I value the freedom to pursue my own goals without interference. (Chaotic)</item>
+				<item id="6">Nihilism. I don’t believe in anything, and anyone who does is a fool. (Neutral)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I discovered a secret I can’t let anyone else uncoverincluding my guild superiors.</item>
+				<item id="2">I formed a close friendship or romance with someone in the guild I’m infiltrating.</item>
+				<item id="3">The Dimir agent who recruited me was unmasked and killed. My revenge on the killers will be thorough and painful.</item>
+				<item id="4">I spend as much time as I can in the Ismeri Library because I’m certain an information hub operates behind its facade. I want its secrets!</item>
+				<item id="5">I’m utterly loyal to my superior in the guild, more than to the guild or its guildmaster.</item>
+				<item id="6">Someone has discovered my true identity.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I like secrets so much that I’m reluctant to share details of a plan even with those who need to know.</item>
+				<item id="2">I would let my friends die rather than reveal my true identity.</item>
+				<item id="3">I have trouble trusting anyone but myself.</item>
+				<item id="4">I have a particular vice that puts all my secrets at risk if I’m not careful.</item>
+				<item id="5">I’m pretty sure I’ve done something horrible that I can’t remember because of the guild’s mind magic.</item>
+				<item id="6">I put too much trust in the people who give me orders.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: False Identity" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY">
+		<supports>Feature</supports>
+		<description>
+			<p>You have more than one identity. The one you wear most of the time makes you appear to be a member of a guild other than House Dimir. You have documentation, established acquaintances, and disguises that allow you to assume that persona and fit into the secondary guild.</p>
+			<p class="indent">Whenever you choose, you can drop this identity and blend into the guildless masses of the city.</p>
+			<p class="indent">Consider why you’re embedded in the secondary guild. Create a story with your DM, inspired by rolling on the following table or choosing a reason that suits you.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Reason for Infiltration</td></tr>
+				</thead>
+				<tr><td>1</td><td>My parents belong to this guild, and I let them think I’m following in their footsteps.</td></tr>
+				<tr><td>2</td><td>I’ve been assigned to track this guild’s activities.</td></tr>
+				<tr><td>3</td><td>I’ve been assigned to get close to an individual in this guild and learn their secrets.</td></tr>
+				<tr><td>4</td><td>I’ve been assigned to recruit a new Dimir spy from the ranks of this guild.</td></tr>
+				<tr><td>S</td><td>I was a member of this guild before the Dimir recruited me.</td></tr>
+				<tr><td>6</td><td>I don’t like what this guild stands for and want to destroy it from within.</td></tr>
+				<tr><td>7</td><td>I secretly wish I could leave the Dimir and join this guild, but there is no escaping the Dimir.</td></tr>
+				<tr><td>8</td><td>I chose this guild at random or on a lark.</td></tr>
+			</table>
+		</description>
+		<sheet alt="False Identity">
+			<description>You have more than one identity. The one you wear most of the time makes you appear to be a member of a guild other than House Dimir. You have documentation, established acquaintances, and disguises that allow you to assume that persona and fit into the secondary guild.
+			Whenever you choose, you can drop this identity and blend into the guildless masses of the city.</description>
+		</sheet>
+	</element>
+	<element name="Dimir Guild Spells" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_DIMIR_GUILD_SPELLS">
+		<description>
+			<p><em>Prerequisite: Spellcasting or Pact Magic class feature</em></p>
+			<p>For you, the spells on the Dimir Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Dimir Guild Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>encode thoughts, mage hand</em></td></tr>
+				<tr><td>1st</td><td><em>disguise self, sleep</em></td></tr>
+				<tr><td>2nd</td><td><em>detect thoughts, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>gaseous form, meld into stone, nondetection</em></td></tr>
+				<tr><td>4th</td><td><em>arcane eye, freedom of movement</em></td></tr>
+				<tr><td>5th</td><td><em>modify memory</em></td></tr>
+			</table>
+			<p class="indent">Your magic is meant to be subtle and undetectable, but it might pull shadows or clouds of mist around you as you cast your spells. Using the encode thoughts cantrip described below, you can turn a creature’s thoughts (including your own) into a thought st rand that others can potentially read, share, or steal. These thought strands are treated as valuable curre ncy among the Dimir.</p>
+		</description>
+		<sheet>
+			<description>Your magic is meant to be subtle and undetectable, but it might pull shadows or clouds of mist around you as you cast your spells. Using the encode thoughts cantrip described below, you can turn a creature’s thoughts (including your own) into a thought st rand that others can potentially read, share, or steal. These thought strands are treated as valuable curre ncy among the Dimir.</description>
+		</sheet>
+		<!-- <spellcasting name="" extend="true" all="true">
+			<extend>ID_GGTR_SPELL_ENCODE_THOUGHTS</extend>
+			<extend>ID_PHB_SPELL_MAGE_HAND</extend>
+			<extend>ID_PHB_SPELL_DISGUISE_SELF</extend>
+			<extend>ID_PHB_SPELL_SLEEP</extend>
+			<extend>ID_PHB_SPELL_DETECT_THOUGHTS</extend>
+			<extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+			<extend>ID_PHB_SPELL_GASEOUS_FORM</extend>
+			<extend>ID_PHB_SPELL_MELD_INTO_STONE</extend>
+			<extend>ID_PHB_SPELL_NONDETECTION</extend>
+			<extend>ID_PHB_SPELL_ARCANE_EYE</extend>
+			<extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+			<extend>ID_PHB_SPELL_MODIFY_MEMORY</extend>
+		</spellcasting> -->
+	</element>
 </elements>
