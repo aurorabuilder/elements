@@ -4,14 +4,13 @@
     <name>Wizard</name>
     <description>The Wizard class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.2">
+    <update version="0.2.3">
       <file name="class-wizard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-wizard.xml" />
     </update>
   </info>
 
  <element name="Wizard" type="Class" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_WIZARD">
     <description>
-      <!-- <p class="flavor">A scholarly magic-user capable of manipulating the structures of reality.</p> -->
       <p>Clad in the silver robes that denote her station, an elf closes her eyes to shut out the distractions of the battlefield and begins her quiet chant. Fingers weaving in front of her, she completes her spell and launches a tiny bead of fire toward the enemy ranks, where it erupts into a conflagration that engulfs the soldiers.</p>
       <p class="indent">Checking and rechecking his work, a human scribes an intricate magic circle in chalk on the bare stone floor, then sprinkles powdered iron along every line and graceful curve. When the circle is complete, he drones a long incantation. A hole opens in space inside the circle, bringing a whiff of brimstone from the otherworldly plane beyond.</p>
       <p class="indent">Crouching on the floor in a dungeon intersection, a gnome tosses a handful of small bones inscribed with mystic symbols, muttering a few words of power over them. Closing his eyes to see the visions more clearly, he nods slowly, then opens his eyes and points down the passage to his left.</p>
@@ -102,7 +101,7 @@
       </rules>
     </multiclass>
   </element>
-  <element name="Spellcasting (Wizard)" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELLCASTING_WIZARD">
+  <element name="Spellcasting" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELLCASTING_WIZARD">
     <description>
       <p>As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.</p>
       <h5>CANTRIPS</h5>
@@ -163,7 +162,6 @@
       <stat name="wizard:spellcasting:prepare" value="Intelligence Modifier" />
       <stat name="wizard:spellcasting:prepare" value="level:wizard" />
 
-
       <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Wizard" />
       <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="4" number="1" spellcasting="Wizard" />
       <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Wizard" />
@@ -190,66 +188,6 @@
       <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="18" number="2" spellcasting="Wizard" />
       <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" number="2" spellcasting="Wizard" />
       <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" number="2" spellcasting="Wizard" />
-
-
-
-<!-- 
-
-      <stat name="spell:prepare:count:wizard" value="level:wizard" />
-      <stat name="spell:prepare:count:wizard" value="Intelligence Modifier" />
-
-
-      <stat name="spell:attack" value="+Proficiency" />
-      <stat name="spell:attack" value="+Intelligence Modifier" />
-
-      <stat name="spell:dc" value="+8" />
-      <stat name="spell:dc" value="+Proficiency" />
-      <stat name="spell:dc" value="+Intelligence Modifier" />
-
-      <stat name="spell:slots:1" value="2" level="1" />
-      <stat name="spell:slots:1" value="1" level="2" />
-      <stat name="spell:slots:1" value="1" level="3" />
-      <stat name="spell:slots:2" value="2" level="3" />
-      <stat name="spell:slots:2" value="1" level="4" />
-      <stat name="spell:slots:3" value="2" level="5" />
-      <stat name="spell:slots:3" value="1" level="6" />
-      <stat name="spell:slots:4" value="1" level="7" />
-      <stat name="spell:slots:4" value="1" level="8" />
-      <stat name="spell:slots:4" value="1" level="9" />
-      <stat name="spell:slots:5" value="1" level="9" />
-      <stat name="spell:slots:5" value="1" level="10" />
-      <stat name="spell:slots:5" value="1" level="18" />
-      <stat name="spell:slots:6" value="1" level="11" />
-      <stat name="spell:slots:6" value="1" level="19" />
-      <stat name="spell:slots:7" value="1" level="13" />
-      <stat name="spell:slots:7" value="1" level="20" />
-      <stat name="spell:slots:8" value="1" level="15" />
-      <stat name="spell:slots:9" value="1" level="17" />
-
-      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="1" number="3"/>
-      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="4" />
-      <select type="Spell" name="Cantrip (Wizard)" supports="0,Wizard" level="10" />
-
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,1" level="1" number="6"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,1" level="2" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2)" level="3" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2)" level="4" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3)" level="5" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3)" level="6" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4)" level="7" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4)" level="8" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5)" level="9" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5)" level="10" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6)" level="11" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6)" level="12" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7)" level="13" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7)" level="14" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8)" level="15" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8)" level="16" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="17" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="18" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="19" number="2"/>
-      <select type="Spell" name="Spell (Wizard Spellbook)" supports="Wizard,(1||2||3||4||5||6||7||8||9)" level="20" number="2"/> -->
     </rules>
   </element>
   <element name="Arcane Recovery" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY">
