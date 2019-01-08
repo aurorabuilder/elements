@@ -56,18 +56,150 @@
 	
 	</element>
 	
-	<element name="Weapons Proficiency (Sidearms)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS">
+	<element name="Weapon Proficiency (Sidearms)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS">
 		<supports>Weapon, Ranged, Sidearms</supports>
 		<requirements />
 		<description><![CDATA[]]></description>
 		<rules />
 	</element>
 	
-	<element name="Weapons Proficiency (Longarms)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS">
+	<element name="Weapon Proficiency (Longarms)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS">
 		<supports>Weapon, Ranged, Longarms</supports>
 		<requirements />
 		<description><![CDATA[]]></description>
 		<rules />
 	</element>
+	
+	<element name="Weapon Group (Muskets)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_MUSKETS" />
+	<element name="Weapon Group (Rifles)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_RIFLES" />
+	<element name="Weapon Group (Carbines)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_CARBINES" />
+	<element name="Weapon Group (Pistols)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_PISTOLS" />
+	<element name="Weapon Group (Sawn-Off Shotguns)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_SAWNOFFSHOTGUNS" />
+	<element name="Weapon Group (Dragoons)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_DRAGOONS" />
+	<element name="Weapon Group (Flintlock Pistols)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_FLINTLOCKPISTOLS" />
+	<element name="Weapon Group (Wheellock Guns)" type="Weapon Group" source="Internal" id="ID_INTERNAL_WEAPON_GROUP_WHEELLOCKGUNS" />
+	
+	<element name="Weapon Proficiency (Muskets)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_MUSKET">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_MUSKETS</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Rifles)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_RIFLES">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_RIFLES</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Carbines)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_CARBINES">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_CARBINES</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Scatter Guns)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SCATTER">
+		<supports>Weapon, Ranged, ID_RDDT_AA_INTERNAL_WEAPON_PROPERTY_SCATTER</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Pistols)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_PISTOLS</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Sawn-Off Shotguns)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SAWNOFFSHOTGUNS">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_SAWNOFFSHOTGUNS</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Dragoons)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_DRAGOONS">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_DRAGOONS</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Flintlock Pistols)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_FLINTLOCKPISTOLS">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_FLINTLOCKPISTOLS</supports>
+	</element>
+	
+	<element name="Weapon Proficiency (Wheellock Guns)" type="Proficiency" source="Arcane Artillery" id="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_WHEELLOCKGUNS">
+		<supports>Weapon, Ranged, ID_INTERNAL_WEAPON_GROUP_WHEELLOCKGUNS</supports>
+	</element>
+	
+	<append id="ID_WOTC_PHB_CLASS_BARD">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_MUSKET" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_RIFLES" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_CARBINES" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_CLERIC">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SCATTER" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_FIGHTER">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_MONK">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_SORCERER">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SAWNOFFSHOTGUNS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_DRAGOONS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_FLINTLOCKPISTOLS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_WARLOCK">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SAWNOFFSHOTGUNS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_DRAGOONS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_FLINTLOCKPISTOLS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_WIZARD">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SAWNOFFSHOTGUNS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_DRAGOONS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_FLINTLOCKPISTOLS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_PALADIN">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_RANGER">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_LONGARMS" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_PHB_CLASS_ROGUE">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_MUSKET" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_WHEELLOCKGUNS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_RIFLES" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_CARBINES" type="Proficiency"/>
+		</rules>
+	</append>
+	
+	<append id="ID_WOTC_UA_CLASS_ARTIFICER">
+		<rules>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SIDEARMS" type="Proficiency"/>
+			<grant name="ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SCATTER" type="Proficiency"/>
+		</rules>
+	</append>
 	
 </elements>
