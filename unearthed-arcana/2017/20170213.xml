@@ -1,43 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Unearthed Arcana: Warlock and Wizard</name>
+        <name>Unearthed Arcana:  Warlock and Wizard</name>
         <description>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</description>
-        <author url="http://dnd.wizards.com/articles/unearthed-arcana/warlock-and-wizard">Wizards of the Coast</author>
-        <update version="0.0.2">
+        <author url="http://dnd.wizards.com/articles/unearthed-arcana/wild">Wizards of the Coast</author>
+        <update version="0.0.1">
             <file name="20170213.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170213.xml" />
         </update>
     </info>
-
-	<element name="Unearthed Arcana: Warlock and Wizard" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20170213">
-		<description>
-			<p>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</p>
-		</description>
-		<setters>
-			<set name="abbreviation">UA20170213</set>
-			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/warlock-and-wizard</set>
-			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
-			<set name="official">true</set>
-			<set name="playtest">true</set>
-			<set name="release">20170213</set>
-		</setters>
-	</element>
-
-    <element name="The Raven Queen" type="Deity" source="Unearthed Arcana" id="ID_WOTC_UA20170213_DEITY_THE_RAVEN_QUEEN">
-        <description>
-            <p class="flavor">goddess of death, fate, and winter</p>
-        </description>
-        <setters>
-            <set name="alignment">UN</set>
-            <set name="domains">Death, Fate, Winter</set>
-            <set name="symbol">The head of a raven</set>
-            <set name="gender">female</set>
-        </setters>
-        <sheet>
-            <description>goddess of death, fate, and winter</description>
-        </sheet>
-    </element>
-
     <!-- The Raven Queen -->
     <element name="The Raven Queen" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN">
         <supports>Otherworldly Patron</supports>
@@ -163,5 +133,110 @@
             <description>When you score a critical hit with your eldritch blast cantrip, pick yourself or an ally you can see within 30 feet of you. The chosen creature can immediately expend a Hit Die to regain hit points equal to the roll + the creature’s Constitution modifier (minimum of 1 hit point).</description>
         </sheet>
         <rules />
-    </element>	
+    </element>
+    <!-- Lore Mastery -->
+    <element name="Lore Mastery" type="Archetype" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Lore Mastery is an arcane tradition fixated on understanding the underlying mechanics of magic. It is the most academic of all arcane traditions. The promise of uncovering new knowledge or proving (or discrediting) a theory of magic is usually required to rouse its practitioners from their laboratories, academies, and archives to persue a life of adventure.</p>
+    			<p class="indent">Known as savants, followers of this tradition are a bookish lot who see beauty and mystery in the application of magic. The results of a spell are less interesting to them than the process that creates it. Some savants take haughty attitude toward those who follow a tradition focused on a single school of magic, seeing them as provincial and lacking the sophistication needed to master true magic. Other savants are generous teachers, countering ignorance and deception with deep knowledge and good humor.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" />
+            <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS" />
+            <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING" />
+            <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY" />
+            <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC" />
+        </description>
+        <sheet>
+            <description>Lore Mastery is an arcane tradition fixated on understanding the underlying mechnanics of magic. The promise of uncovering new knowledge or proving (or discrediting) a theory of magic is usually required to rouse its practitioners from their laboratories, academies, and archives to persue a life of adventure.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING" level="6"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY" level="10"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC" level="14"/>
+        </rules>
+    </element>
+    <element name="Lore Master" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER">
+        <description>
+            <p>Starting at 2nd level, you become a compendium of knowledge on a vast array of topics. Your proficiency bonus is doubled for any ability check you make that uses the Arcana, History, Nature, or Religion skill if you are proficient in that skill.</p>
+    			<p class="indent">In addition, your analytical abilities are so well-honed that your initiative in combat can be driven by mental agility, rather than physical ability. When you roll initiative, you choose either an Intelligence check or a Dexterity check.</p>
+        </description>
+        <sheet>
+            <description>When you roll initiative, you choose either an Intelligence check or a Dexterity check.</description>
+        </sheet>
+        <rules>
+		<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_ARCANA_DOUBLE" requirements="ID_PROFICIENCY_SKILL_ARCANA"/>
+		<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_HISTORY_DOUBLE" requirements="ID_PROFICIENCY_SKILL_HISTORY"/>
+		<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_NATURE_DOUBLE" requirements="ID_PROFICIENCY_SKILL_NATURE"/>
+		<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_RELIGION_DOUBLE" requirements="ID_PROFICIENCY_SKILL_RELIGION"/>
+		<stat name="Initiative" value="Intelligence Modifier" bonus="ability"/>
+        </rules>
+    </element>
+    <element name="Arcana Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_ARCANA_DOUBLE">
+        <rules> 
+		<stat name="Arcana Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_ARCANA"/> 
+        </rules> 
+    </element>
+    <element name="History Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_HISTORY_DOUBLE">
+        <rules> 
+		<stat name="History Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_HISTORY"/> 
+        </rules> 
+    </element>
+    <element name="Nature Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_NATURE_DOUBLE">
+        <rules> 
+		<stat name="Nature Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_NATURE"/> 
+        </rules> 
+    </element>
+    <element name="Religion Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_RELIGION_DOUBLE">
+        <rules> 
+		<stat name="Religion Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_RELIGION"/> 
+        </rules> 
+    </element>
+    <element name="Spell Secrets" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS">
+        <description>
+            <p>At 2nd level, you master the first in a series of arcane secrets uncovered by your extensive studies.</p>
+    			<p class="indent">When you cast a spell with a spell slot and the spell deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). You replace one energy type for another by altering the spell's formula as you cast it.</p>
+    			<p class="indent">When you cast a spell with a spell slot and the spell requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>When you cast a spell with a spell slot that deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). When you cast a spell that requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Alchemical Casting" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING">
+        <description>
+            <p>At 6th level, you learn to augment spells in a variety of ways. When you cast a spell with a spell slot, you can expend one additional spell slot to augment its effects for this casting, mixing the raw stuff of magic into your spell slot you expend.</p>
+    			<p class="indent">An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by 2d10 force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.</p>
+    			<p class="indent">An additional 2nd-level spell slot can increase the spell's range. If the spell's range is at least 30 feet, it becomes 1 miles.</p>
+    			<p class="indent">An additional 3rd-level spell slot can increase the spell's potency. Increase the spell's save DC by 2.</p>
+        </description>
+        <sheet>
+            <description>You can expend one additional spell slot to augment your casting. An additional 1st-level increases damage of the spell by 2d10 force damage once on the turn you cast the spell. An additional 2nd-level spell slot increases range to a 1 mile. An additional 3rd-level spell slot increases spell's save DC by 2.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Prodigious Memory" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY">
+        <description>
+            <p>At 10th level, you have attained greater mastery of spell preparation. As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Master of Magic" type="Archetype Feature" source="Unearthed Arcana" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC">
+        <description>
+            <p>At 14th level, your knowledge of magic allows you to duplicate almost any spell. As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. If the spell isn't a wizard spell, it counts as a wizard spell when you cast it. The ability to cast the spell vanishes from your mind when you cast it or when current turn ends.</p>
+    			<p class="indent">You can't use this feature again until you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. You can't use this feature again until you finish a long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
 </elements>
