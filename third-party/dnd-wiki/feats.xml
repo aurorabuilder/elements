@@ -4,7 +4,7 @@
         <name>Feats</name>
         <description>5e homebrew</description>
         <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
-        <update version="0.1">
+        <update version="0.2">
             <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/feats.xml" />
         </update>
     </info>
@@ -53,4 +53,112 @@
         </sheet>
     </element>
 
+    <element name="Cantrip Caster" type="Feat" source="D&amp;D Wiki" id="ID_WIKI_FEAT_CANTRIP_CASTER">
+        <supports />
+		<prerequisite>Intelligence 13, Wisdom 13 or Charisma</prerequisite>
+		<requirements>([int:13]||[wis:13]||[cha:13])</requirements>
+        <description>
+            <p><i>Prerequisites: Intelligence, Wisdom, or Charisma 13 or higher</i></p>
+            <p>Choose a class: bard, cleric, druid, sorcerer, warlock, or wizard. You learn a one cantrip of your choice from that class's spell list. Your spellcasting ability for this cantrip depends on the class you chose: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid: or Intelligence for wizard. When you cast a cantrip, you can choose to gain the following benefits:</p>
+            <ul>
+                <li>When you cast a cantrip that requires you to make a ranged attack roll, the cantrip's range is doubled.</li>
+                <li>If a cantrip has a range of touch, you can instead cast it with a range of 30 feet.</li>
+                <li>If a cantrip deals damage, it deals extra damage equal to your spellcasting modifier.</li>
+                <li>When casting a cantrip with a casting time of one action, you can choose to cast it twice, instead of once, as a single action. Once you use this feature, you must finish a short or long rest before you can use it again.</li>
+            </ul>        
+        </description>
+        <setters>
+            <set name="sourceUrl">https://www.dandwiki.com/wiki/Cantrip_Caster_(5e_Feat)</set>
+        </setters>
+        <sheet>
+            <description>When you cast a cantrip that requires you to make a ranged attack roll, the cantrip's range is doubled. If a cantrip has a range of touch, you can instead cast it with a range of 30 feet. If a cantrip deals damage, it deals extra damage equal to your spellcasting modifier. When casting a cantrip with a casting time of one action, you can choose to cast it twice, instead of once, as a single action. Once you use this feature, you must finish a short or long rest before you can use it again.</description>
+        </sheet>
+        <rules>
+            <select type="Feat Feature" name="Cantrip Caster" supports="Cantrip Caster" />
+        </rules>
+    </element>
+    <element name="Bard" type="Feat Feature" source="D&amp;D Wiki"  id="ID_WIKI_FEAT_CANTRIP_CASTER_BARD">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the bard’s spell   list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Charisma.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Charisma.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Bard Cantrip (Cantrip Caster)" supports="0, Bard" number="1" />
+        </rules>
+    </element>
+    <element name="Cleric" type="Feat Feature" source="D&amp;D Wiki"  id="ID_WIKI_FEAT_CANTRIP_CASTER_CLERIC">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the cleric’s spell   list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Wisdom.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Wisdom.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Cleric Cantrip (Cantrip Caster)" supports="0, Cleric" number="1" />
+        </rules>
+    </element>
+    <element name="Druid" type="Feat Feature" source="D&amp;D Wiki"   id="ID_WIKI_FEAT_CANTRIP_CASTER_DRUID">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the druid spell  list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Wisdom.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Wisdom.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Druid Cantrip (Cantrip Caster)" supports="0, Druid" number="1" />
+        </rules>
+    </element>
+    <element name="Sorcerer" type="Feat Feature" source="D&amp;D Wiki"  id="ID_WIKI_FEAT_CANTRIP_CASTER_SORCERER">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the sorcerer’s spell   list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Charisma.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Charisma.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Sorcerer Cantrip (Cantrip Caster)" supports="0, Sorcerer" number="1" />
+        </rules>
+    </element>
+    <element name="Warlock" type="Feat Feature" source="D&amp;D Wiki"   id="ID_WIKI_FEAT_CANTRIP_CASTER_WARLOCK">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the warlock’s spell  list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Charisma.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Charisma.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Warlock Cantrip (Cantrip Caster)" supports="0, Warlock" number="1" />
+        </rules>
+    </element>
+    <element name="Wizard" type="Feat Feature" source="D&amp;D Wiki"  id="ID_WIKI_FEAT_CANTRIP_CASTER_WIZARD">
+        <supports>Cantrip Caster</supports>
+        <requirements />
+        <description>
+            <p>You learn one cantrip of your choice from the wizard’s spell   list.</p>
+            <p class="indent">Your spellcasting ability for this cantrip is   Intelligence.</p>
+        </description>
+        <sheet>
+            <description>Spellcasting ability: Intelligence.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Wizard Cantrip (Cantrip Caster)" supports="0, Wizard" number="1" />
+        </rules>
+    </element>
 </elements>
