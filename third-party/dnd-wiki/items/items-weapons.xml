@@ -20,10 +20,10 @@
 			<set name="slot">onehand</set>
 			<set name="damage" type="slashing">1d8</set>
 			<set name="versatile">1d10</set>
-			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_KATANA</set>
+			<set name="proficiency">ID_BREW_WEAPON_PROFICIENCY_KATANA</set>
 		</setters>
 	</element>
-	<element name="Finesse Katana" type="Weapon" source="D&amp;D Wiki" id="ID_BREW_WEAPON_LIGHT_KATANA">
+	<element name="Katana, Finesse" type="Weapon" source="D&amp;D Wiki" id="ID_BREW_WEAPON_LIGHT_KATANA">
 		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
 		<description>
 			<p></p>
@@ -34,7 +34,15 @@
 			<set name="weight" lb="2">2 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="damage" type="slashing">1d8</set>
-			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_KATANA</set>
+			<set name="proficiency">ID_BREW_WEAPON_PROFICIENCY_KATANA</set>
 		</setters>
 	</element>
+	<element name="Weapon Proficiency (Katana)" type="Proficiency" source="D&amp;D Wiki" id="ID_BREW_WEAPON_PROFICIENCY_KATANA">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_BREW_WEAPON_PROFICIENCY_KATANA" />
+		</rules>
+	</append>
 </elements>
