@@ -86,6 +86,7 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
 			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
 			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
+			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
 			<select type="Proficiency" name="Saving Throw Proficiency (Weapon Master)" supports="ID_PROFICIENCY_SAVINGTHROW_STRENGTH|ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" number="1" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
 			<select type="Proficiency" name="Skill Proficiency (Weapon Master)" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" requirements="!ID_WIKI_MULTICLASS_WEAPON_MASTER"/>
 			<grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_WEAPON_MASTER_FAVORED_WEAPON" level="1" />
@@ -139,10 +140,14 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<p>At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.</p>
 			<h5>ARCHERY</h5>
 			<p>You gain a +2 bonus to attack rolls you make with ranged weapons.</p>
+			<h5>DEFENSE</h5>
+			<p>While you are wearing armor, you gain a +1 bonus to AC.</p>
 			<h5>DUELING</h5>
 			<p>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
 			<h5>GREAT WEAPON FIGHTING</h5>
 			<p>When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.</p>
+			<h5>PROTECTION</h5>
+			<p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</p>
 			<h5>TWO-WEAPON FIGHTING</h5>
 			<p>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</p>
 		</description>
@@ -169,11 +174,11 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 		<sheet display="false" />
 		<rules>
 			<!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_WEAPON_MASTER" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /><grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_WEAPON_MASTER" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /><grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_WEAPON_MASTER" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /><grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_WEAPON_MASTER" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /><grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_WEAPON_MASTER" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
-			<select type="Class Feature" name="Improvement Option (Weapon Master 4)" supports="Improvement Option,Weapon Master,4" default="ID_INTERNAL_CLASS_FEATURE_ASI_4_WEAPON_MASTER" level="4" requirements=""/>
-			<select type="Class Feature" name="Improvement Option (Weapon Master 8)" supports="Improvement Option,Weapon Master,8" default="ID_INTERNAL_CLASS_FEATURE_ASI_8_WEAPON_MASTER" level="8" requirements=""/>
-			<select type="Class Feature" name="Improvement Option (Weapon Master 12)" supports="Improvement Option,Weapon Master,12" default="ID_INTERNAL_CLASS_FEATURE_ASI_12_WEAPON_MASTER" level="12" requirements=""/>
-			<select type="Class Feature" name="Improvement Option (Weapon Master 16)" supports="Improvement Option,Weapon Master,16" default="ID_INTERNAL_CLASS_FEATURE_ASI_16_WEAPON_MASTER" level="16" requirements=""/>
-			<select type="Class Feature" name="Improvement Option (Weapon Master 19)" supports="Improvement Option,Weapon Master,19" default="ID_INTERNAL_CLASS_FEATURE_ASI_19_WEAPON_MASTER" level="19" requirements=""/>
+			<select type="Class Feature" name="Improvement Option (Weapon Master 4)" supports="Improvement Option,Weapon Master,4" level="4" />
+			<select type="Class Feature" name="Improvement Option (Weapon Master 8)" supports="Improvement Option,Weapon Master,8" level="8" />
+			<select type="Class Feature" name="Improvement Option (Weapon Master 12)" supports="Improvement Option,Weapon Master,12" level="12" />
+			<select type="Class Feature" name="Improvement Option (Weapon Master 16)" supports="Improvement Option,Weapon Master,16" level="16" />
+			<select type="Class Feature" name="Improvement Option (Weapon Master 19)" supports="Improvement Option,Weapon Master,19" level="19" />
 		</rules>
 	</element>
 	<element name="Extra Attack" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_WEAPON_MASTER_EXTRA_ATTACK">
@@ -215,19 +220,8 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_INTIMIDATION" requirements="!ID_PROFICIENCY_SKILL_INTIMIDATION"/> 
-			<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_INTIMIDATION_DOUBLE" requirements="ID_PROFICIENCY_SKILL_INTIMIDATION"/>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_INTIMIDATION" />
 		</rules>
-	</element>
-	<element name="Intimidation Proficiency" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_INTIMIDATION">
-		<rules> 
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" /> 
-		</rules> 
-	</element> 
-	<element name="Intimidation Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_INTIMIDATION_DOUBLE">
-		<rules> 
-			<stat name="Intimidation Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_INTIMIDATION"/> 
-		</rules> 
 	</element>
 	<!-- Combat Mastery -->
 	<element name="Combat Mastery" type="Archetype" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_WEAPON_MASTER_COMBAT_MASTERY">
@@ -309,7 +303,7 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_NATURAL_LEADER" />
 			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_PARRY" />
 			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_HELPER" />
-			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENCE" />
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENSE" />
 			<div element="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_KNOW_YOUR_ENEMY" />
 		</description>
 		<setters>
@@ -322,7 +316,7 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_NATURAL_LEADER" level="3" />
 			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_PARRY" level="7" />
 			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_HELPER" level="10" />
-			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENCE" level="15" />
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENSE" level="15" />
 			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_KNOW_YOUR_ENEMY" level="18" />
 		</rules>
 	</element>
@@ -350,7 +344,7 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<description>When you take the Help action, you may Help a separate target as a bonus action.</description>
 		</sheet>
 	</element>
-	<element name="Multiattack Defence" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENCE">
+	<element name="Multiattack Defense" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_MULTIATTACK_DEFENSE">
 		<description>
 			<p>From 15th level, when a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.</p>
 		</description>
@@ -436,19 +430,8 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Blobby383b and Raid
 			<description>You gain advantage on any Dexterity saving throws from magic.</description>
 		</sheet>
 		<rules>
-			<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_PROFICIENCY_SKILL_PERCEPTION"/> 
-			<grant type="Grants" id="ID_GRANTS_PROFICIENCY_SKILL_PERCEPTION_DOUBLE" requirements="ID_PROFICIENCY_SKILL_PERCEPTION"/>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_PERCEPTION" />
 		</rules>
-	</element>
-	<element name="Perception Proficiency" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_PERCEPTION">
-		<rules> 
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" /> 
-		</rules> 
-	</element> 
-	<element name="Perception Proficiency Double" type="Grants" source="Core" id="ID_GRANTS_PROFICIENCY_SKILL_PERCEPTION_DOUBLE">
-		<rules> 
-			<stat name="Perception Proficiency" value="Proficiency" bonus="Proficiency Double" requirements="!ID_GRANTS_PROFICIENCY_SKILL_PERCEPTION"/> 
-		</rules> 
 	</element>
 	<!-- /Evasive Mastery -->
 </elements>
