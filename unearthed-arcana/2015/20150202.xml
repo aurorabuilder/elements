@@ -4,13 +4,27 @@
         <name>Unearthed Arcana: Eberron</name>
         <description>The Eberron campaign setting was created by Keith Baker and first published for D&amp;D in 2004. It combines pulp adventure and intrigue in a world where magic-driven technology has produced airships, trains, and similar advancements comparable to early 20th-century Europe. The continent of Khorvaire, the center of Eberron’s focus, has recently emerged from the Last War, a terrible conflict that saw the kingdom of Cyre transformed into a lifeless gray wasteland called the Mournland. That catastrophe shocked the remaining kingdoms into an uneasy peace that has held so far.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/unearthed-arcana-eberron">Wizards of the Coast</author>
-        <update version="0.2.0">
+        <update version="0.2.3">
             <file name="20150202.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2015/20150202.xml" />
         </update>
     </info>
     
+	<element name="Unearthed Arcana: Eberron" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20150202">
+		<description>
+			<p>The Eberron campaign setting was created by Keith Baker and first published for D&amp;D in 2004. It combines pulp adventure and intrigue in a world where magic-driven technology has produced airships, trains, and similar advancements comparable to early 20th-century Europe. The continent of Khorvaire, the center of Eberron’s focus, has recently emerged from the Last War, a terrible conflict that saw the kingdom of Cyre transformed into a lifeless gray wasteland called the Mournland. That catastrophe shocked the remaining kingdoms into an uneasy peace that has held so far.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20150202</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/unearthed-arcana-eberron</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20150202</set>
+		</setters>
+	</element>
+
     <!-- Changeling -->
-    <element name="Changeling" type="Race" source="Unearthed Arcana" id="ID_WOTC_UA_RACE_CHANGELING">
+    <element name="Changeling" type="Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACE_CHANGELING">
         <description>
             <p class="flavor">Changelings are subtle shapeshifters capable of disguising their appearance. Their ability to adopt other creatures’ guises makes them consummate spies and criminals.</p>
             <p>As a changeling, you have the following racial traits.</p>
@@ -33,7 +47,7 @@
         <rules>
             <stat name="Dexterity" value="+1" />
             <stat name="Charisma" value="+1" />
-            <stat name="Speed" value="30" />
+            <stat name="Speed" value="30" bonus="base" />
             <grant type="Size" name="ID_SIZE_MEDIUM" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER" />
@@ -41,7 +55,7 @@
             <select type="Language" name="Language (Changeling)" number="2" />
         </rules>
     </element>
-    <element name="Duplicity" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY">
+    <element name="Duplicity" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY">
         <description>
             <p>You gain proficiency in the Deception skill.</p>
         </description>
@@ -52,7 +66,7 @@
             <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_DECEPTION" />
         </rules>
     </element>
-    <element name="Shapechanger" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER">
+    <element name="Shapechanger" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER">
         <description>
             <p>As an action, you can polymorph into any humanoid of your size that you have seen, or back into your true form. However, your equipment does not change with you. If you die, you revert to your natural appearance.</p>
         </description>
@@ -65,7 +79,7 @@
 
 
     <!-- Shifter -->
-    <element name="Shifter" type="Race" source="Unearthed Arcana" id="ID_WOTC_UA_RACE_SHIFTER">
+    <element name="Shifter" type="Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACE_SHIFTER">
         <description>
             <p class="flavor">Shifters are descended from humans and lycanthropes. Although they cannot fully change to animal form, they can take on animalistic features by a process they call shifting.</p>
             <p>As a shifter, you have the following racial traits.</p>
@@ -95,7 +109,7 @@
         <rules>            
             <stat name="Dexterity" value="+1" />
             <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <stat name="Speed" value="30" />
+            <stat name="Speed" value="30" bonus="base" />
             <grant type="Vision" name="ID_VISION_DARKVISION" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE" />
@@ -103,7 +117,7 @@
             <grant type="Language" name="ID_LANGUAGE_SYLVAN" />
         </rules>
     </element>
-    <element name="Shifting" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING">
+    <element name="Shifting" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING">
         <description>
             <p>On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.</p>
             <p class="indent">While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.</p>
@@ -118,7 +132,7 @@
             <stat name="shifting:hp:temp" value="Constitution Modifier" bonus="min" />
         </rules>
     </element>
-    <element name="Shifter Subrace" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE">
+    <element name="Shifter Subrace" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE">
         <description>
             <p>Several subraces of shifter exist, each with its own animalistic features. Choose one of the options below.</p>
         </description>
@@ -127,7 +141,7 @@
             <select type="Sub Race" name="Shifter Subrace" supports="UA Shifter" />
         </rules>
     </element>
-    <element name="Beasthide Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_BEASTHIDE">
+    <element name="Beasthide Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_BEASTHIDE">
         <supports>UA Shifter</supports>
         <description>
             <p>As a beasthide shifter, you are especially tough and persistent in battle.</p>
@@ -143,7 +157,7 @@
             <stat name="Constitution" value="+1" />
         </rules>
     </element>
-    <element name="Cliffwalk Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_Cliffwalk">
+    <element name="Cliffwalk Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Cliffwalk">
         <supports>UA Shifter</supports>
         <description>
             <p>Your cliffwalk heritage grants you the agility of a mountain goat.</p>
@@ -159,7 +173,7 @@
             <stat name="Dexterity" value="+1" />
         </rules>
     </element>
-    <element name="Longstride Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_Longstride">
+    <element name="Longstride Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Longstride">
         <supports>UA Shifter</supports>
         <description>
             <p>Longstride shifters are fleet and elusive.</p>
@@ -175,7 +189,7 @@
             <stat name="Dexterity" value="+1" />
         </rules>
     </element>
-    <element name="Longtooth Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_Longtooth">
+    <element name="Longtooth Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Longtooth">
         <supports>UA Shifter</supports>
         <description>
             <p>As a longtooth shifter, you are a ferocious combatant.</p>
@@ -191,7 +205,7 @@
             <stat name="Strength" value="+1" />
         </rules>
     </element>
-    <element name="Razorclaw Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_Razorclaw">
+    <element name="Razorclaw Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Razorclaw">
         <supports>UA Shifter</supports>
         <description>
             <p>As a razorclaw shifter, you make swift, slashing strikes in battle.</p>
@@ -207,7 +221,7 @@
             <stat name="Dexterity" value="+1" />
         </rules>
     </element>
-    <element name="Wildhunt Shifter" type="Sub Race" source="Unearthed Arcana" id="ID_WOTC_UA_SUBRACE_Wildhunt">
+    <element name="Wildhunt Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Wildhunt">
         <supports>UA Shifter</supports>
         <description>
             <p>Your wildhunt heritage makes you a consummate tracker and survivor.</p>
@@ -227,7 +241,7 @@
 
 
     <!-- Warforged -->
-    <element name="Warforged" type="Race" source="Unearthed Arcana" id="ID_WOTC_UA_RACE_WARFORGED">
+    <element name="Warforged" type="Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACE_WARFORGED">
         <description>
             <p class="flavor">The warforged were made as the ideal soldiers to serve in the devastating Last War. Although they are constructs, they have much in common with living creatures, including emotions and social bonds, and perhaps even souls.</p>
             <p>As a warforged, you have the following racial traits.</p>
@@ -250,14 +264,14 @@
             <stat name="Strength" value="+1" />
             <stat name="Constitution" value="+1" />
             <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <stat name="Speed" value="30" />
+            <stat name="Speed" value="30" bonus="base" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating" />
             <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct" />
             <grant type="Language" name="ID_LANGUAGE_COMMON" />
             <select type="Language" name="Language (Warforged)" />
         </rules>
     </element>
-    <element name="Composite Plating" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating">
+    <element name="Composite Plating" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating">
         <description>
             <p>Your construction incorporates wood and metal, granting you a +1 bonus to Armor Class.</p>
         </description>
@@ -268,7 +282,7 @@
             <stat name="AC" value="+1" />
         </rules>
     </element>
-    <element name="Living Construct" type="Racial Trait" source="Unearthed Arcana" id="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct">
+    <element name="Living Construct" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct">
         <description>
             <p>Even though you were constructed, you are a living creature. You are immune to disease. You do not need to eat or breathe, but you can ingest food and drink if you wish.</p>
             <p class="indent">Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal.</p>
@@ -286,7 +300,7 @@
 
 
     <!-- Feat: Dragonmark -->
-    <!-- <element name="Dragonmark" type="Feat" source="Unearthed Arcana" id="ID_WOTC_UA_FEAT_DRAGONMARK">
+    <!-- <element name="Dragonmark" type="Feat" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_FEAT_DRAGONMARK">
         <description>
             <p>You have a magical mark that indicates you are a member of one of the dragonmarked houses. Select one of the options from the Dragonmarks table.</p>
             <p class="indent">You gain the ability to innately cast spells and cantrips, as summarized in the Dragonmark Benefits table, using the spellcasting ability listed under the Ability column. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:</p>
@@ -324,7 +338,7 @@
     </element> -->
 
     <!-- Dragonmarks -->
-    <!-- <element name="Detection" type="Feat Feature" source="Unearthed Arcana" id="ID_WOTC_UA_FEATFEATURE_DRAGONMARK_Detection">
+    <!-- <element name="Detection" type="Feat Feature" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_FEATFEATURE_DRAGONMARK_Detection">
         <supports>UA_Dragonmark</supports>
         <description>
             <p></p>

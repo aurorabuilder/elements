@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Vedalken</name>
+		<description></description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
+		<update version="0.0.2">
+			<file name="vedalken.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/vedalken.xml" />
+		</update>
+	</info>
+    
+	<element name="Vedalken" type="Race" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACE_VEDALKEN">
+		<description>
+			<p>Nothing is perfect. Vedalken not only believe this fact, they rejoice in it. Every imperfection is a chance for improvement, and progress is an endless march toward a state of perfection that can never be reached. This viewpoint leads vedalken to pursue their work with delighted enthusiasm, never deterred by setbacks and excited by every opportunity for improvement.</p>
+			<p class="indent">Vedalken are tall and slender, standing almost a head taller than humans on average but weighing about the same. Their hairless skin comes in a range of shades of blue. Their eyes are darker shades of blue or violet. They lack external ears, their noses are broad and flat, and they are partially amphibious.</p>
+			<h4>COOL RATIONALITY</h4>
+			<p>Despite being talkative, vedalken keep their personal lives private, and they tend to engage more with ideas than with people. They form close friendships based on mutual interests or compelling disagreements, and their interactions dwell on their thoughts about those issues rather than their feelings about them.</p>
+			<p class="indent">To members of other races, vedalken often seem cold, even emotionless. That assessment isn't fair-they feel emotion every bit as intensely as other folk do, but they are skilled at not displaying it. Cool rationality guides their actions, they make and follow careful plans, and they are patient enough to do nothing when the ideal outcome relies on such inaction.</p>
+			<h4>REASONING TOWARD PERFECTION</h4>
+			<p>Their curious intellects and rational minds incline vedalken toward membership in the Azorius Senate, the Simic Combine, and (less often) the Izzet League. Whatever their guild affiliation, they put their intelligence to use in crafting and improving things, whether those things are laws, procedures, or magical sciences.</p>
+			<p class="indent">Vedalken believe that the path toward the impossible goal of perfect ion is paved with bricks of education, careful deliberation, and controlled experimentation. Some vedalken direct their energy toward perfecting themselves, whether by means of Simic bioengineering or through extensive study, and others concentrate on perfecting society through the careful drafting and application of laws.</p>
+			<h4>VEDALKEN NAMES</h4>
+			<p>Vedalken are given names at birth, but usually choose new names for themselves as part of their transition into adulthood. They rarely use family names.</p>
+			<p><strong>Male Names:</strong> Aglar, Bellin, DaHid, Firellan, Kavin, Koplony, Lomar, Mathvan, Modar, Nebun, Nhillosh, Nitt, Otrovac, Ovlan, Pelener, Rill, Trivaz, Uldin, Yolov, Zataz<br/>
+			<strong>Female Names:</strong> Azi, Barvisa, Brazia, Direll, Fainn, Griya, Hallia, Katrille, Kovel, Lilla, Mirela, Morai, Nedress, Ossya, Pierenn, Roya, Sestri, Triel, Uzana, Yaraghiya, Zlovol</p>
+			<h4>VEDALKEN TRAITS</h4>
+			<p>Your vedalken character has the following racial traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence score increases by 2, and your Wisdom score increases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Vedalken mature slower than humans do, reaching maturity around age 40. Their life span is typically 350 years, with some living to the age of 500.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Vedalken are usually lawful and non-evil.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Tall and slender, Vedalken stand 6 to 6 1/2 feet tall on average and usually weigh less than 200 pounds. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Vedalken Dispassion.</em></strong> You have advantage on all Intelligence, Wisdom, and Charisma saving throws.</p>
+			<p class="indent"><strong><em>Tireless Precision.</em></strong> You are proficient in one of the following skills of your choice: Arcana, History, Investigation, Medicine, Performance, or Sleight of Hand. You are also proficient with one tool of your choice.</p>
+			<p class="indent">Whenever you make an ability check with the chosen skill or tool, roll a d4 and add the number rolled to the check's total.</p>
+			<p class="indent"><strong><em>Partially Amphibious.</em></strong> By absorbing oxygen through your skin, you can breathe underwater for up to 1 hour. Once you've reached that limit, you can't use this trait again until you finish a long rest.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common, Vedalken, and one other language of your choice.</p>
+		</description>
+		<setters>
+			<set name="names" type="male">Aglar, Bellin, DaHid, Firellan, Kavin, Koplony, Lomar, Mathvan, Modar, Nebun, Nhillosh, Nitt, Otrovac, Ovlan, Pelener, Rill, Trivaz, Uldin, Yolov, Zataz</set>
+			<set name="names" type="female">Azi, Barvisa, Brazia, Direll, Fainn, Griya, Hallia, Katrille, Kovel, Lilla, Mirela, Morai, Nedress, Ossya, Pierenn, Roya, Sestri, Triel, Uzana, Yaraghiya, Zlovol</set>
+			<set name="names-format">$(name)</set>
+			<set name="height" modifier="2d10">5'4"</set>
+			<set name="weight" modifier="2d4">110 lb.</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<stat name="Intelligence" value="2" />
+			<stat name="Wisdom" value="1" />
+			<stat name="Speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_GGTR_LANGUAGE_VEDALKEN" />
+			<select type="Language" name="Language (Vedalken)" supports="Starting" />
+			<grant type="Racial Trait" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_VEDALKEN_DISPASSION" />
+			<grant type="Racial Trait" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_TIRELESS_PRECISION" />
+			<grant type="Racial Trait" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_PARTIALLY_AMPHIBIOUS" />
+		</rules>
+	</element>	
+    <element name="Vedalken Dispassion" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_VEDALKEN_DISPASSION">
+		<description>
+			<p>You have advantage on all Intelligence, Wisdom, and Charisma saving throws.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on all Intelligence, Wisdom, and Charisma saving throws.</description>
+		</sheet>
+	</element>    
+	<element name="Tireless Precision" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_TIRELESS_PRECISION">
+		<description>
+			<p>You are proficient in one of the following skills of your choice: Arcana, History, Investigation, Medicine, Performance, or Sleight of Hand. You are also proficient with one tool of your choice.</p>
+			<p class="indent">Whenever you make an ability check with the chosen skill or tool, roll a d4 and add the number rolled to the check's total.</p>
+		</description>
+		<sheet>
+			<description>Whenever you make an ability check with the chosen skill or tool, roll a d4 and add the number rolled to the check's total.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Tireless Precision)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<select type="Proficiency" name="Tool Proficiency (Tireless Precision)" supports="Tool" />
+		</rules>
+	</element>    
+	<element name="Partially Amphibious" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_VEDALKEN_PARTIALLY_AMPHIBIOUS">
+		<description>
+			<p>By absorbing oxygen through your skin, you can breathe underwater for up to 1 hour. Once you've reached that limit, you can't use this trait again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>By absorbing oxygen through your skin, you can breathe underwater for up to 1 hour. Once you've reached that limit, you can't use this trait again until you finish a long rest.</description>
+		</sheet>
+	</element>
+</elements>
