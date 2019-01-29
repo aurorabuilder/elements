@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bounty Hunter</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.1">
+            <file name="background-bounty-hunter.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-bounty-hunter.xml" />
+        </update>
+    </info>
+    <element name="Bounty Hunter" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER">
+        <description>
+            <p>However fine and noble the world might have seemed at first glance, once you dug a little deeper beneath the facade, a deeper truth revealed itself to you. Conflict and strife are the only real constants in "civilized" lands, and for you, therein lay the opportunity for profit. As a bounty hunter you had plied your trade well, offering dubious (if effective) services and skills to all manner of client for myriad reasons- superficial or otherwise. Regardless of the cause, the justification, or the moral impunity associated with locating your mark. Every job finished brought the clink of coin between your purse strings at the expense of another poor soul fated to endure consequences dire, and often foul.</p>
+            <p class="indent">Though the time spent in this line of work has left you grim and jilted, your reputation for ruthlessness and cunning precedes you. More often than not, you found yourself sought after and petitioned to ferret a mark, never needing to eke out the work on your own. From the lowly debtor owing the wrong merchant guild, to the misguided runaway offspring of a minor noble, or the thieving murderer eluding the city guard, none could evade your dogged pursuit, and many more dared not try once your involvement was learned.</p>
+            <p>
+                <span class="emphasis">Skill Proficiencies:</span>Deception, Intimidation<br/>
+                <span class="emphasis">Tool Proficiencies:</span>Thieves' Tools<br/>
+                <span class="emphasis">Equipment:</span>Ink bottle, a set of traveler's clothes, ink pen, 5 pages of parchment, 2 hunting traps, thieves' tools, 3 trinkets from previous bounties (roll on table PHB pg. 160-161), and a belt pouch containing 10 gold
+            </p>
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_NAMES_FACES_PLACES" />
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_CONTACTS_AND_FORGERY" />
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_EAR_TO_THE_GROUND" />
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_VIGILANTE" />
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_CRIME_DOESNT_PAY" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>A bounty hunter's sole purpose is to hunt down people with a price on their head, for grievances ranging from the mundane to the terrible. Those who follow this life can be quiet, taciturn individuals as readily as they can be savage brutes living not for the pay, but for the thrill of pursuit. Hunters are therefore often as varied in personality as their marks.</p>
+        </description>
+        <setters>
+            <set name="sourceUrl">https://www.dandwiki.com/wiki/Bounty_Hunter_(5e_Background)</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" requirements="!ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_VIGILANTE" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_NAMES_FACES_PLACES" requirements="!ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_VIGILANTE" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_CONTACTS_AND_FORGERY" />
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_EAR_TO_THE_GROUND" />
+            <select type="Background Variant" name="Bounty Hunter Variant" supports="BH Variant" optional="true" />
+            <select name="Personality Trait" type="List" number="2">
+                <item id="1">I tend to approach conversation with people I've just met as though it were an interrogation.</item>
+                <item id="2">I project arrogance and conceit at times, especially after turning in a troublesome target. </item>
+                <item id="3">I'll accept the help of others with a bounty, so long as they can prove their skill to me first.</item>
+                <item id="4">It needn't be hunting down a mark - I'll chop firewood for an old woman if there's pay involved. </item>
+                <item id="5">I'm not prone to idle chatter, and prefer keeping to myself unless the topic's business. </item>
+                <item id="6">I've a great deal of practical experience from hunting bounties, and can relate to almost any situation.</item>
+                <item id="7">I'm rather adept at games of skill like darts, or five-finger fillet.</item>
+                <item id="8">I frequently move from town to town, eager to pursue new marks and seek new contacts.</item>
+            </select>
+            <select name="Ideal" type="List">
+                <item id="1">Justice. These people have violated the law once. I won't let it happen twice. (Lawful)</item>
+                <item id="2">Wealth. The only path to true freedom is having gold enough to do as you will. (Chaotic)</item>
+                <item id="3">Brutality. Gold pales to the brilliance of the life draining from their eyes. (Evil)</item>
+                <item id="4">Morality. It's not enough to hunt them down. They have to understand what they've done is reprehensible. (Good)</item>
+                <item id="5">Ambiguity. This job's just a job, like any other. Nothing personal against my targets. (Neutral)</item>
+                <item id="6">Endurance. In no other line of work could anyone expect to test their limits so completely. (Any)</item>
+            </select>
+            <select name="Bond" type="List">
+                <item id="1">Once a solider, my comrade's grave betrayal forced me from my home, and into this life. </item>
+                <item id="2">Though my friends are few, I owe them my life many times over, and would happily die for them. </item>
+                <item id="3">Horrendous tales and vile rumor destroyed my family's good name, and this path is the only recourse to find the truth. </item>
+                <item id="4">The contract turned sour, and now I find myself yoked to dangerously twisted employers. </item>
+                <item id="5">All my deeds would surely consign me to prison - only by servicing officials do I stay free. </item>
+                <item id="6">Mindless thuggery stole the life of one I cherished, and the price they must pay is one I will collect. </item>
+            </select>
+            <select name="Flaw" type="List">
+                <item id="1">Sleep, when it comes, is no sleep at all. The time spent tracking marks has left me skittish and paranoid. </item>
+                <item id="2">Not only am I good at what I do, but I love what I do - and I hate myself for it. </item>
+                <item id="3">I refuse to believe anyone can be trusted, and will root through their life until I'm satisfied they can be. </item>
+                <item id="4">At a younger age my actions earned me the brand of a criminal, those mistakes haunting me and my fellows even today. </item>
+                <item id="5">It is only for my own selfish need to be the best at what I do that I abandon my team to bring the bounty in first. </item>
+                <item id="6">Contract or not, I never bring murder bounties back alive. They showed no mercy, and so neither will I.</item>
+            </select>
+        </rules>
+    </element>
+    <element name="Feature: Names, Faces, and Places" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_NAMES_FACES_PLACES">
+        <description>
+            <p>Though many claim the role of a bounty hunter, few actually excel at the profession save those with a keen eye for observation. Among the adept are those who are truly gifted, having an almost preternatural talent for anticipating the behavior of their targeted mark. Being among their ranks, you have an uncanny ability to recall specific details of conversation and names you overhear or participate in as it relates to your bounty, or otherwise see written, even if only for a moment or two. You can also sketch out faces and general locations you've seen with accuracy, possessing exceptional recollection. In addition, you often effortlessly identify clues when tracking your bounty's movements and disposition that would be otherwise lost on lesser pursuers.</p>
+        </description>
+        <sheet alt="Names, Faces, and Places" />
+    </element>
+    <element name="Feature: Contacts and Forgery" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_CONTACTS_AND_FORGERY">
+        <description>
+            <p>As a bounty hunter you have traveled far and wide which has allowed you to have built up a network of contacts and informants that can help you track down your mark. If you are in a town or city where one of your contacts or informants reside (DM's discretion) you may inquire about information that pertains to your mark for the right price or trade a favor to gain the information (DM's discretion). Additionally you have trained yourself in creating documents that will allow you to gain entry into areas you would normally not be allowed to enter in order to capture your mark. You can forge documents including officials papers and personal letters, as long as you have seen an example of the kind of document or handwriting you are trying to copy.</p>
+        </description>
+        <sheet alt="Contacts and Forgery" />
+    </element>
+    <element name="Feature: Ear to the Ground" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_EAR_TO_THE_GROUND">
+        <description>
+            <p>You are in frequent contact with people in the segment of society that your chosen mark moves through. These people might be associated with the criminal underworld, the rough-and-tumble folk of the streets, or members of high society. This connection comes in the form of a contact in any city you visit, a person who provides information about the people, places and the political standings of the local area.</p>
+        </description>
+        <sheet alt="Ear to the Ground" />
+    </element>
+    <element name="Variant: Vigilante" type="Background Variant" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_VIGILANTE">
+        <supports>BH Variant</supports>
+        <description>
+            <p>Standing in contrast to the mercenaries who haul in anyone labelled a criminal for coin are those who target thieves, charlatans, and murderers exclusively - and for no material reward. Vigilantes areas often soldiers dumbstruck by newly-found social decay and corruption whence they return home from war, as they are wealthy citizens with a penchant for martial prowess an axe to grind against their city's seedy underbelly for a past, personal transgression. As a matter of course, a particularly zealous vigilante may come into conflict with a bounty hunter, deeming her as guilty of violating the law as any brigand skulking about an alleyway. If you indeed wish to be a vigilante, select the Crime Doesn't Pay feature outlined below instead of the Names, Faces, and Places feature above. Living a life of vigilantism means that you will always be on the lookout for criminal activity, especially so if you're within the boundaries of a town or other settlement you claim as your home. The promise of payment never sways your decisions in whom you target, and you hold yourself to a higher code than your capricious counterparts - you consider it preferable to turn your marks over to the appropriate authorities instead of harming them. </p>
+            <p class="indent">City guard and militia are likely to turn a blind eye to your unsanctioned activities unless you cross someone in their rank, be they corrupted, prideful, or otherwise. Additionally, as your reputation grows, you will gradually earn the accolades and support of the common people who find their streets safer, and petty thugs less inclined to hold them at knifepoint over a few coins. At the same time, organizations and individuals accustomed to using their coffers to help guide a settlement's definition of "criminal" (such as a merchant house, corrupt council member, and the like) will gradually grow to resent and perhaps lash out at your burgeoning reputation. </p>
+            <div element="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_CRIME_DOESNT_PAY" />
+        </description>
+        <rules>
+            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_CRIME_DOESNT_PAY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+        </rules>
+    </element>
+    <element name="Variant Feature: Crime Doesn't Pay" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_BOUNTY_HUNTER_VARIANT_CRIME_DOESNT_PAY">
+        <supports>BH Variant</supports>
+        <description>
+            <p>Pulling from your prior experiences as a soldier, mercenary, or even an extensive time living the life of a vigilante, you have the skills needed to wage a kind of psychological battle against the criminal elements of society. When interrogating someone to glean information about the location, motive, or operations of their superiors, they will easily buckle under questioning and often times readily give up sensitive knowledge without the need to press further. Any promises you may make concerning their fate in exchange for information you are not obligated to keep, short of killing them. You can coordinate this information with any authority in a city you're on amicable terms with, be it the guard or militia, your own old military unit, or even a sympathetic temple's leadership, provided that temple maintains soldiers of their own. </p>
+            <p class="indent">In addition, replace the Deception proficiency in the skills list above with Stealth, and substitute the hunter's traps and bounty trinkets with a magnifying glass and a set of manacles.</p>
+        </description>
+        <sheet alt="Crime Doesn't Pay" />
+    </element>
+</elements>
