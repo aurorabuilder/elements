@@ -4,7 +4,7 @@
     <name>Monk</name>
     <description>The Monk class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2">
+    <update version="0.2.3">
       <file name="class-monk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-monk.xml" />
     </update>
   </info>
@@ -18,14 +18,14 @@
       <h4>THE MAGIC OF KI</h4>
       <p>Monks make careful study of a magical energy that most monastic traditions call ki. This energy is an element of the magic that suffuses the multiverse—specifically, the element that flows through living bodies. Monks harness this power within themselves to create magical effects and exceed their bodies' physical capabilities, and some of their special attacks can hinder the flow of ki in their opponents. Using this energy, monks channel uncanny speed and strength into their unarmed strikes. As they gain experience, their martial training and their mastery of ki gives them more power over their bodies and the bodies of their foes.</p>
       <h4>TRAINING AND ASCETICISM</h4>
-      <p>Small walled cloisters dot the landscapes of the w orlds of D&amp;D, tiny refuges from the flow of ordinary life, where time seems to stand still. The monks who live there seek personal perfection through contemplation and rigorous training. Many entered the monastery as children, sent to live there when their parents died, when food couldn’t be found to support them, or in return for some kindness that the monks had performed for their families.</p>
+      <p>Small walled cloisters dot the landscapes of the worlds of D&amp;D, tiny refuges from the flow of ordinary life, where time seems to stand still. The monks who live there seek personal perfection through contemplation and rigorous training. Many entered the monastery as children, sent to live there when their parents died, when food couldn’t be found to support them, or in return for some kindness that the monks had performed for their families.</p>
       <p class="indent">Some monks live entirely apart from the surrounding population, secluded from anything that might impede their spiritual progress. Others are sworn to isolation, emerging only to serve as spies or assassins at the command of their leader, a noble patron, or some other mortal or divine power.</p>
       <p class="indent">The majority of monks don’t shun their neighbors, making frequent visits to nearby towns or villages and exchanging their service for food and other goods. As versatile warriors, monks often end up protecting their neighbors from monsters or tyrants.</p>
-      <p class="indent">For a monk, becoming an adventurer means leaving a structured, communal lifestyle to become a wanderer. This can be a harsh transition, and monks don’t undertake it lightly. Those w ho leave their cloisters take their w ork seriously, approaching their adventures as personal tests of their physical and spiritual growth. As a rule, monks care little for material wealth and are driven by a desire to accomplish a greater m ission than merely slaying monsters and plundering their treasure.</p>      
+      <p class="indent">For a monk, becoming an adventurer means leaving a structured, communal lifestyle to become a wanderer. This can be a harsh transition, and monks don’t undertake it lightly. Those who leave their cloisters take their work seriously, approaching their adventures as personal tests of their physical and spiritual growth. As a rule, monks care little for material wealth and are driven by a desire to accomplish a greater mission than merely slaying monsters and plundering their treasure.</p>      
       <h4>CREATING A MONK</h4>
       <p>As you make your monk character, think about your connection to the monastery where you learned your skills and spent your formative years. Were you an orphan or a child left on the monastery’s threshold? Did your parents promise you to the monastery in gratitude for a service performed by the monks? Did you enter this secluded life to hide from a crime you committed? Or did you choose the monastic life for yourself?</p>
       <p class="indent">Consider why you left. Did the head of your monastery choose you for a particularly important mission beyond the cloister? Perhaps you were cast out because of some violation of the community’s rules. Did you dread leaving, or were you happy to go? Is there something you hope to accomplish outside the monastery? Are you eager to return to your home?</p>
-      <p class="indent">As a result of the structured life of a m onastic community and the discipline required to harness ki, monks are almost always lawful in alignment.</p>
+      <p class="indent">As a result of the structured life of a monastic community and the discipline required to harness ki, monks are almost always lawful in alignment.</p>
       <h5>QUICK BUILD</h5>
       <p>You can make a monk quickly by following these suggestions. First, make Dexterity your highest ability score, followed by Wisdom. Second, choose the hermit background.</p>
       <h3>CLASS FEATURES</h3>
@@ -197,6 +197,7 @@
       <stat name="ki:dc" value="8" />
       <stat name="ki:dc" value="Proficiency" />
       <stat name="ki:dc" value="Wisdom Modifier" />
+	  <!-- create elements for flurry/patient/step for descriptions -->
     </rules>
   </element>
   <element name="Unarmored Movement" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_UNARMORED_MOVEMENT">
@@ -205,17 +206,17 @@
       <p class="indent">At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</p>
     </description>
     <sheet>
-      <description>Your speed increases by %Unarmored Movement% feet while you are not wearing armor or wielding a shield.</description>
-      <description level="9">Your speed increases by %Unarmored Movement% feet while you are not wearing armor or wielding a shield. You gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</description>
+      <description>Your speed increases by $(monk:unarmored movement) feet while you are not wearing armor or wielding a shield.</description>
+      <description level="9">Your speed increases by $(monk:unarmored movement) feet while you are not wearing armor or wielding a shield. You gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</description>
     </sheet>
     <rules>
-      <stat name="Unarmored Movement" value="+10" bonus="Unarmored Movement" level="2" equipped="[armor:none],[shield:none]" />
-      <stat name="Unarmored Movement" value="+15" bonus="Unarmored Movement" level="6" equipped="[armor:none],[shield:none]" />
-      <stat name="Unarmored Movement" value="+20" bonus="Unarmored Movement" level="10" equipped="[armor:none],[shield:none]" />
-      <stat name="Unarmored Movement" value="+25" bonus="Unarmored Movement" level="14" equipped="[armor:none],[shield:none]" />
-      <stat name="Unarmored Movement" value="+30" bonus="Unarmored Movement" level="18" equipped="[armor:none],[shield:none]" />
+      <stat name="monk:unarmored movement" value="10" bonus="Unarmored Movement" level="2" />
+      <stat name="monk:unarmored movement" value="15" bonus="Unarmored Movement" level="6" />
+      <stat name="monk:unarmored movement" value="20" bonus="Unarmored Movement" level="10" />
+      <stat name="monk:unarmored movement" value="25" bonus="Unarmored Movement" level="14" />
+      <stat name="monk:unarmored movement" value="30" bonus="Unarmored Movement" level="18" />
 
-      <stat name="Speed" value="Unarmored Movement" bonus="Unarmored Movement" />
+      <stat name="Speed" value="monk:unarmored movement" bonus="Unarmored Movement" equipped="[armor:none],[shield:none]" />
     </rules>
   </element>
   <element name="Monastic Tradition" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_MONASTIC_TRADITION">
@@ -253,11 +254,11 @@
       <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_MONK" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
       <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_MONK" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
       <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_MONK" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
-      <select type="Class Feature" name="Improvement Option (Monk 4)" supports="Improvement Option,Monk,4" default="ID_INTERNAL_CLASS_FEATURE_ASI_4_MONK" level="4" requirements=""/>
-      <select type="Class Feature" name="Improvement Option (Monk 8)" supports="Improvement Option,Monk,8" default="ID_INTERNAL_CLASS_FEATURE_ASI_8_MONK" level="8" requirements=""/>
-      <select type="Class Feature" name="Improvement Option (Monk 12)" supports="Improvement Option,Monk,12" default="ID_INTERNAL_CLASS_FEATURE_ASI_12_MONK" level="12" requirements=""/>
-      <select type="Class Feature" name="Improvement Option (Monk 16)" supports="Improvement Option,Monk,16" default="ID_INTERNAL_CLASS_FEATURE_ASI_16_MONK" level="16" requirements=""/>
-      <select type="Class Feature" name="Improvement Option (Monk 19)" supports="Improvement Option,Monk,19" default="ID_INTERNAL_CLASS_FEATURE_ASI_19_MONK" level="19" requirements=""/>
+      <select type="Class Feature" name="Improvement Option (Monk 4)" supports="Improvement Option,Monk,4" level="4" />
+      <select type="Class Feature" name="Improvement Option (Monk 8)" supports="Improvement Option,Monk,8" level="8" />
+      <select type="Class Feature" name="Improvement Option (Monk 12)" supports="Improvement Option,Monk,12" level="12" />
+      <select type="Class Feature" name="Improvement Option (Monk 16)" supports="Improvement Option,Monk,16" level="16" />
+      <select type="Class Feature" name="Improvement Option (Monk 19)" supports="Improvement Option,Monk,19" level="19" />
     </rules>
   </element>
   <element name="Slow Fall" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_SLOW_FALL">
@@ -452,7 +453,7 @@
   <element name="Way of Shadow" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_SHADOW">
     <supports>Monastic Tradition</supports>  
     <description>
-      <p>Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Sometimes the members of a ninja monastery are family m embers, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves’ guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience of their students.</p>
+      <p>Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Sometimes the members of a ninja monastery are family members, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves’ guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience of their students.</p>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_ARTS" />
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_STEP" />
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_CLOAK_OF_SHADOWS" />
@@ -774,7 +775,7 @@
   <element name="Water Whip" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_DISCIPLINE_WATER_WHIP">
   	<supports>Elemental Discipline</supports>
     <description>
-      <p>You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3 d 10 bludgeoning damage, plus an extra 1d 10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don’t pull it or knock it prone.</p>
+      <p>You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don’t pull it or knock it prone.</p>
     </description>
     <sheet>
       <description>You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it.</description>
