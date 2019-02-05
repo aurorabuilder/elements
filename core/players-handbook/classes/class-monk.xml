@@ -4,7 +4,7 @@
     <name>Monk</name>
     <description>The Monk class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.3">
+    <update version="0.2.4">
       <file name="class-monk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-monk.xml" />
     </update>
   </info>
@@ -33,7 +33,7 @@
       <h5>HIT POINTS</h5>
       <p>
         <span class="emphasis">Hit Dice:</span>1d8 per monk level<br />
-        <span class="emphasis">Hit Points at 1st Level:</span>8 + your Constitution modefier<br />
+        <span class="emphasis">Hit Points at 1st Level:</span>8 + your Constitution modifier<br />
         <span class="emphasis">Hit Points at Higher Levels:</span>1d8 (or 5) + your Constitution modifier per monk level after 1st<br />
       </p>
       <h5>PROFICIENCIES</h5>
@@ -130,20 +130,16 @@
       <p>Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.</p>
     </description>
     <sheet>
-      <description>While you are wearing no armor and not wielding a shield, your AC equals %Unarmored Defence Monk Inline%.</description>
+      <description>While you are wearing no armor and not wielding a shield, your AC equals $(ac:unarmored defense monk).</description>
     </sheet>
     <rules>
-      <!-- this statistic is used for inline replacement -->
-      <stat name="Unarmored Defence Monk Inline" value="10" />
-      <stat name="Unarmored Defence Monk Inline" value="Dexterity Modifier" />
-      <stat name="Unarmored Defence Monk Inline" value="Wisdom Modifier" />
-      <!-- dexterity modifier granted by default -->
-      <stat name="Unarmored Defence" value="Wisdom Modifier" bonus="Unarmored Defence" equipped="[armor:none],[shield:none]" />
-      <stat name="AC" value="Unarmored Defence" bonus="Unarmored Defence" equipped="[armor:none],[shield:none]" />
-
-<!-- 
-      <stat name="monk:unarmored defence" value="Wisdom Modifier" equipped="[armor:none],[shield:none]" />
-      <stat name="AC" value="monk:unarmored defence" bonus="Unarmored Defence" equipped="[armor:none],[shield:none]" /> -->
+		<stat name="ac:unarmored defense monk:base" value="10" />
+		<stat name="ac:unarmored defense monk:dexterity" value="dexterity:modifier" />
+		<stat name="ac:unarmored defense monk:wisdom" value="wisdom:modifier" />
+		<stat name="ac:unarmored defense monk" value="ac:unarmored defense monk:base" />
+		<stat name="ac:unarmored defense monk" value="ac:unarmored defense monk:dexterity" />
+		<stat name="ac:unarmored defense monk" value="ac:unarmored defense monk:wisdom" />
+		<stat name="ac:calculation" value="ac:unarmored defense monk" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Unarmored Defence (Monk)" />
     </rules>
   </element>
   <element name="Martial Arts" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_MARTIAL_ARTS">
@@ -161,11 +157,11 @@
       <description>Your unarmed strike does 1d%martial arts:dice% damage. You can use Strength or Dexterity for these attacks.</description>
     </sheet>
     <rules>
-        <stat name="martial arts:attack" value="Strength Modifier" bonus="martial arts" />
-        <stat name="martial arts:attack" value="Dexterity Modifier" bonus="martial arts" />
+        <stat name="martial arts:attack" value="strength:modifier" bonus="martial arts" />
+        <stat name="martial arts:attack" value="dexterity:modifier" bonus="martial arts" />
 
-        <stat name="martial arts:damage" value="Strength Modifier" bonus="martial arts" />
-        <stat name="martial arts:damage" value="Dexterity Modifier" bonus="martial arts" />
+        <stat name="martial arts:damage" value="strength:modifier" bonus="martial arts" />
+        <stat name="martial arts:damage" value="dexterity:modifier" bonus="martial arts" />
 
         <stat name="martial arts:dice" value="4" bonus="martial arts" />
         <stat name="martial arts:dice" value="6" bonus="martial arts" level="5" />
@@ -195,8 +191,8 @@
     <rules>
       <stat name="ki:points" value="level:monk" />
       <stat name="ki:dc" value="8" />
-      <stat name="ki:dc" value="Proficiency" />
-      <stat name="ki:dc" value="Wisdom Modifier" />
+      <stat name="ki:dc" value="proficiency" />
+      <stat name="ki:dc" value="wisdom:modifier" />
 	  <!-- create elements for flurry/patient/step for descriptions -->
     </rules>
   </element>
@@ -216,7 +212,7 @@
       <stat name="monk:unarmored movement" value="25" bonus="Unarmored Movement" level="14" />
       <stat name="monk:unarmored movement" value="30" bonus="Unarmored Movement" level="18" />
 
-      <stat name="Speed" value="monk:unarmored movement" bonus="Unarmored Movement" equipped="[armor:none],[shield:none]" />
+      <stat name="speed" value="monk:unarmored movement" bonus="Unarmored Movement" equipped="[armor:none],[shield:none]" />
     </rules>
   </element>
   <element name="Monastic Tradition" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_MONASTIC_TRADITION">
@@ -239,7 +235,7 @@
       <description>You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + %monk:deflect missiles bonus%.</description>
     </sheet>
     <rules>
-      <stat name="monk:deflect missiles bonus" value="Dexterity Modifier" />
+      <stat name="monk:deflect missiles bonus" value="dexterity:modifier" />
       <stat name="monk:deflect missiles bonus" value="level:monk" />
     </rules>
   </element>
@@ -434,8 +430,8 @@
     </sheet>
     <rules>
       <stat name="Tranquility:DC" value="8" />
-      <stat name="Tranquility:DC" value="Proficiency" />
-      <stat name="Tranquility:DC" value="Wisdom Modifier" />
+      <stat name="Tranquility:DC" value="proficiency" />
+      <stat name="Tranquility:DC" value="wisdom:modifier" />
     </rules>
   </element>
   <element name="Quivering Palm" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_QUIVERING_PALM">

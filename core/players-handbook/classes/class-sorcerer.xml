@@ -4,7 +4,7 @@
     <name>Sorcerer</name>
     <description>Sorcerer from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.4">
+    <update version="0.2.5">
       <file name="class-sorcerer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-sorcerer.xml" />
     </update>
   </info>
@@ -325,52 +325,17 @@
       <p>At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.</p>
       <h5>Draconic Ancestry</h5>
       <table>
-        <thead>
-          <tr>
-            <td>Dragon</td>
-            <td>Damage Type</td>
-          </tr>
-        </thead>
-        <tr>
-          <td>Black</td>
-          <td>Acid</td>
-        </tr>
-        <tr>
-          <td>Blue</td>
-          <td>Lightning</td>
-        </tr>
-        <tr>
-          <td>Brass</td>
-          <td>Fire</td>
-        </tr>
-        <tr>
-          <td>Bronze</td>
-          <td>Lightning</td>
-        </tr>
-        <tr>
-          <td>Copper</td>
-          <td>Acid</td>
-        </tr>
-        <tr>
-          <td>Gold</td>
-          <td>Fire</td>
-        </tr>
-        <tr>
-          <td>Green</td>
-          <td>Poison</td>
-        </tr>
-        <tr>
-          <td>Red</td>
-          <td>Fire</td>
-        </tr>
-        <tr>
-          <td>Silver</td>
-          <td>Cold</td>
-        </tr>
-        <tr>
-          <td>White</td>
-          <td>Cold</td>
-        </tr>
+        <thead> <tr> <td>Dragon</td> <td>Damage Type</td> </tr> </thead>
+        <tr> <td>Black</td> <td>Acid</td> </tr>
+        <tr> <td>Blue</td> <td>Lightning</td> </tr>
+        <tr> <td>Brass</td> <td>Fire</td> </tr>
+        <tr> <td>Bronze</td> <td>Lightning</td> </tr>
+        <tr> <td>Copper</td> <td>Acid</td> </tr>
+        <tr> <td>Gold</td> <td>Fire</td> </tr>
+        <tr> <td>Green</td> <td>Poison</td> </tr>
+        <tr> <td>Red</td> <td>Fire</td> </tr>
+        <tr> <td>Silver</td> <td>Cold</td> </tr>
+        <tr> <td>White</td> <td>Cold</td> </tr>
       </table>
       <p>You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.</p>
     </description>
@@ -390,14 +355,13 @@
       <p class="indent">Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier.</p>
     </description>
     <sheet>
-      <description>Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier.</description>
+      <description>Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class. When you aren’t wearing armor, your AC equals $(ac:draconic resilience).</description>
     </sheet>
     <rules>
-      <stat name="HP" value="level:sorcerer" />
-      <!-- re-check ac stackings with natural armor -->
-      <!-- reference lizardfolk settle on 1 way, prefer not override base so i can see +3 comes from X -->
-      <stat name="ac:natural" value="3" bonus="natural" equipped="[armor:none]"/>
-      <stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]"/>
+      	<stat name="hp" value="level:sorcerer" />		
+		<stat name="ac:draconic resilience" value="13" />
+		<stat name="ac:draconic resilience" value="dexterity:modifier" />
+		<stat name="ac:calculation" value="ac:draconic resilience" bonus="calculation" equipped="[armor:none]" alt="Draconic Resilience (Sorcerer)" />
     </rules>
   </element>
   <element name="Elemental Affinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_AFFINITY">
@@ -422,7 +386,7 @@
       <description>You gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.</description>
     </sheet>
     <rules>
-      <stat name="speed:fly" value="Speed" />
+      <stat name="speed:fly" value="speed" />
     </rules>
   </element>
   <element name="Draconic Presence" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_PRESENCE">

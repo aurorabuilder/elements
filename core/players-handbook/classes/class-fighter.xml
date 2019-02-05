@@ -4,7 +4,7 @@
     <name>Fighter</name>
     <description>The fighter class and the champion archetype from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.4">
+    <update version="0.3.5">
       <file name="class-fighter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-fighter.xml" />
     </update>
   </info>
@@ -32,7 +32,7 @@
       <p>
         <span class="emphasis">Hit Dice:</span>1d10 per fighter level
         <br />
-        <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modefier
+        <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modifier
         <br />
         <span class="emphasis">Hit Points at Higher Levels:</span>1d10 (or 6) + your Constitution modifier per fighter level after 1st
         <br />
@@ -242,7 +242,7 @@
       <description>While you are wearing armor, you gain a +1 bonus to AC.</description>
     </sheet>
     <rules>
-      <stat name="AC" value="1" bonus="fighting style" equipped="[armor:any]"/>
+      <stat name="ac:misc" value="1" bonus="fighting style" equipped="[armor:any]"/>
     </rules>
   </element>
   <element name="Dueling" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING">
@@ -327,10 +327,10 @@
       <description>You can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus. In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.</description>
     </sheet>
     <rules>
-      <stat name="Acrobatics Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS" />
-      <stat name="Athletics Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_ATHLETICS" />
-      <stat name="Sleight of Hand Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
-      <stat name="Stealth Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_STEALTH" />
+      <stat name="acrobatics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS" />
+      <stat name="athletics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ATHLETICS" />
+      <stat name="sleight of hand:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+      <stat name="stealth:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_STEALTH" />
     </rules>
   </element>
   <element name="Additional Fighting Style" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ADDITIONALFIGHTINGSTYLE">
@@ -362,7 +362,7 @@
     </sheet>
     <rules>
       <stat name="survivor:hp" value="5" />
-      <stat name="survivor:hp" value="Constitution Modifier" />
+      <stat name="survivor:hp" value="constitution:modifier" />
     </rules>
   </element>
   <!-- Battle Master Archetype -->
@@ -411,10 +411,10 @@
       <stat name="superiority dice:amount" value="1" level="15" />
       <stat name="superiority dice:size" value="8" bonus="size"/>
       <stat name="superiority dice:dc" value="8" />
-      <stat name="superiority dice:dc" value="Proficiency" />
+      <stat name="superiority dice:dc" value="proficiency" />
       <!-- create selection option -->
-      <stat name="superiority dice:dc:ability" value="Strength Modifier" bonus="ability"/>
-      <stat name="superiority dice:dc:ability" value="Dexterity Modifier" bonus="ability"/>
+      <stat name="superiority dice:dc:ability" value="strength:modifier" bonus="ability"/>
+      <stat name="superiority dice:dc:ability" value="dexterity:modifier" bonus="ability"/>
       <stat name="superiority dice:dc" value="superiority dice:dc:ability" />
       <select type="Archetype Feature" name="Combat Superiority (Level 3)" supports="Maneuver,Battle Master" number="3" />
       <select type="Archetype Feature" name="Combat Superiority (Level 7)" supports="Maneuver,Battle Master" number="2" level="7" />

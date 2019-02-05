@@ -4,7 +4,7 @@
     <name>Barbarian</name>
     <description>The Barbarian class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.3">
+    <update version="0.2.4">
       <file name="class-barbarian.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-barbarian.xml" />
     </update>
   </info>
@@ -35,7 +35,7 @@
       <p>
         <span class="emphasis">Hit Dice:</span>1d12 per barbarian level
         <br />
-        <span class="emphasis">Hit Points at 1st Level:</span>12 + your Constitution modefier
+        <span class="emphasis">Hit Points at 1st Level:</span>12 + your Constitution modifier
         <br />
         <span class="emphasis">Hit Points at Higher Levels:</span>1d12 (or 7) + your Constitution modifier per barbarian level after 1st
         <br />
@@ -154,16 +154,18 @@
       <p>While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.</p>
     </description>
     <sheet>
-      <description>While you are not wearing any armor, your Armor Class equals %Unarmored Defence Barbarian Inline%. You can use a shield and still gain this benefit.</description>
+      <description>While you are not wearing any armor, your Armor Class equals $(ac:unarmored defense barbarian). You can use a shield and still gain this benefit.</description>
     </sheet>
     <rules>
-      <!-- this statistic is used for inline replacement -->
-      <stat name="Unarmored Defence Barbarian Inline" value="10" />
-      <stat name="Unarmored Defence Barbarian Inline" value="Constitution Modifier" />
-      <stat name="Unarmored Defence Barbarian Inline" value="Dexterity Modifier" />
-      <!-- dexterity modifier granted by default -->
-      <stat name="Unarmored Defence" value="Constitution Modifier" bonus="Unarmored Defence" equipped="[armor:none]" />
-      <stat name="AC" value="Unarmored Defence" bonus="Unarmored Defence" equipped="[armor:none]" />
+		<stat name="ac:unarmored defense barbarian:base" value="10" />
+		<stat name="ac:unarmored defense barbarian:dexterity" value="dexterity:modifier" />
+		<stat name="ac:unarmored defense barbarian:constitution" value="constitution:modifier" />
+
+		<stat name="ac:unarmored defense barbarian" value="ac:unarmored defense barbarian:base" />
+		<stat name="ac:unarmored defense barbarian" value="ac:unarmored defense barbarian:dexterity" />
+		<stat name="ac:unarmored defense barbarian" value="ac:unarmored defense barbarian:constitution" />
+
+		<stat name="ac:calculation" value="ac:unarmored defense barbarian" bonus="calculation" equipped="[armor:none]" alt="Unarmored Defence (Barbarian)" />
     </rules>
   </element>
   <element name="Reckless Attack" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_BARBARIAN_RECKLESS_ATTACK">
@@ -234,7 +236,8 @@
       <description>Your speed increases by 10 feet while you aren’t wearing heavy armor.</description>
     </sheet>
     <rules>
-      <stat name="Speed" value="+10" equipped="![armor:heavy]" level="5"/>
+		<!-- todo: innate speeds? -->
+      <stat name="speed" value="+10" equipped="![armor:heavy]" level="5"/>
     </rules>
   </element>
   <element name="Feral Instinct" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_BARBARIAN_FERAL_INSTINCT">
@@ -301,10 +304,10 @@
       <description>You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.</description>
     </sheet>
     <rules>
-      <stat name="Strength" value="+4" />
-      <stat name="Constitution" value="+4" />
-      <stat name="Strength Maximum" value="+4" />
-      <stat name="Constitution Maximum" value="+4" />
+      <stat name="strength" value="4" />
+      <stat name="constitution" value="4" />
+      <stat name="strength:max" value="4" />
+      <stat name="constitution:max" value="4" />
     </rules>
   </element>
 

@@ -4,7 +4,7 @@
     <name>Feats</name>
     <description>Feats from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.0.8">
+    <update version="0.0.9">
       <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/feats.xml" />
     </update>
   </info>
@@ -24,7 +24,7 @@
       <description>You have advantage on Charisma (Deception) and Charisma (Performance) checks when trying to pass yourself off as a different person. You can mimic the speech of another person or the sounds made by other creatures.</description>
     </sheet>
     <rules>
-      <stat name="Charisma" value="+1" />
+      <stat name="charisma" value="+1" />
     </rules>
   </element>
   <element name="Alert" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ALERT">
@@ -42,7 +42,7 @@
       <description>You can’t be surprised while you are conscious. Other creatures don’t gain advantage on attack rolls against you as a result of being hidden from you.</description>
     </sheet>
     <rules>
-      <stat name="Initiative" value="+5" />
+      <stat name="initiative" value="5" />
     </rules>
   </element>
   <element name="Athlete" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ATHLETE">
@@ -109,7 +109,7 @@
       <description>When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add %defensive duelist:proficiency% to your AC for that attack, potentially causing the attack to miss you.</description>
     </sheet>
     <rules>
-      <stat name="defensive duelist:proficiency" value="Proficiency" />
+      <stat name="defensive duelist:proficiency" value="proficiency" />
     </rules>
   </element>
   <element name="Dual Wielder" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUALWIELDER">
@@ -161,12 +161,9 @@
       <description>When you roll a Hit Die to regain hit points, the minimum number of hit points you regain from the roll equals %durable:hd:bonus%.</description>
     </sheet>
     <rules>
-      <stat name="Constitution" value="+1" />
-
-
-      <stat name="durable:constitution modifier" value="Constitution Modifier" />
-      <stat name="durable:constitution modifier" value="Constitution Modifier" />
-
+      <stat name="constitution" value="+1" />
+      <stat name="durable:constitution modifier" value="constitution:modifier" />
+      <stat name="durable:constitution modifier" value="constitution:modifier" />
       <stat name="durable:hd:bonus" value="2" bonus="feat:durable"/>
       <stat name="durable:hd:bonus" value="durable:constitution modifier" bonus="feat:durable"/>
     </rules>
@@ -308,7 +305,7 @@
       <description>You have trained to master the use of heavy armor.</description>
     </sheet>
     <rules>
-      <stat name="Strength" value="+1" />
+      <stat name="strength" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
     </rules>
   </element>
@@ -328,7 +325,7 @@
       <description>While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from non magical weapons is reduced by 3.</description>
     </sheet>
     <rules>
-      <stat name="Strength" value="+1" />
+      <stat name="strength" value="+1" />
     </rules>
   </element>
   <element name="Inspiring Leader" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_INSPIRINGLEADER">
@@ -344,7 +341,7 @@
     </sheet>
     <rules>
       <stat name="inspiring leader:hp:temp" value="level" />
-      <stat name="inspiring leader:hp:temp" value="charisma modifier" />
+      <stat name="inspiring leader:hp:temp" value="charisma:modifier" />
     </rules>
   </element>
   <element name="Keen Mind" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_KEENMIND">
@@ -363,7 +360,7 @@
       <description>You always know which way is north. You always know the number of hours left before the next sunrise or sunset. You can accurately recall anything you have seen or heard within the past month.</description>
     </sheet>
     <rules>
-      <stat name="Intelligence" value="+1" />
+      <stat name="intelligence" value="+1" />
     </rules>
   </element>
   <element name="Lightly Armored" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LIGHTLYARMORED">
@@ -399,10 +396,10 @@
       <description>You can ably create written ciphers. Others can’t decipher a code you create unless you teach them, they succeed on an Intelligence check (DC equal to %linguist:dc%), or they use magic to decipher it.</description>
     </sheet>
     <rules>
-      <stat name="Intelligence" value="+1" />
+      <stat name="intelligence" value="1" />
       <select type="Language" name="Language (Linguist)" number="3"/>
-      <stat name="linguist:dc" value="Intelligence" />
-      <stat name="linguist:dc" value="Proficiency" />
+      <stat name="linguist:dc" value="intelligence:score" />
+      <stat name="linguist:dc" value="proficiency" />
     </rules>
   </element>
   <element name="Lucky" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LUCKY">
@@ -563,8 +560,8 @@
       <description>%martial adept:dice:amount%d%martial adept:dice:size% superiority dice / short rest. DC %martial adept:dc%</description>
     </sheet>
     <rules>
-      <stat name="martial adept:ability" value="Strength Modifier" bonus="martial adept:ability" />
-      <stat name="martial adept:ability" value="Dexterity Modifier" bonus="martial adept:ability" />
+      <stat name="martial adept:ability" value="strength:modifier" bonus="martial adept:ability" />
+      <stat name="martial adept:ability" value="dexterity:modifier" bonus="martial adept:ability" />
 
       <stat name="martial adept:dc" value="8" />
       <stat name="martial adept:dc" value="proficiency" />
@@ -623,7 +620,8 @@
       <description>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn. When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</description>
     </sheet>
     <rules>
-      <stat name="Speed" value="+10" bonus="mobile"/>
+	<!-- todo: innate speeds increase -->
+      <stat name="speed" value="+10" bonus="mobile"/>
     </rules>
   </element>
   <element name="Moderately Armored" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MODERATELYARMORED">
@@ -679,8 +677,8 @@
     </sheet>
     <rules>
       <select type="Ability Score Improvement" name="Ability Score Increase (Observant)" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM" />
-      <stat name="Perception Passive" value="+5" />
-      <stat name="Investigation Passive" value="+5" />
+      <stat name="perception:passive" value="+5" />
+      <stat name="investigation:passive" value="+5" />
     </rules>
   </element>
   <element name="Polearm Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_POLEARMMASTER">
@@ -694,7 +692,8 @@
       </ul>
     </description>
     <sheet>
-      <description>When you take the Attack action and attack with only a glaive, halberd, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. While you are wielding a glaive, halberd, pike, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach.</description>
+      <description>When you take the Attack action and attack with only a glaive, halberd, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage.
+	  While you are wielding a glaive, halberd, pike, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach.</description>
     </sheet>
     <rules />
   </element>
@@ -725,7 +724,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Strength" value="+1" />
+      <stat name="strength" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
     </rules>
   </element>
@@ -738,7 +737,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Dexterity" value="+1" />
+      <stat name="dexterity" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
     </rules>
   </element>
@@ -751,7 +750,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Constitution" value="+1" />
+      <stat name="constitution" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
     </rules>
   </element>
@@ -764,7 +763,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Intelligence" value="+1" />
+      <stat name="intelligence" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" />
     </rules>
   </element>
@@ -777,7 +776,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Wisdom" value="+1" />
+      <stat name="wisdom" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
     </rules>
   </element>
@@ -790,7 +789,7 @@
     </description>
     <sheet />
     <rules>
-      <stat name="Charisma" value="+1" />
+      <stat name="charisma" value="+1" />
       <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
     </rules>
   </element>
@@ -1047,8 +1046,8 @@
       <set name="allow duplicate">true</set>
     </setters>
     <rules>
-      <stat name="HP" value="Level" />
-      <stat name="HP" value="Level" />
+      <stat name="hp" value="level" />
+      <stat name="hp" value="level" />
     </rules>
   </element>
   <element name="War Caster" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_WARCASTER">
@@ -1096,7 +1095,7 @@
       <p>Your Strength increases by 1.</p>
     </description>
     <rules>
-      <stat name="Strength" value="+1"/>
+      <stat name="strength" value="+1"/>
     </rules>
   </element>
   <element name="Ability Score Increase (Dexterity)" type="Ability Score Improvement" source="Player’s Handbook" id="ID_PHB_FEAT_ASI_DEXTERITY">
@@ -1106,7 +1105,7 @@
       <p>Your Dexterity increases by 1.</p>
     </description>
     <rules>
-      <stat name="Dexterity" value="+1"/>
+      <stat name="dexterity" value="+1"/>
     </rules>
   </element>
   <element name="Ability Score Increase (Constitution)" type="Ability Score Improvement" source="Player’s Handbook" id="ID_PHB_FEAT_ASI_CONSTITUTION">
@@ -1116,7 +1115,7 @@
       <p>Your Constitution increases by 1.</p>
     </description>
     <rules>
-      <stat name="Constitution" value="+1"/>
+      <stat name="constitution" value="+1"/>
     </rules>
   </element>
   <element name="Ability Score Increase (Intelligence)" type="Ability Score Improvement" source="Player’s Handbook" id="ID_PHB_FEAT_ASI_INTELLIGENCE">
@@ -1126,7 +1125,7 @@
       <p>Your Intelligence increases by 1.</p>
     </description>
     <rules>
-      <stat name="Intelligence" value="+1"/>
+      <stat name="intelligence" value="+1"/>
     </rules>
   </element>
   <element name="Ability Score Increase (Wisdom)" type="Ability Score Improvement" source="Player’s Handbook" id="ID_PHB_FEAT_ASI_WISDOM">
@@ -1136,7 +1135,7 @@
       <p>Your Wisdom increases by 1.</p>
     </description>
     <rules>
-      <stat name="Wisdom" value="+1"/>
+      <stat name="wisdom" value="+1"/>
     </rules>
   </element>
   <element name="Ability Score Increase (Charisma)" type="Ability Score Improvement" source="Player’s Handbook" id="ID_PHB_FEAT_ASI_CHARISMA">
@@ -1146,7 +1145,7 @@
       <p>Your Charisma increases by 1.</p>
     </description>
     <rules>
-      <stat name="Charisma" value="+1"/>
+      <stat name="charisma" value="+1"/>
     </rules>
   </element>
 
