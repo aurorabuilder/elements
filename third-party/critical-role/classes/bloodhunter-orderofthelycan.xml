@@ -4,7 +4,7 @@
         <name>Order of the Lycan</name>
         <description>The Order of the Lycan archetype for the Blood Hunter class.</description>
         <author url="http://www.dmsguild.com/product/175606/Order-of-the-Lycan-for-Blood-Hunters">Matthew Mercer</author>
-        <update version="0.1.2">
+        <update version="0.1.3">
             <file name="bloodhunter-orderofthelycan.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/bloodhunter-orderofthelycan.xml" />
         </update>
     </info>
@@ -90,17 +90,14 @@
         <description>
             <p>At 7th level, your speed increases by 10 feet. You also can add 10 feet to your long jump distance and 3 feet to your high jump distance.</p>
             <p class="indent">In addition, your hybrid form gains the Improved predatory Strikes feature.</p>
-            <p class="indent">
-                <b>
-                    <i>Improved Predatory Strikes. </i>
-                </b> When you have an active rite while in your hybrid form, your unarmed strikes are considered magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
-            </p>
+            <p class="indent"><b><i>Improved Predatory Strikes.</i></b> When you have an active rite while in your hybrid form, your unarmed strikes are considered magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
         </description>
         <sheet>
             <description>Your speed increases by 10 feet. You can add 10 feet to your long jump distance and 3 feet to your high jump distance.</description>
         </sheet>
         <rules>
-            <stat name="Speed" value="10" />
+            <stat name="speed" value="10" />
+			<!-- todo: other speeds? -->
             <grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_ORDER_OF_THE_LYCAN_IMPROVED_PREDATORY_STRIKES" />
         </rules>
     </element>
@@ -174,7 +171,7 @@
             <description>You gain a +$(feral might:damage) bonus to melee damage rolls. You also have advantage on Strength checks and Strength saving throws.</description>
         </sheet>
         <rules>
-            <stat name="feral might:damage" value="Proficiency Half" />
+            <stat name="feral might:damage" value="proficiency:half" />
         </rules>
     </element>
     <element name="Resilient Hide" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_ORDER_OF_THE_LYCAN_RESILIENT_HIDE">
@@ -186,7 +183,7 @@
             <description>You have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons that aren’t silvered.</description>
         </sheet>
         <rules>
-            <stat name="AC" value="1" equipped="![armor:heavy]" />
+            <stat name="ac:misc" value="1" equipped="![armor:heavy]" />
         </rules>
     </element>
     <element name="Predatory Strikes" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_ORDER_OF_THE_LYCAN_PREDATORY_STRIKES">
@@ -199,10 +196,10 @@
             <description>When you use the Attack action with an unarmed strike you can make another unarmed strike as a bonus action. (+$(predatory strikes:attack) vs AC, 1d$(predatory strikes:damage)+$(predatory strikes:attack:ability))</description>
         </sheet>
         <rules>
-            <stat name="predatory strikes:attack:ability" value="Strength Modifier" bonus="ability" />
-            <stat name="predatory strikes:attack:ability" value="Dexterity Modifier" bonus="ability" />
+            <stat name="predatory strikes:attack:ability" value="strength:modifier" bonus="ability" />
+            <stat name="predatory strikes:attack:ability" value="dexterity:modifier" bonus="ability" />
             <stat name="predatory strikes:attack" value="predatory strikes:attack:ability" />
-            <stat name="predatory strikes:attack" value="Proficiency" />
+            <stat name="predatory strikes:attack" value="proficiency" />
             <stat name="predatory strikes:damage" value="6" />
             <stat name="predatory strikes:damage" value="8" level="11" />
             <stat name="predatory strikes:damage" value="10" level="18" />
@@ -249,7 +246,7 @@
         </sheet>
         <rules>
             <stat name="lycan regeneration:hp" value="1" />
-            <stat name="lycan regeneration:hp" value="Constitution Modifier" />
+            <stat name="lycan regeneration:hp" value="constitution:modifier" />
         </rules>
     </element>
     <element name="Beastly Precision" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_ORDER_OF_THE_LYCAN_BEASTLY_PRECISION">
@@ -258,7 +255,7 @@
             <p>You gain a bonus to melee attack rolls made with your unarmed strikes equal to half of your proficiency bonus (rounded down).</p>
         </description>
         <sheet>
-            <description>You gain a +$(Proficiency Half) bonus to melee attack rolls made with your unarmed strikes.</description>
+            <description>You gain a +$(proficiency:half) bonus to melee attack rolls made with your unarmed strikes.</description>
         </sheet>
         <rules></rules>
     </element>
@@ -284,8 +281,8 @@
         </sheet>
         <rules>
             <stat name="blood curse howl:dc" value="8" />
-            <stat name="blood curse howl:dc" value="Proficiency" />
-            <stat name="blood curse howl:dc" value="Wisdom Modifier" />
+            <stat name="blood curse howl:dc" value="proficiency" />
+            <stat name="blood curse howl:dc" value="wisdom:modifier" />
         </rules>
     </element>
 </elements>

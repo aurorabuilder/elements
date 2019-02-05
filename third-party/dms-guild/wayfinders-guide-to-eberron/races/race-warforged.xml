@@ -4,7 +4,7 @@
 		<name>Warforged</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="race-warforged.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/races/race-warforged.xml" />
 		</update>
 	</info>
@@ -70,9 +70,9 @@
 			<set name="names-format">$(warforged)</set>
       	</setters>
       	<rules>
-			<stat name="Constitution" value="1" />
+			<stat name="constitution" value="1" />
 			<grant type="Size" name="ID_SIZE_MEDIUM" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="speed" value="30" bonus="base" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_WARFORGED_RESILIENCE" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SENTRYS_REST" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION" />
@@ -140,8 +140,11 @@
 			<description>11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</description>
 		</sheet>
 		<rules>
-			<stat name="AC" value="11" bonus="base" />
-			<stat name="AC" value="Proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR"/>
+			<stat name="warforged:darkwood core" value="11" />
+			<stat name="warforged:darkwood core" value="dexterity:modifier" />
+			<stat name="warforged:darkwood core" value="proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+
+			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" />
 		</rules>
 	</element>
 	<element name="Composite Plating" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_COMPOSITE_PLATING">
@@ -156,15 +159,13 @@
 			<description>11 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</description>
 		</sheet>
 		<rules>
-			<!-- todo: some rules that counts as wearing armor? alternative, create the armors as equipment -->
-			<!-- disable armor equipment slot? -->
-			<stat name="AC" value="11" bonus="base" />
-			<stat name="AC" value="Proficiency" />
-			
-			<!-- ac formulas need rework which affects all elements and needs application updates -->
-			<!-- cap normally applied when wearing medium armor -->
-			<grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" />
-			<stat name="AC" value="Dexterity Modifier" bonus="base:modifier" cap="ac:dexterity:mod:cap:armor:medium" />
+			<stat name="warforged:composite plating" value="11" />
+			<stat name="warforged:composite plating" value="dexterity:modifier" cap="ac:dexterity:mod:cap:armor:medium" />
+			<stat name="warforged:composite plating" value="proficiency" />
+
+			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" />
+			<!-- todo: grant counts as wearing armor? -->
+			<!-- todo: disable armor equipment slot? -->
 		</rules>
 	</element>
 	<element name="Heavy Plating" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_HEAVY_PLATING">
@@ -179,13 +180,11 @@
 			<description>16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</description>
 		</sheet>
 		<rules>
-			<!-- todo: some rules that counts as wearing armor? alternative, create the armors as equipment -->
-			<!-- disable armor equipment slot? -->
-			<stat name="AC" value="16" bonus="base" />
-			<stat name="AC" value="Proficiency" />
-		
-			<!-- normally when heavy armor is equipped this is ignored automatically -->
-			<grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
+			
+			<stat name="warforged:heavy plating" value="16" />
+			<stat name="warforged:heavy plating" value="proficiency" />
+			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" />
 		</rules>
 	</element>
 
@@ -246,7 +245,7 @@
 			<description>You’re an imposing war machine built for close combat and raw might.</description>
 		</sheet>
 		<rules>
-			<stat name="Strength" value="2" />
+			<stat name="strength" value="2" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_IRON_FISTS" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_POWERFUL_BUILD" />
 		</rules>
@@ -280,7 +279,7 @@
 			<description>You were built to scout the edges of battle and outmaneuver your enemies.</description>
 		</sheet>
 		<rules>
-			<stat name="Dexterity" value="2" />
+			<stat name="dexterity" value="2" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_SWIFT" />
 			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_LIGHT_STEP" />
 		</rules>
@@ -293,7 +292,7 @@
 			<description>Your walking speed is increased by 5 feet.</description>
 		</sheet>
 		<rules>
-			<stat name="Speed" value="5" />
+			<stat name="speed" value="5" />
 		</rules>
 	</element>
 	<element name="Light Step" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_LIGHT_STEP">
@@ -313,7 +312,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Strength" value="1"/>
+			<stat name="strength" value="1"/>
 		</rules>
 	</element>
 	<element name="Dexterity" type="Ability Score Improvement" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_DEXTERITY">
@@ -323,7 +322,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Dexterity" value="1"/>
+			<stat name="dexterity" value="1"/>
 		</rules>
 	</element>
 	<element name="Constitution" type="Ability Score Improvement" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_CONSTITUTION">
@@ -333,7 +332,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Constitution" value="1"/>
+			<stat name="constitution" value="1"/>
 		</rules>
 	</element>
 	<element name="Intelligence" type="Ability Score Improvement" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_INTELLIGENCE">
@@ -343,7 +342,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Intelligence" value="1"/>
+			<stat name="intelligence" value="1"/>
 		</rules>
 	</element>
 	<element name="Wisdom" type="Ability Score Improvement" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_WISDOM">
@@ -353,7 +352,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Wisdom" value="1"/>
+			<stat name="wisdom" value="1"/>
 		</rules>
 	</element>
 	<element name="Charisma" type="Ability Score Improvement" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_CHARISMA">
@@ -363,7 +362,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Charisma" value="1"/>
+			<stat name="charisma" value="1"/>
 		</rules>
 	</element>
 </elements>

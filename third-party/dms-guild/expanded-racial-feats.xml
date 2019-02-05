@@ -4,7 +4,7 @@
 		<name>Expanded Racial Feats</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/226194/Expanded-Racial-Feats">Adam Bradford</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="expanded-racial-feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/expanded-racial-feats.xml" />
 		</update>
 	</info>
@@ -39,12 +39,9 @@
 		    <select type="Ability Score Improvement" name="Dao Heritage" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
 			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
 
-			<!-- ac formulas need rework -->
-			<stat name="ac:natural" value="3" bonus="natural" equipped="[armor:none]"/>
-			<stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]"/>
-			
-			<!-- <stat name="ac:natural:alt" value="3" bonus="natural" equipped="[armor:any]" />
-			<stat name="AC" value="ac:natural:alt" bonus="armor" equipped="[armor:any]" /> -->
+			<stat name="dao heritage:natural armor" value="13" />
+			<stat name="dao heritage:natural armor" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="dao heritage:natural armor" bonus="calculation" equipped="[armor:none]" alt="Natural Armor (Dao Heritage)" />
 		</rules>
 	</element>
 	<element name="Djinn Heritage" type="Feat" source="Expanded Racial Feats" id="ID_DMSG_ERF_FEAT_DJINN_HERITAGE">
@@ -109,7 +106,7 @@
 			You don’t take damage from falling 20 feet or less if you aren’t incapacitated.</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
+		    <stat name="dexterity" value="1" />
 		</rules>
 	</element>
 
@@ -145,7 +142,7 @@
 			<description>When a creature you can see targets you with an attack and another creature is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. (1/SR)</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
+		    <stat name="dexterity" value="1" />
 		</rules>
 	</element>
 
@@ -293,7 +290,7 @@
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Tortle Protector" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_WISDOM" />
-			<stat name="ac:natural" value="8" bonus="natural" />
+			<stat name="tortle:natural armor" value="18" bonus="base" />
 		</rules>
 	</element>
 
@@ -372,8 +369,8 @@
 			<description>You gain a flying speed of 30 feet. To use this speed, you can't be wearing medium or heavy armor.</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
-		    <stat name="speed:fly" value="30" bonus="base" equipped="![armor:	],![armor:heavy]" />
+		    <stat name="dexterity" value="1" />
+		    <stat name="speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
 		</rules>
 	</element>
 
