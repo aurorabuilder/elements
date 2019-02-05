@@ -4,7 +4,7 @@
         <name>Feats</name>
         <description>The Feats from Xanathar’s Guide to Everything</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-        <update version="0.0.3">
+        <update version="0.0.4">
             <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/feats.xml" />
         </update>
     </info>
@@ -38,8 +38,8 @@
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Dragon Fear)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
             <stat name="dragon fear:dc" value="8" />
-            <stat name="dragon fear:dc" value="Proficiency" />
-            <stat name="dragon fear:dc" value="Charisma Modifier" />
+            <stat name="dragon fear:dc" value="proficiency" />
+            <stat name="dragon fear:dc" value="charisma:modifier" />
         </rules>
     </element>
     <element name="Dragon Hide" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DRAGON_HIDE">
@@ -55,11 +55,14 @@
             </ul>
         </description>
         <sheet>
-            <description></description>
+            <description>You grow retractable claws from the tips of your fingers. Extending or retracting the claws requires no action. The claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal 1d4 + $(strength:modifier) slashing damage.</description>
         </sheet>
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Dragon Hide)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
-            <stat name="AC" value="13" bonus="base" equipped="[armor:none]"/>
+
+            <stat name="dragon hide:natural armor" value="13" bonus="base" />
+            <stat name="dragon hide:natural armor" value="dexterity:modifier" bonus="base" />
+            <stat name="ac:calculation" value="dragon hide:natural armor" bonus="calculation" equipped="[armor:none]" />
         </rules>
     </element>
     <element name="Drow High Magic" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_DROW_HIGH_MAGIC">
@@ -88,7 +91,7 @@
             <description>Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. Roll the die, add %Constitution Modifier%, and regain a number of hit points equal to the total (minimum of 1).</description>
         </sheet>
         <rules>
-            <stat name="Constitution" value="1" />
+            <stat name="constitution" value="1" />
         </rules>
     </element>
     <element name="Elven Accuracy" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_ELVEN_ACCURACY">
@@ -183,7 +186,8 @@
             <description>You have resistance to cold damage and poison damage. You have advantage on saving throws against being poisoned.</description>
         </sheet>
         <rules>
-            <stat name="Constitution" value="1" />
+            <stat name="constitution" value="1" />
+			<!-- todo: resistance -->
         </rules>
     </element>
     <element name="Orcish Fury" type="Feat" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_FEAT_ORCISH_FURY">
@@ -262,7 +266,7 @@
         </sheet>
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Squat Nimbleness)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
-            <stat name="Speed" value="5" />
+            <stat name="speed" value="5" />
             <select type="Proficiency" name="Squat Nimbleness" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS" />
         </rules>
     </element>

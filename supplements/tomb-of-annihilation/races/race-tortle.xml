@@ -4,7 +4,7 @@
         <name>Tortle</name>
         <description>The Tortle race from the Tortle Package, a Tomb of Annihilation Supplement</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tomb-annihilation">Wizards of the Coast</author>
-        <update version="0.1.1">
+        <update version="0.1.2">
             <file name="race-tortle.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/tomb-of-annihilation/races/race-tortle.xml" />
         </update>
     </info>
@@ -51,9 +51,9 @@
         </setters>
         <sheet display="false"/>
         <rules>
-            <stat name="Strength" value="+2" />
-            <stat name="Wisdom" value="+1" />
-            <stat name="Speed" value="30" bonus="base"/>
+            <stat name="strength" value="+2" />
+            <stat name="wisdom" value="+1" />
+            <stat name="speed" value="30" bonus="base"/>
             <grant type="Language" name="ID_LANGUAGE_COMMON" />
             <grant type="Language" name="ID_MM_LANGUAGE_AQUAN" />
             <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_CLAWS" />
@@ -88,13 +88,8 @@
             <description>Due to your shell and the shape of your body, you are ill-suited to wearing armor. Your shell provides ample protection, however; it gives you a base AC of 17 (your Dexterity modifier doesn't affect this number). You gain no benefit from wearing armor, but if you are using a shield, you can apply the shield's bonus as normal.</description>
         </sheet>
         <rules>
-            <stat name="ac:natural" value="7" bonus="natural" />
-            <stat name="AC" value="ac:natural" equipped="[armor:none]" />					
-			<stat name="AC" value="ac:natural" bonus="armor" equipped="[armor:any]" />
-			
-            <!-- temp testing unusual rules, need something more streamlined to alter stats maybe -->
-            <!-- works from version 1.18.5XX and above, edge case - not finalized -->
-            <grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" />            
+			<stat name="tortle:natural armor" value="17" bonus="base" />
+            <stat name="ac:calculation" value="tortle:natural armor" bonus="ac:calculation" alt="Natural Armor (Tortle)" />
         </rules>
     </element>
     <element name="Shell Defense" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE">
@@ -104,7 +99,6 @@
         <sheet>
             <description>You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</description>
         </sheet>
-        <rules></rules>
     </element>
     <element name="Survival Instinct" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SURVIVAL_INSTINCT">
         <description>

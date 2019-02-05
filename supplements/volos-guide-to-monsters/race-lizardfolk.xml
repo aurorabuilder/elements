@@ -4,7 +4,7 @@
     <name>Lizardfolk</name>
     <description></description>
     <author url="http://dnd.wizards.com">Wizards of the Coast</author>
-    <update version="0.0.8">
+    <update version="0.0.9">
       <file name="race-lizardfolk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/race-lizardfolk.xml" />
     </update>
   </info>
@@ -89,9 +89,9 @@
       <set name="weight" modifier="2d6">110 lb.</set>
     </setters>
     <rules>
-      <stat name="Constitution" value="+2" />
-      <stat name="Wisdom" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
+      <stat name="constitution" value="+2" />
+      <stat name="wisdom" value="+1" />
+      <stat name="speed" value="+30" bonus="base" />
       <stat name="speed:swim" value="+30" bonus="base"/>
       <grant type="Size" name="ID_SIZE_MEDIUM" />
       <grant type="Language" name="ID_LANGUAGE_COMMON" />
@@ -113,7 +113,7 @@
       <description>Your fanged maw is a natural weapon, which you can use to make unarmed strikes. 1d6 + %lizardfolk bite:damage% piercing damage.</description>
     </sheet>
     <rules>
-      <stat name="lizardfolk bite:damage" value="Strength Modifier" />
+      <stat name="lizardfolk bite:damage" value="strength:modifier" />
     </rules>
   </element>
   <element name="Cunning Artisan" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Cunning_Artisan">
@@ -157,18 +157,11 @@
       <description>You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + %Dexterity Modifier%.</description>
     </sheet>
     <rules>
-    
-      <stat name="ac:natural" value="3" bonus="natural" equipped="[armor:none]"/>
-      <stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]"/>
-
-<!-- 
-      <stat name="natural:ac" value="3" bonus="natural" equipped="[armor:none]" />
-      <stat name="AC" value="natural:ac" equipped="[armor:none]" /> -->
-
-      
-      <stat name="ac:natural:alt" value="3" bonus="natural" equipped="[armor:any]" />
-      <stat name="AC" value="ac:natural:alt" bonus="armor" equipped="[armor:any]" />
-
+		<stat name="ac:natural armor lizardfolk:base" value="13" />
+		<stat name="ac:natural armor lizardfolk:dexterity" value="dexterity:modifier" />
+		<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:base" />
+		<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:dexterity" />
+		<stat name="ac:calculation" value="ac:natural armor lizardfolk" bonus="calculation" equipped="[armor:none]" alt="Natural Armor (Lizardfolk)" />
     </rules>
   </element>
   <element name="Hungry Jaws" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hungry_Jaws">
@@ -181,7 +174,7 @@
     </sheet>
     <rules>
       <stat name="hungry jaws:hp:temp" value="1" bonus="hungry jaws" />
-      <stat name="hungry jaws:hp:temp" value="Constitution Modifier" bonus="hungry jaws" />
+      <stat name="hungry jaws:hp:temp" value="constitution:modifier" bonus="hungry jaws" />
     </rules>
   </element>
 </elements>

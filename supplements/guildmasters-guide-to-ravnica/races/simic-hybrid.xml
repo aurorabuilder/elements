@@ -4,7 +4,7 @@
 		<name>Simic Hybrid</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="simic-hybrid.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/simic-hybrid.xml" />
 		</update>
 	</info>
@@ -45,9 +45,9 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="Constitution" value="2" />
+			<stat name="constitution" value="2" />
 			<select type="Ability Score Improvement" name="Ability Score Increase (Simic Hybrid)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
@@ -94,7 +94,7 @@
 			<description>You have a climbing speed equal to your walking speed.</description>
 		</sheet>
 		<rules>
-			<stat name="speed:climb" value="Speed" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base" />
 		</rules>
 	</element>    
 	<element name="Underwater Adaptation" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_SIMIC_HYBRID_ENHANCEMENT_UNDERWATER_ADAPTATION">
@@ -106,7 +106,7 @@
 			<description>You can breathe air and water, and you have a swimming speed equal to your walking speed.</description>
 		</sheet>
 		<rules>
-			<stat name="speed:swim" value="Speed" bonus="base" />
+			<stat name="speed:swim" value="speed" bonus="base" />
 		</rules>
 	</element>    
 	<element name="Grappling Appendages" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_SIMIC_HYBRID_ENHANCEMENT_GRAPPLING_APPENDAGES">
@@ -127,7 +127,7 @@
 			<description>Your skin in places is covered by a thick shell. You gain a +1 bonus to AC when you're not wearing heavy armor.</description>
 		</sheet>
 		<rules>
-			<stat name="AC" value="1" equipped="![armor:heavy]" />
+			<stat name="ac:misc" value="1" equipped="![armor:heavy]" />
 		</rules>
 	</element>    
 	<element name="Acid Spit" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_SIMIC_HYBRID_ENHANCEMENT_ACID_SPIT">
@@ -140,10 +140,10 @@
 		</sheet>
 		<rules>
 			<stat name="acid spit:dc" value="8" />
-			<stat name="acid spit:dc" value="Proficiency" />
-			<stat name="acid spit:dc" value="Constitution Modifier" />			
+			<stat name="acid spit:dc" value="proficiency" />
+			<stat name="acid spit:dc" value="constitution:modifier" />			
 			<stat name="acid spit:usage" value="1" bonus="usage" />
-			<stat name="acid spit:usage" value="Constitution Modifier" bonus="usage" />			
+			<stat name="acid spit:usage" value="constitution:modifier" bonus="usage" />			
 			<stat name="acid spit:dice count" value="2" />
 			<stat name="acid spit:dice count" value="1" level="11" />
 			<stat name="acid spit:dice count" value="1" level="17" />
