@@ -144,7 +144,7 @@
 			<stat name="warforged:darkwood core" value="dexterity:modifier" />
 			<stat name="warforged:darkwood core" value="proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
 
-			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" />
+			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" alt="Darkwood Core (Integrated Protection)" />
 		</rules>
 	</element>
 	<element name="Composite Plating" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_COMPOSITE_PLATING">
@@ -163,9 +163,9 @@
 			<stat name="warforged:composite plating" value="dexterity:modifier" cap="ac:armored:dexterity:cap" />
 			<stat name="warforged:composite plating" value="proficiency" />
 
-			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" />
-			<!-- todo: grant counts as wearing armor? -->
-			<!-- todo: disable armor equipment slot? -->
+			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" alt="Composite Plating (Integrated Protection)" />
+
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />			
 		</rules>
 	</element>
 	<element name="Heavy Plating" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_HEAVY_PLATING">
@@ -184,7 +184,9 @@
 			
 			<stat name="warforged:heavy plating" value="16" />
 			<stat name="warforged:heavy plating" value="proficiency" />
-			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" />
+			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" alt="Heavy Plating (Integrated Protection)" />
+
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />
 		</rules>
 	</element>
 
@@ -213,8 +215,8 @@
 			<description>You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Specialized Design" supports="Skill" />
-			<select type="Proficiency" name="Specialized Design" supports="Tool" />
+			<select type="Proficiency" name="Skill Proficiency, Specialized Design" supports="Skill" />
+			<select type="Proficiency" name="Tool Proficiency, Specialized Design" supports="Tool" />
 			<select type="Language" name="Specialized Design" />
 		</rules>
 	</element>
