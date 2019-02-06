@@ -4,7 +4,7 @@
 		<name>Weapons from D&amp;D Wiki</name>
         <description>5E Homebrew weapons from D&amp;D Wiki</description>
         <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
-        <update version="0.1">
+        <update version="0.0.2">
             <file name="items-weapons.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/items/items-weapons.xml" />
         </update>
 	</info>
@@ -45,6 +45,29 @@
 	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS">
 		<rules>
 			<grant type="Proficiency" id="ID_WIKI_PROFICIENCY_WEAPON_PROFICIENCY_KATANA" />
+		</rules>
+	</append>
+	<element name="Scythe" type="Weapon" source="D&amp;D Wiki" id="ID_WIKI_WEAPON_SCYTHE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+			<p>This weapon is inspired by the common farming implement used to cut swaths of grown hay, but it has a straight handle and a heavier blade. Despite its humble origins, the scythe is recognized as a symbol of death in many cultures because of its use in reaping. Rather than being too heavy for most smaller creatures, the scythe is too long for Small sized creatures to wield effectively. </p>
+		</description>
+		<setters>
+			<set name="sourceUrl">https://www.dandwiki.com/wiki/Scythe_(5e_Equipment)</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="slashing">2d4</set>
+			<set name="proficiency">ID_WIKI_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE</set>
+		</setters>
+	</element>
+	<element name="Weapon Proficiency (Scythe)" type="Proficiency" source="D&amp;D Wiki" id="ID_WIKI_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING</supports>
+	</element>
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_WIKI_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE" />
 		</rules>
 	</append>
 </elements>
