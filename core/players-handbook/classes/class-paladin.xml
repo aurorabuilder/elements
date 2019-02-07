@@ -127,8 +127,8 @@
       <p>The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the <i>hallow</i> spell.</p>
       <p class="indent">You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses.</p>
     </description>
-    <sheet>
-      <description>$(divine sense:count) / long rest. As an action, you can open your awareness to detect presence of strong evil. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
+    <sheet usage="$(divine sense:count)/Long Rest" action="Action">
+      <description>You can open your awareness to detect presence of strong evil. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
     </sheet>
     <rules>
       <stat name="divine sense:count" value="1" />
@@ -240,17 +240,11 @@
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_PALADIN" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_PALADIN" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_PALADIN" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_PALADIN" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_PALADIN" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Paladin 4)" supports="Improvement Option,Paladin,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Paladin 8)" supports="Improvement Option,Paladin,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Paladin 12)" supports="Improvement Option,Paladin,12" level="12" />
       <select type="Class Feature" name="Improvement Option (Paladin 16)" supports="Improvement Option,Paladin,16" level="16" />
       <select type="Class Feature" name="Improvement Option (Paladin 19)" supports="Improvement Option,Paladin,19" level="19" />
-
     </rules>
   </element>
   <element name="Extra Attack" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_EXTRA_ATTACK">
@@ -260,6 +254,9 @@
     <sheet>
       <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
     </sheet>
+	<rules>
+		<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+	</rules>
   </element>
   <element name="Aura of Protection" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_AURA_OF_PROTECTION">
     <description>
@@ -302,8 +299,8 @@
       <p>Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.</p>
       <p class="indent">You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can use your action to end one spell on yourself or on one willing creature that you touch $(cleansing touch:count) / long rest.</description>
+    <sheet usage="$(cleansing touch:count)/Long Rest">
+      <description>You can use your action to end one spell on yourself or on one willing creature that you touch.</description>
     </sheet>
     <rules>
       <stat name="cleansing touch:count" value="1" bonus="base"/>

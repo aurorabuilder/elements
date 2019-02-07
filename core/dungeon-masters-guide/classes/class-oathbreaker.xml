@@ -21,7 +21,7 @@
       <div element="ID_DMG_ARCHETYPE_FEATURE_OATHBREAKER_SUPERNATURAL_RESISTANCE" />
       <div element="ID_DMG_ARCHETYPE_FEATURE_OATHBREAKER_DREAD_LORD" />
     </description>
-    <sheet>
+    <sheet display="false">
       <description>An Oathbreaker is a paladin who breaks his or her sacred oaths to pursue some dark ambition or serve an evil power.</description>
     </sheet>
     <rules>
@@ -80,7 +80,7 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
-      <description>You as well any fiends and undead within $(aura of hate:range) feet of the paladin, gains a bonus to melee weapon damage rolls equal to $(aura of hate:melee damage bonus).</description>
+      <description>You as well any fiends and undead within $(aura of hate:range) feet of the paladin, gains a +$(aura of hate:melee damage bonus) bonus to melee weapon damage rolls.</description>
     </sheet>
     <rules>
       <stat name="aura of hate:range" value="10" />
@@ -105,12 +105,9 @@
       <p class="indent">While the aura lasts, the paladin can use a bonus action on his or her turn to cause the shadows in the aura to attack one creature. The paladin makes a melee spell attack against the target. If the attack hits, the target takes necrotic damage equal to 3d10 + the paladin's Charisma modifier.</p>
       <p class="indent">After activating the aura, the paladin can't do so again until he or she finishes a long rest.</p>
     </description>
-    <sheet>
-      <description>1/LR. As an action, you surround yourself with an aura of gloom that lasts for 1 minute. The aura reduces any bright light in a 30-foot radius around the paladin to dim light. Whenever an enemy that is frightened by the paladin starts its turn in the aura, it takes 4d10 psychic damage. Additionally, the paladin and creatures he or she chooses in the aura are draped in deeper shadow. Creatures that rely on sight have disadvantage on attack rolls against creatures draped in this shadow. While the aura lasts, the paladin can use a bonus action on his or her turn to cause the shadows in the aura to attack one creature. The paladin makes a melee spell attack against the target. If the attack hits, the target takes necrotic damage equal to 3d10 + $(dread lord:mod).</description>
+    <sheet usage="1/Long Rest" action="Action">
+      <description>You surround yourself with an aura of gloom that lasts for 1 minute. The aura reduces any bright light in a 30-foot radius around the paladin to dim light. Whenever an enemy that is frightened by the paladin starts its turn in the aura, it takes 4d10 psychic damage. Additionally, the paladin and creatures he or she chooses in the aura are draped in deeper shadow. Creatures that rely on sight have disadvantage on attack rolls against creatures draped in this shadow. 
+	  While the aura lasts, the paladin can use a bonus action on his or her turn to cause the shadows in the aura to attack one creature. The paladin makes a melee spell attack against the target. If the attack hits, the target takes necrotic damage equal to 3d10+$(charisma:modifier).</description>
     </sheet>
-    <rules>
-      <stat name="dread lord:mod" value="charisma:modifier" bonus="base"/>
-    </rules>
-  </element>
-  
+  </element>  
 </elements>

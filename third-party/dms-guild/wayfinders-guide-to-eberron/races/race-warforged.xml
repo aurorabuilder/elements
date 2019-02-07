@@ -124,10 +124,22 @@
 			</table>
 		</description>
 		<sheet>
-			<description>You can alter your body to enter different defensive modes each time you finish a long rest rest.</description>
+			<description>You can alter your body to enter different defensive modes each time you finish a long rest rest.
+			Darkwood Core ($(warforged:darkwood core)), Composite Plating ($(warforged:composite plating)), Heavy Plating ($(warforged:heavy plating))</description>
 		</sheet>
 		<rules>
 			<select type="Racial Trait" name="Integrated Protection" supports="Warforged Integrated Protection" />
+			
+			<stat name="warforged:darkwood core" value="11" />
+			<stat name="warforged:darkwood core" value="dexterity:modifier" />
+			<stat name="warforged:darkwood core" value="proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+
+			<stat name="warforged:composite plating" value="11" />
+			<stat name="warforged:composite plating" value="dexterity:modifier" cap="ac:armored:dexterity:cap" />
+			<stat name="warforged:composite plating" value="proficiency" />
+
+			<stat name="warforged:heavy plating" value="16" />
+			<stat name="warforged:heavy plating" value="proficiency" />
 		</rules>
 	</element>
 
@@ -136,15 +148,11 @@
 		<description>
 			<p><strong><em>Armor Class.</em></strong> 11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</description>
 		</sheet>
 		<rules>
-			<stat name="warforged:darkwood core" value="11" />
-			<stat name="warforged:darkwood core" value="dexterity:modifier" />
-			<stat name="warforged:darkwood core" value="proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-
-			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" alt="Darkwood Core (Integrated Protection)" />
+			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" alt="Darkwood Core (Warforged)" />
 		</rules>
 	</element>
 	<element name="Composite Plating" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_COMPOSITE_PLATING">
@@ -155,16 +163,11 @@
 			<p><em>Prerequisite: Medium armor proficiency</em></p>
 			<p><strong><em>Armor Class.</em></strong> 11 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>11 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</description>
 		</sheet>
 		<rules>
-			<stat name="warforged:composite plating" value="11" />
-			<stat name="warforged:composite plating" value="dexterity:modifier" cap="ac:armored:dexterity:cap" />
-			<stat name="warforged:composite plating" value="proficiency" />
-
-			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" alt="Composite Plating (Integrated Protection)" />
-
+			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" alt="Composite Plating (Warforged)" />
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />			
 		</rules>
 	</element>
@@ -176,16 +179,12 @@
 			<p><em>Prerequisite: Heavy armor proficiency</em></p>
 			<p><strong><em>Armor Class.</em></strong> 16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</description>
 		</sheet>
 		<rules>
-			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-			
-			<stat name="warforged:heavy plating" value="16" />
-			<stat name="warforged:heavy plating" value="proficiency" />
-			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" alt="Heavy Plating (Integrated Protection)" />
-
+			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" alt="Heavy Plating (Warforged)" />	
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />		
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />
 		</rules>
 	</element>
@@ -225,7 +224,7 @@
 			<p>Choose one tool you’re proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</p>
 		</description>
 		<sheet>
-			<description>Choose one tool you’re proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</description>
+			<description>A tool you’re proficienct with is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</description>
 		</sheet>
 		<rules>
 			<!-- todo: select from existing tools much like skill expertise, but skill expertise has class feature elements for each skill -->
