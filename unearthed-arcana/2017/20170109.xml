@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Artificer</name>
         <description>Makers of magic-infused objects, artificers are defined by their inventive nature.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/artificer">Wizards of the Coast</author>
-        <update version="0.0.6">
+        <update version="0.0.7">
             <file name="20170109.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170109.xml" />
         </update>
     </info>
@@ -121,17 +121,17 @@
             <grant type="Class Feature" id="ID_WOTC_UA_CLASS_FEATURE_ARTIFICER_SOUL_OF_ARTIFICE" level="20" />
         </rules>
         <multiclass id="ID_WOTC_UA_MULTICLASS_ARTIFICER">
-            <prerequisite>Intelligence 13 and Constitution 13</prerequisite>
-            <requirements>[int:13],[con:13]</requirements>
+			  <!-- no multiclass info provided in UA, using recommendations from mike mearls (wotcstaff) -->
+            <prerequisite>Intelligence 13</prerequisite>
+            <requirements>[int:13]</requirements>
             <setters>
-                <set name="multiclass proficiencies">Light armor, medium armor, simple weapons, thieves' tools</set>
+                <set name="multiclass proficiencies">Light armor, simple weapons, two tools of your choice</set>
             </setters>
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
                 <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
                 <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+				<select type="Proficiency" name="Tool Proficiency (Artificer)" supports="Tool" number="2" />
             </rules>
         </multiclass>
         <spellcasting name="Artificer" ability="Intelligence" allowReplace="true">

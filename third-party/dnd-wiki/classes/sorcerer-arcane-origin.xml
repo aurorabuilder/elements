@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+       <name>Arcane Sorcerous Origin</name>
+       <description>5e homebrew</description>
+       <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+       <update version="0.0.1">
+           <file name="sorcerer-arcane-origin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/classes/sorcerer-arcane-origin.xml" />
+       </update>
+    </info>
+	<element name="Arcane Origin" type="Archetype" source="D&amp;D Wiki" id="ID_WIKI_SORCERER_ARCHETYPE_ARCANE_ORIGIN">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your innate abilities come from a deep connection with the fabric of magic. You may have descended from a magical being, or you may have been touched by the raw essence of magic.</p>
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_MAGICAL_SECRETS" />
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_EXTRA_SORCERY_POINTS" />
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_POWERFUL_SPELLS" />
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_PERSISTENT_MAGIC" />
+			<div element="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_ARCANE_DESTRUCTION" />
+		</description>
+		<sheet>
+			<description>Your innate abilities come from a deep connection with the fabric of magic.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_MAGICAL_SECRETS" level="1" />
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_EXTRA_SORCERY_POINTS" level="3" />
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_POWERFUL_SPELLS" level="6" />
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_PERSISTENT_MAGIC" level="14" />
+			<grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_ARCANE_DESTRUCTION" level="18" />
+		</rules>
+	</element>
+	<element name="Magical Secrets" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_MAGICAL_SECRETS">
+		<description>
+			<p>At 1st level, your connection to the fabric of magic allows you to draw inspiration from many varieties of spellcasting. You learn two spells of your choice from any class. These spells count as sorcerer spells for you. A spell you choose must be of a level for which you have spell slots, or a cantrip. When you gain a level in this class, you can choose one spell gained from this ability and replace it with another spell from any class. You learn an additional spell from this feature at 4th, 9th, 14th and 20th level.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" number="2" level="1" spellcasting="Sorcerer"/>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" level="4" spellcasting="Sorcerer"/>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" level="9" spellcasting="Sorcerer"/>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" level="14" spellcasting="Sorcerer"/>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" level="20" spellcasting="Sorcerer"/>
+		</rules>
+	</element>
+	<element name="Extra Sorcery Points" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_EXTRA_SORCERY_POINTS">
+		<description>
+			<p>At 3rd level, the wellspring of magic found in you is deeper than in other sorcerers. You have 2 additional sorcery points. You gain 2 additional sorcery points again when you reach 6th level, and again at 12nd and 18th level.</p>
+		</description>
+		<sheet display="false">
+			<description level="3">You gain 2 additional sorcery points.</description>
+			<description level="6">You gain 4 additional sorcery points.</description>
+			<description level="12">You gain 6 additional sorcery points.</description>
+			<description level="18">You gain 8 additional sorcery points.</description>
+		</sheet>
+        <rules>
+            <stat name="sorcery-points" value="+2" level="3" />
+            <stat name="sorcery-points" value="+2" level="6" />
+            <stat name="sorcery-points" value="+2" level="12" />
+            <stat name="sorcery-points" value="+2" level="18" />
+        </rules>
+	</element>
+	<element name="Powerful Spells" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_POWERFUL_SPELLS">
+		<description>
+			<p>At 6th level, you begin to master the essence of magic, using it to punish your foes more heavily than other casters. You can add your Charisma modifier to one damage roll of any cantrip you cast. When you cast a spell of 1st level or higher, you can spend a sorcery point to add your Charisma modifier to one damage roll, or one roll of the <i>color spray</i> or <i>sleep</i> spells. This can be used in conjunction with Metamagic effects. Furthermore, you can choose an additional metamagic talent to add to those already known.</p>
+		</description>
+		<sheet>
+			<description>You can add your Charisma modifier (+$(Charisma Modifier)) to one damage roll of any cantrip you cast. When you cast a spell of 1st level or higher, you can spend a sorcery point to add your Charisma modifier (+$(Charisma Modifier)) to one damage roll, or one roll of the <i>color spray</i> or <i>sleep</i> spells. This can be used in conjunction with Metamagic effects.</description>
+		</sheet>
+        <rules>
+            <select type="Class Feature" name="Metamagic (Powerful Spells)" supports="Metamagic" level="6"/>
+        </rules>
+	</element>
+	<element name="Persistent Magic" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_PERSISTENT_MAGIC">
+		<description>
+			<p>At 14th level your focus and intensity with certain spells increases. When you cast a spell of 1st level or higher, you can choose to spend 3 sorcery points and ignore the concentration requirement if it is a concentration spell, potentially allowing the effect to persist for its' maximum duration. All other aspects of the spell still apply, including range requirements and saving throws. You can only ever have one active effect in use with this ability, and if you cast another spell using this ability, the first spell immediately ends. Until you take a long rest, your maximum number of sorcery points available decreases by 3 for every time you use this ability.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell of 1st level or higher, you can choose to spend 3 sorcery points and ignore the concentration requirement if it is a concentration spell, potentially allowing the effect to persist for its' maximum duration. All other aspects of the spell still apply, including range requirements and saving throws. You can only ever have one active effect in use with this ability, and if you cast another spell using this ability, the first spell immediately ends. Until you take a long rest, your maximum number of sorcery points available decreases by 3 for every time you use this ability.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Destruction" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_ARCANE_ORIGIN_ARCANE_DESTRUCTION">
+		<description>
+			<p>At 18th level your harmful spells grow more powerful, capable of extreme destruction upon those you wish it on. Whenever you roll for the damage dealt by a spell, you may spend any number of sorcery points to re-roll a number of damage die. Spending one sorcery point allows you to re-roll up to two damage die. You can re-roll the damage dice for ongoing effects, such as the <i>wall of fire</i> spell, when a creature takes damage from it, and from instantaneous effects at the time of casting. </p>
+		</description>
+		<sheet>
+			<description>Whenever you roll for the damage dealt by a spell, you may spend any number of sorcery points to re-roll a number of damage die. Spending one sorcery point allows you to re-roll up to two damage die. You can re-roll the damage dice for ongoing effects, such as the <i>wall of fire</i> spell, when a creature takes damage from it, and from instantaneous effects at the time of casting.</description>
+		</sheet>
+	</element>
+</elements>
