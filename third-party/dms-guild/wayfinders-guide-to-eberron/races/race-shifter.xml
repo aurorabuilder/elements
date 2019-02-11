@@ -4,7 +4,7 @@
 		<name>Shifter</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="race-shifter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/races/race-shifter.xml" />
 		</update>
 	</info>
@@ -79,13 +79,13 @@
 			<p>As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1) temporary hitpoits. You also gain additional benefits that depend on your shifter subrace, described below.</p>
 			<p class="indent">Once you shift, you can’t do so again until you fininsh a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can assume a more bestial appearance for 1 minute that lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain $(shifting:temporary hp) temporary hit points. (1/SR)</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can assume a more bestial appearance for 1 minute that lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain $(shifting:temporary hp) temporary hit points.</description>
 		</sheet>
 		<rules>
 			<stat name="shifting:temporary hp" value="level" />
-			<stat name="shifting:temporary hp" value="1" base="modifier" />
-			<stat name="shifting:temporary hp" value="constitution:modifier" base="modifier" />
+			<stat name="shifting:temporary hp" value="1" bonus="modifier" />
+			<stat name="shifting:temporary hp" value="constitution:modifier" bonus="modifier" />
 		</rules>
 	</element>
 

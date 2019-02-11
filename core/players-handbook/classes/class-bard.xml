@@ -114,7 +114,6 @@
       </setters>
       <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-        
         <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
         <select type="Proficiency" name="Skill Proficiency (Bard)" supports="Skill,Bard" number="1" />
         <select type="Proficiency" name="Musical Instrument (Bard)" supports="Musical Instrument" number="1" />
@@ -128,8 +127,9 @@
       <p class="indent">You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
       <p class="indent">Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.</p>
     </description>
-    <sheet>
-      <description>As a bonus action you can inspire one creature other that yourself within 60 feet of you who can hear you. $(bardic-inpiration:count) times a d$(bardic-inpiration:dice)/long rest</description>
+    <sheet action="Bonus Action" usage="{{bardic-inpiration:count}}/Long Rest">
+      <description>Inspire one creature other than yourself within 60 feet of you who can hear you. It gains one Bardic Inspiration die, a d{{bardic-inpiration:dice}}.
+	  Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes.</description>
     </sheet>
     <rules>
       <stat name="bardic-inpiration:count" value="1" bonus="bardic inspiration"/>
@@ -218,7 +218,7 @@
       <p>Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn’t already include your proficiency bonus.</p>
     </description>
     <sheet>
-      <description>You can add half your proficiency bonus, rounded down, to any ability check you make that doesn’t already include your proficiency bonus.</description>
+      <description>You can add half your proficiency bonus ({{proficiency:half}}), rounded down, to any ability check you make that doesn’t already include your proficiency bonus.</description>
     </sheet>
     <rules>
 	  <stat name="initiative" value="proficiency:half" bonus="proficiency" />
@@ -284,11 +284,6 @@
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_BARD" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_BARD" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_BARD" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_BARD" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_BARD" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Bard 4)" supports="Improvement Option,Bard,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Bard 8)" supports="Improvement Option,Bard,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Bard 12)" supports="Improvement Option,Bard,12" level="12" />
