@@ -174,7 +174,7 @@
       <p class="indent">Discipline attack modifier = your proficiency bonus + your Intelligence modifier</p>
     </description>
     <sheet display="true">
-      <description>You have an internal reservoir of %psi-points% Psi points that can be devoted to psionic disciplines you know. You can use no more than %psi-limit% psi points to activate a psionic discipline. As a bonus action, you can choose one of your psionic disciplines and gain its psychic focus benefit. The benefit lasts until you are incapacitated or until you use another bonus action to choose a different focus benefit.</description>
+      <description>You have an internal reservoir of $(psi-points) Psi points that can be devoted to psionic disciplines you know. You can use no more than $(psi-limit) psi points to activate a psionic discipline. As a bonus action, you can choose one of your psionic disciplines and gain its psychic focus benefit. The benefit lasts until you are incapacitated or until you use another bonus action to choose a different focus benefit.</description>
     </sheet>
     <setters>
       <set name="spellcastingClass">Mystic</set>
@@ -263,11 +263,6 @@
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_MYSTIC" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_MYSTIC" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_MYSTIC" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_MYSTIC" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_MYSTIC" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Mystic 4)" supports="Improvement Option,Mystic,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Mystic 8)" supports="Improvement Option,Mystic,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Mystic 12)" supports="Improvement Option,Mystic,12" level="12" />
@@ -295,7 +290,7 @@
       <p class="indent">In addition, you add your Intelligence modifier to any damage roll you make for a psionic talent.</p>
     </description>
     <sheet>
-      <description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra %potent psionics:dice%d8 psychic damage to that target. You also add your Intelligence modifier (+%Intelligence Modifier%) to any damage roll you make for a psionic talent.</description>
+      <description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra $(potent psionics:dice)d8 psychic damage to that target. You also add your Intelligence modifier (+$(Intelligence Modifier)) to any damage roll you make for a psionic talent.</description>
     </sheet>
       <rules>
       <stat name="potent psionics:dice" value="1" bonus="potent psionics" />
@@ -324,8 +319,8 @@
       <p class="indent">You have one use of this feature, and you regain any expended use of it with a long rest. You gain one additional use of this feature at 13th, 15th, and 17th level.</p>
     </description>
     <sheet>
-      <description>As an action, you gain %psi mastery:points% special psi points that you can spend only on disciplines that require an action or a bonus action to use. You can use all %psi mastery:points% points on one discipline, or you can spread them across multiple disciplines. You can’t also spend your normal psi points on these disciplines, only the special points gained from this feature. When you finish a long rest, you lose any points you haven’t spent.
-      If more than one of the disciplines you activate with these points require concentration, you can concentrate on all of them. (%psi mastery:uses%/long rest)</description>
+      <description>As an action, you gain $(psi mastery:points) special psi points that you can spend only on disciplines that require an action or a bonus action to use. You can use all $(psi mastery:points) points on one discipline, or you can spread them across multiple disciplines. You can’t also spend your normal psi points on these disciplines, only the special points gained from this feature. When you finish a long rest, you lose any points you haven’t spent.
+      If more than one of the disciplines you activate with these points require concentration, you can concentrate on all of them. ($(psi mastery:uses)/long rest)</description>
     </sheet>
       <rules>
       <stat name="psi mastery:points" value="9" bonus="psi mastery" />
@@ -536,7 +531,7 @@
       <p>Beginning at 6th level, you project an aura of resilience. While you aren’t incapacitated, each ally within 30 feet of you who can see you regains additional hit points equal to your Intelligence modifier (minimum of 0) whenever they regain hit points from a psionic discipline.</p>
     </description>
     <sheet>
-      <description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier (%Intelligence Modifier%) whenever they regain hit points from a psionic discipline.</description>
+      <description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier ($(Intelligence Modifier)) whenever they regain hit points from a psionic discipline.</description>
     </sheet>
     <rules />
   </element>
@@ -634,7 +629,7 @@
       <p class="indent">In addition, while you aren’t wearing armor or wielding a shield, your base AC equals 10 + your Dexterity modifier + your Constitution modifier.</p>    
     </description>
     <sheet>
-    <description>While you are wearing no armor and not wielding a shield, your AC equals %Immortal Durability Mystic Inline%. Your max HP increases by 1 per mystic level.</description>
+    <description>While you are wearing no armor and not wielding a shield, your AC equals $(Immortal Durability Mystic Inline). Your max HP increases by 1 per mystic level.</description>
     </sheet>
     <rules>
       <stat name="HP" value="Level" />
@@ -652,7 +647,7 @@
       <p>Starting at 3rd level, your psionic energy grants you extraordinary fortitude. At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier (minimum of 0) if you have at least 1 hit point.</p>
     </description>
     <sheet>
-      <description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier (%Intelligence Modifier%) if you have at least 1 HP.</description>
+      <description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier ($(Intelligence Modifier)) if you have at least 1 HP.</description>
     </sheet>
     <rules />
   </element>
@@ -675,7 +670,7 @@
       <p>Starting at 14th level, you can draw on your reserves of psionic power to survive beyond death. At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain a number of hit points equal to your mystic level + your Constitution modifier.</p>
     </description>
     <sheet>
-      <description>At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain %immortal will:hp% HP.</description>
+      <description>At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain $(immortal will:hp) HP.</description>
     </sheet>
       <rules>
       <stat name="immortal will:hp" value="Level" />
@@ -2033,7 +2028,7 @@
 			<p>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take 1d8 acid, cold, fire, lightning, or thunder damage (your choice). The talent’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take %mystic:talents%d8 acid, cold, fire, lightning, or thunder damage (your choice).</description>
+			<description>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take $(mystic:talents)d8 acid, cold, fire, lightning, or thunder damage (your choice).</description>
 		</sheet>
         <rules>
             <stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -2068,7 +2063,7 @@
             <p class="indent">The talent’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 60 ft of you. The target must succeed on a Constitution saving throw or take %mystic:talents%d6 force damage. If it takes any of this damage and is Large or smaller, it is knocked prone.</description>
+			<description>As an action, you target one creature you can see within 60 ft of you. The target must succeed on a Constitution saving throw or take $(mystic:talents)d6 force damage. If it takes any of this damage and is Large or smaller, it is knocked prone.</description>
 		</sheet>
         <rules>
             <stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -2084,7 +2079,7 @@
             <p class="indent">The talent’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 120 ft of you. The target must succeed on an Intelligence saving throw or take %mystic:talents%d10 psychic damage.</description>
+			<description>As an action, you target one creature you can see within 120 ft of you. The target must succeed on an Intelligence saving throw or take $(mystic:talents)d10 psychic damage.</description>
 		</sheet>
         <rules>
             <stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -2119,7 +2114,7 @@
             <p class="indent">The talent’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<sheet>
-			<description>As an action, you try to grasp one creature you can see within 120 ft of you, with a hand crafted from telekinetic energy. The target must succeed on a Strength saving throw or take %mystic:talents%d6 force damage. If it takes any of this damage and is Large or smaller, you can move it up to 10 ft in a straight line in a direction of your choice. You can’t lift the target off the ground unless it is already airborne or underwater.</description>
+			<description>As an action, you try to grasp one creature you can see within 120 ft of you, with a hand crafted from telekinetic energy. The target must succeed on a Strength saving throw or take $(mystic:talents)d6 force damage. If it takes any of this damage and is Large or smaller, you can move it up to 10 ft in a straight line in a direction of your choice. You can’t lift the target off the ground unless it is already airborne or underwater.</description>
 		</sheet>
         <rules>
             <stat name="mystic:talents" value="1" bonus="psionic talents" />
