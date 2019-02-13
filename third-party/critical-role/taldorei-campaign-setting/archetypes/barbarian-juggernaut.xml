@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-    <info>
-        <name>Juggernaut</name>
-        <description>The Juggernaut archetype from the Tal’Dorei Campaign Setting.</description>
-        <author url="https://geekandsundry.com/shows/critical-role/">Tal’Dorei Campaign Setting</author>
-        <update version="0.0.1">
-            <file name="barbarian-juggernaut.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/taldorei-campaign-setting/archetypes/barbarian-juggernaut.xml" />
-        </update>
-    </info>
-
-    <!-- placeholder -->
-
+	<info>
+		<name>Path of the Juggernaut</name>
+		<description>The Path of the Juggernaut archetype from the Tal’Dorei Campaign Setting.</description>
+		<author url="https://geekandsundry.com/shows/critical-role/">Tal’Dorei Campaign Setting</author>
+		<update version="0.0.1">
+			<file name="barbarian-juggernaut.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/barbarian-juggernaut.xml" />
+		</update>
+	</info>
+	
+	<element name="Path of the Juggernaut" type="Archetype" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_BARBARIAN_PATH_OF_THE_JUGGERNAUT">
+		<supports>Primal Path</supports>
+		<description>
+			<p>When the Herd of Storms led their terrible raids across the continent under the leadership of Kevdak, tales spread of their bloodlust, brutality, and nigh unstoppable strength. Walls crumbled and legions fell to but a handful of fearsome warriors as they cut a path for the herd to charge in and take what they wished before vanishing back into the Dividing Plains. These fearsome barbarians that would break through the shields and towers of nearby townships became known as the Juggernauts.</p>
+			<p class="indent">While the Herd of Storms is no more, the lineage of trained juggernauts that survived to join the Rivermaw still teach the ways of their unbreakable rage. Honed to assault the lairs of powerful threats to their way of life, or defend against armed hordes of snarling goblinoids, the juggernauts represent the finest of frontline destroyers within the primal lands of Tal’Dorei and beyond.</p>
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_THUNDEROUS_BLOWS" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_STANCE_OF_THE_MOUNTAIN" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_DEMOLISHING_MIGHT" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_OVERWHELMING_CLEAVE" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_UNSTOPPABLE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_THUNDEROUS_BLOWS" level="3" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_STANCE_OF_THE_MOUNTAIN" level="3" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_DEMOLISHING_MIGHT" level="6" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_OVERWHELMING_CLEAVE" level="10" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_UNSTOPPABLE" level="14" />
+		</rules>
+	</element>
+	<element name="Thunderous Blows" type="Archetype Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_THUNDEROUS_BLOWS">
+		<description>
+			<p>Starting when you choose this path at 3rd level, your rage instills you with the strength to batter around your foes, making any battlefield your domain. Once per turn while raging, when you damage a creature with a melee attack, you can force the target to make a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier). On a failure, you push the target 5 feet away from you, and you can choose to immediately move 5 feet into the target’s previous position.</p>
+		</description>
+		<sheet>
+			<description>1/turn, while raging, when you damage a creature with a melee attack, force it to make a DC$(thunderblow:dc) Strength saving throw, on a fail, it is pushed 5ft away from you, and you can choose to follow and stay in melee.</description>
+		</sheet>
+		<rules>
+			<stat name="thunderblow:dc" value="8" />
+			<stat name="thunderblow:dc" value="Proficiency" />
+			<stat name="thunderblow:dc" value="Strength Modifier" />
+		</rules>
+	</element>
+	<element name="Stance of the Mountain" type="Archetype Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_STANCE_OF_THE_MOUNTAIN">
+		<description>
+			<p>You harness your fury to anchor your feet to the earth, shrugging off the blows of those who wish to topple you. Upon choosing this path at 3rd level, you cannot be knocked prone while raging unless you become unconscious.</p>
+		</description>
+		<sheet>
+			<description>While raging, you are immune to being knocked prone.</description>
+		</sheet>
+	</element>
+	<element name="Demolishing Might" type="Archetype Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_DEMOLISHING_MIGHT">
+		<description>
+			<p>Beginning at 6th level, you can muster destructive force with your assault, shaking the core of even the strongest structures. All of your melee attacks gain the siege property (your attacks deal double damage
+      to objects and structures). Your melee attacks against creatures of the construct type deal an additional 1d8 weapon damage.</p>
+		</description>
+		<sheet>
+			<description>Melee attacks deal double damage to objects and structures (Siege). Melee attacks against construct creatures deal an additional 1d8 weapon damage.</description>
+		</sheet>
+	</element>
+	<element name="Overwhelming Cleave" type="Archetype Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_OVERWHELMING_CLEAVE">
+		<description>
+			<p>Upon reaching 10th level, you wade into armies of foes, great swings of your weapon striking many who threaten you. When you make a weapon attack while raging, you can make another attack as a bonus action with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.</p>
+		</description>
+		<sheet>
+			<description>Bonus action: While raging, if you make a weapon attack, you make another attack with the same weapon against a differet creature within 5ft of the original target and in range of your weapon.</description>
+		</sheet>
+	</element>
+	<element name="Unstoppable" type="Archetype Feature" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_JUGGERNAUT_UNSTOPPABLE">
+		<description>
+			<p>Starting at 14th level, you can become “unstoppable” when you rage. If you do so, for the duration of the rage your speed cannot be reduced, and you are immune to the frightened, paralyzed, and stunned conditions. If you are frightened, paralyzed, or stunned, you can still take your bonus action to enter your rage and suspend the effects for the duration of the rage. When your rage ends, you suffer one level of exhaustion (as described in appendix A, PHB).</p>
+		</description>
+		<sheet>
+			<description>While raging, your speed cannot be reduced, and you are immune to the frightened, paralyzed, and stunned conditions.</description>
+		</sheet>
+	</element>
 </elements>
