@@ -7,8 +7,12 @@
 		</update>
 	</info>
 
+	<!-- todo: firearms update required for some features -->
+	<!-- ID_INTERNAL_WEAPON_CATEGORY_FIREARM - not working yet, temp fix adding ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED to firearms -->
+	<!-- <set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set> missing proficiencies -->
+
 	<element name="Flintlock Pistol" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_FLINTLOCK_PISTOL">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FLINTLOCKPISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FLINTLOCKPISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 30/90), Loading, Light, Misfire 3</p>
 		</description>
@@ -18,13 +22,14 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">twohand</set>
 			<set name="range">30/90</set>
-			<set name="damage">1d6 piercing</set>
+			<set name="damage" type="piercing">1d6</set>
 			<set name="misfire">3</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_FLINTLOCKPISTOLS</set>
 		</setters>
 	</element>
 	
 	<element name="Dragoon" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_DRAGOON">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_SCATTER, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_DRAGOONS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_SCATTER, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_DRAGOONS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 10/30), Loading, Scatter (1d4), Misfire 3</p>
 		</description>
@@ -36,11 +41,12 @@
 			<set name="range">10/30</set>
 			<set name="damage">1d8 bludgeoning</set>
 			<set name="misfire">3</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_DRAGOONS</set>
 		</setters>
 	</element>
 	
 	<element name="Pepperbox" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_PEPPERBOX">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 40/120), Reload 4, Shell Loading, Misfire 1</p>
 		</description>
@@ -50,14 +56,15 @@
 			<set name="weight" lb="4">4 lb.</set>
 			<set name="slot">twohand</set>
 			<set name="range">40/120</set>
-			<set name="damage">1d8 piercing</set>
+			<set name="damage" type="piercing">1d8</set>
 			<set name="misfire">1</set>
 			<set name="reload">4</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Musket" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_MUSKET">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_MUSKETS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_MUSKETS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 70/200), Two-Handed, Loading, Misfire 2</p>
 		</description>
@@ -67,13 +74,14 @@
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">70/200</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
 			<set name="misfire">2</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_MUSKET</set>
 		</setters>
 	</element>
 	
 	<element name="Arquebus" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_ARQUEBUS">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 60/150), Two-Handed, Loading, Heavy, Misfire 4</p>
 		</description>
@@ -83,13 +91,14 @@
 			<set name="weight" lb="13">13 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">60/150</set>
-			<set name="damage">3d4 piercing</set>
+			<set name="damage" type="piercing">3d4</set>
 			<set name="misfire">4</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Blunderbuss" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_BLUNDERBUSS">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 15/45), Two-Handed, Loading, Scatter (1d6), Misfire 3</p>
 		</description>
@@ -102,11 +111,12 @@
 			<set name="damage">1d12 bludgeoning</set>
 			<set name="misfire">3</set>
 			<set name="scatter">1d6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Wheellock Gun" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_WHEELLOCKGUN">
-		<supports> ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_WHEELLOCKGUNS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
+		<supports> ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED, ID_INTERNAL_WEAPON_PROPERTY_PRIMITIVEGUNS, ID_INTERNAL_DAMAGETYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_MISFIRE, ID_INTERNAL_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_WHEELLOCKGUNS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS </supports>
 		<description>
 			<p>Ammunition (range 50/160), Two-Handed, Loading, Misfire 2</p>
 		</description>
@@ -116,13 +126,14 @@
 			<set name="weight" lb="5">5 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">50/160</set>
-			<set name="damage">1d10 piercing</set>
+			<set name="damage" type="piercing">1d10</set>
 			<set name="misfire">2</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_WHEELLOCKGUNS</set>
 		</setters>
 	</element>
 	
 	<element name="Pistol" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_PISTOL">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_PISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_PISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 40/120), Reload 8, Light</p>
@@ -133,13 +144,14 @@
 			<set name="weight" lb="2">2 lb.</set>
 			<set name="slot">twohand</set>
 			<set name="range">40/120</set>
-			<set name="damage">1d6 piercing</set>
+			<set name="damage" type="piercing">1d6</set>
 			<set name="reload">8</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS</set>
 		</setters>
 	</element>
 	
 	<element name="Heavy Pistol" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_HEAVYPISTOL">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_PISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_PISTOLS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 40/140), Reload 8</p>
@@ -150,13 +162,14 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">twohand</set>
 			<set name="range">40/120</set>
-			<set name="damage">1d8 piercing</set>
+			<set name="damage" type="piercing">1d8</set>
 			<set name="reload">8</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_PISTOLS</set>
 		</setters>
 	</element>
 	
 	<element name="Sawn-Off Shotgun" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_SAWNOFF">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_SAWNOFFSHOTGUNS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_SAWNOFFSHOTGUNS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 20/40), Reload 4, Scatter (1d4)</p>
@@ -170,11 +183,12 @@
 			<set name="damage">2d4 bludgeoning</set>
 			<set name="reload">4</set>
 			<set name="scatter">1d4</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_SAWNOFFSHOTGUNS</set>
 		</setters>
 	</element>
 	
 	<element name="Rifle" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_RIFLES, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_RIFLES, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 90/300), Two-Handed, Reload 6</p>
@@ -185,13 +199,14 @@
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">90/300</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
 			<set name="reload">6</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_RIFLES</set>
 		</setters>
 	</element>
 	
 	<element name="Carbine" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_CARBINE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_CARBINES, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_CARBINES, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 60/200), Two-Handed, Reload 8</p>
@@ -202,13 +217,14 @@
 			<set name="weight" lb="6">6 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">60/200</set>
-			<set name="damage">1d10 piercing</set>
+			<set name="damage" type="piercing">1d10</set>
 			<set name="reload">6</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_CARBINES</set>
 		</setters>
 	</element>
 	
 	<element name="Shotgun" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_SHOTGUN">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 30/60), Two-Handed, Scatter (1d6), Reload 6</p>
@@ -222,11 +238,12 @@
 			<set name="damage">1d12 bludgeoning</set>
 			<set name="reload">6</set>
 			<set name="scatter">1d6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 
 	<element name="Heavy Rifle" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_HEAVYRIFLE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 200/1000), Two-Handed, Loading, Heavy</p>
@@ -237,13 +254,14 @@
 			<set name="weight" lb="18">18 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">200/1000</set>
-			<set name="damage">3d8 piercing</set>
+			<set name="damage" type="piercing">3d8</set>
+			<set name="proficiency">ID_RDDT_AA_PROFICIENCY_WEAPON_PROFICIENCY_RIFLES</set>
 		</setters>
 	</element>
 	
 	
 	<element name="Repeating Crossbow" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_REPEATING_CROSSBOW">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
 		</supports>
 		<description>
 			<p>Ammunition (range 100/400), Heavy, Two-Handed, Reload 6</p>
@@ -254,13 +272,14 @@
 			<set name="weight" lb="18">18 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">100/400</set>
-			<set name="damage">1d10 piercing</set>
+			<set name="damage" type="piercing">1d10</set>
 			<set name="reload">6</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY</set>
 		</setters>
 	</element>
 	
 	<element name="Automatic Crossbow" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_AUTOMATIC_CROSSBOW">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
 		</supports>
 		<description>
 			<p>Ammunition (range 100/400), Heavy, Two-Handed, Automatic (1d10), Reload 20</p>
@@ -271,13 +290,14 @@
 			<set name="weight" lb="20">20 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">100/400</set>
-			<set name="damage">1d8 piercing</set>
+			<set name="damage" type="piercing">1d8</set>
 			<set name="reload">20</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY</set>
 		</setters>
 	</element>
 	
 	<element name="Reloading Hand Crossbow" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_RELOADING_HAND_CROSSBOW">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
 		</supports>
 		<description>
 			<p>Ammunition (range 30/120), Light, Reload 4</p>
@@ -288,13 +308,14 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">mainhand, offhand</set>
 			<set name="range">30/120</set>
-			<set name="damage">1d6 piercing</set>
+			<set name="damage" type="piercing">1d6</set>
 			<set name="reload">4</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND</set>
 		</setters>
 	</element>
 	
 	<element name="Splinterfire Crossbow" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_SPLINTERFIRE_CROSSBOW">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_SCATTER,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_SCATTER,ID_RDDT_AA_WEAPON_GROUP_CROSSBOWS 
 		</supports>
 		<description>
 			<p>Ammunition (range 30/60), Heavy, Two-Handed, Scatter (1d6), Reload 6</p>
@@ -305,14 +326,15 @@
 			<set name="weight" lb="21">21 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">30/60</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
 			<set name="reload">6</set>
 			<set name="scatter">1d6</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY</set>
 		</setters>
 	</element>
 	
 	<element name="Automatic Pistol" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_AUTOMATIC_PISTOL">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 40/120), Light, Reload 24, Automatic (6d4)</p>
@@ -323,14 +345,15 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">mainhand, offhand</set>
 			<set name="range">40/120</set>
-			<set name="damage">2d4 piercing</set>
+			<set name="damage" type="piercing">2d4</set>
 			<set name="reload">24</set>
 			<set name="automatic">6d4</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Burst Pistol" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_BURST_PISTOL">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_BURSTFIRE, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_RDDT_AA_WEAPON_PROPERTY_BURSTFIRE, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 30/90), Light, Reload 24, Burst Fire (3d8)</p>
@@ -341,14 +364,15 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">mainhand, offhand</set>
 			<set name="range">30/90</set>
-			<set name="damage">1d8 piercing</set>
+			<set name="damage" type="piercing">1d8</set>
 			<set name="reload">24</set>
 			<set name="burst">3d8</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Revolver" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_REVOLVER">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 50/180), Light, Reload 6</p>
@@ -359,13 +383,14 @@
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">mainhand, offhand</set>
 			<set name="range">50/180</set>
-			<set name="damage">1d8 piercing</set>
+			<set name="damage" type="piercing">1d8</set>
 			<set name="reload">6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Hand Cannon" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_HAND_CANNON">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_SIDEARMS, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 60/200), Reload 6</p>
@@ -376,14 +401,15 @@
 			<set name="weight" lb="4">4 lb.</set>
 			<set name="slot">mainhand, offhand</set>
 			<set name="range">60/200</set>
-			<set name="damage">1d10 piercing</set>
+			<set name="damage" type="piercing">1d10</set>
 			<set name="reload">6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	
 	<element name="Automatic Rifle" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_AUTOMATIC_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_RDDT_AA_WEAPON_PROPERTY_AUTOMATIC,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 90/300), Two-Handed, Reload 30, Automatic (6d6)</p>
@@ -394,14 +420,15 @@
 			<set name="weight" lb="8">8 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">90/300</set>
-			<set name="damage">2d6 piercing</set>
+			<set name="damage" type="piercing">2d6</set>
 			<set name="reload">30</set>
 			<set name="automatic">6d6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Burst Rifle" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_BURST_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_BURSTFIRE, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED,ID_RDDT_AA_WEAPON_PROPERTY_BURSTFIRE, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 90/300), Two-Handed, Reload 24, Burst Fire (3d12)</p>
@@ -412,14 +439,15 @@
 			<set name="weight" lb="8">8 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">90/300</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
 			<set name="reload">24</set>
 			<set name="burst">3d12</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Double Barrel Shotgun" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_DOUBLE_BARREL_SHOTGUN">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_SCATTER, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 90/300), Two-Handed, Scatter (1d8), Loading, Special</p>
@@ -434,11 +462,12 @@
 			<set name="range">90/300</set>
 			<set name="damage">4d10 bludgeoning</set>
 			<set name="scatter">1d8</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Anti-Material Rifle" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_ANTIMATERIAL_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 300/1800), Two-Handed, Loading, Heavy </p>
@@ -449,12 +478,13 @@
 			<set name="weight" lb="18">18 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">300/1800</set>
-			<set name="damage">3d12 piercing</set>
+			<set name="damage" type="piercing">3d12</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Shoulder Cannon" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_SHOULDER_CANNON">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LOADING,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 60/200), Two-Handed, Loading, Bulky, Special</p>
@@ -468,10 +498,11 @@
 			<set name="slot">onehand</set>
 			<set name="range">60/200</set>
 			<set name="damage">4d10 bludgeoning</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
-	<element name="Mini-Cannonball" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_MINICANNONBALL">
+	<element name="Mini-Cannonball" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_MINICANNONBALL">
 		<description>
 			<p>Mini-Cannonballs are used with a Shoulder Cannon to make a ranged attack.</p>
 		</description>
@@ -485,7 +516,7 @@
 	</element>
 	
 	<element name="Rifleblade" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_RIFLEBLADE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 90/300), Two-Handed, Reload 6, Bayonet(1d6 Piercing/Slashing)</p>
@@ -496,13 +527,14 @@
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">90/300</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
 			<set name="reload">6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Gunlance" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_GUNLANCE">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_RELOAD,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 70/230), Two-Handed, Reload 6, Bayonet(1d12 Piercing, Reach), Special</p>
@@ -515,13 +547,14 @@
 			<set name="weight" lb="16">16 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">70/230</set>
-			<set name="damage">2d6 piercing</set>
+			<set name="damage" type="piercing">2d6</set>
 			<set name="reload">6</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
 	<element name="Nock Gun" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_WEAPON_NOCK_GUN">
-		<supports>ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM,ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_RANGED,ID_INTERNAL_DAMAGETYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_RDDT_AA_WEAPON_PROPERTY_LONGARMS,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_RDDT_AA_WEAPON_GROUP_FIREARMS
 		</supports>
 		<description>
 			<p>Ammunition (range 70/210), Two-Handed, Loading, Special</p>
@@ -534,11 +567,12 @@
 			<set name="weight" lb="20">20 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">70/210</set>
-			<set name="damage">1d12 piercing</set>
+			<set name="damage" type="piercing">1d12</set>
+			<set name="proficiency">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</set>
 		</setters>
 	</element>
 	
-	<element name="Musketball (20)" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_MUSKETBALL">
+	<element name="Musketball (20)" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_MUSKETBALL">
 		<description>
 			<p>Musketballs are used in primitive firearms without the scatter property.</p>
 		</description>
@@ -551,7 +585,7 @@
 		</setters>
 	</element>
 	
-	<element name="Musketball" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_MUSKETBALL">
+	<element name="Musketball" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_MUSKETBALL">
 		<description>
 			<p>Musketballs are used in primitive firearms without the scatter property.</p>
 		</description>
@@ -564,7 +598,7 @@
 		</setters>
 	</element>
 	
-	<element name="Spreadshot" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_SPREADSHOT">
+	<element name="Spreadshot" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_SPREADSHOT">
 		<description>
 			<p>Spreadshot is used in blunderbusses.</p>
 		</description>
@@ -577,7 +611,7 @@
 		</setters>
 	</element>
 	
-	<element name="Cartridge" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_CARTRIDGE">
+	<element name="Cartridge" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_CARTRIDGE">
 		<description>
 			<p>Cartridges are used in advanced firearms without the scatter property.</p>
 		</description>
@@ -590,7 +624,7 @@
 		</setters>
 	</element>
 	
-	<element name="Buckshot" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_BUCKSHOT">
+	<element name="Buckshot" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_BUCKSHOT">
 		<description>
 			<p>Buckshot is used in shotguns.</p>
 		</description>
@@ -603,7 +637,7 @@
 		</setters>
 	</element>
 	
-	<element name="Slug" type="Weapon" source="Arcane Artillery" id="ID_RDDT_AA_BUCKSHOT">
+	<element name="Slug" type="Item" source="Arcane Artillery" id="ID_RDDT_AA_SLUG">
 		<description>
 			<p>Slugs are used in shotguns. Removes the scatter property - functions like cartridge rounds.</p>
 		</description>
