@@ -4,11 +4,113 @@
 		<name>Selesnya Initiate</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="selesnya-initiate.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/selesnya-initiate.xml" />
 		</update>
 	</info>
     
-	<!-- Selesnya Initiate placeholder -->
-    
+	<element name="Selesnya Initiate" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_Selesnya Initiate">
+		<description>
+			<p>You are a member of a blessed community, built on the ideals of harmony. Here, nature and civilization coexist peacefully. living and growing in accordance with the will of the Worldsoul, Mat’Selesnya. As a member of the Selesnya Conclave, you are surrounded by people and other creatures who share your worldview and your longing for deeper spiritual communion with the world, and you have a fervent desire to share the joy you have experienced with Ravnica. Along with the rest of the conclave, you are committed to resisting the ambitions of the other guilds- with military force if necessary.</p><br />
+			<p class="indent"><strong>Skill Proficiencies:</strong> Nature, Persuasion</p>
+			<p class="indent"><strong>Tool Proficiencies:</strong> One type of artisan’s tools or one musical instrument</p>
+			<p class="indent"><strong>Languages:</strong> Choose one of Elvish, Loxodon, or Sylvan</p>
+			<p class="indent"><strong>Equipment:</strong> A Selesnya insignia, a healer’s kit, robes, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</p>
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER" />
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_SELESNYA_GUILD_SPELLS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Most members of the Selesnya Conclave are true believers-the tight-knit community allows little room for the cynical or disillusioned. They are spiritual, empathetic. and generally peaceful-unless roused to action. Their flaws and bonds alike grow naturally from their close ties to the community.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Proficiency" name="Tool Proficiency, Selesnya Initiate" supports="Artisan tools||Musical Instrument" />
+			<select type="Language" name="Language, Selesnya Initiate" supports="ID_LANGUAGE_ELVISH|ID_GGTR_LANGUAGE_LOXODON|ID_LANGUAGE_SYLVAN" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_SELESNYA_GUILD_SPELLS" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I never raise my voice or lose my temper.</item>
+				<item id="2">I feel the pains and joys of everyone around me, friend or foe.</item>
+				<item id="3">I would rather make a friend than thwart an enemy.</item>
+				<item id="4">I’m always straining to peer into another reality that seems to be just beyond my senses.</item>
+				<item id="5">I’m uneasy if I can’t see plants growing or feel soil beneath my feet.</item>
+				<item id="6">Seeing illness or injury in any creature saddens me.</item>
+				<item id="7">I have much to be proud of, but I am still just one strand in the grand, interwoven tapestry of life.</item>
+				<item id="8">Nature offers rich and abundant metaphors for understanding the complexities of life.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Guild. My guild is all that really matters. (Any)</item>
+				<item id="2">Harmony. Nothing is more beautiful than voices and actions aligned in common purpose. (Good)</item>
+				<item id="3">Order. Like a well-pruned tree, society thrives when everything is kept in good order. (Lawful)</item>
+				<item id="4">Life. Preserving life and nature is always a worthwhile endeavor. (Good)</item>
+				<item id="5">Humility. Ambition and pride are the roots of strife. (Good)</item>
+				<item id="6">Evangelism. When all have joined the Selesnya Conclave, Ravnica will finally know peace. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I would give my life in the defen se of the small enclave where I first encountered Mat’Selesnya.</item>
+				<item id="2">I love beasts and plants of all kinds, and am loath to harm them.</item>
+				<item id="3">A healer nursed me to recovery from a mortal illness.</item>
+				<item id="4">I’ll sing the invitation of Mat’Selesnya with my dying breath.</item>
+				<item id="5">I cherish a leaf from Vitu-Ghazi that changes color with the seasons, even though it is no longer attached to the tree.</item>
+				<item id="6">Every member of the conclave is my kin, and I would fight for any one of them.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I’m terrified of getting into a fight where my side is outnumbered.</item>
+				<item id="2">I assume that people mean well until they prove otherwise.</item>
+				<item id="3">I enjoy comfort and quiet, and prefer to avoid extra effort.</item>
+				<item id="4">I have a fierce temper that doesn’t reflect the inner calm I seek.</item>
+				<item id="5">I’m convinced that everyone else in the conclave has a deeper connection to the Worldsoul than I do.</item>
+				<item id="6">I’m trying to atone for the life of crime I led before I joined the Selesnya, but I find it hard to give up my bad habits.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Conclave’s Shelter" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER">
+		<supports>Feature</supports>
+		<description>
+			<p>As a member of the Selesnya Conclave, you can count on your guild mates to provide shelter and aid. You and your companions can find a place to hide or rest in any Selesnya enclave in the city, unless you have proven to be a danger to them. The members of the enclave will shield you from the law or anyone else searching for you, though they will not risk their lives in this effort.</p>
+			<p class="indent">In addition, as a guild member you can receive free healing and care at a Selesnya enclave, though you must provide any material components needed for spells.</p>
+		</description>
+		<sheet alt="Conclave’s Shelter">
+			<description>As a member of the Selesnya Conclave, you can count on your guild mates to provide shelter and aid. You and your companions can find a place to hide or rest in any Selesnya enclave in the city, unless you have proven to be a danger to them. The members of the enclave will shield you from the law or anyone else searching for you, though they will not risk their lives in this effort.
+			In addition, as a guild member you can receive free healing and care at a Selesnya enclave, though you must provide any material components needed for spells.</description>
+		</sheet>
+	</element>
+	<element name="Selesnya Guild Spells" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_SELESNYA_GUILD_SPELLS">
+		<description>
+			<p><em>Prerequisite: Spellcasting or Pact Magic class feature</em></p>
+			<p>For you, the spells on the Selesnya Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Selesnya Guild Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>druidcraft, friends</em></td></tr>
+				<tr><td>1st</td><td><em>aid, animal friendship, charm person</em></td></tr>
+				<tr><td>2nd</td><td><em>animal messenger, calm emotions, warding bond</em></td></tr>
+				<tr><td>3rd</td><td><em>plant growth, speak with plants</em></td></tr>
+				<tr><td>4th</td><td><em>aura of life, conjure minor elementals</em></td></tr>
+				<tr><td>5th</td><td><em>awaken, commune with nature</em></td></tr>
+			</table>
+			<p class="indent">Members of the Selesnya Conclave refer to their magic as "doruvati," a Sylvan word meaning "gift." When you use these gifts of Mat’Selesnya. graceful swirls of green and silver light dance in the air around you, and phantasmal green leaves might waft through the air. A sensation of gentle warmth and cbe smell of spring flowers or autumn leaves might accompany your spells.</p>
+		</description>
+		<sheet>
+			<description>Members of the Selesnya Conclave refer to their magic as "doruvati," a Sylvan word meaning "gift." When you use these gifts of Mat’Selesnya. graceful swirls of green and silver light dance in the air around you, and phantasmal green leaves might waft through the air. A sensation of gentle warmth and cbe smell of spring flowers or autumn leaves might accompany your spells.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_DRUIDCRAFT</extend>
+			<extend>ID_PHB_SPELL_FRIENDS</extend>
+			<extend>ID_PHB_SPELL_AID</extend>
+			<extend>ID_PHB_SPELL_ANIMAL_FRIENDSHIP</extend>
+			<extend>ID_PHB_SPELL_CHARM_PERSON</extend>
+			<extend>ID_PHB_SPELL_ANIMAL_MESSENGER</extend>
+			<extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+			<extend>ID_PHB_SPELL_WARDING_BOND</extend>
+			<extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+			<extend>ID_PHB_SPELL_SPEAK_WITH_PLANTS</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+			<extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTALS</extend>
+			<extend>ID_PHB_SPELL_AWAKEN</extend>
+			<extend>ID_PHB_SPELL_COMMUNE_WITH_NATURE</extend>
+		</spellcasting>
+	</element>
 </elements>

@@ -4,11 +4,110 @@
 		<name>Golgari Agent</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="golgari-agent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/golgari-agent.xml" />
 		</update>
 	</info>
     
-	<!-- Golgari Agent placeholder -->
-    
+	<element name="Golgari Agent" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_GOLGARI_AGENT">
+		<description>
+			<p>You are a member of a teeming horde-one small part of a sprawling organism. Just as you are part of the swarm, the swarm is part of a larger ecosystem, a never-ending cycle of life, death, rot, and rebirth. You have spent your life in the slow churn of that ecosystem, in the dark places of the city where the messy parts of existence are on display. There is little squeamishness among the Golgari, no fear of death or taboo about the dead, just a fierce affirmation of the cycle.</p><br />
+			<p class="indent"><strong>Skill Proficiencies:</strong> Nature, Survival</p>
+			<p class="indent"><strong>Skill Proficiencies:</strong> Poisoner’s kit</p>
+			<p class="indent"><strong>Languages:</strong> Choose one of Elvish, Giant, or Kraul</p>
+			<p class="indent"><strong>Equipment:</strong> A Golgari insignia, a poisoner’s kit, a pet beetle or spider, a set of common clothes, and a belt pouch containing 10 gp worth of mixed coins</p>
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS" />
+			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_GOLGARI_GUILD_SPELLS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Members of the Golgari Swarm are unmistakably products of the undercity, ill at ease amid the comforts of civilization. They bring about the same discomfort in others by reminding them of death’s inevitable approach.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+			<select type="Language" name="Language, Golgari Agent" supports="ID_LANGUAGE_ELVISH|ID_LANGUAGE_GIANT|ID_GGTR_LANGUAGE_KRAUL" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_GOLGARI_GUILD_SPELLS" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">Remember, I could kill you in your sleep. Or put centipedes in your bedroll.</item>
+				<item id="2">I like to remind people of their inevitable demise.</item>
+				<item id="3">Sometimes I give voice to the whispers of the rot, which I hear but no one else does.</item>
+				<item id="4">I do my best to discourage anyone from approaching or talking to me.</item>
+				<item id="5">I have accepted my death. Hence, I don’t fear it.</item>
+				<item id="6">Like roots growing through stone, I am relentless and determined in my action.</item>
+				<item id="7">I put my knowledge of anatomy to use by narrating the injuries my enemies suffer in grisly detail.</item>
+				<item id="8">Like a wild animal, I lash out viciously when I’m provoked-and I’m easily provoked.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Guild. My guild is all that really matters. (Any)</item>
+				<item id="2">Stoicism. All of us are part of the cyclical march of nature, which will continue with or without us. (Neutral)</item>
+				<item id="3">Nature. The natural world is more important than the edifices of the city and civilization. (Neutral)</item>
+				<item id="4">Interdependence. We are all part of nature’s web. (Lawful)</item>
+				<item id="5">Ambition. The time of Golgari ascendance is at hand, and I intend to have a prominent place in the new world order. (Evil)</item>
+				<item id="6">Live and Let Live. Meddling in the affairs of other guilds is a great way to get squashed like a bug. (Neutral)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I cherish the finger of a family member who was petrified by a medusa.</item>
+				<item id="2">I have an identical twin who is as different from me as any person could be.</item>
+				<item id="3">I want to lead one faction of the guild to a new position of dominance.</item>
+				<item id="4">I love spending time in the moss-covered building where I took part in my first reclamation mission.</item>
+				<item id="5">I found something in the sewer that must never come to light.</item>
+				<item id="6">I am forever grateful to the reclaimer who found me floating facedown in the sewer, moments from death.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">Death comes for us all, so you can’t expect me to take care of someone who can’t fight it off.</item>
+				<item id="2">I assume that anyone outside the Golgari looks down on me.</item>
+				<item id="3">I feel a need for revenge against those who enjoy the privilege of living above ground.</item>
+				<item id="4">I don’t bother to couch my opinions in flattering words.</item>
+				<item id="5">I can’t help but pocket any trinket or coin I come across, no matter how worthless.</item>
+				<item id="6">I’m convinced that I’m better and stronger than members of other guilds, isolated as they are from the realities of life and death.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Undercity Paths" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS">
+		<supports>Feature</supports>
+		<description>
+			<p>You know hidden, underground pathways that you can use to bypass crowds, obstacles, and observation as you move through the city. When you aren’t in combat, you and companions you lead can travel between any two locations in the city twice as fast as your speed would normally allow. The paths of the undercity are haunted by dangers that rarely brave the light of the surface world, so your journey isn’t guaranteed to be safe.</p>
+		</description>
+		<sheet alt="Undercity Paths">
+			<description>You know hidden, underground pathways that you can use to bypass crowds, obstacles, and observation as you move through the city. When you aren’t in combat, you and companions you lead can travel between any two locations in the city twice as fast as your speed would normally allow. The paths of the undercity are haunted by dangers that rarely brave the light of the surface world, so your journey isn’t guaranteed to be safe.</description>
+		</sheet>
+	</element>
+	<element name="Golgari Guild Spells" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_GOLGARI_GUILD_SPELLS">
+		<description>
+			<p><em>Prerequisite: Spellcasting or Pact Magic class feature</em></p>
+			<p>For you, the spells on the Golgari Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Golgari Guild Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>dancing lights, spare the dying</em></td></tr>
+				<tr><td>1st</td><td><em>entangle, ray of sickness</em></td></tr>
+				<tr><td>2nd</td><td><em>protection from poison, ray of enfeeblement, spider climb</em></td></tr>
+				<tr><td>3rd</td><td><em>animate dead, plant growth</em></td></tr>
+				<tr><td>4th</td><td><em>giant insect, grasping vine</em></td></tr>
+				<tr><td>5th</td><td><em>cloudkill, insect plague</em></td></tr>
+			</table>
+			<p class="indent">Golgari magic is often accompanied by a sickly green glow and a rotting stench.</p>
+		</description>
+		<sheet>
+			<description>Golgari magic is often accompanied by a sickly green glow and a rotting stench.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_DANCING_LIGHTS</extend>
+			<extend>ID_PHB_SPELL_SPARE_THE_DYING</extend>
+			<extend>ID_PHB_SPELL_ENTANGLE</extend>
+			<extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_POISON</extend>
+			<extend>ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT</extend>
+			<extend>ID_PHB_SPELL_SPIDER_CLIMB</extend>
+			<extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+			<extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+			<extend>ID_PHB_SPELL_GIANT_INSECT</extend>
+			<extend>ID_PHB_SPELL_GRASPING_VINE</extend>
+			<extend>ID_PHB_SPELL_CLOUDKILL</extend>
+			<extend>ID_PHB_SPELL_INSECT_PLAGUE</extend>
+		</spellcasting>
+	</element>
 </elements>
