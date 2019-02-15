@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Artificer</name>
         <description>Makers of magic-infused objects, artificers are defined by their inventive nature.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/artificer">Wizards of the Coast</author>
-        <update version="0.0.8">
+        <update version="0.0.9">
             <file name="20170109.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170109.xml" />
         </update>
     </info>
@@ -595,12 +595,15 @@
     <element name="Thunder Cannon" type="Archetype Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_FEATURE_GUNSMITH_THUNDER_CANNON">
         <description>
             <p>At 1st level, you forge a deadly firearm using a combination of arcane magic and your knowledge of engineering and metallurgy. This firearm is called a Thunder Cannon. It is a ferocious weapon that fires leaden bullets that can punch through armor with ease.</p>
-            <p class="indent">You are proficient with the Thunder Cannon. The firearm is a two-handed ranged weapon that deals 2d6 piercing damage. Its normal range is 150 feet, and its maximum range if 500 feet. Once fired, it must be reloaded as a bonus action.</p>
+            <p class="indent">You are proficient with the Thunder Cannon. The firearm is a two-handed ranged weapon that deals 2d6 piercing damage. Its normal range is 150 feet, and its maximum range is 500 feet. Once fired, it must be reloaded as a bonus action.</p>
             <p class="indent">If you lose your Thunder Cannon, you can create a new one over the course of three days of work (eight hours each day) by expending 100 gp worth of metal and other raw materials.</p>
         </description>
         <sheet>
             <description>You are proficient with the Thunder Cannon. The firearm is a two-handed ranged weapon that deals 2d6 piercing damage. Its normal range is 150 feet, and its maximum range if 500 feet. Once fired, it must be reloaded as a bonus action.</description>
         </sheet>
+        <rules>
+            <grant type="Proficiency" name="ID_WOTC_UA_PROFICIENCY_WEAPON_THUNDER_CANNON" />
+        </rules>
     </element>
     <element name="Arcane Magazine" type="Archetype Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_FEATURE_GUNSMITH_ARCANE_MAGAZINE">
         <description>
@@ -666,4 +669,37 @@
             <description>As an action you launch an explosive round from the gun. The round detonates in a 30-foot radius sphere at a point within range. Each creature in that area must make a Dexterity saving throw against your spell save DC. On a failed throw the target takes 4d8 fire damage.</description>
         </sheet>
     </element>
+    <!-- Thunder Cannon -->
+	<element name="Thunder Cannon" type="Weapon" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_WEAPON_THUNDER_CANNON">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+            <p>Thunder Cannon is a two-handed ranged weapon that deals 2d6 piercing damage. Its normal range is 150 feet, and its maximum range is 500 feet. Once fired, it must be reloaded as a bonus action.</p>
+            <p class="indent">If you lose your Thunder Cannon, you can create a new one over the course of three days of work (eight hours each day) by expending 100 gp worth of metal and other raw materials.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="weight" lb="10">10 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">150/500</set>
+			<set name="damage" type="piercing">2d6</set>
+			<set name="proficiency">ID_WOTC_UA_PROFICIENCY_WEAPON_THUNDER_CANNON</set>
+			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET</set> -->
+		</setters>
+	</element>
+	<element name="Weapon Proficiency (Thunder Cannon)" type="Proficiency" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_PROFICIENCY_WEAPON_THUNDER_CANNON">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+	</element>
+    <!-- Arcane Magazine -->
+	<element name="Arcane Magazine" type="Item" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ITEM_ARCANE_MAGAZINE">
+		<description>
+			<p>Arcane Magazine includes the powders, lead shot, and other materials needed to keep Thunder Cannon functioning.</p>
+            <p class="indent">You can use the Arcane Magazine to produce ammunition for your gun. At the end of each long rest, you can magically produce 40 rounds of ammunition with this magazine. After each short rest, you can produce 10 rounds.</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">25</set>
+			<set name="weight" lb="2">2 lb.</set>
+		</setters>
+	</element>
 </elements>
