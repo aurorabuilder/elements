@@ -113,8 +113,6 @@
     </rules>
   </element>
   <element name="Dual Wielder" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUALWIELDER">
-    <supports />
-    <requirements />
     <description>
       <p>You master fighting with two weapons, gaining the following benefits:</p>
       <ul>
@@ -124,10 +122,12 @@
       </ul>
     </description>
     <sheet>
-      <description>+1 bonus to AC while you are wielding a separate melee weapon in each hand.</description>
+      <description>+1 bonus to AC while you are wielding a separate melee weapon in each hand.
+	  You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light.
+	  You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</description>
     </sheet>
     <rules>
-      <!-- todo: implement equipment rules -->
+		<stat name="ac:misc" value="1" equipped="[primary:any],[secondary:any],![primary:versatile]" />
     </rules>
   </element>
   <element name="Dungeon Delver" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUNGEON_DELVER">

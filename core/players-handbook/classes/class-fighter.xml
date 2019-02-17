@@ -148,8 +148,8 @@
       <p>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.</p>
       <p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again.</p>
     </description>
-    <sheet usage="1/Short Rest">
-      <description>You can use a bonus action to regain 1d10+$(level:fighter) hit points.</description>
+    <sheet action="Bonus Action" usage="1/Short Rest">
+      <description>You regain 1d10+$(level:fighter) hit points.</description>
     </sheet>
     <rules />
   </element>
@@ -165,7 +165,6 @@
     <rules />
   </element>
   <element name="Martial Archetype" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MARTIALARCHETYPE">
-    <supports>3</supports>
     <description>
       <p>At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. The Champion archetype is detailed at the end of the class description; see the Player’s Handbook for information on other martial archetypes. Your archetype grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.</p>
     </description>
@@ -210,7 +209,7 @@
       <p>Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest.</p>
       <p class="indent">You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.</p>
     </description>
-    <sheet usage="$(imdomitable:usages)/Long Rest">
+    <sheet usage="{{ imdomitable:usages }}/Long Rest">
       <description>You can reroll a saving throw that you fail. If you do so, you must use the new roll.</description>
     </sheet>
     <rules>
