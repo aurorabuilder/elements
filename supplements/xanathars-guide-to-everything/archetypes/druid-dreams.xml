@@ -31,11 +31,11 @@
       <p class="indent">As a bonus action, you can choose one creature you can see within 120 feet of you and spend a number of those dice equal to half your druid level or less. Roll the spent dice and add them together. The target regains a number of hit points equal to the total. The target also gains 1 temporary hit point per die spent.</p>
       <p class="indent">You regain all expended dice when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You have a pool of fey energy ($(fey-energy:pool)d6/long rest) Bonus Action: Choose a creature within 120ft and expend and roll $(level:druid:half) Fey Energy die. The target regains that much HP, and 1 temporary HP per die spent.</description>
+    <sheet action="Bonus Action" usage="{{fey-energy:pool}}d6/long rest">
+      <description>Choose a creature within 120ft and expend and roll up to {{level:druid:half}} fey energy die. The target regains that much HP, and 1 temporary HP per die spent.</description>
     </sheet>
     <rules>
-      <stat name="fey-energy:pool" value="level:druid:half" />
+      <stat name="fey-energy:pool" value="level:druid" />
     </rules>
   </element>
   <element name="Hearth of Moonlight and Shadow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DREAMS_HEARTH_OF_MOONLIGHT_AND_SHADOW">
@@ -54,10 +54,10 @@
       <p>Starting at 10th level, you can use the hidden, magical pathways that some fey use to traverse space in the blink of an eye. As a bonus action on your turn, you can teleport up to 60 feet to an unoccupied space you can see. Alternatively, you can use your action to teleport one willing creature you touch up to 30 feet to an unoccupied space you can see.</p>
       <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Bonus Action: Teleport up to 60ft. OR Action: Teleport a willing creature you touch up to 30ft. ($(wisdom:modifier)/long rest)</description>
+    <sheet action="Bonus Action" usage="{{wisdom:modifier}}/Long Rest">
+      <description>Teleport up to 60ft.
+	  Alternatively, as an action you teleport a willing creature you touch up to 30ft.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Walker in Dreams" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_DREAMS_WALKER_IN_DREAMS">
     <description>

@@ -46,7 +46,7 @@
       <set name="names" type="male">Aseir, Bardeid, Haseid, Khemed, Mehmen, Sudeiman, Zasheir</set>
       <set name="names" type="female">Atala, Ceidil, Hama, Jasmal, Meilil, Seipora, Yasheira, Zasheida</set>
       <set name="names" type="surname">Basha, Dumein, Jassan, Khalid, Mostana, Pashar, Rein</set>
-      <set name="names-format">$(name) $(surname)</set>   
+      <set name="names-format">{{name}} {{surname}}</set>   
       <set name="height" modifier="2d10">4'8"</set>
       <set name="weight" modifier="2d4">110 lb.</set>   
     </setters>
@@ -77,11 +77,11 @@
     <description>
       <p>As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>As an action, you can touch a creature and cause it to regain $(trait:healing-hands) hit points. (once / long rest)</description>
+    <sheet action="Action" usage="1/Long Rest">
+      <description>You can touch a creature and cause it to regain {{trait:healing-hands}} hit points.</description>
     </sheet>
     <rules>
-      <stat name="trait:healing-hands" value="Level"  />
+      <stat name="trait:healing-hands" value="level" />
     </rules>
   </element>
   <element name="Light Bearer" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER">
