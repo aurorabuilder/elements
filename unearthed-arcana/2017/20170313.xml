@@ -269,7 +269,7 @@
 			<p class="indent">In addition, you add your Intelligence modifier to any damage roll you make for a psionic talent.</p>
 		</description>
 		<sheet>
-			<description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra $(potent psionics:dice)d8 psychic damage to that target. You also add your Intelligence modifier (+$(Intelligence Modifier)) to any damage roll you make for a psionic talent.</description>
+			<description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra $(potent psionics:dice)d8 psychic damage to that target. You also add your Intelligence modifier (+$(intelligence:modifier)) to any damage roll you make for a psionic talent.</description>
 		</sheet>
 		<rules>
 			<stat name="potent psionics:dice" value="1" bonus="potent psionics" />
@@ -494,7 +494,7 @@
 			<p>Beginning at 6th level, you project an aura of resilience. While you aren’t incapacitated, each ally within 30 feet of you who can see you regains additional hit points equal to your Intelligence modifier (minimum of 0) whenever they regain hit points from a psionic discipline.</p>
 		</description>
 		<sheet>
-			<description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier ($(Intelligence Modifier)) whenever they regain hit points from a psionic discipline.</description>
+			<description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier ($(intelligence:modifier)) whenever they regain hit points from a psionic discipline.</description>
 		</sheet>
 	</element>
 	<element name="Avatar of Speed" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_SPEED">
@@ -579,16 +579,14 @@
 			<p class="indent">In addition, while you aren’t wearing armor or wielding a shield, your base AC equals 10 + your Dexterity modifier + your Constitution modifier.</p>
 		</description>
 		<sheet>
-			<description>While you are wearing no armor and not wielding a shield, your AC equals $(Immortal Durability Mystic Inline). Your max HP increases by 1 per mystic level.</description>
+			<description>While you are wearing no armor and not wielding a shield, your AC equals $(mystic:immortal durability).</description>
 		</sheet>
 		<rules>
-			<!-- todo: statistics update ac calculation -->
-			<stat name="HP" value="Level" />
-			<stat name="Immortal Durability Mystic Inline" value="10" />
-			<stat name="Immortal Durability Mystic Inline" value="Dexterity Modifier" />
-			<stat name="Immortal Durability Mystic Inline" value="Constitution Modifier" />
-			<stat name="Immortal Durability" value="Constitution Modifier" bonus="Immortal Durability" equipped="[armor:none],[shield:none]" />
-			<stat name="AC" value="Immortal Durability" bonus="Immortal Durability" equipped="[armor:none],[shield:none]" />
+			<stat name="hp" value="level:mystic" />
+			<stat name="mystic:immortal durability" value="10" />
+			<stat name="mystic:immortal durability" value="dexterity:modifier" />
+			<stat name="mystic:immortal durability" value="constitution:modifier" />
+			<stat name="ac:calculation" value="mystic:immortal durability" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Immortal Durability (Mystic)" />
 		</rules>
 	</element>
 	<element name="Psionic Resilience" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_PSIONIC_RESILIENCE">
@@ -597,7 +595,7 @@
 			<p>Starting at 3rd level, your psionic energy grants you extraordinary fortitude. At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier (minimum of 0) if you have at least 1 hit point.</p>
 		</description>
 		<sheet>
-			<description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier ($(Intelligence Modifier)) if you have at least 1 HP.</description>
+			<description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier ($(intelligence:modifier)) if you have at least 1 HP.</description>
 		</sheet>
 	</element>
 	<element name="Surge of Health" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_SURGE_OF_HEALTH">
@@ -619,8 +617,8 @@
 			<description>At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain $(immortal will:hp) HP.</description>
 		</sheet>
 		<rules>
-			<stat name="immortal will:hp" value="Level" />
-			<stat name="immortal will:hp" value="Constitution Modifier" />
+			<stat name="immortal will:hp" value="level:mystic" />
+			<stat name="immortal will:hp" value="constitution:modifier" />
 		</rules>
 	</element>
 
@@ -676,13 +674,13 @@
 	<element name="Martial Training" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_MARTIAL_TRAINING">
 		<supports>Order of the Soul Knife</supports>
 		<description>
-			<p>At	1st	level, you gain proficiency with medium armor and martial weapons</p>
+			<p>At 1st level, you gain proficiency with medium armor and martial weapons</p>
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-		</rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+		</rules>  
 	</element>
 	<element name="Soul Knife" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_SOUL_KNIFE">
 		<supports>Order of the Soul Knife</supports>
