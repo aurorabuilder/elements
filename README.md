@@ -6,6 +6,7 @@ When this content gets updated or new content gets added the builder will automa
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index
+- https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index
 
 
 ### Support
