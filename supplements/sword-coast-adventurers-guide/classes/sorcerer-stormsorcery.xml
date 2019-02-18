@@ -95,15 +95,17 @@
   <element name="Wind Soul" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_WIND_SOUL">
     <description>
       <p>At 18th level, you gain immunity to lightning and thunder damage.</p>
-      <p class="indent">You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 +your Charisma modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest.</p> </description>
-    <sheet>
-      <description>You gain immunity to lightning and thunder damage. You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose {{wind soul:creatures}} creatures within 30 feet of you that gain a magical flying speed of 30 feet for 1 hour. (1/LR)</description>
+      <p class="indent">You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 + your Charisma modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest.</p> </description>
+    <sheet usage="1/Long Rest">
+      <description>You gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose {{wind soul:creatures}} creatures within 30 feet of you that gain a magical flying speed of 30 feet for 1 hour. (1/LR)</description>
     </sheet>
     <rules>
-		<!-- todo:resistance -->
       <stat name="speed:fly" value="60" bonus="base" />
       <stat name="wind soul:creatures" value="3" bonus="wind soul" />
       <stat name="wind soul:creatures" value="charisma:modifier" bonus="wind soul" />
+	  
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_LIGHTNING" />
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_THUNDER" />
     </rules>
   </element>
 

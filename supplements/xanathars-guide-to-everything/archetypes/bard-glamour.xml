@@ -32,13 +32,17 @@
       <p class="indent">As a bonus action, you can expend one use of your Bardic Inspiration to grant yourself a wondrous appearance. When you do so, choose a number of creatures you can see and that can see you within 60 feet of you, up to a number equal to your Charisma modifier (minimum of one). Each of them gains 5 temporary hit points. When a creature gains these temporary hit points, it can immediately use its reaction to move up to its speed, without provoking opportunity attacks.</p>
       <p class="indent">The number of temporary hit points increases when you reach certain levels in this class, increasing to 8 at 5th level, 11 at 10th level, and 14 at 15th level.</p>
     </description>
-    <sheet>
-      <description level="3">Bonus action: Expend one use of Bardic Inspiration, and choose up to {{charisma:modifier}} creatures within 60ft of you. Each of them gains 5 temporary HP, and can use its reaction to move up to its speed, without provoking oppertunity attacks.</description>
-      <description level="5">Bonus action: Expend one use of Bardic Inspiration, and choose up to {{charisma:modifier}} creatures within 60ft of you. Each of them gains 8 temporary HP, and can use its reaction to move up to its speed, without provoking oppertunity attacks.</description>
-      <description level="10">Bonus action: Expend one use of Bardic Inspiration, and choose up to {{charisma:modifier}} creatures within 60ft of you. Each of them gains 11 temporary HP, and can use its reaction to move up to its speed, without provoking oppertunity attacks.</description>
-      <description level="15">Bonus action: Expend one use of Bardic Inspiration, and choose up to {{charisma:modifier}} creatures within 60ft of you. Each of them gains 14 temporary HP, and can use its reaction to move up to its speed, without provoking oppertunity attacks.</description>
+    <sheet action="Bonus Action">
+      <description level="3">Expend one use of Bardic Inspiration, and choose up to {{mantle of inspiration:creature-count}} creatures within 60ft of you. Each of them gains {{mantle of inspiration:temp-hp}} temporary HP, and can use its reaction to move up to its speed, without provoking oppertunity attacks.</description>
     </sheet>
-    <rules />
+    <rules>
+		<stat name="mantle of inspiration:creature-count" value="1" bonus="mantle of inspiration" />
+		<stat name="mantle of inspiration:creature-count" value="charisma:modifier" bonus="mantle of inspiration" />
+		<stat name="mantle of inspiration:temp-hp" value="5" bonus="mantle of inspiration" />
+		<stat name="mantle of inspiration:temp-hp" value="8" level="5" bonus="mantle of inspiration" />
+		<stat name="mantle of inspiration:temp-hp" value="11" level="10" bonus="mantle of inspiration" />
+		<stat name="mantle of inspiration:temp-hp" value="14" level="15" bonus="mantle of inspiration" />
+	</rules>
   </element>
   <element name="Enthralling Performance" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_GLAMOUR_ENTHRALLING_PERFORMANCE">
     <description>
@@ -47,8 +51,8 @@
       <p class="indent">If a target succeeds on its saving throw, the target has no hint that you tried to charm it.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>When performing for 1 minute, choose up to {{charisma:modifier}} creatures within 60ft who watched the whole performance, they make a DC{{bard:spell:dc}} Wisdom save or are charmed by you. While charmed, they idolize you, speak glowingly of you, and hinder anyone that opposes you for 1 hour, or until they take damage, you attack it, or it sees you attacking any of its allies.(1/rest)</description>
+    <sheet usage="1/Short Rest">
+      <description>When performing for 1 minute, choose up to {{charisma:modifier}} creatures within 60ft who watched the whole performance, they make a DC{{bard:spell:dc}} Wisdom save or are charmed by you. While charmed, they idolize you, speak glowingly of you, and hinder anyone that opposes you for 1 hour, or until they take damage, you attack it, or it sees you attacking any of its allies.</description>
     </sheet>
   </element>
   <element name="Mantle of Majesty" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_MAJESTY">
@@ -57,8 +61,8 @@
       <p class="indent">Any creature charmed by you automatically fails its saving throw against the command you cast with this feature.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet action="Bonus Action" >
-      <description>Cast command, without expending a spell slot, for 1 minute, or until your concentration ends. Creatures charmed by you fail their save.(1/long rest)</description>
+    <sheet action="Bonus Action" usage="1/Long Rest">
+      <description>Cast command, without expending a spell slot, for 1 minute, or until your concentration ends. Creatures charmed by you fail their save.</description>
     </sheet>
     <rules />
   </element>
@@ -68,8 +72,8 @@
       <p class="indent">In addition, as a bonus action, you can assume a magically majestic presence for 1 minute or until you are incapacitated. For the duration, whenever any creature tries to attack you for the first time on a turn, the attacker must make a Charisma saving throw against your spell save DC. On a failed save, it can’t attack you on this turn, and it must choose a new target for its attack or the attack is wasted. On a successful save, it can attack you on this turn, but it has disadvantage on any saving throw it makes against your spells on your next turn.</p>
       <p class="indent">Once you assume this majestic presence, you can’t do so again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>Bonus action: For 1 minute, whenever a creature tries to attack you for the first time on a turn, it must make a DC{{bard:spell:dc}} Charisma saving throw. On a fail, it can't attack you this turn, and must choose a new target for the attack or waste it. On a succes, it can attack, but has disadvantage on saving throws against your spells.(1/rest) </description>
+    <sheet action="Bonus Action" usage="1/Short Rest">
+      <description>For 1 minute, whenever a creature tries to attack you for the first time on a turn, it must make a DC{{bard:spell:dc}} Charisma saving throw. On a fail, it can't attack you this turn, and must choose a new target for the attack or waste it. On a succes, it can attack, but has disadvantage on saving throws against your spells.</description>
     </sheet>
     <rules />
   </element>

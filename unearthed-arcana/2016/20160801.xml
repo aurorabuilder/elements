@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: The Faithful</name>
         <description>This month, Unearthed Arcana presents two new options that allow arcane casters to express their faith in the gods. For warlock characters, the Pact of the Seeker defines a bond to a mysterious, inscrutable deity dedicated to gathering knowledge and lore. For wizards, the Theurgy arcane tradition creates a magic-user whose arcane instruction is guided by the teachings of a deity, and who gains the benefits of a divine domain.</description>
         <author url="http://dnd.wizards.com/articles/features/faithful">Wizards of the Coast</author>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="20160801.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2016/20160801.xml" />
         </update>
     </info>
@@ -80,8 +80,8 @@
             <p>Starting at 1st level, you can invoke the Seeker’s power to protect you from harm. As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes radiant damage equal to your warlock level + your Charisma modifier.</p>
             <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
         </description>
-        <sheet>
-            <description>As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes {{shielding aurora:damage}} radiant damage. (1/SR)</description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes {{shielding aurora:damage}} radiant damage.</description>
         </sheet>
         <rules>
             <stat name="shielding aurora:damage" value="charisma:modifier" />
@@ -104,7 +104,10 @@
         <sheet>
             <description>You no longer need to breathe, and you gain resistance to fire damage and cold damage.</description>
         </sheet>
-        <rules />
+        <rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
     </element>  
     <element name="Astral Sequestration" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WARLOCK_THE_SEEKER_ASTRAL_SEQUESTRATION">
         <description>
@@ -113,8 +116,8 @@
             <p class="indent">During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester.</p>
             <p class="indent">Once you use this ability, you cannot use it again until you complete a long rest.</p>
         </description>
-        <sheet>
-            <description>By performing a special ritual over the course of 5 minutes, you shift yourself and up to ten willing creatures you can see to the Astral Plane. You and those creatures gain the benefits of a short rest while sequeste red on the Astral Plane. You then return to the spaces you all occupied when you used this ability, with no time having passed in the world. During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester. (1/LR)</description>
+        <sheet usage="1/Long Rest">
+            <description>By performing a special ritual over the course of 5 minutes, you shift yourself and up to ten willing creatures you can see to the Astral Plane. You and those creatures gain the benefits of a short rest while sequeste red on the Astral Plane. You then return to the spaces you all occupied when you used this ability, with no time having passed in the world. During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester.</description>
         </sheet>
         <rules />
     </element>  
@@ -131,8 +134,8 @@
             <p class="indent">If you lose your Star Chain, you can perform a 1-hour ceremony to receive a replacement from the Seeker. The ceremony can be performed during a short or long rest, and it destroys the previous chain. The chain disappears in a flash of light when you die.</p>
             <p class="indent">The exact form of this item might be different depending on your patron. The Star Chain is inspired by the Greyhawk deity Celestian.</p>
         </description>
-        <sheet>
-            <description>The Seeker grants you a chain forged from starlight, decorated with seven gleaming motes of brightness. While the chain is on your person, you know the augury spell and can cast it as a ritual. The spell doesn’t count against your number of spells known. Additionally, you can invoke the Seeker’s power to gain advantage on an Intelligence check while you carry this item. (1/SR)</description>
+        <sheet usage="1/Short Rest">
+            <description>While the chain is on your person, you know the augury spell and can cast it as a ritual. The spell doesn’t count against your number of spells known. Additionally, you can invoke the Seeker’s power to gain advantage on an Intelligence check while you carry this item.</description>
         </sheet>
         <rules />
     </element>  
