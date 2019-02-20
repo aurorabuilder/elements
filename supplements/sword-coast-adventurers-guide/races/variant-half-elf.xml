@@ -8,163 +8,84 @@
 			<file name="variant-half-elf.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/races/variant-half-elf.xml" />
 		</update>
 	</info>
+	
+	<!-- requirements grant -->
+	<element name="Half-Elf Variant" type="Grants" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
 
-	<element name="Half-Elf Variant" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_VARIANT_HALF_ELF">
+	<!-- obsolete, but not errata'd -->
+	<element name="Keen Senses Variant" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_KEEN_SENSES_VARIANT">
 		<supports>Half-Elf Variant</supports>
-		<requirements />
 		<description>
-			<p>Some half-elves in Faerun have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead take the elf trait Keen Senses or a trait based on your elf parentage: </p>
-			<ul>
-				<li>A half-elf of <b>wood elf</b> descent can choose the wood elf's Elf Weapon Training, Fleet of Foot, or Mask of the Wild.</li>
-				<li>A half-elf of <b>moon elf</b> or <b>sun elf</b> descent can choose the high-elf's elf's Elf Weapon Training or Cantrip.</li>
-				<li>A half-elf of <b>drow</b> descent can choose the drow's Drow Magic.</li>
-				<li>A half-elf of <b>aquatic</b> heritage can choose swimming speed of 30 feet.</li>
-			</ul>
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead take the elf trait Keen Senses.</p>
+			<div element="ID_RACIAL_TRAIT_KEEN_SENSES" />
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
-			<select type="Racial Trait" name="Half-Elf Heritage" supports="Half-Elf Heritage" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_KEEN_SENSES" />
 		</rules>
 	</element>
-	<element name="Keen Senses" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_KEEN_SENSES">
-		<supports>Half-Elf Heritage</supports>
-		<requirements />
+	<element name="Wood Elf Descent" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_WOOD_ELF_DESCENT">
+		<supports>Half-Elf Variant</supports>
 		<description>
-			<p>You have proficiency in the Perception skill.</p>
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead choose the wood elf's Elf Weapon Training, Fleet of Foot, or Mask of the Wild.</p>
+			<div element="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING" />
+			<div element="ID_RACIAL_TRAIT_FLEET_OF_FOOT" />
+			<div element="ID_RACIAL_TRAIT_MASK_OF_THE_WILD" />
 		</description>
-		<sheet>
-			<description>You have proficiency in the Perception skill.</description>
-		</sheet>
+		<sheet alt="Half-Elf (Wood Elf)" display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<select type="Racial Trait" name="Racial Trait, Wood Elf Descent" supports="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING|ID_RACIAL_TRAIT_FLEET_OF_FOOT|ID_RACIAL_TRAIT_MASK_OF_THE_WILD" />
 		</rules>
 	</element>
-	<element name="Wood Elf Descent" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_WOOD_ELF">
-		<supports>Half-Elf Heritage</supports>
-		<requirements />
+	<element name="Moon Elf Descent" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_MOON_ELF_DESCENT">
+		<supports>Half-Elf Variant</supports>
 		<description>
-			<p>A half-elf of <b>wood elf</b> descent can choose one of the following traits:</p>
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_WEAPON_TRAINING" />
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_FLEET_OF_FOOT" />
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_MASK_OF_THE_WILD" />
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead choose the high-elf's elf's Elf Weapon Training or Cantrip.</p>
+			<div element="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING" />
+			<div element="ID_RACIAL_TRAIT_CANTRIP" />
 		</description>
-		<sheet />
+		<sheet alt="Half-Elf (Moon Elf)" display="false" />
 		<rules>
-			<select type="Racial Trait" name="Wood Elf Trait" supports="ID_WOTC_SCAG_VARIANT_HALF_ELF_WEAPON_TRAINING|ID_WOTC_SCAG_VARIANT_HALF_ELF_FLEET_OF_FOOT|ID_WOTC_SCAG_VARIANT_HALF_ELF_MASK_OF_THE_WILD" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<select type="Racial Trait" name="Racial Trait, Moon Elf Descent" supports="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING|ID_RACIAL_TRAIT_CANTRIP" />
 		</rules>
 	</element>
-
-	<element name="Elf Weapon Training" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_WEAPON_TRAINING">
-		<supports />
+	<element name="Sun Elf Descent" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_SUN_ELF_DESCENT">
+		<supports>Half-Elf Variant</supports>
 		<description>
-			<p>You have proficiency with the longsword, shortsword, shortbow, and longbow.</p>
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead choose the high-elf's elf's Elf Weapon Training or Cantrip.</p>
+			<div element="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING" />
+			<div element="ID_RACIAL_TRAIT_CANTRIP" />
 		</description>
-		<sheet display="false">
-			<description>You have proficiency with the longsword, shortsword, shortbow, and longbow.</description>
-		</sheet>
+		<sheet alt="Half-Elf (Sun Elf)" display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<select type="Racial Trait" name="Racial Trait, Sun Elf Descent" supports="ID_RACIAL_TRAIT_ELF_WEAPON_TRAINING|ID_RACIAL_TRAIT_CANTRIP" />
 		</rules>
 	</element>
-
-	<element name="Fleet of Foot" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  	id="ID_WOTC_SCAG_VARIANT_HALF_ELF_FLEET_OF_FOOT">
-		<supports />
-		<requirements />
+	<element name="Drow Descent" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_DROW_DESCENT">
+		<supports>Half-Elf Variant</supports>
 		<description>
-			<p>Your base walking speed increases to 35 feet.</p>
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead choose the drow's Drow Magic.</p>
+			<div element="ID_RACIAL_TRAIT_DROW_MAGIC" />
 		</description>
-		<sheet>
-			<description>Your speed increases to 35 feet.</description>
-		</sheet>
+		<sheet alt="Half-Elf (Drow)" display="false" />
 		<rules>
-			<stat name="Speed" value="35" bonus="base" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DROW_MAGIC" />
 		</rules>
 	</element>
-
-	<element name="Mask of the Wild" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  	id="ID_WOTC_SCAG_VARIANT_HALF_ELF_MASK_OF_THE_WILD">
-		<supports />
+	<element name="Aquatic Heritage" type="Race Variant" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_RACE_VARIANT_HALF_ELF_AQUATIC_HERITAGE">
+		<supports>Half-Elf Variant</supports>
 		<description>
-			<p>You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.</p>
+			<p>Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead choose swimming speed of 30 feet.</p>
 		</description>
-		<sheet>
-			<description>You can attempt to hide even when you are only lightly obscured.</description>
-		</sheet>
-		<rules />
-	</element>
-
-	<element name="High Elf Descent" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_HIGH_ELF">
-		<supports>Half-Elf Heritage</supports>
-		<requirements />
-		<description>
-			<p>A half-elf of <b>moon elf</b> or <b>sun elf</b> descent can choose one of the following traits:</p>
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_WEAPON_TRAINING" />
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_CANTRIP" />
-		</description>
-		<sheet />
+		<sheet alt="Half-Elf (Aquatic)" display="false" />
 		<rules>
-			<select type="Racial Trait" name="High Elf Trait" supports="ID_WOTC_SCAG_VARIANT_HALF_ELF_WEAPON_TRAINING|ID_WOTC_SCAG_VARIANT_HALF_ELF_CANTRIP" />
+			<grant type="Grants" id="ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF" />
+			<stat name="speed:swim" value="30" bonus="base" />
 		</rules>
 	</element>
-
-	<element name="Cantrip" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  	id="ID_WOTC_SCAG_VARIANT_HALF_ELF_CANTRIP">
-		<supports />
-		<requirements />
-		<description>
-			<p>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>
-		</description>
-		<sheet display="false">
-			<description>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</description>
-		</sheet>
-		<rules>
-			<select type="Spell" name="Wizard Cantrip (High Elf)" supports="Wizard&amp;&amp;0" />
-		</rules>
-	</element>
-
-	<element name="Drow Descent" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_DARK_ELF">
-		<supports>Half-Elf Heritage</supports>
-		<requirements />
-		<description>
-			<p>A half-elf of <b>drow</b> descent gains Drow Magic trait.</p>
-			<div element="ID_WOTC_SCAG_VARIANT_HALF_ELF_DROW_MAGIC" />
-		</description>
-		<sheet />
-		<rules>
-			<grant type="Racial Trait" name="ID_WOTC_SCAG_VARIANT_HALF_ELF_DROW_MAGIC" />
-		</rules>
-	</element>
-
-	<element name="Drow Magic" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  	id="ID_WOTC_SCAG_VARIANT_HALF_ELF_DROW_MAGIC">
-		<supports />
-		<description>
-			<p>You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>
-		</description>
-		<sheet>
-			<description>1/day Dancing Lights. Charisma is your spellcasting ability.</description>
-			<description level="3">1/day Dancing Lights and Faerie Fire. Charisma is your spellcasting 	ability for these spells.</description>
-			<description level="5">1/day Dancing Lights, Faerie Fire, and Darkness. Charisma is your 	spellcasting ability for these spells.</description>
-		</sheet>
-		<rules>
-			<grant type="Spell" name="ID_PHB_SPELL_DANCING_LIGHTS" level="1" />
-			<grant type="Spell" name="ID_PHB_SPELL_FAERIE_FIRE" level="3" />
-			<grant type="Spell" name="ID_PHB_SPELL_DARKNESS" level="5" />
-		</rules>
-	</element>
-
-	<element name="Aquatic Descent" type="Racial Trait" source="Sword Coast Adventurer’s Guide"  id="ID_WOTC_SCAG_VARIANT_HALF_ELF_AQUATIC_ELF">
-		<supports>Half-Elf Heritage</supports>
-		<requirements />
-		<description>
-			<p>A half-elf of <b>aquatic</b> heritage gains swimming speed of 30 feet.</p>
-		</description>
-		<sheet />
-		<rules>
-			<stat name="speed:swim" value="+30" bonus="base" />
-		</rules>
-	</element>
-
 </elements>
