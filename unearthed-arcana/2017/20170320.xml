@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Wizard Revisited</name>
+		<description>After releasing the 28-page mystic last week, we have a short Unearthed Arcana installment this week: two Arcane Tradition options for the wizard.</description>
+		<author url="http://dnd.wizards.com/articles/unearthed-arcana/wizard-revisited">Wizards of the Coast</author>
+		<update version="0.0.1">
+		    <file name="20170320.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170320.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Wizard Revisited" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20170320">
+		<description>
+			<p>After releasing the 28-page mystic last week, we have a short Unearthed Arcana installment this week: two Arcane Tradition options for the wizard.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20170320</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/wizard-revisited</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20170320</set>
+		</setters>
+	</element>
+
+    <element name="Theurgy" type="Archetype" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>A number of deities claim arcane magic as their domain, for magic is as much apart of the fabric of the cosmos as wind, fire, lightning, and all other primal forces. Just as there are deities of the sea and gods of warfare, the arcane arts feature their own divine patrons.</p>
+    		<p class="indent">Such deities often have clerics, but many gods of magic bid their followers to take up the study of wizardry. These religious magic-users follow the arcane tradition of Theurgy, and are commonly known as theurgists. Such spellcasters are as dedicated and scholarly as any other wizard, but they blend their arcane study with religious devotion.</p>
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_DIVINE_INSPIRATION" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_INITIATE" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_CHANNEL_ARCANA" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_CHANNEL_ARCANA_DIVINE_ARCANA" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_ACOLYTE" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_PRODIGIOUS_MEMORY" />
+            <div element="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_MASTER_OF_MAGIC" />
+        </description>
+        <sheet>
+            <description>Deities often have clerics, but many gods of magic bid their followers to take up the study of wizardry. These religious magic-users follow the arcane tradition of Theurgy, and are commonly known as theurgists.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_DIVINE_INSPIRATION" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_INITIATE" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_CHANNEL_ARCANA" level="2"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_ACOLYTE" level="6"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_PRODIGIOUS_MEMORY" level="10"/>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_MASTER_OF_MAGIC" level="14"/>
+        </rules>
+    </element>
+    <element name="Lore Master" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_DIVINE_INSPIRATION">
+        <description>
+            <p>Starting at 2nd level, you become a compendium of knowledge on a vast array of topics. Your proficiency bonus is doubled for any ability check you make that uses the Arcana, History, Nature, or Religion skill if you are proficient in that skill.</p>
+    			<p class="indent">In addition, your analytical abilities are so well-honed that your initiative in combat can be driven by mental agility, rather than physical ability. When you roll initiative, you choose either an Intelligence check or a Dexterity check.</p>
+        </description>
+        <sheet>
+            <description>When you roll initiative, you choose either an Intelligence check or a Dexterity check.</description>
+        </sheet>
+        <rules>
+		<stat name="Arcana Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_ARCANA" />
+		<stat name="History Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_HISTORY" />
+		<stat name="Nature Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_NATURE" />
+		<stat name="Religion Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_RELIGION" />
+		<stat name="Initiative" value="Intelligence Modifier" bonus="ability" />
+        </rules> 
+    </element>
+    <element name="Spell Secrets" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_INITIATE">
+        <description>
+            <p>At 2nd level, you master the first in a series of arcane secrets uncovered by your extensive studies.</p>
+    			<p class="indent">When you cast a spell with a spell slot and the spell deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). You replace one energy type for another by altering the spell's formula as you cast it.</p>
+    			<p class="indent">When you cast a spell with a spell slot and the spell requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>When you cast a spell with a spell slot that deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). When you cast a spell that requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Alchemical Casting" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ARCANE_ACOLYTE">
+        <description>
+            <p>At 6th level, you learn to augment spells in a variety of ways. When you cast a spell with a spell slot, you can expend one additional spell slot to augment its effects for this casting, mixing the raw stuff of magic into your spell slot you expend.</p>
+    			<p class="indent">An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by 2d10 force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.</p>
+    			<p class="indent">An additional 2nd-level spell slot can increase the spell's range. If the spell's range is at least 30 feet, it becomes 1 miles.</p>
+    			<p class="indent">An additional 3rd-level spell slot can increase the spell's potency. Increase the spell's save DC by 2.</p>
+        </description>
+        <sheet>
+            <description>You can expend one additional spell slot to augment your casting. An additional 1st-level increases damage of the spell by 2d10 force damage once on the turn you cast the spell. An additional 2nd-level spell slot increases range to a 1 mile. An additional 3rd-level spell slot increases spell's save DC by 2.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Prodigious Memory" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_PRODIGIOUS_MEMORY">
+        <description>
+            <p>At 10th level, you have attained greater mastery of spell preparation. As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Master of Magic" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_MASTER_OF_MAGIC">
+        <description>
+            <p>At 14th level, your knowledge of magic allows you to duplicate almost any spell. As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. If the spell isn't a wizard spell, it counts as a wizard spell when you cast it. The ability to cast the spell vanishes from your mind when you cast it or when current turn ends.</p>
+    			<p class="indent">You can't use this feature again until you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. You can't use this feature again until you finish a long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+</elements>
