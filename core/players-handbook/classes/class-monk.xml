@@ -186,55 +186,70 @@
       <p>You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn.</p>
     </description>
     <sheet>
-      <description>You have {{ki:points}} Ki Points and your Ki DC is {{ki:dc}</description>
+      <description>You have {{ki:points}} Ki Points and your Ki DC is {{ki:dc}}</description>
     </sheet>
     <rules>
       <stat name="ki:points" value="level:monk" />
       <stat name="ki:dc" value="8" />
       <stat name="ki:dc" value="proficiency" />
       <stat name="ki:dc" value="wisdom:modifier" />
-	  <!-- create elements for flurry/patient/step for descriptions -->
+	  <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_FLURRY_OF_BLOWS" />
+	  <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_PATIENT_DEFENSE" />
+	  <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_STEP_OF_THE_WIND" />
     </rules>
-  </element>
-
-	<!-- todo: FLURRY OF BLOWS -->
-	<!-- todo: PATIENT DEFENSE -->
-	<!-- todo: STEP OF THE WIND -->
-
-
-
-
-
-
-
-
-
-  <element name="Unarmored Movement" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_UNARMORED_MOVEMENT">
-    <description>
-      <p>Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.</p>
-      <p class="indent">At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</p>
-    </description>
-    <sheet>
-      <description>Your speed increases by {{monk:unarmored movement}} feet while you are not wearing armor or wielding a shield.</description>
-      <description level="9">Your speed increases by {{monk:unarmored movement}} feet while you are not wearing armor or wielding a shield. You gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</description>
-    </sheet>
-    <rules>
-      <stat name="monk:unarmored movement" value="10" bonus="Unarmored Movement" level="2" />
-      <stat name="monk:unarmored movement" value="15" bonus="Unarmored Movement" level="6" />
-      <stat name="monk:unarmored movement" value="20" bonus="Unarmored Movement" level="10" />
-      <stat name="monk:unarmored movement" value="25" bonus="Unarmored Movement" level="14" />
-      <stat name="monk:unarmored movement" value="30" bonus="Unarmored Movement" level="18" />
-
-      <stat name="speed" value="monk:unarmored movement" bonus="Unarmored Movement" equipped="[armor:none],[shield:none]" />
-    </rules>
-  </element>
+  </element>  
+	<element name="Flurry of Blows" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_FLURRY_OF_BLOWS">
+		<description>
+			<p>Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.</p>
+		</description>
+		<sheet usage="Ki">
+			<description>Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Patient Defense" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_PATIENT_DEFENSE">
+		<description>
+			<p>You can spend 1 ki point to take the Dodge action as a bonus action on your turn.</p>
+		</description>
+		<sheet usage="Ki">
+			<description>You can spend 1 ki point to take the Dodge action as a bonus action on your turn.</description>
+		</sheet>
+	</element>
+	<element name="Step of the Wind" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_KI_STEP_OF_THE_WIND">
+		<description>
+			<p>You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn..</p>
+		</description>
+		<sheet usage="Ki">
+			<description>You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn..</description>
+		</sheet>
+	</element>
+	<element name="Unarmored Movement" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_UNARMORED_MOVEMENT">
+		<description>
+			<p>Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.</p>
+			<p class="indent">At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</p>
+		</description>
+		<sheet>
+			<description>Your speed increases by {{monk:unarmored movement}} feet while you are not wearing armor or wielding a shield.</description>
+			<description level="9">Your speed increases by {{monk:unarmored movement}} feet while you are not wearing armor or wielding a shield. You gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</description>
+		</sheet>
+		<rules>
+			<stat name="monk:unarmored movement" value="10" bonus="unarmored movement" level="2" />
+			<stat name="monk:unarmored movement" value="15" bonus="unarmored movement" level="6" />
+			<stat name="monk:unarmored movement" value="20" bonus="unarmored movement" level="10" />
+			<stat name="monk:unarmored movement" value="25" bonus="unarmored movement" level="14" />
+			<stat name="monk:unarmored movement" value="30" bonus="unarmored movement" level="18" />
+			
+			<stat name="innate speed:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:1]" />
+			<stat name="innate speed:climb:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:climb:1]" />
+			<stat name="innate speed:fly:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:fly:1]" />
+			<stat name="innate speed:swim:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:swim:1]" />
+			<stat name="innate speed:burrow:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:burrow:1]" />
+		</rules>
+	</element>
   <element name="Monastic Tradition" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_MONK_MONASTIC_TRADITION">
     <description>
       <p>When you reach 3rd level, you commit yourself to a monastic tradition, such as the Way of the Open Hand. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level.</p>
     </description>
-    <sheet>
-      <description></description>
-    </sheet>
+    <sheet />
     <rules>
       <select type="Archetype" name="Monastic Tradition" supports="Monastic Tradition" />
     </rules>
@@ -258,11 +273,6 @@
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_MONK" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_MONK" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_MONK" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_MONK" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_MONK" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Monk 4)" supports="Improvement Option,Monk,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Monk 8)" supports="Improvement Option,Monk,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Monk 12)" supports="Improvement Option,Monk,12" level="12" />
@@ -274,8 +284,8 @@
     <description>
       <p>Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.</p>
     </description>
-    <sheet>
-      <description>Use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level. ({{monk:slowfall}})</description>
+    <sheet usage="Reaction">
+      <description>Use your reaction when you fall to reduce any falling damage you take by {{monk:slowfall}}.</description>
     </sheet>
     <rules>
       <stat name="monk:slowfall" value="level:monk" />
@@ -300,7 +310,7 @@
     <description>
       <p>Starting at 5th level, you can interfere with the flow of ki in an opponent’s body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.</p>
     </description>
-    <sheet>
+    <sheet  usage="Ki">
       <description>When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.</description>
     </sheet>
   </element>
@@ -350,7 +360,8 @@
       <p class="indent">Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.</p>
     </description>
     <sheet>
-      <description>Whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.</description>
+      <description>Your mastery of ki grants you proficiency in all saving throws.
+	  Whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.</description>
     </sheet>
     <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
