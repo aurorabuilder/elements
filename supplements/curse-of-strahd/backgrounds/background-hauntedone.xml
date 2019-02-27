@@ -11,11 +11,11 @@
     <element name="Haunted One" type="Background" source="Curse of Strahd" id="ID_COS_BACKGROUND_HAUNTED_ONE">
         <description>
             <p>You are haunted by something so terrible that you dare not speak of it. You’ve tried to bury it and flee from it to no avail. This thing that haunts you can’t be slain with a sword or banished with a spell. It might come to you as a shadow on the wall, a bloodcurdling nightmare, a memory that refuses to die, or a demonic whisper in the dark. The burden has taken its toll, isolating you from others and making you question your sanity. You must find a way to overcome it before it destroys you.</p>
-            <p>
-                <span class="emphasis">Skill Proficiencies:</span>Choose two from among Arcana, Investigation, Religion, and Survival<br/>
-                <span class="emphasis">Languages:</span>Choose one exotic language (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)<br/>
-                <span class="emphasis">Equipment:</span>A monster hunter’s pack, a set of common clothes, and one trinket of special significance (see below), and a belt pouch containing 15 gp.
-            </p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Choose two from among Arcana, Investigation, Religion, and Survival</li>
+                <li><strong>Languages:</strong> Choose one exotic language (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)</li>
+                <li><strong>Equipment:</strong> A monster hunter’s pack, a set of common clothes, and one trinket of special significance (see below), and a belt pouch containing 15 gp.</li>
+            </ul>
             <h5>HARROWING EVENT</h5>
             <p>Prior to becoming an adventurer, your path in life was defined by one dark moment, one fateful decision, or one tragedy. Now you feel a darkness threatening to consume you, and you fear there may be no hope of escape. Choose a harrowing event that haunts you, or roll one on the Harrowing Events table.</p>
             <table>
@@ -97,7 +97,8 @@
         <rules>
             <select type="Proficiency" name="Skill Proficiency (Haunted One)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
             <select type="Language" name="Language (Haunted One)" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_DEEP_SPEECH|ID_LANGUAGE_DRACONIC|ID_LANGUAGE_INFERNAL|ID_LANGUAGE_PRIMORDIAL|ID_LANGUAGE_SYLVAN|ID_LANGUAGE_UNDERCOMMON" number="1" />
-            <grant type="Background Feature" id="ID_COS_BACKGROUND_HAUNTED_ONE_HEART_OF_DARKNESS" />
+            <grant type="Background Feature" id="ID_COS_BACKGROUND_HAUNTED_ONE_HEART_OF_DARKNESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
             <select name="Personality Trait" type="List" number="2">
                 <item id="1">I don’t run from evil. Evil runs from me.</item>
                 <item id="2">I like to read, write, and memorize poetry. It keeps me calm and brings me fleeting moments of happiness.</item>
@@ -139,14 +140,58 @@
             <p>Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.</p>
         </description>
     </element>
-    <element name="Monster Hunter’s Pack" type="Item" source="Curse of Strahd" id="ID_WOTC_COS_ITEM_MONSTER_HUNTERS_PACK">
-        <description>
-            <p>Includes a chest, a crowbar, a hammer, three wooden stakes, a holy symbol, a flask of holy water, a set of manacles, a steel mirror, a flask of oil, a tinderbox, and three torches.</p>
-        </description>
-        <setters>
-            <set name="category">Equipment Packs</set>
-            <set name="cost" currency="gp">33</set>
-            <set name="weight" lb="10">10 lbs.</set>
-        </setters>
-    </element>
+
+	<!-- todo: extend trinket list -->
+	<!-- <trinkets>
+		<trinket>A picture you drew as a child of your imaginary friend.</trinket>
+		<trinket>A lock that opens when blood is dripped in its keyhole.</trinket>
+		<trinket>Clothes stolen from a scarecrow.</trinket>
+		<trinket>A spinning top carved with four faces: happy, sad, wrathful, and dead.</trinket>
+		<trinket>The necklace of a sibling who died on the day you were born.</trinket>
+		<trinket>A wig from someone executed by beheading.</trinket>
+		<trinket>The unopened letter to you from your dying father.</trinket>
+		<trinket>A pocket watch that runs backward for an hour every midnight.</trinket>
+		<trinket>A winter coat stolen from a dying soldier.</trinket>
+		<trinket>A bottle of invisible ink that can only be read at sunset.</trinket>
+		<trinket>A wineskin that refills when interred with a dead person for a night.</trinket>
+		<trinket>A set of silverware used by a king for his last meal.</trinket>
+		<trinket>A spyglass that always shows the world suffering a terrible storm.</trinket>
+		<trinket>A cameo with the profile’s face scratched away.</trinket>
+		<trinket>A lantern with a black candle that never runs out and that burns with green flame.</trinket>
+		<trinket>A teacup from a child’s tea set, stained with blood.</trinket>
+		<trinket>A little black book that records your dreams, and yours alone, when you sleep.</trinket>
+		<trinket>A necklace formed of the interlinked holy symbols of a dozen deities.</trinket>
+		<trinket>A hangman’s noose that feels heavier than it should.</trinket>
+		<trinket>A birdcage into which small birds fly but once inside never eat or leave.</trinket>
+		<trinket>A lepidopterist’s box filled dead moths with skull-like patterns on their wings.</trinket>
+		<trinket>A jar of pickled ghouls’ tongues.</trinket>
+		<trinket>The wooden hand of a notorious pirate.</trinket>
+		<trinket>A urn with the ashes of a dead relative.</trinket>
+		<trinket>A hand mirror backed with a bronze depiction of a medusa.</trinket>
+		<trinket>Pallid leather gloves crafted with ivory fingernails.</trinket>
+		<trinket>Dice made from the knuckles of a notorious charlatan.</trinket>
+		<trinket>A ring of keys for forgotten locks.</trinket>
+		<trinket>Nails from the coffin of a murderer.</trinket>
+		<trinket>A key to the family crypt.</trinket>
+		<trinket>A bouquet of funerary flowers that always looks and smells fresh.</trinket>
+		<trinket>A switch used to discipline you as a child.</trinket>
+		<trinket>A music box that plays by itself whenever someone holding it dances.</trinket>
+		<trinket>A walking cane with an iron ferule that strikes sparks on stone.</trinket>
+		<trinket>A flag from a ship lost at sea.</trinket>
+		<trinket>Porcelain doll’s head that always seems to be looking at you.</trinket>
+		<trinket>A wolf’s head wrought in silver that is also a whistle.</trinket>
+		<trinket>A small mirror that shows a much older version of the viewer.</trinket>
+		<trinket>Small, worn book of children’s nursery rhymes.</trinket>
+		<trinket>A mummified raven's claw.</trinket>
+		<trinket>A broken pendent of a silver dragon that’s always cold to the touch.</trinket>
+		<trinket>A small locked box that quietly hums a lovely melody at night but you always forget it in the morning.</trinket>
+		<trinket>An inkwell that makes one a little nauseous when staring at it.</trinket>
+		<trinket>An old little doll made from a dark, dense wood and missing a hand and a foot.</trinket>
+		<trinket>A black executioner’s hood.</trinket>
+		<trinket>A pouch made of flesh, with a sinew drawstring.</trinket>
+		<trinket>A tiny spool of black thread that never runs out.</trinket>
+		<trinket>A tiny clockwork figurine of a dancer that’s missing a gear and doesn’t work.</trinket>
+		<trinket>A black wooden pipe that creates puffs of smoke that look like skulls.</trinket>
+		<trinket>A vial of perfume, the scent of which only certain creatures can detect.</trinket>
+	</trinkets> -->
 </elements>
