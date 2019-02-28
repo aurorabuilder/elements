@@ -72,6 +72,33 @@
         </rules>
     </element>
         <!-- Dwarf Revenant -->
+    <element name="Dwarf Revenant" type="Race Variant" source="Unearthed Arcana: Gothic Heroes" id="ID_WOTC_UA20160404_RACE_VARIANT_DRAGONBORN_REVENANT">
+        <supports>Dwarf</supports>
+        <requirements />
+        <description>
+            <p>If you want to play a dragonborn revenant, modify the dragonborn’s Ability Score Increase trait to the following: Your Strength score increases by 1, and your Charisma score increases by 1. Additionally, your Draconic Ancestry trait uses necrotic damage as its damage type, replacing the damage type that applies to your breath weapon and your damage resistance.</p>
+            <p>
+                <span class="feature">Ability Score Increase.</span>Your Strength score, Constitution score and your Charisma score increases by 1.<br />
+                <span class="feature">Draconic Ancestry.</span>Your draconic ancestry uses necrotic damage as its damage type, replacing the damage type that applies to your breath weapon and your damage resistance.<br />
+                <span class="feature">Relentless Nature.</span>Your DM assigns a goal to you — typically, one related to your character's death. The goal must be specific task you can complete, such as slaying an enemy or liberating an area and its people. Until you fulfill that goal, you gain following benefits:<br />
+                <ul>
+                    <li>If you are below half your hit point maximum at the start of your turn, you regain 1 hit point.</li>
+                    <li>If you die, you return to life 24 hours after death. If your body is destroyed, you reform within 1 mile of the place of your death at a spot determined by the DM. If your equipment was also destroyed, you do not regain it.</li>
+                    <li>You know the distance and direction between you and any creature involved in your goal, such as a person you seek vengeance against or someone you pledged to defend. This awareness fails if the creature is on another plane of existence.</li>
+                </ul>
+            </p>
+            <p>When your goal is complete, you finally find rest. You die and cannot be restored to life.</p>
+        </description>
+        <sheet display="false"/>
+        <setters>
+            <set name="height" modifier="2d4">3'8"</set>
+            <set name="weight" modifier="2d6">115 lb.</set>
+        </setters>
+        <rules>
+            <stat name="Wisdom" value="+1" />
+            <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_TOUGHNESS" />
+        </rules>
+    </element>
 
     <!-- Monster Hunter Martial Archetype -->
     <element name="Monster Hunter" type="Archetype" source="Unearthed Arcana: Gothic Heroes" id="ID_WOTC_UA20160404_ARCHETYPE_FIGHTER_MONSTER_HUNTER">
@@ -85,7 +112,9 @@
             <div element="ID_WOTC_UA20160404_ARCHETYPE_FEATURE_SCOUT_IMPROVED_COMBAT_SUPERIORITY"/>
             <div element="ID_WOTC_UA20160404_ARCHETYPE_FEATURE_SCOUT_RELENTLESS"/>
         </description>
-        <sheet display="false"/>
+        <sheet>
+        	<description>As an archetypal Monster Hunter, you are an expert at defeating supernatural threats.</description>
+        </sheet>
         <rules>
             <grant type="Archetype Feature" name="ID_WOTC_UA20160404_ARCHETYPE_FEATURE_SCOUT_BONUS_PROFICIENCIES" level="3"/>
             <grant type="Archetype Feature" name="ID_WOTC_UA20160404_ARCHETYPE_FEATURE_SCOUT_COMBAT_SUPERIORITY" level="3"/>
@@ -100,21 +129,25 @@
         <description>
             <p>When you choose this archetype at 3rd level, you gain proficiency in two of the following skills of your choice: Arcana, History, Insight, Investigation, Nature, or Perception. You can gain proficiency with a tool of your choice in place of one skill choice.</p> 
         </description>
-        <sheet />
+        <sheet display="false"/>
         <rules>
-            <select type="Proficiency" name="Bonus Proficiencies(Scout)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION" number="2"/>
+            <select type="Proficiency" name="Bonus Proficiencies (Monster Hunter)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION" number="2"/>
         </rules>
     </element>
     <element name="Combat Superiority" type="Archetype Feature" source="Unearthed Arcana: Gothic Heroes" id="ID_WOTC_UA20160404_ARCHETYPE_FEATURE_SCOUT_COMBAT_SUPERIORITY">
         <description>
             <p>At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.</p>
-            <p class="indent"><b>Superiority Dice.</b> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long or short rest.</p>
-            <p class="indent">You gain another superiority die at 7th level and one more at 15th level.</p>
-            <p class="indent"><b>Using Superiority Dice.</b> You can expend superiority dice to gain a number of different benefits:</p>
-            <li>When you make a weapon attack against a creature, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.</li>
-            <li>When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save.</li>  
-            <li>When you make an Intelligence, a Wisdom, or a Charisma saving throw, you can expend one superiority die to add it to the roll. You can use this feature only before you learn if the save succeeded or failed.</li>
-            <li>When you make a Wisdom (Perception) check to detect a hidden creature or object, or a Wisdom (Insight) check to determine if someone is lying to you, you can expend one superiority die to add it to the roll. You can use this feature after seeing the total but before learning if you succeeded or failed.</li>
+            <p>
+                <span class="feature">Superiority Dice.</span> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long or short rest.<br />
+                <p class="indent">You gain another superiority die at 7th level and one more at 15th level.</p>
+                <span class="feature">Using Superiority Dice.</span> You can expend superiority dice to gain a number of different benefits:<br />
+            </p>
+            <ul>
+                <li>When you make a weapon attack against a creature, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.</li>
+                <li>When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save.</li>  
+                <li>When you make an Intelligence, a Wisdom, or a Charisma saving throw, you can expend one superiority die to add it to the roll. You can use this feature only before you learn if the save succeeded or failed.</li>
+                <li>When you make a Wisdom (Perception) check to detect a hidden creature or object, or a Wisdom (Insight) check to determine if someone is lying to you, you can expend one superiority die to add it to the roll. You can use this feature after seeing the total but before learning if you succeeded or failed.</li>
+            </ul>
         </description>
         <sheet>
             <description>You have %superiority dice:amount%d%superiority dice:size%s superiority dice. You can expend them to choose between following effects: Roll a superiority die and add the number to an attack roll. Or, roll a superiority die and add it to a weapons' damage roll, if this damage causes a target to make a concentration check, it has disadvantage. Or, roll a superiority die and add the number to an Intelligence, Wisdom, or Charisma saving throw(before learning if it succeeded or not). Or, roll a superiority die and add it to the number of a perception or insight check(before learning if it succeeded or not).</description>
@@ -134,7 +167,7 @@
             <description>Can cast detect magic as a ritual. Can cast Protection from evil and good 1/long rest.</description>
         </sheet>
         <rules>
-            <select type="Language" name="Language(Monster Hunter)" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_INFERNAL" number="1" /> 
+            <select type="Language" name="Language (Monster Hunter)" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_INFERNAL" number="1" /> 
             <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
             <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" />
         </rules>
@@ -144,7 +177,7 @@
             <p>At 7th level, whenever you expend superiority dice to add to a damage roll, you can expend up to two dice instead of just one, adding both to the roll. Both dice are expended as normal. If the target of your attack is an aberration, a fey, a fiend, or an undead, you deal maximum damage with both dice, instead of rolling them.</p>
         </description>
         <sheet>
-            <description>Can roll 2 superiority dice instead of 1 when adding to a damage roll. Deal maximum damage to aberrations, fey, fiends, and undead.</description>  
+            <description>Can roll 2 superiority dice instead of 1 when adding to a damage roll. Deal maximum damage to aberrations, fey, fiends, and undead. </description>  
         </sheet>
         <rules />
     </element>
@@ -152,7 +185,7 @@
         <description>
             <p>At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s.</p>
         </description>
-        <sheet />
+        <sheet display="false"/>
         <rules>
             <stat name="superiority dice:size" value="10" level="10" bonus="size"/>
             <stat name="superiority dice:size" value="12" level="18" bonus="size"/>
@@ -167,6 +200,4 @@
         </sheet>
         <rules />
     </element>
-
-    <!-- Inquisitive Roguish Archetype -->
 </elements>
