@@ -11,7 +11,6 @@
 
   <element name="Duergar" type="Sub Race" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SUBRACE_GRAY_DWARF">
     <supports>Dwarf</supports>
-    <requirements />
     <description>
         <p>The gray dwarves, or duergar, live deep in the Underdark. After delving deeper than any other dwarves, they were enslaved by mind flayers for eons. Although they eventually won their freedom , these grim, ashen-skinned dwarves now take slaves of their own and are as tyrannical as their former masters.</p>
         <p class="indent">Physically similar to other dwarves in some ways, duergar are wiry and lean, with black eyes and bald heads, with the males growing long, unkempt, gray beards.</p>
@@ -37,34 +36,28 @@
     </rules>
   </element>
 
-  <element name="Duergar Resilience" type="Racial Trait" source="Sword Coast Adventurer’s Guide" id="ID_RACIAL_TRAIT_DUERGAR_RESILIENCE">
-    <supports />
-    <requirements />
-    <description>
-      <p>You have advantage on saving throws against illusions and against being charmed or paralyzed.</p>
-    </description>
-    <sheet>
-      <description>You have advantage on saving throws against illusions and against being charmed or paralyzed.</description>
-    </sheet>
-    <rules>
-    </rules>
-  </element>
-  
-  <element name="Duergar Magic" type="Racial Trait" source="Sword Coast Adventurer’s Guide" id="ID_RACIAL_TRAIT_DUERGAR_MAGIC">
-    <supports />
-    <requirements>[level:3]</requirements>
-    <description>
-      <p>When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
-    </description>
-    <sheet usage="1/Long Rest">
-      <description>You can cast enlarge on yourself.</description>
-      <description level="5">You can cast enlarge and invisibility on yourself.</description>
-    </sheet>
-    <rules>
-        <!-- <stat name="duergar magic:spellcasting:ability" value="Intelligence" /> -->
-        <grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="3"/>
-        <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="5"/>
-    </rules>
-  </element>
+	<element name="Duergar Resilience" type="Racial Trait" source="Sword Coast Adventurer’s Guide" id="ID_RACIAL_TRAIT_DUERGAR_RESILIENCE">
+		<description>
+			<p>You have advantage on saving throws against illusions and against being charmed or paralyzed.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against illusions and against being charmed or paralyzed.</description>
+		</sheet>
+	</element>
 
+	<element name="Duergar Magic" type="Racial Trait" source="Sword Coast Adventurer’s Guide" id="ID_RACIAL_TRAIT_DUERGAR_MAGIC">
+		<requirements>[level:3]</requirements>
+		<description>
+			<p>When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast enlarge on yourself. (Spellcasting: Intelligence)</description>
+			<description level="5">You can cast enlarge and invisibility on yourself. (Spellcasting: Intelligence)</description>
+		</sheet>
+		<rules>
+			<!-- <stat name="duergar magic:spellcasting:ability" value="Intelligence" /> -->
+			<grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="5" />
+		</rules>
+	</element>
 </elements>  
