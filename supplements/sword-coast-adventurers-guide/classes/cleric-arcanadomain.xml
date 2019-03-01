@@ -4,7 +4,7 @@
     <name>Arcana Domain</name>
     <description>Arcana Domain archetype from the Sword Coast Adventurer’s Guide.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.1.2">
+    <update version="0.1.3">
       <file name="cleric-arcanadomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/cleric-arcanadomain.xml" />
     </update>
   </info>
@@ -83,14 +83,20 @@
         <tr><td>17th</td><td>4 or lower</td></tr>
       </table>
     </description>
-    <sheet alt="Arcane Abjuration">
-      <description level="5">You can use your Channel Divinity to abjure otherworldly creatures of CR 1/2 or lower for 1 minute DC {{spellcasting:dc:wis}} Wisdom saving throw.</description>
-      <description level="8">You can use your Channel Divinity to abjure otherworldly creatures of CR 1 or lower for 1 minute DC {{spellcasting:dc:wis}} Wisdom saving throw.</description>
-      <description level="11">You can use your Channel Divinity to abjure otherworldly creatures of CR 2 or lower for 1 minute DC {{spellcasting:dc:wis}} Wisdom saving throw.</description>
-      <description level="14">You can use your Channel Divinity to abjure otherworldly creatures of CR 3 or lower for 1 minute DC {{spellcasting:dc:wis}} Wisdom saving throw.</description>
-      <description level="17">You can use your Channel Divinity to abjure otherworldly creatures of CR 4 or lower for 1 minute DC {{spellcasting:dc:wis}} Wisdom saving throw.</description>
+    <sheet alt="Arcane Abjuration" action="Action" usage="Channel Divinity">
+		<description>You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+		A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.</description>
+		<description level="5">You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+		A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+		When a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is {{arcane abjuration:cr}}.</description>
     </sheet>
-    <rules />
+    <rules>
+		<stat inline="true" name="arcane abjuration:cr" value="1/2 or lower" level="5"/>
+		<stat inline="true" name="arcane abjuration:cr" value="1 or lower" level="8"/>
+		<stat inline="true" name="arcane abjuration:cr" value="2 or lower" level="11"/>
+		<stat inline="true" name="arcane abjuration:cr" value="3 or lower" level="14"/>
+		<stat inline="true" name="arcane abjuration:cr" value="4 or lower" level="17"/>
+	</rules>
   </element>
 
   <element name="Spell Breaker" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER">
