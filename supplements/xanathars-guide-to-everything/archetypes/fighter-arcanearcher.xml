@@ -4,7 +4,7 @@
     <name>Arcane Archer</name>
     <description>The Arcane Archer from Xanathar’s Guide to Everything</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-    <update version="0.0.7">
+    <update version="0.0.8">
       <file name="fighter-arcanearcher.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/fighter-arcanearcher.xml" />
     </update>
   </info>
@@ -25,11 +25,11 @@
       <description>An Arcane Archer studies a unique elven method of archery that weaves magic into attacks to produce supernatural effects.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_ARCHER_LORE" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_SHOT" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_MAGIC_ARROW" level="7"/>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_CURVING_SHOT" level="7"/>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_EVER_READY_SHOT" level="15"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_ARCHER_LORE" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_SHOT" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_MAGIC_ARROW" level="7"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_CURVING_SHOT" level="7"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_EVER_READY_SHOT" level="15"/>
     </rules>
   </element>
   <element name="Arcane Archer Lore" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_ARCHER_LORE">
@@ -50,7 +50,7 @@
       <p class="indent">Once per turn when you fire a magic arrow from a shortbow or longbow as part of the Attack action, you can apply one of your Arcane Shot options to that arrow. You decide to use the option when the arrow hits a creature, unless the option doesn’t involve an attack roll. You have two uses of this ability, and you regain all expended uses of it when you finish a short or long rest.</p>
       <p class="indent">You gain an additional Arcane Shot option of your choice when you reach certain levels in this class: 7th, 10th, 15th, and 18th level. Each option also improves when you become an 18th—level fighter.</p>
     </description>
-    <sheet usage="2 / Short Rest">
+    <sheet usage="2/Short Rest">
       <description>1/turn use one of you Arcane Shot options when you hit with an arrow, unless the option doesn't inolve an attack roll.</description>
     </sheet>
     <rules>
@@ -61,8 +61,8 @@
       <select type="Archetype Feature" name="Arcane Shot (level 18)" supports="Arcane Shot,Arcane Archer" number="1" level="18" />
 
       <stat name="arcane shot:dc:base" value="8" bonus="base" />
-      <stat name="arcane shot:dc:proficiency" value="Proficiency" bonus="proficiency" />
-      <stat name="arcane shot:dc:ability" value="Intelligence Modifier" bonus="ability" />
+      <stat name="arcane shot:dc:proficiency" value="proficiency" bonus="proficiency" />
+      <stat name="arcane shot:dc:ability" value="intelligence:modifier" bonus="ability" />
 
       <stat name="arcane shot:dc" value="arcane shot:dc:base" />
       <stat name="arcane shot:dc" value="arcane shot:dc:proficiency" />
@@ -82,8 +82,8 @@
     <description>
       <p>At 7th level, you learn how to direct an errant arrow toward a new target. When you make an attack roll with a magic arrow and miss, you can use a bonus action to reroll the attack roll against a different target within 60 feet of the original target.</p>
     </description>
-    <sheet>
-      <description>Bonus action: When missing with an arrow, reroll the attack against a different target within 60ft of the original.</description>
+    <sheet action="Bonus Action">
+      <description>When missing with an arrow, reroll the attack against a different target within 60ft of the original.</description>
     </sheet>
     <rules />
   </element>
@@ -104,8 +104,8 @@
       <p class="indent">After you reach 18th level in this class, a target also takes 2d6 force damage when the arrow hits it.</p>
     </description>
     <sheet>
-      <description level="3">A creature hit by this arrow must make a DC$(arcane shot:dc) Charisma saving throw or be banished to a harmless location in the feywild until the end of its next turn.</description>
-      <description level="18">A creature hit by this arrow takes an extra 2d6 force damage, and must make a DC$(arcane shot:dc) Charisma saving throw or be banished to a harmless location in the feywild until the end of its next turn.</description>
+      <description level="3">A creature hit by this arrow must make a DC{{arcane shot:dc}} Charisma saving throw or be banished to a harmless location in the feywild until the end of its next turn.</description>
+      <description level="18">A creature hit by this arrow takes an extra 2d6 force damage, and must make a DC{{arcane shot:dc}} Charisma saving throw or be banished to a harmless location in the feywild until the end of its next turn.</description>
     </sheet>
     <rules />
   </element>
@@ -116,8 +116,8 @@
       <p class="indent">The psychic damage increases to 4d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">A creature hit by this arrow takes an extra 2d6 psychic damage, and must make a DC$(arcane shot:dc) Wisdom save, or become charmed by a chosen ally within 30ft of it.</description>
-      <description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC$(arcane shot:dc) Wisdom save, or become charmed by a chosen ally within 30ft of it.</description>
+      <description level="3">A creature hit by this arrow takes an extra 2d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom save, or become charmed by a chosen ally within 30ft of it.</description>
+      <description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom save, or become charmed by a chosen ally within 30ft of it.</description>
     </sheet>
     <rules />
   </element>
@@ -140,8 +140,8 @@
       <p class="indent">The necrotic damage increases to 4d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">A creature hit by this arrow takes an extra 2d6 necrotic damage, and must make a DC$(arcane shot:dc) Constitution saving throw, or its weapon damage is halved until the start of its next turn.</description>
-      <description level="18">A creature hit by this arrow takes an extra 4d6 necrotic damage, and must make a DC$(arcane shot:dc) Constitution saving throw, or its weapon damage is halved until the start of its next turn.</description>
+      <description level="3">A creature hit by this arrow takes an extra 2d6 necrotic damage, and must make a DC{{arcane shot:dc}} Constitution saving throw, or its weapon damage is halved until the start of its next turn.</description>
+      <description level="18">A creature hit by this arrow takes an extra 4d6 necrotic damage, and must make a DC{{arcane shot:dc}} Constitution saving throw, or its weapon damage is halved until the start of its next turn.</description>
     </sheet>
     <rules />
   </element>
@@ -152,8 +152,8 @@
       <p class="indent">The poison damage and slashing damage both increase to 4d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 2d6 poison damage, its speed is reduced by 10ft, and it takes 2d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC$(arcane shot:dc) Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
-      <description level="18">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 4d6 poison damage, its speed is reduced by 10ft, and it takes 4d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC$(arcane shot:dc) Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
+      <description level="3">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 2d6 poison damage, its speed is reduced by 10ft, and it takes 2d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC{{arcane shot:dc}} Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
+      <description level="18">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 4d6 poison damage, its speed is reduced by 10ft, and it takes 4d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC{{arcane shot:dc}} Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
     </sheet>
     <rules />
   </element>
@@ -164,8 +164,8 @@
       <p class="indent">The piercing damage increases to 2d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC$(arcane shot:dc) Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 piercing. On a succes it takes half damage.</description>
-      <description level="18">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC$(arcane shot:dc) Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 piercing. On a succes it takes half damage.</description>
+      <description level="3">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 piercing. On a succes it takes half damage.</description>
+      <description level="18">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 piercing. On a succes it takes half damage.</description>
     </sheet>
     <rules />
   </element>
@@ -176,8 +176,8 @@
       <p class="indent">The force damage increases to 2d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC$(arcane shot:dc) Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
-      <description level="18">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC$(arcane shot:dc) Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
+      <description level="3">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
+      <description level="18">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
     </sheet>
     <rules />
   </element>
@@ -188,8 +188,8 @@
       <p class="indent">The psychic damage increases to 4d6 when you reach 18th level in this class.</p>
     </description>
     <sheet>
-      <description level="3">A creature hit by this arrow takes an extra 2d6 psychic damage, and must make a DC$(arcane shot:dc) Wisdom saving throw or is unable to see anything farther than 5ft away until the start of your next turn.</description>
-      <description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC$(arcane shot:dc) Wisdom saving throw or is unable to see anything farther than 5ft away until the start of your next turn.</description>
+      <description level="3">A creature hit by this arrow takes an extra 2d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom saving throw or is unable to see anything farther than 5ft away until the start of your next turn.</description>
+      <description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom saving throw or is unable to see anything farther than 5ft away until the start of your next turn.</description>
     </sheet>
     <rules />
   </element>

@@ -4,7 +4,7 @@
     <name>The Undying</name>
     <description>The Undying archetype from the Sword Coast Adventurer’s Guide.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.0.3">
+    <update version="0.0.5">
       <file name="warlock-theundying.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/warlock-theundying.xml" />
     </update>
   </info>
@@ -23,11 +23,11 @@
       <description>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="10"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="14"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="14"/>
     </rules>
   </element>
   <element name="Expanded Spell List" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST">
@@ -67,7 +67,7 @@
       <p class="indent">Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.</p>
     </description>
     <sheet>
-      <description>You have advantage on saving throws against any disease. If an undead targets you directly with an attack or a harmful spell, that creature must make a DC%spellcasting:dc:wis% Wisdom saving throw. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell.</description>
+      <description>You have advantage on saving throws against any disease. If an undead targets you directly with an attack or a harmful spell, that creature must make a DC{{spellcasting:dc:wis}} Wisdom saving throw. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell.</description>
     </sheet>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Warlock" />
@@ -78,12 +78,12 @@
       <p>Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</p>
       <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can regain hit points equal to 1d8+%defy death:modifier% when you succeed on a death saving throw or when you stabilize a creature with spare the dying. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can regain hit points equal to 1d8+{{defy death:modifier} when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</description>
     </sheet>
     <rules>
       <stat name="defy death:modifier" value="1" bonus="defy death" />
-      <stat name="defy death:modifier" value="Constitution Modifier" bonus="defy death" />
+      <stat name="defy death:modifier" value="constitution:modifier" bonus="defy death" />
     </rules>
   </element>
   <element name="Undying Nature" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE">
@@ -101,8 +101,8 @@
       <p>When you reach 14th level, you partake of some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</p>
       <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>On your turn, you can use a bonus action to regain hit points equal to 1d8+%level:warlock%. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches. (1/SR)</description>
+    <sheet usage="1/Short Rest">
+      <description>On your turn, you can use a bonus action to regain hit points equal to 1d8+{{level:warlock}}. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</description>
     </sheet>
     <rules />
   </element>

@@ -4,7 +4,7 @@
 		<name>Shifter</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="race-shifter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/races/race-shifter.xml" />
 		</update>
 	</info>
@@ -50,16 +50,16 @@
 		<sheet display="false" />
 		<setters>
 			<set name="names" type="shifter">Badger, Bear, Cat, Fang, Grace, Grim, Moon, Rain, Red, Scar, Stripe, Swift, Whiskers, Wolf</set>
-			<set name="names-format">$(shifter)</set>
+			<set name="names-format">{{shifter}}</set>
       	</setters>
       	<rules>
-			<stat name="Dexterity" value="1" />
-			<grant type="Size" name="ID_SIZE_MEDIUM" />
-			<stat name="Speed" value="30" bonus="base" />
-			<grant type="Vision" name="ID_VISION_DARKVISION" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_KEEN_SENSES" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SHIFTING" />
-			<grant type="Language" name="ID_LANGUAGE_COMMON" />
+			<stat name="dexterity" value="1" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SHIFTING" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
 			<select type="Sub Race" name="Shifter Subrace" supports="Shifter" />
 		</rules>
 	</element>
@@ -71,7 +71,7 @@
 			<description>You have proficiency with the Perception skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
 		</rules>
 	</element>
 	<element name="Shifting" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SHIFTING">
@@ -79,13 +79,13 @@
 			<p>As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1) temporary hitpoits. You also gain additional benefits that depend on your shifter subrace, described below.</p>
 			<p class="indent">Once you shift, you can’t do so again until you fininsh a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can assume a more bestial appearance for 1 minute that lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain $(shifting:temporary hp) temporary hit points. (1/SR)</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can assume a more bestial appearance for 1 minute that lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain {{shifting:temporary hp}} temporary hit points.</description>
 		</sheet>
 		<rules>
 			<stat name="shifting:temporary hp" value="level" />
-			<stat name="shifting:temporary hp" value="1" base="modifier" />
-			<stat name="shifting:temporary hp" value="Constitution Modifier" base="modifier" />
+			<stat name="shifting:temporary hp" value="1" bonus="modifier" />
+			<stat name="shifting:temporary hp" value="constitution:modifier" bonus="modifier" />
 		</rules>
 	</element>
 
@@ -101,9 +101,9 @@
 			<description>Stoic and solid, a beasthide shifter draws strength and stability from the beast within.</description>
 		</sheet>
 		<rules>
-			<stat name="Constitution" value="2" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_TOUGH" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_SHIFTING_FEATURE" />
+			<stat name="constitution" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_TOUGH" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_SHIFTING_FEATURE" />
 		</rules>
 	</element>
 	<element name="Tough" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_TOUGH">
@@ -114,7 +114,7 @@
 			<description>You have proficiency with the Athletics skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
 		</rules>
 	</element>
 	<element name="Shifting Feature" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_BEASTHIDE_SHIFTING_FEATURE">
@@ -138,9 +138,9 @@
 			<description>Longtooth shifters are fierce and aggressive, but they form deep bonds with their friends.</description>
 		</sheet>
 		<rules>
-			<stat name="Strength" value="2" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_FIERCE" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_SHIFTING_FEATURE" />
+			<stat name="strength" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_FIERCE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_SHIFTING_FEATURE" />
 		</rules>
 	</element>
 	<element name="Fierce" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_FIERCE">
@@ -151,7 +151,7 @@
 			<description>You have proficiency with the Intimidation skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
 		</rules>
 	</element>
 	<element name="Shifting Feature" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_LONGTOOTH_SHIFTING_FEATURE">
@@ -159,7 +159,7 @@
 			<p>While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
 		</description>
 		<sheet>
-			<description>While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action and deal 1d6 + $(Strength Modifier) piercing damage.</description>
+			<description>While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action and deal 1d6+{{strength:modifier}} piercing damage.</description>
 		</sheet>
 	</element>
 
@@ -176,11 +176,11 @@
 			<description>Swiftstride shifters are graceful and quick.</description>
 		</sheet>
 		<rules>
-			<stat name="Dexterity" value="1" />
-			<stat name="Charisma" value="1" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_GRACEFUL" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SWIFT_STRIDE" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SHIFTING_FEATURE" />
+			<stat name="dexterity" value="1" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_GRACEFUL" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SWIFT_STRIDE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SHIFTING_FEATURE" />
 		</rules>
 	</element>
 	<element name="Graceful" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_GRACEFUL">
@@ -191,7 +191,7 @@
 			<description>You have proficiency with the Acrobatics skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
 		</rules>
 	</element>
 	<element name="Swift Stride" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SWIFT_STRIDE">
@@ -202,7 +202,7 @@
 			<description>Your walking speed increases by 5 feet.</description>
 		</sheet>
 		<rules>
-			<stat name="Speed" value="5" />
+			<stat name="innate speed" value="5" />
 		</rules>
 	</element>
 	<element name="Shifting Feature" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_SWIFTSTRIDE_SHIFTING_FEATURE">
@@ -227,10 +227,10 @@
 			<description>Wildhunt shifters are sharp and insightful.</description>
 		</sheet>
 		<rules>
-			<stat name="Wisdom" value="2" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_NATURAL_TRACKER" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_MARK_THE_SCENT" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_SHIFTING_FEATURE" />
+			<stat name="wisdom" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_NATURAL_TRACKER" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_MARK_THE_SCENT" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_SHIFTING_FEATURE" />
 		</rules>
 	</element>
 	<element name="Natural Tracker" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_NATURAL_TRACKER">
@@ -241,15 +241,15 @@
 			<description>You have proficiency with the Survival skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
 		</rules>
 	</element>
 	<element name="Mark the Scent" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_MARK_THE_SCENT">
 		<description>
 			<p>As a bonus action, you can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked create, and you always know the location of that creature if it is within 60 feet of you. You can’t use this trait again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked create, and you always know the location of that creature if it is within 60 feet of you. (1/SR)</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked create, and you always know the location of that creature if it is within 60 feet of you.</description>
 		</sheet>
 	</element>
 	<element name="Shifting Feature" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHIFTER_WILDHUNT_SHIFTING_FEATURE">

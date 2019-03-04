@@ -4,18 +4,20 @@
 		<name>Izzet Engineer</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="izzet-engineer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/izzet-engineer.xml" />
 		</update>
 	</info>
     
 	<element name="Izzet Engineer" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_IZZET_ENGINEER">
 		<description>
-			<p>Armed with an inventive intellect, a love of magical technology, and an unquenchable energy, you are an enthusiastic participant in the research work of the Izzet League. Though you’re likely to begin your career as a mere attendant, you can aspire to become a skilled mage or alchemist, a laboratory supervisor, or even a flamethrower-wielding scorchbringer tasked with defending Izzet laboratories. The Izzet are obsessive, brilliant, inspired, and an unpredictable force of chaos in Ravnica, and you epitomize all of those qualities.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Arcana, Investigation</p>
-			<p class="indent"><strong>Languages:</strong> Choose one of Draconic, Goblin, or Vedalken</p>
-			<p class="indent"><strong>Tool Proficiencies:</strong> One type of artisan’s tools</p>
-			<p class="indent"><strong>Equipment:</strong> An Izzet insignia, one set of artisan’s tools, the charred and twisted remains of a failed experiment, a hammer, a block and tackle, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</p>
+			<p>Armed with an inventive intellect, a love of magical technology, and an unquenchable energy, you are an enthusiastic participant in the research work of the Izzet League. Though you’re likely to begin your career as a mere attendant, you can aspire to become a skilled mage or alchemist, a laboratory supervisor, or even a flamethrower-wielding scorchbringer tasked with defending Izzet laboratories. The Izzet are obsessive, brilliant, inspired, and an unpredictable force of chaos in Ravnica, and you epitomize all of those qualities.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, Investigation</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
+				<li><strong>Languages:</strong> Choose one of Draconic, Goblin, or Vedalken</li>
+				<li><strong>Equipment:</strong> An Izzet insignia, one set of artisan’s tools, the charred and twisted remains of a failed experiment, a hammer, a block and tackle, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
@@ -26,7 +28,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
 			<select type="Language" name="Language, Izzet Engineer" supports="ID_LANGUAGE_DRACONIC|ID_LANGUAGE_GOBLIN|ID_GGTR_LANGUAGE_VEDALKEN" />
 			<select type="Proficiency" name="Tool Proficiency, Izzet Engineer" supports="Artisan tools" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_IZZET_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I have a hard time staying focused on ... oh, and my brain tends to jump from one ... did I mention focus?</item>
@@ -65,7 +68,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Urban Infrastructure" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_IZZET_ENGINEER_URBAN_INFRASTRUCTURE">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>The popular conception of the Izzet League is based on mad inventions, dangerous experiments, and explosive blasts. Much of that perception is accurate, but the league is also involved with mundane tasks of construction and architecture- primarily in crafting the infrastructure that allows Ravnicans to enjoy running water, levitating platforms, and other magical and technological wonders.</p>
 			<p class="indent">You have a basic knowledge of the structure of buildings, including the stuff behind the walls. You can also find blueprints of a specific building in order to learn the details of its construction. Such blueprints might provide knowledge of entry points, structural weaknesses, or secret spaces. Your access to such information isn’t unlimited. If obtaining or using the information gets you in trouble with the law, the guild can’t shield you from the repercussions.</p>
