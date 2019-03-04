@@ -4,7 +4,7 @@
 		<name>Dimir Operative</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="dimir-operative.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/dimir-operative.xml" />
 		</update>
 	</info>
@@ -13,11 +13,12 @@
 		<description>
 			<p>You’re a spy. Secrets and misinformation are your stock in trade. You skulk in the shadows, infiltrate other guilds, and steal the most precious secrets, whether they’re written in locked journals or hidden away in someone’s mind. Even you might not be aware of all the reasons behind the missions you carry out. Sometimes a mission’s sole purpose is to conceal the motivatjon behind another strike performed in a different part of the city, or simply to spread fear.</p>
 			<p class="indent">As part of your covert work for House Dimir, you maintain a false identity as a member of another guild. You can choose your secondary guild or roll to determine it randomly. This secondary guild membership determines a portion of your starting equipment and is also where most of your contacts come from. You infiltrate your secondary guild to learn its secrets, keep tabs on its activities, or perhaps undermine it from within.</p>
-			<br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Deception, Stealth</p>
-			<p class="indent"><strong>Tool Proficiencies:</strong> Disguise kit</p>
-			<p class="indent"><strong>Languages:</strong> One of your choice</p>
-			<p class="indent"><strong>Equipment:</strong> A Dimir insignia, three small knives, a set of dark-colored common clothes, and the starting equipment of the background described in this chapter for your secondary guild</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Stealth</li>
+				<li><strong>Tool Proficiencies:</strong> Disguise kit</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A Dimir insignia, three small knives, a set of dark-colored common clothes, and the starting equipment of the background described in this chapter for your secondary guild</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_DIMIR_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
@@ -28,7 +29,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
 			<select type="Language" name="Language, Dimir Operative" supports="Starting" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_DIMIR_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I’m good at hiding my true thoughts and feelings.</item>
@@ -67,7 +69,7 @@
 		</rules>
 	</element>
 	<element name="Feature: False Identity" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_DIMIR_OPERATIVE_FALSE_IDENTITY">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>You have more than one identity. The one you wear most of the time makes you appear to be a member of a guild other than House Dimir. You have documentation, established acquaintances, and disguises that allow you to assume that persona and fit into the secondary guild.</p>
 			<p class="indent">Whenever you choose, you can drop this identity and blend into the guildless masses of the city.</p>
