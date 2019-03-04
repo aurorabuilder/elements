@@ -22,6 +22,12 @@
             <h4>CLANSMEN AND POISON BREWERS</h4>
             <p>Sprites hold their kin at the highest of esteem; they never harm a fellow clansmen or do any mischief. Their clans divided up by sub-races which can be easily spotted and recognized. They mostly form either a hierarchy, a matriarch, or a patriarch, and sometimes in rare cases, they are run by a council of their elders.</p>
             <p class="indent">In their forest domains, sprites brew toxins, unguents, antidotes, and poisons, including the sleep poison with which they coat their arrows. They venture.far into the woods to harvest rare flowers, mosses, and fungi, sometimes crossing dangerous territory to do so. If desperate, sprites even steal their ingredients from the gardens of hags.</p>
+			<h4>SPRITE NAMES</h4>
+			<p>Sprites take names that are mixes of elven and human.</p>
+			<ul class="unstyled">
+				<li><strong>Male: </strong>Covara, Jamaran, Puck, Hob</li>
+				<li><strong>Female: </strong>Faula, Mysteria, Eowyn, Lily</li>
+			</ul>
             <h4>SPRITE TRAITS</h4>
             <p>Your Sprite character has the following traits.</p>
             <p class="indent"><b><i>Ability Score Increase. </i></b>Your Charisma score increases by 1, and your Dexterity score increases by 1.</p>
@@ -35,18 +41,25 @@
             <p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Sylvan.</p>
             <p class="indent"><b><i>Clan. </i></b>Sprites usually fall into a clan; each clan is famous or infamous for something, and this reflects on the sprites themselves.</p>        
         </description>
+        <setters>
+            <set name="names" type="male">Covara, Jamaran, Puck, Hob</set>
+            <set name="names" type="female">Faula, Mysteria, Eowyn, Lily</set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier="2d4">0'4"</set>
+            <set name="weight" modifier="1d4">1</set>
+        </setters>
         <sheet display="false" />
         <rules>
-            <stat name="Charisma" value="1" />
-            <stat name="Dexterity" value="1" />
-            <stat name="Speed" value="10" bonus="base" />
-            <stat name="speed:fly" value="30" bonus="base" />
-            <grant type="Size" name="ID_SIZE_TINY" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <grant type="Language" name="ID_LANGUAGE_SYLVAN" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_HEART_SIGHT" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_INVISIBILITY" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_CLAN" />
+            <stat name="charisma" value="1" />
+            <stat name="dexterity" value="1" />
+            <stat name="innate speed" value="10" bonus="base" />
+            <stat name="innate speed:fly" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_TINY" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_HEART_SIGHT" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_INVISIBILITY" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_CLAN" />
         </rules>
     </element>
     <element name="Sprite Subrace" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_CLAN">
@@ -69,8 +82,8 @@
         </sheet>
         <rules>
         <stat name="heart:dc" value="8" />
-        <stat name="heart:dc" value="Proficiency" />
-        <stat name="heart:dc" value="Wisdom Modifier" />
+        <stat name="heart:dc" value="proficiency" />
+        <stat name="heart:dc" value="wisdom:modifier" />
         </rules>
     </element>
     <element name="Invisibility" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_INVISIBILITY">
@@ -99,23 +112,23 @@
         <sheet display="false"/>
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Wandering Sprite)" supports="ID_INTERNAL_ASI_WISDOM|ID_INTERNAL_ASI_INTELLIGENCE" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_WANDERING_MAGIC" />
-            <grant name="ID_VISION_DARKVISION" type="Vision" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WANDERING_MAGIC" />
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
         </rules>
     </element>
     <element name="Wandering Magic" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WANDERING_MAGIC">
         <description>
             <p>You know the mage hand cantrip. When you reach 3rd level, you can cast the disguise self spell once per day. When you reach 5th level, you can also cast the misty step spell once per day. Charisma is your spellcasting ability for these spells.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>You know the mage hand cantrip.</description>
             <description level="3">You know the mage hand cantrip and can cast disguise self once per day.</description>
             <description level="5">You know the mage hand cantrip, can cast disguise self and misty step once per day.</description>
         </sheet>
         <rules>
-        <grant type="Spell" name="ID_PHB_SPELL_MAGE_HAND" />
-        <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="3" />
-        <grant type="Spell" name="ID_PHB_SPELL_MISTY_STEP" level="5" />
+        <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+        <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="3" />
+        <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" />
         </rules>
     </element>
 
@@ -133,16 +146,16 @@
         <sheet display="false"/>
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Bell Sprite)" supports="ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_CHARISMA" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_DUST" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_LIGHT" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_MISCHIEVOUS_GROWTH" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_DUST" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_LIGHT" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_MISCHIEVOUS_GROWTH" />
         </rules>
     </element>
     <element name="Fairy Dust" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_DUST">
         <description>
             <p>As an action, you may give a willing creature a flying speed of 30 foot for 1 minute, however, they cannot fly higher than this. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>Once per rest you can grant one wiling creature 30 ft of flying speed with a maximum height of 30 ft.</description>
         </sheet>
     </element>
@@ -150,18 +163,18 @@
         <description>
             <p>You know the light cantrip, and when cast on yourself you can adjust the size of the light to a 5-foot radius of bright light and an addition 5 feet of dim light.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>You know the light cantrip, and when cast on yourself you can adjust the size of the light to a 5-foot radius of bright light and an addition 5 feet of dim light.</description>
         </sheet>
         <rules>
-        <grant type="Spell" name="ID_PHB_SPELL_LIGHT" />
+        <grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
         </rules>
     </element>
     <element name="Mischievous Growth" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_MISCHIEVOUS_GROWTH">
         <description>
             <p>Bell sprites are known for their ability to grow to look like regular humans. As an action, you can become Medium sized, when you do, you lose your flying speed as you are too heavy for your thin wings to carry you. This transformation lasts for 1 hour until you dismiss it as an action or you are reduced to 0 hit points. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>Once per rest as an action, you can become Medium sized, when you do, you lose your flying speed as you are too heavy for your thin wings to carry you. This transformation lasts for 1 hour until you dismiss it as an action or you are reduced to 0 hit points.</description>
         </sheet>
     </element>
@@ -181,19 +194,20 @@
         <sheet display="false"/>
         <rules>
             <select type="Ability Score Improvement" name="Ability Score Improvement (Crom Sprite)" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_CONSTITUTION" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_POWERFUL_BUILD" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_WEAPON_FIGHTER" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_TINY_FIGHTER" />
-            <grant type="Racial Trait" name="ID_WIKI_RACIAL_TRAIT_SPRITE_BRAVE" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_POWERFUL_BUILD" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WEAPON_FIGHTER" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_TINY_FIGHTER" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_BRAVE" />
         </rules>
     </element>
     <element name="Powerful Build" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_POWERFUL_BUILD">
         <description>
             <p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
         </sheet>
+		<!-- todo: carrying capacity mod -->
     </element>
     <element name="Weapon Fighter" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WEAPON_FIGHTER">
         <description>
@@ -203,33 +217,28 @@
             <description>You have proficiency with two simple and two martial weapons of your choice.</description>
         </sheet>
         <rules>
-        <select type="Proficiency" name="Weapon Fighter" supports="Weapon,Martial" number="2" />
-        <select type="Proficiency" name="Weapon Fighter" supports="Weapon,Simple" number="2" />
+            <select type="Proficiency" name="Simple Weapon Proficiency, Weapon Fighter" supports="Weapon,Simple" number="2" />
+            <select type="Proficiency" name="Martial Weapon Proficiency, Weapon Fighter" supports="Weapon,Martial" number="2" />
         </rules>
     </element>
     <element name="Tiny Fighter" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_TINY_FIGHTER">
         <description>
             <p>Your small stature and fighting instincts makes you hard to hit no matter what. Your Armor Class cannot be lower than 12.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>Your Armor Class cannot be lower than 12.</description>
         </sheet>
         <rules>
-			<grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" equipped="[armor:none]" />
-            <stat name="ac:natural" value="2" bonus="base" />
-			<stat name="ac:natural" value="Dexterity Modifier" bonus="ability" />
-			<stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]" />
-			<stat name="AC" value="ac:natural" bonus="armor" equipped="[armor:any]" />
+			<!-- homebrew ac type (not really a type of natural armor as it's written) -->
+			<stat name="ac:calculation" value="12" bonus="calculation" />
         </rules>
     </element>
     <element name="Brave" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_BRAVE">
         <description>
             <p>You have advantage on saving throws against being frightened.</p>
         </description>
-        <sheet display="true">
+        <sheet>
             <description>You have advantage on saving throws against being frightened.</description>
         </sheet>
-        <rules/>
     </element>
-
 </elements>
