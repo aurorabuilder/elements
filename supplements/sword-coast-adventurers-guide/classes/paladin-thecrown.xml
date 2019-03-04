@@ -4,7 +4,7 @@
     <name>Oath of the Crown</name>
     <description>Oath of the Crown archetype from the Sword Coast Adventurer’s Guide.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.0.3">
+    <update version="0.0.5">
       <file name="paladin-thecrown.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/paladin-thecrown.xml" />
     </update>
   </info>
@@ -29,11 +29,11 @@
       <description>The Oath of the Crown is sworn to the ideals of civilization, be it the spirit of a nation, fealty to a sovereign, or service to a deity of law and rulership.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_OATH_SPELLS" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_DIVINE_ALLEGIANCE" level="7"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_UNYIELDING_SPIRIT" level="15"/>
-      <grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_EXALTED_CHAMPION" level="20"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_OATH_SPELLS" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_DIVINE_ALLEGIANCE" level="7"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_UNYIELDING_SPIRIT" level="15"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_EXALTED_CHAMPION" level="20"/>
     </rules>
   </element>
 
@@ -79,7 +79,30 @@
     <sheet>
       <description>Champion Challenge / Turn the Tide.</description>
     </sheet>
-    <rules />
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY_CHAMPION_CHALLENGE" />
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY_TURN_THE_TIDE" />
+	</rules>
+  </element>
+  <element name="Channel Divinity: Champion Challenge" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY_CHAMPION_CHALLENGE">
+    <description>
+      <p>As a bonus action, you issue a challenge that compels other creatures to do battle with you. Each creature of your choice that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, a creature can't willingly move more than 30 feet away from you. This effect ends on the creature if you are incapacitated or die or if the creature is more than 30 feet away from you.</p>
+    </description>
+    <sheet alt="Champion Challenge" action="Bonus Action" usage="Channel Divinity">
+      <description>You issue a challenge that compels other creatures to do battle with you. Each creature of your choice that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, a creature can't willingly move more than 30 feet away from you. This effect ends on the creature if you are incapacitated or die or if the creature is more than 30 feet away from you.</description>
+    </sheet>
+  </element>
+  <element name="Channel Divinity: Turn the Tide" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_CHANNEL_DIVINITY_TURN_THE_TIDE">
+    <description>
+      <p>As a bonus action, you can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to 1d6 + your Charisma modifier (minimum of 1) if it has no more than half of its hit points.</p>
+    </description>
+    <sheet alt="Turn the Tide" action="Bonus Action" usage="Channel Divinity">
+      <description>You can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to 1d6 + {{cd:turn the tide:hp}} if it has no more than half of its hit points.</description>
+    </sheet>
+	<rules>
+		<stat name="cd:turn the tide:hp" value="1" bonus="turn the tide" />
+		<stat name="cd:turn the tide:hp" value="charisma:modifier" bonus="turn the tide" />
+	</rules>
   </element>
 
   <element name="Divine Allegiance" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_OATH_OF_THE_CROWN_DIVINE_ALLEGIANCE">

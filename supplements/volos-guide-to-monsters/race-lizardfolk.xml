@@ -4,7 +4,7 @@
     <name>Lizardfolk</name>
     <description></description>
     <author url="http://dnd.wizards.com">Wizards of the Coast</author>
-    <update version="0.0.9">
+    <update version="0.1.0">
       <file name="race-lizardfolk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/race-lizardfolk.xml" />
     </update>
   </info>
@@ -84,24 +84,24 @@
     <supports />
     <setters>
       <set name="names" type="description">Achuak, Aryte, Baeshra, Darastrix, Garurt, Irhtos, Jhank, Kepesk, Kethend, Korth, Kosj, Kothar, Litrix, Mirik, Othokent, Sauriv, Throden, Thurkear, Usk, Valignat, Vargach, Verthica, Vutha, Vyth</set>
-      <set name="names-format">$(description)</set>
+      <set name="names-format">{{description}}</set>
       <set name="height" modifier="2d12">4'8"</set>
       <set name="weight" modifier="2d6">110 lb.</set>
     </setters>
     <rules>
-      <stat name="Constitution" value="+2" />
-      <stat name="Wisdom" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <stat name="speed:swim" value="+30" bonus="base"/>
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_DRACONIC" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Bite" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Cunning_Artisan" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hold_Breath" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hunters_Lore" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Natural_Armor" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hungry_Jaws" />
+      <stat name="constitution" value="2" />
+      <stat name="wisdom" value="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <stat name="innate speed:swim" value="30" bonus="base"/>
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Bite" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Cunning_Artisan" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hold_Breath" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hunters_Lore" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Natural_Armor" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hungry_Jaws" />
     </rules>
   </element>
   <element name="Bite" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Bite">
@@ -110,10 +110,10 @@
       <p>Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
     </description>
     <sheet>
-      <description>Your fanged maw is a natural weapon, which you can use to make unarmed strikes. 1d6 + %lizardfolk bite:damage% piercing damage.</description>
+      <description>Your fanged maw is a natural weapon, which you can use to make unarmed strikes. 1d6+{{lizardfolk bite:damage}} piercing damage.</description>
     </sheet>
     <rules>
-      <stat name="lizardfolk bite:damage" value="Strength Modifier" />
+      <stat name="lizardfolk bite:damage" value="strength:modifier" />
     </rules>
   </element>
   <element name="Cunning Artisan" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Cunning_Artisan">
@@ -154,21 +154,14 @@
       <p>You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.</p>
     </description>
     <sheet>
-      <description>You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + %Dexterity Modifier%.</description>
+      <description>You have tough, scaly skin. When you aren't wearing armor, your AC is {{ac:natural armor lizardfolk}}.</description>
     </sheet>
     <rules>
-    
-      <stat name="ac:natural" value="3" bonus="natural" equipped="[armor:none]"/>
-      <stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]"/>
-
-<!-- 
-      <stat name="natural:ac" value="3" bonus="natural" equipped="[armor:none]" />
-      <stat name="AC" value="natural:ac" equipped="[armor:none]" /> -->
-
-      
-      <stat name="ac:natural:alt" value="3" bonus="natural" equipped="[armor:any]" />
-      <stat name="AC" value="ac:natural:alt" bonus="armor" equipped="[armor:any]" />
-
+		<stat name="ac:natural armor lizardfolk:base" value="13" />
+		<stat name="ac:natural armor lizardfolk:dexterity" value="dexterity:modifier" />
+		<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:base" />
+		<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:dexterity" />
+		<stat name="ac:calculation" value="ac:natural armor lizardfolk" bonus="calculation" equipped="[armor:none]" alt="Natural Armor (Lizardfolk)" />
     </rules>
   </element>
   <element name="Hungry Jaws" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_LIZARDFOLK_Hungry_Jaws">
@@ -177,11 +170,11 @@
       <p>In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points (minimum of 1) equal to your Constitution modifier, and you can't use this trait again until you finish a short or long rest.</p>
     </description>
     <sheet>
-      <description>As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain %hungry jaws:hp:temp% temporary hit points. 1/ short rest.</description>
+      <description>As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain {{hungry jaws:hp:temp}} temporary hit points. 1/ short rest.</description>
     </sheet>
     <rules>
       <stat name="hungry jaws:hp:temp" value="1" bonus="hungry jaws" />
-      <stat name="hungry jaws:hp:temp" value="Constitution Modifier" bonus="hungry jaws" />
+      <stat name="hungry jaws:hp:temp" value="constitution:modifier" bonus="hungry jaws" />
     </rules>
   </element>
 </elements>

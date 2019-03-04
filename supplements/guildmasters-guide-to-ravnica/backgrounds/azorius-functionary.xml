@@ -4,17 +4,19 @@
 		<name>Azorius Functionary</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="azorius-functionary.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/azorius-functionary.xml" />
 		</update>
 	</info>
 
 	<element name="Azorius Functionary" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_AZORIUS_FUNCTIONARY">
 		<description>
-			<p>The brutes are at the gate, chaos is looming, and the only thing standing in the way of disaster is the foundation of law and order- as embodied in the Azorius Senate. You’re a proud member of the Azorius guild, which both enacts and enforces the laws that make Ravnican society function smoothly and safely.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Insight, Intimidation</p>
-			<p class="indent"><strong>Languages:</strong> Two of your choice</p>
-			<p class="indent"><strong>Equipment:</strong> An Azorius insignia, a scroll containing the text of a law important to you, a bottle of blue ink, a pen, a set of fine clothes, and a belt pouch containing 10 gp (Azorius-minted 1-zino coins)</p>
+			<p>The brutes are at the gate, chaos is looming, and the only thing standing in the way of disaster is the foundation of law and order- as embodied in the Azorius Senate. You’re a proud member of the Azorius guild, which both enacts and enforces the laws that make Ravnican society function smoothly and safely.</p>			
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Insight, Intimidation</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> An Azorius insignia, a scroll containing the text of a law important to you, a bottle of blue ink, a pen, a set of fine clothes, and a belt pouch containing 10 gp (Azorius-minted 1-zino coins)</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_LEGAL_AUTHORITY" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_AZORIUS_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
@@ -24,7 +26,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
 			<select type="Language" name="Language (Azorius Functionary)" supports="Starting" number="2" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_LEGAL_AUTHORITY" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_LEGAL_AUTHORITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_AZORIUS_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I try never to let my judgment become clouded by emotion.</item>
@@ -63,7 +66,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Legal Authority" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_AZORIUS_FUNCTIONARY_LEGAL_AUTHORITY">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>You have the authority to enforce the laws of Ravnica, and that status inspires a certain amount of respect and even fear in the populace. People mind their manners in your presence and avoid drawing your attention; they assume you have the right to be wherever you are. Showing your Azorius insignia gets you an audience with anyone you want to talk to (though it might cause more problems than it solves when you’re dealing with incorrigible lawbreakers). If you abuse this privilege, though, you can get in serious trouble with your superiors and even be stripped of your position.</p>
 		</description>
