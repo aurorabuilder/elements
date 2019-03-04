@@ -4,7 +4,7 @@
         <name>Way of the Immortal Flame</name>
         <description>The Way of the Immortal Flame archetype.</description>
         <author url="http://mfov.magehandpress.com/2017/09/way-of-immortal-flame.html">Mage Hand Press</author>
-        <update version="0.1">
+        <update version="0.1.1">
             <file name="monk-immortalflame.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/monk-immortalflame.xml" />
         </update>
     </info>
@@ -21,10 +21,10 @@
             <description>Monks everywhere study and train to bring discipline and order to their lives, and enlighten their minds.</description>
         </sheet>
         <rules>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN" level="3"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE" level="6"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_EXPLOSIVE_FIST" level="11"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_MASTER_OF_THE_INFERNO" level="17"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN" level="3"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE" level="6"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_EXPLOSIVE_FIST" level="11"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_MASTER_OF_THE_INFERNO" level="17"/>
         </rules>
     </element>
     <element name="Fire Within" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_FIRE_WITHIN">
@@ -39,11 +39,11 @@
             </ul>
         </description>
         <sheet>
-            <description>As a bonus action, spend 3 ki points: you have fire resistance, you shed bright/dim light 30/60 ft., you hover instead of walking, ranged fire unarmed strikes, %fire within:damage% fire damage when attacked by melee weapon attack.</description>
+            <description>As a bonus action, spend 3 ki points: you have fire resistance, you shed bright/dim light 30/60 ft., you hover instead of walking, ranged fire unarmed strikes, {{fire within:damage}} fire damage when attacked by melee weapon attack.</description>
         </sheet>
         <rules>
             <stat name="fire within:damage" value="0" bonus="fire within" />
-            <stat name="fire within:damage" value="Wisdom Modifier" bonus="fire within" />
+            <stat name="fire within:damage" value="wisdom:modifier" bonus="fire within" />
         </rules>
     </element>
     <element name="Student of the Blaze" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_WAY_OF_THE_IMMORTAL_FLAME_STUDENT_OF_THE_BLAZE">
@@ -69,8 +69,8 @@
             <p>Starting at 17th level, you wield complete authority over the flames, an exemplar of the monastic training that brings order to the purest chaos. As a demonstration of this mastery over the blaze you can spend 6 ki points to cast the spell conjure elemental as a bonus action on your turn, without using a spell slot or spell components. Unless you have learned this spell from some other source, you can only conjure a fire elemental with this spell. Otherwise, your casting of the conjure elemental spell follows all the rules of the spell.</p>
             <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
         </description>
-        <sheet>
-            <description>You can spend 6 ki points to cast the spell conjure elemental as a bonus action on your turn, without using a spell slot or spell components. Unless you have learned this spell from some other source, you can only conjure a fire elemental with this spell. Otherwise, your casting of the conjure elemental spell follows all the rules of the spell. (1/LR)</description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>You can spend 6 ki points to cast the spell conjure elemental without using a spell slot or spell components. Unless you have learned this spell from some other source, you can only conjure a fire elemental with this spell. Otherwise, your casting of the conjure elemental spell follows all the rules of the spell.</description>
         </sheet>
         <rules />
     </element>

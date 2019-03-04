@@ -4,7 +4,7 @@
 		<name>Rakdos Cultist</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="rakdos-cultist.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/rakdos-cultist.xml" />
 		</update>
 	</info>
@@ -12,11 +12,13 @@
 	<element name="Rakdos Cultist" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_RAKDOS_CULTIST">
 		<description>
 			<p>You're an entertainer at heart. a performer with a Hair for the dramatic and a love of the spotlight. You've spent years honing your craft, mastering a demanding set of skills so you can perform them with panache and make them look easy. The wild applause, the screams of the crowds, the mayhem and terror spreading into the streets-this is what you live for.</p>
-			<p class="indent">You're also a member of a cult devoted to an ancient demon who delights in vio le nce and chaos. It just so happens that Rakdos loves a good show, and your highest aspiration is to please the Defiler, the Lord of Riots, with your own performance.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Acrobatics, Performance</p>
-			<p class="indent"><strong>Languages:</strong> Choose either Abyssal or Giant</p>
-			<p class="indent"><strong>Tool Proficiencies:</strong> One type of musical instrument</p>
-			<p class="indent"><strong>Equipment:</strong> A Rakdos insignia, a musical instrument (one of your choice), a costume, a hooded lantern made of wrought iron, a 10-foot length of chain with sharply spiked links, a tinderbox, 10 tor ches, a set of common clothes, a belt pouch containi ng 10 gp (a mix of Azorius and Boros 1-zino coins), and a bottle of sweet, red juice</p>
+			<p class="indent">You're also a member of a cult devoted to an ancient demon who delights in vio le nce and chaos. It just so happens that Rakdos loves a good show, and your highest aspiration is to please the Defiler, the Lord of Riots, with your own performance.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Acrobatics, Performance</li>
+				<li><strong>Tool Proficiencies:</strong> One type of musical instrument</li>
+				<li><strong>Languages:</strong> Choose either Abyssal or Giant</li>
+				<li><strong>Equipment:</strong> A Rakdos insignia, a musical instrument (one of your choice), a costume, a hooded lantern made of wrought iron, a 10-foot length of chain with sharply spiked links, a tinderbox, 10 tor ches, a set of common clothes, a belt pouch containing 10 gp (a mix of Azorius and Boros 1-zino coins), and a bottle of sweet, red juice</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_FEARSOME_REPUTATION" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_RAKDOS_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
@@ -27,7 +29,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
 			<select type="Language" name="Language, Rakdos Cultist" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_GIANT" />
 			<select type="Proficiency" name="Musical Instrument, Rakdos Cultist" supports="Musical Instrument" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_FEARSOME_REPUTATION" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_FEARSOME_REPUTATION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_RAKDOS_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I revel in mayhem, the more destructive the better.</item>
@@ -66,7 +69,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Fearsome Reputation" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_RAKDOS_CULTIST_FEARSOME_REPUTATION">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>People recognize you as a member of the Cult of Rakdos, and they're careful not to draw your anger or ridicule. You can get away with minor criminal offenses, such as refusing to pay for food at a restaurant or breaking down a door at a local shop, if no legal authorities witness the crime. Most people are too daunted by you to report your wrongdoing to the Azorius.</p>
 		</description>
