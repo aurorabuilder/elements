@@ -4,7 +4,7 @@
 		<name>Goblin</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="goblin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/goblin.xml" />
 		</update>
 	</info>
@@ -36,29 +36,29 @@
 		</description>
 		<setters>
 			<set name="names" type="name">Azzinax, Babolax, Blixanix, Crixizix, Dazzaz, Estrix, Finizix,Juzba, Kaluzax, Lyzaxa, Mizzix, Myznar, Nixispix, Paxizaz, Ravixiz, Stixil, Sunnix, Tozinox, Uxivozi, Vazozav, Wexiny, Zizzix</set>
-			<set name="names-format">$(name)</set>
+			<set name="names-format">{{name}}</set>
 			<set name="height" modifier="2d4">3'5"</set>
 			<set name="weight" modifier="1">35 lb.</set>
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="Dexterity" value="2" />
-			<stat name="Constitution" value="1" />
-			<stat name="Speed" value="30" bonus="base" />
-			<grant type="Size" name="ID_SIZE_SMALL" />
+			<stat name="dexterity" value="2" />
+			<stat name="constitution" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<grant type="Language" name="ID_LANGUAGE_COMMON" />
-			<grant type="Language" name="ID_LANGUAGE_GOBLIN" />
-			<grant type="Racial Trait" name="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
-			<grant type="Racial Trait" name="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+			<grant type="Racial Trait" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
+			<grant type="Racial Trait" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
 		</rules>
 	</element>
 	<element name="Fury of the Small" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL">
 		<description>
 			<p>When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal $(level) extra damage to the creature. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal {{level}} extra damage to the creature.</description>
 		</sheet>
 	</element>
 	<element name="Nimble Escape" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE">
