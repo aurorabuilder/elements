@@ -40,10 +40,10 @@
       <description>Jesters use lowbrow stories, daring acrobatics, and cutting jokes to entertain audiences, ranging from the crowds in a rundown dockside pub to the nobles of a king’s royal court.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_BONUS_PROFICIENCIES" level="3" />
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_TUMBLING_FOOL" level="3" />
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_INSIGHT" level="6" />
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_LUCK" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_BONUS_PROFICIENCIES" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_TUMBLING_FOOL" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_INSIGHT" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_LUCK" level="14" />
     </rules>
   </element>
 
@@ -53,8 +53,8 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
       <select type="Proficiency" name="Skill Proficiency (College of Satire)" supports="Skill" />
     </rules>
   </element>
@@ -68,30 +68,31 @@
       </ul>
     </description>
     <sheet>
-      <description>As a bonus action, you can tumble. When you do so you gain the befits of taking the Dash and Disengage actions, as well as gaining a climbing speed equal to your base speed, and you only take half damage from falling until the end of your turn.</description>  
+      <description>As a bonus action, you can tumble. 
+	  When you do so you gain the befits of taking the Dash and Disengage actions, as well as gaining a climbing speed equal to your current speed, and you only take half damage from falling until the end of your turn.</description>  
     </sheet>
-    <rules />
   </element>
-  <element name="Fool's Insight" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_INSIGHT">
+  <element name="Fool’s Insight" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_INSIGHT">
     <description>
       <p>At 6th level, your ability to gather stories and lore gains a supernatural edge. You can cast detect thoughts up to a number of times equal to your Charisma modifier. You regain any expended uses of this ability after completing a long rest.</p> 
       <p class="indent">If a creature resists your attempt to probe deeper and succeeds at its saving throw against your detect thoughts, it immediately suffers an embarrassing social gaffe. It might loudly pass gas, 
       unleash a thunderous burp, trip and fall, or be compelled to tell a tasteless joke.</p>
     </description>
-    <sheet>
-      <description>Cast detect thoughts without using a spell slot. If a creature succeeds its save against it, it suffers an embarrassing social gaffe.(%Charisma Modifier%/long rest)</description>  
+    <sheet usage="{{charisma:modifier}}/Long Rest">
+      <description>Cast detect thoughts without using a spell slot. If a creature succeeds its save against it, it suffers an embarrassing social gaffe.</description>  
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DETECT_THOUGHTS" />
+      <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" />
     </rules>
   </element>
-  <element name="Fool's Luck" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_LUCK">
+  <element name="Fool’s Luck" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_BARD_SATIRE_FOOLS_LUCK">
     <description>
       <p>Jesters seem to have a knack for pulling themselves out of tight situations, transforming what looks like sure failure into an embarrassing but effective success. At 14th level, you can expend one use of Bardic Inspiration after you fail an ability check, fail a saving throw, or miss with an attack roll. Roll a Bardic Inspiration die and add the number rolled to your attack, saving throw, or ability check, using the new result in place of the failed one.</p>  
       <p class="indent">If using this ability grants you a success on the attack, saving throw, or ability check, note the number you rolled on the Bardic Inspiration die. The DM can then apply that result as a penalty to an attack or check you make, and you cannot use this ability again until you suffer this drawback. When the DM invokes this penalty, describe an embarrassing gaffe or mistake you make as part of the affected die roll.</p>
     </description>
     <sheet>
-      <description>Expend one use of Bardic Inspiration after you fail a check, saving throw, or attack roll. Roll a d$(bardic-inspiration:dice) and add it to the number rolled. If this causes you to succeed, write down the number you rolled. You cannot use this ability again until the DM applies that number as a penalty to an attack or check you make. If this causes you to miss a roll, describe an embarrasing gaffe or mistake you make as part of the action you were trying to do.</description>
+      <description>Expend one use of Bardic Inspiration after you fail a check, saving throw, or attack roll. Roll a d{{bardic-inspiration:dice}} and add it to the number rolled.
+	  If this causes you to succeed, write down the number you rolled. You cannot use this ability again until the DM applies that number as a penalty to an attack or check you make. If this causes you to miss a roll, describe an embarrasing gaffe or mistake you make as part of the action you were trying to do.</description>
     </sheet>
   </element>
       
@@ -109,11 +110,11 @@
       <description>Scouts excels at finding safe passage through dangerous regions.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_BONUS_PROFICIENCIES" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_COMBAT_SUPERIORITY" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_NATURAL_EXPLORER" level="3"/>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_IMPROVED_COMBAT_SUPERIORITY" level="10"/>
-      <grant type="Archetype Feature" name="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_RELENTLESS" level="15"/>
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_BONUS_PROFICIENCIES" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_COMBAT_SUPERIORITY" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_NATURAL_EXPLORER" level="3"/>
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_IMPROVED_COMBAT_SUPERIORITY" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_RELENTLESS" level="15"/>
     </rules>
   </element>
   <element name="Bonus Profciencies" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_BONUS_PROFICIENCIES">
@@ -128,20 +129,22 @@
   <element name="Combat Superiority" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_COMBAT_SUPERIORITY">
     <description>
       <p>At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.</p>
-      <p class="indent"><b>Superiority Dice.</b> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long or short rest.</p>
+      <p class="indent"><b><em>Superiority Dice.</em></b> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long or short rest.</p>
       <p class="indent">You gain another superiority die at 7th level and one more at 15th level.</p>
-      <p class="indent"><b>Using Superiority Dice.</b> You can expend superiority dice to gain a number of different benefits:</p>
-      <ul><li>When you make a check that allows you to apply your proficiency in Athletics, Nature, Perception, Stealth, or Survival, you can expend one superiority die to bolster the check. Add half the number rolled on the superiority die (rounding up) to your check. You apply this bonus after making the check but before learning if it was successful.</li>
-      <li>When you make a weapon attack against a creature, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.</li> 
-      <li>If you are hit by an attack while wearing light or medium armor, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it.</li></ul>
+      <p class="indent"><b><em>Using Superiority Dice.</em></b> You can expend superiority dice to gain a number of different benefits:</p>
+      <ul>
+		<li>When you make a check that allows you to apply your proficiency in Athletics, Nature, Perception, Stealth, or Survival, you can expend one superiority die to bolster the check. Add half the number rolled on the superiority die (rounding up) to your check. You apply this bonus after making the check but before learning if it was successful.</li>
+		<li>When you make a weapon attack against a creature, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.</li> 
+		<li>If you are hit by an attack while wearing light or medium armor, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it.</li>
+	  </ul>
     </description>
     <sheet>
-      <description>You have %superiority dice:amount%d%superiority dice:size%s superiority dice. You can expend them to choose between following effects: Roll one superiority die and add half the rolled number to a Athletics, Nature, Perception, Stealth, or Survival check that allows you to apply your proficiency(before learning if successful or not). Or, roll a superiority die and add the number to an attack roll. Or, When hit while wearing light or medium armor, roll a superiority die and add the number rolled to your AC, if that attack still hits, you take half damage.</description>
+      <description>You have {{superiority dice:amount}}d{{superiority dice:size}}s superiority dice. You can expend them to choose between following effects: Roll one superiority die and add half the rolled number to a Athletics, Nature, Perception, Stealth, or Survival check that allows you to apply your proficiency (before learning if successful or not). Or, roll a superiority die and add the number to an attack roll. Or, When hit while wearing light or medium armor, roll a superiority die and add the number rolled to your AC, if that attack still hits, you take half damage.</description>
     </sheet>
     <rules>
-      <stat name="superiority dice:amount" value="+4" />
-      <stat name="superiority dice:amount" value="+1" level="7" />
-      <stat name="superiority dice:amount" value="+1" level="15" />      
+      <stat name="superiority dice:amount" value="4" />
+      <stat name="superiority dice:amount" value="1" level="7" />
+      <stat name="superiority dice:amount" value="1" level="15" />      
       <stat name="superiority dice:size" value="8" bonus="size"/>
     </rules>
   </element>
@@ -174,8 +177,8 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="superiority dice:size" value="10" level="10" bonus="size"/>
-    	<stat name="superiority dice:size" value="12" level="18" bonus="size"/>
+        <stat name="superiority dice:size" value="10" level="10" bonus="size"/>
+        <stat name="superiority dice:size" value="12" level="18" bonus="size"/>
     </rules>
   </element>
   <element name="Relentless" type="Archetype Feature" source="Unearthed Arcana: Kits of Old" id="ID_WOTC_UA20160104_ARCHETYPE_FEATURE_SCOUT_RELENTLESS">
@@ -185,7 +188,6 @@
     <sheet>
       <description>When you roll initiative and have no superiority dice remaining, you regain 1 superiority die.</description>
     </sheet>
-    <rules />
   </element>
 
 </elements>
