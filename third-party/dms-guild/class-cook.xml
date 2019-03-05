@@ -4,7 +4,7 @@
     <name>cook</name>
     <description>The cook class from DM's Guild.</description>
     <author url="https://www.dmsguild.com/product/232212/The-cook-Class">Sam Grierson</author>
-    <update version="0.0.5">
+    <update version="0.1.2">
       <file name="class-cook.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/classes/class-cook.xml" />
     </update>
   </info>
@@ -140,7 +140,7 @@
     <p>Creatures who do not have mouths or analogous orifices can still be affected by your morsels. Mere contact with your morsels imparts a weakened effect. If a creature cannot ingest your morsel, it has advantage on any saving throws it makes against the morsel's effect.</p>
     </description>
     <sheet>
-      <description>You can make %Constitution Modifier% morsels every rest and your Morsel DC is %morsel:dc%</description>
+      <description>You can make {{constitution:modifier}} morsels every rest and your Morsel DC is {{morsel:dc}}</description>
     </sheet>
     <rules>
       <select type="Class Feature" name="Morsel" supports="Morsel" level="1" number="3"/>
@@ -210,7 +210,7 @@
       <p>At 5th level, you gain the ability to repel enemies that attack you. Your stomach is of utmost importance, and you have toned your belly to be tough and somewhat gelatinous. When a Large or smaller creature within 5 feet of you hits you with a melee attack, you can use your reaction to cause the creature to make a Dexterity saving throw against your Morsel save DC. On a failed save, their speed becomes 0 until the end of the turn, and they are either pushed 10 ft. away from you or knocked prone (your choice).</p>
     </description>
     <sheet>
-      <description>When you are attacked by a melee weapon you can use your reaction to make a Dexterity Save (DC %morsel:dc%) and either be proned or knocked back 10 ft.</description>
+      <description>When you are attacked by a melee weapon you can use your reaction to make a Dexterity Save (DC {{morsel:dc}}) and either be proned or knocked back 10 ft.</description>
     </sheet>
     <rules />
   </element>
@@ -220,8 +220,8 @@
       <p>At 11th level, you can make these additional morsels during a short rest as well as during a long rest.</p>
     </description>
     <sheet>
-      <description>You can cook an additional %Constitution Modifier% morsels, which don't have any prerequisites, every long rest. </description>
-      <description>You can cook an additional %Constitution Modifier% morsels, which don't have any prerequisites, every short or long rest. </description>
+      <description>You can cook an additional {{constitution:modifier}} morsels, which don't have any prerequisites, every long rest. </description>
+      <description>You can cook an additional {{constitution:modifier}} morsels, which don't have any prerequisites, every short or long rest. </description>
     </sheet>
     <rules />
   </element>
@@ -301,7 +301,7 @@
       <p>At 6th level, you create a signature sauce that you dab onto all of your beneficial morsels. Whenever you feed a morsel to a friendly creature, it regains a number of hit points equal to your Constitution modifier.</p>
     </description>
     <sheet>
-      <description>Morsels fed to friendy creatures restore %Constitution Modifier% Hit Points.</description>
+      <description>Morsels fed to friendy creatures restore {{constitution:modifier}} Hit Points.</description>
     </sheet>
     <rules />
   </element>
@@ -311,7 +311,7 @@
       <p>Once you use this feature, you must finish a long rest before you can use it again.</p>
     </description>
     <sheet>
-      <description>You can use your action heal all allies in 30 ft range %level:cook% HP and allow them to make a melee attack as a reaction. Once per long rest.</description>
+      <description>You can use your action heal all allies in 30 ft range {{level:cook}} HP and allow them to make a melee attack as a reaction. Once per long rest.</description>
     </sheet>
     <rules />
   </element>
@@ -379,7 +379,7 @@
       <p>You can use this feature a number of times equal to your Constitution modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
     <sheet>
-      <description> As an action you can make enemies in a 10 ft cone in front of you to make a wisdom saving throw (DC %morsel:dc%). On a failed save they have disadvantage on attack rolls against all creatures that are not you. Can be used %Constitution Modifier% per long rest.</description>
+      <description> As an action you can make enemies in a 10 ft cone in front of you to make a wisdom saving throw (DC {{morsel:dc}}). On a failed save they have disadvantage on attack rolls against all creatures that are not you. Can be used {{constitution:modifier}} per long rest.</description>
     </sheet>
     <rules />
   </element>
@@ -427,8 +427,8 @@
       <description>Increase the limit of strength to 22.</description>
     </sheet>
     <rules>
-      <stat name="Strength" value="+2" />
-      <stat name="Strength Maximum" value="+2" />
+      <stat name="strength" value="2" />
+      <stat name="strength:max" value="2" />
     </rules>
   </element>
   <element name="Constitution" type="Archetype Feature" source="Sam Grierson" id="ID_DMSG_ARCHETYPE_FEATURE_MESS_SERGENT_STRICT_DIET_CONSTITUTION">
@@ -441,8 +441,8 @@
       <description>Increase the limit of Constitution to 22.</description>
     </sheet>
     <rules>
-      <stat name="Constitution" value="+2" />
-      <stat name="Constitution Maximum" value="+2" />
+      <stat name="constitution" value="2" />
+      <stat name="constitution:max" value="2" />
     </rules>
   </element>
   <element name="Dexterity" type="Archetype Feature" source="Sam Grierson" id="ID_DMSG_ARCHETYPE_FEATURE_MESS_SERGENT_STRICT_DIET_DEXTERITY">
@@ -455,8 +455,8 @@
       <description>Increase the limit of dexterity to 22.</description>
     </sheet>
     <rules>
-      <stat name="Dexterity" value="+2" />
-      <stat name="Dexterity Maximum" value="+2" />
+      <stat name="dexterity" value="2" />
+      <stat name="dexterity:max" value="2" />
     </rules>
   </element>
   <element name="Intelligence" type="Archetype Feature" source="Sam Grierson" id="ID_DMSG_ARCHETYPE_FEATURE_MESS_SERGENT_STRICT_DIET_INTELLIGENCE">
@@ -469,8 +469,8 @@
       <description>Increase the of intelligence limit to 22.</description>
     </sheet>
     <rules>
-      <stat name="Intelligence" value="+2" />
-      <stat name="Intelligence Maximum" value="+2" />
+      <stat name="intelligence" value="2" />
+      <stat name="intelligence:max" value="2" />
     </rules>
   </element>
   <element name="Wisdom" type="Archetype Feature" source="Sam Grierson" id="ID_DMSG_ARCHETYPE_FEATURE_MESS_SERGENT_STRICT_DIET_WISDOM">
@@ -483,8 +483,8 @@
       <description>Increase the limit of wisdom to 22.</description>
     </sheet>
     <rules>
-      <stat name="Wisdom" value="+2" />
-      <stat name="Wisdom Maximum" value="+2" />
+      <stat name="wisdom" value="2" />
+      <stat name="wisdom:max" value="2" />
     </rules>
   </element>
   <element name="Charisma" type="Archetype Feature" source="Sam Grierson" id="ID_DMSG_ARCHETYPE_FEATURE_MESS_SERGENT_STRICT_DIET_CHARISMA">
@@ -497,8 +497,8 @@
       <description>Increase the limit of charisma to 22.</description>
     </sheet>
     <rules>
-      <stat name="Charisma" value="+2" />
-      <stat name="Charisma Maximum" value="+2" />
+      <stat name="charisma" value="2" />
+      <stat name="charisma:max" value="2" />
     </rules>
   </element>
 
@@ -647,7 +647,7 @@
       <p>Once per turn, when a creature that you have intoxicated hits a creature with an attack, they can add your Constitution modifier to the damage roll.</p>
     </description>
     <sheet>
-      <description>Once per turn an intoxicated creature can add %Constitution Modifier% to their damage roll</description>
+      <description>Once per turn an intoxicated creature can add {{constitution:modifier}} to their damage roll</description>
     </sheet>
     <rules />
   </element>
@@ -700,7 +700,7 @@
       </ul>
     </description>
     <sheet>
-      <description>When you or an ally kills an enemy of CR 1 or higher you can make a feast out of it's body during the next rest for %feast:number% creatures.</description>
+      <description>When you or an ally kills an enemy of CR 1 or higher you can make a feast out of it's body during the next rest for {{feast:number}} creatures.</description>
     </sheet>
     <rules>
       <stat name="feast:number" value="5" />
@@ -714,7 +714,7 @@
       <p>Your Cook's bag can season and cook the following morsel a number of times equal to your Constitution modifier (minimum of once). You regain expended uses when you finish a long rest.</p>
     </description>
     <sheet>
-      <description>When you deal piercing or slashing damage you can cook 1 Fresh Cut Morsel as a bonus action. You can hold only 1 Fresh Cut and can cook Fresh Cut %Constitution Modifier% times per long rest.</description>
+      <description>When you deal piercing or slashing damage you can cook 1 Fresh Cut Morsel as a bonus action. You can hold only 1 Fresh Cut and can cook Fresh Cut {{constitution:modifier}} times per long rest.</description>
     </sheet>
     <rules>
       <grant type="Class Feature" name="ID_DMSG_CLASS_FEATURE_COOK_MORSEL_FRESH_CUT" />
@@ -736,7 +736,7 @@
       <p>If you observe a creature for 1 minute, you learn if it has any vulnerabilities, immunities, or resistances and what they are. You need only to be able to see the creature for the duration of the minute to gain this knowledge. You cannot observe more than one creature during this minute. You can gain knowledge using this feature a number of times equal to your Constitution modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
     <sheet>
-      <description>Focus on one creature to learn its vulnerabilities, immunities and resistances. You can only do this to %Constitution Modifier% creatures per long rest.</description>
+      <description>Focus on one creature to learn its vulnerabilities, immunities and resistances. You can only do this to {{constitution:modifier}} creatures per long rest.</description>
     </sheet>
     <rules />
   </element>
