@@ -4,7 +4,7 @@
         <name>Feats</name>
         <description>5e homebrew</description>
         <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
-        <update version="0.1.1">
+        <update version="0.1.3">
             <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/feats.xml" />
         </update>
     </info>
@@ -26,13 +26,16 @@
             <set name="sourceUrl">http://www.dandwiki.com/wiki/Blademaster_(5e_Feat)</set>
         </setters>
         <sheet>
-            <description>While wielding a weapon that deals Slashing damage and does not have the heavy property: +1 AC. -  When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. - When you are hit by a ranged weapon attack, you can use your reaction to deflect the missile. When you do so, the damage you take is reduced by 1d10+$(blademaster:deflect). If you reduce the damage to 0 or less, you slice the projectile out of the air, destroying it.</description>
+            <description>While wielding a weapon that deals Slashing damage and does not have the heavy property: +1 AC.
+			When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.
+			When you are hit by a ranged weapon attack, you can use your reaction to deflect the missile. When you do so, the damage you take is reduced by 1d10+{{blademaster:deflect}}. If you reduce the damage to 0 or less, you slice the projectile out of the air, destroying it.</description>
         </sheet>
         <rules>
-            <stat name="AC" value="1" />
-            <stat name="blademaster:deflect" value="Level" />
-            <stat name="blademaster:deflect" value="Strength Modifier" bonus="ability" />
-            <stat name="blademaster:deflect" value="Dexterity Modifier" bonus="ability" />
+			<!-- conditional ac -->
+            <!-- <stat name="ac:misc" value="1" /> -->
+            <stat name="blademaster:deflect" value="level" />
+            <stat name="blademaster:deflect" value="strength:modifier" bonus="ability" />
+            <stat name="blademaster:deflect" value="dexterity:modifier" bonus="ability" />
         </rules>
     </element>
 

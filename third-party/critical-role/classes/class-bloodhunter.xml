@@ -4,7 +4,7 @@
         <name>Blood Hunter</name>
         <description>The Blood Hunter class (v2.0).</description>
         <author url="http://www.dmsguild.com/product/170777/Blood-Hunter-Class">Matthew Mercer</author>
-        <update version="0.1.3">
+        <update version="0.1.5">
             <file name="class-bloodhunter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/class-bloodhunter.xml" />
         </update>
     </info>
@@ -28,7 +28,7 @@
             <p>
                 <span class="emphasis">Hit Dice:</span>1d10 per blood hunter level
                 <br />
-                <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modefier
+                <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modifier
                 <br />
                 <span class="emphasis">Hit Points at Higher Levels:</span>1d10 (or 6) + your Constitution modifier per blood hunter level after 1st
             </p>
@@ -81,14 +81,14 @@
         </setters>
         <sheet display="false"/>
         <rules>
-            <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
-            <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
             <select type="Proficiency" name="Skill Proficiency (Blood Hunter)" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" requirements="!ID_CRIT_MULTICLASS_BLOOD_HUNTER"/>
             <grant type="Class Feature" id="ID_CRIT_CLASS_FEATURE_BLOOD_HUNTER_HUNTERS_BANE" level="1" />
             <grant type="Class Feature" id="ID_CRIT_CLASS_FEATURE_BLOOD_HUNTER_CRIMSON_RITE" level="1" />
@@ -110,12 +110,12 @@
             </setters>
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-                <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
             </rules>
         </multiclass>
     </element>
@@ -229,14 +229,11 @@
     <element name="Blood Maledict" type="Class Feature" source="Critical Role" id="ID_CRIT_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_MALEDICT">
         <description>
             <p>At 2nd level, you gain the knowledge to further channel, and sacrifice, a part of your vital essence to curse and manipulate your enemies. You gain one blood curse of your choice, detailed in the “blood curses” section below. You learned one additional blood curse of your choice at 5th, 9th, 13th, 16th, and 20th level.</p>
-            <p class="indent">When you use your Blood Maledict, you choose which curse to invoke. While invoking a blood curse, but before it affects the target, you may choose to                                                 
-                <i>amplify</i> the curse by suffering damage equal to a roll of your crimson rite damage die. An amplified curse gains an additional effect, noted in the curse’s description. Creatures that do not have blood in their bodies are immune to the blood curses (DM’s discretion).
-                                    
-            </p>
+            <p class="indent">When you use your Blood Maledict, you choose which curse to invoke. While invoking a blood curse, but before it affects the target, you may choose to <i>amplify</i> the curse by suffering damage equal to a roll of your crimson rite damage die. An amplified curse gains an additional effect, noted in the curse’s description. Creatures that do not have blood in their bodies are immune to the blood curses (DM’s discretion).</p>
             <p class="indent">You can use this feature once. You regain expended uses when you finish a short or long rest. Beginning at 6th level, you can use your Blood Maledict feature twice between rests, at 11th level you can use it three times between rests, and at 17th level you can use it four times between rests.</p>
         </description>
         <sheet>
-            <description>You gain the knowledge to further channel, and sacrifice, a part of your vital essence to curse and manipulate your enemies. You can use $(blood maledict:curse count) blood curses / short rest.</description>
+            <description>You gain the knowledge to further channel, and sacrifice, a part of your vital essence to curse and manipulate your enemies. You can use {{blood maledict:curse count}} blood curses / short rest.</description>
         </sheet>
         <rules>
             <select type="Class Feature" name="Blood Curse" supports="Blood Curse" level="2" />
@@ -255,9 +252,7 @@
         <description>
             <p>At 3rd level, you commit to an order of blood hunter martial focus. Choose Order of the Mutant, Order of the Ghostslayer, or Order of the Profane Soul, all detailed at the end of the class description. The order you choose grants you features at 3rd level, and again at 7th, 11th, 15th, and 18th level.</p>
         </description>
-        <sheet>
-            <description></description>
-        </sheet>
+        <sheet />
         <rules>
             <select type="Archetype" name="Blood Hunter Order" supports="Blood Hunter Order" />
         </rules>
@@ -282,6 +277,9 @@
         <sheet>
             <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
         </sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+		</rules>
     </element>
     <element name="Grim Psychometry" type="Class Feature" source="Critical Role" id="ID_CRIT_CLASS_FEATURE_BLOOD_HUNTER_GRIM_PSYCHOMETRY">
         <description>
@@ -377,7 +375,7 @@
             </p>
         </description>
         <sheet>
-            <description>When an enemy casts a spell that requires a Dexterity saving throw, you can use your reaction to deflect the spell with your crimson rite. You gain a +$(Wisdom Modifier) bonus to the initial saving throw against that spell.</description>
+            <description>When an enemy casts a spell that requires a Dexterity saving throw, you can use your reaction to deflect the spell with your crimson rite. You gain a +{{wisdom:modifier}} bonus to the initial saving throw against that spell.</description>
         </sheet>
     </element>
     <element name="Blood Curse of the Marked" type="Class Feature" source="Critical Role" id="ID_CRIT_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_MARKED">
@@ -479,8 +477,8 @@
             <p class="indent">Upon reaching 11th level, any creature you hit with your Rite of the Dawn suffers this additional radiant damage.</p>
         </description>
         <sheet>
-            <description>If you hit an Undead creature with your Rite of the Dawn, it suffers $(Wisdom Modifier) additional radiant damage.</description>
-            <description level="11">If you hit a creature with your Rite of the Dawn, it suffers $(Wisdom Modifier) additional radiant damage.</description>
+            <description>If you hit an Undead creature with your Rite of the Dawn, it suffers {{wisdom:modifier}} additional radiant damage.</description>
+            <description level="11">If you hit a creature with your Rite of the Dawn, it suffers {{wisdom:modifier}} additional radiant damage.</description>
         </sheet>
         <rules>
             <grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_GHOSTSLAYER_ESOTERIC_RITE_DAWN" />
@@ -510,7 +508,7 @@
             <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a short or long rest.</p>
         </description>
         <sheet>
-            <description>When you use that Attack action, you can make one weapon attack as a bonus action, and you temporarily become spectral. Until the end of your next turn, you can move through other creatures and objects as if they were difficult terrain. You take 1d10 force damage if you end your turn inside an object. If you are inside an object when and you are no longer spectral, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you moved. You may expend a use of this feature as a bonus action instead of making an attack. ($(Wisdom Modifier)/SR)</description>
+            <description>When you use that Attack action, you can make one weapon attack as a bonus action, and you temporarily become spectral. Until the end of your next turn, you can move through other creatures and objects as if they were difficult terrain. You take 1d10 force damage if you end your turn inside an object. If you are inside an object when and you are no longer spectral, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you moved. You may expend a use of this feature as a bonus action instead of making an attack. ({{wisdom:modifier}}/SR)</description>
         </sheet>
     </element>
     <element name="Gravesight" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_GHOSTSLAYER_GRAVESIGHT">
@@ -682,12 +680,12 @@
             </p>
         </description>
         <sheet>
-            <description>Your Dexterity score increases by $(mutation score), as does your Dexterity maximum. Side effect: Your Wisdom score decreases by $(mutation score).</description>
+            <description>Your Dexterity score increases by {{mutation score}}, as does your Dexterity maximum. Side effect: Your Wisdom score decreases by {{mutation score}}.</description>
         </sheet>
         <rules>
-            <!-- <stat name="Dexterity" value="mutation score" /> -->
-            <!-- <stat name="Dexterity Maximum" value="mutation score" /> -->
-            <!-- <stat name="Wisdom" value="-mutation score" /> -->
+            <!-- <stat name="dexterity" value="mutation score" /> -->
+            <!-- <stat name="dexterity:max" value="mutation score" /> -->
+            <!-- <stat name="wisdom" value="-mutation score" /> -->
         </rules>
     </element>
     <element name="Conversant" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_MUTAGEN_FORMULA_CONVERSANT">
@@ -746,8 +744,8 @@
             </p>
         </description>
         <sheet>
-            <description>You gain immunity to the grappled and restrained conditions. Side effect: You gain a -$(mobility formula:penalty) penalty to initiative.</description>
-            <description level="11">You gain immunity to the grappled, restrained, and paralyzed conditions. Side effect: You gain a -$(mobility formula:penalty) penalty to initiative.</description>
+            <description>You gain immunity to the grappled and restrained conditions. Side effect: You gain a -{{mobility formula:penalty}} penalty to initiative.</description>
+            <description level="11">You gain immunity to the grappled, restrained, and paralyzed conditions. Side effect: You gain a -{{mobility formula:penalty}} penalty to initiative.</description>
         </sheet>
         <rules>
             <stat name="mobility formula:penalty" value="mutation score" />
@@ -779,12 +777,12 @@
             </p>
         </description>
         <sheet>
-            <description>Your Strength score increases by $(mutation score), as does your Strength maximum. Side effect: Your Dexterity score decreases by $(mutation score).</description>
+            <description>Your Strength score increases by {{mutation score}}, as does your Strength maximum. Side effect: Your Dexterity score decreases by {{mutation score}}.</description>
         </sheet>
         <rules>
-            <!-- <stat name="Strength" value="mutation score" /> -->
-            <!-- <stat name="Strength Maximum" value="mutation score" /> -->
-            <!-- <stat name="Dexterity" value="-mutation score" /> -->
+            <!-- <stat name="strength" value="mutation score" /> -->
+            <!-- <stat name="strength:max" value="mutation score" /> -->
+            <!-- <stat name="dexterity" value="-mutation score" /> -->
         </rules>
     </element>
     <element name="Precision" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_MUTAGEN_FORMULA_PRECISION">
@@ -833,7 +831,7 @@
             </p>
         </description>
         <sheet>
-            <description>While conscious and in combat, you regenerate $(reconstruction formula:regeneration) hit points at the start of your turn as long as you are above 0 hit points. Side effect: Your speed decreases by 10 feet.</description>
+            <description>While conscious and in combat, you regenerate {{reconstruction formula:regeneration}} hit points at the start of your turn as long as you are above 0 hit points. Side effect: Your speed decreases by 10 feet.</description>
         </sheet>
         <rules>
             <stat name="reconstruction formula:regeneration" value="mutation score" />
@@ -851,12 +849,12 @@
             </p>
         </description>
         <sheet>
-            <description>Your Wisdom score increases by $(mutation score), as does your Wisdom maximum. Side effect: Your armor class decreases by $(mutation score).</description>
+            <description>Your Wisdom score increases by {{mutation score}}, as does your Wisdom maximum. Side effect: Your armor class decreases by {{mutation score}}.</description>
         </sheet>
         <rules>
-            <!-- <stat name="Wisdom" value="mutation score" /> -->
-            <!-- <stat name="Wisdom Maximum" value="mutation score" /> -->
-            <!-- <stat name="AC" value="-mutation score" /> -->
+            <!-- <stat name="wisdom" value="mutation score" /> -->
+            <!-- <stat name="wisdom:max" value="mutation score" /> -->
+            <!-- <stat name="ac:misc" value="-mutation score" /> -->
         </rules>
     </element>
     <element name="Shielded" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_MUTAGEN_FORMULA_SHIELDED">
@@ -898,7 +896,7 @@
             </p>
         </description>
         <sheet>
-            <description>You gain a +$(wariness formula:initiative) bonus to initiative. Side effect: You have disadvantage on Wisdom (Perception) checks.</description>
+            <description>You gain a +{{wariness formula:initiative}} bonus to initiative. Side effect: You have disadvantage on Wisdom (Perception) checks.</description>
         </sheet>
         <rules>
             <stat name="wariness formula:initiative" value="mutation score" />
