@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>Feats from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.0">
+		<update version="0.1.1">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/feats.xml" />
 		</update>
 	</info>
@@ -126,14 +126,19 @@
 				<li>You have advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect the presence of secret doors.</li>
 				<li>You have advantage on saving throws made to avoid or resist traps.</li>
 				<li>You have resistance to the damage dealt by traps.</li>
-				<li>You can search for traps while traveling at a normal pace, instead of only at a slow pace.</li>
+				<!-- <li>You can search for traps while traveling at a normal pace, instead of only at a slow pace.</li> -->
+				<li>Traveling at a fast pace doesn’t impose the normal −5 penalty on your passive Wisdom (Perception) score.</li>
 			</ul>
 		</description>
 		<sheet>
+			<!-- <description>You have advantage on Perception and Investigation checks made to detect the presence of secret doors.
+			You have advantage on saving throws made to avoid or resist traps.
+			You have resistance to the damage dealt by traps.
+			You can search for traps while traveling at a normal pace, instead of only at a slow pace.</description> -->
 			<description>You have advantage on Perception and Investigation checks made to detect the presence of secret doors.
 			You have advantage on saving throws made to avoid or resist traps.
 			You have resistance to the damage dealt by traps.
-			You can search for traps while traveling at a normal pace, instead of only at a slow pace.</description>
+			Traveling at a fast pace doesn’t impose the normal −5 penalty on your passive Perception score.</description>			
 		</sheet>
 		<!-- todo: traps resistance condition -->
 	</element>
@@ -158,7 +163,7 @@
 	</element>
 	<element name="Elemental Adept" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
-		<requirements>[type:Spell]</requirements>
+		<requirements>[type:spell]</requirements>
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>When you gain this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.</p>
@@ -626,13 +631,13 @@
 		<description>
 			<p>You can keep your enemies at bay with reach weapons. You gain the following benefits:</p>
 			<ul>
-				<li>When you take the Attack action and attack with only a glaive, halberd, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage.</li>
-				<li>While you are wielding a glaive, halberd, pike, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach.</li>
+				<li>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.</li>
+				<li>While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>When you take the Attack action and attack with only a glaive, halberd, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage.
-			While you are wielding a glaive, halberd, pike, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach.</description>
+			<description>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.
+			While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach.</description>
 		</sheet>
 	</element>
 
@@ -833,13 +838,13 @@
 			<p>You have mastered techniques to take advantage of every drop in any enemy’s guard, gaining the following benefits:</p>
 			<ul>
 				<li>When you hit a creature with an opportunity attack, the creature’s speed becomes 0 for the rest of the turn.</li>
-				<li>Creatures within 5 feet of you provoke opportunity attacks from you even if they take the Disengage action before leaving your reach.</li>
+				<li>Creatures provoke opportunity attacks from you even if they take the Disengage action before leaving your reach.</li>
 				<li>When a creature within 5 feet of you makes an attack against a target other than you (and that target doesn’t have this feat), you can use your reaction to make a melee weapon attack against the attacking creature.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>When you hit a creature with an opportunity attack, the creature’s speed becomes 0 for the rest of the turn.
-			Creatures within 5 feet of you provoke opportunity attacks from you even if they take the Disengage action before leaving your reach.
+			Creatures provoke opportunity attacks from you even if they take the Disengage action before leaving your reach.
 			When a creature within 5 feet of you makes an attack against a target other than you, you can use your reaction to make a melee weapon attack against the attacking creature.</description>
 		</sheet>
 	</element>
@@ -902,7 +907,7 @@
 	</element>
 	<element name="Spell Sniper" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SPELLSNIPER">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
-		<requirements>[type:Spell]</requirements>
+		<requirements>[type:spell]</requirements>
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>You have learned techniques to enhance your attacks with certain kinds of spells, gaining the following benefits:</p>
@@ -926,19 +931,19 @@
 			<p>Accustomed to rough-and-tumble fighting using whatever weapons happen to be at hand, you gain the following benefits:</p>
 			<ul>
 				<li>Increase your Strength or Constitution score by 1, to a maximum of 20.</li>
-				<li>You are proficient with improvised weapons and unarmed strikes.</li>
+				<li>You are proficient with improvised weapons.</li>
 				<li>Your unarmed strike uses a d4 for damage.</li>
 				<li>When you hit a creature with an unarmed strike or an improvised weapon on your turn, you can use a bonus action to attempt to grapple the target.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>You are proficient with improvised weapons and unarmed strikes.
+			<description>You are proficient with improvised weapons.
 			Your unarmed strike uses a d4 for damage.
 			When you hit a creature with an unarmed strike or an improvised weapon on your turn, you can use a bonus action to attempt to grapple the target.</description>
 		</sheet>
 		<rules>
 			<select type="Ability Score Improvement" name="Ability Score Increase (Tavern Brawler)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
-			<!-- todo: You are proficient with improvised weapons and unarmed strikes. -->
+			<!-- todo: You are proficient with improvised weapons. -->
 		</rules>
 	</element>
 	<element name="Tough" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_TOUGH">
@@ -978,7 +983,7 @@
 			<p>You have practiced extensively with a variety of weapons, gaining the following benefits:</p>
 			<ul>
 				<li>Increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
-				<li>You gain proficiency with four weapons of your choice.</li>
+				<li>You gain proficiency with four weapons of your choice. Each one must be a simple or a martial weapon.</li>
 			</ul>
 		</description>
 		<sheet />
