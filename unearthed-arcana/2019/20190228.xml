@@ -276,11 +276,11 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Class Feature" name="Improvement Option, Artificer Level 4" supports="Improvement Option,Artificer,4" level="4" />
-			<select type="Class Feature" name="Improvement Option, Artificer Level 8" supports="Improvement Option,Artificer,8" level="8" />
-			<select type="Class Feature" name="Improvement Option, Artificer Level 12" supports="Improvement Option,Artificer,12" level="12" />
-			<select type="Class Feature" name="Improvement Option, Artificer Level 16" supports="Improvement Option,Artificer,16" level="16" />
-			<select type="Class Feature" name="Improvement Option, Artificer Level 19" supports="Improvement Option,Artificer,19" level="19" />
+			<select type="Class Feature" name="Improvement Option, Artificer Level 4" supports="Improvement Option,UA Artificer,4" level="4" />
+			<select type="Class Feature" name="Improvement Option, Artificer Level 8" supports="Improvement Option,UA Artificer,8" level="8" />
+			<select type="Class Feature" name="Improvement Option, Artificer Level 12" supports="Improvement Option,UA Artificer,12" level="12" />
+			<select type="Class Feature" name="Improvement Option, Artificer Level 16" supports="Improvement Option,UA Artificer,16" level="16" />
+			<select type="Class Feature" name="Improvement Option, Artificer Level 19" supports="Improvement Option,UA Artificer,19" level="19" />
 		</rules>
 	</element>
 	<element name="Arcane Armament" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARCANE_ARMAMENT">
@@ -486,7 +486,7 @@
 			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
 		</rules>
 	</element>
-	<element name="Might of the Master" type="Companion Trait" source="Player’s Handbook" id="ID_WOTC_UA20190228_COMPANION_TRAIT_HOMUNCULUS_MIGHT_OF_THE_MASTER">
+	<element name="Might of the Master" type="Companion Trait" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_COMPANION_TRAIT_HOMUNCULUS_MIGHT_OF_THE_MASTER">
 		<description>
 			<p>The following numbers increase by 1 when your proficiency bonus increases by 1: the homunculus’s skill bonuses and the bonuses to hit and damage of its Acidic Spittle.</p>
 		</description>
@@ -520,7 +520,7 @@
 			<stat name="companion:survival:misc" value="might-of-the-master:bonus" /> -->
 		</rules>
 	</element>
-	<element name="Acidic Spittle" type="Companion Action" source="Player’s Handbook" id="ID_WOTC_UA20190228_COMPANION_ACTION_HOMUNCULUS_ACIDIC_SPITTLE">
+	<element name="Acidic Spittle" type="Companion Action" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_COMPANION_ACTION_HOMUNCULUS_ACIDIC_SPITTLE">
 		<description>
 			<p>Ranged Weapon Attack: +4 to hit, range 30 ft., one target you can see. Hit: 1d6 + 2 acid damage.</p>
 		</description>
@@ -537,7 +537,7 @@
 			<stat name="attack:acidic spittle:damage bonus" value="might-of-the-master:bonus" /> -->
 		</rules>
 	</element>
-	<element name="Alchemical Salve" type="Companion Action" source="Player’s Handbook" id="ID_WOTC_UA20190228_COMPANION_ACTION_HOMUNCULUS_ALCHEMICAL_SALVE">
+	<element name="Alchemical Salve" type="Companion Action" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_COMPANION_ACTION_HOMUNCULUS_ALCHEMICAL_SALVE">
 		<description>
 			<p>The homunculus produces a salve and touches one creature you designate. The target receives one of the following magical benefits of your choice:</p>
 			<ul>
@@ -641,8 +641,18 @@
 			</table>
 		</description>
 		<sheet>
-			<description>With your smith’s tools in hand, you can take an action to magically summon a Medium turret in an unoccupied space on a horizontal surface within 5 feet of you.</description>
+			<description>With your smith’s tools in hand, you can take an action to magically summon a Medium turret (AC: 18, HP: {{arcane-turret:hp}}) in an unoccupied space on a horizontal surface within 5 feet of you. It is immune to poison damage, psychic damage, and all conditions. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 10 minutes. You can dismiss it early as an action.
+			On each of your turns, you can take a bonus action to cause the turret to activate if you are within 60 feet of it. As part of the same action, you can direct the turret to walk or climb up to 15 feet to an unoccupied space.
+			You can summon a turret once for free and must finish a long rest before doing so again. You can also summon the turret by expending a spell slot of 1st level or higher. If you summon a second turret, the first turret disappears.
+			As an action, you can command your turret to detonate if you are within 60 feet of it. Doing so destroys the turret and forces each creature within 10 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d6 force damage on a failed save or half as much damage on a successful one.</description>
 		</sheet>
+		<rules>
+			<stat name="arcane-turret:hp" value="level:artificer" />
+			<stat name="arcane-turret:hp" value="level:artificer" />
+			<stat name="arcane-turret:hp" value="level:artificer" />
+			<stat name="arcane-turret:hp" value="level:artificer" />
+			<stat name="arcane-turret:hp" value="level:artificer" />
+		</rules>
 	</element>
 	<element name="Wand Prototype" type="Archetype Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARTILLERIST_WAND_PROTOTYPE">
 		<description>
@@ -1404,13 +1414,13 @@
 			<set name="type" addition="a simple or martial weapon with the thrown property">Weapon</set>
 			<set name="rarity">Artificer Infusion</set>
 			<set name="enhancement">1</set>
-			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_WEAPON_PROPERTY_THROWN</set>
+			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),ID_INTERNAL_WEAPON_PROPERTY_THROWN</set>
 			<set name="name-format">Returning {{parent}} +{{enhancement}}</set>
 		</setters>
 	</element>
 
 	<!-- new spell -->
-	<element name="Arcane Weapon" type="Spell" source="Player’s Handbook" id="ID_WOTC_UA20190228_SPELL_ARCANE_WEAPON">
+	<element name="Arcane Weapon" type="Spell" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_SPELL_ARCANE_WEAPON">
 		<supports>UA Artificer</supports>
 		<description>
 			<p>You channel arcane energy into one simple or martial weapon you’re holding, and choose one damage type: acid, cold, fire, lightning, poison, or thunder. Until the spell ends, you deal an extra 1d6 damage of the chosen type to any target you hit with the weapon. If the weapon isn’t magical, it becomes a magic weapon for the spell’s duration.</p>
@@ -1653,4 +1663,131 @@
 	<append id="ID_PHB_SPELL_WALL_OF_STONE">
 		<supports>UA Artificer</supports>
 	</append>
+
+	<!-- UA workaround -->
+	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_4">
+		<supports>Improvement Option, UA Artificer, 4</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 4)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_4">
+		<supports>Improvement Option, UA Artificer, 4</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 4)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_8">
+		<supports>Improvement Option, UA Artificer, 8</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 8)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_8">
+		<supports>Improvement Option, UA Artificer, 8</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 8)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_12">
+		<supports>Improvement Option, UA Artificer, 12</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 12)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_12">
+		<supports>Improvement Option, UA Artificer, 12</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 12)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_16">
+		<supports>Improvement Option, UA Artificer, 16</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 16)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_16">
+		<supports>Improvement Option, UA Artificer, 16</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 16)" type="Feat" />
+		</rules>
+	</element> 
+	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_19">
+		<supports>Improvement Option, UA Artificer, 19</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 19)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_19">
+		<supports>Improvement Option, UA Artificer, 19</supports>
+		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 19)" type="Feat" />
+		</rules>
+	</element>
 </elements>
