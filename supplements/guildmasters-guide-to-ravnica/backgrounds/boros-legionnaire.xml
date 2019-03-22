@@ -4,7 +4,7 @@
 		<name>Boros Legionnaire</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="boros-legionnaire.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/boros-legionnaire.xml" />
 		</update>
 	</info>
@@ -12,11 +12,12 @@
 	<element name="Boros Legionnaire" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_BOROS_LEGIONNAIRE">
 		<description>
 			<p>As a member of the Boros Legion, your life is devoted to the service of angels and consecrated to the work of establishing justice and peace on the streets of Ravnica. You might be a true believer, inspired by the example of the angels, moved by the plight of the downtrodden, and devoted to the cause of justice. Or you could be a cynic in the ranks, perhaps because you reluctantly followed in the footsteps of a Boros parent, succumbed to the persuasion of a charismatic recruiter’s lofty promises, or were drawn in by the prospect of a life of action.</p>
-			<br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Athletics, Intimidation</p>
-			<p class="indent"><strong>Tool Proficiencies:</strong> One type of gaming set</p>
-			<p class="indent"><strong>Languages:</strong> Choose one of Celestial, Draconic, Goblin, or Minotaur</p>
-			<p class="indent"><strong>Equipment:</strong> A Boros insignia, a feather from an angel’s wing, a tattered piece of a Boros banner (a souvenir from a famous battle), a set of common clothes, and a belt pouch containing 2 gp (Boros-minted 1-zino coins)</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Intimidation</li>
+				<li><strong>Tool Proficiencies:</strong> One type of gaming set</li>
+				<li><strong>Languages:</strong> Choose one of Celestial, Draconic, Goblin, or Minotaur</li>
+				<li><strong>Equipment:</strong> A Boros insignia, a feather from an angel’s wing, a tattered piece of a Boros banner (a souvenir from a famous battle), a set of common clothes, and a belt pouch containing 2 gp (Boros-minted 1-zino coins)</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_LEGION_STATION" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_BOROS_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
@@ -27,7 +28,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
 			<select type="Proficiency" name="Tool Proficiency, Boros Legionnaire" supports="Gaming Set" />
 			<select type="Language" name="Language, Boros Legionnaire" supports="ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_DRACONIC|ID_LANGUAGE_GOBLIN|ID_GGTR_LANGUAGE_MINOTAUR" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_LEGION_STATION" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_LEGION_STATION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_BOROS_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I approach every task with the same high degree of military precision.</item>
@@ -66,7 +68,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Legion Station" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_BOROS_LEGIONNAIRE_LEGION_STATION">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>You have an established place in the hierarchy of the Boros Legion. You can requisition simple equipment for temporary use, and you can gain access to any Boros garrison in Ravnica, where you can rest in safety and receive the attention of medics. You are also paid a salary of 1 gp (a Boros-minted 1-zino coin) per week, which (combined with free lodging in your garrison) enables you to maintain a poor lifestyle between adventures.</p>
 		</description>
