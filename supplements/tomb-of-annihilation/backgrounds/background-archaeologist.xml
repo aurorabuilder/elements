@@ -4,19 +4,19 @@
 		<name>Archaeologist</name>
 		<description>Archaeologist Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tomb-annihilation">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="background-archaeologist.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/tomb-of-annihilation/backgrounds/background-archaeologist.xml" />
 		</update>
 	</info>
 	<element name="Archaeologist" type="Background" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ARCHAEOLOGIST">
 		<description>
 			<p>An archaeologist learns about the long-lost and fallen cultures of the past by studying their remains -their bones, their ruins, their surviving masterworks, and their tombs. Those who practice archaeology travel to the far corners of the world to root through crumbled cities and lost dungeons, digging in search of artifacts that might tell the stories of monarchs and high priests, wars and cataclysms.</p>
-			<p>
-				<span class="emphasis">Skill Proficiencies:</span>History, Survival<br/>
-				<span class="emphasis">Tool Proficiencies:</span>Cartographer's tools or navigator's tools<br/>
-				<span class="emphasis">Languages:</span>One of your choice<br/>
-				<span class="emphasis">Equipment:</span>A wooden case containing a map to a ruin or dungeon, a bullseye lantern, a miner's pick, a set of traveler's clothes, a shovel, a two-person tent, a trinket recovered from a dig site, and a pouch containing 25 gp<br/>
-			</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Cartographer's tools or navigator's tools</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A wooden case containing a map to a ruin or dungeon, a bullseye lantern, a miner's pick, a set of traveler's clothes, a shovel, a two-person tent, a trinket recovered from a dig site, and a pouch containing 25 gp</li>
+			</ul>
 			<h5>DUST DIGGER</h5>
 			<p>Prior to becoming an adventurer, you spent most of your young life crawling around in the dust, pilfering relics of questionable value from crypts and ruins. Though you managed to sell a few of your discoveries and earn enough coin to buy proper adventuring gear, you have held onto an item that has great emotional value to you. Roll on the Signature Item table to see what you have, or choose an item from the table.</p>
 			<table>
@@ -40,8 +40,9 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
 			<select type="Proficiency" name="Tool Proficiency (Archaeologist)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
-			<select type="Language" name="Language (Archaeologist)" number="1" />
-			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ARCHAEOLOGIST_FEATURE_HISTORICAL_KNOWLEDGE" />
+			<select type="Language" name="Language (Archaeologist)" />
+			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ARCHAEOLOGIST_FEATURE_HISTORICAL_KNOWLEDGE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Signature Item" type="List" optional="true">
 				<item id="1">10-foot pole</item>
 				<item id="2">Crowbar</item>
@@ -89,11 +90,10 @@
 		</rules>
 	</element>
 	<element name="Feature: Historical Knowledge" type="Background Feature" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ARCHAEOLOGIST_FEATURE_HISTORICAL_KNOWLEDGE">
+		<supports>Background Feature</supports>
 		<description>
 			<p>When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, yuan-ti, or some other known race. In addition, you can determine the monetary value of art objects more than a century old.</p>
 		</description>
-		<sheet>
-			<description>When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, yuan-ti, or some other known race. In addition, you can determine the monetary value of art objects more than a century old.</description>
-		</sheet>
+		<sheet alt="Historical Knowledge" />
 	</element>
 </elements>

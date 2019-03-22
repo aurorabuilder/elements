@@ -4,7 +4,7 @@
 		<name>Eladrin</name>
 		<description>The Eladrin subrace from Mordenkainen’s Tome of Foes</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/mordenkainens-tome-foes">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="subrace-eladrin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/mordenkainens-tome-of-foes/races/subrace-eladrin.xml" />
 		</update>
 	</info>
@@ -92,7 +92,7 @@
         </description>
 		<sheet display="false" />
         <rules>
-			<stat name="Charisma" value="1" />
+			<stat name="charisma" value="1" />
 			<grant type="Racial Trait" id="ID_WOTC_MTOF_SUBRACE_ELADRIN_FEYSTEP" />
 			<select type="Racial Trait" name="Eladrin’s Season" supports="Eladrin Season" />
         </rules>
@@ -101,17 +101,15 @@
 	<element name="Fey Step" type="Racial Trait" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_SUBRACE_ELADRIN_FEYSTEP">
 		<description>
 			<p>As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can’t do so again until you finish a short or long rest.</p>
-			<p class="indent">When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier:</p>
-
+			<p class="indent">When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. (1/SR)</description>
-			<description level="3">As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. (1/SR)</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can magically teleport up to 30 feet to an unoccupied space you can see.</description>
 		</sheet>
 		<rules>		
 			<stat name="fey step:season:dc" value="8" />
-			<stat name="fey step:season:dc" value="Proficiency" />
-			<stat name="fey step:season:dc" value="Charisma Modifier" />
+			<stat name="fey step:season:dc" value="proficiency" />
+			<stat name="fey step:season:dc" value="charisma:modifier" />
 
 			<grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_FEYSTEP_SEASON_AUTUMN" level="3" requirements="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_SEASON_AUTUMN" />
 			<grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_FEYSTEP_SEASON_WINTER" level="3" requirements="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_SEASON_WINTER" />
@@ -167,7 +165,7 @@
 			<p>Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to it.</p>
 		</description>
 		<sheet>
-			<description>Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a DC$(fey step:season:dc) Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to it.</description>
+			<description>Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a DC{{fey step:season:dc}} Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to it.</description>
 		</sheet>
 	</element>
 	<element name="Fey Step (Winter)" type="Racial Trait" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_FEYSTEP_SEASON_WINTER">
@@ -176,7 +174,7 @@
 			<p>When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description>When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a DC$(fey step:season:dc) Wisdom saving throw or be frightened of you until the end of your next turn.</description>
+			<description>When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a DC{{fey step:season:dc}} Wisdom saving throw or be frightened of you until the end of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="Fey Step (Spring)" type="Racial Trait" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_RACIAL_TRAIT_ELADRIN_FEYSTEP_SEASON_SPRING">
@@ -194,11 +192,11 @@
 			<p>Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your Charisma modifier (minimum of 1 damage).</p>
 		</description>
 		<sheet>
-			<description>Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes $(fey step:summer:damage) fire damage.</description>
+			<description>Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes {{fey step:summer:damage}} fire damage.</description>
 		</sheet>
 		<rules>
 			<stat name="fey step:summer:damage" value="1" bonus="damage" />
-			<stat name="fey step:summer:damage" value="Charisma Modifier" bonus="damage" />
+			<stat name="fey step:summer:damage" value="charisma:modifier" bonus="damage" />
 		</rules>
 	</element>
 </elements>

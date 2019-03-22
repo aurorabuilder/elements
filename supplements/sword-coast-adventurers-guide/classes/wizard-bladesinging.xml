@@ -4,7 +4,7 @@
 		<name>Bladesinging</name>
 		<description>The Bladesinging archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.1.1">
+		<update version="0.1.3">
 			<file name="wizard-bladesinging.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/wizard-bladesinging.xml" />
 		</update>
 	</info>
@@ -41,11 +41,11 @@
 			<description>Bladesingers are elves who bravely defend their people and lands.</description>
 		</sheet>
 		<rules>
-			<grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" level="2" />
-			<grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" level="2" />
-			<grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" level="6" />
-			<grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" level="10" />
-			<grant type="Archetype Feature" name="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" level="14" />
 		</rules>
 	</element>
 	<element name="Training in War and Song" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG">
@@ -68,19 +68,19 @@
 			<p class="indent">You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time you choose (no action required).</p>
 			<p class="indent">While your Bladesong is active, you gain the following benefits:</p>
 			<ul>
-				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of+ 1).</li>
+				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of + 1).</li>
 				<li>Your walking speed increases by 10 feet.</li>
 				<li>You have advantage on Dexterity (Acrobatics) checks .</li>
 				<li>You gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +l).</li>
 			</ul>
 			<p class="indent">You can use this feature twice. You regain all expended uses of it when you finish a short or long rest.</p>
 		</description>
-		<sheet usage="2 / Short Rest">
-			<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +%bladesong:int% AC, +10 speed, advantage on Acrobatics checks, +%bladesong:int% to concentration checks.</description>
+		<sheet usage="2/Short Rest">
+			<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +{{bladesong:intelligence}} AC, +10 speed, advantage on Acrobatics checks, +{{bladesong:intelligence}} to concentration checks.</description>
 		</sheet>
 		<rules>
-			<stat name="bladesong:int" value="1" bonus="bladesong" />
-			<stat name="bladesong:int" value="Intelligence Modifier" bonus="bladesong" />
+			<stat name="bladesong:intelligence" value="1" bonus="bladesong" />
+			<stat name="bladesong:intelligence" value="intelligence:modifier" bonus="bladesong" />
 		</rules>
 	</element>
 	<element name="Extra Attack" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK">
@@ -90,7 +90,9 @@
 		<sheet>
 			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
 		</sheet>
-		<rules />
+		<rules>
+			<stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
+		</rules>
 	</element>
 	<element name="Song of Defense" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE">
 		<description>
@@ -106,10 +108,10 @@
 			<p>Starting at 14th level, you add your Intelligence modifier (minimum of +1) to the damage of your melee weapon attacks while your Bladesong is active.</p>
 		</description>
 		<sheet>
-			<description>You add +%bladesong:int% to the damage of your melee weapon attacks while your Bladesong is active.</description>
+			<description>You add +{{bladesong:intelligence}} to the damage of your melee weapon attacks while your Bladesong is active.</description>
 		</sheet>
 		<rules>
-			<!-- +bladesong:int on melee damage, condition bladesong active -->
+			<!-- +bladesong:intelligence on melee damage, condition bladesong active -->
 		</rules>
 	</element>
 </elements>
