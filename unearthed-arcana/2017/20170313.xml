@@ -4,7 +4,7 @@
 		<name>Mystic</name>
 		<description>Mystic from Unearthed Arcana.</description>
 		<author url="https://media.wizards.com/2017/dnd/downloads/UAMystic3.pdf">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="20170313.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170313.xml" />
 		</update>
 	</info>
@@ -115,30 +115,29 @@
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
 			<select type="Proficiency" name="Skill Proficiency (Mystic)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_RELIGION" number="2" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONICS" level="1" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_MYSTIC_ORDER" level="1" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_MYSTICAL_RECOVERY" level="2" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_TELEPATHY" level="2" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_ABILITY_SCORE_IMPROVEMENT_MYSTIC" level="4" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_STRENGTH_OF_MIND" level="4" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_POTENT_PSIONICS" level="8" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_CONSUMPTIVE_POWER" level="10" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONIC_MASTERY" level="11" />
-			<grant type="Class Feature" name="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONIC_BODY" level="20" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONICS" level="1" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_MYSTIC_ORDER" level="1" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_MYSTICAL_RECOVERY" level="2" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_TELEPATHY" level="2" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_ABILITY_SCORE_IMPROVEMENT_MYSTIC" level="4" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_STRENGTH_OF_MIND" level="4" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_POTENT_PSIONICS" level="8" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_CONSUMPTIVE_POWER" level="10" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONIC_MASTERY" level="11" />
+			<grant type="Class Feature" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONIC_BODY" level="20" />
 		</rules>
-		<multiclass id="ID_WOTC_UA20170313_MULTICLASS_MYSTIC">
+		<!-- <multiclass id="ID_WOTC_UA20170313_MULTICLASS_MYSTIC">
 			<prerequisite>As is typical in Unearthed Arcana, the options here haven’t been tuned for multiclassing.</prerequisite>
-			<!-- temporary requirement to disallow multiclassing -->
 			<requirements>!ID_LEVEL_1</requirements>
 			<setters>
 				<set name="multiclass proficiencies">—</set>
 			</setters>
-		</multiclass>
+		</multiclass> -->
 	</element>
 
 	<!-- Mystic Class Features -->
@@ -166,7 +165,7 @@
 			<p class="indent">Discipline attack modifier = your proficiency bonus + your Intelligence modifier</p>
 		</description>
 		<sheet display="true">
-			<description>You have an internal reservoir of $(psi-points) Psi points that can be devoted to psionic disciplines you know. You can use no more than $(psi-limit) psi points to activate a psionic discipline. As a bonus action, you can choose one of your psionic disciplines and gain its psychic focus benefit. The benefit lasts until you are incapacitated or until you use another bonus action to choose a different focus benefit.</description>
+			<description>You have an internal reservoir of {{psi-points}} Psi points that can be devoted to psionic disciplines you know. You can use no more than {{psi-limit}} psi points to activate a psionic discipline. As a bonus action, you can choose one of your psionic disciplines and gain its psychic focus benefit. The benefit lasts until you are incapacitated or until you use another bonus action to choose a different focus benefit.</description>
 		</sheet>
 		<spellcasting name="Mystic" ability="Intelligence" allowReplace="true">
 			<list>Mystic</list>
@@ -269,7 +268,7 @@
 			<p class="indent">In addition, you add your Intelligence modifier to any damage roll you make for a psionic talent.</p>
 		</description>
 		<sheet>
-			<description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra $(potent psionics:dice)d8 psychic damage to that target. You also add your Intelligence modifier (+$(Intelligence Modifier)) to any damage roll you make for a psionic talent.</description>
+			<description>Once on each of your turns when you hit a creature with a weapon, you can deal an extra {{potent psionics:dice}}d8 psychic damage to that target. You also add your Intelligence modifier (+{{intelligence:modifier}}) to any damage roll you make for a psionic talent.</description>
 		</sheet>
 		<rules>
 			<stat name="potent psionics:dice" value="1" bonus="potent psionics" />
@@ -282,8 +281,8 @@
 			<p>At 10th level, you gain the ability to sacrifice your physical durability in exchange for psionic power. When activating a psionic discipline, you can pay its psi point cost with your hit points, instead of using any psi points. Your current hit points and hit point maximum are both reduced by the number of hit points you spend. This reduction can’t be lessened in any way, and the reduction to your hit point maximum lasts until you finish a long rest.</p>
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description>When activating a psionic discipline, you can pay its psi point cost with your hit points, instead of using any psi points. Your current HP and max HP are both reduced by the number of HP you spend. This reduction can’t be lessened in any way. (1/long rest)</description>
+		<sheet usage="1/Long Rest">
+			<description>When activating a psionic discipline, you can pay its psi point cost with your hit points, instead of using any psi points. Your current HP and max HP are both reduced by the number of HP you spend. This reduction can’t be lessened in any way.</description>
 		</sheet>
 	</element>
 	<element name="Psionic Mastery" type="Class Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_CLASS_FEATURE_MYSTIC_PSIONIC_MASTERY">
@@ -295,8 +294,8 @@
 			<p class="indent">You have one use of this feature, and you regain any expended use of it with a long rest. You gain one additional use of this feature at 13th, 15th, and 17th level.</p>
 		</description>
 		<sheet>
-			<description>As an action, you gain $(psi mastery:points) special psi points that you can spend only on disciplines that require an action or a bonus action to use. You can use all $(psi mastery:points) points on one discipline, or you can spread them across multiple disciplines. You can’t also spend your normal psi points on these disciplines, only the special points gained from this feature. When you finish a long rest, you lose any points you haven’t spent.
-		If more than one of the disciplines you activate with these points require concentration, you can concentrate on all of them. ($(psi mastery:uses)/long rest)</description>
+			<description>As an action, you gain {{psi mastery:points}} special psi points that you can spend only on disciplines that require an action or a bonus action to use. You can use all {{psi mastery:points}} points on one discipline, or you can spread them across multiple disciplines. You can’t also spend your normal psi points on these disciplines, only the special points gained from this feature. When you finish a long rest, you lose any points you haven’t spent.
+		If more than one of the disciplines you activate with these points require concentration, you can concentrate on all of them. ({{psi mastery:uses}}/long rest)</description>
 		</sheet>
 		<rules>
 			<stat name="psi mastery:points" value="9" bonus="psi mastery" />
@@ -339,11 +338,11 @@
 			<description>Mystics of the Order of the Avatar delve into the world of emotion.</description>
 		</sheet>
 		<rules>
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_BONUS_DISCIPLINES" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_ARMOR_TRAINING" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_BATTLE" type="Archetype Feature" level="3" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_HEALING" type="Archetype Feature" level="6" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_SPEED" type="Archetype Feature" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_BONUS_DISCIPLINES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_ARMOR_TRAINING" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_BATTLE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_HEALING" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_SPEED" level="14" />
 		</rules>
 	</element>
 	<element name="Order of the Awakened" type="Archetype" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_MYSTIC_AWAKENED">
@@ -361,11 +360,11 @@
 			<description>Mystics dedicated to the Order of the Awakened seek to unlock the full potential of the mind.</description>
 		</sheet>
 		<rules>
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_BONUS_DISCIPLINES" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_AWAKENED_TALENT" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_PSIONIC_INVESTIGATION" type="Archetype Feature" level="3" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_PSIONIC_SURGE" type="Archetype Feature" level="6" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_SPECTRAL_FORM" type="Archetype Feature" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_BONUS_DISCIPLINES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_AWAKENED_TALENT" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_PSIONIC_INVESTIGATION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_PSIONIC_SURGE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_SPECTRAL_FORM" level="14" />
 		</rules>
 	</element>
 	<element name="Order of the Immortal" type="Archetype" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_MYSTIC_IMMORTAL">
@@ -383,11 +382,11 @@
 			<description>The Order of the Immortal uses psionic energy to augment and modify the physical form.</description>
 		</sheet>
 		<rules>
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_BONUS_DISCIPLINES" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_IMMORTAL_DURABILITY" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_PSIONIC_RESILIENCE" type="Archetype Feature" level="3" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_SURGE_OF_HEALTH" type="Archetype Feature" level="6" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_IMMORTAL_WILL" type="Archetype Feature" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_BONUS_DISCIPLINES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_IMMORTAL_DURABILITY" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_PSIONIC_RESILIENCE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_SURGE_OF_HEALTH" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_IMMORTAL_WILL" level="14" />
 		</rules>
 	</element>
 	<element name="Order of the Nomad" type="Archetype" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_MYSTIC_NOMAD">
@@ -405,11 +404,11 @@
 			<description>Mystics of the Order of the Nomad keep their minds in a strange, rarified state. They seek to accumulate as much knowledge as possible.</description>
 		</sheet>
 		<rules>
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_BONUS_DISCIPLINES" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_BREADTH_OF_KNOWLEDGE" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_MEMORY_OF_ONE_THOUSAND_STEPS" type="Archetype Feature" level="3" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_SUPERIOR_TELEPORTATION" type="Archetype Feature" level="6" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_EFFORTLESS_JOURNEY" type="Archetype Feature" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_BONUS_DISCIPLINES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_BREADTH_OF_KNOWLEDGE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_MEMORY_OF_ONE_THOUSAND_STEPS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_SUPERIOR_TELEPORTATION" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_EFFORTLESS_JOURNEY" level="14" />
 		</rules>
 	</element>
 	<element name="Order of the Soul Knife" type="Archetype" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_MYSTIC_SOULKNIFE">
@@ -427,11 +426,11 @@
 			<description>The Order of the Soul Knife mystics learn to manifest a deadly weapon of pure psychic energy that they can use to cleave through foes.</description>
 		</sheet>
 		<rules>
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_MARTIAL_TRAINING" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_SOUL_KNIFE" type="Archetype Feature" level="1" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_HONE_THE_BLADE" type="Archetype Feature" level="3" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_CONSUMPTIVE_KNIFE" type="Archetype Feature" level="6" />
-			<grant name="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_PHANTOM_KNIFE" type="Archetype Feature" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_MARTIAL_TRAINING" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_SOUL_KNIFE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_HONE_THE_BLADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_CONSUMPTIVE_KNIFE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_PHANTOM_KNIFE" level="14" />
 		</rules>
 	</element>
 	<element name="Order of the Wu Jen" type="Archetype" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_MYSTIC_WUJEN">
@@ -494,7 +493,7 @@
 			<p>Beginning at 6th level, you project an aura of resilience. While you aren’t incapacitated, each ally within 30 feet of you who can see you regains additional hit points equal to your Intelligence modifier (minimum of 0) whenever they regain hit points from a psionic discipline.</p>
 		</description>
 		<sheet>
-			<description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier ($(Intelligence Modifier)) whenever they regain hit points from a psionic discipline.</description>
+			<description>While you aren’t incapacitated, each ally within 30 ft. of you who can see you regains additional HP equal to your Intelligence modifier ({{intelligence:modifier}}) whenever they regain hit points from a psionic discipline.</description>
 		</sheet>
 	</element>
 	<element name="Avatar of Speed" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AVATAR_AVATAR_OF_SPEED">
@@ -536,8 +535,8 @@
 			<p class="indent">Additionally, you can embed an intangible psionic sensor within the object. For the next 24 hours, you can use an action to learn the object’s location relative to you (its distance and direction) and to look at the object’s surroundings from its point of view as if you were there. This perception lasts until the start of your next turn.</p>
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>If you hold an object and concentrate on it for 10 minutes, you learn a few basic facts about it. You gain a mental image from the object’s point of view, showing the last creature to hold the object within the past 24 hours, and any events that have occurred within 20 feet of the object within the past hour. You can only see and hear these events. Additionally, you can embed a psionic sensor within the object. For the next 24 hours, you can use an action to learn the object’s distance and direction from you, and to look at the object’s surroundings from its point of view. This perception lasts until the start of your next turn. (1/long rest)</description>
+		<sheet usage="1/Long Rest">
+			<description>If you hold an object and concentrate on it for 10 minutes, you learn a few basic facts about it. You gain a mental image from the object’s point of view, showing the last creature to hold the object within the past 24 hours, and any events that have occurred within 20 feet of the object within the past hour. You can only see and hear these events. Additionally, you can embed a psionic sensor within the object. For the next 24 hours, you can use an action to learn the object’s distance and direction from you, and to look at the object’s surroundings from its point of view. This perception lasts until the start of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="Psionic Surge" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_AWAKENED_PSIONIC_SURGE">
@@ -556,8 +555,8 @@
 			<p>At 14th level, you gain the ability to become a ghostly figure of psionic energy. As an action, you can transform into a transparent, ghostly version of yourself. While in this form, you have resistance to all damage, move at half speed, and can pass through objects and creatures while moving but can’t willingly end your movement in their spaces. The form lasts for 10 minutes or until you use an action to end it.</p>
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description>As an action, you can transform into a transparent, ghostly version of yourself. While in this form, you have resistance to all damage, move at half speed, and can pass through objects and creatures while moving but can’t willingly end your movement in their spaces. The form lasts for 10 minutes or until you use an action to end it. (1/long rest)</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can transform into a transparent, ghostly version of yourself. While in this form, you have resistance to all damage, move at half speed, and can pass through objects and creatures while moving but can’t willingly end your movement in their spaces. The form lasts for 10 minutes or until you use an action to end it.</description>
 		</sheet>
 	</element>
 
@@ -579,16 +578,14 @@
 			<p class="indent">In addition, while you aren’t wearing armor or wielding a shield, your base AC equals 10 + your Dexterity modifier + your Constitution modifier.</p>
 		</description>
 		<sheet>
-			<description>While you are wearing no armor and not wielding a shield, your AC equals $(Immortal Durability Mystic Inline). Your max HP increases by 1 per mystic level.</description>
+			<description>While you are wearing no armor and not wielding a shield, your AC equals {{mystic:immortal durability}}.</description>
 		</sheet>
 		<rules>
-			<!-- todo: statistics update ac calculation -->
-			<stat name="HP" value="Level" />
-			<stat name="Immortal Durability Mystic Inline" value="10" />
-			<stat name="Immortal Durability Mystic Inline" value="Dexterity Modifier" />
-			<stat name="Immortal Durability Mystic Inline" value="Constitution Modifier" />
-			<stat name="Immortal Durability" value="Constitution Modifier" bonus="Immortal Durability" equipped="[armor:none],[shield:none]" />
-			<stat name="AC" value="Immortal Durability" bonus="Immortal Durability" equipped="[armor:none],[shield:none]" />
+			<stat name="hp" value="level:mystic" />
+			<stat name="mystic:immortal durability" value="10" />
+			<stat name="mystic:immortal durability" value="dexterity:modifier" />
+			<stat name="mystic:immortal durability" value="constitution:modifier" />
+			<stat name="ac:calculation" value="mystic:immortal durability" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Immortal Durability (Mystic)" />
 		</rules>
 	</element>
 	<element name="Psionic Resilience" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_PSIONIC_RESILIENCE">
@@ -597,7 +594,7 @@
 			<p>Starting at 3rd level, your psionic energy grants you extraordinary fortitude. At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier (minimum of 0) if you have at least 1 hit point.</p>
 		</description>
 		<sheet>
-			<description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier ($(Intelligence Modifier)) if you have at least 1 HP.</description>
+			<description>At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier ({{intelligence:modifier}}) if you have at least 1 HP.</description>
 		</sheet>
 	</element>
 	<element name="Surge of Health" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_IMMORTAL_SURGE_OF_HEALTH">
@@ -616,11 +613,11 @@
 			<p>Starting at 14th level, you can draw on your reserves of psionic power to survive beyond death. At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain a number of hit points equal to your mystic level + your Constitution modifier.</p>
 		</description>
 		<sheet>
-			<description>At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain $(immortal will:hp) HP.</description>
+			<description>At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain {{immortal will:hp}} HP.</description>
 		</sheet>
 		<rules>
-			<stat name="immortal will:hp" value="Level" />
-			<stat name="immortal will:hp" value="Constitution Modifier" />
+			<stat name="immortal will:hp" value="level:mystic" />
+			<stat name="immortal will:hp" value="constitution:modifier" />
 		</rules>
 	</element>
 
@@ -649,8 +646,8 @@
 		<description>
 			<p>At 3rd level, you gain the ability to use psionics to recall your steps. As a reaction when you are hit by an attack, you can teleport to an unoccupied space that you occupied since the start of your last turn, and the attack misses you. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>As a reaction when you are hit by an attack, you can teleport to an unoccupied space that you occupied since the start of your last turn, and the attack misses you. (1/rest)</description>
+		<sheet usage="1/Long Rest">
+			<description>As a reaction when you are hit by an attack, you can teleport to an unoccupied space that you occupied since the start of your last turn, and the attack misses you.</description>
 		</sheet>
 	</element>
 	<element name="Superior Teleportation" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_NOMAD_SUPERIOR_TELEPORTATION">
@@ -676,13 +673,13 @@
 	<element name="Martial Training" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_MARTIAL_TRAINING">
 		<supports>Order of the Soul Knife</supports>
 		<description>
-			<p>At	1st	level, you gain proficiency with medium armor and martial weapons</p>
+			<p>At 1st level, you gain proficiency with medium armor and martial weapons</p>
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-		</rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+		</rules>  
 	</element>
 	<element name="Soul Knife" type="Archetype Feature" source="Unearthed Arcana: The Mystic Class" id="ID_WOTC_UA20170313_ARCHETYPE_FEATURE_SOULKNIFE_SOUL_KNIFE">
 		<supports>Order of the Soul Knife</supports>
@@ -1948,7 +1945,7 @@
 			<p>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take 1d8 acid, cold, fire, lightning, or thunder damage (your choice). The talent’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take $(mystic:talents)d8 acid, cold, fire, lightning, or thunder damage (your choice).</description>
+			<description>As an action, you target one creature you can see within 90 feet of you. The target must succeed on a Dexterity saving throw or take {{mystic:talents}}d8 acid, cold, fire, lightning, or thunder damage (your choice).</description>
 		</sheet>
 		<rules>
 			<stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -1983,7 +1980,7 @@
 			<p class="indent">The talent’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 60 ft of you. The target must succeed on a Constitution saving throw or take $(mystic:talents)d6 force damage. If it takes any of this damage and is Large or smaller, it is knocked prone.</description>
+			<description>As an action, you target one creature you can see within 60 ft of you. The target must succeed on a Constitution saving throw or take {{mystic:talents}}d6 force damage. If it takes any of this damage and is Large or smaller, it is knocked prone.</description>
 		</sheet>
 		<rules>
 			<stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -1999,7 +1996,7 @@
 			<p class="indent">The talent’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
 		</description>
 		<sheet>
-			<description>As an action, you target one creature you can see within 120 ft of you. The target must succeed on an Intelligence saving throw or take $(mystic:talents)d10 psychic damage.</description>
+			<description>As an action, you target one creature you can see within 120 ft of you. The target must succeed on an Intelligence saving throw or take {{mystic:talents}}d10 psychic damage.</description>
 		</sheet>
 		<rules>
 			<stat name="mystic:talents" value="1" bonus="psionic talents" />
@@ -2034,7 +2031,7 @@
 			<p class="indent">The talent’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<sheet>
-			<description>As an action, you try to grasp one creature you can see within 120 ft of you, with a hand crafted from telekinetic energy. The target must succeed on a Strength saving throw or take $(mystic:talents)d6 force damage. If it takes any of this damage and is Large or smaller, you can move it up to 10 ft in a straight line in a direction of your choice. You can’t lift the target off the ground unless it is already airborne or underwater.</description>
+			<description>As an action, you try to grasp one creature you can see within 120 ft of you, with a hand crafted from telekinetic energy. The target must succeed on a Strength saving throw or take {{mystic:talents}}d6 force damage. If it takes any of this damage and is Large or smaller, you can move it up to 10 ft in a straight line in a direction of your choice. You can’t lift the target off the ground unless it is already airborne or underwater.</description>
 		</sheet>
 		<rules>
 			<stat name="mystic:talents" value="1" bonus="psionic talents" />

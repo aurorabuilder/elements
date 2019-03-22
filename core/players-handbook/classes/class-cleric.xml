@@ -4,7 +4,7 @@
     <name>Cleric</name>
     <description>The Cleric class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.4">
+    <update version="0.3.5">
       <file name="class-cleric.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-cleric.xml" />
     </update>
   </info>
@@ -37,7 +37,7 @@
         <span class="emphasis">Hit Dice:</span>1d8 per cleric level
         
         <br/>
-        <span class="emphasis">Hit Points at 1st Level:</span>8 + your Constitution modefier
+        <span class="emphasis">Hit Points at 1st Level:</span>8 + your Constitution modifier
         
         <br/>
         <span class="emphasis">Hit Points at Higher Levels:</span>1d8 (or 5) + your Constitution modifier per cleric level after 1st
@@ -109,19 +109,20 @@
       <set name="spellcastingAbility">Wisdom</set>
     </setters>
     <rules>        
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <select type="Proficiency" name="Skill Proficiency (Cleric)" supports="Skill,Cleric" number="2" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" type="Class Feature" level="1" />
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEDOMAIN" type="Class Feature" level="1" />
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY" type="Class Feature" level="2" />
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_ABILITYSCOREIMPROVEMENT_CLERIC" type="Class Feature" level="4" />
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DESTROYUNDEAD" type="Class Feature" level="5" />
-      <grant name="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEINTERVENTION" type="Class Feature" level="10" />
+	  
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" level="1" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEDOMAIN" level="1" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY" level="2" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_ABILITYSCOREIMPROVEMENT_CLERIC" level="4" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DESTROYUNDEAD" level="5" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEINTERVENTION" level="10" />
     </rules>
     <multiclass id="ID_WOTC_PHB_MULTICLASS_CLERIC">
       <prerequisite>Wisdom 13</prerequisite>
@@ -131,9 +132,9 @@
       </setters>
       <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
       </rules>
     </multiclass>
   </element>
@@ -157,7 +158,7 @@
       <p>You can use a holy symbol as a spellcasting focus for your cleric spells.</p>
     </description>
     <sheet>
-      <description>You can cast cleric spells as rituals. You can prepare %cleric:spellcasting:prepare% spells from the cleric spell list. You can use a holy symbol as your spellcasting focus.</description>
+      <description>You can cast cleric spells as rituals. You can prepare {{cleric:spellcasting:prepare}} spells from the cleric spell list. You can use a holy symbol as your spellcasting focus.</description>
     </sheet>
     <setters>
       <set name="spellcastingClass">Cleric</set>
@@ -168,8 +169,8 @@
     </spellcasting>
     <rules>     
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
-      <grant type="Grants" name="ID_INTERNAL_RITUAL_CASTING" />
-      <grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
+      <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+      <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
 
       <stat name="cleric:spellcasting:slots:1" value="2" level="1" />
       <stat name="cleric:spellcasting:slots:1" value="1" level="2" />
@@ -191,7 +192,7 @@
       <stat name="cleric:spellcasting:slots:8" value="1" level="15" />
       <stat name="cleric:spellcasting:slots:9" value="1" level="17" />
 
-      <stat name="cleric:spellcasting:prepare" value="Wisdom Modifier" />
+      <stat name="cleric:spellcasting:prepare" value="wisdom:modifier" />
       <stat name="cleric:spellcasting:prepare" value="level:cleric" />
 
       <select type="Spell" name="Cantrip (Cleric)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Cleric" />
@@ -210,35 +211,39 @@
       <select type="Archetype" name="Divine Domain" supports="Divine Domain" />
     </rules>
   </element>
-  <element name="Channel Divinity" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY">
-    <description>
-      <p>At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.</p>
-      <p class="indent">When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.</p>
-      <p class="indent">Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.</p>
-      <p class="indent">Beginning at 6th level, you can use your Channel</p>
-      <p class="indent">Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.</p>
-      <h5>CHANNEL DIVINITY: TURN UNDEAD</h5>
-      <p>As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
-      <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
-    </description>
-    <sheet>
-      <description level="1">Once per short rest</description>
-      <description level="6">Twice per short rest</description>
-      <description level="18">Three times per short rest</description>
-    </sheet>
-    <rules />
-  </element>
+	<element name="Channel Divinity" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY">
+		<description>
+			<p>At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.</p>
+			<p class="indent">When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.</p>
+			<p class="indent">Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.</p>
+			<p class="indent">Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.</p>
+			<div element="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY_TURN_UNDEAD" />
+		</description>
+		<sheet usage="{{channel divinity:count}}/Short Rest" />
+		<rules>
+			<stat name="channel divinity:count" value="1" level="1" bonus="base" />
+			<stat name="channel divinity:count" value="2" level="6" bonus="base" />
+			<stat name="channel divinity:count" value="3" level="18" bonus="base" />
+			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY_TURN_UNDEAD" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Turn Undead" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY_TURN_UNDEAD">
+		<description>
+			<p>As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+		</description>
+		<sheet alt="Turn Undead" action="Action" usage="Channel Divinity">
+			<description>Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+			A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</description>
+		</sheet>
+	</element>
+
   <element name="Ability Score Improvement (Cleric)" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_ABILITYSCOREIMPROVEMENT_CLERIC">
     <description>
       <p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_CLERIC" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_CLERIC" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_CLERIC" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_CLERIC" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_CLERIC" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Cleric 4)" supports="Improvement Option,Cleric,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Cleric 8)" supports="Improvement Option,Cleric,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Cleric 12)" supports="Improvement Option,Cleric,12" level="12" />
@@ -251,24 +256,25 @@
       <p>Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.</p>
       <h5>Destroy Undead</h5>
       <table>
-        <thead> <tr> <td>Cleric Level</td> <td>Destroys Undead of CR ...</td> </tr> </thead>
-        <tr> <td>5th</td> <td>1/2 or lower</td> </tr>
-        <tr> <td>8th</td> <td>1 or lower</td> </tr>
-        <tr> <td>11th</td> <td>2 or lower</td> </tr>
-        <tr> <td>14th</td> <td>3 or lower</td> </tr>
-        <tr> <td>17th</td> <td>4 or lower</td> </tr>
+        <thead>
+			<tr><td>Cleric Level</td><td>Destroys Undead of CR ...</td></tr>
+		</thead>
+        <tr><td>5th</td><td>1/2 or lower</td></tr>
+        <tr><td>8th</td><td>1 or lower</td></tr>
+        <tr><td>11th</td><td>2 or lower</td></tr>
+        <tr><td>14th</td><td>3 or lower</td></tr>
+        <tr><td>17th</td><td>4 or lower</td></tr>
       </table>
     </description>
     <sheet>
-      <description>When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed. %destroy undead:cr%</description>
-      <!--<description level="5">destroy turned undead of CR 1/2 or lower</description><description level="8">destroy turned undead of CR 1 or lower</description><description level="11">destroy turned undead of CR 2 or lower</description><description level="14">destroy turned undead of CR 3 or lower</description><description level="17">destroy turned undead of CR 4 or lower</description>-->
+      <description>When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed. {{destroy undead:cr}}</description>
     </sheet>
     <rules>
-      <stat name="destroy undead:cr" value="CR 1/2 or lower" inline="true" level="5"/>
-      <stat name="destroy undead:cr" value="CR 1 or lower" inline="true" level="8"/>
-      <stat name="destroy undead:cr" value="CR 2 or lower" inline="true" level="11"/>
-      <stat name="destroy undead:cr" value="CR 3 or lower" inline="true" level="14"/>
-      <stat name="destroy undead:cr" value="CR 4 or lower" inline="true" level="17"/>
+      <stat inline="true" name="destroy undead:cr" value="CR 1/2 or lower" level="5"/>
+      <stat inline="true" name="destroy undead:cr" value="CR 1 or lower" level="8"/>
+      <stat inline="true" name="destroy undead:cr" value="CR 2 or lower" level="11"/>
+      <stat inline="true" name="destroy undead:cr" value="CR 3 or lower" level="14"/>
+      <stat inline="true" name="destroy undead:cr" value="CR 4 or lower" level="17"/>
     </rules>
   </element>
   <element name="Divine Intervention" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEINTERVENTION">
@@ -339,22 +345,22 @@
     </sheet>
     <rules>
       <!-- Spells put into a 'life domain spells' grant -->
-      <grant type="Spell" name="ID_PHB_SPELL_BLESS" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_CURE_WOUNDS" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_BEACON_OF_HOPE" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_RAISE_DEAD" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BONUSPROFICIENCY" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_CHANNELDIVINITY_PRESERVELIFE" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BLESSEDHEALER" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DIVINESTRIKE" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_SUPREMEHEALING" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_BLESS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BONUSPROFICIENCY" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_CHANNELDIVINITY_PRESERVELIFE" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BLESSEDHEALER" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DIVINESTRIKE" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_SUPREMEHEALING" level="17"/>
     </rules>
   </element>
   <element name="Bonus Proficiency" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BONUSPROFICIENCY">
@@ -363,7 +369,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
     </rules>
   </element>
   <element name="Disciple of Life" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE">
@@ -373,15 +379,14 @@
     <sheet>
       <description>Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell’s level.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Channel Divinity: Preserve Life" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_CHANNELDIVINITY_PRESERVELIFE">
     <description>
       <p>Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.</p>
       <p class="indent">As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</p>
     </description>
-    <sheet>
-      <description>As an action, you present your holy symbol and evoke healing energy that can restore %preserve life:hp% hit points. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</description>
+    <sheet alt="Preserve Life" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol and evoke healing energy that can restore {{preserve life:hp}} hit points. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</description>
     </sheet>
     <rules>
       <stat name="preserve life:hp" value="level:cleric" />
@@ -473,21 +478,21 @@
       <description>The gods of knowledge value learning and understanding above all.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_COMMAND" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_IDENTIFY" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_AUGURY" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_NONDETECTION" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_POTENT_SPELLCASTING" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_COMMAND" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_IDENTIFY" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_AUGURY" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_POTENT_SPELLCASTING" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST" level="17"/>
     </rules>
   </element>
   <element name="Blessings of Knowledge" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE">
@@ -510,8 +515,8 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_ARCANA" />
-      <stat name="Arcana Proficiency" value="Proficiency" bonus="double"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+      <stat name="arcana:proficiency" value="proficiency" bonus="double"/>
     </rules>
   </element>
   <element name="Blessings of Knowledge (History)" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_HISTORY">
@@ -523,8 +528,8 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_HISTORY" />
-      <stat name="History Proficiency" value="Proficiency" bonus="double"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+      <stat name="history:proficiency" value="proficiency" bonus="double"/>
     </rules>
   </element>
   <element name="Blessings of Knowledge (Nature)" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_NATURE">
@@ -536,8 +541,8 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_NATURE" />
-      <stat name="Nature Proficiency" value="Proficiency" bonus="double"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+      <stat name="nature:proficiency" value="proficiency" bonus="double"/>
     </rules>
   </element>
   <element name="Blessings of Knowledge (Religion)" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_RELIGION">
@@ -549,8 +554,8 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_RELIGION" />
-      <stat name="Religion Proficiency" value="Proficiency" bonus="double"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+      <stat name="religion:proficiency" value="proficiency" bonus="double"/>
     </rules>
   </element>
   <element name="Channel Divinity: Knowledge of the Ages" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES">
@@ -558,8 +563,8 @@
     <description>
       <p>Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</p>
     </description>
-    <sheet>
-      <description>As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</description>
+    <sheet alt="Knowledge of the Ages" action="Action" usage="Channel Divinity">
+      <description>You choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</description>
     </sheet>
     <rules />
   </element>
@@ -574,7 +579,7 @@
       <description>As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature fails its save, you can read its surface thoughts when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</description>
     </sheet>
     <rules>
-      <!-- <grant type="Spell" name="ID_PHB_SPELL_SUGGESTION" />spellcasting="Cleric" prepared="true" -->
+      <!-- <grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" />spellcasting="Cleric" prepared="true" -->
       <!-- <set target="ID_PHB_SPELL_SUGGESTION" parent="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" field="name" value="Read Thoughts: Suggestion" /> -->
     </rules>
   </element>
@@ -583,10 +588,10 @@
       <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
     </description>
     <sheet>
-      <description>Add your Wisdom modifier (+%potent spellcasting:modifier%) to the damage you deal with any cleric cantrip.</description>
+      <description>Add your Wisdom modifier (+{{potent spellcasting:modifier}}) to the damage you deal with any cleric cantrip.</description>
     </sheet>
     <rules>
-      <stat name="potent spellcasting:modifier" value="Wisdom Modifier" />
+      <stat name="potent spellcasting:modifier" value="wisdom:modifier" />
     </rules>
   </element>
   <element name="Visions of the Past" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST">
@@ -603,9 +608,8 @@
       </p>
     </description>
     <sheet>
-      <description>You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score (%Wisdom%) and must maintain concentration during that time, as if you were casting a spell.</description>
+      <description>You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score ({{wisdom:score}}) and must maintain concentration during that time, as if you were casting a spell.</description>
     </sheet>
-    <rules></rules>
   </element>
   <!-- Light Domain -->
   <element name="Light Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_LIGHT_DOMAIN">
@@ -662,22 +666,22 @@
       <description>Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_BURNING_HANDS" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAMING_SPHERE" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCORCHING_RAY" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DAYLIGHT" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FIREBALL" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_WALL_OF_FIRE" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_BONUS_CANTRIP" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CD_Radiance_of_the_Dawn" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Improved_Flare" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Potent_Spellcasting" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Corona_of_Light" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_BONUS_CANTRIP" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CD_Radiance_of_the_Dawn" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Improved_Flare" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Potent_Spellcasting" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Corona_of_Light" level="17"/>
     </rules>
   </element>
   <element name="Bonus Cantrip" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_BONUS_CANTRIP">
@@ -688,7 +692,7 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_LIGHT" spellcasting="Cleric" />
+      <grant type="Spell" id="ID_PHB_SPELL_LIGHT" spellcasting="Cleric" />
     </rules>
   </element>
   <element name="Warding Flare" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE">
@@ -697,11 +701,11 @@
       <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
     <sheet>
-      <description>When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. You can use this feature %warding flare:count% times. You regain all expended uses when you finish a long rest.</description>
+      <description>When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. You can use this feature {{warding flare:count}} times. You regain all expended uses when you finish a long rest.</description>
     </sheet>
     <rules>
       <stat name="warding flare:count" value="1" bonus="warding flare" />
-      <stat name="warding flare:count" value="Wisdom Modifier" bonus="warding flare" />
+      <stat name="warding flare:count" value="wisdom:modifier" bonus="warding flare" />
     </rules>
   </element>
   <element name="Channel Divinity: Radiance of the Dawn" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CD_Radiance_of_the_Dawn">
@@ -709,10 +713,9 @@
       <p>Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.</p>
       <p class="indent">As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</p>
     </description>
-    <sheet>
-      <description>As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</description>
+    <sheet alt="Radiance of the Dawn" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes 2d10 + {{level:cleric}} radiant damage on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Improved Flare" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Improved_Flare">
     <description>
@@ -721,16 +724,14 @@
     <sheet>
       <description>You can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Potent Spellcasting" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Potent_Spellcasting">
     <description>
       <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
     </description>
     <sheet>
-      <description>You add your Wisdom modifier (%Wisdom Modifier%) to the damage you deal with any cleric cantrip.</description>
+      <description>You add your Wisdom modifier ({{wisdom:modifier}}) to the damage you deal with any cleric cantrip.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Corona of Light" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Corona_of_Light">
     <description>
@@ -739,7 +740,6 @@
     <sheet>
       <description>You can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage.</description>
     </sheet>
-    <rules></rules>
   </element>
   <!-- Nature Domain -->
   <element name="Nature Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_NATURE_DOMAIN">
@@ -796,22 +796,22 @@
       <description>Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests to friendly deities associated with particular springs and groves.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_BARKSKIN" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_PLANT_GROWTH" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_WIND_WALL" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_BEAST" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_GRASPING_VINE" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_TREE_STRIDE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_ACOLYTE_OF_NATURE" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_BONUS_PROFICIENCY" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_CD_CHARM_ANIMALS_AND_PLANTS" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DAMPEN_ELEMENTS" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DIVINE_STRIKE" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_MASTER_OF_NATURE" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_BARKSKIN" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_WIND_WALL" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_BEAST" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_GRASPING_VINE" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_ACOLYTE_OF_NATURE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_BONUS_PROFICIENCY" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_CD_CHARM_ANIMALS_AND_PLANTS" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DAMPEN_ELEMENTS" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DIVINE_STRIKE" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_MASTER_OF_NATURE" level="17"/>
     </rules>
   </element>
   <element name="Acolyte of Nature" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_ACOLYTE_OF_NATURE">
@@ -830,7 +830,7 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
     </rules>
   </element>
   <element name="Channel Divinity: Charm Animals and Plants" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_CD_CHARM_ANIMALS_AND_PLANTS">
@@ -838,19 +838,17 @@
       <p>Starting at 2nd level, you can use your Channel Divinity to charm animals and plants.</p>
       <p class="indent">As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</p>
     </description>
-    <sheet>
-      <description>As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</description>
+    <sheet alt="Charm Animals and Plants" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Dampen Elements" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DAMPEN_ELEMENTS">
     <description>
       <p>Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.</p>
     </description>
-    <sheet>
+    <sheet action="Reaction">
       <description>When you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DIVINE_STRIKE">
     <description>
@@ -860,7 +858,6 @@
       <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target.</description>
       <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 cold, fire, or lightning damage (your choice) to the target.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Master of Nature" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_MASTER_OF_NATURE">
     <description>
@@ -869,7 +866,6 @@
     <sheet>
       <description>While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn.</description>
     </sheet>
-    <rules></rules>
   </element>
   <!-- Tempest Domain -->
   <element name="Tempest Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_TEMPEST_DOMAIN">
@@ -926,22 +922,22 @@
       <description>Gods whose portfolios include the Tempest domain govern storms, sea, and sky.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_FOG_CLOUD" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_THUNDERWAVE" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SHATTER" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_CALL_LIGHTNING" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SHATTER" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_CALL_LIGHTNING" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN" level="17"/>
     </rules>
   </element>
   <element name="Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES">
@@ -952,8 +948,8 @@
       <description>You gain proficiency with martial weapons and heavy armor.</description>
     </sheet>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
     </rules>
   </element>
   <element name="Wrath of the Storm" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM">
@@ -961,12 +957,12 @@
       <p>Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.</p>
       <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one. You can use this feature %wrath of the storm:count% times / long rest.</description>
+    <sheet action="Reaction" usage="{{wrath of the storm:count}}/Long Rest.">
+      <description>When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage on a failed saving throw, and half as much damage on a successful one.</description>
     </sheet>
     <rules>
       <stat name="wrath of the storm:count" value="1" bonus="wrath of the storm"/>
-      <stat name="wrath of the storm:count" value="Wisdom Modifier" bonus="wrath of the storm"/>
+      <stat name="wrath of the storm:count" value="wisdom:modifier" bonus="wrath of the storm"/>
     </rules>
   </element>
   <element name="Channel Divinity: Destructive Wrath" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH">
@@ -974,10 +970,9 @@
       <p>Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.</p>
       <p class="indent">When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</p>
     </description>
-    <sheet>
+    <sheet alt="Destructive Wrath" action="Action" usage="Channel Divinity">
       <description>When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Thunderbolt Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE">
     <description>
@@ -986,7 +981,6 @@
     <sheet>
       <description>When you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE">
     <description>
@@ -996,7 +990,6 @@
       <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target.</description>
       <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 thunder damage to the target.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Stormborn" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN">
     <description>
@@ -1005,7 +998,6 @@
     <sheet>
       <description>You have a flying speed equal to your current walking speed whenever you are not underground or indoors.</description>
     </sheet>
-    <rules></rules>
   </element>
   <!-- Trickery Domain -->
   <element name="Trickery Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_Trickery_DOMAIN">
@@ -1061,21 +1053,21 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_CHARM_PERSON" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_MIRROR_IMAGE" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_BLINK" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DIMENSION_DOOR" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_POLYMORPH" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_MODIFY_MEMORY" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_MIRROR_IMAGE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_BLINK" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" level="17"/>
     </rules>
   </element>
   <element name="Blessing of the Trickster" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER">
@@ -1085,7 +1077,6 @@
     <sheet>
       <description>You can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Channel Divinity: Invoke Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
     <description>
@@ -1093,20 +1084,18 @@
       <p class="indent">The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.</p>
       <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
     </description>
-    <sheet>
-      <description>As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration.</description>
+    <sheet alt="Invoke Duplicity" action="Action" usage="Channel Divinity">
+      <description>You create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Channel Divinity: Cloak of Shadows" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS">
     <description>
       <p>Starting at 6th level, you can use your Channel Divinity to vanish.</p>
       <p class="indent">As an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell.</p>
     </description>
-    <sheet>
-      <description>As an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell.</description>
+    <sheet alt="Cloak of Shadows" action="Action" usage="Channel Divinity">
+      <description>You become invisible until the end of your next turn. You become visible if you attack or cast a spell.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE">
     <description>
@@ -1116,7 +1105,6 @@
       <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target.</description>
       <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 poison damage to the target.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Improved Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY">
     <description>
@@ -1126,7 +1114,6 @@
     <sheet>
       <description>AYou can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.</description>
     </sheet>
-    <rules></rules>
   </element>
   <!-- War Domain -->
   <element name="War Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_War_DOMAIN">
@@ -1136,41 +1123,11 @@
       <h5>War Domain Spells</h5>
       <table>
         <thead>
-          <tr>
-            <td>Cleric Level</td>
-            <td>Spells</td>
-          </tr>
-        </thead>
-        <tr>
-          <td>1st</td>
-          <td>
-            <em>divine favor, shield of faith</em>
-          </td>
-        </tr>
-        <tr>
-          <td>3rd</td>
-          <td>
-            <em>magic weapon, spiritual weapon</em>
-          </td>
-        </tr>
-        <tr>
-          <td>5th</td>
-          <td>
-            <em>crusader’s mantle, spirit guardians</em>
-          </td>
-        </tr>
-        <tr>
-          <td>7th</td>
-          <td>
-            <em>freedom of movement, stoneskin</em>
-          </td>
-        </tr>
-        <tr>
-          <td>9th</td>
-          <td>
-            <em>flame strike, hold monster</em>
-          </td>
-        </tr>
+          <tr> <td>Cleric Level</td> <td>Spells</td> </tr> </thead> <tr> <td>1st</td> <td> <em>divine favor, shield of faith</em> </td> </tr>
+        <tr> <td>3rd</td> <td> <em>magic weapon, spiritual weapon</em> </td> </tr>
+        <tr> <td>5th</td> <td> <em>crusader’s mantle, spirit guardians</em> </td> </tr>
+        <tr> <td>7th</td> <td> <em>freedom of movement, stoneskin</em> </td> </tr>
+        <tr> <td>9th</td> <td> <em>flame strike, hold monster</em> </td> </tr>
       </table>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_BONUS_PROFICIENCIES" />
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_WAR_PRIEST" />
@@ -1183,22 +1140,22 @@
       <description></description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DIVINE_FAVOR" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SHIELD_OF_FAITH" level="1" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_MAGIC_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_CRUSADERS_MANTLE" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_STONESKIN" level="7" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Spell" name="ID_PHB_SPELL_HOLD_MONSTER" level="9" spellcasting="Cleric" prepared="true" />
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_WAR_PRIEST" level="1"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_GUIDED_STRIKE" level="2"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_WAR_GODS_BLESSING" level="6"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_DIVINE_STRIKE" level="8"/>
-      <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_AVATAR_OF_BATTLE" level="17"/>
+      <grant type="Spell" id="ID_PHB_SPELL_DIVINE_FAVOR" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SHIELD_OF_FAITH" level="1" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_MAGIC_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_CRUSADERS_MANTLE" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="7" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="9" spellcasting="Cleric" prepared="true" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_WAR_PRIEST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_GUIDED_STRIKE" level="2"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_WAR_GODS_BLESSING" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_DIVINE_STRIKE" level="8"/>
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_AVATAR_OF_BATTLE" level="17"/>
     </rules>
   </element>
   <element name="Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_BONUS_PROFICIENCIES">
@@ -1209,8 +1166,8 @@
       <description>You gain proficiency with martial weapons and heavy armor.</description>
     </sheet>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
     </rules>
   </element>
   <element name="War Priest" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_WAR_PRIEST">
@@ -1218,31 +1175,29 @@
       <p>From 1st level, your god delivers bolts of inspiration to you while you are engaged in battle. When you use the Attack action, you can make one weapon attack as a bonus action.</p>
       <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>When you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature %war priest:count% times / long rest.</description>
+    <sheet usage="{{war priest:count}}/Long Rest">
+      <description>When you use the Attack action, you can make one weapon attack as a bonus action.</description>
     </sheet>
     <rules>
       <stat name="war priest:count" value="1" bonus="war priest" />
-      <stat name="war priest:count" value="Wisdom Modifier" bonus="war priest" />
+      <stat name="war priest:count" value="wisdom:modifier" bonus="war priest" />
     </rules>
   </element>
   <element name="Channel Divinity: Guided Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_GUIDED_STRIKE">
     <description>
       <p>Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
     </description>
-    <sheet>
+    <sheet alt="Guided Strike" usage="Channel Divinity">
       <description>When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Channel Divinity: War God’s Blessing" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_CD_WAR_GODS_BLESSING">
     <description>
       <p>At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
     </description>
-    <sheet>
+    <sheet alt="War God’s Blessing" action="Reaction" usage="Channel Divinity">
       <description>When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_DIVINE_STRIKE">
     <description>
@@ -1252,7 +1207,6 @@
       <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target.</description>
       <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 damage of the same type dealt by the weapon to the target.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Avatar of Battle" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_AVATAR_OF_BATTLE">
     <description>
@@ -1261,6 +1215,5 @@
     <sheet>
       <description>You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons.</description>
     </sheet>
-    <rules></rules>
   </element>
 </elements>

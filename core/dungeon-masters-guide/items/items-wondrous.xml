@@ -4,7 +4,7 @@
 		<name>Wondrous Items</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="items-wondrous.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/dungeon-masters-guide/items/items-wondrous.xml" />
 		</update>
 	</info>
@@ -107,7 +107,7 @@
 			<h5>Rust Bag of Tricks</h5>
 			<table>
 				<thead>
-					<tr> <td>d8</td> <td>Creature</td> </tr>
+					<tr> <td class="col-20">d8</td> <td>Creature</td> </tr>
 				</thead>
 				<tbody>
 					<tr> <td>1</td> <td>Rat</td> </tr>
@@ -138,7 +138,7 @@
 			<h5>Tan Bag of Tricks</h5>
 			<table>
 				<thead>
-					<tr> <td>d8</td> <td>Creature</td> </tr>
+					<tr> <td class="col-20">d8</td> <td>Creature</td> </tr>
 				</thead>
 				<tbody>
 					<tr> <td>1</td> <td>Jackal</td> </tr>
@@ -189,7 +189,8 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="speed" value="30" bonus="base" />
+			<!-- todo: ignore encumbered/heavy armor speed reduction -->
 		</rules>
 	</element>
 	<element name="Boots of the Winterlands" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_BOOTS_OF_THE_WINTERLANDS">
@@ -327,22 +328,13 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" />		
-			<stat name="Strength Saving Throw Misc" value="1" />
-			<stat name="Dexterity Saving Throw Misc" value="1" />
-			<stat name="Constitution Saving Throw Misc" value="1" />
-			<stat name="Intelligence Saving Throw Misc" value="1" />
-			<stat name="Wisdom Saving Throw Misc" value="1" />
-			<stat name="Charisma Saving Throw Misc" value="1" />
-
-			<!-- <stat name="ac" value="1" />		
+			<stat name="ac:misc" value="1" />		
 			<stat name="strength:save:misc" value="1" />
 			<stat name="dexterity:save:misc" value="1" />
 			<stat name="constitution:save:misc" value="1" />
 			<stat name="intelligence:save:misc" value="1" />
 			<stat name="wisdom:save:misc" value="1" />
-			<stat name="charisma:save:misc" value="1" /> -->
-	
+			<stat name="charisma:save:misc" value="1" />
 		</rules>
 	</element>
 	<element name="Cloak of the Manta Ray" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_CLOAK_OF_THE_MANTA_RAY">
@@ -1065,7 +1057,7 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<stat name="speed:climb" value="Speed" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base" />
 		</rules>
 	</element>
 	<element name="Stone of Good Luck" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_STONE_OF_GOOD_LUCK">
@@ -1082,33 +1074,33 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<stat name="Initiative" value="1" />
+			<stat name="initiative" value="1" />
 
-			<stat name="Acrobatics Misc" value="1" />
-			<stat name="Animal Handling Misc" value="1" />
-			<stat name="Arcana Misc" value="1" />
-			<stat name="Athletics Misc" value="1" />
-			<stat name="Deception Misc" value="1" />
-			<stat name="History Misc" value="1" />
-			<stat name="Insight Misc" value="1" />
-			<stat name="Intimidation Misc" value="1" />
-			<stat name="Investigation Misc" value="1" />
-			<stat name="Medicine Misc" value="1" />
-			<stat name="Nature Misc" value="1" />
-			<stat name="Perception Misc" value="1" />
-			<stat name="Performance Misc" value="1" />
-			<stat name="Persuasion Misc" value="1" />
-			<stat name="Religion Misc" value="1" />
-			<stat name="Sleight of Hand Misc" value="1" />
-			<stat name="Stealth Misc" value="1" />
-			<stat name="Survival Misc" value="1" />
+			<stat name="acrobatics:misc" value="1" />
+			<stat name="animal handling:misc" value="1" />
+			<stat name="arcana:misc" value="1" />
+			<stat name="athletics:misc" value="1" />
+			<stat name="deception:misc" value="1" />
+			<stat name="history:misc" value="1" />
+			<stat name="insight:misc" value="1" />
+			<stat name="intimidation:misc" value="1" />
+			<stat name="investigation:misc" value="1" />
+			<stat name="medicine:misc" value="1" />
+			<stat name="nature:misc" value="1" />
+			<stat name="perception:misc" value="1" />
+			<stat name="performance:misc" value="1" />
+			<stat name="persuasion:misc" value="1" />
+			<stat name="religion:misc" value="1" />
+			<stat name="sleight of hand:misc" value="1" />
+			<stat name="stealth:misc" value="1" />
+			<stat name="survival:misc" value="1" />
 
-			<stat name="Strength Saving Throw Misc" value="1" />
-			<stat name="Dexterity Saving Throw Misc" value="1" />
-			<stat name="Constitution Saving Throw Misc" value="1" />
-			<stat name="Intelligence Saving Throw Misc" value="1" />
-			<stat name="Wisdom Saving Throw Misc" value="1" />
-			<stat name="Charisma Saving Throw Misc" value="1" />
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
 		</rules>
 	</element>
 	<element name="Wind Fan" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_WIND_FAN">
@@ -1140,7 +1132,7 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<stat name="speed:fly" value="Speed" bonus="base" />
+			<stat name="speed:fly" value="speed" bonus="base" />
 		</rules>
 	</element>
 	<element name="Amulet of Health" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_AMULET_OF_HEALTH">
@@ -1234,7 +1226,7 @@
 			<set name="rarity">Rare</set>
 		</setters>
 		<rules>
-			<stat name="Constitution" value="2" />
+			<stat name="constitution" value="2" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="!ID_SRD_RACE_DWARF" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_SRD_RACE_DWARF" />
 			<grant type="Language" id="ID_LANGUAGE_DWARVISH" requirements="!ID_SRD_RACE_DWARF" />
@@ -1484,7 +1476,7 @@
 			<set name="rarity">Rare</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="2" equipped="[armor:none],![armor:shield]" />
+			<stat name="ac:misc" value="2" equipped="[armor:none],[shield:none]" />
 		</rules>
 	</element>
 	<element name="Brazier of Commanding Fire Elementals" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_BRAZIER_OF_COMMANDING_FIRE_ELEMENTALS">
@@ -2311,7 +2303,7 @@
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
-			<stat name="speed:climb" value="Speed" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base" />
 		</rules>
 	</element>
 	<element name="Crystal Ball" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_CRYSTAL_BALL">
@@ -2409,8 +2401,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Constitution" value="2" />
-			<stat name="Constitution Maximum" value="2" />
+			<stat name="constitution" value="2" />
+			<stat name="constitution:max" value="2" />
 		</rules>
 	</element>
 	<element name="Manual of Gainful Exercise" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MANUAL_OF_GAINFUL_EXERCISE">
@@ -2428,8 +2420,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Strength" value="2" />
-			<stat name="Strength Maximum" value="2" />
+			<stat name="strength" value="2" />
+			<stat name="strength:max" value="2" />
 		</rules>
 	</element>
 	<element name="Manual of Clay Golems" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MANUAL_OF_CLAY_GOLEMS">
@@ -2547,8 +2539,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Dexterity" value="2" />
-			<stat name="Dexterity Maximum" value="2" />
+			<stat name="dexterity" value="2" />
+			<stat name="dexterity:max" value="2" />
 		</rules>
 	</element>
 	<element name="Mirror of Life Trapping" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MIRROR_OF_LIFE_TRAPPING">
@@ -2618,12 +2610,12 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Strength Saving Throw Misc" value="1" />
-			<stat name="Dexterity Saving Throw Misc" value="1" />
-			<stat name="Constitution Saving Throw Misc" value="1" />
-			<stat name="Intelligence Saving Throw Misc" value="1" />
-			<stat name="Wisdom Saving Throw Misc" value="1" />
-			<stat name="Charisma Saving Throw Misc" value="1" />
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
 		</rules>
 	</element>
 	<element name="Tome of Clear Thought" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_TOME_OF_CLEAR_THOUGHT">
@@ -2641,8 +2633,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Intelligence" value="2" />
-			<stat name="Intelligence Maximum" value="2" />
+			<stat name="intelligence" value="2" />
+			<stat name="intelligence:max" value="2" />
 		</rules>
 	</element>
 	<element name="Tome of Leadership and Influence" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_TOME_OF_LEADERSHIP_AND_INFLUENCE">
@@ -2660,8 +2652,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Charisma" value="2" />
-			<stat name="Charisma Maximum" value="2" />
+			<stat name="charisma" value="2" />
+			<stat name="charisma:max" value="2" />
 		</rules>
 	</element>
 	<element name="Tome of Understanding" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_TOME_OF_UNDERSTANDING">
@@ -2679,8 +2671,8 @@
 			<set name="slot">misc</set>
 		</setters>
 		<rules>
-			<stat name="Wisdom" value="2" />
-			<stat name="Wisdom Maximum" value="2" />
+			<stat name="wisdom" value="2" />
+			<stat name="wisdom:max" value="2" />
 		</rules>
 	</element>
 	<element name="Apparatus of Kwalish" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_APPARATUS_OF_KWALISH">
@@ -2928,7 +2920,10 @@
 			<set name="rarity">Legendary</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="15" bonus="base" equipped="[armor:none]" />
+			<stat name="ac:robe of the archmagi" value="15" />
+			<stat name="ac:robe of the archmagi" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="ac:robe of the archmagi" bonus="calculation" equipped="[armor:none]" />
+
 			<stat name="spellcasting:attack" value="2" />
 			<stat name="spellcasting:dc" value="2" />
 		</rules>
@@ -3352,7 +3347,7 @@
 			<set name="rarity">Legendary</set>
 		</setters>
 		<rules>
-			<stat name="Proficiency" value="1" />
+			<stat name="proficiency" value="1" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Regeneration" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_REGENERATION">
@@ -3411,7 +3406,7 @@
 			<set name="rarity">Rare</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" />
+			<stat name="ac:misc" value="1" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Reserve" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_RESERVE">
@@ -3492,7 +3487,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Dexterity" value="2" />
+			<stat name="dexterity" value="2" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Fortitude" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_FORTITUDE">
@@ -3513,7 +3508,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Constitution" value="2" />
+			<stat name="constitution" value="2" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Insight" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_INSIGHT">
@@ -3534,7 +3529,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Wisdom" value="2" />
+			<stat name="wisdom" value="2" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Intellect" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_INTELLECT">
@@ -3555,7 +3550,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Intelligence" value="2" />
+			<stat name="intelligence" value="2" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Leadership" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_LEADERSHIP">
@@ -3576,7 +3571,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Charisma" value="2" />
+			<stat name="charisma" value="2" />
 		</rules>
 	</element>
 	<element name="Ioun Stone, Strength" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_IOUN_STONE_STRENGTH">
@@ -3597,7 +3592,7 @@
 			<set name="rarity">Very Rare</set>
 		</setters>
 		<rules>
-			<stat name="Strength" value="2" />
+			<stat name="strength" value="2" />
 		</rules>
 	</element>
 	<element name="Oil of Slipperiness" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_OIL_OF_SLIPPERINESS">		
