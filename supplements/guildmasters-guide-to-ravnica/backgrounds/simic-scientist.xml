@@ -4,17 +4,19 @@
 		<name>Simic Scientist</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="simic-scientist.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/simic-scientist.xml" />
 		</update>
 	</info>
     
 	<element name="Simic Scientist" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_SIMIC_SCIENTIST">
 		<description>
-			<p>Imagine a perfect world: one in which nature and civilization exist in harmony, adapted to each other; one in which life is shaped to match its environment and the environment is shaped to match life. That’s the world you have been trying to grow in the laboratories of the Simic Combine. Nature is all about adaptation, evolution, and balance- but for it to keep up with the pace of advancing civil ization, nature needs some help from biomancers and ter raformers. If, along the way, you happen to create super-soldiers and mutant monsters that can bolster the combine’s defenses against the schemes and ambitions of the other guilds, so much the better.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Arcana, Medicine</p>
-			<p class="indent"><strong>Languages:</strong> Two of your choice</p>
-			<p class="indent"><strong>Equipment:</strong> A Simic insignia, a set of commoner’s clothes, a book of research notes, an ink pen, a bottle of squid ink, a flask of oil (made from blubber), a vial of acid (derived from digestive juices), a vial of fish scales, a vial of seaweed, a vial of jellyfish stingers, a glass bottle of unidentified slime, and a belt pouch containing 10 gp (Azorius 1-zino coins)</p>
+			<p>Imagine a perfect world: one in which nature and civilization exist in harmony, adapted to each other; one in which life is shaped to match its environment and the environment is shaped to match life. That’s the world you have been trying to grow in the laboratories of the Simic Combine. Nature is all about adaptation, evolution, and balance- but for it to keep up with the pace of advancing civil ization, nature needs some help from biomancers and ter raformers. If, along the way, you happen to create super-soldiers and mutant monsters that can bolster the combine’s defenses against the schemes and ambitions of the other guilds, so much the better.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, Medicine</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A Simic insignia, a set of commoner’s clothes, a book of research notes, an ink pen, a bottle of squid ink, a flask of oil (made from blubber), a vial of acid (derived from digestive juices), a vial of fish scales, a vial of seaweed, a vial of jellyfish stingers, a glass bottle of unidentified slime, and a belt pouch containing 10 gp (Azorius 1-zino coins)</li>
+			</ul>
 			<h4>CLADES AND PROJECTS</h4>
 			<p>As a Simic researcher, you are part of a clade-a diverse group of individuals combining disparate talents in pursuit of a common goal- or a researcher on a specialized, short-term project focused on addressing an immediate need. You can roll a d6 or choose from the options in the Research Options table to determine your area of research.</p>
 			<h5>RESEARCH OPTIONS</h5>
@@ -38,7 +40,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
 			<select type="Language" name="Language, Simic Scientist" supports="Starting" number="2" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SIMIC_SCIENTIST_RESEARCHER" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SIMIC_SCIENTIST_RESEARCHER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SIMIC_SCIENTIST_SIMIC_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I can’t wait to see what I become next!</item>
@@ -77,7 +80,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Researcher" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SIMIC_SCIENTIST_RESEARCHER">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>When you attempt to learn or recall a magical or scientific fact, if you don’t know that information, you know where and from whom you can obtain it. Usually, this in formation comes from a Simic laboratory, or sometimes from an Izzet facility, a library, a university, or an independent scholar or other learned person or creature. Knowing where the information can be found doesn’t automatically enable you to learn it; you might need to offer bribes, favors, or other incentives to induce people to reveal their secrets.</p>
 			<p class="indent">Your DM might rule that the knowledge you seek is secreted away in an inaccessible place, or that it simply can’t be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.</p>
