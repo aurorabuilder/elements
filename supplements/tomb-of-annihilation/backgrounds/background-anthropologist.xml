@@ -4,7 +4,7 @@
 		<name>Anthropologist</name>
 		<description>Anthropologist Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tomb-annihilation">Wizards of the Coast</author>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="background-anthropologist.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/tomb-of-annihilation/backgrounds/background-anthropologist.xml" />
 		</update>
 	</info>
@@ -12,11 +12,11 @@
 	<element name="Anthropologist" type="Background" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST">
 		<description>
 			<p>You have always been fascinated by other cultures, from the most ancient and primeval lost lands to the most modern civilizations. By studying other cultures' customs, philosophies, laws, rituals, religious beliefs, languages, and art, you have learned how tribes, empires, and all forms of society in between craft their own destinies and doom. This knowledge came to you not only through books and scrolls, but also through firsthand observation- by visiting far-flung settlements and exploring local histories and customs.</p>
-			<p>
-				<span class="emphasis">Skill Proficiencies:</span>Insight, Religion<br/>
-				<span class="emphasis">Languages:</span>Two of your choice<br/>
-				<span class="emphasis">Equipment:</span>A leather-bound diary, a bottle of ink, an ink pen, a set of traveler's clothes, one trinket of special significance, and a pouch containing 10 gp
-			</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Insight, Religion</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A leather-bound diary, a bottle of ink, an ink pen, a set of traveler's clothes, one trinket of special significance, and a pouch containing 10 gp</li>
+			</ul>
 			<h5>CULTURAL CHAMELEON</h5>
 			<p>Before becoming an adventurer, you spent much of your adult life away from your homeland, living among people different from your kin. You came to understand these foreign cultures and the ways of their people, who eventually treated you as one of their own. One culture had more of an influence on you than any other, shaping your beliefs and customs. Choose a race whose culture you've adopted, or roll on the Adopted Culture table.</p>
 			<table>
@@ -40,7 +40,8 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
 			<select type="Language" name="Language (Anthropologist)" number="2" />
-			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST" />
+			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Adopted Culture" type="List" optional="true">
 				<item id="1">Aarakocra</item>
 				<item id="2">Dwarf</item>
@@ -86,11 +87,10 @@
 		</rules>
 	</element>
 	<element name="Feature: Adept Linguist" type="Background Feature" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST">
+		<supports>Background Feature</supports>
 		<description>
 			<p>You can communicate with humanoids who don't speak any language you know. You must observe the humanoids interacting with one another for at least 1 day, after which you learn a handful of important words, expressions, and gestures-enough to communicate on a rudimentary level.</p>
 		</description>
-		<sheet alt="Adept Linguist">
-			<description>You can communicate with humanoids who don't speak any language you know. You must observe the humanoids interacting with one another for at least 1 day, after which you learn a handful of important words, expressions, and gestures-enough to communicate on a rudimentary level.</description>
-		</sheet>
+		<sheet alt="Adept Linguist" />
 	</element>
 </elements>

@@ -4,7 +4,7 @@
 		<name>The Hexblade</name>
 		<description>The Hexblade Otherworldly Patron from Xanathar’s Guide to Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="warlock-hexblade.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/warlock-hexblade.xml" />
 		</update>
 	</info>
@@ -26,12 +26,12 @@
       <description>You have made your pact with a mysterious entity from the Shadowfell.</description>
     </sheet>
     <rules>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1"/>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE" type="Archetype Feature" level="1"/>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEX_WARRIOR" type="Archetype Feature" level="1"/>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER" type="Archetype Feature" level="6"/>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ARMOR_OF_HEXES" type="Archetype Feature" level="10"/>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_MASTER_OF_HEXES" type="Archetype Feature" level="14"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEX_WARRIOR" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ARMOR_OF_HEXES" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_MASTER_OF_HEXES" level="14"/>
     </rules>
   </element>
   <element name="Expanded Spell List" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST">
@@ -78,11 +78,11 @@
     </description>
     <sheet>
       <description>
-      <p>As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. Choose one of the following effects: If the cursed target dies, you regain %hexblades curse:hp% hit points. Hits on the target creature from you deal +%Proficiency% damage. An attack roll of 19 or 20 made by you are critical hits against the cursed target.</p>
+      <p>As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. Choose one of the following effects: If the cursed target dies, you regain {{hexblades curse:hp}} hit points. Hits on the target creature from you deal +{{Proficiency}} damage. An attack roll of 19 or 20 made by you are critical hits against the cursed target.</p>
       </description>
     </sheet>
     <rules>
-      <stat name="hexblades curse:hp" value="Charisma Modifier" />
+      <stat name="hexblades curse:hp" value="charisma:modifier" />
       <stat name="hexblades curse:hp" value="level:warlock" />
     </rules>
   </element>
@@ -92,16 +92,16 @@
       <p class="indent">The influence of your patron also allows you to mystically channel your will through a particular weapon. Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls. This benefit lasts until you finish a long rest. If you later gain the Pact of the Blade feature, this benefit extends to every pact weapon you conjure with that feature, no matter the weapon’s type. </p>
     </description>
     <sheet>
-      <description>Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use +$(hex warrior:attack) for the attack and +$(hex warrior:damage) damage.</description>
+      <description>Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use +{{hex warrior:attack}} for the attack and +{{hex warrior:damage}} damage.</description>
     </sheet>
     <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
 
-      <stat name="hex warrior:attack" value="Charisma Modifier" bonus="ability" />
-      <stat name="hex warrior:attack" value="Proficiency" bonus="proficiency" />
-      <stat name="hex warrior:damage" value="Charisma Modifier" bonus="ability" />
+      <stat name="hex warrior:attack" value="charisma:modifier" bonus="ability" />
+      <stat name="hex warrior:attack" value="proficiency" bonus="proficiency" />
+      <stat name="hex warrior:damage" value="charisma:modifier" bonus="ability" />
     </rules>
   </element>
   <element name="Accursed Specter" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER">
@@ -111,10 +111,10 @@
       <p class="indent">Once you bind a specter with this feature, you can’t use the feature again until you finish a long rest. </p>
     </description>
     <sheet>
-      <description>You can curse the soul of humanoid you slay turning it into a Spirit (see Monster Manual for it's statistics), it gains %accursed specter:temp hp% temporary hit points and a +%accursed specter:attack bonus% bonus to attack rolls.</description>
+      <description>You can curse the soul of humanoid you slay turning it into a Spirit (see Monster Manual for it's statistics), it gains {{accursed specter:temp hp}} temporary hit points and a +{{accursed specter:attack bonus}} bonus to attack rolls.</description>
     </sheet>
     <rules>
-      <stat name="accursed specter:attack bonus" value="Charisma Modifier" />
+      <stat name="accursed specter:attack bonus" value="charisma:modifier" />
       <stat name="accursed specter:temp hp" value="level:warlock:half" />
     </rules>
   </element>

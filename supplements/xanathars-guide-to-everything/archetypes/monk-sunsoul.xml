@@ -4,7 +4,7 @@
         <name>Sun Soul</name>
         <description>The Sun Soul archetype from Xanathar’s Guide to Everything</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="monk-sunsoul.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/monk-sunsoul.xml" />
         </update>
     </info>
@@ -22,10 +22,10 @@
             <description>Transforms ki into bursts of fire and searing bolts of light</description>
         </sheet>
         <rules>
-            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT" level="3"/>
-            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_ARC_STRIKE" level="6"/>
-            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_SUNBURST" level="11"/>
-            <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SUN_SHIELD" level="17"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT" level="3"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_ARC_STRIKE" level="6"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_SUNBURST" level="11"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SUN_SHIELD" level="17"/>
         </rules>
     </element>
     <element name="Radiant Sun Bolt" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT">
@@ -35,13 +35,13 @@
             <p class="indent">When you take the Attack action on your turn and use this special attack as part of it, you can spend 1 ki point to make the special attack twice as a bonus action.</p>
             <p class="indent">When you gain the Extra Attack feature, this special attack can be used for any of the attacks you make as part of the Attack action.</p>
         </description>
-        <sheet>
-            <description>Action: Make a ranged spell attack ($(radiant sun bolt:range)ft, +$(radiant sun bolt:attack) vs AC, $(radiant sun bolt:die:count)d$(radiant sun bolt:die:size)+$(radiant sun bolt:damage) radiant damage) When you use this attack, spend 1 ki point to make it twice as a bonus action.</description>
+        <sheet action="Action">
+            <description>Make a ranged spell attack ({{radiant sun bolt:range}}ft, +{{radiant sun bolt:attack}} vs AC, {{radiant sun bolt:die:count}}d{{radiant sun bolt:die:size}}+{{radiant sun bolt:damage}} radiant damage) When you use this attack, spend 1 ki point to make it twice as a bonus action.</description>
         </sheet>
         <rules>
-            <stat name="radiant sun bolt:attack" value="Proficiency" bonus="proficiency" />
-            <stat name="radiant sun bolt:attack" value="Dexterity Modifier" bonus="ability"/>
-            <stat name="radiant sun bolt:damage" value="Dexterity Modifier" bonus="ability"/>
+            <stat name="radiant sun bolt:attack" value="proficiency" bonus="proficiency" />
+            <stat name="radiant sun bolt:attack" value="dexterity:modifier" bonus="ability"/>
+            <stat name="radiant sun bolt:damage" value="dexterity:modifier" bonus="ability"/>
             <stat name="radiant sun bolt:range" value="30" />
             <stat name="radiant sun bolt:die:count" value="1" />
             <stat name="radiant sun bolt:die:size" value="martial arts:dice" />
@@ -52,8 +52,8 @@
             <p>At 6th level, you gain the ability to channel your ki into searing waves of energy. Immediately after you take the Attack action on your turn, you can spend 2 ki points to cast the burning hands spell as a bonus action.</p>
             <p class="indent">You can spend additional ki points to cast burning hands as a higher-level spell. Each additional ki point you spend increases the spell’s level by 1. The maximum number of ki points (2 plus any additional points) that you can spend on the spell equals half your monk level.</p>
         </description>
-        <sheet>
-            <description>Bonus action: After an attack, spend 2 ki point to cast the burning hands. Additional ki points to cast the spell at higher levels (1/level). You can spent maximum $(searing arc strike:ki maximum) ki points (2 plus any additional points).</description>
+        <sheet action="Bonus Action">
+            <description>After an attack, spend 2 ki point to cast the burning hands. Additional ki points to cast the spell at higher levels (1/level). You can spent maximum {{searing arc strike:ki maximum}} ki points (2 plus any additional points).</description>
         </sheet>
         <rules>
             <stat name="searing arc strike:ki maximum" value="level:monk:half" />
@@ -67,8 +67,8 @@
             <p class="indent">Each creature in that 20—foot-radius sphere must succeed on a Constitution saving throw or take 2d6 radiant damage. A creature doesn’t need to make the save if the creature is behind total cover that is opaque.</p>
             <p class="indent">You can increase the spheres damage by spending ki points. Each point you spend, to a maximum of 3, increases the damage by 2d6.</p>
         </description>
-        <sheet>
-            <description>Action: Create an orb and hurl it up to 150ft, where it erupts into a 20ft radius sphere of Radiant light. Each creature within it makes a DC$(ki:dc) Constitution saving throw or takes 2d6 Radiant damage. Spend up to 3 ki point to increase the damage by 2d6/ki point spent.</description>
+        <sheet action="Action">
+            <description>Create an orb and hurl it up to 150ft, where it erupts into a 20ft radius sphere of Radiant light. Each creature within it makes a DC{{ki:dc}} Constitution saving throw or takes 2d6 Radiant damage. Spend up to 3 ki point to increase the damage by 2d6/ki point spent.</description>
         </sheet>
         <rules />
     </element>
@@ -78,11 +78,11 @@
             <p class="indent">If a creature hits you with a melee attack while this light shines, you can use your reaction to deal radiant damage to the creature. The radiant damage equals 5 + your Wisdom modifier.</p>
         </description>
         <sheet>
-            <description>You can extinguish or restore the light of your aura as a bonus action. If a creature hits you with a melee while the light shines, you can use your reaction to deal $(sun shield:damage) radiant damage to the creature.</description>
+            <description>You can extinguish or restore the light of your aura as a bonus action. If a creature hits you with a melee while the light shines, you can use your reaction to deal {{sun shield:damage}} radiant damage to the creature.</description>
         </sheet>
         <rules>
             <stat name="sun shield:damage" value="5" />
-            <stat name="sun shield:damage" value="Wisdom Modifier" />
+            <stat name="sun shield:damage" value="wisdom:modifier" />
         </rules>
     </element>
 </elements>

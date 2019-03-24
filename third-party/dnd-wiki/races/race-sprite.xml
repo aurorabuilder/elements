@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sprite</name>
+        <description>Sprite</description>
+        <author url="https://www.dandwiki.com/wiki/Sprite_(5e_Race)">D&amp;D Wiki</author>
+        <update version="0.0.1">
+            <file name="race-sprite.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/races/race-sprite.xml" />
+        </update>
+    </info>
+    
+    <element name="Sprite" type="Race" source="D&amp;D Wiki" id="ID_WIKI_RACE_SPRITE">
+        <description>
+            <p>In secret groves and shaded glens, tiny sprites with dragonfly wings flutter. For all their fey splendor, however, sprites lack warmth and compassion. They are aggressive and hardy warriors, taking severe measures to ward off strangers from their homes. Interlopers that come too close have their moral character judged, they are put to sleep or frightened off. </p>
+            <h4>FOREST PROTECTORS</h4>
+            <p>Sprites build little villages in the boughs of trees and willing treants, in verdant glades brightened by moss, wildflowers, and toadstools. Wild nature thrives, and the sprites allow no trespassers. When intruders are spotted, the sprites lead them astray with ominous rustling from the bushes and distant snapping twigs. Creatures foolish enough to persist in intruding on a sprite's territory are stung with poisoned arrows and lulled into a senseless sleep. While they slumber, the sprites make good their escape, retreating to an even more secluded area of the forest.</p>
+            <p class="indent">Similar mishaps in many areas of terrain where these little guardians dwell. Tread lightly and respectfully or pay the price.</p>
+            <h4>HEART SEERS</h4>
+            <p>Sprites can sense whether a creature is good or evil by the sound and feeling of its beating heart. Weighing the balance of a creature's past actions, a sprite can tell whether its heart beats rapidly in love or flags in sorrow, or whether it is darkened by hate or greed. The sprite's power to perceive the heart always shows the truth, because the heart can't lie.</p>
+            <p class="indent">Because they are judges of the heart and favor good creatures, sprites oppose the will of evil fey and pledge to thwart evil archfey at every turn. If they encounter adventurers on a quest to rid their forest of an evil fey creature or goblinoid menace, they will pledge their support and even come to their aid when the adventurers least expect it. Unlike pixies, sprites rarely indulge in frivolous merriment and fun. They are firm warriors, protectors, and judges, and their stern bent causes other fey to consider them overly dour and serious. However, a fey that respects the sprites' territory finds them staunch allies in times of trouble.</p>
+            <p class="indent">However, this is not always the case, as there is a time and season for all the sprite kind. Some clans are not talked about and are served for times of war or defense when nothing else seems to work... They are shunned by the other clans, and they are ok with that because they understand not all can handle their level of commitment to do whatever it takes, by any means necessary, however long it takes.</p>
+            <h4>CLANSMEN AND POISON BREWERS</h4>
+            <p>Sprites hold their kin at the highest of esteem; they never harm a fellow clansmen or do any mischief. Their clans divided up by sub-races which can be easily spotted and recognized. They mostly form either a hierarchy, a matriarch, or a patriarch, and sometimes in rare cases, they are run by a council of their elders.</p>
+            <p class="indent">In their forest domains, sprites brew toxins, unguents, antidotes, and poisons, including the sleep poison with which they coat their arrows. They venture.far into the woods to harvest rare flowers, mosses, and fungi, sometimes crossing dangerous territory to do so. If desperate, sprites even steal their ingredients from the gardens of hags.</p>
+			<h4>SPRITE NAMES</h4>
+			<p>Sprites take names that are mixes of elven and human.</p>
+			<ul class="unstyled">
+				<li><strong>Male: </strong>Covara, Jamaran, Puck, Hob</li>
+				<li><strong>Female: </strong>Faula, Mysteria, Eowyn, Lily</li>
+			</ul>
+            <h4>SPRITE TRAITS</h4>
+            <p>Your Sprite character has the following traits.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Charisma score increases by 1, and your Dexterity score increases by 1.</p>
+            <p class="indent"><b><i>Age. </i></b>Sprites can live to be about 130 and reach maturity at around 10.</p>
+            <p class="indent"><b><i>Alignment. </i></b>Sprites are almost exclusively good, and, more often than not, neutral.</p>
+            <p class="indent"><b><i>Size. </i></b>Your size is Tiny.</p>
+            <p class="indent"><b><i>Speed. </i></b>Your base walking speed is 10 feet.</p>
+            <p class="indent"><b><i>Flight. </i></b>Your have a flying speed equal to 30 feet, however, you cannot fly higher than this.</p>
+            <p class="indent"><b><i>Heart Sight. </i></b>As an action, you touch a creature and magically know the creature's current emotional state. If the target fails a Charisma saving throw, you also know the creature's alignment. The DC for this save is equal to 8 + your Charisma modifier + your proficiency bonus. Celestials, fiends, and undead automatically fail the saving throw.</p>
+            <p class="indent"><b><i>Invisibility. </i></b>You can cast the invisibility spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Charisma is your spellcasting ability for this spell.</p>
+            <p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Sylvan.</p>
+            <p class="indent"><b><i>Clan. </i></b>Sprites usually fall into a clan; each clan is famous or infamous for something, and this reflects on the sprites themselves.</p>        
+        </description>
+        <setters>
+            <set name="names" type="male">Covara, Jamaran, Puck, Hob</set>
+            <set name="names" type="female">Faula, Mysteria, Eowyn, Lily</set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier="2d4">0'4"</set>
+            <set name="weight" modifier="1d4">1</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <stat name="charisma" value="1" />
+            <stat name="dexterity" value="1" />
+            <stat name="innate speed" value="10" bonus="base" />
+            <stat name="innate speed:fly" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_TINY" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_HEART_SIGHT" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_INVISIBILITY" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_CLAN" />
+        </rules>
+    </element>
+    <element name="Sprite Subrace" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_CLAN">
+        <supports>Sprite</supports>
+        <requirements />
+        <description>
+            <p>Sprites usually fall into a clan; each clan is famous or infamous for something, and this reflects on the sprites themselves.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Sub Race" name="Clan" supports="Sprite Subrace" />
+        </rules>
+    </element>
+    <element name="Heart Sight" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_HEART_SIGHT">
+        <description>
+        	<p>As an action, you touch a creature and magically know the creature's current emotional state. If the target fails a Charisma saving throw, you also know the creature's alignment. The DC for this save is equal to 8 + your Charisma modifier + your proficiency bonus. Celestials, fiends, and undead automatically fail the saving throw.</p>
+        </description>
+        <sheet action="Action">
+            <description>You touch a creature allows you to know their emotional state. If the target fails a Charisma saving throw (DC {{heart:dc}}), you also know the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw.</description>
+        </sheet>
+        <rules>
+        <stat name="heart:dc" value="8" />
+        <stat name="heart:dc" value="proficiency" />
+        <stat name="heart:dc" value="wisdom:modifier" />
+        </rules>
+    </element>
+    <element name="Invisibility" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_INVISIBILITY">
+        <description>
+            <p>You can cast the invisibility spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description>You can cast the invisibility spell once per long rest.</description>
+        </sheet>
+        <rules>
+        <grant type="Spell" name="ID_PHB_SPELL_INVISIBILITY" />
+        </rules>
+    </element>
+
+    <!-- Wandering Sprites -->
+    <element name="Wandering Sprite" type="Sub Race" source="D&amp;D Wiki" id="ID_WIKI_SPRITE_SUBRACE_WANDERING">
+        <supports>Sprite Subrace</supports>
+        <requirements />
+        <description>
+            <p>These Sprites move about so much that they hardly have a place of their own. They often end up in cities taking on a nomad-like role, having little holds between places far out of reach of anything but them. One secret tactic is to burrow into a wall or abandoned location and their only entrance is as small as a pinhole, just enough to see inside, where they can teleport to. You cant get more secure than that.</p>
+            <p class="indent">They are guardians of personal space, self-reflection. They guard those hiding places where people go to find peace in a very crowded city.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Intelligence or Wisdom score increases by 1.</p>
+            <p class="indent"><b><i>Darkvision. </i></b>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p>
+            <p class="indent"><b><i>Wandering Magic. </i></b>You know the mage hand cantrip. When you reach 3rd level, you can cast the disguise self spell once per day. When you reach 5th level, you can also cast the misty step spell once per day. Charisma is your spellcasting ability for these spells.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Wandering Sprite)" supports="ID_INTERNAL_ASI_WISDOM|ID_INTERNAL_ASI_INTELLIGENCE" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WANDERING_MAGIC" />
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+    <element name="Wandering Magic" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WANDERING_MAGIC">
+        <description>
+            <p>You know the mage hand cantrip. When you reach 3rd level, you can cast the disguise self spell once per day. When you reach 5th level, you can also cast the misty step spell once per day. Charisma is your spellcasting ability for these spells.</p>
+        </description>
+        <sheet>
+            <description>You know the mage hand cantrip.</description>
+            <description level="3">You know the mage hand cantrip and can cast disguise self once per day.</description>
+            <description level="5">You know the mage hand cantrip, can cast disguise self and misty step once per day.</description>
+        </sheet>
+        <rules>
+        <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+        <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="3" />
+        <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" />
+        </rules>
+    </element>
+
+    <!-- Bell Sprites -->
+    <element name="Bell Sprite" type="Sub Race" source="D&amp;D Wiki" id="ID_WIKI_SPRITE_SUBRACE_BELL">
+        <supports>Sprite Subrace</supports>
+        <requirements />
+        <description>
+            <p>Bell sprites are small, glowing sprites that enjoy mischief. Although they are still highly territorial, they are known to wander off in search of other races to befriend. Usually, they form attachments to children that are just as mischievous as they. They exude a natural fairy dust that grants things that it falls on a natural floating ability. Some say that it also stops the aging process and allows children to never grow up.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Dexterity or Charisma score increases by 1.</p>
+            <p class="indent"><b><i>Fairy Dust. </i></b>As an action, you may give a willing creature a flying speed of 30 foot for 1 minute, however, they cannot fly higher than this. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
+            <p class="indent"><b><i>Fairy Light. </i></b>You know the light cantrip, and when cast on yourself you can adjust the size of the light to a 5-foot radius of bright light and an addition 5 feet of dim light.</p>
+            <p class="indent"><b><i>Mischievous Growth. </i></b>Bell sprites are known for their ability to grow to look like regular humans. As an action, you can become Medium sized, when you do, you lose your flying speed as you are too heavy for your thin wings to carry you. This transformation lasts for 1 hour until you dismiss it as an action or you are reduced to 0 hit points. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Bell Sprite)" supports="ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_CHARISMA" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_DUST" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_LIGHT" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_MISCHIEVOUS_GROWTH" />
+        </rules>
+    </element>
+    <element name="Fairy Dust" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_DUST">
+        <description>
+            <p>As an action, you may give a willing creature a flying speed of 30 foot for 1 minute, however, they cannot fly higher than this. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>Once per rest you can grant one wiling creature 30 ft of flying speed with a maximum height of 30 ft.</description>
+        </sheet>
+    </element>
+    <element name="Fairy Light" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_FAIRY_LIGHT">
+        <description>
+            <p>You know the light cantrip, and when cast on yourself you can adjust the size of the light to a 5-foot radius of bright light and an addition 5 feet of dim light.</p>
+        </description>
+        <sheet>
+            <description>You know the light cantrip, and when cast on yourself you can adjust the size of the light to a 5-foot radius of bright light and an addition 5 feet of dim light.</description>
+        </sheet>
+        <rules>
+        <grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
+        </rules>
+    </element>
+    <element name="Mischievous Growth" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_MISCHIEVOUS_GROWTH">
+        <description>
+            <p>Bell sprites are known for their ability to grow to look like regular humans. As an action, you can become Medium sized, when you do, you lose your flying speed as you are too heavy for your thin wings to carry you. This transformation lasts for 1 hour until you dismiss it as an action or you are reduced to 0 hit points. After you use this trait, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>Once per rest as an action, you can become Medium sized, when you do, you lose your flying speed as you are too heavy for your thin wings to carry you. This transformation lasts for 1 hour until you dismiss it as an action or you are reduced to 0 hit points.</description>
+        </sheet>
+    </element>
+
+    <!-- Crom Sprites -->
+    <element name="Crom Sprite" type="Sub Race" source="D&amp;D Wiki" id="ID_WIKI_SPRITE_SUBRACE_CROM">
+        <supports>Sprite Subrace</supports>
+        <requirements />
+        <description>
+            <p>Crom Sprites are the strongest and proudest of warriors, known to go toe-to-toe with even the larger creatures in honorable duels. Crom Sprites are known to seek out the strongest of warriors to pit their mettle against. They are also known to join battles that take place near to their villages, seeing into the hearts of the combatants and helping whoever they deem the best and honorable. They are also known for their ability to imbue their weapons with magic, many caught off guard as a Sprite's polearm extends to be as long as those carried by human soldiers.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Strength or Constitution score increases by 1.</p>
+            <p class="indent"><b><i>Powerful Build. </i></b>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+            <p class="indent"><b><i>Weapon Fighter. </i></b>You have proficiency with two simple and two martial weapons of your choice.</p>
+            <p class="indent"><b><i>Tiny Fighter. </i></b>Your small stature and fighting instincts makes you hard to hit no matter what. Your Armor Class cannot be lower than 12.</p>
+            <p class="indent"><b><i>Brave. </i></b>You have advantage on saving throws against being frightened.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Crom Sprite)" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_CONSTITUTION" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_POWERFUL_BUILD" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WEAPON_FIGHTER" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_TINY_FIGHTER" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_SPRITE_BRAVE" />
+        </rules>
+    </element>
+    <element name="Powerful Build" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_POWERFUL_BUILD">
+        <description>
+            <p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+        </description>
+        <sheet>
+            <description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+        </sheet>
+		<!-- todo: carrying capacity mod -->
+    </element>
+    <element name="Weapon Fighter" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_WEAPON_FIGHTER">
+        <description>
+            <p>You have proficiency with two simple and two martial weapons of your choice.</p>
+        </description>
+        <sheet display="false">
+            <description>You have proficiency with two simple and two martial weapons of your choice.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Simple Weapon Proficiency, Weapon Fighter" supports="Weapon,Simple" number="2" />
+            <select type="Proficiency" name="Martial Weapon Proficiency, Weapon Fighter" supports="Weapon,Martial" number="2" />
+        </rules>
+    </element>
+    <element name="Tiny Fighter" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_TINY_FIGHTER">
+        <description>
+            <p>Your small stature and fighting instincts makes you hard to hit no matter what. Your Armor Class cannot be lower than 12.</p>
+        </description>
+        <sheet>
+            <description>Your Armor Class cannot be lower than 12.</description>
+        </sheet>
+        <rules>
+			<!-- homebrew ac type (not really a type of natural armor as it's written) -->
+			<stat name="ac:calculation" value="12" bonus="calculation" />
+        </rules>
+    </element>
+    <element name="Brave" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_SPRITE_BRAVE">
+        <description>
+            <p>You have advantage on saving throws against being frightened.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against being frightened.</description>
+        </sheet>
+    </element>
+</elements>
