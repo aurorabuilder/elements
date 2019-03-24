@@ -4,7 +4,7 @@
 		<name>Triton</name>
 		<description></description>
 		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="race-triton.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/race-triton.xml" />
 		</update>
 	</info>
@@ -71,27 +71,27 @@
       <set name="names" type="male">Aryn, Belthyn, Duthyn, Feloren, Otanyn, Shalryn, Vlaryn, Wolyn</set>
       <set name="names" type="female">Corus, Delnis, Jhimas, Keros, Molos, Nalos, Vodos, Zunis</set>
       <set name="names" type="surname">Ahlorsath, Pumanath, Vuuvaxath</set>     
-      <set name="names-format">$(name) $(surname)</set>     
+      <set name="names-format">{{name}} {{surname}}</set>     
       <set name="height" modifier="2d4">4'4"</set>
       <set name="weight" modifier="2d4">100 lb.</set> 
     </setters>
     <rules>
-      <stat name="Strength" value="+1"/>
-      <stat name="Constitution" value="+1"/>
-      <stat name="Charisma" value="+1"/>
-      <stat name="Speed" value="+30" bonus="base"/>
-      <stat name="speed:swim" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_PRIMORDIAL" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Amphibious" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Control_Air_and_Water" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Emissary_of_the_Sea" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Guardians_of_the_Depths" />
+      <stat name="strength" value="1"/>
+      <stat name="constitution" value="1"/>
+      <stat name="charisma" value="1"/>
+      <stat name="innate speed" value="30" bonus="base"/>
+      <stat name="innate speed:swim" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Amphibious" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Control_Air_and_Water" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Emissary_of_the_Sea" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Guardians_of_the_Depths" />
     </rules>
   </element>
 
-   <element name="Amphibious" type="Racial Trait" source="Volo’s Guide to Monsters"  id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Amphibious">
+   <element name="Amphibious" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Amphibious">
     <description>
       <p>You can breathe air and water.</p>
     </description>
@@ -100,7 +100,7 @@
     </sheet>
     <rules />
   </element>
-   <element name="Control Air and Water" type="Racial Trait" source="Volo’s Guide to Monsters"  id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Control_Air_and_Water">
+   <element name="Control Air and Water" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Control_Air_and_Water">
     <supports />
     <description>
       <p>A child of the sea, you can call on the magic of elemental air and water. You can cast fog cloud with this trait. Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water with it (see the spell in the sidebar). Once you cast a spell with this trait, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
@@ -117,7 +117,7 @@
     </rules>
   </element>
 
-   <element name="Emissary of the Sea" type="Racial Trait" source="Volo’s Guide to Monsters"  id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Emissary_of_the_Sea">
+   <element name="Emissary of the Sea" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Emissary_of_the_Sea">
     <supports />
     <description>
       <p>Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas with beasts that can breathe water. They can understand the meaning of your words, though you have no special ability to understand them in return.</p>
@@ -128,7 +128,7 @@
     <rules />
   </element>
 
-   <element name="Guardians of the Depths" type="Racial Trait" source="Volo’s Guide to Monsters"  id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Guardians_of_the_Depths">
+   <element name="Guardians of the Depths" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_Guardians_of_the_Depths">
     <supports />
     <description>
       <p>Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks caused by a deep, underwater environment.</p>
@@ -136,7 +136,9 @@
     <sheet>
       <description>You have resistance to cold damage, and you ignore any of the drawbacks caused by a deep, underwater environment.</description>
     </sheet>
-    <rules />
+    <rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+	</rules>
   </element>
   
   

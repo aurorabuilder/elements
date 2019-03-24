@@ -4,7 +4,7 @@
 		<name>Oath of Redemption</name>
 		<description>The Oath of Redemption from Xanathar’s Guide to Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-		<update version="0.1">
+		<update version="0.1.2">
 			<file name="paladin-redemption.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/paladin-redemption.xml" />
 		</update>
 	</info>
@@ -29,11 +29,11 @@
 			<description>The Oath of Redemption sets a paladin on a difficult path, one that requires a holy warrior to use violence only as a last resort.</description>
 		</sheet>
 		<rules>
-			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_OATH_SPELLS" level="1" />
-			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY" level="3" />
-			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_AURA_OF_THE_GUARDIAN" level="7" />
-			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_PROTECTIVE_SPIRIT" level="15" />
-			<grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_EMISSARY_OF_REDEMPTION" level="20" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_OATH_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_AURA_OF_THE_GUARDIAN" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_PROTECTIVE_SPIRIT" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_EMISSARY_OF_REDEMPTION" level="20" />
 		</rules>
 	</element>
 	
@@ -77,7 +77,26 @@
     <sheet>
       <description>Emissary of Peace and Rebuke the Violent</description>
     </sheet>
-    <rules />
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE" />
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT" />
+	</rules>
+  </element>
+  <element name="Channel Divinity: Emissary of Peace" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE">
+    <description>
+      <p>You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</p>
+    </description>
+    <sheet alt="Emissary of Peace" action="Bonus Action" usage="Channel Divinity">
+      <description>You grant yourself a +5 bonus to Persuasion checks for the next 10 minutes.</description>
+    </sheet>
+  </element>
+  <element name="Channel Divinity: Rebuke the Violent" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT">
+    <description>
+      <p>You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</p>
+    </description>
+    <sheet alt="Rebuke the Violent" action="Reaction" usage="Channel Divinity">
+      <description>Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</description>
+    </sheet>
   </element>
   <element name="Aura of the Guardian" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_AURA_OF_THE_GUARDIAN">
     <description>
@@ -85,7 +104,7 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
-      <description>When a creature within %aura of the guardian:aura% feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</description>
+      <description>When a creature within {{aura of the guardian:aura}} feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</description>
     </sheet>
     <rules>
 		<stat name="aura of the guardian:aura" value="10" bonus="aura of the guardian" />
@@ -98,7 +117,7 @@
       <p class="indent"></p>
     </description>
     <sheet>
-      <description>You regain 1d6 + %level:paladin:half% hit points if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</description>
+      <description>You regain 1d6+{{level:paladin:half}} hit points if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</description>
     </sheet>
     <rules />
   </element>

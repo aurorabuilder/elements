@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Warlock and Wizard</name>
         <description>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/warlock-and-wizard">Wizards of the Coast</author>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="20170213.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170213.xml" />
         </update>
     </info>
@@ -54,11 +54,11 @@
             <description>You patron is the Raven Queen, a mysterious being who rules the Shadowfell from a palace of ice deep within that dread realm.</description>
         </sheet>
         <rules>
-            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1"/>
-            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN" type="Archetype Feature" level="1"/>
-            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN" type="Archetype Feature" level="6"/>
-            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD" type="Archetype Feature" level="10"/>
-            <grant name="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND" type="Archetype Feature" level="14"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST" level="1"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN" level="1"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN" level="6"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD" level="10"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND" level="14"/>
         </rules>
     </element>
     <element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST">
@@ -103,10 +103,10 @@
             <p class="indent">At the end of a short or long rest, you can call the raven back to you—no matter where it is or whether it died—and it reappears within 5 feet of you.</p>
         </description>
         <sheet>
-            <description>While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a +$(seninel raven:perception) bonus to your passive Perception score and to Perception checks.</description>
+            <description>While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a +{{seninel raven:perception}} bonus to your passive Perception score and to Perception checks.</description>
         </sheet>
         <rules>
-            <stat name="seninel raven:perception" value="Charisma Modifier" />
+            <stat name="seninel raven:perception" value="charisma:modifier" />
         </rules>
     </element>
     <element name="Soul of the Raven" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SOUL_OF_THE_RAVEN">
@@ -180,11 +180,11 @@
             <description>Lore Mastery is an arcane tradition fixated on understanding the underlying mechnanics of magic. The promise of uncovering new knowledge or proving (or discrediting) a theory of magic is usually required to rouse its practitioners from their laboratories, academies, and archives to persue a life of adventure.</description>
         </sheet>
         <rules>
-            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" level="2"/>
-            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS" level="2"/>
-            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING" level="6"/>
-            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY" level="10"/>
-            <grant type="Archetype Feature" name="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC" level="14"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" level="2"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS" level="2"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING" level="6"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY" level="10"/>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC" level="14"/>
         </rules>
     </element>
     <element name="Lore Master" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER">
@@ -196,11 +196,11 @@
             <description>When you roll initiative, you choose either an Intelligence check or a Dexterity check.</description>
         </sheet>
         <rules>
-		<stat name="Arcana Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_ARCANA" />
-		<stat name="History Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_HISTORY" />
-		<stat name="Nature Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_NATURE" />
-		<stat name="Religion Proficiency" value="Proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_RELIGION" />
-		<stat name="Initiative" value="Intelligence Modifier" bonus="ability" />
+		<stat name="arcana:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_ARCANA" />
+		<stat name="history:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_HISTORY" />
+		<stat name="nature:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_NATURE" />
+		<stat name="religion:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_RELIGION" />
+		<stat name="initiative" value="intelligence:modifier" bonus="ability" />
         </rules> 
     </element>
     <element name="Spell Secrets" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS">
