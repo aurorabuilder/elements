@@ -2,11 +2,9 @@
 <elements>
 	<info>
 		<name>Weapon Master</name>
-		<description>The Weapon Master class.
-</description>
-		<author
-url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby383b</author>
-		<update version="1.0">
+		<description>The Weapon Master class.</description>
+		<author url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby383b</author>
+		<update version="0.0.1">
 			<file name="class-weapon-master.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/classes/class-weapon-master.xml" />
 		</update>
 	</info>
@@ -119,12 +117,12 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 	<element name="Favored Weapon" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_WEAPON_MASTER_FAVORED_WEAPON">
 		<description>
 			<p>For a Weapon master, your weapons are what makes you who you are. Through your life you have adapted to fight with all kinds of weapons but have specific type of weapon as your signature weapons.</p>
-			<p class="indent">You get +1 bonus to attack and damage rolls when you use your favored weapon. Choose one simple or martial weapon type, and another when you reach 11th level.</p>
+			<p class="indent">You get +1 bonus to attack and damage rolls when you use your favored weapon. Choose one simple or martial weapon, and another when you reach 11th level.</p>
 			<p class="indent">When you reach 20th level, you have advantage on attacks with your favored weapon.</p>
 		</description>
 		<sheet>
 			<description>You get +1 bonus to attack and damage rolls when you use your favored weapon.</description>
-			<description level="11">You get +1 bonus to attack and damage rolls with two types of weapons as your favored weapons.</description>
+			<description level="11">You get +1 bonus to attack and damage rolls with your two favored weapons.</description>
 			<description level="20">You get +1 bonus to damage and attack rolls with your favored weapons, you also have advantage on attacks with them.</description>
 		</sheet>
 		<setters>
@@ -224,19 +222,23 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 		<description>
 			<p>At 9th level, you become extremely hard to fight due to your uncanny stance. When a creature you can see or hear attacks you, you can use your reaction to make attacks from that creature roll with disadvantage when attacking you. If the creature misses an attack against you, in the same reaction you can counter attack, making one melee attack against that creature. You can use this feature a number of times equal to your Dexterity modifier(minimum 1) and regain uses of this feature when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description>When a creature you can see or hear attacks you, you can use your reaction to make attacks from that creature roll with disadvantage when attacking you. If the creature misses an attack against you, in the same reaction you can counter attack, making one melee attack against that creature. You can use this feature a number of times equal to your Dexterity modifier(minimum 1) and regain uses of this feature when you finish a long rest.</description>
+		<sheet action="Reaction" usage="{{flawless stance:uses}}/Long Rest">
+			<description>When a creature you can see or hear attacks you, you can use your reaction to make attacks from that creature roll with disadvantage when attacking you. If the creature misses an attack against you, in the same reaction you can counter attack, making one melee attack against that creature.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Flawless_Stance</set>
 		</setters>
+		<rules>
+			<stat name="flawless stance:uses" value="dexterity:modifier" bonus="base" />
+			<stat name="flawless stance:uses" value="1" bonus="base" />
+		</rules>
 	</element>
 	<element name="Adrenaline" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_WEAPON_MASTER_ADRENALINE">
 		<description>
 			<p>Beginning at 13th level, when you enter combat your body instantly responds to your battle urges releasing a heavy dose of adrenaline into your system. After rolling your Initiative roll, you gain temporary hit points equal to your weapon master level.</p>
 		</description>
 		<sheet>
-			<description>After rolling your Initiative roll, you gain temporary hit points equal to your weapon master level.</description>
+			<description>After rolling your Initiative roll, you gain temporary hit points equal to {{level:weapon master}}.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Adrenaline</set>
@@ -283,25 +285,25 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 		<description>
 			<p>Starting at 3rd level, you can add half your proficiency bonus (rounded up) to any Strength or Dexterity based skill check you make that doesn’t already use your proficiency bonus.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>You can add half your proficiency bonus (rounded up) to any Strength or Dexterity based skill check you make that doesn’t already use your proficiency bonus.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Martial_Prowess</set>
 		</setters>
 		<rules>
-      		<stat name="Acrobatics Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS" />
-      		<stat name="Athletics Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_ATHLETICS" />
-      		<stat name="Sleight of Hand Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
-      		<stat name="Stealth Misc" value="Proficiency Half Rounded Up" requirements="!ID_PROFICIENCY_SKILL_STEALTH" />
+			<stat name="acrobatics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<stat name="athletics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<stat name="sleight of hand:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<stat name="stealth:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_STEALTH" />
 		</rules>
 	</element>
 	<element name="Combat Prowess" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_COMBAT_MASTERY_COMBAT_PROWESS">
 		<description>
 			<p>At 7th level, when you miss a weapon attack, you can choose to make it a hit instead. Once you use this feature you can’t use it again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description>When you miss a weapon attack, you can choose to make it a hit instead. Once you use this feature you can’t use it again until you finish a long rest.</description>
+		<sheet usage="1/Long Rest">
+			<description>When you miss a weapon attack, you can choose to make it a hit instead.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Combat_Prowess</set>
@@ -322,8 +324,8 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 		<description>
 			<p>At 15th level, you may now make a spinning attack on all attackers within five feet of you as an action. You have to roll a separate attack roll for each of the enemies.</p>
 		</description>
-		<sheet>
-			<description>You may now make a spinning attack on all attackers within five feet of you as an action. You have to roll a separate attack roll for each of the enemies.</description>
+		<sheet action="Action">
+			<description>You make a spinning attack on all attackers within five feet of you. You have to roll a separate attack roll for each of the enemies.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Whirlwind_Attack</set>
@@ -333,8 +335,8 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 		<description>
 			<p>Upon reaching 18th level, you attain the pinnacle of resilience on battle. As a bonus action, you can spend a hit dice to heal yourself equal to hit die + your Constitution modifier if you have no more than half of your hit points left. You can not use this feature if you have 0 hit points.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can spend a hit dice to heal yourself equal to hit die + your Constitution modifier if you have no more than half of your hit points left. You can not use this feature if you have 0 hit points.</description>
+		<sheet action="Bonus Action">
+			<description>You can spend a hit dice to heal yourself equal to hit die + {{constitution:modifier}} if you have no more than half of your hit points left. You can not use this feature if you have 0 hit points.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Survivor</set>
@@ -381,12 +383,16 @@ url="https://www.dandwiki.com/wiki/Weapon_Master_(5e_Class)">Raiden and Blobby38
 		<description>
 			<p>At 7th level, you can use your reaction in combat to parry an attack. Once per turn, you can choose to parry one melee weapon attack against you as long as you aren’t surprised or the creature attacking you doesn’t have advantage against you. The damage of the attack from that creature is reduced by half your current weapon master level rounded down + your Dexterity modifier.</p>
 		</description>
-		<sheet>
-			<description>Once per turn, you can choose to parry one melee weapon attack against you as long as you aren’t surprised or the creature attacking you doesn’t have advantage against you. The damage of the attack from that creature is reduced by half your current weapon master level rounded down + your Dexterity modifier.</description>
+		<sheet action="Reaction">
+			<description>Once per turn, you can choose to parry one melee weapon attack against you as long as you aren’t surprised or the creature attacking you doesn’t have advantage against you. The damage of the attack from that creature is reduced by {{parry:damage reduction}}.</description>
 		</sheet>
 		<setters>
 			<set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Weapon_Master_(5e_Class)&amp;oldid=1131376#Parry</set>
 		</setters>
+		<rules>
+			<stat name="parry:damage reduction" value="level:weapon master:half" />
+			<stat name="parry:damage reduction" value="dexterity:modifier" />
+		</rules>
 	</element>
 	<element name="Helper" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_TACTIC_MASTERY_HELPER">
 		<description>
