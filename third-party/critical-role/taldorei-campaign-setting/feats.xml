@@ -4,7 +4,7 @@
         <name>Feats</name>
         <description>The Feats from Tal’Dorei Campaign Setting.</description>
         <author url="https://geekandsundry.com/shows/critical-role/">Tal’Dorei Campaign Setting</author>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/taldorei-campaign-setting/feats.xml" />
         </update>
     </info>
@@ -48,7 +48,7 @@
             <description>As a reaction you can prepare a spell that you have not prepared losing preperation on a different spell. This spell is limited by the spell slots that you have and can only be from a class that you contain and has the ability to prepare spells. </description>
         </sheet>
     </element>
-    <element name="Gambler" type="Feat" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_FEAT_DROW_GAMBLER">
+    <element name="Gambler" type="Feat" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_FEAT_GAMBLER">
         <description>
             <p>Spending countless hours winning and losing coin in alestained taverns has forged you into a consummate gambler and chance-seeking addict. You gain the following benefits and features:</p>
             <ul>
@@ -63,8 +63,8 @@
             <description>You have advantage on deception checks to bluff in games on chance and persuasion to convince people to play. You also have a reputation as a card shark and when you take the carousing downtime action you can reroll your result and have to take the second roll.</description>
         </sheet>
         <rules>
-            <select type="Proficiency" name="Gaming Set (Gambler)" supports="Gaming Set" />
-            <stat name="Constitution" value="1" />
+            <select type="Proficiency" name="Gaming Set (Gambler)" supports="Gaming Set" nummber="2"/>
+            <stat name="charisma" value="1" />
         </rules>
     </element>
     <element name="Mending Affinity" type="Feat" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_FEAT_MENDING_AFFINITY">
@@ -80,7 +80,7 @@
             <description>When you are healed by any source (including stabilized with a healer's kit) you gain an additional {{proficiency}} Hit Points.</description>
         </sheet>
         <rules>
-            <stat name="Constitution" value="1" />
+            <stat name="constitution" value="1" />
         </rules>
     </element>
     <element name="Mystic Conflux" type="Feat" source="Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_FEAT_MYSTIC_CONFLUX">
@@ -91,6 +91,9 @@
                 <li>You can now be attuned to a maximum of four magical items, rather than the normal limit of three. Other attunement limitations still apply.</li>
             </ul>
         </description>
+        <rules>
+            <stat name="attunement:max" value="4" bonus="base" />
+        </rules>
         <sheet>
             <description>You have advantage on arcana checks when investigating magical objects or devices and can be attuned to a maximum of 4 magical items.</description>
         </sheet>
