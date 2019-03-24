@@ -4,7 +4,7 @@
         <name>The Shadow Cabal</name>
         <description>The Shadow Cabal archetype.</description>
         <author url="http://mfov.magehandpress.com/2018/04/the-shadow-cabal.html">Mage Hand Press</author>
-        <update version="0.1.1">
+        <update version="0.1.2">
             <file name="warlock-shadowcabal.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/warlock-shadowcabal.xml" />
         </update>
     </info>
@@ -76,7 +76,7 @@
             <!-- <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" /> -->
             <select type="Proficiency" name="Death Walks Among You" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_INTIMIDATION" default="ID_PROFICIENCY_SKILL_INTIMIDATION" default-behaviour="force" />
 
-            <stat name="Intimidation Proficiency" value="Proficiency" bonus="double" />
+            <stat name="intimidation:proficiency" value="proficiency" bonus="double" />
         </rules>
     </element>
     <element name="Shadow Walk" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_SHADOW_WALK">
@@ -92,8 +92,8 @@
             <p>At 6th level, as a reaction when you are hit by an attack you can become a haunting, incorporeal phantasm. You gain resistance to that attack and all damage until the end of your next turn, and you can then move 60 feet to an unoccupied space that you can see.</p>
             <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
         </description>
-        <sheet>
-            <description>As a reaction when you are hit by an attack you can become a haunting, incorporeal phantasm. You gain resistance to that attack and all damage until the end of your next turn, and you can then move 60 feet to an unoccupied space that you can see. (1/SR)</description>
+        <sheet usage="1/Short Rest">
+            <description>As a reaction when you are hit by an attack you can become a haunting, incorporeal phantasm. You gain resistance to that attack and all damage until the end of your next turn, and you can then move 60 feet to an unoccupied space that you can see.</description>
         </sheet>
     </element>
     <element name="The Reaping" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_THE_REAPING">
@@ -101,10 +101,10 @@
             <p>At 10th level, when you go on the offensive, the dark forces that empower you grant you a defensive boon. Once per turn, when you deal damage to a hostile creature, you can regain hit points equal to your Charisma modifier.</p>
         </description>
         <sheet>
-            <description>Once per turn, when you deal damage to a hostile creature, you can regain $(the reaping:hp) hit points.</description>
+            <description>Once per turn, when you deal damage to a hostile creature, you can regain {{the reaping:hp}} hit points.</description>
         </sheet>
         <rules>
-            <stat name="the reaping:hp" value="Charisma Modifier" />
+            <stat name="the reaping:hp" value="charisma:modifier" />
         </rules>
     </element>
     <element name="Death Blossom" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_THE_SHADOW_CABAL_DEATH_BLOSSOM">
@@ -112,8 +112,8 @@
             <p>At 14th level, as an action on your turn you can unleash a deadly barrage of eldritch energy in a 30-foot radius around you. Creatures you choose in this area must make a Dexterity saving throw against your warlock spell save DC. On a failed save, a creature takes force damage equal to 4d10 + your Charisma modifier, or half as much damage on a successful save.</p>
             <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
         </description>
-        <sheet>
-            <description>As an action on your turn you can unleash a deadly barrage of eldritch energy in a 30-foot radius around you. Creatures you choose in this area must make a DC$(spellcasting:dc:cha) Dexterity saving throw. On a failed save, a creature takes force damage equal to 4d10 + $(Charisma Modifier), or half as much damage on a successful save. (1/LR)</description>
+        <sheet usage="1/Long Rest">
+            <description>As an action on your turn you can unleash a deadly barrage of eldritch energy in a 30-foot radius around you. Creatures you choose in this area must make a DC{{spellcasting:dc:cha}} Dexterity saving throw. On a failed save, a creature takes force damage equal to 4d10+{{charisma:modifier}}, or half as much damage on a successful save.</description>
         </sheet>
     </element>
 </elements>

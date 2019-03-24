@@ -4,7 +4,7 @@
     <name>Warlock</name>
     <description>The Warlock class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.8">
+    <update version="0.3.2">
       <file name="class-warlock.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-warlock.xml" />
     </update>
   </info>
@@ -80,21 +80,21 @@
       <set name="spellcastingAbility">Charisma</set>
     </setters>
     <rules>
-      <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D8" /> -->
+      <!-- <grant type="Grants" id="ID_INTERNAL_GRANTS_AVERAGE_HP_D8" /> -->
 
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
       <select type="Proficiency" name="Skill Proficiency (Warlock)" supports="Skill,Warlock" number="2" requirements="!ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
 
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_OTHERWORLDLY_PATRON" level="1"/>
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_SPELLCASTING_WARLOCK_PACT_MAGIC" level="1" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_INVOCATIONS" level="2" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON" level="3" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ABILITY_SCORE_IMPROVEMENT_WARLOCK" level="4" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_MYSTIC_ARCANUM" level="11" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_MASTER" level="20" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_OTHERWORLDLY_PATRON" level="1"/>
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_SPELLCASTING_WARLOCK_PACT_MAGIC" level="1" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_INVOCATIONS" level="2" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON" level="3" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ABILITY_SCORE_IMPROVEMENT_WARLOCK" level="4" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_MYSTIC_ARCANUM" level="11" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_MASTER" level="20" />
     </rules>
     <multiclass id="ID_WOTC_PHB_MULTICLASS_WARLOCK">
       <prerequisite>Charisma 13</prerequisite>
@@ -104,8 +104,8 @@
       </setters>
       <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS" />
       </rules>
     </multiclass>
   </element>
@@ -144,7 +144,7 @@
       <p>You can use an arcane focus as a spellcasting focus for your warlock spells.</p>      
     </description>
     <sheet display="false">
-      <description>Your arcane research and the magic bestowed on you by your patron have given you facility with spells. You have %warlock:spellcasting:slots:count% slots of level %warlock:spellcasting:slot%</description>
+      <description>Your arcane research and the magic bestowed on you by your patron have given you facility with spells. You have {{warlock:spellcasting:slots:count}} slots of level {{warlock:spellcasting:slot}}</description>
     </sheet>
     <setters>
       <set name="spellcastingClass">Warlock</set>
@@ -192,11 +192,11 @@
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="8" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Warlock"/>
-      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="10" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Warlock"/>
       <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Warlock"/>
+      <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Warlock"/>
     </rules>
   </element>
   <element name="Eldritch Invocations" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_ELDRITCH_INVOCATIONS">
@@ -254,8 +254,8 @@
       <p class="indent">You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.</p>
       <p class="indent">At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast your arcanum spells once without expending a spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast your arcanum spells once without expending a spell slot.</description>
     </sheet>
     <rules>
       <select type="Spell" name="Arcanum Spell (Mystic Arcanum)" supports="Warlock,6" level="11" spellcasting="Warlock" />
@@ -268,8 +268,8 @@
     <description>
       <p>At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.</p>
     </description>
-    <sheet>
-      <description>You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature.</description>
     </sheet>
     <rules />
   </element>
@@ -283,7 +283,7 @@
       <p>When you cast eldritch blast, add your Charisma modifier to the damage it deals on a hit.</p>
     </description>
     <sheet>
-      <description>When you cast eldritch blast, add your Charisma modifier (+%Charisma Modifier%) to the damage it deals on a hit.</description>
+      <description>When you cast eldritch blast, add your Charisma modifier (+{{charisma:modifier}}) to the damage it deals on a hit.</description>
     </sheet>
     <rules />
   </element>
@@ -297,7 +297,7 @@
       <description>You can cast mage armor on yourself at will, without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_MAGE_ARMOR" />
+      <grant type="Spell" id="ID_PHB_SPELL_MAGE_ARMOR" />
     </rules>
   </element>
   <element name="Ascendant Step" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ASCENDANT_STEP">
@@ -312,7 +312,7 @@
       <description>You can cast levitate on yourself at will, without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_LEVITATE" />
+      <grant type="Spell" id="ID_PHB_SPELL_LEVITATE" />
     </rules>
   </element>
   <element name="Beast Speach" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEAST_SPEACH">
@@ -324,7 +324,7 @@
       <description>You can cast speak with animals at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
     </rules>
   </element>
   <element name="Beguiling Influence" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEGUILING_INFLUENCE">
@@ -336,8 +336,8 @@
       <description>You gain proficiency in the Deception and Persuasion skills.</description>
     </sheet>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_DECEPTION" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_PERSUASION" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
     </rules>
   </element>
   <element name="Bewitching Whispers" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEWITCHING_WHISPERS">
@@ -348,11 +348,11 @@
       <p class="flavor">Prerequisite: 7th level</p>
       <p>You can cast compulsion once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast compulsion once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast compulsion once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_COMPULSION" />
+      <grant type="Spell" id="ID_PHB_SPELL_COMPULSION" />
     </rules>
   </element>
   <element name="Book of Ancient Secrets" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BOOK_OF_ANCIENT_SECRETS">
@@ -379,11 +379,11 @@
       <p class="flavor">Prerequisite: 15th level, Pact of the Chain feature</p>
       <p>You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.</p>
     </description>
-    <sheet>
-      <description>You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_HOLD_MONSTER" />
+      <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" />
     </rules>
   </element>
   <element name="Devil’s Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_DEVILS_SIGHT">
@@ -404,11 +404,11 @@
       <p class="flavor">Prerequisite: 7th level</p>
       <p>You can cast confusion once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast confusion once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast confusion once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_CONFUSION" />
+      <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" />
     </rules>
   </element>
   <element name="Eldritch Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_SIGHT">
@@ -421,7 +421,7 @@
       <description>You can cast detect magic at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DETECT_MAGIC" />
+      <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
     </rules>
   </element>
   <element name="Eldritch Spear" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_Eldritch_Spear">
@@ -436,7 +436,7 @@
       <description>When you cast eldritch blast, its range is 300 feet.</description>
     </sheet>
     <rules>
-      <!-- implement alter spell: <stat target="ID_PHB_SPELL_ELDRITCH_BLAST" field="range" value="300 feet" / >-->
+      <!-- implement alter spell: <stat target="ID_PHB_SPELL_ELDRITCH_BLAST" field="range" value="300 feet" />-->
     </rules>
   </element>
   <element name="Eyes of the Rune Keeper" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_EYES_OF_THE_RUNEKEEPER">
@@ -458,7 +458,7 @@
       <description>You can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_FALSE_LIFE" />
+      <grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" />
     </rules>
   </element>
   <element name="Gaze of Two Minds" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_GAZE_OF_TWO_MINDS">
@@ -480,11 +480,11 @@
       <p>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).</p>
     </description>
     <sheet>
-      <description>When you hit a creature with your pact weapon, the creature takes %lifedrinker:damage% extra necrotic damage.</description>
+      <description>When you hit a creature with your pact weapon, the creature takes {{lifedrinker:damage}} extra necrotic damage.</description>
     </sheet>
     <rules>
       <stat name="lifedrinker:damage" value="1" bonus="modifier"/>
-      <stat name="lifedrinker:damage" value="Charisma Modifier" bonus="modifier"/>
+      <stat name="lifedrinker:damage" value="charisma:modifier" bonus="modifier"/>
     </rules>
   </element>
   <element name="Mask of Many Faces" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MANY_FACES">
@@ -496,7 +496,7 @@
       <description>You can cast disguise self at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" />
+      <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" />
     </rules>
   </element>
   <element name="Master of Myriad Forms" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MASTER_OF_MYRIAD_FORMS">
@@ -511,7 +511,7 @@
       <description>You can cast alter self at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_ALTER_SELF" />
+      <grant type="Spell" id="ID_PHB_SPELL_ALTER_SELF" />
     </rules>
   </element>
   <element name="Minions of Chaos" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MINIONS_OF_CHAOS">
@@ -522,11 +522,11 @@
       <p class="flavor">Prerequisite: 9th level</p>
       <p>You can cast conjure elemental once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast conjure elemental once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast conjure elemental once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_CONJURE_ELEMENTAL" />
+      <grant type="Spell" id="ID_PHB_SPELL_CONJURE_ELEMENTAL" />
     </rules>
   </element>
   <element name="Mire the Mind" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MIRE_THE_MIND">
@@ -537,11 +537,11 @@
       <p class="flavor">Prerequisite: 5th level</p>
       <p>You can cast slow once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast slow once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast slow once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_SLOW" />
+      <grant type="Spell" id="ID_PHB_SPELL_SLOW" />
     </rules>
   </element>
   <element name="Misty Visions" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MISTY_VISIONS">
@@ -553,7 +553,7 @@
       <description>You can cast silent image at will, without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_SILENT_IMAGE" />
+      <grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" />
     </rules>
   </element>
   <element name="One with Shadows" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ONE_WITH_SHADOWS">
@@ -581,7 +581,7 @@
       <description>You can cast jump on yourself at will, without expending a spell slot or material components.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_JUMP" />
+      <grant type="Spell" id="ID_PHB_SPELL_JUMP" />
     </rules>
   </element>
   <element name="Repelling Blast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_REPELLING_BLAST">
@@ -605,11 +605,11 @@
       <p class="flavor">Prerequisite: 7th level</p>
       <p>You can cast polymorph once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast polymorph once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast polymorph once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_POLYMORPH" />
+      <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" />
     </rules>
   </element>
   <element name="Sign of Ill Omen" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_SIGN_OF_ILL_OMEN">
@@ -620,11 +620,11 @@
       <p class="flavor">Prerequisite: 5th level</p>
       <p>You can cast bestow curse once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast bestow curse once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast bestow curse once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_BESTOW_CURSE" />
+      <grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" />
     </rules>
   </element>
   <element name="Thief of Five Fates" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_THIEF_OF_FIVE_FATES">
@@ -632,11 +632,11 @@
     <description>
       <p>You can cast bane once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast bane once using a warlock spell slot. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast bane once using a warlock spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_BANE" />
+      <grant type="Spell" id="ID_PHB_SPELL_BANE" />
     </rules>
   </element>
   <element name="Thirsting Blade" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_THIRSTING_BLADE">
@@ -664,7 +664,7 @@
       <description>You can cast arcane eye at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_ARCANE_EYE" />
+      <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" />
     </rules>
   </element>
   <element name="Voice of the Chain Master" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_VOICE_OF_THE_CHAIN_MASTER">
@@ -692,7 +692,7 @@
       <description>You can cast speak with dead at will, without expending a spell slot.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+      <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
     </rules>
   </element>
   <element name="Witch Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_WITCH_SIGHT">
@@ -721,7 +721,7 @@
       <description>You learn the find familiar spell and can cast it as a ritual. Additionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own.</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_FIND_FAMILIAR" />
+      <grant type="Spell" id="ID_PHB_SPELL_FIND_FAMILIAR" />
     </rules>
   </element>
   <element name="Pact of the Tome" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME">
@@ -746,8 +746,10 @@
       <p class="indent">Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.</p>
       <p class="indent">You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can’t affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.</p>
     </description>
-    <sheet>
-      <description>You can use your action to create a pact weapon in your empty hand. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</description>
+    <sheet usage="Action">
+      <description>Create a pact weapon in your empty hand. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
+	  Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.
+	  You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can’t affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.</description>
     </sheet>
     <rules />
   </element>
@@ -768,11 +770,11 @@
       <description>You have made a pact with a fiend from the lower planes of existence.</description>
     </sheet>
     <rules>
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESBLESSING" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESOWNLUCK" type="Archetype Feature" level="6" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_FIENDISH_RESILIENCE" type="Archetype Feature" level="10" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_HURL_THROUGH_HELL" type="Archetype Feature" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_EXPANDED_SPELL_LIST" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESBLESSING" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESOWNLUCK" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_FIENDISH_RESILIENCE" level="10" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_HURL_THROUGH_HELL" level="14" />
     </rules>
   </element>
   <element name="Expanded Spell List" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_EXPANDED_SPELL_LIST">
@@ -815,10 +817,10 @@
       <p>Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1).</p>
     </description>
     <sheet>
-      <description>When you reduce a hostile creature to 0 hit points, you gain %dark ones blessing:temp hp% temporary hit points.</description>
+      <description>When you reduce a hostile creature to 0 hit points, you gain {{dark ones blessing:temp hp}} temporary hit points.</description>
     </sheet>
     <rules>
-      <stat name="dark ones blessing:temp hp" value="Charisma Modifier" />
+      <stat name="dark ones blessing:temp hp" value="charisma:modifier" />
       <stat name="dark ones blessing:temp hp" value="level:warlock" />
     </rules>
   </element>
@@ -829,8 +831,8 @@
       <p>Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll’s effects occur.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. (1/SR-LR)</description>
+    <sheet usage="1/Short Rest">
+      <description>When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll.</description>
     </sheet>
     <rules />
   </element>
@@ -848,8 +850,8 @@
       <p class="indent">At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>When you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears. At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>When you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears. At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage.</description>
     </sheet>
   </element>
 
@@ -870,11 +872,11 @@
       <description>Your patron is a lord or lady of the fey, a creature of legend who holds secrets that were forgotten before the mortal races were born.</description>
     </sheet>
     <rules>
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_FEY_PRESENCE" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_MISTY_ESCAPE" type="Archetype Feature" level="6" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_BEGUILING_DEFENSES" type="Archetype Feature" level="10" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_DARK_DELIRIUM" type="Archetype Feature" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_EXPANDED_SPELL_LIST" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_FEY_PRESENCE" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_MISTY_ESCAPE" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_BEGUILING_DEFENSES" level="10" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_DARK_DELIRIUM" level="14" />
     </rules>
   </element>
 
@@ -915,8 +917,8 @@
       <p>Starting at 1st level, your patron bestows upon you the ability to project the beguiling and fearsome presence of the fey. As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>As an action, you can cause each creature in a 10-foot cube originating from you to make a DC$(spellcasting:dc:wis) Wisdom saving throw. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn. (1/SR)</description>
+    <sheet action="Action" usage="1/Short Rest">
+      <description>You can cause each creature in a 10-foot cube originating from you to make a DC{{spellcasting:dc:wis}} Wisdom saving throw. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.</description>
     </sheet>
     <rules />
   </element>
@@ -926,8 +928,8 @@
       <p>Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.</p>
       <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell. (1/SR)</description>
+    <sheet usage="1/Short Rest">
+      <description>When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.</description>
     </sheet>
     <rules />
   </element>
@@ -937,7 +939,7 @@
       <p>Beginning at 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be charmed by you for 1 minute or until the creature takes any damage.</p>
     </description>
     <sheet>
-      <description>You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a DC$(spellcasting:dc:wis) Wisdom saving throw or be charmed by you for 1 minute or until the creature takes any damage.</description>
+      <description>You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a DC{{spellcasting:dc:wis}} Wisdom saving throw or be charmed by you for 1 minute or until the creature takes any damage.</description>
     </sheet>
     <rules />
   </element>
@@ -948,8 +950,8 @@
       <p class="indent">Until this illusion ends, the creature thinks it is lost in a misty realm, the appearance of which you choose. The creature can see and hear only itself, you, and the illusion.</p>
       <p class="indent">You must finish a short or long rest before you can use this feature again.</p>
     </description>
-    <sheet>
-      <description>As an action, choose a creature that you can see within 60 feet of you. It must make a DC$(spellcasting:dc:wis) Wisdom saving throw. On a failed save, it is charmed or frightened by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell). This effect ends early if the creature takes any damage. (1/SR)</description>
+    <sheet action="Action" usage="1/Short Rest">
+      <description>Choose a creature that you can see within 60 feet of you. It must make a DC{{spellcasting:dc:wis}} Wisdom saving throw. On a failed save, it is charmed or frightened by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell). This effect ends early if the creature takes any damage.</description>
     </sheet>
     <rules />
   </element>
@@ -974,11 +976,11 @@
       <description>Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality.</description>
     </sheet>
     <rules>
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND" type="Archetype Feature" level="1" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD" type="Archetype Feature" level="6" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_THOUGHT_SHIELD" type="Archetype Feature" level="10" />
-      <grant name="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL" type="Archetype Feature" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_THOUGHT_SHIELD" level="10" />
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL" level="14" />
     </rules>
   </element>
 
@@ -1028,8 +1030,8 @@
       <p>At 6th level, you learn to magically ward yourself against attack and to turn an enemy’s failed strike into good luck for yourself. When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn. (1/SR)</description>
+    <sheet usage="1/Short Rest">
+      <description>When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.</description>
     </sheet>
     <rules />
   </element>
@@ -1040,7 +1042,9 @@
     <sheet>
       <description>You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do.</description>
     </sheet>
-    <rules />
+	<rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+	</rules>
   </element>
   <element name="Create Thrall" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL">
     <description>
@@ -1052,19 +1056,4 @@
     </sheet>
     <rules />
   </element>
-
-
-  <!--
-  <element name="xxxxxxxxxxxxxxx" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCHFEY_xxxxxxxxxxxxxxx">
-    <description>
-      <p></p>
-      <p class="indent"></p>
-    </description>
-    <sheet>
-      <description></description>
-    </sheet>
-    <rules />
-  </element>
-  -->
-
 </elements>
