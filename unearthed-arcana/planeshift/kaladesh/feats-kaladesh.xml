@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Feats</name>
+		<description>Feats from Plane Shift: kaladesh.</description>
+		<author url="https://media.wizards.com/2017/downloads/magic/Plane-Shift_Kaladesh.pdf">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="feats-kaladesh.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/kaladesh/feats-kaladesh.xml" />
+		</update>
+	</info>
+	<element name="Servo Crafting" type="Feat" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_FEAT_SERVO_CRAFTING">
+		<prerequisite>Intelligence 13 or higher</prerequisite>
+		<requirements>[int:13]</requirements>
+		<description>
+			<p><i>Prerequisite: Intelligence 13 or higher</i></p>
+			<p>You are skilled in the creation of servos—tiny constructs that function as personal assistants. You can cast the find familiar spell as a ritual, creating a servo to serve as your familiar instead of an animal. A servo’s statistics appear in the “Artifact Creatures” section of the Planeshift: Kaladesh document. In every other way, a servo familiar functions as described in the find familiar spell.</p>
+			<p class="indent">You can communicate telepathically with your servo familiar and perceive through its senses as long as you are on the same plane of existence. You can speak through your servo in your own voice.</p>
+			<p class="indent">Additionally, when you take the Attack action, you can forgo one of your own attacks to allow your servo familiar to make one attack of its own.</p>
+		</description>
+		<sheet>
+			<description>You can cast find familiar as a ritual and can forgo one of your attacks to attack with your servo.</description>
+		</sheet>
+		<rules>
+			<grant type="spell" name="ID_PHB_SPELL_FIND_FAMILIAR" />
+		</rules>
+	</element>
+	<element name="Quicksmithing" type="Feat" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_FEAT_QUICKSMITHING">
+		<prerequisite>Intelligence 13 or higher</prerequisite>
+		<requirements>[int:13]</requirements>
+		<description>
+			<p><i>Prerequisite: Intelligence 13 or higher</i></p>
+			<p class="indent">You have mastered the art of on-the-fly invention, improvement, and jury-rigging. You can use your talents to create immediate, short-term magical effects similar to spells, given time and an adequate supply of aether.</p>
+			<p class="indent">When you choose this feat, you master two magical effects, each of which recreates the effect of a 1st-level spell that has the ritual tag. These spells can come from any class list, but Intelligence is your spellcasting ability for them.</p>
+			<p class="indent">If you come across a schematic geared toward quicksmithing or study with another quicksmith, you might be able to add another spell to the effects you have mastered. The spell’s level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of mastering the spell takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents aether you use as you experiment with the spell effect to master it.</p>
+			<p class="indent">When you create a device, choose one of the following options:</p>
+			<ul>
+				<li>Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.</li>
+				<li>Fire Starter. This device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.</li>
+				<li>Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You learn two free rituals of the first level and can learn rituals that are of level {{level:half:up}} or lower costing 50 gp and 2h per spell level (Spellcasting ability is intelligence). You gain proficiency with the quicksmith's tools and can craft quicksmith contraptions (AC 5, 1 HP) for 10 gp and 1 hour per contraption. Up to a maximum of 3 contraptions that function for up to 24 hours.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="1st-level Spell (Quicksmithing)" supports="Ritual,1" number="2" />
+		</rules>
+	</element>
+</elements>
