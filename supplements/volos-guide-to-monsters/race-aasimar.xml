@@ -4,7 +4,7 @@
 		<name>Aasimar</name>
 		<description></description>
 		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="race-aasimar.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/race-aasimar.xml" />
 		</update>
 	</info>
@@ -46,21 +46,21 @@
       <set name="names" type="male">Aseir, Bardeid, Haseid, Khemed, Mehmen, Sudeiman, Zasheir</set>
       <set name="names" type="female">Atala, Ceidil, Hama, Jasmal, Meilil, Seipora, Yasheira, Zasheida</set>
       <set name="names" type="surname">Basha, Dumein, Jassan, Khalid, Mostana, Pashar, Rein</set>
-      <set name="names-format">$(name) $(surname)</set>   
+      <set name="names-format">{{name}} {{surname}}</set>   
       <set name="height" modifier="2d10">4'8"</set>
       <set name="weight" modifier="2d4">110 lb.</set>   
     </setters>
     <rules>
-      <stat name="Charisma" value="+2" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
-      <grant type="Vision" name="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_CELESTIAL" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_AASIMAR_SUBRACE" />
+      <stat name="charisma" value="2" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Vision" id="ID_VISION_DARKVISION" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_AASIMAR_SUBRACE" />
     </rules>
   </element>
   <element name="Celestial Resistance" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE">
@@ -70,18 +70,21 @@
     <sheet>
       <description>You have resistance to necrotic damage and radiant damage.</description>
     </sheet>
-    <rules />
+    <rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+	</rules>
   </element>
   <element name="Healing Hands" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS">
     <supports />
     <description>
       <p>As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>As an action, you can touch a creature and cause it to regain %trait:healing-hands% hit points. (once / long rest)</description>
+    <sheet action="Action" usage="1/Long Rest">
+      <description>You can touch a creature and cause it to regain {{trait:healing-hands}} hit points.</description>
     </sheet>
     <rules>
-      <stat name="trait:healing-hands" value="Level"  />
+      <stat name="trait:healing-hands" value="level" />
     </rules>
   </element>
   <element name="Light Bearer" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER">
@@ -90,10 +93,10 @@
       <p>You know the light cantrip. Charisma is your spellcasting ability for it.</p>
     </description>
     <sheet>
-      <description>You know the light cantrip. Charisma is your spellcasting ability for it.</description>
+      <description>You know the light cantrip. (Spellcasting: Charisma)</description>
     </sheet>
     <rules>
-      <grant type="Spell" name="ID_PHB_SPELL_LIGHT" />
+      <grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
     </rules>
   </element>
   <element name="Aasimar Subrace" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_AASIMAR_SUBRACE">
@@ -117,8 +120,8 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="Wisdom" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_AASIMAR_RADIANT_SOUL" />
+      <stat name="wisdom" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_AASIMAR_RADIANT_SOUL" />
     </rules>
   </element>
   <element name="Radiant Soul" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_RACIAL_TRAIT_AASIMAR_RADIANT_SOUL">
@@ -128,8 +131,8 @@
       <p>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.</p>
       <p>Once you use this trait, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal {{level}} extra radiant damage to one target when you deal damage to it with an attack or a spell.</description>
     </sheet>
     <rules />
   </element>
@@ -145,21 +148,19 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="Constitution" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_AASIMAR_RADIANT_CONSUMPTION" />
+      <stat name="constitution" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_AASIMAR_RADIANT_CONSUMPTION" />
     </rules>
   </element>
   <element name="Radiant Consumption" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_RACIAL_TRAIT_AASIMAR_RADIANT_CONSUMPTION">
-    <supports />
     <description>
       <p>Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you.</p>
       <p>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.</p>
       <p>Once you use this trait, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take {{level:half:up}} radiant damage. In addition, once on each of your turns, you can deal {{level}} extra radiant damage to one target when you deal damage to it with an attack or a spell.</description>
     </sheet>
-    <rules />
   </element>
   
   <element name="Fallen Aasimar" type="Sub Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_SUB_RACE_FALLEN_AASIMAR">
@@ -173,21 +174,25 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="Strength" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_AASIMAR_NECROTIC_SHROUD" />
+      <stat name="strength" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_AASIMAR_NECROTIC_SHROUD" />
     </rules>
   </element>
   <element name="Necrotic Shroud" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_RACIAL_TRAIT_AASIMAR_NECROTIC_SHROUD">
     <supports />
     <description>
       <p>Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant you transform, other creatures within 10 feet of you that can see you must each succeed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become frightened of you until the end of your next turn.</p>
-      <p>Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level.</p>
-      <p>Once you use this trait, you can't use it again until you finish a long rest.</p>
+      <p class="indent">Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level.</p>
+      <p class="indent">Once you use this trait, you can't use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>The instant you transform, other creatures within 10 feet of you that can see you must each succeed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become frightened of you until the end of your next turn. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level. (1/LR)</description>
+    <sheet usage="1/Long Rest">
+      <description>The instant you transform, other creatures within 10 feet of you that can see you must each succeed on a Charisma saving throw (DC {{necrotic shroud:dc}}) or become frightened of you until the end of your next turn. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal {{level}} extra necrotic damage to one target when you deal damage to it with an attack or a spell.</description>
     </sheet>
-    <rules />
+    <rules>
+		<stat name="necrotic shroud:dc" value="8" />
+		<stat name="necrotic shroud:dc" value="proficiency" />
+		<stat name="necrotic shroud:dc" value="charisma:modifier" />
+	</rules>
   </element>
   
 </elements>

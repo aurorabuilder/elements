@@ -4,7 +4,7 @@
 		<name>College of the Maestro</name>
 		<description>The College of the Maestro is a new Bardic College option to the Bard class, available at 3rd level. It plays as a more support-focused Bard, with additional utility for their Bardic Inspiration feature to alter and manipulate the battlefield in small ways. With a multitude of Conducting Techniques to choose from, you can customize your Maestro skill set to your liking. Do you wish to provide more control over battle placement and movement? Would you like to enable allies options to enhance their attacks? Perhaps you'd enjoy sutble healing and defense benefits for all around you? All of these flavors of additional playstyle options are at your disposal with the College of the Maestro.</description>
 		<author url="https://www.dmsguild.com/product/183630/College-of-the-Maestro--Bard-College-Option">Matthew Mercer</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="bard-maestro.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/bard-maestro.xml" />
 		</update>
 	</info>
@@ -36,10 +36,10 @@
 			<description>Wandering bards have mastered the art of creating music to shape and manipulate the thoughts and hearts of the world through song, words, and instrument.</description>
 		</sheet>
 		<rules>
-			<grant type="Archetype Feature" name="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_BATTLE_MUSE" level="3" />
-			<grant type="Archetype Feature" name="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_SYMPHONY_OF_CONFLICT" level="3" />
-			<grant type="Archetype Feature" name="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_FRENETIC_CRESCENDO" level="6" />
-			<grant type="Archetype Feature" name="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_VIRTUOSO_OF_CAPTIVATION" level="14" />
+			<grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_BATTLE_MUSE" level="3" />
+			<grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_SYMPHONY_OF_CONFLICT" level="3" />
+			<grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_FRENETIC_CRESCENDO" level="6" />
+			<grant type="Archetype Feature" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_VIRTUOSO_OF_CAPTIVATION" level="14" />
 		</rules>
 	</element>	
 	<element name="Battle Muse" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_BATTLE_MUSE">
@@ -53,9 +53,9 @@
 			<description level="14">You gain three additional uses of your Bardic Inspiration feature.</description>
 		</sheet>
 		<rules>
-			<stat name="bardic-inpiration:count" value="1" level="3"/>
-			<stat name="bardic-inpiration:count" value="1" level="6"/>
-			<stat name="bardic-inpiration:count" value="1" level="14"/>
+			<stat name="bardic-inspiration:count" value="1" level="3"/>
+			<stat name="bardic-inspiration:count" value="1" level="6"/>
+			<stat name="bardic-inspiration:count" value="1" level="14"/>
 		</rules>
 	</element>	
 	<element name="Symphony of Conflict" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_SYMPHONY_OF_CONFLICT">
@@ -78,8 +78,8 @@
 			<p>At 6th level, you can harness the beat of battle, whipping it into a frenzy of drums, chants, and glory. You can use your action to expend any number of uses of your Bardic Inspiration feature. For each expended use, you can immediately grant a Bardic Inspiration die to a creature other than yourself within 60 feet that you can see. A creature can have only one Bardic Inspiration die at a time.</p>
 			<p class="indent">Once you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
-		<sheet>
-			<description>You can use your action to expend any number of uses of your Bardic Inspiration feature. For each expended use, you can immediately grant a Bardic Inspiration die to a creature other than yourself within 60 feet that you can see. A creature can have only one Bardic Inspiration die at a time. (1/LR)</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>Expend any number of uses of your Bardic Inspiration feature. For each expended use, you can immediately grant a Bardic Inspiration die to a creature other than yourself within 60 feet that you can see. A creature can have only one Bardic Inspiration die at a time.</description>
 		</sheet>
 	</element>
 	<element name="Virtuoso of Captivation" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_BARD_MAESTRO_VIRTUOSO_OF_CAPTIVATION">
@@ -88,10 +88,10 @@
 			<p class="indent">In addition, affected targets have disadvantage on Wisdom (Perception) rolls that rely on sight or sound to detect targets other than you.</p>
 			<p class="indent">In combat, you must spend your action each turn to continue the performance or the effect ends. Once you use Virtuoso of Captivation, you must finish a short or long rest before you can use it again.</p>
 		</description>
-		<sheet>
+		<sheet usage="1/Short Rest">
 			<description>You can begin conducting a mystical symphony as an action, distracting and capturing the minds of of nearby creatures. For up to 10 minutes, any number of creatures you choose within 60 feet who can hear you have disadvantage on any saving throws against being charmed and against magical sleep.
 			In addition, affected targets have disadvantage on Perception rolls that rely on sight or sound to detect targets other than you.
-			In combat, you must spend your action each turn to continue the performance or the effect ends. (1/SR)</description>
+			In combat, you must spend your action each turn to continue the performance or the effect ends.</description>
 		</sheet>
 	</element>
 
@@ -165,11 +165,11 @@
 			<p>Pulled from the chaos, you muster an uplifting melody that bolsters the resolve of your allies. You can expend and roll a Bardic Inspiration die as an action, and all other creatures you choose within 60 ft gain temporary hitpoints equal to the number rolled plus your Charisma modifier (minimum of 1 ). These temporary hitpoints last until the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description>You can expend and roll a Bardic Inspiration die as an action, and all other creatures you choose within 60 ft gain temporary hitpoints equal to the number rolled + $(majestic anthem:hp). These temporary hitpoints last until the end of your next turn.</description>
+			<description>You can expend and roll a Bardic Inspiration die as an action, and all other creatures you choose within 60 ft gain temporary hitpoints equal to the number rolled + {{majestic anthem:hp}}. These temporary hitpoints last until the end of your next turn.</description>
 		</sheet>
 		<rules>
 			<stat name="majestic anthem:hp" value="1" bonus="majestic anthem" />
-			<stat name="majestic anthem:hp" value="Charisma Modifier" bonus="majestic anthem" />
+			<stat name="majestic anthem:hp" value="charisma:modifier" bonus="majestic anthem" />
 		</rules>
 	</element>
 	<element name="Resonance (Risonanza)" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_MAESTRO_CONDUCTING_TECHNIQUE_RESONANCE_RISONANZA">
@@ -201,18 +201,18 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You have spent some time in the bardic teachings of a maestro, granting you minor command over the music of combat. If a technique you use requires your target to make a saving throw to resist the technique's effects, the saving throw DC equals $(journeyman conductor:dc).
+			<description>You have spent some time in the bardic teachings of a maestro, granting you minor command over the music of combat. If a technique you use requires your target to make a saving throw to resist the technique's effects, the saving throw DC equals {{journeyman conductor:dc}}.
 			If you already have Bardic Inspiration dice, you gain one more; otherwise, you have one Bardic Inspiration die, which is a d6. This die can be given to others as a bonus action (per the bard feature, Bardic Inspiration), or can be used to fuel your techniques. A Bardic Inspiration die is expended when you use it. You regain this expended bardic inspiration die when you finish a short or long rest.</description>
 		</sheet>
 		<rules>
 			<select type="Archetype Feature" name="Journeyman Conductor" supports="Conducting Techniques" number="2" />
 
 			<stat name="journeyman conductor:dc" value="8" />
-			<stat name="journeyman conductor:dc" value="Proficiency" />
-			<stat name="journeyman conductor:dc" value="Charisma Modifier" />
+			<stat name="journeyman conductor:dc" value="proficiency" />
+			<stat name="journeyman conductor:dc" value="charisma:modifier" />
 
-			<stat name="bardic-inpiration:count" value="1" />
-			<stat name="bardic-inpiration:dice" value="6" bonus="bardic inspiration" />
+			<stat name="bardic-inspiration:count" value="1" />
+			<stat name="bardic-inspiration:dice" value="6" bonus="bardic inspiration" />
 		</rules>
 	</element>
 
