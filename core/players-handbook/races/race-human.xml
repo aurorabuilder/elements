@@ -4,7 +4,7 @@
 		<name>Human</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.1">
+		<update version="0.2.2">
 			<file name="race-human.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-human.xml" />
 		</update>
 	</info>
@@ -92,21 +92,21 @@
     <rules>
       <stat name="innate speed" value="30" bonus="base"/>
       <grant type="Size" id="ID_SIZE_MEDIUM"/>
-      <grant type="Language" id="ID_LANGUAGE_COMMON"/>
-      <select type="Language" name="Language (Human)" supports="Starting"/>
-      <stat name="strength" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <stat name="dexterity" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <stat name="constitution" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <stat name="intelligence" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <stat name="wisdom" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <stat name="charisma" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL)" />
-      <select type="Race Variant" name="Human Variant" supports="Human" optional="true" requirements="ID_INTERNAL_OPTION_ALLOW_FEATS" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON"/>	  
+      <select type="Language" name="Language (Human)" supports="Starting" requirements="!ID_UA_PS_GRANTS_HUMAN_VARIANT"/>
+      <stat name="strength" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="dexterity" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="constitution" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="intelligence" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="wisdom" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="charisma" value="1" requirements="!(ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_VARIANT_HUMAN_SENTINEL||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <select type="Race Variant" name="Human Variant" supports="Human" optional="true" />
     </rules>
   </element>
   
   <element name="Human Variant Trait" type="Race Variant" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT">
     <supports>Human</supports>
-    <requirements />
+    <requirements>ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
     <description>
       <p>If your campaign uses the optional feat rules from the Player’s Handbook, your Dungeon Master might allow these variant traits, all of which replace the human’s Ability Score Increase trait.</p>
       <p>
