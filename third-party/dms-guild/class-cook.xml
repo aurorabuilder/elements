@@ -131,7 +131,7 @@
       <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
       <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
       <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
-      <select type="Proficiency" name="Skill Proficiency (Cook)" number="3" supports="Skill,Cook" />
+      <select type="Proficiency" name="Skill Proficiency (Cook)" supports="ID_PROFICIENCY_SKILL_ANIMAL_HANDLING|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" />
       </rules>
     </multiclass>
   </element>
@@ -140,7 +140,7 @@
       <p>At first level, you craft a Cook's Bag, a bag that magically preserves not only your morsels, but also the ingredients required to make them. You must replenish these ingredients at least once every 30 days. When you do so, you can buy 10 gp worth of food from a market, or you can spend 8 hours scavenging food from your surroundings. If you lose this bag, you can create a new one by expending 100 gp worth of leather, gems, and other raw materials. Doing so takes 8 hours of work.</p>
     </description>
     <sheet>
-      <description>At A bag that magically preserves not only your morsels, but also the ingredients required to make them. You must replenish these ingredients at least once every 30 days. When you do so, you can buy 10 gp worth of food from a market, or you can spend 8 hours scavenging food from your surroundings. If you lose this bag, you can create a new one by expending 100 gp worth of leather, gems, and other raw materials. Doing so takes 8 hours of work.</description>
+      <description>A bag that magically preserves not only your morsels, but also the ingredients required to make them. You must replenish these ingredients at least once every 30 days. When you do so, you can buy 10 gp worth of food from a market, or you can spend 8 hours scavenging food from your surroundings. If you lose this bag, you can spend 8 hours to create a new one by expending 100 gp worth of leather, gems, and other raw materials.</description>
     </sheet>
     <rules />
   </element>
@@ -155,7 +155,7 @@
     <p>Creatures who do not have mouths or analogous orifices can still be affected by your morsels. Mere contact with your morsels imparts a weakened effect. If a creature cannot ingest your morsel, it has advantage on any saving throws it makes against the morsel's effect.</p>
     </description>
     <sheet>
-      <description>You can make {{constitution:modifier}} morsels every rest and your Morsel DC is {{morsel:dc}}</description>
+      <description>You can make {{constitution:modifier}} morsels every rest and your Morsel DC is {{morsel:dc}}. Feeding a morsel takes an action. A creature can only have one morsel effect at any given time.</description>
     </sheet>
     <rules>
       <select type="Class Feature" name="Morsel" supports="Morsel" level="1" number="3"/>
@@ -181,10 +181,10 @@
       <p class="indent">At 7th level, the creature can repeat a saving throw against the stunned condition.</p>
       <p class="indent">At 13th level, the creature can repeat a saving throw against the paralyzed condition.</p>
     </description>
-    <sheet>
-      <description>You can spend an action to allow a creature in melee to repeat a saving throw to break a charmed or frightened condition.</description>
-      <description level="7">You can spend an action to allow a creature in melee to repeat a saving throw to break a charmed, frightened or stunned condition.</description>
-      <description level="13">You can spend an action to allow a creature in melee to repeat a saving throw to break a charmed, frightened, stunned or paralyzed condition.</description>
+    <sheet action="Action">
+      <description>Allow a creature in melee to repeat a saving throw to break a charmed or frightened condition.</description>
+      <description level="7">Allow a creature in melee to repeat a saving throw to break a charmed, frightened or stunned condition.</description>
+      <description level="13">Allow a creature in melee to repeat a saving throw to break a charmed, frightened, stunned or paralyzed condition.</description>
     </sheet>
   </element>
   <element name="Cook Archetype" type="Class Feature" source="The Cook Class" id="ID_DMSG_COOK_CLASS_FEATURE_COOK_ARCHETYPE">
@@ -222,10 +222,10 @@
   </element>
   <element name="Rotund Relfection" type="Class Feature" source="The Cook Class" id="ID_DMSG_COOK_CLASS_FEATURE_COOK_ROTUND_REFLECTION">
     <description>
-      <p>At 5th level, you gain the ability to repel enemies that attack you. Your stomach is of utmost importance, and you have toned your belly to be tough and somewhat gelatinous. When a Large or smaller creature within 5 feet of you hits you with a melee attack, you can use your reaction to cause the creature to make a Dexterity saving throw against your Morsel save DC. On a failed save, their speed becomes 0 until the end of the turn, and they are either pushed 10 ft. away from you or knocked prone (your choice).</p>
+      <p>At 5th level, you gain the ability to repel enemies that attack you. Your stomach is of utmost importance, and you have toned your belly to be tough and somewhat gelatinous. When a Large or smaller creature within 5 feet of you hits you with a melee attack, you can use your reaction to cause the creature to make a Dexterity saving throw against your Morsel save DC. On a failed save, their speed becomes 0 until the end of the turn, and they are either pushed 10 ft away from you or knocked prone (your choice).</p>
     </description>
     <sheet>
-      <description>When you are attacked by a melee weapon you can use your reaction to make a Dexterity Save (DC {{morsel:dc}}) and either be proned or knocked back 10 ft.</description>
+      <description>When you are attacked by a melee weapon you can use your reaction to make them make a Dexterity Save (DC {{morsel:dc}}) and either be proned or knocked back 10 ft.</description>
     </sheet>
     <rules />
   </element>
@@ -254,8 +254,8 @@
       <p>At 15th level, you have attuned your body's life force to the nourishing energies of the world. You can cast Create Food and Water once with this feature and regain the ability to do so when you finish a long rest. When you do so, the food you create is not bland, but flavorful and enjoyable. Also, the food you create does not spoil for 1 week. </p>
       <p class="indent">In addition, if you make morsels, and you have no ingredients left, you conjure the necessary ingredients as part of making the morsels.</p>
     </description>
-    <sheet>
-      <description>You can cast Create Food and Water once per long rest and you don't need ingredients to make morsels.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast Create Food and Water and you don't need ingredients to make morsels.</description>
     </sheet>
     <rules>
     <grant type="Spell" name="ID_PHB_SPELL_CREATE_FOOD_AND_WATER" />
@@ -307,7 +307,7 @@
       <p>Additionally, when you feed a morsel to a willing creature that you can touch (other than yourself), you can do so as a bonus action.</p>
     </description>
     <sheet>
-      <description>You can feed morsels to allies in a 60 ft range and if their mouth is not covered, feeding a morsel can be done as a bonus action.</description>
+      <description>You can feed morsels to allies in a 60 ft range and if their mouth is not covered. Feeding a morsel at touch range can be done as a bonus action.</description>
     </sheet>
     <rules />
   </element>
@@ -316,7 +316,7 @@
       <p>At 6th level, you create a signature sauce that you dab onto all of your beneficial morsels. Whenever you feed a morsel to a friendly creature, it regains a number of hit points equal to your Constitution modifier.</p>
     </description>
     <sheet>
-      <description>Morsels fed to friendy creatures restore {{constitution:modifier}} Hit Points.</description>
+      <description>Morsels fed to friendy creatures restore {{constitution:modifier}} HP.</description>
     </sheet>
     <rules />
   </element>
@@ -325,8 +325,8 @@
       <p>At 10th level, a lifetime of culinary delights has infused the sweat in your pores with a thousand revitalizing smells that stir your companions to action. As an action you can expel these smells in one powerful wave. All friendly creatures (including yourself) within 30 feet of you that you can see regain a number of hit points equal to your Cook Level, and they can each immediately use their reaction to make a single weapon attack.</p>
       <p>Once you use this feature, you must finish a long rest before you can use it again.</p>
     </description>
-    <sheet>
-      <description>You can use your action heal all allies in 30 ft range {{level:cook}} HP and allow them to make a melee attack as a reaction. Once per long rest.</description>
+    <sheet action="Action" usage="1/Long Rest">
+      <description>Heal all allies in 30 ft range {{level:cook}} HP and allow them to make a melee attack as a reaction.</description>
     </sheet>
     <rules />
   </element>
@@ -335,8 +335,8 @@
       <p>Beginning at 14th level, you can prepare a magical feast that strengthens both body and will. You gain the ability to cast the Heroes' Feast spell. When you do so, you replace the material components of the spell with fine foods worth at least 500 gp, which the spell consumes.</p>
       <p>Once you cast Heroes' Feast in this way, you can not do so again until you have finished a long rest.</p>
     </description>
-    <sheet>
-      <description>You can cast Heroes' Feast with 500gp worth of food once per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cast Heroes' Feast with 500gp worth of food.</description>
     </sheet>
     <rules>
     <grant type="Spell" name="ID_PHB_SPELL_HEROES_FEAST" />
@@ -346,8 +346,8 @@
     <description>
       <p>At 18th level, you gain the ability to make the Monkey's Brain morsel when you take a long rest. When you do so, you can make only one. It does not expire until your next long rest.</p>
     </description>
-    <sheet>
-      <description>You can cook 1 Monkey's Brain per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cook 1 Monkey's Brain.</description>
     </sheet>
     <rules>
     <grant type="Class Feature" name="ID_DMSG_COOK_CLASS_FEATURE_COOK_MORSEL_MONKEYS_BRAIN" />
@@ -385,7 +385,7 @@
       <description>Eating a morsel is a bonus action.</description>
     </sheet>
     <rules>
-      <stat name="HP" value="+Level" />
+      <stat name="hp" value="level:cook" />
     </rules>
   </element>
   <element name="Raucous Belch" type="Archetype Feature" source="The Cook Class" id="ID_DMSG_COOK_ARCHETYPE_FEATURE_MESS_SERGENT_RAUCOUS_BELCH">
@@ -393,8 +393,8 @@
       <p>At 6th level, you gain the ability to taunt your foes with a loud and ordorous burp. As an action you can have each hostile creature in a 10 foot cone originating from you make a Wisdom saving throw against your Morsel save DC. On a failed save, the target(s) have disadvantage on attack rolls against all creatures other than you until the start of your next turn. </p>
       <p>You can use this feature a number of times equal to your Constitution modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description> As an action you can make enemies in a 10 ft cone in front of you to make a wisdom saving throw (DC {{morsel:dc}}). On a failed save they have disadvantage on attack rolls against all creatures that are not you. Can be used {{constitution:modifier}} per long rest.</description>
+    <sheet usage="{{constitution:modifier}}/Long Rest">
+      <description> As an action you can make enemies in a 10 ft cone in front of you to make a wisdom saving throw (DC {{morsel:dc}}). On a failed save they have disadvantage on attack rolls against all creatures that are not you.</description>
     </sheet>
     <rules />
   </element>
@@ -423,8 +423,8 @@
     <description>
       <p>At 18th level, you gain the ability to make the Crytalline Heart morsel when you take a long rest. When you do so, you can make only one. It does not expire until your next long rest.</p>
     </description>
-    <sheet>
-      <description>You can cook 1 Crytalline Heart per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cook 1 Crytalline Heart.</description>
     </sheet>
     <rules>
     <grant type="Class Feature" name="ID_DMSG_COOK_CLASS_FEATURE_COOK_MORSEL_CRYTALLINE_HEART" />
@@ -557,7 +557,7 @@
       <p>Also at 3rd level, you gain the ability to feed your enemies at range. When you feed a morsel to a hostile creature, the creature you feed can be 60 feet away from you, so long as you can see them, and their mouth or analogous orifice is not blocked by total cover. You throw the morsel directly into their mouth or analogous orifice, and they ingest it immediately.</p>
     </description>
     <sheet>
-      <description>You can feed morsels to enemies in a 60 ft range and if their mouth is not covered.</description>
+      <description>You can feed morsels to enemies in a 60 ft range if their mouth is not covered.</description>
     </sheet>
     <rules />
   </element>
@@ -568,7 +568,9 @@
     <sheet>
       <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
     </sheet>
-    <rules />
+    <rules>
+      <stat name="extra attack:count" value="2" bonus="extra attack" />
+    </rules>
   </element>
   <element name="Horrific Stench" type="Archetype Feature" source="The Cook Class" id="ID_DMSG_COOK_ARCHETYPE_FEATURE_HASH_SLINGER_HORRIFIC_STENCH">
     <description>
@@ -583,8 +585,8 @@
     <description>
       <p>At 14th level when a creature makes a saving throw against one of your morsel's effects, you can impose disadvantage on the roll. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
     </description>
-    <sheet>
-      <description>You can impose disadvantage on a saving throw against your morsel effect once per rest.</description>
+    <sheet usage="1/Short or Long Rest">
+      <description>You can impose disadvantage on a saving throw against your morsel effect.</description>
     </sheet>
     <rules />
   </element>
@@ -592,8 +594,8 @@
     <description>
       <p>At 18th level, you gain the ability to make the Bubbly Pill morsel when you take a long rest. When you do so, you can make only one. It does not expire until your next long rest.</p>
     </description>
-    <sheet>
-      <description>You can cook 1 Bubbly Pill per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cook 1 Bubbly Pill.</description>
     </sheet>
     <rules>
     <grant type="Class Feature" name="ID_DMSG_COOK_CLASS_FEATURE_COOK_MORSEL_BUBBLY_PILL" />
@@ -630,7 +632,7 @@
       <p>When a creature's intoxication ends, it loses all effects gained from morsels, and the creature can't move or take actions until the end of its next turn as it becomes hung over. Once a creature has become intoxicated, it can't do so again until it has finished a short or long rest.</p>
     </description>
     <sheet>
-      <description>You can spike a morsel allowing you to intoxicate the creature eating the morsel. A creature can only get intoxicated once per rest.</description>
+      <description>Feeding a spiked morsel to a creature who is already under the effect of a spiked morsel causes intoxication. An intoxicated creature is immune to the charmed and frightened conditions.</description>
     </sheet>
     <rules>
     <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES" />
@@ -661,8 +663,8 @@
       <p>At 14th level, you craft your booze to create a frenzied buzz.</p> 
       <p>Once per turn, when a creature that you have intoxicated hits a creature with an attack, they can add your Constitution modifier to the damage roll.</p>
     </description>
-    <sheet>
-      <description>Once per turn an intoxicated creature can add {{constitution:modifier}} to their damage roll</description>
+    <sheet usage="1/Turn">
+      <description>An intoxicated creature can add {{constitution:modifier}} to their damage roll.</description>
     </sheet>
     <rules />
   </element>
@@ -670,8 +672,8 @@
     <description>
       <p>At 18th level, you gain the ability to make the Master Brew morsel when you take a long rest. When you do so, you can make only one. It does not expire until your next long rest.</p>
     </description>
-    <sheet>
-      <description>You can cook 1 Master Brew per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cook 1 Master Brew.</description>
     </sheet>
     <rules>
     <grant type="Class Feature" name="ID_DMSG_COOK_CLASS_FEATURE_COOK_MORSEL_MASTER_BREW" />
@@ -750,8 +752,8 @@
       <p>At 14th level, your study of the vital essence of creatures allows you to see its ebb and flow, giving you insights into creatures you observe closely.</p>
       <p>If you observe a creature for 1 minute, you learn if it has any vulnerabilities, immunities, or resistances and what they are. You need only to be able to see the creature for the duration of the minute to gain this knowledge. You cannot observe more than one creature during this minute. You can gain knowledge using this feature a number of times equal to your Constitution modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Focus on one creature to learn its vulnerabilities, immunities and resistances. You can only do this to {{constitution:modifier}} creatures per long rest.</description>
+    <sheet usage="{{constitution:modifier}}/Long Rest">
+      <description>Focus on one creature to learn its vulnerabilities, immunities and resistances.</description>
     </sheet>
     <rules />
   </element>
@@ -759,8 +761,8 @@
     <description>
       <p>At 18th level, you gain the ability to make the Vital Meat morsel when you take a long rest. When you do so, you can make only one. It does not expire until your next long rest.</p>
     </description>
-    <sheet>
-      <description>You can cook 1 Vital Meat per long rest.</description>
+    <sheet usage="1/Long Rest">
+      <description>You can cook 1 Vital Meat.</description>
     </sheet>
     <rules>
     <grant type="Class Feature" name="ID_DMSG_COOK_CLASS_FEATURE_COOK_MORSEL_VITAL_MEAT" />
