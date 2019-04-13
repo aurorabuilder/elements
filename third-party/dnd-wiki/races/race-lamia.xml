@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Lamia</name>
+        <description>5e homebrew</description>
+        <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
+        <update version="0.0.3">
+            <file name="race-Lamia.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/races/race-Lamia.xml" />
+        </update>
+    </info>
+
+    <element name="Lamia" type="Race" source="D&amp;D Wiki" id="ID_WIKI_RACE_LAMIA">
+        <description>
+            <h4>PHYSICAL DESCRIPTION</h4>
+            <p>The Lamia are a reptilian race with the upper body of a human and the lower body of a snake. a Lamia's tongue is very long in length and has a naturally "forked" tip. Like a snake, the tip of a Lamia's tongue possesses the Jacobson's organ, a sensory organ that allows a Lamia to detect smells in the air. Lamias posses a sensory organ similar to pitvipers that allows them to see heat signatures. With it, they can follow the heat signature of their prey even in the dark. The tip of a lamia's tail is extremely sensitive.</p>
+            <h4>HISTORY</h4>
+            <p>Believed to be deadly towards humans, Lamia are reputed to lure men back to their lairs and kill them after they've had their way with them. However, this is only partially true, as due to being a female-only race, Lamias would lure men to their villages and hold them as 'Communal Husbands'. If the male is resistant, Lamia will use alchemical compounds such as incense to draw out their lust and force themselves upon them. Usually all the eligible members of the village would get involved. Following the initial mating, the male has a choice to voluntarily stay or leave. Since issues arose because of the Lamia practice of kidnapping and keeping 'communal husbands' against their will, many groups would target them. To end hostilities the lamias stopped this practice and in an attempt to compensate for this, Lamia villages have taken to send out members of the village to find a willing mate(can be of any normal humanoid species).</p>
+            <h4>LAMIA NAMES</h4>
+            <p>Lamias tend to have names as varied as humans.</p>
+            <p>
+                <b>Female: </b>Sea, Gina, Miia, Lucine, Iormu             
+            </p>
+            <h4>LAMIA TRAITS</h4>
+            <p>A race of reptilian females with the upper body of a human and the lower body of a snake.</p>
+            <p>
+                <span class="feature">Ability Score Increase.</span>Your Constitution score increases by 2.<br />
+                <span class="feature">Age.</span>Lamia reach maturity at 15 and can live to be as old as 750.<br />
+                <span class="feature">Alignment.</span>Varies as much as it does for humans.<br />
+                <span class="feature">Size.</span>Large. Normally occupies the normal space of a large creature. Lamia creatures require four times as much food and water per day. Lamia creatures have double the carrying capacity. Lamia are able to coil up to fit in the same size square as a medium creature and can squeeze through small opening at least as easily as a normal medium sized creature. Lamias are unable to wield large weapons any easier than a medium creature could.<br />
+                <span class="feature">Speed.</span>Your base walking speed is 35 feet, though you slither as a snake instead of walking like a normal humanoid. You also have a swim speed of 35 feet and climb speed of 35 feet.<br />
+                <span class="feature">Snake-Like.</span>Because she is reptilian, if her environment isn't warm enough, her bodily functions will slow down, and she will feel the need to hibernate. Extreme cold is considered 20 degrees Fahrenheit and below instead of normal and they are vulnerable to cold damage, however extreme heat is considered 115 and higher instead of normal. Lamia will shed their skin once in awhile(around once every 180 days or twice a year), just like regular snakes(the only skin shedding being the snake part not the human skin). The lamia can, at the end of a rest while shedding, spend an hour caring for herself and finish shedding, however if she does not spend this time to care for herself it can last an entire week. Interestingly, Lamias find being seen skin shedding to be more embarrassing than being seen naked because of this while shedding they have disadvantage on charisma checks. Given that they are part snake, Lamia can also go without food for up to 10 days(however must make up for this when eating again). They are also carnivores. Perception checks based off of smell are at advantage due to the tip of a Lamia's tongue possessing the Jacobson's organ, a sensory organ that allows a Lamia to detect smells in the air.<br />
+                <span class="feature">Blindsight.</span>Because of the lamias Pit Vision(sensory organ allows her to see infrared) and their keen sense of smell they effectively have Blindsight out to 20 feet<br />
+                <span class="feature">Snake body.</span>Lamia are able to slam a foe with their tails or attempt to grapple with it.(1d4+str bludgeoning damage on slam. the lamia can constrict a grappled foe once a turn without using an action for 1d6+str bludgeoning damage).<br />
+                <span class="feature">Languages.</span>You can speak, read, and write Common.<br />
+            </p>
+        </description>
+        <setters>
+            <set name="names" type="female">Sea, Gina, Miia, Lucine, Iormu</set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier = "20"></set>
+            <set name="weight" modifier = "1000"></set>
+        </setters>
+        <sheet display="false">
+            <description>The Lamia are a reptilian race with the upper body of a human and the lower body of a snake. a Lamia's tongue is very long in length and has a naturally "forked" tip. Like a snake, the tip of a Lamia's tongue possesses the Jacobson's organ, a sensory organ that allows a Lamia to detect smells in the air. Lamias posses a sensory organ similar to pitvipers that allows them to see heat signatures. With it, they can follow the heat signature of their prey even in the dark. The tip of a lamia's tail is extremely sensitive.</description>
+        </sheet>
+        <rules>
+            <stat name="constitution" value="2" />
+            <grant type="Size" id="ID_SIZE_LARGE" />
+            <stat name="innate speed" value="35" bonus="base" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_LAMIA_SNAKE-LIKE" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_LAMIA_BLINDSIGHT" />
+            <grant type="Racial Trait" id="ID_WIKI_RACIAL_TRAIT_LAMIA_SNAKE_BODY" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_LAMIAN_SUBRACE" />
+        </rules>
+    </element>
+    <element name="Snake-like" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_LAMIA_SNAKE-LIKE">
+        <description>
+            <p>Because she is reptilian, if her environment isn't warm enough, her bodily functions will slow down, and she will feel the need to hibernate. Extreme cold is considered 20 degrees Fahrenheit and below instead of normal and they are vulnerable to cold damage, however extreme heat is considered 115 and higher instead of normal. Lamia will shed their skin once in awhile(around once every 180 days or twice a year), just like regular snakes(the only skin shedding being the snake part not the human skin). The lamia can, at the end of a rest while shedding, spend an hour caring for herself and finish shedding, however if she does not spend this time to care for herself it can last an entire week. Interestingly, Lamias find being seen skin shedding to be more embarrassing than being seen naked because of this while shedding they have disadvantage on charisma checks. Given that they are part snake, Lamia can also go without food for up to 10 days(however must make up for this when eating again). They are also carnivores. Perception checks based off of smell are at advantage due to the tip of a Lamia's tongue possessing the Jacobson's organ, a sensory organ that allows a Lamia to detect smells in the air.</p>
+        </description>
+        <sheet>
+            <description>Because she is reptilian, if her environment isn't warm enough, her bodily functions will slow down, and she will feel the need to hibernate. Extreme cold is considered 20 degrees Fahrenheit and below instead of normal and they are vulnerable to cold damage, however extreme heat is considered 115 and higher instead of normal. Lamia will shed their skin once in awhile(around once every 180 days or twice a year), just like regular snakes(the only skin shedding being the snake part not the human skin). The lamia can, at the end of a rest while shedding, spend an hour caring for herself and finish shedding, however if she does not spend this time to care for herself it can last an entire week. Interestingly, Lamias find being seen skin shedding to be more embarrassing than being seen naked because of this while shedding they have disadvantage on charisma checks. Given that they are part snake, Lamia can also go without food for up to 10 days(however must make up for this when eating again). They are also carnivores. Perception checks based off of smell are at advantage due to the tip of a Lamia's tongue possessing the Jacobson's organ, a sensory organ that allows a Lamia to detect smells in the air.</description>
+        </sheet>
+    </element>
+    <element name="Blindsight" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_LAMIA_BLINDSIGHT">
+        <description>
+            <p>Because of the lamias Pit Vision(sensory organ allows her to see infrared) and their keen sense of smell they effectively have Blindsight out to 20 feet</p>
+        </description>
+        <sheet>
+            <description>Because of the lamias Pit Vision(sensory organ allows her to see infrared) and their keen sense of smell they effectively have Blindsight out to 20 feet</description>
+        </sheet>
+    </element>
+    <element name="Snake body" type="Racial Trait" source="D&amp;D Wiki" id="ID_WIKI_RACIAL_TRAIT_LAMIA_SNAKE_BODY">
+        <description>
+            <p>Lamia are able to slam a foe with their tails or attempt to grapple with it.(1d4+str bludgeoning damage on slam. the lamia can constrict a grappled foe once a turn without using an action for 1d6+str bludgeoning damage).</p>
+        </description>
+        <sheet>
+            <description>Lamia are able to slam a foe with their tails or attempt to grapple with it.(1d4+str bludgeoning damage on slam. the lamia can constrict a grappled foe once a turn without using an action for 1d6+str bludgeoning damage).</description>
+        </sheet>
+    </element>
+	<element name="Lamian Subrace" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_LAMIAN_SUBRACE">
+		<description>
+			<p>Many different types of Lamia roam the globe such as the common, echidina, or medusa</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Sub Race" name="Lamian Subrace" supports="Lamia" />
+		</rules>
+	</element>
+
+    <element name="Normal Lamia" type="Sub Race" source="D&amp;D Wiki" id="ID_SUB_RACE_NORMAL_LAMIA">
+		<supports>Lamia</supports>
+		<description>
+		<p>The most common type of Lamia.</p>
+		<p>
+			<span class="feature">Ability Score Increase.</span>Your Strength score increases by 1.<br />
+			<span class="feature">Darkvision.</span>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br />
+			<span class="feature">Strong tail.</span>Lamia may add double their strength modifier in grapple attempts with their tails and the slam damage is a 1d8 instead of a 1d4.<br />
+		</p>
+		</description>
+		<rules>
+		<stat name="strength" value="1" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DARKVISION" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_STRONG_TAIL" />
+		</rules>
+	</element>  
+
+    <element name="Echidna" type="Sub Race" source="D&amp;D Wiki" id="ID_SUB_RACE_ECHIDNA">
+		<supports>Lamia</supports>
+		<description>
+		<p>Echidnas are a subspecies of Lamia. Because more of their bodies are covered by scales compared to lamias, echidnas are more closely related to Lizardfolk. Their name means "viper women", and true to their name, they possess poisonous fangs inside their mouths. Their venom is a type of hemorrhagin (meaning that it breaks down blood vessels) and must be treated with caution. Their snake-like lower bodies are covered in a unique pattern reminiscent of vipers.</p>
+		<p>
+			<span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 1.<br />
+			<span class="feature">Venomous bite.</span>You can perform a bite as an unarmed strike, which inflicts piercing damage instead of bludgeoning. This bite inflicts an additional 1d8 poison damage.<br />
+			<span class="feature">Thick scales.</span>An Echidna Lamia's scales cover more of its body than that of normal lamia. While not wearing armor, your armor class is equal to 11 + your Dexterity modifier.<br />
+		</p>
+		</description>
+		<rules>
+		<stat name="dexterity" value="1" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_VENOMOUS_BITE" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_THICK_SCALES" />
+		</rules>
+	</element>  
+    
+    <element name="Medusa" type="Sub Race" source="D&amp;D Wiki" id="ID_SUB_RACE_MEDUSA">
+		<supports>Lamia</supports>
+		<description>
+		<p>Medusae are a subspecies of Lamia with snakes for hair. Their gaze are said to turn creatures into stone, but in reality they possess no such ability. However, their gaze does seem to be very keen, and their glare has at times frightened a creatures to the point it was unable to move, as though they indeed have been turned to stone. This is often due to the fact that they have poor eyesight. They might only appear to be glaring as they are only trying to see more clearly.</p>
+		<p>
+			<span class="feature">Ability Score Increase.</span>Your Intelligence score increases by 1.<br />
+			<span class="feature">Poor eyesight.</span>Medusae have very poor eyesight and can only see around half as far as normal. in addition they make all sight based perception rolls at disadvantage(does not effect blindsight).<br />
+			<span class="feature">Frightening glare.</span>As an action, you can glare at a creature that you can see. The target must make a Wisdom saving throw with a DC equal to + your Wisdom modifier + your proficiency modifier. On a failure, the target becomes frightened of you for 1 minute, the creature may roll a saving throw at the end of each of its turns to end this effect. (Up to dm discretion: If the Medusa is attempting to see something more clearly and is rolling a perception roll for sight nearby creatures may be affected by her accidental glare unless specifically avoiding looking like she is glaring.)<br />
+		</p>
+		</description>
+		<rules>
+		<stat name="intelligence" value="1" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_POOR_EYESIGHT" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_FRIGHTENING_GLARE" />
+		</rules>
+	</element> 
+    
+    <element name="Melusine" type="Sub Race" source="D&amp;D Wiki" id="ID_SUB_RACE_MELUSINE">
+		<supports>Lamia</supports>
+		<description>
+		<p>Melusines are a lamia subspecies with dragon wings on their backs. In contrast to other lamia subspecies, they are more similar to sea snakes than terrestrial snakes and prefer to live by the shore. Sadly, their wings aren't strong enough to lift their long lower bodies, making said wings being more vestigial in nature.</p>
+		<p>
+			<span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2.<br />
+			<span class="feature">Quick.</span>Melusine have a movement speed of 40 instead of 35 and have a swim speed of 50.<br />
+		</p>
+		</description>
+		<rules>
+		<stat name="dexterity" value="2" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_QUICK" />
+		</rules>
+	</element> 
+    
+    <element name="Sea Serpent" type="Sub Race" source="D&amp;D Wiki" id="ID_SUB_RACE_SEA_SERPENT">
+		<supports>Lamia</supports>
+		<description>
+		<p>A subspecies of the Lamia, Sea Serpents were a type of "Sea Monster" that first appeared in ancient Norse mythology, but have since appeared in one form or another in the myths of virtually every existing culture that has had interactions with the sea. This is due to the fact that, while an aquatic species, Sea Serpents are air breathers and do not possesses gills like Mermaids. As a result they must surface regularly to breathe which has resulted them being sighted by numerous seafaring vessels throughout the centuries.</p>
+		<p>
+			<span class="feature">Ability Score Increase.</span>Your Strength score increases by 2.<br />
+			<span class="feature">Aquatic.</span>Sea Serpents have a movement speed of 30 and a swim speed of 75. they can also hold their breath for up to 30 minutes with ease and have advantage on checks made about swimming(such as athletics).<br />
+			<span class="feature">Darkvision.</span>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br />
+		</p>
+		</description>
+		<rules>
+		<stat name="strength" value="2" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_AQUATIC" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DARKVISION" />
+		</rules>
+	</element> 
+
+	
+	<element name="Aquatic" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_AQUATIC">
+		<description>
+			<p>Sea Serpents have a movement speed of 30 and a swim speed of 75. they can also hold their breath for up to 30 minutes with ease and have advantage on checks made about swimming(such as athletics).</p>
+		</description>
+		<sheet>
+			<description>Sea Serpents have a movement speed of 30 and a swim speed of 75. they can also hold their breath for up to 30 minutes with ease and have advantage on checks made about swimming(such as athletics).</description>
+		</sheet>
+		<rules>
+        <stat name="innate speed" value="30" bonus="base" />
+        <stat name="innate speed:swim" value="75" bonus="base" />
+		</rules>
+	</element>
+	<element name="Darkvision" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_DARKVISION">
+		<description>
+			<p>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</description>
+		</sheet>
+	</element>
+	<element name="Poor eyesight" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_POOR_EYESIGHT">
+		<description>
+			<p>Medusae have very poor eyesight and can only see around half as far as normal. in addition they make all sight based perception rolls at disadvantage(does not effect blindsight).</p>
+		</description>
+		<sheet>
+			<description>Medusae have very poor eyesight and can only see around half as far as normal. in addition they make all sight based perception rolls at disadvantage(does not effect blindsight).</description>
+		</sheet>
+	</element>
+	<element name="Frightening glare" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_FRIGHTENING_GLARE">
+		<description>
+			<p>As an action, you can glare at a creature that you can see. The target must make a Wisdom saving throw with a DC equal to + your Wisdom modifier + your proficiency modifier. On a failure, the target becomes frightened of you for 1 minute, the creature may roll a saving throw at the end of each of its turns to end this effect. (Up to dm discretion: If the Medusa is attempting to see something more clearly and is rolling a perception roll for sight nearby creatures may be affected by her accidental glare unless specifically avoiding looking like she is glaring.)</p>
+		</description>
+		<sheet>
+			<description>As an action, you can glare at a creature that you can see. The target must make a Wisdom saving throw with a DC equal to + your Wisdom modifier + your proficiency modifier. On a failure, the target becomes frightened of you for 1 minute, the creature may roll a saving throw at the end of each of its turns to end this effect. (Up to dm discretion: If the Medusa is attempting to see something more clearly and is rolling a perception roll for sight nearby creatures may be affected by her accidental glare unless specifically avoiding looking like she is glaring.)</description>
+		</sheet>
+	</element>
+	<element name="Venomous Bite" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_VENOMOUS_BITE">
+		<description>
+			<p>You can perform a bite as an unarmed strike, which inflicts piercing damage instead of bludgeoning. This bite inflicts an additional 1d8 poison damage.</p>
+		</description>
+		<sheet>
+			<description>You can perform a bite as an unarmed strike, which inflicts piercing damage instead of bludgeoning. This bite inflicts an additional 1d8 poison damage.</description>
+		</sheet>
+	</element>
+	<element name="Thick scales" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_THICK SCALES">
+		<description>
+			<p>An Echidna Lamia's scales cover more of its body than that of normal lamia. While not wearing armor, your armor class is equal to 11 + your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>An Echidna Lamia's scales cover more of its body than that of normal lamia. While not wearing armor, your armor class is equal to 11 + your Dexterity modifier.</description>
+		</sheet>
+	</element>
+	<element name="Strong tail" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_STRONG_TAIL">
+		<description>
+			<p>Lamia may add double their strength modifier in grapple attempts with their tails and the slam damage is a 1d8 instead of a 1d4.</p>
+		</description>
+		<sheet>
+			<description>Lamia may add double their strength modifier in grapple attempts with their tails and the slam damage is a 1d8 instead of a 1d4.</description>
+		</sheet>
+	</element>
+	<element name="Quick" type="Racial Trait" source="D&amp;D Wiki" id="ID_RACIAL_TRAIT_QUICK">
+		<description>
+			<p>Melusine have a movement speed of 40 instead of 35 and have a swim speed of 50.</p>
+		</description>
+		<sheet>
+			<description>Melusine have a movement speed of 40 instead of 35 and have a swim speed of 50.</description>
+		</sheet>
+		<rules>
+        <stat name="innate speed" value="40" bonus="base" />
+        <stat name="innate speed:swim" value="50" bonus="base" />
+		</rules>
+	</element>
+</elements>
