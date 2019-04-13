@@ -51,9 +51,20 @@
         <rules>
             <stat name="constitution" value="2" />
             <grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+            <grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GROTAG_TAMER" />            
         </rules>
     </element>
+	<element name="Grotag Tamer" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GROTAG_TAMER">
+		<description>
+			<p>You have proficiency in the Animal Handling skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Animal Handling skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+		</rules>
+	</element>
 
     <!-- Lavastep Tribe Goblin -->
     <element name="Lavastep Tribe Goblin" type="Sub Race" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_SUBRACE_LAVASTEP">
@@ -72,15 +83,13 @@
             <grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_LAVASTEP_GRIT" />
         </rules>
     </element>
-
     <element name="Lavastep Grit" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_LAVASTEP_GRIT">
         <description>
             <p>You have advantage on Dexterity (Stealth) checks made to hide in rocky or subterranean environments.</p>
         </description>
         <sheet>
-            <description>You have advantage on Dexterity (Stealth) checks made to hide in rocky or subterranean environments.</description>
+            <description>You have advantage on Stealth checks made to hide in rocky or subterranean environments.</description>
         </sheet>
-        <rules />
     </element>
 
     <!-- Tuktuk Tribe Goblin -->
@@ -97,9 +106,20 @@
         <rules>
             <stat name="constitution" value="2" />
             <grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+            <grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_TUKTUK_CUNNING" />
         </rules>
     </element>
+	<element name="Tuktuk Cunning" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_TUKTUK_CUNNING">
+		<description>
+			<p>You have proficiency with thieves’ tools.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency with thieves’ tools.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
 
     <element name="Grit" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT">
         <description>
@@ -118,7 +138,7 @@
     </element>
 
     <!-- Ixalan Goblin -->
-    <element name="Ixalan Goblin" type="Sub Race" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_SUBRACE_IXALAN">
+    <element name="Ixalan Goblin" type="Sub Race" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_SUBRACE_IXALAN_GOBLIN">
         <supports>Plane Shift Goblin Subrace</supports>
         <requirements />
         <description>
@@ -127,11 +147,22 @@
             <p class="indent"><b><i>Ability Score Increase. </i></b>Your Dexterity score increases by 2.</p>
             <p class="indent"><b><i>Agile Climber. </i></b>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can’t use your climbing speed if you are encumbered.)</p>
         </description>
-        <sheet display="false"/>
+        <sheet alt="Goblin" display="false"/>
         <rules>
-            <stat name="dexterity" value="2" />
-            <stat name="innate speed:climb" value="25" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+            <stat name="dexterity" value="2" />            
+        	<grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_GOBLIN_AGILE_CLIMBER" />
         </rules>
     </element>
+	<element name="Agile Climber" type="Racial Trait" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_RACIAL_TRAIT_GOBLIN_AGILE_CLIMBER">
+		<description>
+			<p>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can’t use your climbing speed if you are encumbered.)</p>
+		</description>
+		<sheet>
+			<description>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:climb" value="25" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
 
 </elements>
