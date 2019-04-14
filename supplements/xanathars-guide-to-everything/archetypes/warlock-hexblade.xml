@@ -4,7 +4,7 @@
 		<name>The Hexblade</name>
 		<description>The Hexblade Otherworldly Patron from Xanathar’s Guide to Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="warlock-hexblade.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/warlock-hexblade.xml" />
 		</update>
 	</info>
@@ -66,7 +66,7 @@
       <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
     </spellcasting>
   </element>
-  <element name="Hexblade's Curse" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE">
+  <element name="Hexblade’s Curse" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE">
     <description>
       <p>Starting at 1st level, you gain the ability to place a baleful curse on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:</p>
       <ul>
@@ -76,10 +76,10 @@
       </ul>
       <p class="indent">You can’t use this feature again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>
-      <p>As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. Choose one of the following effects: If the cursed target dies, you regain {{hexblades curse:hp}} hit points. Hits on the target creature from you deal +{{Proficiency}} damage. An attack roll of 19 or 20 made by you are critical hits against the cursed target.</p>
-      </description>
+    <sheet action="Bonus Action">
+      <description>Choose one creature you can see within 30ft. The target is cursed for 1 minute. Until the curse ends, you gain the following benefits: 
+	  You gain a +{{proficiency}} bonus to damage rolls against the cursed target and any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.
+	  If the cursed target dies, you regain {{hexblades curse:hp}} hit points.</description>
     </sheet>
     <rules>
       <stat name="hexblades curse:hp" value="charisma:modifier" />
@@ -111,7 +111,7 @@
       <p class="indent">Once you bind a specter with this feature, you can’t use the feature again until you finish a long rest. </p>
     </description>
     <sheet>
-      <description>You can curse the soul of humanoid you slay turning it into a Spirit (see Monster Manual for it's statistics), it gains {{accursed specter:temp hp}} temporary hit points and a +{{accursed specter:attack bonus}} bonus to attack rolls.</description>
+      <description>You can curse the soul of humanoid you slay turning it into a Spirit (see Monster Manual for it’s statistics), it gains {{accursed specter:temp hp}} temporary hit points and a +{{accursed specter:attack bonus}} bonus to attack rolls.</description>
     </sheet>
     <rules>
       <stat name="accursed specter:attack bonus" value="charisma:modifier" />
