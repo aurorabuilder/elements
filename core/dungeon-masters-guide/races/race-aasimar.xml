@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Aasimar</name>
+		<description>Race from the Dungeon Master’s Guide".</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/dungeon-masters-guide">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-aasimar.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/dungeon-masters-guide/races/race-aasimar.xml" />
+		</update>
+	</info>
+	<element name="Aasimar" type="Race" source="Dungeon Master’s Guide" id="ID_DMG_RACE_AASIMAR">
+		<supports />
+		<requirements />
+		<description>
+			<p class="flavor">Whereas tieflings have fiendish blood in their veins, aasimar are the descendants of celestial beings. These folk generally appear as glorious humans with lustrous hair, flawless skin, and piercing eyes. Aasimar often attempt to fass as humans in order to right wrongs and defend goodness in the Material Plane without drawing undue attention to their celestial heritage. They strive to fit into society, although they usually rise to the tip, becoming revered leaders and honorable heroes.</p>
+			<h4> AASIMAR TRAITS</h4>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 1, and your Charisma score increases by 2<br/>
+				<span class="feature">Age.</span>Aasimar mature at the same rate as humans but live a few years longer.<br/>
+				<span class="feature">Alignment.</span>Due to their celestial heritage, aasimar are often good. However, some aasimar fall into evil, rejecting their heritage.<br/>
+				<span class="feature">Size.</span>Aasimar are built like well-proportioned humans. Your size is Medium.<br/>
+				<span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
+				<span class="feature">Darkvision.</span>Thanks to your celestial heritage, you have superior darkvision in dark and dim conditions. You can see in dim light withing 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br/>
+				<span class="feature">Celestial Resistance.</span>You have resistance to necrotic damage and radiant damage.<br/>
+				<span class="feature">Celestial Legacy.</span>You know th light cantrip. Once you reach 3rd level, you can cat the lesser restoration spell once with this trait, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the daylight spell once with this trait as a 3rd-level spell, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.<br/>
+				<span class="feature">Languages.</span> You can speak, read, and write Common and Celestial.<br/>
+			</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<stat name="charisma" value="2" />
+			<stat name="innate speed" value="30" bonus="base" />
+			 <grant type="Size" id="ID_SIZE_MEDIUM" />
+			 <grant type="Vision" id="ID_VISION_DARKVISION" />
+			 <grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+			<grant type="Racial Trait" id="ID_DMG_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_DMG_RACIAL_TRAIT_AASIMAR_CELESTIAL_LEGACY" />
+		</rules>
+	</element>
+	<element name="Celestial Resistance" type="Racial Trait" source="Dungeon Master's Guide" id="ID_DMG_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE">
+    <description>
+      <p>You have resistance to necrotic damage and radiant damage.</p>
+    </description>
+    <sheet>
+      <description>You have resistance to necrotic damage and radiant damage.</description>
+    </sheet>
+    <rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+	</rules>
+  </element>
+  <element name="Celestial Legacy" type="Racial Trait" source="Dungeon Master's Guide" id="ID_DMG_RACIAL_TRAIT_AASIMAR_CELESTIAL_LEGACY">
+    <description>
+      <p>You know the light cantrip.</p>
+	  <p>Once you reach 3rd level, you can cast the lesser restoration spell once with this trait, and you regain the ability to do so when you finish a long rest.</p>
+	  <p>Once you reach 5th level, you can cast the daylight spell once with this trait as a 3rd-level spell, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+    </description>
+    <sheet>
+      <description>You know the light cantrip. Once you reach 3rd level, you can cast the lesser restoration spell once per day. Once you reach 5th level, you can cast the daylight spell once per day as a 3rd-level spell. (Spellcasting: Charisma).</description>
+    </sheet>
+    <rules>
+		<grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
+		<grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3"/>
+		<grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" level="5"/>
+	</rules>
+  </element>
+</elements>
