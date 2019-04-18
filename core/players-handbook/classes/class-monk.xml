@@ -4,7 +4,7 @@
     <name>Monk</name>
     <description>The Monk class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.4">
+    <update version="0.2.5">
       <file name="class-monk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-monk.xml" />
     </update>
   </info>
@@ -259,7 +259,7 @@
       <p>Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level. </p>
       <p class="indent">If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack, which has a normal range of 20 feet and a long range of 60 feet.</p>
     </description>
-    <sheet>
+    <sheet action="Reaction">
       <description>You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10+{{monk:deflect missiles bonus}}.</description>
     </sheet>
     <rules>
@@ -284,7 +284,7 @@
     <description>
       <p>Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.</p>
     </description>
-    <sheet usage="Reaction">
+    <sheet action="Reaction">
       <description>Use your reaction when you fall to reduce any falling damage you take by {{monk:slowfall}}.</description>
     </sheet>
     <rules>
@@ -334,7 +334,7 @@
     <description>
       <p>Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened.</p>
     </description>
-    <sheet>
+    <sheet action="Action">
       <description>You can use your action to end one effect on yourself that is causing you to be charmed or frightened.</description>
     </sheet>
   </element>
@@ -385,7 +385,7 @@
       <p>Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.</p>
       <p class="indent">Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can’t take any other creatures with you.</p>
     </description>
-    <sheet>
+    <sheet action="Action" usage="Ki">
       <description>You can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage. Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can’t take any other creatures with you.</description>
     </sheet>
     <rules>
@@ -497,7 +497,7 @@
     <description>
       <p>Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.</p>
     </description>
-    <sheet>
+    <sheet action="Action" usage="Ki">
       <description>As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.</description>
     </sheet>
     <rules>
@@ -508,7 +508,7 @@
     <description>
       <p>At 6th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</p>
     </description>
-    <sheet>
+    <sheet action="Bonus Action">
       <description>When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</description>
     </sheet>
     <rules />
@@ -517,7 +517,7 @@
     <description>
       <p>By 11th level, you have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</p>
     </description>
-    <sheet>
+    <sheet action="Action">
       <description>When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</description>
     </sheet>
     <rules />
@@ -526,7 +526,7 @@
     <description>
       <p>At 17th level, you can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.</p>
     </description>
-    <sheet>
+    <sheet action="Reaction">
       <description>Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.</description>
     </sheet>
     <rules />
@@ -610,7 +610,7 @@
       	<li>Cause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute.</li>
       </ul>
     </description>
-    <sheet>
+    <sheet action="Action">
       <description>You can use your action to briefly control elemental forces nearby.</description>
     </sheet>
     <rules />
@@ -622,7 +622,7 @@
       <p class="flavor">17th level required.</p>
       <p>You can spend 6 ki points to cast cone of cold.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 6 ki points to cast cone of cold.</description>
     </sheet>
     <rules>
@@ -637,7 +637,7 @@
       <p class="flavor">6th level required.</p>
       <p>You can spend 3 ki points to cast hold person.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 3 ki points to cast hold person.</description>
     </sheet>
     <rules>
@@ -651,7 +651,7 @@
       <p class="flavor">17th level required.</p>
       <p>You can spend 5 ki points to cast stoneskin, targeting yourself.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 5 ki points to cast stoneskin, targeting yourself.</description>
     </sheet>
     <rules>
@@ -663,7 +663,7 @@
     <description>
       <p>When you use the Attack action on your turn, you can spend 1 ki point to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>When you use the Attack action on your turn, you can spend 1 ki point to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage.</description>
     </sheet>
     <rules />
@@ -673,7 +673,7 @@
     <description>
       <p>You can spend 2 ki points to cast thunderwave</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 2 ki points to cast thunderwave</description>
     </sheet>
     <rules>
@@ -685,7 +685,7 @@
     <description>
       <p>You can create a blast of compressed air that strikes like a mighty fist. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don’t push it or knock it prone.</p>
     </description>
-    <sheet>
+    <sheet action="Action" usage="Ki">
       <description>As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don’t push it or knock it prone.</description>
     </sheet>
     <rules />
@@ -697,7 +697,7 @@
       <p class="flavor">11th level required.</p>
       <p>You can spend 4 ki points to cast fireball.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 4 ki points to cast fireball.</description>
     </sheet>
     <rules>
@@ -711,7 +711,7 @@
       <p class="flavor">6th level required.</p>
       <p>You can spend 3 ki points to cast shatter.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 3 ki points to cast shatter.</description>
     </sheet>
     <rules>
@@ -725,7 +725,7 @@
       <p class="flavor">11th level required.</p>
       <p>You can spend 4 ki points to cast gaseous form, targeting yourself.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 4 ki points to cast gaseous form, targeting yourself.</description>
     </sheet>
     <rules>
@@ -739,7 +739,7 @@
       <p class="flavor">11th level required.</p>
       <p>You can spend 4 ki points to cast fly, targeting yourself.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 4 ki points to cast fly, targeting yourself.</description>
     </sheet>
     <rules>
@@ -753,7 +753,7 @@
       <p class="flavor">17th level required.</p>
       <p>You can spend 5 ki points to cast wall of fire.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 5 ki points to cast wall of fire.</description>
     </sheet>
     <rules>
@@ -765,7 +765,7 @@
     <description>
       <p>You can spend 2 ki points to cast gust of wind.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 2 ki points to cast gust of wind.</description>
     </sheet>
     <rules>
@@ -777,7 +777,7 @@
     <description>
       <p>As an action, you can spend 1 ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can’t exceed half the area’s largest dimension. For example, if you affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square’s elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can’t shape the ice to trap or injure a creature in the area.</p>
     </description>
-    <sheet>
+    <sheet action="Action" usage="Ki">
       <description>As an action, you can spend 1 ki point to shape an area of ice or water no larger than 30 feet on a side within 120 feet of you.</description>
     </sheet>
     <rules>
@@ -788,7 +788,7 @@
     <description>
       <p>You can spend 2 ki points to cast burning hands.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 2 ki points to cast burning hands.</description>
     </sheet>
     <rules>
@@ -800,7 +800,7 @@
     <description>
       <p>You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don’t pull it or knock it prone.</p>
     </description>
-    <sheet>
+    <sheet action="Action" usage="Ki">
       <description>You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it.</description>
     </sheet>
     <rules>
@@ -813,7 +813,7 @@
       <p class="flavor">17th level required.</p>
       <p>You can spend 6 ki points to cast wall of stone.</p>
     </description>
-    <sheet>
+    <sheet usage="Ki">
       <description>You can spend 6 ki points to cast wall of stone.</description>
     </sheet>
     <rules>
