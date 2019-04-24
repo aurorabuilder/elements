@@ -4,7 +4,7 @@
     <name>Bard</name>
     <description></description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.4.6">
+    <update version="0.4.7">
       <file name="class-bard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-bard.xml" />
     </update>
   </info>
@@ -39,21 +39,21 @@
       <h5>PROFICIENCIES</h5>
       <p>
         <span class="emphasis">Armor:</span>Light armor
-                        
+
         <br />
         <span class="emphasis">Weapons:</span>Simple weapons, hand crossbows, longswords, rapiers, shortswords
-                        
+
         <br />
         <span class="emphasis">Tools:</span>Three musical instruments of your choice
-                        
+
         <br />
       </p>
       <p>
         <span class="emphasis">Saving Throws:</span>Dexterity, Charisma
-                        
+
         <br />
         <span class="emphasis">Skills:</span>Choose any three
-                        
+
         <br />
       </p>
       <h5>EQUIPMENT</h5>
@@ -83,7 +83,7 @@
       <set name="spellcaster">true</set>
       <set name="spellcastingAbility">Charisma</set>
     </setters>
-    <rules>    
+    <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_BARD"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_BARD"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" requirements="!ID_WOTC_PHB_MULTICLASS_BARD"/>
@@ -134,7 +134,7 @@
     <rules>
       <stat name="bardic-inspiration:count" value="1" bonus="bardic inspiration"/>
       <stat name="bardic-inspiration:count" value="charisma:modifier" bonus="bardic inspiration"/>
-	  
+
       <stat name="bardic-inspiration:dice" value="6" bonus="bardic inspiration" />
       <stat name="bardic-inspiration:dice" value="8" bonus="bardic inspiration" level="5" />
       <stat name="bardic-inspiration:dice" value="10" bonus="bardic inspiration" level="10" />
@@ -171,7 +171,7 @@
     <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
       <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
-      
+
       <stat name="bard:spellcasting:slots:1" value="2" level="1" />
       <stat name="bard:spellcasting:slots:1" value="1" level="2" />
       <stat name="bard:spellcasting:slots:1" value="1" level="3" />
@@ -219,7 +219,7 @@
     </sheet>
     <rules>
 	  <stat name="initiative" value="proficiency:half" bonus="proficiency" />
-	  
+
 	  <stat name="acrobatics:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS"/>
 	  <stat name="animal handling:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ANIMALHANDLING"/>
 	  <stat name="arcana:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ARCANA"/>
@@ -300,8 +300,8 @@
     <description>
       <p>At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).</p>
     </description>
-    <sheet>
-      <description>As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed.</description>
+    <sheet action="Action">
+      <description>You can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed.</description>
     </sheet>
   </element>
   <element name="Magical Secrets" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_BARD_MAGICAL_SECRETS">
@@ -327,7 +327,7 @@
       <description>When you roll initiative and have no uses of Bardic Inspiration left, you regain one use.</description>
     </sheet>
   </element>
-  
+
   <!-- College of Lore -->
   <element name="College of Lore" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_COLLEGE_OF_LORE">
     <supports>Bard College</supports>
@@ -363,8 +363,8 @@
     <description>
       <p>Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</p>
     </description>
-    <sheet>
-      <description>When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</description>
+    <sheet action="Reaction">
+      <description>When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</description>
     </sheet>
   </element>
   <element name="Additional Magical Secrets" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS">

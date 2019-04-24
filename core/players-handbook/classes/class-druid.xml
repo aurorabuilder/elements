@@ -4,7 +4,7 @@
     <name>Druid</name>
     <description>The Druid class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.5">
+    <update version="0.2.6">
       <file name="class-druid.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-druid.xml" />
     </update>
   </info>
@@ -78,7 +78,6 @@
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
-      
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART" requirements="!ID_WOTC_PHB_MULTICLASS_DRUID"/>
@@ -161,10 +160,9 @@
     <spellcasting name="Druid" ability="Wisdom" prepare="true">
       <list known="true">Druid</list>
     </spellcasting>
-    <rules>    
+    <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
       <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
-      
       <stat name="druid:spellcasting:slots:1" value="2" level="1" />
       <stat name="druid:spellcasting:slots:1" value="1" level="2" />
       <stat name="druid:spellcasting:slots:1" value="1" level="3" />
@@ -184,7 +182,6 @@
       <stat name="druid:spellcasting:slots:7" value="1" level="20" />
       <stat name="druid:spellcasting:slots:8" value="1" level="15" />
       <stat name="druid:spellcasting:slots:9" value="1" level="17" />
-
       <stat name="druid:spellcasting:prepare" value="wisdom:modifier" />
       <stat name="druid:spellcasting:prepare" value="level:druid" />
 
@@ -205,10 +202,10 @@
         <li>You can’t cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn’t break your concentration on a spell you’ve already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you’ve already cast.</li>
         <li>You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can’t use any of your special senses, such as darkvision, unless your new form also has that sense.</li>
         <li>You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment, based on the creature’s shape and size. Your equipment doesn’t change size or shape to match the new form, and any equipment that the new form can’t wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.</li>
-      </ul>      
+      </ul>
     </description>
-    <sheet>
-      <description level="2">You can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.</description>
+    <sheet action="Action" usage="2/Short Rest">
+      <description level="2">You can magically assume the shape of a beast that you have seen before.</description>
     </sheet>
     <rules />
   </element>
@@ -389,13 +386,10 @@
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="3" spellcasting="Druid" prepared="true" />
       <grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Druid" prepared="true" />
-      
       <grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Druid" prepared="true" />
       <grant type="Spell" id="ID_PHB_SPELL_SLOW" level="5" spellcasting="Druid" prepared="true" />
-
       <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Druid" prepared="true" />
       <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Druid" prepared="true" />
-
       <grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" level="9" spellcasting="Druid" prepared="true" />
       <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" level="9" spellcasting="Druid" prepared="true" />
     </rules>
@@ -428,7 +422,7 @@
         <td>9th</td>
         <td><em>conjure elemental, scrying</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_MIRROR_IMAGE" level="3" spellcasting="Druid" prepared="true" />
@@ -472,7 +466,7 @@
         <td>9th</td>
         <td><em>insect plague, wall of stone</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_BLUR" level="3" spellcasting="Druid" prepared="true" />
@@ -516,7 +510,7 @@
         <td>9th</td>
         <td><em>commune with nature, tree stride</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_BARKSKIN" level="3" spellcasting="Druid" prepared="true" />
@@ -560,7 +554,7 @@
         <td>9th</td>
         <td><em>dream, insect plague</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="3" spellcasting="Druid" prepared="true" />
@@ -604,7 +598,7 @@
         <td>9th</td>
         <td><em>passwall, wall of stone</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_SPIDER_CLIMB" level="3" spellcasting="Druid" prepared="true" />
@@ -648,7 +642,7 @@
         <td>9th</td>
         <td><em>insect plague, scrying</em></td>
       </tr>
-      </table>  
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" level="3" spellcasting="Druid" prepared="true" />
@@ -692,7 +686,7 @@
         <td>9th</td>
         <td><em>cloudkill, insect plague</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_SPIDER_CLIMB" level="3" spellcasting="Druid" prepared="true" />

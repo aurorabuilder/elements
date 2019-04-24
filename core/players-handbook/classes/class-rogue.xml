@@ -4,7 +4,7 @@
 		<name>Rogue</name>
 		<description>The Rogue class from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.6">
+		<update version="0.2.7">
 			<file name="class-rogue.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-rogue.xml" />
 		</update>
 	</info>
@@ -85,7 +85,6 @@
     </setters>
     <rules>
       <!-- <grant type="Grants" id="ID_INTERNAL_GRANTS_AVERAGE_HP_D8" /> -->
-      
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_ROGUE" />
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_ROGUE" />
       <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" requirements="!ID_WOTC_PHB_MULTICLASS_ROGUE" />
@@ -181,8 +180,8 @@
     <description>
       <p>Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.</p>
     </description>
-    <sheet>
-      <description>You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.</description>
+    <sheet action="Bonus Action">
+      <description>On each of your turns in combat you can take the Dash, Disengage or Hide action.</description>
     </sheet>
   </element>
   <element name="Roguish Archetype" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_ROGUISHARCHETYPE">
@@ -218,8 +217,8 @@
     <description>
       <p>Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</p>
     </description>
-    <sheet>
-      <description>When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</description>
+    <sheet action="Reation">
+      <description>When an attacker that you can see hits you with an attack, you can halve the attack’s damage against you.</description>
     </sheet>
   </element>
   <element name="Evasion" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_EVASION">
@@ -363,7 +362,7 @@
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ASSASSINATE" level="3"/>
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE" level="9"/>
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPOSTER" level="13"/>
-      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DEATHSTRIKE" level="17"/>      
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DEATHSTRIKE" level="17"/>
     </rules>
   </element>
 
@@ -385,7 +384,7 @@
       <description>You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.</description>
     </sheet>
   </element>
-  <element name="Infiltration Expertise" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE">  
+  <element name="Infiltration Expertise" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE">
     <description>
       <p>Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and officiallooking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.</p>
       <p>Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.</p>
@@ -431,7 +430,7 @@
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" level="3"/>
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" level="9"/>
       <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" level="13"/>
-      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF" level="17"/>      
+      <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF" level="17"/>
 
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
     </rules>
@@ -456,7 +455,7 @@
     <spellcasting name="Arcane Trickster" ability="Intelligence" allowReplace="true">
       <list>Wizard,(Enchantment||Illusion)</list>
     </spellcasting>
-    <rules>        
+    <rules>
       <!-- slots -->
       <stat name="arcane trickster:spellcasting:slots:1" value="2" level="3" />
       <stat name="arcane trickster:spellcasting:slots:1" value="1" level="4" />
@@ -475,7 +474,6 @@
 
       <select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="3" number="2" spellcasting="Arcane Trickster" />
       <select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="10" number="1" spellcasting="Arcane Trickster" />
-      
       <select type="Spell" name="Spell (Arcane Trickster)" supports="Wizard, 1" level="3" number="1" spellcasting="Arcane Trickster" allowReplace="false" />
       <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), 1" level="3" number="2" spellcasting="Arcane Trickster" />
       <select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Arcane Trickster"/>
@@ -490,7 +488,6 @@
       <select type="Spell" name="Spell (Arcane Trickster)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="20" spellcasting="Arcane Trickster"/>
 
       <!-- todo: replace spells -->
-      
     </rules>
   </element>
   <element name="Mage Hand Legerdemain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN">
@@ -525,8 +522,8 @@
     <description>
       <p>At 13th level, you gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.</p>
     </description>
-    <sheet>
-      <description>As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.</description>
+    <sheet action="Bonus Action">
+      <description>On your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.</description>
     </sheet>
   </element>
   <element name="Spell Thief" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF">
@@ -535,7 +532,7 @@
       <p class="indent">Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell’s effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn’t need to be a wizard spell). For the next 8 hours, you know the spell and can cast it using your spell slots. The creature can’t cast that spell until the 8 hours have passed.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet>
+    <sheet action="Reaction" usage="1/Long Rest">
       <description>You gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.</description>
     </sheet>
   </element>
@@ -769,5 +766,4 @@
 			<stat name="thieves’ tools:proficiency" value="proficiency" bonus="double" />
 		</rules>
 	</element>
-
 </elements>

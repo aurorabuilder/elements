@@ -4,7 +4,7 @@
     <name>Paladin</name>
     <description>The Paladin class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.4">
+    <update version="0.2.5">
       <file name="class-paladin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-paladin.xml" />
     </update>
   </info>
@@ -142,8 +142,8 @@
       <p class="indent">Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.</p>
       <p class="indent">This feature has no effect on undead and constructs.</p>
     </description>
-    <sheet>
-      <description>As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount ({{lay on hands:hp pool}}) remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it.</description>
+    <sheet action="Action">
+      <description>You can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount ({{lay on hands:hp pool}}) remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it.</description>
     </sheet>
     <rules>
       <stat name="lay on hands:hp pool" value="level:paladin" />
@@ -184,7 +184,6 @@
     </spellcasting>
     <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
-    
       <stat name="paladin:spellcasting:slots:1" value="2" level="2" />
       <stat name="paladin:spellcasting:slots:1" value="1" level="3" />
       <stat name="paladin:spellcasting:slots:1" value="1" level="5" />
@@ -197,7 +196,6 @@
       <stat name="paladin:spellcasting:slots:4" value="1" level="17" />
       <stat name="paladin:spellcasting:slots:5" value="1" level="17" />
       <stat name="paladin:spellcasting:slots:5" value="1" level="19" />
-      
       <stat name="paladin:spellcasting:prepare" value="charisma:modifier" />
       <stat name="paladin:spellcasting:prepare" value="level:paladin:half" />
     </rules>
@@ -303,8 +301,8 @@
       <p>Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.</p>
       <p class="indent">You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
     </description>
-    <sheet usage="{{cleansing touch:count}}/Long Rest">
-      <description>You can use your action to end one spell on yourself or on one willing creature that you touch.</description>
+    <sheet action="Action" usage="{{cleansing touch:count}}/Long Rest">
+      <description>You can end one spell on yourself or on one willing creature that you touch.</description>
     </sheet>
     <rules>
       <stat name="cleansing touch:count" value="1" bonus="base"/>
@@ -353,7 +351,7 @@
       <tr> <td>9th</td> <td><em>beacon of hope, dispel magic</em></td> </tr>
       <tr> <td>13th</td> <td><em>freedom of movement, guardian of faith</em></td> </tr>
       <tr> <td>17th</td> <td><em>commune, flame strike</em></td> </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" level="3" spellcasting="Paladin" prepared="true">
@@ -409,7 +407,7 @@
   <element name="Aura of Devotion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_AURA_OF_DEVOTION">
     <description>
       <p>Starting at 7th level, you and friendly creatures within 10 feet of you can’t be charmed while you are conscious.</p>
-      <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>      
+      <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
       <description>You and friendly creatures within {{aura of devotion:range}} feet of you can’t be charmed while you are conscious.</description>
@@ -421,7 +419,7 @@
   </element>
   <element name="Purity of Spirit" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_PURITY_OF_SPIRIT">
     <description>
-      <p>Beginning at 15th level, you are always under the effects of a protection from evil and good spell.</p>      
+      <p>Beginning at 15th level, you are always under the effects of a protection from evil and good spell.</p>
     </description>
     <sheet>
       <description>You are always under the effects of a protection from evil and good spell.</description>
@@ -432,7 +430,7 @@
       <p>At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.</p>
       <p class="indent">Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.</p>
       <p class="indent">In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.</p>
-      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
     <sheet action="Action" usage="1/Long Rest">
       <description>You can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.</description>
@@ -497,7 +495,7 @@
         <td>17th</td>
         <td><em>commune with nature, tree stride</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_ENSNARING_STRIKE" level="3" spellcasting="Paladin" prepared="true"/>
@@ -510,7 +508,7 @@
       <grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" spellcasting="Paladin" prepared="true"/>
       <grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" level="17" spellcasting="Paladin" prepared="true"/>
       <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" level="17" spellcasting="Paladin" prepared="true"/>
-    </rules>      
+    </rules>
   </element>
   <element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY">
     <description>
@@ -518,7 +516,7 @@
       <p class="indent"><b><i>Nature’s Wrath.</i></b> You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</p>
       <p class="indent"><b><i>Turn the Faithless.</i></b> You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.</p>
       <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
-      <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>      
+      <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>
     </description>
     <sheet display="false" />
 	<rules>
@@ -540,7 +538,7 @@
     <description>
       <p>You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.</p>
       <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
-      <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>  
+      <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>
     </description>
     <sheet alt="Turn the Faithless" action="Action" usage="Channel Divinity">
       <description>You present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.
@@ -562,7 +560,7 @@
   <element name="Aura of Warding" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_AURA_OF_WARDING">
     <description>
       <p>Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.</p>
-      <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>      
+      <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
       <description>You and friendly creatures within {{aura of warding:range}} feet of you have resistance to damage from spells.</description>
@@ -589,9 +587,9 @@
         <li>Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.</li>
         <li>Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.</li>
       </ul>
-      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet usage="1/Long Rest">
+    <sheet action="Action" usage="1/Long Rest">
       <description>For 1 minute you gain the following benefits:
 	  At the start of each of your turns, you regain 10 hit points.
 	  Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.
@@ -626,7 +624,7 @@
       <p class="indent"><b><i>Fight the Greater Evil.</i></b> Faced with a choice of fighting my sworn foes or combating a lesser evil. I choose the greater evil.</p>
       <p class="indent"><b><i>No Mercy for the Wicked.</i></b> Ordinary foes might win my mercy, but my sworn enemies do not.</p>
       <p class="indent"><b><i>By Any Means Necessary.</i></b> My qualms can’t get in the way of exterminating my foes.</p>
-      <p class="indent"><b><i>Restitution.</i></b> If my foes wreak ruin on the world, it is because I failed to stop them. I must help those harmed by their misdeeds.</p>  
+      <p class="indent"><b><i>Restitution.</i></b> If my foes wreak ruin on the world, it is because I failed to stop them. I must help those harmed by their misdeeds.</p>
       <h5>OATH SPELLS</h5>
       <p>You gain oath spells at the paladin levels listed.</p>
       <h5>OATH OF VENGEANCE SPELLS</h5>
@@ -657,7 +655,7 @@
         <td>17th</td>
         <td><em>hold monster, scrying</em></td>
       </tr>
-      </table>      
+      </table>
     </description>
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_BANE" level="3" spellcasting="Paladin" prepared="true"/>
@@ -670,7 +668,7 @@
       <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="13" spellcasting="Paladin" prepared="true"/>
       <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" spellcasting="Paladin" prepared="true"/>
       <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="17" spellcasting="Paladin" prepared="true"/>
-    </rules>      
+    </rules>
   </element>
   <element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY">
     <description>
@@ -678,7 +676,7 @@
       <p class="indent"><b><i>Abjure Enemy.</i></b> As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.</p>
       <p class="indent">On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature’s speed is 0, and it can’t benefit from any bonus to its speed.</p>
       <p class="indent">On a successful save, the creature’s speed is halved for 1 minute or until the creature takes any damage.</p>
-      <p class="indent"><b><i>Vow of Enmity.</i></b> As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.</p>     
+      <p class="indent"><b><i>Vow of Enmity.</i></b> As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.</p>
     </description>
     <sheet display="false">
       <description>You have the Abjure Enemy and Vow of Enmity Channel Divinity options.</description>
@@ -710,7 +708,7 @@
   </element>
   <element name="Relentless Avenger" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_RELENTLESS_AVENGER">
     <description>
-      <p>By 7th level, your supernatural focus helps you close off a foe’s retreat. When you hit a creature with an opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn’t provoke opportunity attacks.</p> 
+      <p>By 7th level, your supernatural focus helps you close off a foe’s retreat. When you hit a creature with an opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn’t provoke opportunity attacks.</p>
     </description>
     <sheet>
       <description>When you hit a creature with an opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn’t provoke opportunity attacks.</description>
@@ -720,8 +718,8 @@
     <description>
       <p>Starting at 15th level, the authority with which you speak your Vow of Enmity gives you greater power over your foe. When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range.</p>
     </description>
-    <sheet>
-      <description>When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range.</description>
+    <sheet action="Reaction">
+      <description>When a creature under the effect of your Vow of Enmity makes an attack, you can make a melee weapon attack against that creature if it is within range.</description>
     </sheet>
   </element>
   <element name="Avenging Angel" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_AVENGING_ANGEL">
@@ -731,9 +729,9 @@
         <li>Wings sprout from your back and grant you a flying speed of 60 feet.</li>
         <li>You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.</li>
       </ul>
-      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet usage="1/Long Rest">
+    <sheet action="Action" usage="1/Long Rest">
       <description>For 1 hour, you gain the following benefits:
 	  Wings sprout from your back and grant you a flying speed of 60 feet.
 	  You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.</description>

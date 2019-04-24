@@ -4,7 +4,7 @@
     <name>Cleric</name>
     <description>The Cleric class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.5">
+    <update version="0.3.6">
       <file name="class-cleric.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-cleric.xml" />
     </update>
   </info>
@@ -35,59 +35,59 @@
       <h5>HIT POINTS</h5>
       <p>
         <span class="emphasis">Hit Dice:</span>1d8 per cleric level
-        
+
         <br/>
         <span class="emphasis">Hit Points at 1st Level:</span>8 + your Constitution modifier
-        
+
         <br/>
         <span class="emphasis">Hit Points at Higher Levels:</span>1d8 (or 5) + your Constitution modifier per cleric level after 1st
-        
+
         <br/>
       </p>
       <h5>PROFICIENCIES</h5>
       <p>
         <span class="emphasis">Armor:</span>Light armor, medium armor, shield
-        
+
         <br/>
         <span class="emphasis">Weapons:</span>Simple weapons
-        
+
         <br/>
         <span class="emphasis">Tools:</span>None
-        
+
         <br/>
       </p>
       <p>
         <span class="emphasis">Saving Throws:</span>Wisdom, Charisma
-        
+
         <br/>
         <span class="emphasis">Skills:</span>Choose two from History, Insight, Medicine,
         Persuasion, and Religion
-        
+
         <br/>
       </p>
       <h5>EQUIPMENT</h5>
       <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
       <ul>
         <li>
-          <i>(a)</i> a mace or           
+          <i>(a)</i> a mace or
           <i>(b)</i> a warhammer (if proficient)
-        
+
         </li>
         <li>
-          <i>(a)</i> scale mail,           
-          <i>(b)</i> leather armor, or           
+          <i>(a)</i> scale mail,
+          <i>(b)</i> leather armor, or
           <i>(c)</i> chain mail (if proficient)
-        
+
         </li>
         <li>
-          <i>(a)</i> a light crossbow and 20 bolts or           
+          <i>(a)</i> a light crossbow and 20 bolts or
           <i>(b)</i> any simple weapon
-        
+
         </li>
         <li>
-          <i>(a)</i> a priest’s pack or           
+          <i>(a)</i> a priest’s pack or
           <i>(b)</i> an explorer’s pack
-        
+
         </li>
         <li>A shield and a holy symbol</li>
       </ul>
@@ -108,7 +108,7 @@
       <set name="spellcaster">true</set>
       <set name="spellcastingAbility">Wisdom</set>
     </setters>
-    <rules>        
+    <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
@@ -116,7 +116,7 @@
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
       <select type="Proficiency" name="Skill Proficiency (Cleric)" supports="Skill,Cleric" number="2" requirements="!ID_WOTC_PHB_MULTICLASS_CLERIC"/>
-	  
+
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" level="1" />
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEDOMAIN" level="1" />
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY" level="2" />
@@ -140,7 +140,7 @@
   </element>
   <element name="Spellcasting" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC">
     <description>
-      <p>As a conduit for divine power, you can cast cleric spells.</p>      
+      <p>As a conduit for divine power, you can cast cleric spells.</p>
       <h5>CANTRIPS</h5>
       <p>At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.</p>
       <h5>PREPARING AND CASTING SPELLS</h5>
@@ -167,7 +167,7 @@
     <spellcasting name="Cleric" ability="Wisdom" prepare="true">
       <list known="true">Cleric</list>
     </spellcasting>
-    <rules>     
+    <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
       <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
       <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
@@ -284,7 +284,7 @@
       <p class="indent">If your deity intervenes, you can’t use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.</p>
       <p class="indent">At 20th level, your call for intervention succeeds automatically, no roll required.</p>
     </description>
-    <sheet>
+    <sheet action="Action">
       <description>Call on your deity to intervene on your behalf when your need is great.</description>
     </sheet>
     <rules />
@@ -575,8 +575,8 @@
       <p class="indent">If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute.</p>
       <p class="indent">During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</p>
     </description>
-    <sheet>
-      <description>As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature fails its save, you can read its surface thoughts when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</description>
+    <sheet action="Action">
+      <description>Choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature fails its save, you can read its surface thoughts when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</description>
     </sheet>
     <rules>
       <!-- <grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" />spellcasting="Cleric" prepared="true" -->
@@ -600,10 +600,10 @@
       <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
       <p>
         <span class="feature">Object Reading.</span>Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. If the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.
-        
+
         <br/>
         <span class="feature">Area Reading.</span>As you meditate, you see visions of recent events in your immediate vicinity (a room, street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation.
-        
+
         <br/>
       </p>
     </description>
@@ -700,7 +700,7 @@
       <p>Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature.</p>
       <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
+    <sheet action="Reaction">
       <description>When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. You can use this feature {{warding flare:count}} times. You regain all expended uses when you finish a long rest.</description>
     </sheet>
     <rules>
@@ -737,8 +737,8 @@
     <description>
       <p>Starting at 17th level, you can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage.</p>
     </description>
-    <sheet>
-      <description>You can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage.</description>
+    <sheet action="Action" usage="{{warding flare:count}}/Day">
+      <description>You can activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage.</description>
     </sheet>
   </element>
   <!-- Nature Domain -->
@@ -847,7 +847,7 @@
       <p>Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.</p>
     </description>
     <sheet action="Reaction">
-      <description>When you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.</description>
+      <description>When you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can grant resistance to the creature against that instance of the damage.</description>
     </sheet>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DIVINE_STRIKE">
@@ -863,8 +863,8 @@
     <description>
       <p>At 17th level, you gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn.</p>
     </description>
-    <sheet>
-      <description>While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn.</description>
+    <sheet action="Bonus Action">
+      <description>While creatures are charmed by your Charm Animals and Plants feature, you can on your turn verbally command what each of those creatures will do on its next turn.</description>
     </sheet>
   </element>
   <!-- Tempest Domain -->
@@ -1074,8 +1074,8 @@
     <description>
       <p>Starting when you choose this domain at 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</p>
     </description>
-    <sheet>
-      <description>You can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</description>
+    <sheet action="Action">
+      <description>You can touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</description>
     </sheet>
   </element>
   <element name="Channel Divinity: Invoke Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
@@ -1112,7 +1112,7 @@
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
     </description>
     <sheet>
-      <description>AYou can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.</description>
+      <description>You can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.</description>
     </sheet>
   </element>
   <!-- War Domain -->
@@ -1196,7 +1196,7 @@
       <p>At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
     </description>
     <sheet alt="War God’s Blessing" action="Reaction" usage="Channel Divinity">
-      <description>When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity.</description>
+      <description>When a creature within 30 feet of you makes an attack roll, you can grant that creature a +10 bonus to the roll, using your Channel Divinity.</description>
     </sheet>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_DIVINE_STRIKE">

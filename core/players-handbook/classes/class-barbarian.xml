@@ -4,7 +4,7 @@
     <name>Barbarian</name>
     <description>The Barbarian class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.4">
+    <update version="0.2.5">
       <file name="class-barbarian.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-barbarian.xml" />
     </update>
   </info>
@@ -88,7 +88,7 @@
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_WOTC_PHB_MULTICLASS_BARBARIAN" />
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_WOTC_PHB_MULTICLASS_BARBARIAN" />
       <select type="Proficiency" name="Skill Proficiency (Barbarian)" number="2" supports="Skill,Barbarian" requirements="!ID_WOTC_PHB_MULTICLASS_BARBARIAN" />
-      
+
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_BARBARIAN_RAGE" level="1" />
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_BARBARIAN_UNARMORED_DEFENCE" level="1" />
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_BARBARIAN_RECKLESS_ATTACK" level="2" />
@@ -144,7 +144,7 @@
       <stat name="barbarian rage:damage" value="2" level="1" />
       <stat name="barbarian rage:damage" value="1" level="9" />
       <stat name="barbarian rage:damage" value="1" level="16" />
-      <!-- 
+      <!--
       <stat name="melee:damage, strength" value="barbarian rage:damage" condition="while raging" />
 	  <stat name="advantage:Strength Check" condition="while raging" />
 	  <stat name="advantage:Strength Saving Throws" condition="while raging" />
@@ -355,8 +355,8 @@
       <p>Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.</p>
       <p>If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.</p>
     </description>
-    <sheet>
-      <description>You can use your action to frighten someone with your menacing presence.</description>
+    <sheet action="Action">
+      <description>You can frighten someone with your menacing presence.</description>
     </sheet>
     <rules />
   </element>
@@ -364,8 +364,8 @@
     <description>
       <p>Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.</p>
     </description>
-    <sheet>
-      <description>When you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.</description>
+    <sheet action="Reaction">
+      <description>When you take damage from a creature that is within 5 feet of you, you can make a melee weapon attack against that creature.</description>
     </sheet>
     <rules />
   </element>
@@ -539,8 +539,8 @@
     <description>
       <p>While you’re raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.</p>
     </description>
-    <sheet>
-      <description>While you’re raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.</description>
+    <sheet action="Bonus action">
+      <description>While you’re raging, you can on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.</description>
     </sheet>
     <rules />
   </element>
