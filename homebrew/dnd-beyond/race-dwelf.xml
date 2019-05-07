@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dwelf</name>
+		<description></description>
+		<author url="https://www.dndbeyond.com/races/738-dwelf">Astromancer</author>
+		<update version="0.1.8">
+			<file name="race-dwelf.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-elf.xml" />
+		</update>
+	</info>
+
+  <element name="Dwelf" type="Race" source="D&D Beyond" id="ID_RACE_DWELF">
+    <description>
+      <p class="flavor">The sight of a dwelf is a rare one. Some remark that these human looking creatures are a sign of the world progressing, changing for the better. Others see dwelves as an abomination, a symbol for the collapse of the two greatest empires to ever grace the earth. Their stocky build, their shorter stance, their graceful sway mark dwelves as the fruit of the forbidden love between an elf and dwarf.</p>
+      <h4>BELONGING NOWHERE</h4>
+      <p>To most, including elves and dwarves, dwelves look human. They range from 4 and a half feet to 5 and a half feet tall and weigh about as much as any human. Dwelven men do grow luscious facial hair, one of the few things distinguishing the genders. Not much of the in the way of the parents' subraces bleed through other than in appearance. Dwelves of duergar or drow parentage may not possess innate magic but are usually an ashen gray in coloration. Other dwelves sport a blue beard or a greenish hue.</p>
+      <h4>ABOMINATIONS OF PROGRESS</h4>
+      <p>The life of a dwelf is a forbidden one. While elven and dwarven nations are cordial and respectful to each other and individuals can develop deep friendships lasting centuries, romantic attraction to the other is frowned upon. A dwelf's parents are typically disowned by their kin and live either as hermits or in human cities. However, humans find the presence of dwelves unsettling as they appear human, yet are distinctly not. Dwelves typically wander, never feeling accepted anywhere. They keep a low profile, portraying themselves as human. </p>
+      <h4>DWELF NAMES</h4>
+      <p>Recognizing the circumstances they are in, dwelfs are usually given or adopt a human name.</p>
+      <h4>DWELF TRAITS</h4>
+      <p>Your dwelf character has some qualities in common with elves and dwarves but also some that are unique to dwelves.</p>
+      <p>
+        <span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 2, and your Dexterity, Constitution, or Charisma score increases by 1.<br />
+        <span class="feature">Age.</span>Dwelves mature at the same rate dwarves do and reach adulthood around the age of 60. They live much longer than dwarves, however, often exceeding 500 years.<br />
+        <span class="feature">Alignment.</span>Dwelves are pulled between their chaotic elven heritage and their more sturdy dwarven side. However, they are often instilled with the ideals of equality and fair play.<br />
+        <span class="feature">Size.</span>Dwelves are slightly smaller than humans. Your size is Medium.<br />
+        <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br />
+        <span class="feature">Darkvision.</span>Thanks to your dwarf and elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.<br />
+        <span class="feature">Fey Ancestry.</span>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.<br />
+        <span class="feature">Dwarven Resilience.</span>You have advantage on saving throws against poison, and you have resistance against poison damage.<br />
+        <span class="feature">Skill Versatility.</span>You gain proficiency in two skills of your choice.<br />
+        <span class="feature">Languages.</span>You can speak, read, and write Common, Dwarvish, and Elvish.<br />
+      </p>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="wisdom" value="2" />
+      <select type="Racial Trait" name="Ability Score Increase (Dwelf)" supports="Dwelf" number="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Vision" id="ID_VISION_DARKVISION" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON"/>
+      <grant type="Language" id="ID_LANGUAGE_ELVISH" />
+      <grant type="Language" id="ID_LANGUAGE_DWARVISH" />
+      <select type="Proficiency" name="Skill Proficiency (Dwelf)" supports="Skill" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_FEY_ANCESTRY" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE" />
+    </rules>
+  </element>
+	<element name="Dwarven Resilience" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE">
+    <supports />
+    <requirements />
+    <description>
+      <p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>
+    </description>
+    <sheet>
+      <description>You have advantage on saving throws against poison, and you have resistance against poison damage.</description>
+    </sheet>
+    <rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+	</rules>
+  </element>
+	<element name="Fey Ancestry" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
+		</description>
+		<sheet>
+			<description>Advantage on saving throws against being charmed, and magic can’t put you to sleep.</description>
+		</sheet>
+	</element>
+
+  <element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWELF_DEXTERITY">
+    <supports>Dwelf</supports>
+    <requirements />
+    <description>
+      <p>Your Dexterity increases by 1.</p>
+    </description>
+    <rules>
+      <stat name="dexterity" value="1"/>
+    </rules>
+  </element>
+
+  <element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWELF_CONSTITUTION">
+    <supports>Dwelf</supports>
+    <requirements />
+    <description>
+      <p>Your Constitution increases by 1.</p>
+    </description>
+    <rules>
+      <stat name="constitution" value="1"/>
+    </rules>
+  </element>
+
+  <element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWELF_CHARISMA">
+    <supports>Dwelf</supports>
+    <requirements />
+    <description>
+      <p>Your Charisma increases by 1.</p>
+    </description>
+    <rules>
+      <stat name="charisma" value="1"/>
+    </rules>
+  </element>
+
+  
+</elements>
