@@ -43,43 +43,38 @@
             <p class="indent"><b><i>Blood of the Spider. </i></b>Arachi possess a remarkable resistance to poison, and it flows through their fangs with equal ease. You gain resistance to poison damage. If you would also gain this resistance from a class feature, you gain the ability to cast falling spider’s spite at 1st level once per long rest without expending a spell slot.</p>
             <p class="indent"><b><i>Darkvision. </i></b>You have superior vision in dark and dim conditions. You can see in dim light within 30 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray. If you gain Darkvision from your racial origin, add both values together.</p>
             <p class="indent"><b><i>False Form. </i></b>As an arachi, you possess two forms: a true form and a false form. Your false form appears as a member of your origin race and can look however you wish. Once you choose this appearance, it can never be changed. You can change between your false form and true form as an action. Nothing aside from your physical appearance changes. However, while in your false form, you gain advantage on Deception checks related to concealing your true nature as an arachi or to actions you performed while you were in your true form.</p>
-            <p class="indent"><b><i>Remarkably Forgetful. </i></b> You learn the forget cantrip, and you can cast it on yourself multiple times instead of only once, forgetting a total number of different things up to your character level.</p>
-            <p class="indent"><b><i>Languages. </i></b> Arachi are fluent in Common and in the language of their racial origin.</p>
+            <p class="indent"><b><i>Remarkably Forgetful.</i></b> You learn the forget cantrip, and you can cast it on yourself multiple times instead of only once, forgetting a total number of different things up to your character level.</p>
+            <p class="indent"><b><i>Languages.</i></b> Arachi are fluent in Common and in the language of their racial origin.</p>
 		</description>
         <sheet display="false" />
         <rules>
+            <select type="Racial Trait" name="Primary Ability Score" supports="Ability Score Improvement, Arachi" />
+			<stat name="dexterity" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY" />
+			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY" />			
+			<stat name="dexterity" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" />
+			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" />
             <grant type="Language" name="ID_LANGUAGE_COMMON" />
             <grant type="Vision" id="ID_VISION_DARKVISION" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_FALSE_FORM" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_BLOOD_OF_THE_SPIDER" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_REMARKABLY_FORGETFUL" />
-            <select type="Sub Race" name="Racial Origin" supports="Origin Race" />
-            <select type="Ability Score Improvement" name="Ability Score Increase (The Arachi)" supports="Ability Score Improvement, Arachi" />
+            <select type="Racial Trait" name="Racial Origin" supports="Alfallen Origin Race" />
 		</rules>
 	</element>
 	
-    <element name="Dexterity" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_ARACHI_DEXTERITY">
+    <element name="Dexterity" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY">
         <supports>Ability Score Improvement, Arachi</supports>
         <description>
             <p>Your Dexterity increases by 2 and Charisma by 1.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="dexterity" value="2" />
-            <stat name="charisma" value="1" />
-		</rules>
-	</element>
-	
-    <element name="Charisma" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_ARACHI_CHARISMA">
+	</element>	
+    <element name="Charisma" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA">
         <supports>Ability Score Improvement, Arachi</supports>
         <description>
-            <p>Your Charisma increases by 2 and Dexterity by 1.</p>
+            <p>Your Dexterity increases by 1 and Charisma by 2.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="dexterity" value="1" />
-            <stat name="charisma" value="2" />
-		</rules>
 	</element>
 	
     <element name="False Form" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_FALSE_FORM">
@@ -96,13 +91,23 @@
 			<p>Arachi possess a remarkable resistance to poison, and it flows through their fangs with equal ease. You gain resistance to poison damage. If you would also gain this resistance from a class feature, you gain the ability to cast falling spider’s spite at 1st level once per long rest without expending a spell slot.</p>
 		</description>
         <sheet>
-            <description>You gain resistance to poison damage. If you would also gain this resistance from a class feature, you gain the ability to cast falling spider’s spite at 1st level once per long rest without expending a spell slot.</description>
+            <description>You gain the ability to cast falling spider’s spite at 1st level once per long rest without expending a spell slot.</description>
 		</sheet>
         <rules>
-            <grant type="Spell" id="ID_GFP_COFSA_SPELL_FALLING_SPIDERS_SPITE" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
-		</rules>
-		
+			<!-- todo: workaround for meeting requirement for the spell -->
+            <grant type="Spell" id="ID_GFP_COFSA_SPELL_FALLING_SPIDERS_SPITE" requirements="ID_GFP_COFSA_GRANTS_BLOOD_OF_THE_SPIDER_SPELL" />
+			<select type="Racial Trait" name="Blood of the Spider" supports="Blood of the Spider Option" optional="true" />
+		</rules>		
+	</element>
+	
+	<!-- work around for getting the falling spiders spell correctly -->
+    <element name="Falling Spider’s Spite" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_GRANTS_BLOOD_OF_THE_SPIDER_SPELL">
+		<supports>Blood of the Spider Option</supports>
+        <description>
+			<p><em>Prerequisite: poison resistance from a class feature</em></p>
+			<p>You gain the ability to cast falling spider’s spite at 1st level once per long rest without expending a spell slot.</p>
+		</description>
 	</element>
 	
     <element name="Remarkably Forgetful" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_REMARKABLY_FORGETFUL">
