@@ -31,7 +31,7 @@
             <p class="indent">Tiefling luminari are marked by the Constellation of the Overseer, which commonly appears as a series of inscriptions shaped into an eye. Most have dozens of these eyes across the prime points of their body, giving them an eerie appearance. </p>
             <h4>LUMINARI TRAITS</h4>
             <p>As a luminari, your starmark grants you magical abilities tied to your racial origin.</p>
-            <p class="indent"><b><i>Ability Score Increase. </i></b>  Choose either Intelligence, Wisdom, or Charisma. That ability score increases by two, while the other scores increase by one.</p>
+            <p class="indent"><b><i>Ability Score Increase.</i></b> Choose either Intelligence, Wisdom, or Charisma. That ability score increases by two, while the other scores increase by one.</p>
             <p class="indent"><b><i>Age. </i></b>The lifespan of a luminari is unchanged.</p>
             <p class="indent"><b><i>Alignment. </i></b>Most luminari tend to be different from others of their kind, making them outcasts and rebels. Some are chaotic and cruel, but others are lawful or benevolent.</p>
             <p class="indent"><b><i>Size. </i></b>Your size is determined by your origin race.</p>
@@ -53,10 +53,10 @@
 			<stat name="intelligence" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
 			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
 			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
-            <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_MYSTICAL_POWER" />
-            <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_STARBORN" />
+            <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_MYSTICAL_POWER" />
+            <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION" />
             <select type="Racial Trait" name="Racial Origin" supports="Alfallen Origin Race" />
 		</rules>
 	</element>
@@ -80,6 +80,17 @@
         <sheet display="false" />
 	</element>
 	
+	<element name="Starborn" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_STARBORN">
+		<description>
+			<p>You gain resistance to radiant damage.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain resistance to radiant damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
     <element name="Mystical Power" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_MYSTICAL_POWER">
         <description>
 			<p>Choose a cantrip from the cleric, wizard, or bard spell list. You learn this cantrip, and you can cast it using either Intelligence, Wisdom, or Charisma (your choice).</p>
@@ -90,15 +101,12 @@
         <rules>
             <select type="Spell" name="Mystical Power" supports="0,(Bard||Cleric||Wizard)" />
 		</rules>
-	</element>
-	
-    <element name="Contellation" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION">
+	</element>	
+    <element name="Constellation" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION">
         <description>
 			<p>You have been marked by a particular constellation and gain a benefit based on your racial origin that applies whenever you cast a cantrip as an action.</p>
 		</description>
-        <sheet display="false">
-            <description></description>
-		</sheet>
+        <sheet display="false" />
         <rules>
 			<grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SLAYER" requirements="ID_GFP_COFSA_ORIGIN_RACE_DRAGONBORN" />
 			<grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_WANDERER" requirements="ID_GFP_COFSA_ORIGIN_RACE_DWARF" />
@@ -112,77 +120,68 @@
 		</rules>
 	</element>
 	
-    <element name="Slayer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SLAYER">
+    <element name="Constellation of the Slayer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SLAYER">
         <description>
-			<p>Your next successful weapon attack deals an extra 1d4 damage of the same type as your breath weapon, provided you do not make it during this turn.</p>
+			<p>Whenever you cast a cantrip as an action. Your next successful weapon attack deals an extra 1d4 damage of the same type as your breath weapon, provided you do not make it during this turn.</p>
 		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>Your next successful weapon attack deals an extra 1d4 damage of the same type as your breath weapon, provided you do not make it during this turn.</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. Your next successful weapon attack deals an extra 1d4 damage of the same type as your breath weapon, provided you do not make it during this turn.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Wanderer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_WANDERER">
+        <description>
+			<p>Whenever you cast a cantrip as an action. If you take the Attack action during your next turn and target a creature, your speed increases by 10 feet until the end of that turn.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. If you take the Attack action during your next turn and target a creature, your speed increases by 10 feet until the end of that turn.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Devourer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_DEVOURER">
+        <description>
+			<p>Whenever you cast a cantrip as an action. If you make an opportunity attack before the start of your next turn, you can pursue the target as it moves away from you. Match its movement, up to 30 feet in total, whenever the target moves during its turn.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. If you make an opportunity attack before the start of your next turn, you can pursue the target as it moves away from you. Match its movement, up to 30 feet in total, whenever the target moves during its turn.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Skulker" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SKULKER">
+        <description>
+			<p>Whenever you cast a cantrip as an action. If you take the Hide action before the end of your next turn, you gain advantage on the check.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. If you take the Hide action before the end of your next turn, you gain advantage on the check.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Champion" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_CHAMPION">
+        <description>
+			<p>Whenever you cast a cantrip as an action. If the cantrip deals damage and has a duration of “Instantaneous”, you gain resistance to one damage type dealt by the cantrip until the start of your next turn.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. If the cantrip deals damage and has a duration of “Instantaneous”, you gain resistance to one damage type dealt by the cantrip until the start of your next turn.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Scholar" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SCHOLAR">
+        <description>
+			<p>Whenever you cast a cantrip as an action. If the cantrip can’t deal damage, you gain advantage on the first melee attack during your next turn.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. If the cantrip can’t deal damage, you gain advantage on the first melee attack during your next turn.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Heartless" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_HEARTLESS">
+        <description>
+			<p>Whenever you cast a cantrip as an action. The first time you make an attack before the end of your next turn targeting a creature that is charmed or frightened by you, you gain advantage on the attack.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. The first time you make an attack before the end of your next turn targeting a creature that is charmed or frightened by you, you gain advantage on the attack.</description>
+		</sheet>
+	</element>	
+    <element name="Constellation of the Overseer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_OVERSEER">
+        <description>
+			<p>Whenever you cast a cantrip as an action. You can take the Search action as a bonus action this turn. If you do, you know the location of any creature within 30 feet of you who attacks or casts a spell before the start of your next turn.</p>
+		</description>
+        <sheet>
+            <description>Whenever you cast a cantrip as an action. You can take the Search action as a bonus action this turn. If you do, you know the location of any creature within 30 feet of you who attacks or casts a spell before the start of your next turn.</description>
 		</sheet>
 	</element>
-	
-    <element name="Wanderer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_WANDERER">
-        <description>
-			<p>If you take the Attack action during your next turn and target a creature, your speed increases by 10 feet until the end of that turn.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>If you take the Attack action during your next turn and target a creature, your speed increases by 10 feet until the end of that turn.</description>
-		</sheet>
-	</element>
-	
-    <element name="Devourer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_DEVOURER">
-        <description>
-			<p>If you make an opportunity attack before the start of your next turn, you can pursue the target as it moves away from you. Match its movement, up to 30 feet in total, whenever the target moves during its turn.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>If you make an opportunity attack before the start of your next turn, you can pursue the target as it moves away from you. Match its movement, up to 30 feet in total, whenever the target moves during its turn.</description>
-		</sheet>
-	</element>
-	
-    <element name="Skulker" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SKULKER">
-        <description>
-			<p>If you take the Hide action before the end of your next turn, you gain advantage on the check.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>If you take the Hide action before the end of your next turn, you gain advantage on the check.</description>
-		</sheet>
-	</element>
-	
-    <element name="Champion" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_CHAMPION">
-        <description>
-			<p>If the cantrip deals damage and has a duration of “Instantaneous”, you gain resistance to one damage type dealt by the cantrip until the start of your next turn.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>If the cantrip deals damage and has a duration of “Instantaneous”, you gain resistance to one damage type dealt by the cantrip until the start of your next turn.</description>
-		</sheet>
-	</element>
-	
-    <element name="Scholar" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_SCHOLAR">
-        <description>
-			<p>If the cantrip can’t deal damage, you gain advantage on the first melee attack during your next turn.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>If the cantrip can’t deal damage, you gain advantage on the first melee attack during your next turn.</description>
-		</sheet>
-	</element>
-	
-    <element name="Heartless" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_HEARTLESS">
-        <description>
-			<p>The first time you make an attack before the end of your next turn targeting a creature that is charmed or frightened by you, you gain advantage on the attack.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>The first time you make an attack before the end of your next turn targeting a creature that is charmed or frightened by you, you gain advantage on the attack.</description>
-		</sheet>
-	</element>
-	
-    <element name="Overseer" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_CONSTELLATION_OVERSEER">
-        <description>
-			<p>You can take the Search action as a bonus action this turn. If you do, you know the location of any creature within 30 feet of you who attacks or casts a spell before the start of your next turn.</p>
-		</description>
-        <sheet usage="Once after casting a cantrip">
-            <description>You can take the Search action as a bonus action this turn. If you do, you know the location of any creature within 30 feet of you who attacks or casts a spell before the start of your next turn.</description>
-		</sheet>
-	</element>
-	
-	
 </elements>
