@@ -34,7 +34,7 @@
             <p>Civilized lands often view individuals who have become nocturne through no fault of their own as troublemakers and tricksters, for they rarely sleep when others do. Some view them with sympathy, treating them as one might an individual suffering from a mental illness. Others are less caring but may speak in hushed whispers about a person with glowing blue eyes that wisp with eerie smoke. Communities of nocturne are viewed poorly by others but have a strong group bond. Knowing others who understand the constant lure and terror of sleep helps many stay sane and whole, despite the troubles in their lives. Few nocturne speak about their forced insomnia to those outside a close circle of friends, as they feel it would put unrequited burden upon strangers.</p>
             <h4>NOCTURE TRAITS</h4>
             <p>As a nocturne, your newfound insight and agility is restrained only by your unceasing insomnia.</p>
-            <p class="indent"><b><i>Ability Score Increase. </i></b>  Choose either Dexterity or Wisdom. That ability score increases by two, while the other score increases by one.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b> Choose either Dexterity or Wisdom. That ability score increases by two, while the other score increases by one.</p>
             <p class="indent"><b><i>Age. </i></b>The lifespan of an Nocturne is unchanged.</p>
             <p class="indent"><b><i>Alignment. </i></b>Most nocturne tend to be neutral or chaotic, driven by their desires but also restrained by their fears.</p>
             <p class="indent"><b><i>Size. </i></b>Your size is determined by your origin race.</p>
@@ -46,9 +46,14 @@
             <p class="indent"><b><i>Nine Lives. </i></b>You’re hard to kill, but only when your fate is unknown. Whenever you are hidden from all other creatures, you gain advantage on death saving throws and on saving throws to reduce damage.</p>
             <p class="indent"><b><i>Languages. </i></b> Nocturne are fluent in Common and in the language of their racial origin.</p>
 		</description>
-        <sheet display="false" />
-		
+        <sheet display="false" />		
         <rules>
+            <select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_ASI_NOCTURNE_DEXTERITY|ID_GFP_COFSA_ASI_NOCTURNE_WISDOM" />
+			<stat name="dexterity" value="2" requirements="ID_GFP_COFSA_ASI_NOCTURNE_DEXTERITY" />
+			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_ASI_NOCTURNE_DEXTERITY" />			
+			<stat name="dexterity" value="1" requirements="ID_GFP_COFSA_ASI_NOCTURNE_WISDOM" />
+			<stat name="wisdom" value="2" requirements="ID_GFP_COFSA_ASI_NOCTURNE_WISDOM" />
+
             <grant type="Language" name="ID_LANGUAGE_COMMON" />
             <grant type="Vision" id="ID_VISION_DARKVISION" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_NIGHT_TERRORS" />
@@ -56,33 +61,22 @@
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_RESTLESS" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_NINE_LIVES" />
             <select type="Racial Trait" name="Racial Origin" supports="Alfallen Origin Race" />
-            <select type="Ability Score Improvement" name="Ability Score Increase (The Nocturne)" supports="Ability Score Improvement, Nocturne" />
 		</rules>
 	</element>
 	
-    <element name="Wisdom" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_NOCTURNE_WISDOM">
-        <supports>Ability Score Improvement, Nocturne</supports>
+    <element name="Dexterity" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_NOCTURNE_DEXTERITY">
         <description>
-            <p>Your Wisdom increases by 2 and Dexterity by 1.</p>
+            <p>Your Dexterity score increases by 2, and your Wisdom score by 1.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="wisdom" value="2" />
-            <stat name="dexterity" value="1" />
-		</rules>
+	</element>
+    <element name="Wisdom" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_NOCTURNE_WISDOM">
+        <description>
+            <p>Your Dexterity score increases by 1, and your Wisdom score by 2.</p>
+		</description>
+        <sheet display="false" />
 	</element>
 	
-    <element name="Dexterity" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_NOCTURNE_DEXTERITY">
-        <supports>Ability Score Improvement, Nocturne</supports>
-        <description>
-            <p>Your Dexterity increases by 2 and Wisdom by 1.</p>
-		</description>
-        <sheet display="false" />
-        <rules>
-            <stat name="wisdom" value="1" />
-            <stat name="dexterity" value="2" />
-		</rules>
-	</element>
 	
     <element name="Night Terrors" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_NIGHT_TERRORS">
         <description>
@@ -92,8 +86,8 @@
             <description>You gain resistance to psychic damage and proficiency in the Perception skill.</description>
 		</sheet>
         <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
 		</rules>
 	</element>
 	
@@ -102,7 +96,7 @@
 			<p>You desire and fear sleep in equal measure. Whenever you take a long rest, you can choose to remain awake or try to sleep. If you remain awake, you gain advantage on Charisma saving throws, and you can perform light activity, such as keeping watch, to gain the benefits of a long rest. If you sleep, your movement speed and jumping height each increase by 5 feet, but you suffer disadvantage on saving throws against being frightened. These benefits last  until you begin a new long rest. If you gain the ability to go without sleep, you gain all the benefits and no penalties. </p>
 		</description>
         <sheet>
-            <description>Whenever you take a long rest, you can choose to remain awake or try to sleep. If you remain awake, you gain advantage on Charisma saving throws. If you sleep, your movement speed and jumping height each increase by 5 feet, but you suffer disadvantage on saving throws against being frightened. These benefits last until you begin a new long rest. If you gain the ability to go without sleep, you gain all the benefits and no penalties. </description>
+            <description>Whenever you take a long rest, you can choose to remain awake or try to sleep. If you remain awake, you gain advantage on Charisma saving throws. If you sleep, your movement speed and jumping height each increase by 5 feet, but you suffer disadvantage on saving throws against being frightened. These benefits last until you begin a new long rest. If you gain the ability to go without sleep, you gain all the benefits and no penalties.</description>
 		</sheet>
 	</element>
 	

@@ -44,52 +44,42 @@
 		</description>
         <sheet display="false" />
         <rules>
+            <select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION|ID_GFP_COFSA_ASI_STATUESQUE_WISDOM|ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA" />
+			<stat name="constitution" value="2" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION" />
+			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION" />			
+			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION" />
+			<stat name="constitution" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_WISDOM" />
+			<stat name="wisdom" value="2" requirements="ID_GFP_COFSA_ASI_STATUESQUE_WISDOM" />		
+			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_WISDOM" />
+			<stat name="constitution" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA" />
+			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA" />
+			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA" />
+
             <grant type="Language" name="ID_LANGUAGE_COMMON" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_RADIANT_BLESSING" />
             <grant type="Racial Trait" name="ID_GFP_COFSA_RACIAL_TRAIT_NATURAL_SOUL" />
             <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_HISTORY" />
             <select type="Racial Trait" name="Racial Origin" supports="Alfallen Origin Race" />
-            <select type="Ability Score Improvement" name="Ability Score Increase (The Statuesque)" supports="Ability Score Improvement, Statuesque" />
 		</rules>
 	</element>
 	
-    <element name="Constitution" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION">
-        <supports>Ability Score Improvement, Statuesque</supports>
+    <element name="Constitution" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_CONSTITUTION">
         <description>
-            <p>Your Constitution increases by 2, Wisdom and Charisma by 1.</p>
+            <p>Your Constitution score increases by 2, your Wisdom score increases by 1, and your Charisma score increases by 1.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="constitution" value="2" />
-            <stat name="wisdom" value="1" />
-            <stat name="charisma" value="1" />
-		</rules>
-	</element>
-	
-    <element name="Wisdom" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_WISDOM">
-        <supports>Ability Score Improvement, Statuesque</supports>
+	</element>	
+    <element name="Wisdom" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_WISDOM">
         <description>
-            <p>Your Wisdom increases by 2, Constitution and Charisma by 1.</p>
+            <p>Your Constitution score increases by 1, your Wisdom score increases by 2, and your Charisma score increases by 1.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="constitution" value="1" />
-            <stat name="wisdom" value="2" />
-            <stat name="charisma" value="1" />
-		</rules>
-	</element>
-	
-    <element name="Charisma" type="Ability Score Improvement" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA">
-        <supports>Ability Score Improvement, Statuesque</supports>
+	</element>	
+    <element name="Charisma" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ASI_STATUESQUE_CHARISMA">
         <description>
-            <p>Your Charisma increases by 2, Constitution and Wisdom by 1.</p>
+            <p>Your Constitution score increases by 1, your Wisdom score increases by 1, and your Charisma score increases by 2.</p>
 		</description>
         <sheet display="false" />
-        <rules>
-            <stat name="constitution" value="1" />
-            <stat name="wisdom" value="1" />
-            <stat name="charisma" value="2" />
-		</rules>
 	</element>
 	
     <element name="Durable Mind" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_RADIANT_BLESSING">
@@ -100,8 +90,8 @@
             <description>You gain resistance to radiant damage. If you would also gain this resistance from a class feature, you learn the mending cantrip instead. Charisma is your spellcasting ability for this cantrip.</description>
 		</sheet>
         <rules>
-		    <grant type="Spell" id="ID_PHB_SPELL_MENDING" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		    <grant type="Spell" id="ID_PHB_SPELL_MENDING" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
 		</rules>
 	</element>
 	
