@@ -260,7 +260,7 @@
     <!-- ASI -->
     <element name="Strength" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_STRENGTH">
         <description>
-            <p>Your Strength increases by 2.</p>
+            <p>Your Strength score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -269,7 +269,7 @@
     </element>
     <element name="Dexterity" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_DEXTERITY">
         <description>
-            <p>Your Dexterity increases by 2.</p>
+            <p>Your Dexterity score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -278,7 +278,7 @@
     </element>
     <element name="Constitution" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_CONSTITUTION">
         <description>
-            <p>Your Constitution increases by 2.</p>
+            <p>Your Constitution score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -287,7 +287,7 @@
     </element>
     <element name="Intelligence" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_INTELLIGENCE">
         <description>
-            <p>Your Intelligence increases by 2.</p>
+            <p>Your Intelligence score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -296,7 +296,7 @@
     </element>
     <element name="Wisdom" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_WISDOM">
         <description>
-            <p>Your Wisdom increases by 2.</p>
+            <p>Your Wisdom score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -305,7 +305,7 @@
     </element>
     <element name="Charisma" type="Ability Score Improvement" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_ASI_UNDEAD_CHARISMA">
         <description>
-            <p>Your Charisma increases by 2.</p>
+            <p>Your Charisma score increases by 2.</p>
         </description>
         <sheet display="false" />
         <rules>
@@ -399,11 +399,12 @@
             <p>When you drop to 0 hit points, you can choose to stay conscious instead of falling unconscious. If you do, you gain temporary hit points equal to your total character level + your Constitution modifier (minimum 1), which last for up to one minute. In this state, you can take an action or bonus action on your turn, but not both, and can move only half of your movement speed. You remain in this state until you regain hit points, or until you no longer have temporary hit points. If you lose all temporary hit points in this state while you are still at 0 hit points, you fall unconscious and begin making death saving throws as normal. Once you use this trait, you can’t use it again until you finish a long rest.</p>
         </description>
         <sheet>
-        <description>When you drop to 0 hit points, you can choose to stay conscious instead of falling unconscious. If you do, you gain {{unnatural:hit points}} temporary hit points, which last for up to one minute. In this state, you can take an action or bonus action on your turn, but not both, and can move only half of your movement speed. You remain in this state until you regain hit points, or until you no longer have temporary hit points. If you lose all temporary hit points in this state while you are still at 0 hit points, you fall unconscious and begin making death saving throws as normal.</description>
+        <description>When you drop to 0 hit points, you can choose to stay conscious instead of falling unconscious. If you do, you gain {{unnatural vitality:hit points}} temporary hit points, which last for up to one minute. In this state, you can take an action or bonus action on your turn, but not both, and can move only half of your movement speed. You remain in this state until you regain hit points, or until you no longer have temporary hit points. If you lose all temporary hit points in this state while you are still at 0 hit points, you fall unconscious and begin making death saving throws as normal.</description>
         </sheet>
         <rules>
-          <stat name="unnatural:hit points" value="level" />
-          <stat name="unnatural:hit points" value="constitution:modifier" />
+          <stat name="unnatural vitality:hit points" value="level" />
+          <stat name="unnatural vitality:hit points" value="constitution:modifier" bonus="modifier" />
+          <stat name="unnatural vitality:hit points" value="1" bonus="modifier" />
         </rules>
     </element>
 
@@ -453,7 +454,7 @@
         <description>
             <p>You can move through other creatures and objects other than physical barriers (such as walls, floors, or ceilings) as if they were difficult terrain. On your turn, you can pass through up to 10 feet of physical barriers (treating them as difficult terrain) as a part of your movement. If you end your turn inside an object or barrier, you take 1d10 force damage and are immediately ejected to the closest available space. After passing through a physical barrier, you must complete a short or long rest before you are able to do so again.</p>
         </description>
-        <sheet usage="1/Short or Long Rest">
+        <sheet usage="1/Short Rest">
         <description>You can move through other creatures and objects other than physical barriers (such as walls, floors, or ceilings) as if they were difficult terrain. On your turn, you can pass through up to 10 feet of physical barriers (treating them as difficult terrain) as a part of your movement. If you end your turn inside an object or barrier, you take 1d10 force damage and are immediately ejected to the closest available space. After passing through a physical barrier.</description>
         </sheet>
         <rules />
@@ -502,13 +503,13 @@
         <description>
             <p>As a bonus action, choose a creature you can see within 60 feet of you. This creature must make a Wisdom saving throw against a DC of 8 + your Constitution modifier + your proficiency bonus. If it fails, this creature becomes frightened of you until the end of your next turn. Once you use this ability successfully, you can not use it again until you complete a short or long rest.</p>
         </description>
-        <sheet action="Bonus Action" usage="1/Short or Long Rest">
-        <description>Choose a creature you can see within 60 feet of you. This creature must make a Wisdom saving throw against a DC of 8 + your Constitution modifier + your proficiency bonus. If it fails, this creature becomes frightened of you until the end of your next turn.</description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+        <description>Choose a creature you can see within 60 feet of you. This creature must make a DC{{dreadful glare:dc}} Wisdom saving throw. If it fails, this creature becomes frightened of you until the end of your next turn.</description>
         </sheet>
         <rules>
-          <stat name="glare:dc" value="8" />
-          <stat name="glare:dc" value="constitution:modifier" />
-          <stat name="glare:dc" value="proficiency" />
+          <stat name="dreadful glare:dc" value="8" />
+          <stat name="dreadful glare:dc" value="constitution:modifier" />
+          <stat name="dreadful glare:dc" value="proficiency" />
         </rules>
     </element>
     <element name="Canopic Resurrection" type="Racial Trait" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_RACIAL_TRAIT_CANOPIC_RESURRECTION">
@@ -557,11 +558,11 @@
             <p>Though undead do not need to eat to continue existing, you are compelled through a dark curse to feed. As an action when you are adjacent to a dead or prone creature that is not an aberration, construct, elemental, ooze, plant, or undead, you can render yourself prone as well and attempt to feed on them.If the creature is alive, make an unarmed strike attack with your fangs, dealing damage on a hit as usual. If this attack hits, or if the creature is already dead, you regain hit points equal to your Constitution modifier + your total character level. Once you successfully use this ability, you can not use it again until you complete a short or long rest. You still feel hunger, and can feed on flesh without regaining hit points, however.</p>
         </description>
         <sheet usage="1 Success/Short or Long Rest">
-        <description>As an action when you are adjacent to a dead or prone creature you can render yourself prone as well and attempt to feed on them. If the creature is alive, make an unarmed strike attack with your fangs. If this attack hits, or if the creature is already dead, you regain {{feed:hp}} hit points.</description>
+        <description>As an action when you are adjacent to a dead or prone creature you can render yourself prone as well and attempt to feed on them. If the creature is alive, make an unarmed strike attack with your fangs. If this attack hits, or if the creature is already dead, you regain {{feeding:hp}} hit points.</description>
         </sheet>
         <rules>
-          <stat name="feed:hp" value="level" />
-          <stat name="feed:hp" value="constitution:modifier" />
+          <stat name="feeding:hp" value="level" />
+          <stat name="feeding:hp" value="constitution:modifier" />
         </rules>
     </element>
     <element name="Curse of the Abyss" type="Racial Trait" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_RACIAL_TRAIT_CURSE_OF_THE_ABYSS">
@@ -569,34 +570,34 @@
             <p>Ghouls were created to feed, and suffer a compulsion to do so. If a creature you can see drops to 0 hit points and you have not used your Feeding ability since your last long rest, you must attempt a Wisdom saving throw with a DC of 15 – half your total character level, rounded down, unless that creature is one of the creature types that can not be fed upon. If you fail this saving throw, you must move to the creature by the shortest possible distance, using the Dash action if necessary. Once you reach the creature, you are compelled to use your Feeding ability with it as the target. You can repeat this Wisdom saving throw on each of your turns, This compulsion ends when you succeed on this saving through, or after you have successfully fed upon the triggering creature.</p>
         </description>
         <sheet>
-        <description>If a creature you can see drops to 0 hit points and you have not used your Feeding ability since your last long rest, you must attempt a Wisdom saving throw (DC {{curse:dc}}), unless that creature is one of the creature types that can not be fed upon. If you fail this saving throw, you must move to the creature by the shortest possible distance, using the Dash action if necessary. Once you reach the creature, you are compelled to use your Feeding ability with it as the target. You can repeat this Wisdom saving throw on each of your turns, This compulsion ends when you succeed on this saving through, or after you have successfully fed upon the triggering creature.</description>
+        <description>If a creature you can see drops to 0 hit points and you have not used your Feeding ability since your last long rest, you must attempt a Wisdom saving throw (DC {{curse of the abyss:dc}}), unless that creature is one of the creature types that can not be fed upon. If you fail this saving throw, you must move to the creature by the shortest possible distance, using the Dash action if necessary. Once you reach the creature, you are compelled to use your Feeding ability with it as the target. You can repeat this Wisdom saving throw on each of your turns, This compulsion ends when you succeed on this saving through, or after you have successfully fed upon the triggering creature.</description>
         </sheet>
         <rules>
-          <stat name="curse:dc" value="15" />
-          <stat name="curse:dc" value="-1" level="2" />
-          <stat name="curse:dc" value="-1" level="4" />
-          <stat name="curse:dc" value="-1" level="6" />
-          <stat name="curse:dc" value="-1" level="8" />
-          <stat name="curse:dc" value="-1" level="10" />
-          <stat name="curse:dc" value="-1" level="12" />
-          <stat name="curse:dc" value="-1" level="14" />
-          <stat name="curse:dc" value="-1" level="16" />
-          <stat name="curse:dc" value="-1" level="18" />
-          <stat name="curse:dc" value="-1" level="20" /> 
+          <stat name="curse of the abyss:dc" value="15" />
+          <stat name="curse of the abyss:dc" value="-1" level="2" />
+          <stat name="curse of the abyss:dc" value="-1" level="4" />
+          <stat name="curse of the abyss:dc" value="-1" level="6" />
+          <stat name="curse of the abyss:dc" value="-1" level="8" />
+          <stat name="curse of the abyss:dc" value="-1" level="10" />
+          <stat name="curse of the abyss:dc" value="-1" level="12" />
+          <stat name="curse of the abyss:dc" value="-1" level="14" />
+          <stat name="curse of the abyss:dc" value="-1" level="16" />
+          <stat name="curse of the abyss:dc" value="-1" level="18" />
+          <stat name="curse of the abyss:dc" value="-1" level="20" /> 
         </rules>
     </element>
     <element name="Paralytic Claws" type="Racial Trait" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_RACIAL_TRAIT_PARALYTIC_CLAWS">
         <description>
             <p>When you hit a creature that is not undead or an elf with an attack using your claws, you can attempt to paralyze them. That creature must make a Constitution saving throw against a DC of 8 + your Constitution modifier + your proficiency bonus. If the creature fails, it is incapacitated and unable to use its movement until the end of your next turn. Once you use this ability successfully, you can not use it again until you complete a long rest.</p>
         </description>
-        <sheet usage="{{claw:sucess}} Success/Long Rest">
-        <description>When you hit a creature that is not undead or an elf with an attack using your claws, you can attempt to paralyze them. That creature must make a Constitution saving throw (DC {{paralyze:dc}}). If the creature fails, it is incapacitated and unable to use its movement until the end of your next turn.</description>
+        <sheet usage="{{paralytic claw:sucess}} Success/Long Rest">
+        <description>When you hit a creature that is not undead or an elf with an attack using your claws, you can attempt to paralyze them. That creature must make a Constitution saving throw (DC {{paralytic claw:dc}}). If the creature fails, it is incapacitated and unable to use its movement until the end of your next turn.</description>
         </sheet>
         <rules>
-          <stat name="cruse:dc" value="8" />
-          <stat name="cruse:dc" value="proficiency" />
-          <stat name="cruse:dc" value="constitution:modifier" />
-          <stat name="claw:sucess" value="1" />
+          <stat name="paralytic claw:dc" value="8" />
+          <stat name="paralytic claw:dc" value="constitution:modifier" />
+          <stat name="paralytic claw:dc" value="proficiency" />
+          <stat name="paralytic claw:sucess" value="1" />
         </rules>
     </element>
 
@@ -616,11 +617,11 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>When a creature within 30 ft. of you dies you can gain one of the following benefits: {{reaping:health}} Temporary HP for one minute. Your next hit deals {{level}} + Strength or Charisma Modifier necrotic damage. Advantage on all saving throws until the start of your next turn.</description>
+			<description>When a creature within 30 ft. of you dies you can gain one of the following benefits: {{dark reaping:health}} Temporary HP for one minute. Your next hit deals {{level}} + Strength or Charisma Modifier necrotic damage. Advantage on all saving throws until the start of your next turn.</description>
 		</sheet>
 		<rules>
-            <stat name="reaping:health" value="level" />
-            <stat name="reaping:health" value="constitution:modifier" />
+            <stat name="dark reaping:health" value="level" />
+            <stat name="dark reaping:health" value="constitution:modifier" />
 			<select type="Ability Score Improvement" name="Dark Reaping" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CHARISMA" />
 		</rules>
 	</element>
@@ -659,7 +660,7 @@
         </sheet>
 		<rules>
             <select type="Ability Score Improvement" name="Improved Paralytic Claws" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
-            <stat name="claw:sucess" value="1" />
+            <stat name="paralytic claw:sucess" value="1" />
 		</rules>
 	</element>
     <element name="Tomb Magic" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_TOMB_MAGIC">
