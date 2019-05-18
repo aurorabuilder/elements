@@ -21,8 +21,24 @@
 			<set name="release">20180623</set>
 		</setters>
 	</element>
-	
+
 	<!-- generic element granted to indicate a character is dragonmarked, can be used as a requirement -->
-	<element name="Dragonmarked" type="Grants" source="Core" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+	<element name="Dragonmarked" type="Grants" source="Core" id="ID_WOTC_WGTE_GRANTS_DARKMARKED">
+		<rules>
+			<!-- grant all dragonmarked characters a the dragonmarked intuition dice stat (d4) -->
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</rules>
+	</element>
+
+	<element name="Intuition Dice" type="Grants" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE">
+		<description>
+			<p>A dragonmark improves your ability to perform a specific type of task.</p>
+			<p class="indent">Each dragonmark has a trait that allows you to roll an Intuition die, a d4, when you perform an ability check with a particular skill or tool. You add the number rolled to the ability check. You don't have to be proficient with the skill or tool to gain this benefit.</p>
+			<p class="indent">Feats, magic items, and other features may improve your Intuition die. This increases the type of die you roll by one size (d6, d8, d10) to a maximum of a d10. You can only roll one Intuition die for a check; if you receive Intuition dice from multiple sources, increase one die by one type and roll that one.</p>
+		</description>
+		<rules>
+			<stat name="dragonmarked-intuition-dice:size" value="4" bonus="base" />
+		</rules>
+	</element>
 
 </elements>
