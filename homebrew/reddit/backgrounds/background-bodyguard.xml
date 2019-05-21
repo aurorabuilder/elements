@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Bodyguard</name>
+		<description>Bodyguard Background</description>
+		<author url="https://www.reddit.com/r/DnD/comments/7uxd9p/5e_background_the_bodyguard/">u/Moses_The_Wise</author>
+		<update version="0.0.1">
+			<file name="background-bodyguard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew/reddit/backgrounds/background-bodyguard.xml" />
+		</update>
+	</info>
+	
+	<element name="Bodyguard" type="Background" source="Reddit" id="ID_RDDT_BACKGROUND_BODYGUARD">
+		<description>
+			<p>You have spent your life protecting someone else’s. Perhaps it was a noble, or a powerful crime boss; maybe even a brutal warlord. Maybe instead of someone more powerful than you, it was a physically weaker companion or family member. Whatever the case, your life up to this point has been focused around protecting someone.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Insight, Intimidation, and Perception</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (land)</li>
+				<li><strong>Equipment:</strong> A symbol or keepsake from one of the people you guarded (possibly denoting rank), a book of troublemakers who caused continuous problems for one of your charges, a pair of manacles, a set of common clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Body guards are generally good at protecting; whether they’re protective by nature or simply good at their job is up to you. Their skill at guarding and noticing dangers, as well as their relationship to their charges, affect how they act and think. Their flaws could be being overly protective or hesitant, or maybe something that somehow compromises their guarding abilities.</p>
+		</description>
+		<setters>
+			<set name="sourceUrl">https://www.reddit.com/r/DnD/comments/7uxd9p/5e_background_the_bodyguard/</set>
+		</setters>		
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<select type="Proficiency" number="2" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<select type="Language" name="Language (Bodyguard)" number="1"/>
+			<grant type="Background Feature" id="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List" optional="true" number="2">
+				<item id="1">I am always quiet and stoic, rarely speaking or acting when I work.</item>
+				<item id="2">I am aggressive and often get in people’s faces while I work, trying to make sure others know to keep a distance.</item>
+				<item id="3">I often hide in crowds while keeping an eye on my charge; stepping in out of the shadows when needed.</item>
+				<item id="4">I always check the shadows wherever I go; you can never be too safe.</item>
+				<item id="5">I fuss over my charge, swiftly and deftly tending to their every need; acting more like a servant than a bodyguard.</item>
+				<item id="6">I don’t like when strangers get too close to me or my friends; keep your distance, and we’ll be fine.</item>
+				<item id="7">I’m used to sleeping on the road and in uncomfortable situations; but I wake up at the slightest noise.</item>
+				<item id="8">I always make sure that when we have to sleep, at least one person is on lookout.</item>
+			</select>
+			<select name="Ideal" type="List" optional="true">
+				<item id="1">Protection. it is my job to protect others; I would die for the ones I guard. (Lawful)</item>
+				<item id="2">Guardian. I want to protect everyone, as best I can. (Good)</item>
+				<item id="3">Fluid. When attacked, you can’t be rigid and unmoving; you need to adapt to the situation. (Chaotic)</item>
+				<item id="4">Money. I honestly just want to get paid; I couldn’t care less about my charges. (Neutral)</item>
+				<item id="5">Betrayal. As a bandit, you have to wait for people to wander out into the wilderness to kill them. As a bodyguard, they’ll wander out into the wilderness with you! (Evil)</item>
+				<item id="6">Friendship. I just don’t want my friends to die. (Any)</item>
+			</select>
+			<select name="Bond" type="List" optional="true">
+				<item id="1">I am still loyal to my original master; and would die for them.</item>
+				<item id="2">I will get revenge on the one who slaughtered those I was meant to defend.</item>
+				<item id="3">I owe my life to my old master; and they owe their life to me.</item>
+				<item id="4">One of my old charges was a cheat and a scoundrel; and swindled me out of my pay. Some payback would be nice.</item>
+				<item id="5">I failed in my duties; it ruined my reputation, and is a stain on my honor.</item>
+				<item id="6">I served (or serve) with a team of bodyguards, that offer protection to various people traveling in dangerous areas.</item>
+			</select>
+			<select name="Flaw" type="List" optional="true">
+				<item id="1">I am paranoid and overly protective, never letting those I guard out of my sight.</item>
+				<item id="2">I’m lax in my duties; and this has gotten me into some trouble before.</item>
+				<item id="3">Yes, actually; I do know best, and you will do as I say.</item>
+				<item id="4">Sometimes my aggression towards strangers gets those I protect in more trouble, rather than help to avoid it.</item>
+				<item id="5">I view myself and those I protect as higher than other people; looking down on the peasantry.</item>
+				<item id="6">I am rigid in my hatred of criminals. I don’t care why you did it or how long ago it was; you’re still filth in my eyes.</item>
+			</select>
+		</rules>			
+	</element>
+	
+	<element name="Feature: Guardian’s Eye" type="Background Feature" source="Reddit" id="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE">
+		<supports>Background Feature</supports>
+		<description>
+			<p>I have a keen eye when it comes to safety. My companions and I can travel at a normal speed through crowds; and I can always pick out the safest route to take through a town or city. This doesn’t account for unseen or hidden dangers, such as a lair of vampires hiding in the noble quarter; but I can easily avoid slums and areas where thugs might hang around.</p>
+		</description>
+		<sheet alt="Guardian’s Eye" />
+	</element>
+	
+</elements>
