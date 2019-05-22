@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of The Spiritlords</name>
+		<update version="0.0.1">
+			<file name="druid-spiritlords.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/druid-spiritlords.xml" />
+		</update>
+	</info>
+	
+	<element name="Circle of The Spiritlords" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_CIRCLE_OF_THE_SPIRITLORDS">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Ages ago, nature priests with a greater connection to the spirit realm believed the world itself to be formed from a group of elemental and primordial spirits, each specifically charged to harness one of the major elements of creation. This band of tribal druids developed a set of ritual practices that allowed them to summon these spirits, whose essence now resides in every rock, tree, and breath of air, controlling the ebb and flow of nature not only in their homeland, but in all lands beyond. This order of priests were known as spiritlords.</p>
+			<p class="indent">Spiritlords begin their journey with the rites handed down by those before them, specifically, the ritual to create a special mask from an ironwood tree. This mask allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent">As the spiritlord grows in power and gains a heightened level of attunement to the spirit world, their mask transforms along with them, being altered with new carvings, ritual paints, and brands that symbolize the bond between the druid and the spirits they carry within.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST" />
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" level="10" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST" level="14" />
+		</rules>
+	</element>
+	
+	<element name="Spirit Bond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND">
+		<description>
+			<p>When you choose this circle at 2nd level, you choose one spirit-element to bond with your mask from the Spirit Bond table below and you learn the cantrip associated with your spirit-element’s fledging conduit, which counts as a druid cantrip for you, and doesn’t count against your number of cantrips known. You can select one additional spirit-element at 6th level and again at 10th level.</p>
+			<p class="indent">Additionally, you can cast the find familiar spell, which bears features similar to your chosen spirit-element (glowing skin, fiery eyes, a thorny tail, etc.). Once you cast find familiar using this feature, you can’t cast it again until you finish a long rest.</p>
+			<p class="indent">You can only have one mask at a time and once this bond is formed, you can’t change the spirit-element within your mask. If the mask is lost or destroyed, creating a new mask for your spirit-element takes 8 hours of uninterrupted time, which you can accomplish during a long rest.</p>
+			<h6>SPIRIT BOND</h6>
+			<table>
+				<thead>
+					<tr><td>Spirit Type</td><td>Fledgling Conduit</td><td>Empowered Conduit</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Earth</td><td>mold earth</td><td>magic stone</td><td>Poison</td></tr>
+				<tr><td>Fire</td><td>control flame</td><td>create bonfire</td><td>Fire</td></tr>
+				<tr><td>Water</td><td>shape water</td><td>frostbite</td><td>Cold</td></tr>
+				<tr><td>Wind</td><td>gust</td><td>thunderclap</td><td>Lightning</td></tr>
+				<tr><td>Light</td><td>dancing lights</td><td>sacred flame</td><td>Radiant</td></tr>
+				<tr><td>Shadow</td><td>minor illusion</td><td>chill touch</td><td>Necrotic</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You can cast the find familiar spell, which bears features similar to your chosen spirit-element. Once you cast find familiar using this feature, you can’t cast it again until you finish a long rest.
+			Creating a new mask for your spirit-element takes 8 hours of uninterrupted time, which you can accomplish during a long rest.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Spirit Bond" supports="Spiritlord Spirit Bond" requirements="!ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST" />
+			<select type="Archetype Feature" name="Spirit Bond" supports="Spiritlord Spirit Bond" level="6" requirements="!ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST" />
+			<select type="Archetype Feature" name="Spirit Bond" supports="Spiritlord Spirit Bond" level="10" requirements="!ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST" />
+		</rules>
+	</element>
+	<element name="Earth Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_EARTH">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the earth spirit with your mask. Its damage type is poison.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_MOLD_EARTH" spellcasting="Druid" />
+			<grant type="Spell" id="ID_XGTE_SPELL_MAGIC_STONE" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+	<element name="Fire Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_FIRE">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the fire spirit with your mask. Its damage type is fire.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" spellcasting="Druid" />
+			<grant type="Spell" id="ID_XGTE_SPELL_CREATE_BONFIRE" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+	<element name="Water Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_WATER">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the water spirit with your mask. Its damage type is cold.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" spellcasting="Druid" />
+			<grant type="Spell" id="ID_XGTE_SPELL_FROSTBITE" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+	<element name="Wind Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_WIND">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the wind spirit with your mask. Its damage type is lightning.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_GUST" spellcasting="Druid" />
+			<grant type="Spell" id="ID_XGTE_SPELL_THUNDERCLAP" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+	<element name="Light Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_LIGHT">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the light spirit with your mask. Its damage type is radiant.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DANCING_LIGHTS" spellcasting="Druid" />
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+	<element name="Shadow Spirit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_SHADOW">
+		<supports>Spiritlord Spirit Bond</supports>
+		<description>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND" />
+		</description>
+		<sheet>
+			<description>You can bond the shadow spirit with your mask. Its damage type is necrotic.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" spellcasting="Druid" />
+			<grant type="Spell" id="ID_PHB_SPELL_CHILL_TOUCH" spellcasting="Druid" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT" />
+		</rules>
+	</element>
+
+	<element name="Empowered Conduit" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_EMPOWERED_CONDUIT">
+		<description>
+			<p>At 6th level, your mask channels the destructive powers of your spirit element. You gain the cantrip in the Empowered Conduit column on the Spirit Bond table.</p>
+			<p class="indent">Further, when your connection with the spirit realm strengthens enough to host an additional spirit-element, you can switch between them with an action. When you do, you gain the benefits of the mask’s current bond and your familiar can take on a similar appearance. No matter how many spirits inhabit your mask, you can only ever call on the aid of one at a time.</p>
+		</description>
+		<sheet>
+			<description>When your connection with the spirit realm strengthens enough to host an additional spirit-element, you can switch between them with an action. When you do, you gain the benefits of the mask’s current bond and your familiar can take on a similar appearance. No matter how many spirits inhabit your mask, you can only ever call on the aid of one at a time.</description>
+		</sheet>
+	</element>
+	<element name="Vigilant Spirits" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS">
+		<description>
+			<p>Starting at 10th level, you add your Wisdom modifier to the damage you deal with any druid cantrip and, each time you switch to a different spirit-element within your mask, you gain resistance to that damage type.</p>
+		</description>
+		<sheet>
+			<description>You add your Wisdom modifier ({{wisdom:modifier}}) to the damage you deal with any druid cantrip and, each time you switch to a different spirit-element within your mask, you gain resistance to that damage type.</description>
+		</sheet>
+	</element>	
+	<element name="Honored Host" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_HONORED_HOST">
+		<description>
+			<p>At 14th level, you have become a beacon for the spirits who wish to affect the world through you. You gain access to all of the spirit-elements listed on the Spirit Bond table, and can switch between them with a bonus action, and your spells ignore resistance and immunity to that damage type.</p>
+		</description>
+		<sheet>
+			<description>You gain access to all of the spirit-elements listed on the Spirit Bond table, and can switch between them with a bonus action, and your spells ignore resistance and immunity to that damage type.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_EARTH" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_FIRE" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_WATER" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_WIND" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_LIGHT" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_SPIRIT_BOND_SHADOW" />
+		</rules>
+	</element>
+
+	<!-- Mask of the Spiritlord (allows for optional active resistance reflected on the sheet based on equipped mask) -->
+	<element name="Mask of the Spiritlord, Earth Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_EARTH">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to poison damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, poison resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+	<element name="Mask of the Spiritlord, Fire Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_FIRE">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to fire damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, fire resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+	<element name="Mask of the Spiritlord, Water Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_WATER">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to cold damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, cold resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+	<element name="Mask of the Spiritlord, Wind Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_WIND">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to lightning damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, lightning resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+	<element name="Mask of the Spiritlord, Light Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_LIGHT">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to radiant damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, radiant resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+	<element name="Mask of the Spiritlord, Shadow Spirit" type="Magic Item" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_MAGIC_ITEM_MASK_OF_THE_SPIRITLORD_SHADOW">
+		<description>
+			<p>This mask from an ironwood tree allows the spiritlord to play host to the spirit-elementals roaming this world.</p>
+			<p class="indent"><strong><em>Vigilant Spirits.</em></strong> Starting at 10th level, you gain resistance to necrotic damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">druid circle, necrotic resistance</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">head</set>
+			<set name="rarity">Unique</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" requirements="ID_XLN_ARCHETYPE_FEATURE_SPIRITLORDS_VIGILANT_SPIRITS" />
+		</rules>
+	</element>
+
+</elements>
