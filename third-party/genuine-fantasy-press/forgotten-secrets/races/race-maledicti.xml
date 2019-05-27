@@ -4,7 +4,7 @@
         <name>The Maledicti</name>
         <description>The Maledicti race from The Compendium of Forgotten Secrets.</description>
         <author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
 			<file name="race-maledicti.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/races/race-maledicti.xml" />
 		</update>
 	</info>
@@ -51,11 +51,11 @@
 		</setters>
         <rules>
             <select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_STRENGTH|ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_INTELLIGENCE" />
-			<stat name="strength" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_STRENGTH" />
+			<!-- todo: revert when ability score requirement issue is fixed -->
+			<!-- <stat name="strength" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_STRENGTH" />
 			<stat name="intelligence" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_STRENGTH" />			
 			<stat name="strength" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_INTELLIGENCE" />
-			<stat name="intelligence" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_INTELLIGENCE" />
-
+			<stat name="intelligence" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_INTELLIGENCE" /> -->
             <grant type="Language" id="ID_LANGUAGE_COMMON" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_BLACK_BLOOD" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_MADNESS" />
@@ -69,6 +69,10 @@
             <p>Your Strength score increases by 2, and your Intelligence score increases by 1.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="strength" value="2" alt="Maledicti" />
+			<stat name="intelligence" value="1" alt="Maledicti" />
+		</rules>
 	</element>
 	
     <element name="Intelligence" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_MALEDICTI_INTELLIGENCE">
@@ -76,6 +80,10 @@
             <p>Your Strength score increases by 1, and your Intelligence score increases by 2.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Maledicti" />
+			<stat name="intelligence" value="2" alt="Maledicti" />
+		</rules>
 	</element>
 	
     <element name="Black Blood" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_BLACK_BLOOD">

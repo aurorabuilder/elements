@@ -4,7 +4,7 @@
 		<name>The Arachi</name>
 		<description>The Arachi race from The Compendium of Forgotten Secrets.</description>
 		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="race-arachi.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/races/race-arachi.xml" />
 		</update>
 	</info>
@@ -49,10 +49,11 @@
 		<sheet display="false" />
 		<rules>
 			<select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY|ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" />
-			<stat name="dexterity" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY" />
+			<!-- todo: revert when ability score requirement issue is fixed -->
+			<!-- <stat name="dexterity" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY" />
 			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_DEXTERITY" />
 			<stat name="dexterity" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" />
-			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" />
+			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA" /> -->
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_FALSE_FORM" />
@@ -66,12 +67,20 @@
 			<p>Your Dexterity score increases by 2, and your Charisma score increases by 1.</p>
 		</description>
 		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="2" alt="Arachi" />
+			<stat name="charisma" value="1" alt="Arachi" />
+		</rules>
 	</element>
 	<element name="Charisma" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_ARACHI_CHARISMA">
 		<description>
 			<p>Your Dexterity score increases by 1, and your Charisma score increases by 2.</p>
 		</description>
 		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Arachi" />
+			<stat name="charisma" value="2" alt="Arachi" />
+		</rules>
 	</element>
 	<element name="False Form" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_FALSE_FORM">
 		<description>
