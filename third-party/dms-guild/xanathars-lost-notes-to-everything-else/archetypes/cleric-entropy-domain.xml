@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Entropy Domain</name>
+		<update version="0.0.1">
+			<file name="cleric-entropy-domain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/cleric-entropy-domain.xml" />
+		</update>
+	</info>
+	
+	<element name="Entropy Domain" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_ENTROPY_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>Heretics preach of a void at the center of the universe that dying gods created to devour the Weave. The necrotic energy it emits is called “Entropy”: a potent force that clerics can harness to shield themselves from magic and annihilate arcane casters. The chained god Tharizdun claims this domain, while in Chessenta, a giant sphere of annihilation is worshipped as an aspect of Entropy itself. Cultists who wield the power go by many names: thaumatoclasts, entropomancers, or entropists.</p>
+			<p class="indent"></p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_DOMAIN_SPELLS" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_POTENT_SPELL_CASTING" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY" />
+		</description>
+		<sheet display="false">
+			<description>Heretics preach of a void at the center of the universe that dying gods created to devour the Weave.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY" level="1" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_POTENT_SPELL_CASTING" level="8" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY" level="17" />
+		</rules>
+	</element>
+	
+	<element name="Domain Spells" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric level listed in the Entropy Domain Spells Table. See the Divine Domain class feature for how domain spells work.</p>
+			<h6>ENTROPY DOMAIN SPELLS</h6>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>detect magic, inflict wounds</em></td></tr>
+				<tr><td>3rd</td><td><em>gentle repose, spiritual weapon</em></td></tr>
+				<tr><td>5th</td><td><em>dispel magic, protection from energy</em></td></tr>
+				<tr><td>7th</td><td><em>blight, death ward</em></td></tr>
+				<tr><td>9th</td><td><em>circle of power, hallow</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GENTLE_REPOSE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIRITUAL_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HALLOW" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Sanctity of Body" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY">
+		<description>
+			<p>When you choose this domain at 1st level, you perform a ritual to anchor your soul to the Material Plane. You have advantage on death saving throws.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on death saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Arcane Disruption" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION">
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to disrupt the flow of magic in your vicinity.</p>
+			<p class="indent">As an action, you conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</p>
+		</description>
+		<sheet alt="Arcane Disruption" action="Action" usage="Channel Divinity">
+			<description>You conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Entropic Retaliation" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION">
+		<description>
+			<p>At 6th level, you can use your Channel Divinity to drain a caster’s magical power. When you succeed on a saving throw against a spell or successfully disrupt a spell using Arcane Disruption, you can force the caster to make a Constitution saving throw against your spell save DC. On a failure, the caster loses an additional spell slot of the same level. If they possess no more slots of that level, they instead gain a level of exhaustion.</p>
+		</description>
+		<sheet alt="Entropic Retaliation" usage="Channel Divinity">
+			<description>When you succeed on a saving throw against a spell or successfully disrupt a spell using Arcane Disruption, you can force the caster to make a Constitution saving throw against your spell save DC. On a failure, the caster loses an additional spell slot of the same level. If they possess no more slots of that level, they instead gain a level of exhaustion.</description>
+		</sheet>
+	</element>
+	<element name="Potent Spell Casting" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_POTENT_SPELL_CASTING">
+		<description>
+			<p>At 8th level, you add your Wisdom modifier to the damage you deal with any cantrip.</p>
+		</description>
+		<sheet>
+			<description>You add your Wisdom modifier ({{wisdom:modifier}}) to the damage you deal with any cantrip.</description>
+		</sheet>
+	</element>
+	<element name="Emissary of Entropy" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY">
+		<description>
+			<p>At 17th level, you have advantage on saving throws against spells. In addition, when you succeed on a saving throw against a spell, you gain 5 temporary hit points for each slot level of the spell.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against spells. In addition, when you succeed on a saving throw against a spell, you gain 5 temporary hit points for each slot level of the spell.</description>
+		</sheet>
+	</element>
+</elements>

@@ -4,7 +4,7 @@
         <name>The Oozian</name>
         <description>The Oozian race from The Compendium of Forgotten Secrets.</description>
         <author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
 			<file name="race-oozian.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/races/race-oozian.xml" />
 		</update>
 	</info>
@@ -51,10 +51,11 @@
 		
         <rules>
             <select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_DEXTERITY|ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_CONSTITUTION" />
-			<stat name="dexterity" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_DEXTERITY" />
+			<!-- todo: revert when ability score requirement issue is fixed -->
+			<!-- <stat name="dexterity" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_DEXTERITY" />
 			<stat name="constitution" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_DEXTERITY" />			
 			<stat name="dexterity" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_CONSTITUTION" />
-			<stat name="constitution" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_CONSTITUTION" />
+			<stat name="constitution" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_CONSTITUTION" /> -->
             <grant type="Language" id="ID_LANGUAGE_COMMON" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_ACIDIC_BODY" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_JIGGLY_SELF" />
@@ -68,12 +69,20 @@
             <p>Your Dexterity score increases by 2, and your Constitution score increases by 1.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="2" alt="Oozian" />
+			<stat name="constitution" value="1" alt="Oozian" />
+		</rules>
 	</element>
     <element name="Constitution" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_OOZIAN_CONSTITUTION">
         <description>
             <p>Your Dexterity score increases by 1, and your Constitution score increases by 2.</p>
 		</description>
         <sheet display="false" />
+		<rules>	
+			<stat name="dexterity" value="1" alt="Oozian" />
+			<stat name="constitution" value="2" alt="Oozian" />
+		</rules>
 	</element>
 	
 	
