@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Sorcerous Origin: Heroic Bloodline</name>
+		<description>Sorcerer from the Player’s Handbook.</description>
+		<author url="https://www.reddit.com/r/UnearthedArcana/comments/c9etxn/heroic_bloodline_a_melee_focused_sorcerer/">u/ChromosomeChorus</author>
+		<update version="0.0.1">
+			<file name="sorcerer-heroic-bloodline.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew/reddit/classes/sorcerer-heroic-bloodline.xml" />
+		</update>
+	</info>
+
+	<element name="Reddit: Heroic Bloodline" type="Source" source="Core" id="ID_RDDT_SOURCE_HEROIC_BLOODLINE">
+		<description>
+			<![CDATA[<p>Your powers are the results of the past deeds of your ancestors, the heroism of which has forever changed reality in such a way that magic has suffused itself into your bloodline, their legend may be forgotten, but regardless your abilities stand as a testament to the glory they once achieved.</p>]]>
+		</description>
+		<setters>
+			<set name="abbreviation">RDDT</set>
+			<set name="url">https://www.reddit.com/r/UnearthedArcana/comments/c9etxn/heroic_bloodline_a_melee_focused_sorcerer/</set>
+			<set name="author" url="https://www.reddit.com/user/ChromosomeChorus">ChromosomeChorus</set>
+			<set name="homebrew">true</set>
+		</setters>
+	</element>
+
+	<element name="Heroic Bloodline" type="Archetype" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_HEROIC_BLOODLINE">
+		<supports>Sorcerous Origin</supports>
+		<requirements />
+		<description>
+			<p>Your powers are the results of the past deeds of your ancestors, the heroism of which has forever changed reality in such a way that magic has suffused itself into your bloodline, their legend may be forgotten, but regardless your abilities stand as a testament to the glory they once achieved.</p>
+			<div element="ID_RDDT_ARCHETYPE_FEATURE_HEROES_HERITAGE"/>
+			<div element="ID_RDDT_ARCHETYPE_FEATURE_WILL_TO_FIGHT"/>
+			<div element="ID_RDDT_ARCHETYPE_FEATURE_MYSTICAL_BLADE"/>
+			<div element="ID_RDDT_ARCHETYPE_FEATURE_EMPOWERED_SWORDPLAY"/>
+			<div element="ID_RDDT_ARCHETYPE_FEATURE_MASTER_OF_SWORD_AND_SORCERY"/>
+		</description>
+		<sheet>
+			<description>Your powers are the results of the past deeds of your ancestors, the heroism of which has forever changed reality in such a way that magic has suffused itself into your bloodline.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROES_HERITAGE" level="1" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_WILL_TO_FIGHT" level="1" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_MYSTICAL_BLADE" level="6" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_EMPOWERED_SWORDPLAY" level="14" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_MASTER_OF_SWORD_AND_SORCERY" level="18" />
+		</rules>
+	</element>
+
+	<element name="Heroes Heritage" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROES_HERITAGE">
+		<description>
+			<p>Your lineage empowers and emboldens you. At 1st level your hitpoint maximum increases by 1 and increases by 1 again whenever you gain a level in this class. When your spellcasting feature lets you learn or replace a sorcerer spell of 1st level or higher, you can choose a spell from the paladin spell list or the sorcerer spell list. You must otherwise obey all the restrictions for selecting a spell and it becomes a sorcerer spell for you.</p>
+		</description>
+		<sheet display="false">
+		</sheet>
+		<spellcasting name="Sorcerer" extend="true">
+			<extend>Paladin</extend>
+		</spellcasting>
+		<rules>
+			<stat name="hp" value="level:sorcerer" />
+		</rules>
+	</element>
+	<element name="Will To Fight" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_WILL_TO_FIGHT">
+		<description>
+			<p>Due to your heritage you can use weapons as an extension of your will. At 1st level you gain proficiency with light and medium armor, shields, and martial weapons. Whenever you finish a long rest, you can touch a weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon you can use your Charisma modifier instead, of Strength or Dexterity, for attack and damage rolls and you can use it as a focus for your sorcerer spells. This benefits last until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can touch a weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon you can use your Charisma modifier instead, of Strength or Dexterity, for attack and damage rolls and you can use it as a focus for your sorcerer spells. This benefits last until you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS"/>
+		</rules>
+	</element>
+	<element name="Mystical Blade" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_MYSTICAL_BLADE">
+		<description>
+			<p>You have learned to combine magic and swordplay in a deadly combination. At 6th level you can attack twice, instead of once, when you take the attack action on your turn. When you take the attack action, you can expend 3 sorcery points to perform one of the following techniques:</p>
+			<p class="indent"><b><i>Ethereal Strike.</i></b> Creatures on a 10 foot line in front of you must succeed a Dexterity saving throw against your spell save DC, taking the full damage of the first attack on a failure and half as much on a success.</p>
+			<p class="indent"><b><i>Warping Strike.</i></b> Before attacking you magically teleport as a bonus action up to 30 feet to an unoccupied space within 5 feet of a hostile creature you can see, you then attack as normal.</p>
+			<p class="indent"><b><i>Weakening Strike.</i></b> On a hit, the target of your attack must succeed on a Wisdom saving throw against you spell save DC, on a failure spell attack roles you make against that creature have advantage until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you take the attack action, you can expend 3 sorcery points to perform one of the following techniques:</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_ETHEREAL_STRIKE" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_WARPING_STRIKE" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_WEAKENING_STRIKE" />
+		</rules>
+	</element>
+
+	<element name="Ethereal Strike" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_ETHEREAL_STRIKE">
+		<description>
+			<p>Creatures on a 10 foot line in front of you must succeed a Dexterity saving throw against your spell save DC, taking the full damage of the first attack on a failure and half as much on a success.</p>
+		</description>
+		<sheet usage="Mystical Blade">
+			<description>Creatures on a 10 foot line in front of you must succeed a Dexterity saving throw against your spell save DC, taking the full damage of the first attack on a failure and half as much on a success.</description>
+		</sheet>
+	</element>
+	<element name="Warping Strike" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_WARPING_STRIKE">
+		<description>
+			<p>Before attacking you magically teleport as a bonus action up to 30 feet to an unoccupied space within 5 feet of a hostile creature you can see, you then attack as normal.</p>
+		</description>
+		<sheet usage="Mystical Blade">
+			<description>Before attacking you magically teleport as a bonus action up to 30 feet to an unoccupied space within 5 feet of a hostile creature you can see, you then attack as normal.</description>
+		</sheet>
+	</element>
+	<element name="Weakening Strike" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_WEAKENING_STRIKE">
+		<description>
+			<p>On a hit, the target of your attack must succeed on a Wisdom saving throw against you spell save DC, on a failure spell attack roles you make against that creature have advantage until the end of your next turn.</p>
+		</description>
+		<sheet usage="Mystical Blade">
+			<description>On a hit, the target of your attack must succeed on a Wisdom saving throw against you spell save DC, on a failure spell attack roles you make against that creature have advantage until the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Empowered Swordplay" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_EMPOWERED_SWORDPLAY">
+		<description>
+			<p>Starting at 14th level when you take the attack action, by expending 3 sorcery points to perform one of the following techniques:</p>
+			<p class="indent"><b><i>Repeating Strike.</i></b> You can make a third attack as part of the same action.</p>
+			<p class="indent"><b><i>Draining Strike.</i></b> On a hit, if the target has at least one spell slot, it must succeed on a Wisdom saving throw against your spell save DC, on a failure they lose a spell slot of their lowest level and you regain 1 sorcery point.</p>
+		</description>
+		<sheet>
+			<description>When you take the attack action, you can expend 3 sorcery points to perform one of the following techniques:</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_REPEATING_STRIKE" />
+			<grant type="Archetype Feature" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_DRAINING_STRIKE" />
+		</rules>
+	</element>
+
+	<element name="Repeating Strike" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_REPEATING_STRIKE">
+		<description>
+			<p>You can make a third attack as part of the same action.</p>
+		</description>
+		<sheet usage="Empowered Swordplay">
+			<description>You can make a third attack as part of the same action.</description>
+		</sheet>
+	</element>
+	<element name="Draining Strike" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_HEROIC_BLOODLINE_MYSTICAL_BLADE_DRAINING_STRIKE">
+		<description>
+			<p>On a hit, if the target has at least one spell slot, it must succeed on a Wisdom saving throw against your spell save DC, on a failure they lose a spell slot of their lowest level and you regain 1 sorcery point.</p>
+		</description>
+		<sheet usage="Empowered Swordplay">
+			<description>On a hit, if the target has at least one spell slot, it must succeed on a Wisdom saving throw against your spell save DC, on a failure they lose a spell slot of their lowest level and you regain 1 sorcery point.</description>
+		</sheet>
+	</element>
+
+	<element name="Master of Sword and Sorcery" type="Archetype Feature" source="Reddit: Heroic Bloodline" id="ID_RDDT_ARCHETYPE_FEATURE_MASTER_OF_SWORD_AND_SORCERY">
+		<description>
+			<p>At 18th level you have mastered your abilities becoming a legend of your own, as an action you can expend 6 sorcery points, for the next hour, none of the techniques granted by your Mystical blade feature cost any sorcery points. Once you use this feature you can't use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="Action">
+			<description>You can expend 6 sorcery points, for the next hour, none of the techniques granted by your Mystical blade feature cost any sorcery points. Once you use this feature you can't use it again until you finish a long rest.</description>
+		</sheet>
+		<rules />
+	</element>
+</elements>
