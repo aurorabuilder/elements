@@ -441,7 +441,7 @@
 		</description>
 		<sheet display="false"/>
 		<rules>
-			<select type="Spell" name="Acolyte of Nature" supports="Druid,0" spellcasting="Cleric" />
+			<select type="Spell" name="Acolyte of Nature" supports="Druid,0" spellcasting="Wizard" />
 			<select type="Proficiency" name="Acolyte of Nature" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_SURVIVAL" />
 		</rules>
 	</element>
@@ -705,5 +705,89 @@
 			<description>You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons.</description>
 		</sheet>
 	</element>
+
+	<!-- Death Domain -->
+	<element name="Death Domain" type="Archetype" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_CLERIC_DEATH_DOMAIN">
+		<supports>Theurgy Domain</supports>
+		<description>
+			<p>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures. Deities such as Chemosh, Myrkul, and Wee Jas are patrons of necromancers, death knights, liches, mummy lords, and vampires. Gods of the Death domain also embody murder (Anubis, Bhaal, and Pyremius), pain (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), and the underworld (Hades and Hel).</p>
+			<h5>War Domain Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Wizard Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1rd</td><td><em>false life, ray of sickness</em></td></tr>
+				<tr><td>3rd</td><td><em>blindness/deafness, ray of enfeeblement</em></td></tr>
+				<tr><td>5th</td><td><em>animate dead, vampiric touch</em></td></tr>
+				<tr><td>7th</td><td><em>blight, death ward</em></td></tr>
+				<tr><td>9th</td><td><em>antilife shell, cloudkill</em></td></tr>
+			</table>
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_CD_TOUCH_OF_DEATH" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" />
+		</description>
+		<sheet>
+			<description>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+			<extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+			<extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+			<extend>ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT</extend>
+			<extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+			<extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
+			<extend>ID_PHB_SPELL_BLIGHT</extend>
+			<extend>ID_PHB_SPELL_DEATH_WARD</extend>
+			<extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+			<extend>ID_PHB_SPELL_CLOUDKILL</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_CD_TOUCH_OF_DEATH"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" level="14"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity: Touch of Death" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_CD_TOUCH_OF_DEATH">
+		<description>
+			<p>Starting at 2nd level, the wizard can use Channel Divinity to destroy another creature's life force by touch.</p>
+			<p class="indent">When the wizard hits a creature with a melee attack, the wizard can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice his or her wizard level.</p>
+		</description>
+		<sheet alt="Touch of Death" usage="Channel Arcana">
+			<description>When you hit a creature with a melee attack, you can use Channel Divinity to deal extra 5 + {{touch of death}} necrotic damage to the target.</description>
+		</sheet>
+		<rules>
+			<stat name="touch of death" value="level:wizard" />
+			<stat name="touch of death" value="level:wizard" />
+		</rules>
+	</element>
+    <element name="Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER">
+        <description>
+            <p>At 6th level, the wizard learns one necromancy cantrip of his or her choice from any spell list. When the wizard casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other.</p>
+        </description>
+        <sheet>
+            <description>When you cast a necromancy cantrip that targets one creature, you can target two creatures within range and within 5ft of each other instead.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Necromancy Cantrip (Death Domain)" supports="0,Necromancy" spellcasting="Wizard" />
+        </rules>
+    </element>
+	<element name="Inescapable Destruction" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION">
+        <description>
+            <p>Starting at 10th level, the wizard's ability to channel negative energy becomes more potent. Necrotic damage dealt by the character's wizard spells and Channel Divinity options ignores resistance to necrotic damage.</p>
+        </description>
+        <sheet>
+            <description>Your wizard spells and Channel Divinity options ignore resistance to necrotic damage.</description>
+        </sheet>
+    </element>
+	<element name="Improved Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER">
+        <description>
+            <p>Starting at 14th level, when the wizard casts a necromancy spell of 1st through 5th level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components, the wizard must provide them for each target.</p>
+        </description>
+        <sheet>
+            <description>When you cast a necromancy spell of 1st through 5th level, that targets one creature, you can target two creatures within range and within 5ft of each other instead. If the spell consumes its material components, you must provide them for each target.</description>
+        </sheet>
+    </element>
 
 </elements>
