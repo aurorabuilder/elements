@@ -65,7 +65,13 @@
 		</sheet>
 		<rules />
 	</element>
-	<element name="Channel Arcana" type="Class Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_CHANNEL_ARCANA">
+	<element name="Arcane Initiate: Cleric Spells" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_ARCANE_INITIATE_CLERIC_SPELLS">
+		<spellcasting name="Wizard" extend="true">
+			<extend>Cleric</extend>
+		</spellcasting>
+		<sheet display="false"/>
+	</element>
+	<element name="Channel Arcana" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_CHANNEL_ARCANA">
 		<description>
 			<p>At 2nd level, you gain the ability to channel arcane energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Divine Arcana and the Channel Divinity option granted at 2nd level by your chosen domain. You employ that Channel Divinity option by using your Channel Arcana ability.</p>
 			<p class="indent">When you use your Channel Arcana, you choose which effect to create. You must then finish a short or long rest to use your Channel Arcana again.</p>
@@ -79,10 +85,10 @@
 			<stat name="channel arcana:count" value="1" level="1" bonus="base" />
 			<stat name="channel arcana:count" value="2" level="6" bonus="base" />
 			<stat name="channel arcana:count" value="3" level="18" bonus="base" />
-			<grant type="Class Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_DIVINE_ARCANA" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_DIVINE_ARCANA" />
 		</rules>
 	</element>
-	<element name="Channel Arcana: Divine Arcana" type="Class Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_DIVINE_ARCANA">
+	<element name="Channel Arcana: Divine Arcana" type="Archetype Feature" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_DIVINE_ARCANA">
 		<description>
 			<p>As a bonus action, you speak a prayer to control the flow of magic around you. The next spell you cast gains a +2 bonus to any attack roll you make for it or to its saving throw DC, as appropriate.</p>
 		</description>
@@ -146,18 +152,12 @@
 			<extend>ID_PHB_SPELL_SCRYING</extend>
 		</spellcasting>
 		<rules>
-			<grant type="Grants" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_ARCANE_INITIATE" requirements="ID_PHB_SPELL_COMMAND,ID_PHB_SPELL_IDENTIFY,ID_PHB_SPELL_AUGURY,ID_PHB_SPELL_SUGGESTION,ID_PHB_SPELL_NONDETECTION,ID_PHB_SPELL_SPEAK_WITH_DEAD,ID_PHB_SPELL_ARCANE_EYE,ID_PHB_SPELL_CONFUSION,ID_PHB_SPELL_LEGEND_LORE,ID_PHB_SPELL_SCRYING"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_THEURGY_ARCANE_INITIATE_CLERIC_SPELLS" requirements="ID_PHB_SPELL_COMMAND,ID_PHB_SPELL_IDENTIFY,ID_PHB_SPELL_AUGURY,ID_PHB_SPELL_SUGGESTION,ID_PHB_SPELL_NONDETECTION,ID_PHB_SPELL_SPEAK_WITH_DEAD,ID_PHB_SPELL_ARCANE_EYE,ID_PHB_SPELL_CONFUSION,ID_PHB_SPELL_LEGEND_LORE,ID_PHB_SPELL_SCRYING"/>
 			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES" />
 			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="6"/>
 			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" level="10"/>
 			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST" level="14"/>
 		</rules>
-	</element>
-	<element name="Knowledge Domain: Arcane Initiate" type="Grants" source="Unearthed Arcana: Wizard Revisited" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_ARCANE_INITIATE">
-		<spellcasting name="Wizard" extend="true">
-			<extend>Cleric</extend>
-		</spellcasting>
-		<sheet display="false"/>
 	</element>
 	<element name="Channel Divinity: Knowledge of the Ages" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES">
 		<description>
@@ -762,32 +762,134 @@
 			<stat name="touch of death" value="level:wizard" />
 		</rules>
 	</element>
-    <element name="Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER">
-        <description>
-            <p>At 6th level, the wizard learns one necromancy cantrip of his or her choice from any spell list. When the wizard casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other.</p>
-        </description>
-        <sheet>
-            <description>When you cast a necromancy cantrip that targets one creature, you can target two creatures within range and within 5ft of each other instead.</description>
-        </sheet>
-        <rules>
-            <select type="Spell" name="Necromancy Cantrip (Death Domain)" supports="0,Necromancy" spellcasting="Wizard" />
-        </rules>
-    </element>
+	<element name="Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER">
+		<description>
+			<p>At 6th level, the wizard learns one necromancy cantrip of his or her choice from any spell list. When the wizard casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other.</p>
+		</description>
+		<sheet>
+			<description>When you cast a necromancy cantrip that targets one creature, you can target two creatures within range and within 5ft of each other instead.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Necromancy Cantrip (Death Domain)" supports="0,Necromancy" spellcasting="Wizard" />
+		</rules>
+	</element>
 	<element name="Inescapable Destruction" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION">
-        <description>
-            <p>Starting at 10th level, the wizard's ability to channel negative energy becomes more potent. Necrotic damage dealt by the character's wizard spells and Channel Divinity options ignores resistance to necrotic damage.</p>
-        </description>
-        <sheet>
-            <description>Your wizard spells and Channel Divinity options ignore resistance to necrotic damage.</description>
-        </sheet>
-    </element>
+		<description>
+			<p>Starting at 10th level, the wizard's ability to channel negative energy becomes more potent. Necrotic damage dealt by the character's wizard spells and Channel Divinity options ignores resistance to necrotic damage.</p>
+		</description>
+		<sheet>
+			<description>Your wizard spells and Channel Divinity options ignore resistance to necrotic damage.</description>
+		</sheet>
+	</element>
 	<element name="Improved Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER">
-        <description>
-            <p>Starting at 14th level, when the wizard casts a necromancy spell of 1st through 5th level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components, the wizard must provide them for each target.</p>
-        </description>
-        <sheet>
-            <description>When you cast a necromancy spell of 1st through 5th level, that targets one creature, you can target two creatures within range and within 5ft of each other instead. If the spell consumes its material components, you must provide them for each target.</description>
-        </sheet>
-    </element>
+		<description>
+			<p>Starting at 14th level, when the wizard casts a necromancy spell of 1st through 5th level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components, the wizard must provide them for each target.</p>
+		</description>
+		<sheet>
+			<description>When you cast a necromancy spell of 1st through 5th level, that targets one creature, you can target two creatures within range and within 5ft of each other instead. If the spell consumes its material components, you must provide them for each target.</description>
+		</sheet>
+	</element>
+
+	<!-- Arcana Domain -->
+	<element name="Arcana Domain" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_CLERIC_ARCANA_DOMAIN">
+		<supports>Theurgy Domain</supports>
+		<description>
+			<p>Magic is an energy that suffuses the multiverse and that fuels both destruction and creation. Gods of the Arcana domain know the secrets and potential of magic intimately. For some of these gods, magical knowledge is a great responsibility that comes with a special understanding of the nature of reality. Other gods of Arcana see magic as pure power, to be used as its wielder sees fit.</p>
+			<p class="indent">The gods of this domain are often associated with knowledge, as learning and arcane power tend to go hand-in-hand. In the Realms, deities of this domain include Azuth and Mystra, as well as Corellon Larethian of the elven pantheon. In other worlds, this domain includes Hecate, Math Mathonwy, and Isis; the triple moon gods of Solinari, Lunitari, and Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.</p>
+			<h5>ARCANA DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Wizard Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>detect magic, magic missile</em></td></tr>
+				<tr><td>3rd</td><td><em>magic weapon, Nystul's magic aura</em></td></tr>
+				<tr><td>5th</td><td><em>dispel magic, magic circle</em></td></tr>
+				<tr><td>7th</td><td><em>arcane eye, Leomund's secret chest</em></td></tr>
+				<tr><td>9th</td><td><em>planar binding, teleportation circle</em></td></tr>
+			</table>
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" />
+		</description>
+		<sheet>
+			<description>Magic is an energy that suffuses the multiverse and that fuels both destruction and creation.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_DETECT_MAGIC</extend>
+			<extend>ID_PHB_SPELL_MAGIC_MISSILE</extend>
+			<extend>ID_PHB_SPELL_MAGIC_WEAPON</extend>
+			<extend>ID_PHB_SPELL_NYSTULS_MAGIC_AURA</extend>
+			<extend>ID_PHB_SPELL_DISPEL_MAGIC</extend>
+			<extend>ID_PHB_SPELL_MAGIC_CIRCLE</extend>
+			<extend>ID_PHB_SPELL_ARCANA_EYE</extend>
+			<extend>ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST</extend>
+			<extend>ID_PHB_SPELL_PLANAR_BINDING</extend>
+			<extend>ID_PHB_SPELL_TELEPORTATION_CIRCLE</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" level="14"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity: Arcane Abjuration" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_CD_ARCANE_ABJURATION">
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.</p>
+			<p class="indent">As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.</p>
+			<p class="indent">After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p>
+			<h5>Arcane Banishment</h5>
+			<table>
+				<thead><tr><td>Wizard Level</td><td>Banishes Creatures of CR</td></tr></thead>
+				<tr><td>5th</td><td>1/2 or lower</td></tr>
+				<tr><td>8th</td><td>1 or lower</td></tr>
+				<tr><td>11th</td><td>2 or lower</td></tr>
+				<tr><td>14th</td><td>3 or lower</td></tr>
+				<tr><td>17th</td><td>4 or lower</td></tr>
+			</table>
+		</description>
+		<sheet alt="Arcane Abjuration">
+			<description level="5">You can use your Channel Divinity to abjure otherworldly creatures of CR 1/2 or lower for 1 minute DC {{spellcasting:dc:int}} Wisdom saving throw.</description>
+			<description level="8">You can use your Channel Divinity to abjure otherworldly creatures of CR 1 or lower for 1 minute DC {{spellcasting:dc:int}} Wisdom saving throw.</description>
+			<description level="11">You can use your Channel Divinity to abjure otherworldly creatures of CR 2 or lower for 1 minute DC {{spellcasting:dc:int}} Wisdom saving throw.</description>
+			<description level="14">You can use your Channel Divinity to abjure otherworldly creatures of CR 3 or lower for 1 minute DC {{spellcasting:dc:int}} Wisdom saving throw.</description>
+			<description level="17">You can use your Channel Divinity to abjure otherworldly creatures of CR 4 or lower for 1 minute DC {{spellcasting:dc:int}} Wisdom saving throw.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Initiate" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE">
+		<description>
+			<p>At 6th level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<select type="Spell" name="Arcane Initiate" supports="Wizard,0" number="2" spellcasting="Wizard"/>
+	</element>
+	<element name="Spell Breaker" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER">
+		<description>
+			<p>Starting at 10th level, when you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell of your choice on that creature. The level of the spell you end must be equal to or lower than the level of the spell slot you use to cast the healing spell.</p>
+		</description>
+		<sheet>
+			<description>When you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell of your choice on that creature. The level of the spell you end must be equal to or lower than the level of the spell slot you use to cast the healing spell.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Mastery" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY">
+    <description>
+      <p>At 14th level, you choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th. You add them to your list of domain spells. Like your other domain spells, they are always prepared and count as cleric spells for you.</p>
+    </description>
+    <sheet display="false">
+      <description>You choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th.</description>
+    </sheet>
+    <rules>
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,6" spellcasting="Wizard"/>
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,7" spellcasting="Wizard"/>
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,8" spellcasting="Wizard"/>
+      <select type="Spell" name="Arcane Mastery" supports="Wizard,9" spellcasting="Wizard"/>
+    </rules>
+  </element>
 
 </elements>
