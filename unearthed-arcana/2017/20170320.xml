@@ -1089,7 +1089,182 @@
 		<sheet usage="1/Turn">
 			<description>When an enemy you can see dies within 60 feet of you, you or one creature of your choice that is within 60 feet of you regains hit points equal to the enemy’s number of Hit Dice.</description>
 		</sheet>
-		<rules></rules>
 	</element>
+
+	<!-- Entropy Domain -->
+	<element name="Entropy Domain" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_ENTROPY_DOMAIN">
+		<supports>Theurgy Domain</supports>
+		<description>
+			<p>Heretics preach of a void at the center of the universe that dying gods created to devour the Weave. The necrotic energy it emits is called “Entropy”: a potent force that clerics can harness to shield themselves from magic and annihilate arcane casters. The chained god Tharizdun claims this domain, while in Chessenta, a giant sphere of annihilation is worshipped as an aspect of Entropy itself. Cultists who wield the power go by many names: thaumatoclasts, entropomancers, or entropists.</p>
+			<h5>ENTROPY DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Wizard Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>detect magic, inflict wounds</em></td></tr>
+				<tr><td>3rd</td><td><em>gentle repose, spiritual weapon</em></td></tr>
+				<tr><td>5th</td><td><em>dispel magic, protection from energy</em></td></tr>
+				<tr><td>7th</td><td><em>blight, death ward</em></td></tr>
+				<tr><td>9th</td><td><em>circle of power, hallow</em></td></tr>
+			</table>
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY" />
+		</description>
+		<sheet>
+			<description>Heretics preach of a void at the center of the universe that dying gods created to devour the Weave.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_DETECT_MAGIC</extend>
+			<extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+			<extend>ID_PHB_SPELL_GENTLE_REPOSE</extend>
+			<extend>ID_PHB_SPELL_SPIRITUAL_WEAPON</extend>
+			<extend>ID_PHB_SPELL_DISPEL_MAGIC</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_ENERGY</extend>
+			<extend>ID_PHB_SPELL_BLIGHT</extend>
+			<extend>ID_PHB_SPELL_DEATH_WARD</extend>
+			<extend>ID_PHB_SPELL_CIRCLE_OF_POWER</extend>
+			<extend>ID_PHB_SPELL_HALLOW</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY" level="14"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity: Arcane Disruption" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION">
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to disrupt the flow of magic in your vicinity.</p>
+			<p class="indent">As an action, you conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</p>
+		</description>
+		<sheet alt="Arcane Disruption" action="Action" usage="Channel Arcana">
+			<description>You conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</description>
+		</sheet>
+	</element>
+	<element name="Sanctity of Body" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_SANCTITY_OF_BODY">
+		<description>
+			<p>At 6th level, you perform a ritual to anchor your soul to the Material Plane. You have advantage on death saving throws.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on death saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Entropic Retaliation" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_CD_ENTROPIC_RETALIATION">
+		<description>
+			<p>At 10th level, you can use your Channel Divinity to drain a caster’s magical power. When you succeed on a saving throw against a spell or successfully disrupt a spell using Arcane Disruption, you can force the caster to make a Constitution saving throw against your spell save DC. On a failure, the caster loses an additional spell slot of the same level. If they possess no more slots of that level, they instead gain a level of exhaustion.</p>
+		</description>
+		<sheet alt="Entropic Retaliation" usage="Channel Arcana">
+			<description>When you succeed on a saving throw against a spell or successfully disrupt a spell using Arcane Disruption, you can force the caster to make a Constitution saving throw against your spell save DC. On a failure, the caster loses an additional spell slot of the same level. If they possess no more slots of that level, they instead gain a level of exhaustion.</description>
+		</sheet>
+	</element>
+	<element name="Emissary of Entropy" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_ENTROPY_DOMAIN_EMISSARY_OF_ENTROPY">
+		<description>
+			<p>At 14th level, you have advantage on saving throws against spells. In addition, when you succeed on a saving throw against a spell, you gain 5 temporary hit points for each slot level of the spell.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against spells. In addition, when you succeed on a saving throw against a spell, you gain 5 temporary hit points for each slot level of the spell.</description>
+		</sheet>
+	</element>
+
+	<!-- Survival Domain -->
+	<element name="Survival Domain" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_UA20170320_ARCHETYPE_THEURGY_SURVIVAL_DOMAIN">
+		<supports>Theurgy Domain</supports>
+		<description>
+			<p>You gain domain spells at the wizard level listed in the Survival Domain Spells Table. See the Divine Domain class feature for how domain spells work.</p>
+			<h6>SURVIVAL DOMAIN SPELLS</h6>
+			<table>
+				<thead>
+					<tr><td>Wizard Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>create or destroy water, false life</em></td></tr>
+				<tr><td>3rd</td><td><em>locate animals or plants, prayer of healing</em></td></tr>
+				<tr><td>5th</td><td><em>fear, protection from energy</em></td></tr>
+				<tr><td>7th</td><td><em>death ward, dominate beast</em></td></tr>
+				<tr><td>9th</td><td><em>antilife shell, greater restoration</em></td></tr>
+			</table>
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_ENCOURAGE_THE_TROOPS" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_BONUS_PROFICIENCY" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_STAND_THE_FALLEN" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_PUSH_THE_LIMITS" />
+			<div element="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_PROTECTION_OF_THE_TRIBE" />
+		</description>
+		<sheet>
+			<description>Heretics preach of a void at the center of the universe that dying gods created to devour the Weave.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_CREATE_OR_DESTROY_WATER</extend>
+			<extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+			<extend>ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS</extend>
+			<extend>ID_PHB_SPELL_PRAYER_OF_HEALING</extend>
+			<extend>ID_PHB_SPELL_FEAR</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_ENERGY</extend>
+			<extend>ID_PHB_SPELL_DEATH_WARD</extend>
+			<extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+			<extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+			<extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_ENCOURAGE_THE_TROOPS"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_BONUS_PROFICIENCY" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_STAND_THE_FALLEN" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_PUSH_THE_LIMITS" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_PROTECTION_OF_THE_TRIBE" level="14"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity: Encourage the Troops" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_ENCOURAGE_THE_TROOPS">
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to bolster the fighting abilities of your allies.</p>
+			<p class="indent">As an action, you present your holy symbol and invoke the survival instincts of your deity. Each allied creature that can see you gains advantage on their next melee or ranged weapon attack before the start of your next turn. If their attack hits, the allied creature also regains hit points equal to your wizard level.</p>
+		</description>
+		<sheet alt="Encourage the Troops" usage="Channel Divinity">
+			<description>As an action, you present your holy symbol and invoke the survival instincts of your deity. Each allied creature that can see you gains advantage on their next melee or ranged weapon attack before the start of your next turn. If their attack hits, the allied creature also regains {{level:wizard}} hit points.</description>
+		</sheet>
+	</element>
+	<element name="Bonus Proficiency" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_BONUS_PROFICIENCY">
+		<description>
+			<p>At 6th level, you gain proficiency in the Survival and Nature skills. Your proficiency bonus is doubled for any ability checks you make that use those skills.</p>
+		</description>
+		<sheet>
+			<description>You gain proficiency in the Survival and Nature skills. Your proficiency bonus is doubled for any ability checks you make that use those skills.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<stat name="survival:proficiency" value="proficiency" bonus="double" />
+			<stat name="nature:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Stand the Fallen" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_STAND_THE_FALLEN">
+		<description>
+			<p>Also starting at 6th level, when you cast the spare the dying cantrip, you can make the following changes to the spell: change the range from touch to 30 feet, and the creature gains 1 hit point instead of becoming stable.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long or short rest.</p>
+		</description>
+		<sheet usage="{{stand the fallen:usage}}/Short Rest">
+			<description>When you cast the spare the dying cantrip, you can make the following changes to the spell:
+			change the range from touch to 30 feet, and the creature gains 1 hit point instead of becoming stable.</description>
+		</sheet>
+		<rules>
+			<stat name="stand the fallen:usage" value="1" bonus="base" />
+			<stat name="stand the fallen:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Push the Limits" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_CD_PUSH_THE_LIMITS">
+		<description>
+			<p>At 10th level, you can use your Channel Divinity to strengthen the resolve your allies. All allied creatures within 30 feet of you gain temporary hit points equal to your wizard level.</p>
+		</description>
+		<sheet alt="Push the Limits" usage="Channel Divinity">
+			<description>All allied creatures within 30 feet of you gain {{level:wizard}} temporary hit points.</description>
+		</sheet>
+	</element>
+	<element name="Protection of the Tribe" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_WOTC_UA20170320_ARCHETYPE_FEATURE_SURVIVAL_DOMAIN_PROTECTION_OF_THE_TRIBE">
+		<description>
+			<p>Starting at 14th level, you can use a bonus action to make one allied creature who you can see immune to damage for a short time. The chosen creature is immune to all damage until the start of your next turn. You regain the use of this ability when you finish a long rest.</p>
+		</description>
+		<sheet usage="Long Rest">
+			<description>You can use a bonus action to make one allied creature who you can see immune to damage for a short time. The chosen creature is immune to all damage until the start of your next turn.</description>
+		</sheet>
+	</element>	
 
 </elements>
