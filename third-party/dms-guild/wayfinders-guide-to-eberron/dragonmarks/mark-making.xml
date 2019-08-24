@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragonmarked Human variants</name>
+		<description>Dragonmarked Human variants from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="mark-making.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-making.xml" />
+		</update>
+	</info>
+	<element name="The Mark of Making" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_VARIANT_HUMAN_MAKING">
+		<supports>Human</supports>
+		<description>
+			<p>The Mark of Making guides its bearer through any act of creation. The bearer of the mark can mend broken things with a touch, and always has a minor magic item they’ve been working on. An artificer or a wizard will get the most out of the mark, but anyone can find a use for an enchanted blade. </p>
+			<h4>HOUSE CANNITH</h4>
+			<p>House Cannith dominates all forms of manufacturing, both mystical and mundane. Cannith forgeholds use streamlined forms of production to quickly produce common goods. Even independent artisans often learn their trade at Cannith academies and adhere to Cannith standards. The House of Making builds the tools the other houses rely upon, and it has always been the unspoken leader of the Twelve.   </p>
+			<p class="indent">The Last War was a time of great opportunity for Cannith. Every nation wanted weapons and warforged, along with mundane arms and armor. The war raised the house up, and then tore it down. House Cannith was based in Cyre, and the Mourning destroyed the house leadership and key facilities. Now three barons jockey to fill the leadership vacuum: the alchemist Jorlanna of Fairhaven, weaponsmith Zorlan of Korth, and warforged innovator Merrix of Sharn. It remains to be seen whether one of these leaders will unite the house, or if it will shatter under the strain. If you’re an heir of House Cannith, you should decide which of these barons you serve—or if you have other ideas about the future of the house. </p>
+			<h4>MARK OF MAKING TRAITS</h4>
+			<p>The Mark of Making only manifests on humans. These traits replace the human Ability Score Increase trait in the Player’s Handbook. </p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence and Dexterity scores increase by 1. Increase either Intelligence or Dexterity by an additional 1 point.  </p>
+			<p class="indent"><strong><em>Artisan’s Intuition.</em></strong> When you make an ability check with artisan’s tools, you can roll one Intuition die, a d4, and add the number rolled to the ability check.  </p>
+			<p class="indent"><strong><em>Maker’s Gift.</em></strong> You know the cantrip mending and gain proficiency with one type of artisan’s tools.</p>
+			<p class="indent"><strong><em>Magecraft.</em></strong> You can create a temporary magic item out of common materials. Choose a cantrip from the wizard spell list. Describe the item connected to it. As long as you possess the item, you know that cantrip. At the end of a long rest, you can replace it with a new item and select a new cantrip from the wizard spell list. Intelligence is your spellcasting ability for these cantrips. </p>
+			<p class="indent"><strong><em>Spellsmith.</em></strong> You can spend one minute to weave a temporary enchantment into a nonmagical suit of armor or weapon. For the next hour the object becomes a magic item, gaining a +1 bonus to AC if it is armor or a +1 bonus to hit and damage if it is a weapon. Once you use this trait, you can’t use it again until you finish a long rest.  </p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Human (Mark of Making)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="dexterity" value="1" />
+			<stat name="intelligence" value="1" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Making)" supports="ID_RACE_VARIANT_HUMAN_VARIANT_DEXTERITY|ID_RACE_VARIANT_HUMAN_VARIANT_INTELLIGENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_ARTISANS_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_MAKERS_GIFT" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_MAGECRAFT" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SPELLSMITH" />
+		</rules>
+	</element>
+	<element name="Artisan’s Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_ARTISANS_INTUITION">
+		<description>
+			<p>When you make an ability check with artisan’s tools, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an ability check with artisan’s tools, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Maker’s Gift" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_MAKERS_GIFT">
+		<description>
+			<p>You know the cantrip mending and gain proficiency with one type of artisan’s tools.</p>
+		</description>
+		<sheet>
+			<description>You know the cantrip mending and gain proficiency with one type of artisan’s tools.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MENDING" />
+			<select type="Proficiency" name="Artisan’s Tool Proficiency (Mark of Making)" supports="Artisan tools" />
+		</rules>
+	</element>
+	<element name="Magecraft" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_MAGECRAFT">
+		<description>
+			<p>You can create a temporary magic item out of common materials. Choose a cantrip from the wizard spell list. Describe the item connected to it. As long as you possess the item, you know that cantrip. At the end of a long rest, you can replace it with a new item and select a new cantrip from the wizard spell list. Intelligence is your spellcasting ability for these cantrips.</p>
+		</description>
+		<sheet>
+			<description>You can create a temporary magic item out of common materials. Choose a cantrip from the wizard spell list. Describe the item connected to it. As long as you possess the item, you know that cantrip. At the end of a long rest, you can replace it with a new item and select a new cantrip from the wizard spell list. Intelligence is your spellcasting ability for these cantrips.</description>
+		</sheet>
+	</element>
+	<element name="Spellsmith" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SPELLSMITH">
+		<description>
+			<p>You can spend one minute to weave a temporary enchantment into a nonmagical suit of armor or weapon. For the next hour the object becomes a magic item, gaining a +1 bonus to AC if it is armor or a +1 bonus to hit and damage if it is a weapon. Once you use this trait, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can spend one minute to weave a temporary enchantment into a nonmagical suit of armor or weapon. For the next hour the object becomes a magic item, gaining a +1 bonus to AC if it is armor or a +1 bonus to hit and damage if it is a weapon.</description>
+		</sheet>
+	</element>
+
+</elements>

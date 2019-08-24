@@ -4,7 +4,7 @@
     <name>Gith</name>
     <description>The Gith race from Mordenkainen’s Tome of Foes</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/mordenkainens-tome-foes">Wizards of the Coast</author>
-    <update version="0.0.3">
+    <update version="0.0.4">
       <file name="race-gith.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/mordenkainens-tome-of-foes/races/race-gith.xml" />
     </update>
   </info>
@@ -28,16 +28,16 @@
     <setters>
       <set name="names" type="male">Yanki, Zerai</set>
       <set name="names" type="female">Yanki, Zerai</set>
-      <set name="names-format">$(name)</set>
+      <set name="names-format">{{name}}</set>
       <set name="height" modifier="2d12">5'0"</set>
       <set name="weight" modifier="2d12">100 lb.</set>
     </setters>
     <rules>
-      <stat name="Intelligence" value="1"/>
-      <stat name="Speed" value="30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_GITH" />
+      <stat name="intelligence" value="1"/>
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_GITH" />
       <select type="Sub Race" name="Gith Subrace" supports="Gith" />
     </rules>
   </element>
@@ -46,7 +46,7 @@
     <description>
       <p class="flavor">The brutal githyanki are trained from birth as warriors.</p>
       <p>Since winning their freedom from the mind flayers, the githyanki have become corrupt raiders and destroyers under the rulership of their dread lich-queen, Vlaakith. They dwell on the Astral Plane in the city of Tu'narath, a metropolis built on and in the corpse of a deity</p>
-      <p class="indent">Vlaakith commands the loyalty of the githyanki from her personal stronghold, Susurrus, also called the Palace of Whispers, which is located deep ins ide the floating city. She sits on her Throne of Bones, a mighty artifact fueled by the intellects of mind flayers and elder brains that were defeated by her minions. It is crafted from mind flayer skulls and extremities, and the cushion she sits on is made of leather produced from the cured remains of an elder brain. A grand statue of Gith, an obsidian monume nt over 100 feet tall, stands beside the palace.</p>
+      <p class="indent">Vlaakith commands the loyalty of the githyanki from her personal stronghold, Susurrus, also called the Palace of Whispers, which is located deep ins ide the floating city. She sits on her Throne of Bones, a mighty artifact fueled by the intellects of mind flayers and elder brains that were defeated by her minions. It is crafted from mind flayer skulls and extremities, and the cushion she sits on is made of leather produced from the cured remains of an elder brain. A grand statue of Gith, an obsidian monument over 100 feet tall, stands beside the palace.</p>
       
       <h4>GITHYANKI TRAITS</h4>
       <p>Githyanki have the following traits in common, in addition to the traits they share with other gith.</p>
@@ -60,7 +60,7 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="Strength" value="2"/>
+      <stat name="strength" value="2"/>
       <grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHYANKI_DECADENT_MASTERY" />
       <grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHYANKI_MARTIAL_PRODIGY" />
       <grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHYANKI_GITHYANKI_PSIONICS" />
@@ -100,18 +100,22 @@
       <p class="indent">Intelligence is your spellcasting ability for these spells. When you cast them with this trait, they don't require components.</p>
     </description>
     <sheet>
-      <description>You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait.</description>
-      <description level="3">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the jump spell once with this trait. (1/LR)</description>
-      <description level="5">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the jump spell once with this trait. (1/LR) You can cast the misty step spell once with this trait. (1/LR)</description>
+      <description>You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. Intelligence is your spellcasting ability for this spell and you don't require components.</description>
+      <description level="3">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the jump spell with this trait (1/LR). Intelligence is your spellcasting ability for these spells and you don't require components.</description>
+      <description level="5">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the jump spell with this trait. (1/LR) You can cast the misty step spell with this trait (1/LR). Intelligence is your spellcasting ability for these spells and you don't require components.</description>
     </sheet>
-    <rules />
+    <rules>
+        <grant type="Spell" name="ID_PHB_SPELL_MAGE_HAND" />
+        <grant type="Spell" name="ID_PHB_SPELL_JUMP" level="3" />
+        <grant type="Spell" name="ID_PHB_SPELL_MISTY_STEP" level="5" />
+    </rules>
   </element>
   <element name="Githzerai" type="Sub Race" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_SUB_RACE_GITHZERAI">
     <supports>Gith</supports>
     <description>
       <p class="flavor">In their fortresses within Limbo, the githzerai hone their minds to a razor’s edge.</p>
       <p>The githzerai were born as a race at the end of the gith's bloody, genocidal uprising against the mind flayers. A gith named Zerthimon, who had gained a significant following during the conflict, challenged Gith's plans and her leadership. Gith was evil, the newcomer proclaimed, and she would lead the people into darkness and tyranny not unlike the one imposed by the illithids.</p>
-      <p class="indent">Thus, no sooner had the gith defeated their sworn enemies than they were plunged into a bitter civil war. In the ensuing conflict, Zerthimon was killed and his followers, naming themselves gith zerai, relocated their civilization to the plane of Limbo.</p>
+      <p class="indent">Thus, no sooner had the gith defeated their sworn enemies than they were plunged into a bitter civil war. In the ensuing conflict, Zerthimon was killed and his followers, naming themselves githzerai, relocated their civilization to the plane of Limbo.</p>
       <p class="indent">Today, under the leadership of the Great Githzerai, Zaerith Menyar-Ag-Gith, the githzerai continue to stand fast against the githyanki, as well as taking their revenge on the mind flayers. Through forays into the Material Plane and other realms, they provide stiff opposition to their enemies' plans for world domination.</p>
 
       <h4>GITHZERAI TRAITS</h4>
@@ -125,7 +129,7 @@
     </description>
     <sheet display="false"/>
     <rules>
-      <stat name="Wisdom" value="2"/>
+      <stat name="wisdom" value="2"/>
       <grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHZERAI_MENTAL_DISCIPLINE" />
       <grant type="Racial Trait" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHZERAI_GITHZERAI_PSIONICS" />
     </rules>
@@ -145,20 +149,24 @@
       <p class="indent">Wisdom is your spellcasting ability for these spells. When you cast them with this trait, they don't require components.</p>
     </description>
     <sheet>
-      <description>You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait.</description>
-      <description level="3">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the shield spell once with this trait. (1/LR)</description>
-      <description level="5">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the shield spell once with this trait. (1/LR) You can cast the detect thoughts spell once with this trait. (1/LR)</description>
+      <description>You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. Wisdom is your spellcasting ability for this spell and you don't require components.</description>
+      <description level="3">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the shield spell with this trait (1/LR). Wisdom is your spellcasting ability for these spells and you don't require components.</description>
+      <description level="5">You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. You can cast the shield spell with this trait (1/LR). You can cast the detect thoughts spell with this trait (1/LR). Wisdom is your spellcasting ability for these spells and you don't require components.</description>
     </sheet>
-    <rules />
+    <rules>
+        <grant type="Spell" name="ID_PHB_SPELL_MAGE_HAND" />
+        <grant type="Spell" name="ID_PHB_SPELL_SHIELD" level="3" />
+        <grant type="Spell" name="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" />
+    </rules>
   </element>
   <element name="Gith" type="Language" source="Mordenkainen’s Tome of Foes" id="ID_LANGUAGE_GITH">
     <supports>ID_INTERNAL_SUPPORT_LANGUAGE_EXOTIC, Exotic</supports>
     <requirements />
     <description>
-      <p>Typically spoken by githyank and githzerai.</p>
+      <p>Typically spoken by githyanki and githzerai.</p>
     </description>
     <setters>
-      <set name="Speakers">Githyank and githzerai</set>
+      <set name="Speakers">Githyanki and githzerai</set>
       <set name="Script"></set>
       <set name="Exotic">true</set>
     </setters>

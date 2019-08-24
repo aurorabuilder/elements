@@ -4,7 +4,7 @@
     <name>Wizard</name>
     <description>The Wizard class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.6">
+    <update version="0.2.8">
       <file name="class-wizard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-wizard.xml" />
     </update>
   </info>
@@ -31,7 +31,7 @@
       <h5>HIT POINTS</h5>
       <p>
         <span class="emphasis">Hit Dice:</span>1d6 per wizard level<br/>
-        <span class="emphasis">Hit Points at 1st Level:</span>6 + your Constitution modefier<br/>
+        <span class="emphasis">Hit Points at 1st Level:</span>6 + your Constitution modifier<br/>
         <span class="emphasis">Hit Points at Higher Levels:</span>1d6 (or 4) + your Constitution modifier per wizard level after 1st<br/>
       </p>
       <h5>PROFICIENCIES</h5>
@@ -66,29 +66,27 @@
     <setters>
       <set name="short">A scholarly magic-user capable of manipulating the structures of reality.</set>
       <set name="hd">d6</set>
-      <set name="spellcaster">true</set>
-      <set name="spellcastingAbility">Intelligence</set>
     </setters>
     <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
 
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SLING"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SLING" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
       
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM"  requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
 
       <select type="Proficiency" name="Skill Proficiency (Wizard)" supports="Skill,Wizard" number="2" requirements="!ID_WOTC_PHB_MULTICLASS_WIZARD"/>
       
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELLCASTING_WIZARD" level="1"/>
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY" level="1" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_TRADITION" level="2" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ABILITYSCOREIMPROVEMENT_WIZARD" level="4" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELL_MASTERY" level="18" />
-      <grant type="Class Feature" name="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SIGNATURE_SPELLS" level="20" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELLCASTING_WIZARD" level="1"/>
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY" level="1" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ARCANE_TRADITION" level="2" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_ABILITYSCOREIMPROVEMENT_WIZARD" level="4" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SPELL_MASTERY" level="18" />
+      <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_WIZARD_SIGNATURE_SPELLS" level="20" />
     </rules>
     <multiclass id="ID_WOTC_PHB_MULTICLASS_WIZARD">
       <prerequisite>Intelligence 13</prerequisite>
@@ -129,14 +127,14 @@
       <p>Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the “Your Spellbook” sidebar).</p>
     </description>
     <sheet display="true">
-      <description>You can prepare $(wizard:spellcasting:prepare) spells from the your spellbook. You use an arcane focus to cast spells. and can also cast wizard spells as a ritual.</description>
+      <description>You can prepare {{wizard:spellcasting:prepare}} spells from the your spellbook. You use an arcane focus to cast spells. and can also cast wizard spells as a ritual.</description>
     </sheet>
     <spellcasting name="Wizard" ability="Intelligence" prepare="true">
       <list>Wizard</list>
     </spellcasting>
     <rules>
-      <grant type="Grants" name="ID_INTERNAL_RITUAL_CASTING" />
-      <grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
+      <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+      <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
 
       <stat name="wizard:spellcasting:slots:1" value="2" level="1" />
       <stat name="wizard:spellcasting:slots:1" value="1" level="2" />
@@ -159,7 +157,7 @@
       <stat name="wizard:spellcasting:slots:8" value="1" level="15" />
       <stat name="wizard:spellcasting:slots:9" value="1" level="17" />
 
-      <stat name="wizard:spellcasting:prepare" value="Intelligence Modifier" />
+      <stat name="wizard:spellcasting:prepare" value="intelligence:modifier" />
       <stat name="wizard:spellcasting:prepare" value="level:wizard" />
 
       <select type="Spell" name="Cantrip (Wizard)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Wizard" />
@@ -265,11 +263,11 @@
     <description>The School of Abjuration emphasizes magic that blocks, banishes, or protects. Detractors of this school say that its tradition is about denial, negation rather than positive assertion.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ABJURATION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ARCANE_WARD" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ABJURATION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ARCANE_WARD" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE" level="14"/>
   </rules>
 </element>
 
@@ -287,9 +285,15 @@
     <p class="indent">While the ward has 0 hit points, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.</p>
     <p class="indent">Once you create the ward, you can't create it again until you finish a long rest.</p>
   </description>
-  <sheet>
-    <description>When you cast an abjuration spell of 1st level or higher, you can create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + %Intelligence Modifier%. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage. While the ward has 0 hit points, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell. (1/LR)</description>
+  <sheet usage="1/Long Rest">
+    <description>When you cast an abjuration spell of 1st level or higher, you can create a magical ward on yourself that lasts until you finish a long rest. The ward has {{arcane ward:hp}} hit points . Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.
+	While the ward has 0 hit points, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.</description>
   </sheet>
+  <rules>
+	<stat name="arcane ward:hp" value="level:wizard" />
+	<stat name="arcane ward:hp" value="level:wizard" />
+	<stat name="arcane ward:hp" value="intelligence:modifier" />
+  </rules>
 </element>
 <element name="Projected Ward" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD">
   <description>
@@ -304,7 +308,7 @@
     <p>Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in counterspell and dispel magic), you add your proficiency bonus to that ability check.</p>
   </description>
   <sheet>
-    <description>When you cast an abjuration spell that requires you to make an ability check as a part of casting that spell, you add your proficiency bonus (+%Proficiency%) to that ability check.</description>
+    <description>When you cast an abjuration spell that requires you to make an ability check as a part of casting that spell, you add your proficiency bonus (+{{proficiency}}) to that ability check.</description>
   </sheet>
 </element>
 <element name="Spell Resistance" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE">
@@ -332,11 +336,11 @@
     <description>As a conjurer, you favor spells that produce objects and creatures out of thin air.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_CONJURATION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_MINOR_CONJURATION" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_BENIGN_TRANSPOSITION" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_DURABLE_SUMMONS" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_CONJURATION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_MINOR_CONJURATION" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_BENIGN_TRANSPOSITION" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_DURABLE_SUMMONS" level="14"/>
   </rules>
 </element>
 
@@ -362,8 +366,8 @@
     <p>Starting at 6th level, you can use your action to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</p>
     <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest or you cast a conjuration spell of 1st level or higher.</p>
   </description>
-  <sheet>
-    <description>You can use your action to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places. (1/LR or you cast a conjuration spell of 1st level or higher)</description>
+  <sheet action="Action">
+    <description>Teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places. (1/LR or you cast a conjuration spell of 1st level or higher)</description>
   </sheet>
 </element>
 <element name="Focused Conjuration" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION">
@@ -398,11 +402,11 @@
     <description>The counsel of a diviner is sought by royalty and commoners alike, for all seek a clearer understanding of the past, present, and future.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_DIVINATION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_PORTENT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_EXPERT_DIVINATION" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_THE_THIRD_EYE" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_GREATER_PORTENT" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_DIVINATION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_PORTENT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_EXPERT_DIVINATION" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_THE_THIRD_EYE" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_DIVINATION_GREATER_PORTENT" level="14"/>
   </rules>
 </element>
 
@@ -467,11 +471,11 @@
     <description>As a member of the School of Enchantment, you have honed your ability to magically entrance and beguile other people and monsters.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_ENCHANTMENT_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_HYPNOTIC_GAZE" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_INSTINCTIVE_CHARM" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_SPLIT_ENCHANTMENT" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_ALTER_MEMORIES" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_ENCHANTMENT_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_HYPNOTIC_GAZE" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_INSTINCTIVE_CHARM" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_SPLIT_ENCHANTMENT" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ENCHANTMENT_ALTER_MEMORIES" level="14"/>
   </rules>
 </element>
 
@@ -535,11 +539,11 @@
     <description>You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_EVOCATION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_SCULPT_SPELLS" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_POTENT_CANTRIP" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_EMPOWERED_EVOCATION" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_OVERCHANNEL" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_EVOCATION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_SCULPT_SPELLS" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_POTENT_CANTRIP" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_EMPOWERED_EVOCATION" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_OVERCHANNEL" level="14"/>
   </rules>
 </element>
 
@@ -572,7 +576,7 @@
     <p>Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast.</p>
   </description>
   <sheet>
-    <description>You can add your Intelligence modifier (+%Intelligence Modifier%) to one damage roll of any wizard evocation spell you cast.</description>
+    <description>You can add your Intelligence modifier (+{{intelligence:modifier}}) to one damage roll of any wizard evocation spell you cast.</description>
   </sheet>
 </element>
 <element name="Overchannel" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_EVOCATION_OVERCHANNEL">
@@ -600,11 +604,11 @@
     <description>You focus your studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_SELF" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_REALITY" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_SELF" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_REALITY" level="14"/>
   </rules>
 </element>
 
@@ -642,7 +646,7 @@
     <p>Beginning at 10th level, you can create an illusory duplicate of yourself as an instant, almost instinctual reaction to danger. When a creature makes an attack roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the illusion dissipates.</p>
     <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
   </description>
-  <sheet usage="1 / Short Rest">
+  <sheet usage="1/Short Rest">
     <description>You can create an illusory duplicate of yourself as an instant, almost instinctual reaction to danger. When a creature makes an attack roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the illusion dissipates.</description>
   </sheet>
 </element>
@@ -672,11 +676,11 @@
     <description>The School of Necromancy explores the cosmic forces of life, death, and undeath.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_NECROMANCY_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_NECROMANCY_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD" level="14"/>
   </rules>
 </element>
 
@@ -719,6 +723,9 @@
   <sheet>
     <description>You have resistance to necrotic damage, and your hit point maximum can't be reduced.</description>
   </sheet>
+  <rules>
+  	<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+  </rules>
 </element>
 <element name="Command Undead" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD">
   <description>
@@ -748,11 +755,11 @@
     <description>You are a student of spells that modify energy and matter.</description>
   </sheet>
   <rules>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_TRANSMUTATION_SAVANT" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_MINOR_ALCHEMY" level="2"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_TRANSMUTERS_STONE" level="6"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_SHAPECHANGER" level="10"/>
-    <grant type="Archetype Feature" name="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_MASTER_TRANSMUTER" level="14"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_TRANSMUTATION_SAVANT" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_MINOR_ALCHEMY" level="2"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_TRANSMUTERS_STONE" level="6"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_SHAPECHANGER" level="10"/>
+    <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_TRANSMUTATION_MASTER_TRANSMUTER" level="14"/>
   </rules>
 </element>
 
@@ -793,7 +800,7 @@
     <p>At 10th level, you add the polymorph spell to your spellbook, if it is not there already. You can cast polymorph without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.</p>
     <p class="indent">Once you cast polymorph in this way, you can’t do so again until you finish a short or long rest, though you can still cast it normally using an available spell slot.</p>
   </description>
-  <sheet usage="1 / Short Rest">
+  <sheet usage="1/Short Rest">
     <description>You can cast polymorph without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.</description>
   </sheet>
   <rules>

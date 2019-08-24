@@ -1,14 +1,250 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<name>House Agent</name>
-		<description></description>
-		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<name>House Agent Background</name>
+		<update version="0.0.2">
 			<file name="background-houseagent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/backgrounds/background-houseagent.xml" />
 		</update>
 	</info>
 
-	<!-- placeholder -->
-
+	<element name="House Agent" type="Background" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_HOUSE_AGENT">
+		<description>
+			<p>You have sworn fealty to a dragonmarked house, one of the mighty mercantile guilds that shapes Khorvaire. If you possess a dragonmark, you’re likely a member of one of the influential families within the house, otherwise you’re an outsider who hopes to make your fortune by allying with this great power. Your primary task is to observe, gathering useful information and serving as the eyes of your house. But you could be called upon at any time to act as a hand of the house. Such missions can be dangerous—but they’ll surely be lucrative.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Investigation, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> Two tools by house:</li>
+				<li>
+					<ul>
+						<li><em>Cannith:</em> alchemist’s supplies and tinker’s tools</li>
+						<li><em>Deneith:</em> one gaming set and vehicles (land)</li>
+						<li><em>Ghallanda:</em> brewer’s supplies and cook’s utensils</li>
+						<li><em>Jorasco:</em> alchemist’s supplies and herbalism kit</li>
+						<li><em>Kundarak:</em> tinker’s tools and thieves’ tools</li>
+						<li><em>Lyrandar:</em> vehicles (sea/air) and navigator’s tools</li>
+						<li><em>Medani:</em> thieves’ tools and disguise kit</li>
+						<li><em>Orien:</em> vehicles (land) and one gaming set</li>
+						<li><em>Phiarlan:</em> disguise kit and one musical instrument</li>
+						<li><em>Sivis:</em> calligrapher’s tools and forgery kit</li>
+						<li><em>Tharashk:</em> thieves’ tools and one gaming set</li>
+						<li><em>Thuranni:</em> poisoner’s kit and one musical instrument</li>
+						<li><em>Vadalis:</em> vehicles (land) and herbalism kit</li>				
+					</ul>
+				</li>
+				<li><strong>Equipment:</strong> A set of fine clothes, house signet ring, ID papers, and a purse containing 20 gp.</li>
+			</ul>
+			<h5>ROLE</h5>
+			<p>You are always gathering information for your house. But when the barons come to you with a specific mission, what sort of work do you usually do? Choose your role or roll on the table below.</p>
+			<h6>HOUSE AGENT ROLE</h6>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Role</td></tr>
+				</thead>
+				<tr><td>1</td><td>Acquisition</td></tr>
+				<tr><td>2</td><td>Investigation</td></tr>
+				<tr><td>3</td><td>Research &amp; Development</td></tr>
+				<tr><td>4</td><td>Security</td></tr>
+				<tr><td>5</td><td>Intimidation</td></tr>
+				<tr><td>6</td><td>Exploration</td></tr>
+				<tr><td>7</td><td>Negotiation</td></tr>
+				<tr><td>8</td><td>Covert Operations</td></tr>
+			</table>
+			<div element="ID_WOTC_WGTE_BACKGROUND_FEATURE_HOUSE_CONNECTIONS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>House agents are a diverse lot. Consider the house you serve and the type of work you do in developing or selecting characteristics.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Background Feature" name="Dragonmarked House" supports="Dragonmarked House" />
+			<grant type="Background Feature" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_HOUSE_CONNECTIONS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I never let emotion complicate work.</item>
+				<item id="2">I’m always looking to improve efficiency.</item>
+				<item id="3">I share trivia about my house’s business (medicine, ships, warforged).</item>
+				<item id="4">I hold myself and anyone I work with to extremely high standards.</item>
+				<item id="5">I never forget an insult made against myself or my house.</item>
+				<item id="6">I’m very excited and enthusiastic about everything my house does.</item>
+				<item id="7">I’m representing my house and take great pride in my personal appearance.</item>
+				<item id="8">I’m critical of monarchies and opposed to any restrictions on the houses.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Common Good. My house serves a vital function, and its prosperity will help everyone. (Good)</item>
+				<item id="2">Tradition. I uphold traditions of my house and bring honor to my family. (Lawful)</item>
+				<item id="3">Innovation. Abandon old traditions and find better ways to do things. (Chaotic)</item>
+				<item id="4">Power. I want to ensure the prosperity of my house and wield its power myself. (Evil)</item>
+				<item id="5">Discovery. I want to learn all I can, both for my house and for my own curiosity. (Any)</item>
+				<item id="6">Comfort. I want to ensure that me and mine enjoy the best things in life. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My house is my family, and I would do anything for my family.</item>
+				<item id="2">I love someone from another house, but such relationships are forbidden.</item>
+				<item id="3">Someone I love was killed by a rival faction within my house, and I will have revenge.</item>
+				<item id="4">I don’t care about the house as a whole, but I would do anything for my old mentor.</item>
+				<item id="5">I believe my house needs to evolve to survive, and I need to lead that change.</item>
+				<item id="6">I am determined to impress the leaders of my house, and to become a leader myself.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m overly concerned with following established procedures and protocols.</item>
+				<item id="2">I’m obsessed with conspiracy theories and worried about secret societies and hidden demons.</item>
+				<item id="3">I believe that my house and bloodline makes me better than everyone else.</item>
+				<item id="4">I’m concealing a secret that could get me driven from my house.</item>
+				<item id="5">I have strong religious beliefs that aren’t shared by others in my house.</item>
+				<item id="6">I’m working for a hidden faction in my house that gives me secret assignments.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: House Connections" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_HOUSE_CONNECTIONS">
+		<supports>Background Feature, Primary</supports>
+		<description>
+			<p>As an agent of your house, you can always get food and lodging for your friends at a house enclave. When the house assigns you a mission, it will usually provide you with necessary supplies and transportation. Beyond this, you have many old friends, mentors, and rivals in your house and you may encounter one of them when you interact with a house business. As a Lyrandar agent you may know the captain of an airship; as a Ghallanda agent you know a lot of innkeepers and bartenders. The degree to which such acquaintances will be willing to help you out will depend on your current standing in your house.</p>
+		</description>
+		<sheet alt="House Connections" />
+	</element>
+	
+	<!-- dragonmarked houses -->
+	<element name="House Cannith" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_CANNITH">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with alchemist’s supplies and tinker’s tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Deneith" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_DENEITH">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with one gaming set and vehicles (land).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Gaming Set, House Deneith" supports="Gaming Set" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+		</rules>
+	</element>
+	<element name="House Ghallanda" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_GHALLANDA">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with brewer’s supplies and cook’s utensils.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+		</rules>
+	</element>
+	<element name="House Jorasco" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_JORASCO">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with alchemist’s supplies and herbalism kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+	<element name="House Kundarak" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_KUNDARAK">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with tinker’s tools and thieves’ tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Lyrandar" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_LYRANDAR">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with vehicles (sea/air) and navigator’s tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+			<!-- todo: <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_AIR" /> -->
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Medani" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_MEDANI">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with thieves’ tools and disguise kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+	<element name="House Orien" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_ORIEN">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with vehicles (land) and one gaming set.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<select type="Proficiency" name="Gaming Set, House Orien" supports="Gaming Set" />
+		</rules>
+	</element>
+	<element name="House Phiarlan" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_PHIARLAN">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with disguise kit and one musical instrument.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<select type="Proficiency" name="Musical Instrument, House Phiarlan" supports="Musical Instrument" />
+		</rules>
+	</element>
+	<element name="House Sivis" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_SIVIS">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with calligrapher’s tools and forgery kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+		</rules>
+	</element>
+	<element name="House Tharashk" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_THARASHK">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with thieves’ tools and one gaming set.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<select type="Proficiency" name="Gaming Set, House Tharashk" supports="Gaming Set" />
+		</rules>
+	</element>
+	<element name="House Thuranni" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_THURANNI">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with poisoner’s kit and one musical instrument.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+			<select type="Proficiency" name="Musical Instrument, House Phiarlan" supports="Musical Instrument" />
+		</rules>
+	</element>
+	<element name="House Vadalis" type="Background Feature" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_BACKGROUND_FEATURE_AGENT_HOUSE_VADALIS">
+		<supports>Dragonmarked House</supports>
+		<description>
+			<p>You gain proficiency with vehicles (land) and herbalism kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
 </elements>

@@ -4,8 +4,8 @@
 		<name>Dwarf</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.3">
-			<file name="race-dwarf.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-dwarf.xml" />
+		<update version="0.2.6">
+			<file name="race-dwarf.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-dwarf.xml" />
 		</update>
 	</info>
 
@@ -39,7 +39,7 @@
         <span class="feature">Speed. </span>Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.<br />
         <span class="feature">Darkvision. </span>Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.<br />
         <span class="feature">Dwarven Resilience. </span>You have advantage on saving throws against poison, and you have resistance against poison damage (explained in chapter 9).<br />
-        <span class="feature">Dwarven Combat Training. </span>You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.<br />
+        <span class="feature">Dwarven Combat Training. </span>You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.<br />
         <span class="feature">Tool Proficiency. </span>You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.<br />
         <span class="feature">Stonecunning. </span>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.<br />
         <span class="feature">Languages. </span>You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak.<br />
@@ -51,24 +51,24 @@
       <set name="names" type="male">Adrik, Alberich, Baern, Barendd, Brottor, Bruenor, Dain, Darrak, Delg, Eberk, Einkil, Fargrim, Flint, Gardain, Harbek, Kildrak, Morgran, Orsik, Oskar, Rangrim, Rurik, Taklinn, Thoradin, Thorin, Tordek, Traubon, Travok, Ulfgar, Veit, Vondal</set>
       <set name="names" type="female">Amber, Artin, Audhild, Bardryn, Dagnal, Diesa, Eldeth, Falkrunn, Finellen, Gunnloda, Gurdis, Helja, Hlin, Kathra, Kristryd, Ilde, Liftrasa, Mardred, Riswynn, Sannl, Torbera, Torgga, Vistra</set>
       <set name="names" type="clan">Balderk, Battlehammer, Brawnanvil, Dankil, Fireforge, Frostbeard, Gorunn, Holderhek, Ironfist, Loderr, Lutgehr, Rumnaheim, Strakeln, Torunn, Ungart</set>
-      <set name="names-format">$(name) $(clan)</set>
+      <set name="names-format">{{name}} {{clan}}</set>
     </setters>
     <rules>
-      <stat name="Constitution" value="+2" />
-      <stat name="Speed" value="+25" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
-      <grant type="Vision" name="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_DWARVISH" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_COMBAT_TRAINING" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_TOOL_PROFICIENCY" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_STONECUNNING" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_SUBRACE" />
+      <stat name="constitution" value="2" />
+      <stat name="innate speed" value="25" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
+      <grant type="Vision" id="ID_VISION_DARKVISION" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_DWARVISH" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_COMBAT_TRAINING" requirements="!ID_WOTC_PSK_SUBRACE_KALADESH_DWARF" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_TOOL_PROFICIENCY" requirements="!ID_WOTC_PSK_SUBRACE_KALADESH_DWARF" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_STONECUNNING" requirements="!ID_WOTC_PSK_SUBRACE_KALADESH_DWARF" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_SUBRACE" />
     </rules>
   </element>
 
-  <element name="Dwarven Resilience" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE">
+  <element name="Dwarven Resilience" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_RESILIENCE">
     <supports />
     <requirements />
     <description>
@@ -77,9 +77,11 @@
     <sheet>
       <description>You have advantage on saving throws against poison, and you have resistance against poison damage.</description>
     </sheet>
-    <rules />
+    <rules>
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+	</rules>
   </element>
-  <element name="Dwarven Combat Training" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_COMBAT_TRAINING">
+  <element name="Dwarven Combat Training" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_COMBAT_TRAINING">
     <supports />
     <requirements />
     <description>
@@ -89,13 +91,13 @@
       <description>You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.</description>
     </sheet>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER" />
     </rules>
   </element>
-  <element name="Tool Proficiency" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_TOOL_PROFICIENCY">
+  <element name="Tool Proficiency" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_TOOL_PROFICIENCY">
     <supports />
     <requirements />
     <description>
@@ -106,23 +108,23 @@
       <select type="Proficiency" name="Dwarven Tool Proficiency" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS" />
     </rules>
   </element>
-  <element name="Stonecunning" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_STONECUNNING">
+  <element name="Stonecunning" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_STONECUNNING">
     <supports />
     <requirements />
     <description>
       <p>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
     </description>
     <sheet>
-      <description>Twice your proficiency bonus on Intelligence (History) check related to origin of stonework. (%stonecunning:check%)</description>
+      <description>A +{{stonecunning:check}} on Intelligence (History) check related to origin of stonework.</description>
     </sheet>
     <rules>
-      <stat name="stonecunning:check" value="Intelligence Modifier" />
-      <stat name="stonecunning:check" value="History Misc" />
-      <stat name="stonecunning:check" value="Proficiency" />
-      <stat name="stonecunning:check" value="Proficiency" />
+      <stat name="stonecunning:check" value="intelligence:modifier" />
+      <stat name="stonecunning:check" value="history:misc" />
+      <stat name="stonecunning:check" value="proficiency" />
+      <stat name="stonecunning:check" value="proficiency" />
     </rules>
   </element>
-  <element name="Dwarven Subrace" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_SUBRACE">
+  <element name="Dwarven Subrace" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_SUBRACE">
     <supports></supports>
     <requirements />
     <description>
@@ -134,11 +136,11 @@
     </rules>
   </element>
 
-  <element name="Hill Dwarf" type="Sub Race" source="Player’s Handbook"  id="ID_SUB_RACE_HILL_DWARF">
+  <element name="Hill Dwarf" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_HILL_DWARF">
     <supports>Dwarf</supports>
     <requirements />
     <description>
-      <p>As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. <!--The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.--></p>
+      <p>As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.</p>
       <p>
         <span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 1.<br />
         <span class="feature">Dwarven Toughness.</span>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.<br />
@@ -150,25 +152,25 @@
       <set name="weight" modifier="2d6">115 lb.</set>
     </setters>
     <rules>
-      <stat name="Wisdom" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_TOUGHNESS" />
+      <stat name="wisdom" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_TOUGHNESS" />
     </rules>
   </element>
-  <element name="Dwarven Toughness" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_TOUGHNESS">
+  <element name="Dwarven Toughness" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_TOUGHNESS">
     <supports />
     <requirements />
     <description>
       <p>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</p>
     </description>
-    <sheet>
+    <sheet display="false">
       <description>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</description>
     </sheet>
     <rules>
-      <stat name="HP" value="+Level" />
+      <stat name="hp" value="level" />
     </rules>
   </element>
 
-  <element name="Mountain Dwarf" type="Sub Race" source="Player’s Handbook"  id="ID_SUB_RACE_MOUNTAIN_DWARF">
+  <element name="Mountain Dwarf" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_MOUNTAIN_DWARF">
     <supports>Dwarf</supports>
     <requirements />
     <description>
@@ -184,11 +186,11 @@
       <set name="weight" modifier="2d6">130 lb.</set>
     </setters>
     <rules>
-      <stat name="Strength" value="+2" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_DWARVEN_ARMOR_TRAINING" />
+      <stat name="strength" value="2" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_DWARVEN_ARMOR_TRAINING" />
     </rules>
   </element>
-  <element name="Dwarven Armor Training" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_DWARVEN_ARMOR_TRAINING">
+  <element name="Dwarven Armor Training" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DWARVEN_ARMOR_TRAINING">
     <supports />
     <requirements />
     <description>
@@ -198,8 +200,8 @@
       <description>You have proficiency with light and medium armor.</description>
     </sheet>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
     </rules>
   </element>
 

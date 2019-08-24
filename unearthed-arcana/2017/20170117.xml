@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Ranger &amp; Rogue</name>
         <description>At 3rd level, a ranger gains the Ranger Archetype feature. Here are new options for that feature: the Horizon Walker and the Primeval Guardian.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/ranger-and-rogue">Wizards of the Coast</author>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="20170117.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170117.xml" />
         </update>
     </info>
@@ -19,14 +19,12 @@
 			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
 			<set name="official">true</set>
 			<set name="playtest">true</set>
-			<set name="release">20170117</set>
+			<set name="release">20170116</set>
 		</setters>
 	</element>
 
     <element name="Primeval Guardian" type="Archetype" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_PRIMEVAL_GUARDIAN">
         <supports>Ranger Archetype</supports>
-        <prerequisites />
-        <requirements />
         <description>
             <p>Rangers of the Primeval Guardian Conclave follow an ancient tradition rooted in powerful druidic magic. These rangers learn to become one with nature, allowing them to channel the aspects of various beasts and plants in order to overcome their foes.</p>
             <p class="indent">These rangers dwell in the elder forests of the world. They venture out only rarely, as they consider it their sacred duty to protect the druidic groves and ancient trees that saw the earliest days of the world.</p>
@@ -40,7 +38,6 @@
         <sheet>
             <description>Rangers of the Primeval Guardian Conclave follow an ancient tradition rooted in powerful druidic magic.</description>
         </sheet>
-        <setters />
         <rules>
             <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_MAGIC" level="3" />
             <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_GUARDIAN_SOUL" level="3" />
@@ -52,9 +49,6 @@
     </element>
         
     <element name="Primeval Guardian Magic" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_MAGIC">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Primeval Guardian Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
             <h5>PRIMEVAL GUARDIAN SPELLS</h5>
@@ -73,7 +67,6 @@
               </table>
         </description>
         <sheet display="false" />
-        <setters />
         <rules>
             <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" level="3" spellcasting="Ranger"/>
             <grant type="Spell" id="ID_PHB_SPELL_ENHANCE_ABILITY" level="5" spellcasting="Ranger" />
@@ -84,9 +77,6 @@
     </element>
 
     <element name="Guardian Soul" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_GUARDIAN_SOUL">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are incapacitated.</p>
             <p class="indent">You undergo the following changes while in your guardian form:</p>
@@ -100,35 +90,26 @@
         <sheet>
             <description>As a bonus action, you assume your guardian form, which lasts until you end it as a bonus action or until you are incapacitated.</description>
         </sheet>
-        <setters />
         <rules />
     </element>
 
     <element name="Piercing Thorns" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_PIERCING_THORNS">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>At 3rd level, your command of primal magic allows you to enhance your attacks with thorns. Once during each of your turns, you can deal an additional 1d6 piercing damage to one creature you hit with a weapon attack.</p>
         </description>
         <sheet>
             <description>Once during each of your turns, you can deal an additional 1d6 piercing damage to one creature you hit with a weapon attack.</description>
         </sheet>
-        <setters />
         <rules />
     </element>
 
     <element name="Ancient Fortitude" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_ANCIENT_FORTITUDE">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>At 7th level, you gain the endurance of the ancient forests. Your hit point maximum and current hit points increase by 2 per ranger level when you assume your guardian form. This increase lasts until you leave the form; your hit point maximum then returns to normal, but your current hit points remain the same, unless they must decrease to abide by your hit point maximum.</p>
         </description>
         <sheet>
-            <description>Your hit point maximum and current hit points increase by %ancient fortitude% when you assume your guardian form. This lasts until you leave the form.</description>
+            <description>Your hit point maximum and current hit points increase by {{ancient fortitude}} when you assume your guardian form. This lasts until you leave the form.</description>
         </sheet>
-        <setters />
         <rules>
 			<stat name="ancient fortitude" value="level:ranger" />
 			<stat name="ancient fortitude" value="level:ranger" />
@@ -136,30 +117,22 @@
     </element>
 
     <element name="Rooted Defense" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_ROOTED_DEFENSE">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>At 11th level, you gain the ability to twist and turn the ground beneath you. While you are in your guardian form, the ground within 30 feet of you is difficult terrain for your enemies.</p>
         </description>
         <sheet>
             <description>While you are in your guardian form, the ground within 30 feet of you is difficult terrain for your enemies.</description>
         </sheet>
-        <setters />
         <rules />
     </element>
 
     <element name="Guardian Aura" type="Archetype Feature" source="Unearthed Arcana: Ranger &amp; Rogue" id="ID_WOTC_UA_ARCHETYPE_FEATURE_PRIMEVAL_GUARDIAN_GUARDIAN_AURA">
-        <supports />
-        <prerequisites />
-        <requirements />
         <description>
             <p>Starting at 15th level, your guardian form emanates a magical aura that fortifies your injured allies. When any ally starts their turn within 30 feet of your guardian form, that ally regains a number of hit points equal to half your ranger level. This aura has no effect on a creature that has half or more of its hit points, and it has no effect on undead and constructs.</p>
         </description>
         <sheet>
             <description>When any ally starts their turn within 30 feet of your guardian form, that ally regains a number of hit points equal to half your ranger level. Has no effect on a creature that has half or more of its hit points, and it has no effect on undead and constructs.</description>
         </sheet>
-        <setters />
         <rules />
     </element>
     

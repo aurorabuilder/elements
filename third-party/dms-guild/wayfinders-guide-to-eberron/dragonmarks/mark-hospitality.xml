@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.3">
+			<file name="mark-hospitality.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-hospitality.xml" />
+		</update>
+	</info>
+
+	<element name="The Mark of Hospitality" type="Sub Race" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_HOSPITALITY_DRAGONMARK">
+		<supports>Halfling</supports>
+		<description>
+			<p>They may not always have gold, but a halfling with the Mark of Hospitality is sure to be rich in friends. The magic of the mark allows the bearer to keep a place clean, and to heat, chill, and season food. But it also helps the bearer connect with others, setting troubled minds at ease—a powerful tool, though it can cause anger if abused. </p>
+			<h4>HOUSE GHALLANDA</h4>
+			<p>The majority of inns, taverns, and restaurants in the Five Nations are either directly owned by House Ghallanda or licensed by its Hosteler’s Guild. Most people give little thought to House Ghallanda; when compared to the soldiers of House Deneith and the factories of House Cannith, an alliance of innkeepers seems harmless and inconsequential. But Ghallanda’s strength lies in charm and connections. A Ghallanda innkeeper hears many things—if you want to know what’s really going on in the community, talk to the halfling bartender. The leaders of House Ghallanda don’t sell information; they prefer to build friendship and deal in favors. But should a Ghallanda baron every truly need something, they likely have a favor they can call in. </p>
+			<p class="indent">Ghallanda has a number of “bound businesses”—franchises run directly by the house. The Gold Dragon Inn is such a business, and Gold Dragon Inns can be found in every major city, each serving a familiar menu and providing similar services. But many Ghallanda heirs take pride in creating their own unique businesses. There are also many independent restaurants, inns, and taverns that are licensed by Ghallanda. The blink dog seal is an assurance that a locale meets Ghallanda standards of health and quality- but not every inn is run by a halfling. </p>
+			<h4>MARK OF HOSPITALITY TRAITS</h4>
+			<p>Characters with the Mark of Hospitality gain the following traits</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Inkeeper’s Charms.</em></strong> You know the cantrips friends and prestidigitation Charisma is your spellcasting ability for them.</p>
+			<p class="indent"><strong><em>Ever Hospitable.</em></strong> When you make a Charisma (Persuasion) check or an ability check involving brewer’s supplies or cook’s utensils, you can roll one Intuition die (a d4) and add the number rolled to the ability check.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Halfling (Mark of Hospitality)" display="false" />
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_HOSPITALITY_DRAGONMARK_RACIAL_TRAIT_INKEEPERS_CHARM" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_HOSPITALITY_DRAGONMARK_RACIAL_TRAIT_EVERY_HOSPITABLE" />
+		</rules>
+	</element>
+
+	<element name="Inkeeper’s Charm" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_HOSPITALITY_DRAGONMARK_RACIAL_TRAIT_INKEEPERS_CHARM">
+		<description>
+			<p>You know the cantrips friends and prestidigitation Charisma is your spellcasting ability for them.</p>
+		</description>
+		<sheet>
+			<description>You know the cantrips friends and prestidigitation (Spellcasting: Charisma).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FRIENDS" />
+			<grant type="Spell" id="ID_PHB_SPELL_PRESTIDIGITATION" />
+		</rules>
+	</element>
+
+	<element name="Ever Hospitable" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_HOSPITALITY_DRAGONMARK_RACIAL_TRAIT_EVERY_HOSPITABLE">
+		<description>
+			<p>When you make a Charisma (Persuasion) check or an ability check involving brewer’s supplies or cook’s utensils, you can roll one Intuition die (a d4) and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Persuasion check or an ability check involving brewer’s supplies or cook’s utensils, you can roll one Intuition die (a d{{dragonmarked-intuition-dice:size}}) and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+
+</elements>

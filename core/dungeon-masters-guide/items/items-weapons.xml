@@ -4,7 +4,7 @@
 		<name>Weapons</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.4">
 			<file name="items-weapons.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/dungeon-masters-guide/items/items-weapons.xml" />
 		</update>
 	</info>
@@ -20,7 +20,7 @@
 			<set name="rarity">Uncommon</set>
 			<set name="enhancement">1</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -36,7 +36,7 @@
 			<set name="rarity">Rare</set>
 			<set name="enhancement">2</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -52,7 +52,7 @@
 			<set name="rarity">Very Rare</set>
 			<set name="enhancement">3</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -90,7 +90,7 @@
 			<set name="rarity">Uncommon</set>
 			<set name="enhancement">1</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
-			<set name="name-format">$(parent) of Vengeance</set>
+			<set name="name-format">{{parent}} of Vengeance</set>
 		</setters>
 		<rules />
 	</element>
@@ -122,7 +122,7 @@
 			<set name="attunement">true</set>
 			<set name="rarity">Uncommon</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">$(parent) of Warning</set>
+			<set name="name-format">{{parent}} of Warning</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
@@ -144,7 +144,7 @@
 			<set name="rarity">Rare</set>
 			<set name="cursed">true</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_AXES</set>
-			<set name="name-format">Berserker $(parent)</set>
+			<set name="name-format">Berserker {{parent}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -298,7 +298,7 @@
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
-			<set name="name-format">$(parent) of Life Stealing</set>
+			<set name="name-format">{{parent}} of Life Stealing</set>
 		</setters>
 		<rules />
 	</element>
@@ -316,7 +316,7 @@
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
-			<set name="name-format">$(parent) of Wounding</set>
+			<set name="name-format">{{parent}} of Wounding</set>
 		</setters>
 		<rules />
 	</element>
@@ -332,7 +332,7 @@
 			<set name="type" addition="any">Weapon</set>
 			<set name="rarity">Rare</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">Vicious $(parent)</set>
+			<set name="name-format">Vicious {{parent}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -351,7 +351,7 @@
 			<set name="attunement">true</set>
 			<set name="rarity">Very Rare</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
-			<set name="name-format">Dancing $(parent)</set>
+			<set name="name-format">Dancing {{parent}}</set>
 		</setters>
 		<rules />
 	</element>
@@ -458,7 +458,7 @@
 			<set name="attunement">true</set>
 			<set name="rarity">Very Rare</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS,ID_INTERNAL_DAMAGE_TYPE_SLASHING</set>
-			<set name="name-format">$(parent) of Sharpness</set>
+			<set name="name-format">{{parent}} of Sharpness</set>
 		</setters>
 	</element>
 	<element name="Defender" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DEFENDER">
@@ -492,10 +492,17 @@
 			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="maul">Weapon</set>
 			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
 			<set name="enhancement">1</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_MAULS</set>
 		</setters>
-		<rules />
+		<rules>
+			<stat name="strength" value="4" />
+			<stat name="strength:max" value="10" />
+			<!-- todo: set stacking bonus on base [strength:max] -->
+			<!-- todo: requirement for [equipped (attunement is not required)] -->
+			<!-- requirement="ID_WOTC_DMG_MAGIC_ITEM_GAUNTLETS_OF_OGRE_POWER,(ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_HILL_GIANT_STRENGTH||ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_STONE_GIANT_STRENGTH||ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_FROST_GIANT_STRENGTH||ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_FIRE_GIANT_STRENGTH||ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_CLOUD_GIANT_STRENGTH||ID_WOTC_DMG_MAGIC_ITEM_BELT_OF_STORM_GIANT_STRENGTH)" -->
+		</rules>
 	</element>
 	<element name="Holy Avenger" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_HOLY_AVENGER">
 		<description>
