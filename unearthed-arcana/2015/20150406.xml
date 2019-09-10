@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Modifying Classes</name>
+		<description>Sometimes a campaign will have special needs for archetypes or character options not found in the existing official material. If you’re in this situation, you might want to modify one or more of the classes in the game in order to provide options for players looking for a unique twist on their characters’ abilities. However, modifying a class is not something that should be undertaken lightly, and the job requires some serious effort, playtesting, and revision to get it right. The two best ways to modify a class are to swap out some class features for different ones, and to add new to an existing class. This article presents methods that will help you to use existing mechanics as a model, while drawing upon features of other classes for inspiration.</description>
+		<author url="https://dnd.wizards.com/articles/unearthed-arcana/modifying-classes">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="20150406.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2015/20150406.xml" />
+		</update>
+	</info>
+	
+	<element name="Unearthed Arcana: Modifying Classes" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20150406">
+		<description>
+			<p>Sometimes a campaign will have special needs for archetypes or character options not found in the existing official material. If you’re in this situation, you might want to modify one or more of the classes in the game in order to provide options for players looking for a unique twist on their characters’ abilities. However, modifying a class is not something that should be undertaken lightly, and the job requires some serious effort, playtesting, and revision to get it right. The two best ways to modify a class are to swap out some class features for different ones, and to add new to an existing class. This article presents methods that will help you to use existing mechanics as a model, while drawing upon features of other classes for inspiration.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20150406</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/modifying-classes</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20150406</set>
+		</setters>
+	</element>
+
+	<!-- Rule Element-->
+	<element name="Favored Soul" type="Rule" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_RULE_FAVORED_SOUL">
+		<description>
+			<p>As an example of how creating a new class option could work, let’s  examine a design that was a full-fledged class in the third edition supplement <i>Complete Divine</i>: the favored soul. This might be an appealing archetype if you are running a game where the gods are going to have a big impact on the world, and where the Chosen of those gods (individuals bestowed with a fragment of a god’s divine power) are prominent players in the campaign. To reflect this tone,  let’s create the Favored Soul as anew origin for the sorcerer class. This decision reflects the idea that the character is someone who is fundamentally changed by the touch of his or her deity, which awakens powerful magical abilities.</p>
+			<p class="indent">Looking at the existing sorcerous origins, we can determine that, at 1st level, an origin provides not only the explanation for the source of the sorcerer’s power, but also a flourish on the way that character plays. Since this sorcerer is going to be gaining its magic by being imbued with divine power, we decide to give the Favored Soul access to some spells normally gained by the cleric. Any time we expand the known spells of the sorcerer, we run the risk of overshadowing the other sorcerous origins, since the limitation on the number of spells the sorcerer knows has a big impact on how the class plays. This indicates that the other class features probably shouldn’t all tie closely to the sorcerer’s spellcasting, since that aspect of the sorcerer is already getting quite a boost. Since the favored soul class was a little more martial in its previous incarnation, we decide to give our sorcerer some better armor and access to simple weapons, similar to the defensive bonuses gained by the Draconic Bloodline sorcerer at 1st level.</p>
+			<p class="indent">At 6th level, the other sorcerous origins provide features that have an impact on the character’s combat abilities. Looking at the bard class, we can see that the College of Valor gains the Extra Attack class feature at the same level, and we decide to give that to the Favored Soul to further enhance its martial bent.</p>
+			<p class="indent">At 14th level, the sorcerous origins provide some measure of utility, with little direct impact on spellcasting or combat capabilities. Here, we choose to model the Favored Soul’s feature after the Draconic Bloodline’s feature at the same level, reflecting the touch of the divine with some imagery typically associated with divinity: wings.</p>
+			<p class="indent">At 18th level, the sorcerous origins provide options that are both potent and strongly linked to the origin’s central theme. Since the sorcerer will have access to higher-level spells at this level, and the feature we gave it at 1st level to provide some cleric spells won’t have as much of an impact, we decide to tie this class feature to those cleric spells, both to incentivize the continued use of those spells, and to give the Favored Soul a little more resilience in the face of high-level threats.</p>
+		</description>
+		<setters>
+			<set name="keywords">favored, soul, origin, sorcerous</set>
+		</setters>
+	</element>
+
+	<!-- Favored Soul -->
+	<element name="Favored Soul" type="Archetype" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_SORCERER_ARCHETYPE_FAVORED_SOUL">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<div element="ID_WOTC_UA20150406_RULE_FAVORED_SOUL" />
+			<p class="indent">When we are done with this initial design, here’s what the Favored Soul sorcerous origin looks like:</p>
+			<div element="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_CHOSEN_OF_THE_GODS" />
+			<div element="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_EXTRA_ATTACK" />
+			<div element="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_DIVINE_WINGS" />
+			<div element="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_POWER_OF_THE_CHOSEN" />
+		</description>
+		<sheet>
+			<description>Sometimes the spark of magic that fuels a sorcerer comes from a divine source that glimmers within the soul.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_CHOSEN_OF_THE_GODS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_BONUS_PROFICIENCIES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_DIVINE_WINGS" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_POWER_OF_THE_CHOSEN" level="18" />
+		</rules>
+	</element>
+	<element name="Chosen of the Gods" type="Archetype Feature" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_CHOSEN_OF_THE_GODS">
+		<description>
+			<p>At 1st level, you choose one of the cleric class’s divine domains. You add that domain’s spells for 1st-level clerics to your known spells. These spells do not count against the number of spells you can know, and they are considered to be sorcerer spells for you. When you reach 3rd, 5th, 7th, and 9th levels in the sorcerer class, you likewise learn your domain’s spells that become available at those levels.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Archetype Feature" name="Divine Domain (Favored Soul)" supports="Favored Soul Divine Domain" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_BONUS_PROFICIENCIES">
+		<description>
+			<p>At 1st level, you gain proficiency in light armor, medium armor, shields, and simple weapons.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+		</rules>
+	</element>
+	<element name="Extra Attack" type="Archetype Feature" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_EXTRA_ATTACK">
+		<description>
+			<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" />
+		</rules>
+	</element>
+	<element name="Divine Wings" type="Archetype Feature" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_DIVINE_WINGS">
+		<description>
+			<p>At 14th level, you gain the ability to sprout a pair of wings from your back (feathered or bat-like, your choice), gaining a flying speed equal to your current walking speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.</p>
+			<p class="indent">You can’t manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can sprout a pair of wings from your back (feathered or bat-like, your choice), gaining a flying speed equal to your current walking speed. They last until you dismiss them as a bonus action on your turn. You can’t manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.</description>
+		</sheet>
+	</element>
+	<element name="Power of the Chosen" type="Archetype Feature" source="Unearthed Arcana: Modifying Classes" id="ID_WOTC_UA20150406_FAVORED_SOUL_ARCHETYPE_FEATURE_POWER_OF_THE_CHOSEN">
+		<description>
+			<p>Starting at 18th level, when you cast one of the spells you learned from your Chosen of the Gods class feature, you regain hit points equal to your Charisma modifier (minimum +1) + the spell’s level.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you cast one of the spells you learned from your Chosen of the Gods class feature, you regain hit points equal to your {{power of the chosen}} + the spell’s level.</description>
+		</sheet>
+		<rules>
+			<stat name="power of the chosen" value="1" bonus="base" />
+			<stat name="power of the chosen" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<!-- Favored Soul Divine Domain elements-->
+</elements>
