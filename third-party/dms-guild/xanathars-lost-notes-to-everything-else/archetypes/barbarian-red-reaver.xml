@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Path of the Red Reaver</name>
+		<update version="0.0.1">
+			<file name="barbarian-red-reaver.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/barbarian-red-reaver.xml" />
+		</update>
+	</info>
+	
+	<element name="Path of the Red Reaver" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_PATH_OF_THE_RED_REAVER">
+		<supports>Primal Path</supports>
+		<description>
+			<p>The Path of the Red Reaver is a warrior’s hunt for meaning in a life borne of suffering and violence, not some ritualistic process for raiding cannibals as inexperienced adventurers might have you believe. The barbarians that follow this path fuel their rage with this pursuit of purpose. For those that live long enough, their discipline becomes almost monk-like in its meditation, chasing their sense of self through the arteries of those they deem worthy in battle.</p>
+			<p class="indent">As wizards live to slake their thirst for knowledge, barbarians who follow the Path of Red Reaver are usually drawn to the greatest challenge in the field, not for bragging rights, or even to turn the tide of battle, but to further discern their place in the veins of their world.</p>	
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_DEVOURER" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_SCENT" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_HOUND" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_OF_THE_PACK" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_CLARITY" />		
+		</description>
+		<sheet display="false">
+			<description>A warrior’s hunt for meaning in a life borne of suffering and violence.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_DEVOURER" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_SCENT" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_HOUND" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_OF_THE_PACK" level="10" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_CLARITY" level="14" />
+		</rules>
+	</element>
+
+	<element name="Devourer" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_DEVOURER">
+		<description>
+			<p>Starting when you choose this path at 3rd level, your thirst for blood channels the life-force of your foes to sustain you. When you’re raging and below half of your hit point maximum, at the start of your turn you can enter a Devouring Rage by expending any number of Hit Dice as a bonus action. For the duration of your Rage, your weapons become magical for the purpose of overcoming damage resistances and immunities, and on a hit, you regain a number of hit points equal to 1 plus the number of Hit Dice you spent. On a critical hit, you restore twice that amount of hit points.</p>
+			<p class="indent">Your target must have blood in order for you to regain hit points from an attack.</p>
+			<p class="indent">At the beginning of each turn, if you haven’t hit a hostile creature since your last turn, you suffer damage equal to the number you would regain on a hit but retain your Devouring Rage and its features.</p>
+			<p class="indent">Your Devouring Rage ends once you reach your hit point maximum or you exit your Rage whichever happens first.</p>
+		</description>
+		<sheet>
+			<description>When you’re raging and below half of your hit point maximum, at the start of your turn you can enter a Devouring Rage by expending any number of Hit Dice as a bonus action. For the duration of your Rage, your weapons become magical for the purpose of overcoming damage resistances and immunities, and on a hit, you regain a number of hit points equal to 1 plus the number of Hit Dice you spent. On a critical hit, you restore twice that amount of hit points.
+			At the beginning of each turn, if you haven’t hit a hostile creature since your last turn, you suffer damage equal to the number you would regain on a hit but retain your Devouring Rage and its features.
+			Your Devouring Rage ends once you reach your hit point maximum or you exit your Rage whichever happens first.</description>
+		</sheet>
+	</element>
+	<element name="Sanguine Scent" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_SCENT">
+		<description>
+			<p>Also at 3rd level, your senses become preternaturally attuned to the scent of blood. As an action on your turn, you can draw a deep breath to immediately track the scent of creatures around you. For the next 10 minutes, you’re able to smell the approximate number of living creatures within 60 feet of you. You can differentiate the type but not the identity of any specific creature.</p>
+			<p class="indent">If you know the creature you’re looking for and have access to one of its possessions, you can focus solely on that target. While focused, you can’t use this feature to detect any other creature but your quarry. When you would make a Wisdom (Survival) check to track your quarry, the creature instead makes a Wisdom saving throw with a DC equal to 8 + your proficiency bonus + your Constitution modifier. On a failure, you learn the direction and approximate distance to that creature, and are able to follow its scent even through terrain that would normally cover its scent, like running water.</p>
+			<p class="indent">You can use this feature a number of times equal to 1 + your Constitution modifier. When you finish a long rest, you regain all expended uses. You must be able to breathe in order to use this feature.</p>
+		</description>
+		<sheet action="Action" usage="{{sanguine scent:usage}}/Long Rest">
+			<description>On your turn, you can draw a deep breath to immediately track the scent of creatures around you. For the next 10 minutes, you’re able to smell the approximate number of living creatures within 60 feet of you. You can differentiate the type but not the identity of any specific creature.
+			If you know the creature you’re looking for and have access to one of its possessions, you can focus solely on that target. While focused, you can’t use this feature to detect any other creature but your quarry. When you would make a Wisdom (Survival) check to track your quarry, the creature instead makes a DC{{sanguine scent:dc}} Wisdom saving throw. On a failure, you learn the direction and approximate distance to that creature, and are able to follow its scent even through terrain that would normally cover its scent, like running water.
+			You must be able to breathe in order to use this feature.</description>
+		</sheet>
+		<rules>
+			<stat name="sanguine scent:dc" value="8" />
+			<stat name="sanguine scent:dc" value="proficiency" />
+			<stat name="sanguine scent:dc" value="constitution:modifier" />
+			<stat name="sanguine scent:usage" value="1" bonus="base" />
+			<stat name="sanguine scent:usage" value="constitution:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Blood Hound" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_HOUND">
+		<description>
+			<p>When you reach 6th level, your mystic connection to blood has honed your sense of smell to mythic proportions. The range of your Sanguine Scent is increased to 120 feet and you no longer need access to a creature’s possessions to track it if you have spent at least 5 minutes within 30 feet of your target within the last 24 hours.</p>
+			<p class="indent">Additionally, you can spend 1 Hit Die to learn the exact number and general location of creatures in the area or, when focused on a single target, impose disadvantage on your target’s saving throw against being tracked by you and the range of your tracking ability becomes 5 miles for that creature.</p>
+		</description>
+		<sheet>
+			<description>The range of your Sanguine Scent is increased to 120 feet and you no longer need access to a creature’s possessions to track it if you have spent at least 5 minutes within 30 feet of your target within the last 24 hours.
+			Additionally, you can spend 1 Hit Die to learn the exact number and general location of creatures in the area or, when focused on a single target, impose disadvantage on your target’s saving throw against being tracked by you and the range of your tracking ability becomes 5 miles for that creature.</description>
+		</sheet>
+	</element>
+	<element name="Blood of the Pack" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_BLOOD_OF_THE_PACK">
+		<description>
+			<p>At 10th level, your wild blood fury is tempered by the bond you share with your allies. While your current hit point total is at least half of your hit point maximum, you can expend any number of Hit Dice as an action to heal an equal number living creatures other than you within 10 feet of you. On your turn, roll 1 Hit Die for each creature you target with this feature. The creature regains a number of hit points equal to the result + your Constitution modifier (minimum of 1). Repeat the process for each creature you choose. Once you use this feature, you suffer one level of exhaustion and can’t use this feature again until you have finished a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>While your current hit point total is at least half of your hit point maximum, you can expend any number of Hit Dice as an action to heal an equal number living creatures other than you within 10 feet of you. On your turn, roll 1 Hit Die for each creature you target with this feature. The creature regains a number of hit points equal to the result + {{blood of the pack:hp}}. Repeat the process for each creature you choose. Once you use this feature, you suffer one level of exhaustion.</description>
+		</sheet>
+		<rules>
+			<stat name="blood of the pack:hp" value="1" bonus="base" />
+			<stat name="blood of the pack:hp" value="constitution:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Sanguine Clarity" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_CLARITY">
+		<description>
+			<p>Starting at 14th level, your rage becomes focused and precise, rather than wild and wrathful. When you enter a rage or a Devouring Rage you may expend up to 3 Hit Dice to increase the critical range of your attack rolls for the duration of your rage. For example, if you expend 2 Hit Dice, your weapon attacks score a critical hit on a roll of 18, 19, or 20.</p>
+			<p class="indent">If you already score a critical hit on a roll lower than 20 due to other class features or effects, this feature allows you to expand your critical range even further.</p>
+		</description>
+		<sheet>
+			<description>When you enter a rage or a Devouring Rage you may expend up to 3 Hit Dice to increase the critical range of your attack rolls for the duration of your rage. For example, if you expend 2 Hit Dice, your weapon attacks score a critical hit on a roll of 18, 19, or 20.
+			If you already score a critical hit on a roll lower than 20 due to other class features or effects, this feature allows you to expand your critical range even further.</description>
+		</sheet>
+	</element>
+</elements>
