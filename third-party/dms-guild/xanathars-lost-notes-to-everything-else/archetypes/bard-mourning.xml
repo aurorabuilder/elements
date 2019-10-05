@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Mourning</name>
+		<update version="0.0.1">
+			<file name="bard-mourning.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/bard-mourning.xml" />
+		</update>
+	</info>
+	
+	<element name="College of Mourning" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_COLLEGE_OF_MOURNING">
+		<supports>Bard College</supports>
+		<description>
+			<p>Bards of the College of Mourning specialize in easing the transition from life to death. While most bards derive their artistic catalogue from celebrating the lives of the valiant, mourning bards create a gateway for dead knights, faithful priests, and wise viziers who dedicated their lives in service, to accomplish any lingering obligations of the Material Plane.</p>
+			<p class="indent">While some see romanticizing death as macabre, the college spent centuries observing religious rites and composing teachings of necromancy in prose to entreat the dead to remain long enough to fulfill their purpose.</p>
+			<p class="indent">Whether woodwind or brass, string or drum, these bards are versed in delicate affairs and often find work in parades krewes, as pallbearers, or on other occasions where tact and taste are tantamount. Mourning bards improvise their melodies to mask the cries and wails of grieving loved ones, and often turn dour occasions into celebrations of remembrance. Whatever their method, their purpose is always to complement the spirits’ shuffle to the afterlife in ceremonious display with arrangements of grace and style.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_MOURNING_MOURNING_GLORY" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_MOURNING_GRIEF_NOTE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DIRGE_OF_THE_PALLBEARER" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DREAD_PARADE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_MOURNING_GLORY" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_GRIEF_NOTE" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DIRGE_OF_THE_PALLBEARER" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DREAD_PARADE" level="14" />
+		</rules>
+	</element>
+
+	<element name="Mourning Glory" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_MOURNING_GLORY">
+		<description>
+			<p>When you join the College of Mourning at 3rd level, you learn the spare the dying cantrip. You also gain proficiency in the Medicine and Religion skills.</p>
+		</description>
+		<sheet>
+			<description>You learn the spare the dying cantrip. You also gain proficiency in the Medicine and Religion skills.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Bard" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+		</rules>
+	</element>
+	<element name="Grief Note" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_GRIEF_NOTE">
+		<description>
+			<p>Also at 3rd level, when a creature you can see within 60 feet, including you, deals damage to a target other than itself, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number on the die to the damage of the attack. The creature also regains hit points equal to the number on the die.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see within 60 feet, including you, deals damage to a target other than itself, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number on the die to the damage of the attack. The creature also regains hit points equal to the number on the die.</description>
+		</sheet>
+	</element>
+	<element name="Dirge of the Pallbearer" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DIRGE_OF_THE_PALLBEARER">
+		<description>
+			<p>At 6th level, you learn the animate dead spell, which counts as a bard spell for you but doesn’t count against the number of bard spells you know. Also, whenever you create an undead creature using a necromancy spell, it gains the additional benefits for 1 minute:</p>
+			<ul>
+				<li>The creature gains temporary hit points equal to your bard level.</li>
+				<li>The creature adds your Charisma modifier to its attack rolls and damage rolls.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Whenever you create an undead creature using a necromancy spell, it gains the additional benefits for 1 minute:
+			{{level:bard}} temporary hit points
+			it adds +{{charisma:modifier}} to its attack rolls and damage rolls</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Bard" />
+		</rules>
+	</element>
+	<element name="Dread Parade" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_MOURNING_DREAD_PARADE">
+		<description>
+			<p>At 14th level, you can summon a ghostly progression from the minstrel spirits of yesteryear. You lead a number of spectral troubadours equal to your Charisma modifier (minimum of 1) that march in a tight formation behind you for 1 minute, whose music gives pause those would do you harm.</p>
+			<p class="indent">At the start of each of your turns, each creature of your choice within 60 feet must succeed on a Wisdom saving throw or take 1d4 psychic damage for each minstrel you summon, and has disadvantage on their next attack roll.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="Long Rest">
+			<description>You lead {{dread parade:number}} spectral troubadours that march in a tight formation behind you for 1 minute, whose music gives pause those would do you harm.
+			At the start of each of your turns, each creature of your choice within 60 feet must succeed on a Wisdom saving throw or take 1d4 psychic damage for each minstrel you summon ({{dread parade:number}}d4), and has disadvantage on their next attack roll.</description>
+		</sheet>
+		<rules>
+			<stat name="dread parade:number" value="1" bonus="base" />
+			<stat name="dread parade:number" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>	
+</elements>

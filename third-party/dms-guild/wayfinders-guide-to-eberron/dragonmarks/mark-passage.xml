@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragonmarked Human variants</name>
+		<description>Dragonmarked Human variants from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="mark-passage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-passage.xml" />
+		</update>
+	</info>
+	<element name="The Mark of Passage" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_VARIANT_HUMAN_PASSAGE">
+		<supports>Human</supports>
+		<description>
+			<p>The Mark of Passage governs motion, allowing its bearer to move with uncanny speed and precision. Running, leaping, climbing—the Mark of Passage enhances every form of movement. The bearer of the mark can even slip through space, leaping from point to point in the blink of an eye. </p>
+			<h4>HOUSE ORIEN</h4>
+			<p>The House of Passage manages land transportation. The lightning rail is the house’s most dramatic tool, but Orien runs caravans and coaches across the length of Khorvaire. Dragonshard focus items ensure that the fastest vehicles are those driven by heirs with the Mark of Passage, but the house also licenses unmarked teamsters. The Courier’s Guild of House Orien delivers mail and packages and has a branch that handles more covert and dangerous deliveries.  </p>
+			<p class="indent">Orien has dominated transportation for centuries, but now the house is facing challenges. The Mournland is a dramatic obstacle for ground transportation, and the expanding role of Lyrandar airships threatens Orien’s business. Long distance teleportation is a service only the strongest Orien heirs can provide. Now Orien, seeking to expand its use of teleportation, is working with Cannith to find ways to unlock and enhance this ultimate gift of the Mark of Making. Orien heirs may be caught up in these experiments or in the rivalry with House Lyrandar, or they may stay close to the ground and just keep moving. </p>
+			<h4>MARK OF PASSAGE TRAITS</h4>
+			<p>The Mark of Passage only manifests on humans. These traits replace the human Ability Score Increase trait given in the Player’s Handbook. </p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 2 and one other ability score of your choice increases by 1. </p>
+			<p class="indent"><strong><em>Courier's Speed.</em></strong> Your base walking speed increases to 40 ft. </p>
+			<p class="indent"><strong><em>Intuitive Motion.</em></strong> When you make a Strength (Athletics) check or any ability check to operate or maintain a land vehicle, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Determined Stride.</em></strong> When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.</p>
+			<p class="indent"><strong><em>Shared Passage.</em></strong> As a bonus action you can teleport a distance up to your walking speed, ending in an unoccupied space that you can see. You can bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you use this trait. Once you use this trait, you can’t use it again until you finish a long rest. </p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Human (Mark of Passage)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="dexterity" value="2" />
+			<stat name="innate speed" value="40" bonus="base" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Passage)" supports="ID_RACE_VARIANT_HUMAN_VARIANT_STRENGTH|ID_RACE_VARIANT_HUMAN_VARIANT_CONSTITUTION|ID_RACE_VARIANT_HUMAN_VARIANT_INTELLIGENCE|ID_RACE_VARIANT_HUMAN_VARIANT_WISDOM|ID_RACE_VARIANT_HUMAN_VARIANT_CHARISMA" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_INTUITIVE_MOTION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETERMINED_STRIDE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHARED_PASSAGE" />
+		</rules>
+	</element>
+	<element name="Intuitive Motion" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_INTUITIVE_MOTION">
+		<description>
+			<p>When you make a Strength (Athletics) check or any ability check to operate or maintain a land vehicle, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Athletics check or any ability check to operate or maintain a land vehicle, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Determined Stride" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETERMINED_STRIDE">
+		<description>
+			<p>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.</p>
+		</description>
+		<sheet>
+			<description>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.</description>
+		</sheet>
+	</element>
+	<element name="Shared Passage" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SHARED_PASSAGE">
+		<description>
+			<p>As a bonus action you can teleport a distance up to your walking speed, ending in an unoccupied space that you can see. You can bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you use this trait. Once you use this trait, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>As a bonus action you can teleport a distance up to your walking speed, ending in an unoccupied space that you can see. You can bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you use this trait.</description>
+		</sheet>
+	</element>
+
+</elements>
