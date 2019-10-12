@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Nightstalker Ranger Archteype</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="ranger-nightstalker.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/ranger-nightstalker.xml" />
+        </update>
+    </info>
+    
+    <element name="Nighstalker" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_RANGER_ARCHETYPE_NIGHTSTALKER">
+        <supports>Ranger Archetype, Ranger Conclave</supports>
+        <description>
+            <p>The Nightstalker archetype emulates a unique form of shadow magic, used to create shadowy familiars to accompany you in battle. By walking this path, you learn to use your shadow familiar like an extension of yourself, using them like a weapon as you stalk through the dim forests and vast plains of the world, searching for your prey. Your choice of familiar defines your style of fighting, with each familiar playing a different role on the hunt and on the battlefield.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOWY_TRANSPOSITION" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_DARK_SENTINEL" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_LORD_OF_THE_NIGHT" />
+        </description>
+        <sheet>
+            <description>The Nightstalker archetype emulates a unique form of shadow magic, used to create shadowy familiars to accompany you in battle.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOWY_TRANSPOSITION" level="7" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_DARK_SENTINEL" level="11" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_LORD_OF_THE_NIGHT" level="15" />
+        </rules>
+    </element>
+    
+    <element name="Shadow Familiar" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR">
+        <description>
+            <p>At 3rd level, you gain the ability to summon a creature made from shadow magic to serve you. As a bonus action on your turn, you conjure or dismiss your shadow familiar, which takes the form of a spectral, untargetable creature. You choose the form you can create when you first select this subclass.</p>
+            <p class="indent">When you conjure your shadow familiar, it appears in an unoccupied space within 30 feet of you. As long as it is conjured, you can forgo one or more of your attacks when you use the Attack action to have your shadow familiar move and make attacks of its own, which use your Ranger spell attack modifier for their attack rolls and have a reach of 5 feet. Your shadow familiar cannot move farther than 120 feet away from you.</p>
+            <p class="indent">The three forms you can choose from are listed below:</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_CAT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_RAVEN" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_WOLF" />
+        </description>
+        <sheet action="Bonus Action">
+            <description>You conjure or dismiss your shadow familiar, which takes the form of a spectral, untargetable creature. It appears in an unoccupied space within 30 feet of you. As long as it is conjured, you can forgo one or more of your attacks when you use the Attack action to have your shadow familiar move and make attacks of its own, which use your Ranger spell attack modifier for their attack rolls and have a reach of 5 feet. Your shadow familiar cannot move farther than 120 feet away from you.</description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" id="Shadow Familiar" supports="Shadow Familiar" />
+        </rules>
+    </element>
+    
+    <element name="Shadow Transposition" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOWY_TRANSPOSITION">
+        <description>
+            <p>Starting at 7th level, whenever you activate the action of your shadow familiar that requires you to expend a spell slot, you can choose to swap positions with them before activating the ability.</p>
+        </description>
+        <sheet action="Action">
+            <description>Whenever you activate the action of your shadow familiar that requires you to expend a spell slot, you can choose to swap positions with them before activating the ability.</description>
+        </sheet>
+    </element>
+    
+    <element name="Dark Sentinel" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_DARK_SENTINEL">
+        <description>
+            <p>At 11th level, whenever a creature leaves the reach of your shadow familiar, you can use your reaction to have it make an attack against that creature. The disengage action and other effects that prevent opportunity attacks prevent this reaction.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>Whenever a creature leaves the reach of your shadow familiar, you can use your reaction to have it make an attack against that creature.</description>
+        </sheet>
+    </element>
+    
+    <element name="Lord of the Night" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_LORD_OF_THE_NIGHT">
+        <description>
+            <p>When you reach 15th level, you have gained much greater power over your shadow familiar. When you activate the action of your shadow familiar that requires you to expend a spell slot, you can activate it as bonus action rather than an action.</p>
+            <p class="indent">Additionally, once per long rest you can activate that action as if you spent a 1st level spell slot without expending a spell slot.</p>
+        </description>
+        <sheet>
+            <description>When you activate the action of your shadow familiar that requires you to expend a spell slot, you can activate it as bonus action rather than an action. Once per long rest, you can activate that action at 1st without spending a spell slot.</description>
+        </sheet>
+    </element>
+    
+    <element name="Cat" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_CAT">
+        <supports>Shadow Familiar</supports>
+        <description>
+            <p>Whenever you forgo an attack, you can have the cat move up to 30 feet and attack a creature. On a hit, the attack deals 1d4 + your Wisdom modifier slashing damage, and the next attack made against that creature has advantage on the attack roll.</p>
+            <p class="indent">As an action, you can expend a ranger spell slot to infuse the cat’s claws with poison and have it leap onto a target within 30 feet of it. That creature must succeed on a Constitution saving throw against your Ranger spell save DC or be poisoned until the end of your next turn and take 2d8 poison damage for a 1st level spell slot, plus 1d8 for each spell level higher than 1st.</p>
+        </description>
+        <sheet action="Action">
+            <description>Your cat can attack in place of one of your attacks to have it move up to 30 feet and attack a creature. Hits do 1d4 + {{wisdom:modifier}} slashing damage, and the next attack against the creature has advantage. You can expend a ranger spell slot to infuse the attack with poison. It can travel 30 feet to attack. Target must make a Constitution saving throw (save DC {{spellcasting:dc}}) or be poisoned and take 2d8 poison damage, plus 1d8 for each spell slot higher than 1st.</description>
+        </sheet>
+    </element>
+    
+    <element name="Raven" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_RAVEN">
+        <supports>Shadow Familiar</supports>
+        <description>
+            <p>Whenever you forgo an attack, you can have the raven fly up to 45 feet and attack a creature. On a hit, the attack deals 1d10 + your Wisdom modifier piercing damage.</p>
+            <p class="indent">As an action, you can expend a ranger spell slot to infuse the raven with lightning and have it travel along a line 5 feet wide and 30 feet long. Each creature in that line must succeed on a Dexterity saving throw or take 2d6 lightning damage for a 1st level spell slot, plus 1d6 for each spell level higher than 1st.</p>
+        </description>
+        <sheet action="Action">
+            <description>Your raven can attack in place of one of your attacks to have it move up to 30 feet and attack a creature. Hits do 1d10 + {{wisdom:modifier}} piercing damage. You can expend a ranger spell slot to infuse the raven with lightning. It can travel 30 feet to attack. Target must make a Constitution saving throw (save DC {{spellcasting:dc}}) or take 2d6 lightning damage, plus 1d6 for each spell slot higher than 1st.</description>
+        </sheet>
+    </element>
+    
+    <element name="Wolf" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_RANGER_NIGHTSTALKER_SHADOW_FAMILIAR_WOLF">
+        <supports>Shadow Familiar</supports>
+        <description>
+            <p>Whenever you forgo an attack, you can have the wolf move up to 30 feet and attack a creature. On a hit, the attack deals 1d6 + your Wisdom modifier piercing damage, and the target has disadvantage on its next attack roll.</p>
+            <p class="indent">As an action, you can expend a ranger spell slot to infuse the wolf with primal ferocity and have it release a piercing howl. Each creature of your choice within 30 feet of the wolf gains 1d6 temporary hit points for a 1st level spell slot, plus 1d6 for each spell level higher than 1st. These temporary hit points last for 1 minute.</p>
+        </description>
+        <sheet action="Action">
+            <description>Your wolf can attack in place of one of your attacks to have it move up to 30 feet and attack a creature. Hits do 1d6 + {{wisdom:modifier}} piercing damage. You can expend a ranger spell slot to infuse the raven with primal ferocity and have it release a piercing howl. Each creature of your choice within 30 feet of the wolf gains 1d6 temporary hit points for a 1st level spell slot, plus 1d6 for each spell level higher than 1st. These temporary hit points last for 1 minute.</description>
+        </sheet>
+    </element>
+    
+</elements>

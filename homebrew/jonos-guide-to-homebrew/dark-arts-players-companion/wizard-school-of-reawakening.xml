@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Awakening</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="wizard-school-of-reawakening.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/wizard-school-of-reawakening.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Reawakening" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_SCHOOL_OF_REAWAKENING">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>As a member of the school of reawakening, you combine the forces of necromancy with the power of conjuration. By transforming the necromantic energies of the creatures you kill into completely new conjurations, you bridge the gap between these two school of magic, creating a hybrid school that combines elements of both Conjuration and Necromancy. As you progress, you learn to shape together ever more powerful conjurations.</p>
+            <p class="indent"></p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONJURATION_NECROMANCY_SAVANT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_REAWAKEN_SOUL" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_VOLATILE_SOUL" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONSUME" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_LASTING_CREATION" />
+        </description>
+        <sheet>
+            <description>Members of the school of reawakening combine the forces of necromancy with the power of conjuration.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONJURATION_NECROMANCY_SAVANT" level="2" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_REAWAKEN_SOUL" level="2" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_VOLATILE_SOUL" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONSUME" level="10" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_LASTING_CREATION" level="14" />
+        </rules>
+    </element>
+    
+    <element name="Conjuration/Necromancy Savant" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONJURATION_NECROMANCY_SAVANT">
+        <description>
+            <p>Beginning when you select this school at 2nd level, the time you must spend to copy a necromancy or conjuration spell into your spellbook is halved.</p>
+        </description>
+        <sheet>
+            <description>The time you must spend to copy a necromancy or conjuration spell into your spellbook is halved.</description>
+        </sheet>
+    </element>
+    
+    <element name="Reawaken Soul" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_REAWAKEN_SOUL">
+        <description>
+            <p>At 2nd level, you gain the ability to store the essence of a creature’s soul for later use. You gain a Soul Vial, which can be used to store the soul of a creature that has a CR less than or equal to 1/3rd your Wizard level. By using a 10 minute ritual on a creature that has died within the last hour, you can store that creature’s soul in the vial. If there is already a soul within the vial, then the new soul replaces it.</p>
+            <p class="indent">Once you have a soul contained within your Soul Vial, you can release it to reform that creature. The creature has the same statistics as the creature you gathered the soul from, but it appears slightly translucent and visibly magical. Once formed, the creature lasts for up to 1 hour, and requires your concentration to maintain. The creature is friendly to you and your companions, and obeys your spoken commands (no action required by you). If you don’t issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. Once the duration ends, the creature’s soul is freed and the vial is emptied.</p>
+            <p class="indent">Once you form a creature, you can’t do so again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You gain a Soul Vial, which can be used to store the soul of a creature that has a CR less than or equal to 1/3rd your Wizard level. You can release it and it has the same statistics as the original creature, but is visibly magical. It lasts for up to 1 hour and requires concentration to maintain.</description>
+        </sheet>
+        <rules>
+            <stat name="soul vial:cr" value="1" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:5" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:8" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:11" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:14" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:17" />
+            <stat name="soul vial:cr" value="1" requirements="wizard:level:20" />
+        </rules>
+    </element>
+    
+    <element name="Volatile Soul" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_VOLATILE_SOUL">
+        <description>
+            <p>Beginning at 6th level, the creatures you create through your Reawaken Soul feature can be used as arcane explosives. When one of the creatures is reduced to zero hit points, it explodes in a burst of necrotic essence.</p>
+            <p class="indent">Each creature of your choice within a 10 ft radius of the exploding creature must make a Dexterity saving throw against your spell save DC. On a failed save, a creature takes 2d6 necrotic damage for every point of that creature’s CR. Creatures below CR 1 deal 1d6 necrotic damage. On a successful save, a creature takes half damage.</p>
+        </description>
+        <sheet>
+            <description>When you reawakened creature is reduced to 0 hit points, it explodes. Each creature of your choice within a 10 ft radius must make a Dexterity saving throw (save DC {{spellcasting:dc}}). On a failed save, a creature takes 2d6 necrotic damage for each CR. Creatures below CR 1 deal 1d6 damage. Half damage on a successful save.</description>
+        </sheet>
+    </element>
+    
+    <element name="Consume" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_CONSUME">
+        <description>
+            <p>Starting at 10th level, you can consume the soul within your Soul Vial to restore hit points to yourself. As an action, you may drink the contents of the vial, regaining 2d4 hit points for every point of that creature’s CR. This feature cannot restore hitpoints to a creature other than yourself.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest" action="Action">
+            <description>You can consume the soul within your Soul Vial to restore 2d4 hit points for every point of that creature’s CR. This feature cannot restore hitpoints to a creature other than yourself.</description>
+        </sheet>
+    </element>
+    
+    <element name="Lasting Creation" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_REAWAKENING_LASTING_CREATION">
+        <description>
+            <p>Starting at 14th level, the creature created through your Soul Reawaken feature lasts for up to 8 hours, and no longer requires concentration to maintain.</p>
+        </description>
+        <sheet>
+            <description>The creature created through your Soul Reawaken feature lasts for up to 8 hours, and no longer requires concentration to maintain.</description>
+        </sheet>
+    </element>
+    
+</elements>

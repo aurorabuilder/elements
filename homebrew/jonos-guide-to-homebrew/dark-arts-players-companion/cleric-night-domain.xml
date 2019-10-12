@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Night Domain Divine Domain</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="cleric-night-domain.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/cleric-night-domain.xml" />
+        </update>
+    </info>
+    
+    <element name="Night Domain" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_DIVINE_DOMAIN_NIGHT_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p>Gods of the night - such as Selûne, Shar, Tharizdon, Takhisis, and Hecate - serve as both creators of light and harbingers of darkness, with moon goods focusing on the former and darkness gods on the latter. These gods serve as patrons of all alignments; their clerics serve as both righteous defenders of the weak, as well as deceptive thieves and assassins. Either way, these clerics excel in both melee combat and spellcasting, always using the cover of darkness to their advantage in both their battles and their attempts at subterfuge.</p>
+            <h5>NIGHT DOMAIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>column1</td><td>column2</td></tr>
+                </thead>
+                <tr><td>1st</td><td><i>sleep, aura of shade</i></td></tr>
+                <tr><td>3rd</td><td><i>darkness, moonbeam</i></td></tr>
+                <tr><td>5th</td><td><i>fear, feign death</i></td></tr>
+                <tr><td>7th</td><td><i>greater invisibility, rend shadows</i></td></tr>
+                <tr><td>9th</td><td><i>dream, shadow stride</i></td></tr>
+            </table>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_BONUS_PROFICIENCIES" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_LUNAR_RADIANCE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_CHANNEL_DIVINITY" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_MOONLIGHT_STRIKE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_DIVINE_STRIKE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_NIGHTSTALKER" />
+        </description>
+        <sheet>
+            <description>These clerics excel in both melee combat and spellcasting, always using the cover of darkness to their advantage in both their battles and their attempts at subterfuge.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SLEEP" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_DAPC_SPELL_AURA_OF_SHADE" spellcasting="Cleric" prepared="true" level="1"/>
+            <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" spellcasting="Cleric" prepared="true" level="3"/>
+            <grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" spellcasting="Cleric" prepared="true" level="3"/>
+            <grant type="Spell" id="ID_PHB_SPELL_FEAR" spellcasting="Cleric" prepared="true" level="5"/>
+            <grant type="Spell" id="ID_PHB_SPELL_FEIGN_DEATH" spellcasting="Cleric" prepared="true" level="5"/>
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Cleric" prepared="true" level="7"/>
+            <grant type="Spell" id="ID_DAPC_SPELL_REND_SHADOWS" spellcasting="Cleric" prepared="true" level="7"/>
+            <grant type="Spell" id="ID_PHB_SPELL_DREAM" spellcasting="Cleric" prepared="true" level="9"/>
+            <grant type="Spell" id="ID_DAPC_SPELL_SHADOW_STRIDE" spellcasting="Cleric" prepared="true" level="9"/>
+            
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_BONUS_PROFICIENCIES" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_LUNAR_RADIANCE" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_CHANNEL_DIVINITY" level="2" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_MOONLIGHT_STRIKE" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_DIVINE_STRIKE" level="8" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_NIGHTSTALKER" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Bonus Proficiencies" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_BONUS_PROFICIENCIES">
+        <description>
+            <p>At 1st level, you gain proficiency with martial weapons and the Stealth skill.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+        </rules>
+    </element>
+    
+    <element name="Lunar Radiance" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_LUNAR_RADIANCE">
+        <description>
+            <p>Also at 1st level, you can empower your attacks with moonlight. When you hit a creature with a melee weapon attack, you can force them to become basked in moonlight. The next attack roll made against this target before the end of your next turn has advantage, and deals an additional 1d6 radiant damage on a hit.</p>
+            <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+        </description>
+        <sheet usage="{{lunar radiance:uses}}/Long Rest">
+            <description>When you hit a creature with a melee weapon attack, you can force them to become basked in moonlight. The next attack roll made against this target before the end of your next turn has advantage, and deals an additional 1d6 radiant damage on a hit.</description>
+        </sheet>
+        <rules>
+            <stat name="lunar radiance:uses" value="1" bonus="uses" />
+            <stat name="lunar radiance:uses" value="wisdom:modifier" bonus="uses" />
+        </rules>
+    </element>
+    
+    <element name="Channel Divinity: Midnight Gloom" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_CHANNEL_DIVINITY">
+        <description>
+            <p>Starting at 2nd level, you can use your Channel Divinity to harness the black gloom of midnight, banishing light and draining the life of your foes.</p>
+            <p class="indent">As an action, you present your holy symbol and all lights within 30 feet of you, magical or non-magical, are instantly put out. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes necrotic damage equal to 2d6 + your cleric level on a failed saving throw, and loses any darkvision they have for 1 minute. On a successful save, they take half as much damage and suffer no other effects. A creature can repeat this saving throw at the start of each of its turns, regaining their darkvision on a success.</p>
+        </description>
+        <sheet action="Action" usage="Channel Divinity" alt="Midnight Gloom">
+            <description>You present your holy symbol and all lights within 30 feet of you, magical or non-magical, are instantly put out. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw (save DC {{spellcasting:dc}}). A creature takes necrotic damage equal to 2d6 + {{level:cleric}} on a failed saving throw, and loses any darkvision they have for 1 minute. On a successful save, they take half as much damage and suffer no other effects. A creature can repeat this saving throw at the start of each of its turns, regaining their darkvision on a success.</description>
+        </sheet>
+    </element>
+    
+    <element name="Moonlight Strike" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_MOONLIGHT_STRIKE">
+        <description>
+            <p>Starting at 6th level, when you deal radiant damage to a creature you may choose to have it emit dim light in a 10 foot radius until the end of your next turn. The affected creature can’t benefit from being invisible, and if the creature is a shapeshifter it immediately shifts to its original form and can’t assume a different form until the light dissipates.</p>
+        </description>
+        <sheet>
+            <description>When you deal radiant damage to a creature you may choose to have it emit dim light in a 10 foot radius until the end of your next turn. The affected creature can’t benefit from being invisible, and if the creature is a shapeshifter it immediately shifts to its original form and can’t assume a different form until the light dissipates.</description>
+        </sheet>
+    </element>
+    
+    <element name="Divine Strike" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_DIVINE_STRIKE">
+        <description>
+            <p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+        </description>
+        <sheet>
+            <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target.</description>
+            <description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 radiant damage to the target.</description>
+        </sheet>
+    </element>
+    
+    <element name="Nightstalker" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_NIGHT_DOMAIN_NIGHTSTALKER">
+        <description>
+            <p>Beginning at 17th level, when you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</p>
+        </description>
+        <sheet action="Action">
+            <description>When you are in an area of dim light or darkness, you can become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</description>
+        </sheet>
+    </element>
+    
+</elements>

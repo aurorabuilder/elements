@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Vampiric Bloodline Sorcerous Origin</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="sorcerer-vampiric-bloodline.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/sorcerer-vampiric-bloodline.xml" />
+        </update>
+    </info>
+    
+    <element name="Vampiric Bloodline" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_SORCEROUS_ORIGIN_VAMPIRIC_BLOODLINE">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic stems from the mingling of your bloodline with the blood of a vampire. Some sorcerers with this origin can trace their powers back to an ancient bargain with a powerful vampire. When a vampire takes particular interest in a mortal being, they may allow that humanoid to have a taste of their blood. This ritual is seldom practiced, and few vampires would ever even dare to try it. But this is not the only way to gain this origin, as many of these sorcerers can trace their powers to a near-death experience with a vampire. Whatever the case, vampiric magic permeates your blood, and your very being.</p>
+            <p class="indent">Vampiric sorcerers most often try to hide their ancestry, since their origins can make them as reviled as the vampires that spawned them. However, a select few embrace their vampiric ancestry, and may even seek to become true vampires in death.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_DENIZEN_OF_THE_NIGHT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MARTIAL_PROWESS" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_VAMPIRIC_REGENERATION" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_EXTRA_ATTACK" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHAPECHANGER" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MISTY_ESCAPE" />
+        </description>
+        <sheet>
+            <description>Your innate magic stems from the mingling of your bloodline with the blood of a vampire.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_DENIZEN_OF_THE_NIGHT" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MARTIAL_PROWESS" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_VAMPIRIC_REGENERATION" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_EXTRA_ATTACK" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHAPECHANGER" level="14" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MISTY_ESCAPE" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Denizen of the Night" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_DENIZEN_OF_THE_NIGHT">
+        <description>
+            <p>Starting when you choose this origin at 1st level, you gain darkvision out to a range of 30 feet, as described in chapter 8 of the PHB.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+    
+    <element name="Martial Prowess" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MARTIAL_PROWESS">
+        <description>
+            <p>Also at 1st level, your vampiric ancestry grants you increased effectiveness in melee combat. Your unarmed strikes use a d6 as their damage die, and use your Charisma instead of Strength for their attack and damage rolls.</p>
+            <p class="indent">Additionally, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.</p>
+        </description>
+        <sheet>
+            <description>Your unarmed strikes use a d6 as their damage die, and use your Charisma instead of Strength for their attack and damage rolls.</description>
+        </sheet>
+        <rules>
+            <grant stat="hp" value="level:sorcerer" />
+        </rules>
+    </element>
+    
+    <element name="Vampiric Regeneration" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_VAMPIRIC_REGENERATION">
+        <description>
+            <p>At 6th level, you gain a semblance of the regenerative abilities of a vampire. At the start of each of your turns, you gain a number of temporary hit points equal to half your Sorcerer level. The amount of temporary hit points gained is halved when you are in sunlight or running water.</p>
+        </description>
+        <sheet>
+            <description>At the start of each of your turns, you gain {{level:sorcerer:half}} temporary hit points, half that amount when you are in sunlight or running water.</description>
+        </sheet>
+    </element>
+    
+    <element name="Extra Attack" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_EXTRA_ATTACK">
+        <description>
+            <p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            <p class="indent">Additionally, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage, and use a d8 as their damage die.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+    		<stat name="extra attack:count" value="2" bonus="extra attack" />
+        </rules>
+    </element>
+    
+    <element name="Shapechanger" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHAPECHANGER">
+        <description>
+            <p>Starting at 14th level, you can use your action to polymorph into a Tiny bat or back into your true form.</p>
+            <p class="indent">While in bat form, you can’t speak, attack, or cast spells, your walking speed is 5 feet, and you have a flying speed of 30 feet. Your statistics, other than your size and speed, are unchanged. Anything you are wearing or carrying transforms with you.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can use your action to polymorph into a Tiny bat or back into your true form. While in bat form, you can’t speak, attack, or cast spells, your walking speed is 5 feet, and you have a flying speed of 30 feet. Your statistics, other than your size and speed, are unchanged. Anything you are wearing or carrying transforms with you.</description>
+        </sheet>
+    </element>
+    
+    <element name="Misty Escape" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MISTY_ESCAPE">
+        <description>
+            <p>At 18th level, you gain the ability to escape from death as a cloud of mist. When you would be reduced to 0 hit points, you can use your reaction and spend 5 sorcery points to instead be reduced to 1 hit point and immediately cast <i>gaseous form</i> on yourself without expending a spell slot or material components.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When you would be reduced to 0 hit points, you can use your reaction and spend 5 sorcery points to instead be reduced to 1 hit point and immediately cast gaseous form on yourself without expending a spell slot or material components.</description>
+        </sheet>
+    </element>
+    
+</elements>

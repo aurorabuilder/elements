@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Hemomancy</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="wizard-school-of-hemomancy.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/wizard-school-of-hemomancy.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Hemomancy" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_SCHOOL_OF_HEMOMANCY">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>The School of Hemomancy studies the ancient arcane art of blood magic. As you select this tradition, you learn to manipulate your own life force so that you may manipulate the life force of others. As you progress through this school, you learn how to transform that vital energy into a force of immeasurable power, capable of defeating even the greatest of foes.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_HEMOMANCY_SAVANT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_ARCANE_ENDURANCE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_DEEPEN_WOUND" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_IMPROVED_ENDURANCE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_MASTER_OF_BLOOD" />
+        </description>
+        <sheet>
+            <description>The School of Hemomancy studies the ancient arcane art of blood magic.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_HEMOMANCY_SAVANT" level="2" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_ARCANE_ENDURANCE" level="2" requirements="!ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_IMPROVED_ENDURANCE" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_DEEPEN_WOUND" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_IMPROVED_ENDURANCE" level="10" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_MASTER_OF_BLOOD" level="14" />
+        </rules>
+    </element>    
+    
+    <element name="Hemomancy Savant" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_HEMOMANCY_SAVANT">
+        <description>
+            <p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy a spell with the hemomancy tag into your spellbook is halved.</p>
+        </description>
+        <sheet>
+            <description>The gold and time you must spend to copy a spell with the hemomancy tag into your spellbook is halved.</description>
+        </sheet>
+    </element>
+    
+    <element name="Arcane Endurance" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_ARCANE_ENDURANCE">
+        <description>
+            <p>Starting at 2nd level when you choose this school, you only need to sacrifice a fraction of your life force to cast Hemomancy spells. When you spend hit points to cast a spell with the hemomancy tag, you gain a number of temporary hit points equal to half the amount spent on the spell. These temporary hit points last for 1 minute.</p>
+        </description>
+        <sheet>
+            <description>When you spend hit points to cast a spell with the hemomancy tag, you gain a number of temporary hit points equal to half the amount spent on the spell. These temporary hit points last for 1 minute.</description>
+        </sheet>
+    </element>
+    
+    <element name="Deepen Wound" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_DEEPEN_WOUND">
+        <description>
+            <p>Starting at 6th level, whenever you hit a creature that is below half their hit point maximum with a spell, that creature takes additional necrotic damage equal to your intelligence modifier.</p>
+        </description>
+        <sheet>
+            <description>Whenever you hit a creature that is below half their hit point maximum with a spell, that creature takes additional {{intelligence:modifier}} hit points of necrotic damage.</description>
+        </sheet>
+    </element>
+    
+    <element name="Improved Endurance" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_IMPROVED_ENDURANCE">
+        <description>
+            <p>At 10th level, your ability to cast Hemomancy spells is greatly augmented. When you spend hit points to cast a spell with the hemomancy tag, you now gain temporary hit points equal to the total amount spent.</p>
+        </description>
+        <sheet>
+            <description>When you spend hit points to cast a spell with the hemomancy tag, you now gain temporary hit points equal to the total amount spent.</description>
+        </sheet>
+    </element>
+    
+    <element name="Master of Blood" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WIZARD_HEMOMANCY_MASTER_OF_BLOOD">
+        <description>
+            <p>Beginning at 14th level, you can choose to expend a number of hit points equal to 6 times the spell’s level to cast a hemomancy spell without using a spell slot. You still need to provide more hit points in order to empower the spell; using this feature only removes the spell slot requirement.</p>
+        </description>
+        <sheet>
+            <description>You can choose to expend a number of hit points equal to 6 times the spell’s level to cast a hemomancy spell without using a spell slot. You still need to provide more hit points in order to empower the spell; using this feature only removes the spell slot requirement.</description>
+        </sheet>
+    </element>
+    
+</elements>

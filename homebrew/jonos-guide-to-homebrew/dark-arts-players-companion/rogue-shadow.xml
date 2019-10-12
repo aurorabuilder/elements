@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shadow Roguish Archetype</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="rogue-shadow.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/rogue-shadow.xml" />
+        </update>
+    </info>
+    
+    <element name="Shadow" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_ROGUISH_ARCHETYPE_SHADOW">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Some rogues choose to delve into the intricacies of shadow magic, using its unique powers to enhance their skills in stealth and deception. These rogues are a very diverse subset, from simple thieves to hired killers to highly trained bounty hunters. By learning how to separate their shadow from their body, shadow rogues become difficult to catch and even harder to kill.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_BONUS_CANTRIPS" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SEVERED_SHADOW" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_DECEIVING_DARKNESS" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SHADOW_SIMULACRUM" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_MASTER_OF_SHADOWS" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_BONUS_CANTRIPS" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SEVERED_SHADOW" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_DECEIVING_DARKNESS" level="9" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SHADOW_SIMULACRUM" level="13" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_MASTER_OF_SHADOWS" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Bonus Cantrips" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_BONUS_CANTRIPS">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain the <i>umbraturgy</i> cantrip and the <i>dueling shadows</i> cantrip. Charisma is your spellcasting ability for these spells.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <setters>
+            <set name="spellcaster">true</set>
+            <set name="spellcastingAbility">Charisma</set>
+            <set name="spellcastingClass">Shadow</set>
+        </setters>
+        <spellcasting name="Shadow" ability="Charisma" allowReplace="false">
+            <list></list>
+        </spellcasting>
+        <rules>
+            <grant type="Spell" id="ID_DAPC_SPELL_DUELING_SHADOWS" known="true" spellcasting="Shadow" />
+            <grant type="Spell" id="ID_DAPC_SPELL_UMBRATURGY" known="true" spellcasting="Shadow" />
+        </rules>
+    </element>
+    
+    <element name="Severed Shadow" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SEVERED_SHADOW">
+        <description>
+            <p>Starting at 3rd level, you can separate your shadow from your body, creating a shadowy replica of yourself. This replica looks like a three-dimensional silhouette of yourself, and is completely opaque and solid.</p>
+            <p class="indent">As a bonus action on your turn, you may separate your shadow and then move it up to your speed as part of the same action. The shadow shares your statistics, and can perform all movements that you would be able to, making ability checks as normal for movements like jumping or rolling, but it cannot take any actions. The shadow is susceptible to attacks and shares your AC, and if it takes any damage it immediately disappears.</p>
+            <p class="indent">On subsequent turns until you reunite with your shadow, you may use your bonus action to move it another 30 feet, up to a maximum of 120 feet away from your current location. While your shadow is separated from you, you no longer cast a shadow. As a bonus action on your turn, you may choose to teleport to the location of your shadow, reuniting yourself with it.</p>
+            <p class="indent">Once you reunite with your shadow, you can’t separate from it again until you complete a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You may separate your shadow and then move it up to your speed as part of the same action. The shadow shares your statistics, and can perform all movements that you would be able to, making ability checks as normal for movements like jumping or rolling, but it cannot take any actions. The shadow is susceptible to attacks and shares your AC, and if it takes any damage it immediately disappears. You may use your bonus action to move it another 30 feet, up to a maximum of 120 feet away from your current location. While your shadow is separated from you, you no longer cast a shadow. As a bonus action on your turn, you may choose to teleport to the location of your shadow, reuniting yourself with it.</description>
+        </sheet>
+    </element>
+    
+    <element name="Deceiving Darkness" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_DECEIVING_DARKNESS">
+        <description>
+            <p>Starting at 9th level, you have advantage on Dexterity (Stealth) checks if you are in dim light or darkness.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on Dexterity (Stealth) checks if you are in dim light or darkness.</description>
+        </sheet>
+    </element>
+    
+    <element name="Shadow Simulacrum" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_SHADOW_SIMULACRUM">
+        <description>
+            <p>At 13th level, you gain greater control over your shadow. When your shadow is separated from you, you can also have it perform the Help action as part of the bonus action required to move it, and your shadow can also manipulate objects weighing up to 25 pounds.</p>
+        </description>
+        <sheet>
+            <description>When your shadow is separated from you, you can also have it perform the Help action as part of the bonus action required to move it, and your shadow can also manipulate objects weighing up to 25 pounds.</description>
+        </sheet>
+    </element>
+    
+    <element name="Master of Shadows" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_MASTER_OF_SHADOWS">
+        <description>
+            <p>When you reach 17th level, you have gained ultimate control over your shadow. When you sever your shadow, it can be separated from your current location by up to 500 feet, and you may use your bonus action to switch from using its senses to using your own, or back again. Additionally, you no longer have to complete a short or long rest to use the feature again.</p>
+        </description>
+        <sheet>
+            <description>When you sever your shadow, it can be separated from your current location by up to 500 feet, and you may use your bonus action to switch from using its senses to using your own, or back again. Additionally, you no longer have to complete a short or long rest to use the feature again.</description>
+        </sheet>
+    </element>
+    
+</elements>

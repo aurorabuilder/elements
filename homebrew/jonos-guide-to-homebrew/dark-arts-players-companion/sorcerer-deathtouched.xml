@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Deathtouched Sorcerous Origin</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="sorcerer-deathtouched.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/sorcerer-deathtouched.xml" />
+        </update>
+    </info>
+    
+    <element name="Deathtouched" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_SORCEROUS_ORIGIN_DEATHTOUCHED">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic comes from a past encounter with death. Most often, this origin is traced back to surviving an attack from an undead, such as a vampire’s bite, a ghost’s possession, or a specter’s life drain. Or, it could have originated from an imperfect revival or near-death experience. Regardless of the way you attained this dark magic, it now dictates your life and greatly augments your power.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_GHOSTLY_CONCEALMENT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MEMORIES_OF_THE_FALLEN" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_NECROTIC_AFFINITY" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHADOWED_PRESENCE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_INCORPOREAL_BODY" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_POSSESSION" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_GHOSTLY_CONCEALMENT" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MEMORIES_OF_THE_FALLEN" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_NECROTIC_AFFINITY" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHADOWED_PRESENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_INCORPOREAL_BODY" level="14" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_POSSESSION" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Ghostly Concealment" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_GHOSTLY_CONCEALMENT">
+        <description>
+            <p>Starting when you choose this origin at 1st level, you gain the ability to slowly fade into the background, concealing yourself from threats. If you remain still for 1 minute while in dim light or darkness, you become invisible until you move, enter bright light, or use an action, bonus action, or reaction.</p>
+        </description>
+        <sheet>
+            <description>If you remain still for 1 minute while in dim light or darkness, you become invisible until you move, enter bright light, or use an action, bonus action, or reaction.</description>
+        </sheet>
+    </element>
+    
+    <element name="Memories of the Fallen" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_MEMORIES_OF_THE_FALLEN">
+        <description>
+            <p>Also at 1st level, you gain the ability to access the memories of the deceased. By performing a 1 minute ritual on a corpse, you can gain insight into how that creature died. If you already witnessed that creature’s death, you instead gain another random memory from that creature. This feature can only be used once per corpse.</p>
+        </description>
+        <sheet usage="1/Corpse">
+            <description>y performing a 1 minute ritual on a corpse, you can gain insight into how that creature died. If you already witnessed that creature’s death, you instead gain another random memory from that creature.</description>
+        </sheet>
+    </element>
+    
+    <element name="Necrotic Affinity" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_NECROTIC_AFFINITY">
+        <description>
+            <p>At 6th level, you learn two Necromancy spells from any class. A spell you choose must be of a level you can cast. Whenever you gain a level in this class, you may choose one of these Necromancy spells and replace it with another Necromancy spell from any class. The chosen spells count as sorcerer spells for you but don’t count against the number of sorcerer spells you know.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Necrotic Affinity" supports="Necromancy" number="2" allowreplace="true" />
+        </rules>
+    </element>
+    
+    <element name="Shadowed Presence" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_SHADOWED_PRESENCE">
+        <description>
+            <p>Also at 6th level, you gain the ability to more quickly conceal yourself. As an action on your turn, you can expend 1 sorcery point to activate your Ghostly Concealment feature without waiting the full minute.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can expend 1 sorcery point to activate your Ghostly Concealment feature without waiting the full minute.</description>
+        </sheet>
+    </element>
+    
+    <element name="Incorporeal Body" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_INCORPOREAL_BODY">
+        <description>
+            <p>Starting at 14th level, you have the ability to become temporarily incorporeal. As a bonus action on your turn, you can spend 2 sorcery points to become incorporeal, gaining resistance to all damage that is not radiant, psychic, or force damage. Additionally, you gain the ability to move through objects while incorporeal as if the object is difficult terrain, and you become immune to the grappled and restrained conditions. Your movement doesn’t provoke opportunity attacks for the duration.</p>
+            <p class="indent">The incorporeal effect ends at the start of your next turn. If you are inside an object when the effect ends, you are ejected to the nearest empty space and stunned until the end of your turn.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can spend 2 sorcery points to become incorporeal, gaining resistance to all damage that is not radiant, psychic, or force damage. Additionally, you gain the ability to move through objects while incorporeal as if the object is difficult terrain, and you become immune to the grappled and restrained conditions. Your movement doesn’t provoke opportunity attacks for the duration. The incorporeal effect ends at the start of your next turn. If you are inside an object when the effect ends, you are ejected to the nearest empty space and stunned until the end of your turn.</description>
+        </sheet>
+    </element>
+    
+    <element name="Possession" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_SORCERER_POSSESSION">
+        <description>
+            <p>At 18th level, you gain the ability to take control of another creature’s body. As an action, you can spend 5 sorcery points to attempt to possess a creature of size large or smaller within 5 ft. of you. That creature must succeed on a Charisma saving throw or be possessed for up to 1 hour. On a success, you then disappear, and the target is incapacitated and loses control of its body. While possessing a creature, you can’t be targeted by any attack, spell, or other effect, and you retain your alignment, Intelligence, Wisdom, and Charisma. You otherwise use the possessed target’s statistics, but don’t gain access to the target’s knowledge, class features, or proficiencies.</p>
+            <p class="indent">At the start of each of your turns, if the possessed creature has been damaged at least once since the end of your last turn it can repeat the saving throw, ending the effect on a success. You may also end the effect using your bonus action. A target is immune to Possession for 24 hours after succeeding on the saving throw.</p>
+        </description>
+        <sheet action="Action">
+            <description>you can spend 5 sorcery points to attempt to possess a creature of size large or smaller within 5 ft. of you. That creature must succeed on a Charisma saving throw (save DC {{spellcasting:dc}}) or be possessed for up to 1 hour.</description>
+        </sheet>
+    </element>
+    
+</elements>

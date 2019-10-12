@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Primal Path of Blood</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-blood.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/barbarian-path-of-blood.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of Blood" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_PRIMAL_PATH_PATH_OF_BLOOD">
+        <supports>Primal Path</supports>
+        <description>
+            <p>The Path of Blood is a path taken by only the most ruthless and battle-hungry barbarians. They do not care when they shed their own blood - in fact, they use that energy to empower their rage even farther, using their suffering to inflict wounds upon their foes through magical bonds of blood.</p>
+            <p class="indent">While at first glance the Path of Blood appears to be powered by the same forces as the Path of the Berserker, the Path of Blood is far more magical in nature. Bloodragers use their blood in a form of hemomancy - a magic that utilizes blood sacrifices.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOODBOUND" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_POWER_THROUGH_SUFFERING" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_SCENT" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_RECKONING" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOODBOUND" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_POWER_THROUGH_SUFFERING" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_SCENT" level="10" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_RECKONING" level="14" />
+        </rules>
+    </element>
+    
+    <element name="Bloodbound" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOODBOUND">
+        <description>
+            <p>Starting when you select this path at 3rd level, you can choose to create a bond of blood between yourself and an enemy within 30 feet of you when you rage. For the duration of your rage, that enemy’s attacks deal bonus necrotic damage to you equal to 1d4 + half your barbarian level on a hit, and your attacks against that enemy also deal 1d4 + half your barbarian level bonus necrotic damage on a hit. The bonus damage dealt to you ignores resistance and immunity.</p>
+            <p class="indent">If the enemy dies before your rage ends, you can use your bonus action on a subsequent turn to create a new bond between yourself and another enemy.</p>
+        </description>
+        <sheet>
+            <description>You can choose to create a bond of blood between yourself and an enemy within 30 feet of you when you rage. For the duration of your rage, that enemy’s attacks deal bonus necrotic damage to you equal to 1d4 + {{level:barbarian:half}} on a hit, and your attacks against that enemy also deal 1d4 + {{level:barbarian:half}} bonus necrotic damage on a hit. The bonus damage dealt to you ignores resistance and immunity. If the enemy dies before your rage ends, you can use your bonus action on a subsequent turn to create a new bond between yourself and another enemy.</description>
+        </sheet>
+    </element>
+
+    <element name="Power Through Suffering" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_POWER_THROUGH_SUFFERING">
+        <description>
+            <p>At 6th level, the sight of your own blood empowers your rage. When you are below half your hit point maximum, your rage damage bonus is doubled for each attack you make against the target of your Bloodbound feature.</p>
+        </description>
+        <sheet>
+            <description>When you are below half your hit point maximum, your rage damage bonus is doubled for each attack you make against the target of your Bloodbound feature.</description>
+        </sheet>
+    </element>
+
+    <element name="Blood Scent" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_SCENT">
+        <description>
+            <p>Starting at 10th level, you can smell the scent of blood from up to 5 miles away, and accurately pinpoint the direction it’s coming from. Once you get within 1 mile of the source, you can make a DC 15 Wisdom (Perception) check to determine its exact identity. On a success, you know the exact identity of the creature if you have encountered it before; otherwise you only determine its type and the severity of its injury. Either way on a success, you know the exact distance and direction to the injured enemy. On a failed check, you know that you failed the check and can’t make another one for 1 hour.</p>
+        </description>
+        <sheet>
+            <description>You can smell the scent of blood from up to 5 miles away, and accurately pinpoint the direction it’s coming from. Once you get within 1 mile of the source, you can make a DC 15 Wisdom (Perception) check to determine its exact identity.</description>
+        </sheet>
+    </element>
+
+    <element name="Blood Reckoning" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_PATH_OF_BLOOD_BLOOD_RECKONING">
+        <description>
+            <p>Beginning at 14th level, when a creature within 5 feet of you hits you with a melee attack, the attacker takes necrotic damage equal to one fourth of your Barbarian level.</p>
+        </description>
+        <sheet>
+            <description>When a creature within 5 feet of you hits you with a melee attack, the attacker takes {{blood reckoning:damage}} hit points necrotic damage.</description>
+        </sheet>
+        <rules>
+            <stat name="blood reckoning:damage" value="4" />
+            <stat name="blood reckoning:damage" value="1" level="18" />
+        </rules>
+    </element>
+
+</elements>

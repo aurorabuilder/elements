@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of the Bloodied Fist Monastic Tradition</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="monk-way-of-the-bloodied-fist.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/monk-way-of-the-bloodied-fist.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of the Bloodied Fist" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_MONASTIC_TRADITION_WAY_OF_THE_BLOODIED_FIST">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks of the Way of the Bloodied Fist follow a tradition that teaches them to control their own life force, as well as the life force of their foes. By focusing their ki, they exert control over blood - a powerful tool that is not to be underestimated. Their monasteries practice in secret in dark caves and high mountains, out of the eye of the common people, and their members only leave for the rare missions ordered by only the most desperate.</p>
+            <p class="indent">Many monks of this tradition are covered in scars - some self-inflicted in their training, and others earned in battle. The monks often use their mystic energies to manipulate these scars, forming them into complex designs and symbols to represent their unique ki powers.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_SANGUINE_ARTS" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TOLL_OF_THE_MYSTIC" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TRANSFUSION" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_DOMINION_OF_BLOOD" />
+        </description>
+        <sheet>
+            <description>Monks of the Way of the Bloodied Fist follow a tradition that teaches them to control their own life force, as well as the life force of their foes. By focusing their ki, they exert control over blood - a powerful tool that is not to be underestimated.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_SANGUINE_ARTS" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TOLL_OF_THE_MYSTIC" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TRANSFUSION" level="11" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_DOMINION_OF_BLOOD" level="17" />
+        </rules>
+    </element>
+
+    <element name="Sanguine Arts" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_SANGUINE_ARTS">
+        <description>
+            <p>Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast <i>bloodburn</i>, <i>blood seal</i>, or <i>sanguine rope</i> without providing material components. Additionally, you gain the <i>bloodletting</i> cantrip if you don’t already know it. You must still pay the hemomancy costs associated with each spell.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can spend 2 ki points to cast bloodburn, blood seal, or sanguine rope without providing material components. You also know the bloodletting cantrip. You must still pay the hemomancy costs associated with each spell.</description>
+        </sheet>
+        <spellcasting name="Shadow" ability="Wisdom" allowReplace="false">
+            <list></list>
+        </spellcasting>
+        <rules>
+            <grant type="Spell" id="ID_DAPC_SPELL_BLOODBURN" />
+            <grant type="Spell" id="ID_DAPC_SPELL_BLOOD_SEAL" />
+            <grant type="Spell" id="ID_DAPC_SPELL_SANGUINE_ROPE" />
+            <grant type="Spell" id="ID_DAPC_SPELL_BLOODLETTING" />
+        </rules>
+    </element>
+
+    <element name="Toll of the Mystic" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TOLL_OF_THE_MYSTIC">
+        <description>
+            <p>At 6th level, you gain the ability to convert your blood into a well of energy. Whenever you spend your ki points, you can choose to expend a number of hit points equal to the number of ki points spent. If you do so, until the start of your next turn you gain a bonus to your speed equal to 10 times the number of hit points expended.</p>
+        </description>
+        <sheet>
+            <description>Whenever you spend your ki points, you can choose to expend a number of hit points equal to the number of ki points spent. If you do so, until the start of your next turn you gain a bonus to your speed equal to 10 times the number of hit points expended.</description>
+        </sheet>
+    </element>
+
+    <element name="Transfusion" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_TRANSFUSION">
+        <description>
+            <p>Beginning at 11th level, whenever you hit a creature with one of the attacks granted by your Flurry of Blows while you are below half your hit point maximum, you regain 1d4 hit points. If the attack scores a critical hit, you instead regain 2d4 hit points.</p>
+        </description>
+        <sheet>
+            <description>Whenever you hit a creature with one of the attacks granted by your Flurry of Blows while you are below half your hit point maximum, you regain 1d4 hit points. If the attack scores a critical hit, you instead regain 2d4 hit points.</description>
+        </sheet>
+    </element>
+
+    <element name="Dominion of Blood" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_MONK_WOTBF_DOMINION_OF_BLOOD">
+        <description>
+            <p>At 17th level, you can take complete control of a creature by manipulating its blood. When you hit a creature with an unarmed strike, you can spend 3 ki points to attempt to grasp control over that creature. The creature must succeed on a Constitution saving throw or fall under your control.</p>
+            <p class="indent">On every subsequent turn after assuming control, you must use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn’t do anything that you don’t allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well. If you do not take this action at the start of your turn, the control ends prematurely. This control can last for up to 1 minute.</p>
+            <p class="indent">Each time the target takes damage, it makes a new Constitution saving throw against the effect. If the saving throw succeeds, the effect ends.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an unarmed strike, you can spend 3 ki points to attempt to grasp control over that creature. The creature must succeed on a Constitution saving throw (save DC {{ki:dc}}) or fall under your control. On every subsequent turn after assuming control, you must use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn’t do anything that you don’t allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well. If you do not take this action at the start of your turn, the control ends prematurely. This control can last for up to 1 minute. Each time the target takes damage, it makes a new Constitution saving throw against the effect. If the saving throw succeeds, the effect ends.</description>
+        </sheet>
+    </element>
+
+</elements>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Wight</name>
+        <author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view?usp=sharing">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="race-wight.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/race-wight.xml" />
+        </update>
+    </info>
+    
+    <element name="Wight" type="Race" source="Dark Arts Player’s Companion" id="ID_DAPC_RACE_WIGHT">
+        <description>
+            <p>The word "wight" meant "person" in days of yore, but the name now refers to evil undead who were once mortals driven by dark desire and great vanity. When death stills such a creature’s heart and snuffs its living breath, its spirit cries out to the demon lord Orcus or some vile god of the underworld for a reprieve: undeath in return for eternal war on the living. If a dark power answers the call, the spirit is granted undeath so that it can pursue its own malevolent agenda.</p>
+            <p class="indent">Wights possess the memories and drives of their formerly living selves. They will heed the call of whatever dark entity transformed them into undead, swearing oaths to appease their new lord while retaining their autonomy. Never tiring, a wight can pursue its goals relentlessly and without distraction.</p>
+            <h4>LIFE EATERS</h4>
+            <p>Neither dead nor alive, a wight exists in a transitional state between one world and the next. The bright spark it possessed in life is gone, and in its place is a yearning to consume that spark in all living things. When a wight attacks, this life essence glows like white-hot embers to its dark eyes, and the wight’s cold touch can drain the spark through flesh, clothing, and armor.</p>
+            <h4>SHADOW OF THE GRAVE</h4>
+            <p>Wights flee from the world by day, away from the light of the sun, which they hate. They retreat to barrow mounds, crypts, and tombs where they dwell. Their lairs are silent, desolate places, surrounded by dead plants, noticeably blackened, and avoided by bird and beast.</p>
+            <p class="indent">Humanoids slain by a wight can rise as zombies under its control. Motivated by hunger for living souls and driven by the same desire for power that awakened them in undeath, some wights serve as shock troops for evil leaders, including wraiths. As soldiers, they are able to plan but seldom do so, relying on their hunger for destruction to overwhelm any creature that stands before them.</p>
+            <h4>WIGHT NAMES</h4>
+            <p>When they are created, a wight keeps all of the memories of its former life, and therefore keeps its name as well. Therefore, wights can have all types of names based on whatever race they were in life.</p>
+            <h4>WIGHT TRAITS</h4>
+            <p>Your wight character has certain traits derived from its undead nature.</p>
+            <p>
+                <span class="feature">Ability Score Increase. </span>Your Constitution score increases by 2, and your Charisma score increases by 1.<br />
+                <span class="feature">Age. </span>As beings of undeath, Wights do not age or mature, and they may live for thousands of years if they are not killed in battle.<br />
+                <span class="feature">Alignment. </span>Wights are transformed by dark entities to serve their needs, and therefore are most often evil themselves. Although they retain their memories and personalities, Wights are only created from evil and vain humans, so they will remain evil unless they change their alignment after reaching undeath.<br />
+                <span class="feature">Size. </span>Wights are between 5 and 6 feet tall and average about 180 pounds. Your size is medium.<br />
+                <span class="feature">Speed. </span>Your base walking speed is 30 feet.<br />        
+                <span class="feature">Darkvision. </span>As a being forced to live in darkness, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of grey.<br />
+                <span class="feature">Sunlight Sensitivity. </span>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.<br />
+                <span class="feature">Undead. </span>You are considered undead for effects such as <i>turn undead</i> and many healing spells. You are immune to disease and the poisoned condition, and you have resistance to poison damage. You do not need to eat or breathe, but you can ingest food or drink if you wish. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state, but resting in this way is otherwise identical to sleeping. Magically induced sleep can cause you to enter this inactive state.<br />
+                <span class="feature">Life Drain. </span>When you kill a humanoid, you can choose to have it rise 24 hours later as a zombie under your control, unless it is restored to life or its body is destroyed. Only one zombie may be created through this ability at any one time; if another is created then the first becomes inanimate.<br />The zombie has the statistics of the Zombie (<i>Monster Manual</i> pg. 316), except its hit point value is instead equal to three times your level.<br />
+                <span class="feature">Languages.</span>You can speak, read, and write Common and one other language you knew in life.<br />      
+            </p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <setters>
+            <set name="names" type="male"></set>
+            <set name="names" type="female"></set>
+            <set name="names" type="clan"></set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier="2d10">4’8"</set>
+            <set name="weight" modifier="2d4">110 lb.</set>
+        </setters>
+        <rules>
+            <stat name="constitution" value="2" />
+            <stat name="charisma" value="1" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Wight)" />
+    		<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+            <grant type="Racial Trait" id="ID_DAPC_RACIAL_TRAIT_WIGHT_SUNLIGHT_SENSITIVITY" />
+            <grant type="Racial Trait" id="ID_DAPC_RACIAL_TRAIT_WIGHT_UNDEAD" />
+            <grant type="Racial Trait" id="ID_DAPC_RACIAL_TRAIT_WIGHT_LIFE_DRAIN" />
+        </rules>
+    </element>
+
+    <element name="Sunlight Sensitivity" type="Racial Trait" source="Dark Arts Player’s Companion" id="ID_DAPC_RACIAL_TRAIT_WIGHT_SUNLIGHT_SENSITIVITY">
+        <description>
+            <p>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</p>
+        </description>
+        <sheet>
+            <description>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</description>
+        </sheet>
+    </element>
+    
+    <element name="Undead" type="Racial Trait" source="Dark Arts Player’s Companion" id="ID_DAPC_RACIAL_TRAIT_WIGHT_UNDEAD">
+        <description>
+            <p>You are considered undead for effects such as <i>turn undead</i> and many healing spells. You are immune to disease and the poisoned condition, and you have resistance to poison damage. You do not need to eat or breathe, but you can ingest food or drink if you wish. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state, but resting in this way is otherwise identical to sleeping. Magically induced sleep can cause you to enter this inactive state.</p>
+        </description>
+        <sheet>
+            <description>You are considered undead for effects such as <i>turn undead</i> and many healing spells. You are immune to disease and the poisoned condition, and you have resistance to poison damage. You do not need to eat or breathe, but you can ingest food or drink if you wish. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state, but resting in this way is otherwise identical to sleeping. Magically induced sleep can cause you to enter this inactive state.</description>
+        </sheet>
+    </element>
+    
+    <element name="Life Drain" type="Racial Trait" source="Dark Arts Player’s Companion" id="ID_DAPC_RACIAL_TRAIT_WIGHT_LIFE_DRAIN">
+        <description>
+            <p>When you kill a humanoid, you can choose to have it rise 24 hours later as a zombie under your control, unless it is restored to life or its body is destroyed. Only one zombie may be created through this ability at any one time; if another is created then the first becomes inanimate.</p>
+            <p class="indent">The zombie has the statistics of the Zombie (<i>Monster Manual</i> pg. 316), except its hit point value is instead equal to three times your level.</p>
+        </description>
+        <sheet>
+            <description>When you kill a humanoid, you can choose to have it rise 24 hours later as a zombie under your control. The zombie has {{zombie:hp}} hit points and all the other characteristics of a zombie.</description>
+        </sheet>
+        <rules>
+            <stat name="zombie:hp" value="level" />
+            <stat name="zombie:hp" value="level" />
+            <stat name="zombie:hp" value="level" />
+        </rules>
+    </element>
+    
+</elements>

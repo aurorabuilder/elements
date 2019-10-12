@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Blood Knight Martial Arcetype</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.2">
+            <file name="fighter-blood-knight.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/fighter-blood-knight.xml" />
+        </update>
+    </info>
+    
+    <element name="Blood Knight" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_MARTIAL_ARCHETYPE_BLOOD_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The archetypal Blood Knight employs their own flesh and blood in the slaughter of their enemies. To a Blood Knight, battle is everything. It isn’t winning or losing that drives them so much as it is the opportunity for a good fight. And when they find that fight, they use everything they have to contest their opponent. They utilize blood sacrifices to cast spells and grant themselves additional offensive and defensive capabilities, though at a steep cost.</p>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_HEMOMANCY" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_WELL" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_DEATHSEEKER" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_IMPROVED_BLOOD_WELL" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_RUSH" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_STRENGTH_OF_THE_WOUNDED" />
+        </description>
+        <sheet>
+            <description>The archetypal Blood Knight employs their own flesh and blood in the slaughter of their enemies. To a Blood Knight, battle is everything.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_HEMOMANCY" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_WELL" level="3" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_DEATHSEEKER" level="7" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_IMPROVED_BLOOD_WELL" level="10" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_RUSH" level="15" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_STRENGTH_OF_THE_WOUNDED" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Hemomancy" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_HEMOMANCY">
+        <description>
+            <p>Beginning when you choose this archetype at 3rd level, you gain the ability to cast hemomancy spells, detailed in chapter 3 of the <i>Dark Arts Player’s Companion</i>.</p>
+            <p class="indent"><span class="feature">Spell Slots. </span>The Blood Knight Spellcasting table shows how many spell slots you have. The table also shows what the level of those slots is; all of your spell slots are the same level. To cast one of your spells of 1st level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.</p>
+            <p class="indent"><span class="feature">Spells Known of 1st Level and Higher. </span>You know one 1st-level hemomancy spell of your choice, chosen from the hemomancy spells detailed in chapter 3.</p>
+            <p class="indent">The Spells Known column of the Blood Knight Spellcasting table shows when you learn more hemomancy spells of 1st level or higher. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+            <p class="indent">Whenever you gain a level in this class, you can replace one of the hemomancy spells you know with another hemomancy spell of your choice. The new spell must be of a level for which you have spell slots.</p>
+            <p class="indent"><span class="feature">Spellcasting Ability. </span>Constitution is your spellcasting ability for your blood knight spells, since your spells are powered through the resilience of your body. You use your Constitution whenever a spell refers to your spellcasting ability. In addition, you use your Constitution modifier when setting the saving throw DC for a blood knight spell you cast and when making an attack roll with one.</p>
+            <p class="indent"><b>Spell save DC</b> = 8 + your proficiency bonus + your Constitution modifier</p>
+            <p class="indent"><b>Spell attack modifier</b> = your proficiency bonus + your Constitution modifier</p>
+        </description>
+        <setters>
+            <set name="spellcaster">true</set>
+            <set name="spellcastingAbility">Constitution</set>
+            <set name="spellcastingClass">Blood Knight</set>
+        </setters>
+        <spellcasting name="Blood Knight" ability="Constitution" allowReplace="true">
+            <list>Hemomancy</list>
+        </spellcasting>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="blood knight:spellcasting:slots:1" value="1" level="3" />
+            <stat name="blood knight:spellcasting:slots:1" value="1" level="5" />
+            <stat name="blood knight:spellcasting:slots:1" value="-2" level="7" />
+            <stat name="blood knight:spellcasting:slots:2" value="2" level="7" />
+            <stat name="blood knight:spellcasting:slots:2" value="-2" level="13" />
+            <stat name="blood knight:spellcasting:slots:3" value="3" level="13" />
+            <stat name="blood knight:spellcasting:slots:3" value="-3" level="7" />
+            <stat name="blood knight:spellcasting:slots:4" value="3" level="7" />
+            
+            <select type="Spell" name="Spell (Blood Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Blood Knight" />
+            <select type="Spell" name="Spell (Blood Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Blood Knight" />
+            <select type="Spell" name="Spell (Blood Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Blood Knight" />
+            <select type="Spell" name="Spell (Blood Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Blood Knight" />
+
+        </rules>
+    </element>
+    
+    <element name="Blood Well" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_WELL">
+        <description>
+            <p>Also at 3rd level, you gain a well of blood magic that is fueled through special dice called blood dice.</p>
+            <p class="indent"><span class="feature">Blood Dice. </span>You have three blood dice, which are d6s. A blood die is expended when you use it. You regain all of your expended blood dice when you finish a short or long rest.</p>
+            <p class="indent">You gain an additional blood die at 7th, 15th, and 18th levels.</p>
+            <p class="indent"><span class="feature">Using Blood Dice. </span>Blood dice can be utilized in two ways. As a bonus action on your turn, you can expend a blood die and regain a number of hit points equal to the number rolled. Also, when you hit a creature with an attack, you can choose to expend a blood die and add the number rolled to the attack’s damage roll. If you do so, the attack counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+        </description>
+        <sheet usage="{{blood dice:count}}/Short Rest">
+            <description>You have {{blood dice:count}} blood dice, which are d{{blood dice:type}}s. As a bonus action on your turn, you can expend a blood die and regain a number of hit points equal to the number rolled. Alternately, when you hit a creature with an attack, you can choose to expend a blood die and add the number rolled to the attack’s damage roll. If you do so, the attack counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</description>
+        </sheet>
+        <rules>
+            <stat name="blood dice:type" value="6" bonus="type" />
+            <stat name="blood dice:count" value="3" />
+            <stat name="blood dice:count" value="1" level="7" />
+            <stat name="blood dice:count" value="1" level="15" />
+            <stat name="blood dice:count" value="1" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Deathseeker" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_DEATHSEEKER">
+        <description>
+            <p>Starting at 7th level, you gain advantage on any Wisdom (Perception) or Wisdom (Survival) check used to find a wounded creature.</p>
+            <p class="indent">Additionally, as a bonus action on your turn you can sacrifice 1 hit point to learn the general direction of every creature within 100 feet of you that has blood.</p>
+        </description>
+        <sheet>
+            <description>You gain advantage on any Wisdom (Perception) or Wisdom (Survival) check used to find a wounded creature. As a bonus action you can sacrifice 1 hit point to learn the general direction of every creature within 100 feet of you that has blood.</description>
+        </sheet>
+    </element>
+    
+    <element name="Improved Blood Well" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_IMPROVED_BLOOD_WELL">
+        <description>
+            <p>At 10th level, your blood dice turn into d8s.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="blood dice:type" value="8" bonus="type" />
+        </rules>
+    </element>
+    
+    <element name="Blood Rush" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_BLOOD_RUSH">
+        <description>
+            <p>Starting at 15th level, whenever you cast a hemomancy spell of 1st level or higher, you enter a blood rush. The blood rush lasts until the end of your next turn, and for the duration your speed is doubled, you have advantage on Dexterity saving throws, and you can Disengage as a bonus action.</p>
+        </description>
+        <sheet>
+            <description>Whenever you cast a hemomancy spell of 1st level or higher, you enter a blood rush. The blood rush lasts until the end of your next turn, and for the duration your speed is doubled, you have advantage on Dexterity saving throws, and you can Disengage as a bonus action.</description>
+        </sheet>
+    </element>
+    
+    <element name="Strength of the Wounded" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_BLOOD_KNIGHT_STRENGTH_OF_THE_WOUNDED">
+        <description>
+            <p>At 18th level, you gain increased power when wounded. Whenever you expend a blood die while below half your hit point maximum, you can add your Constitution modifier to the result.</p>
+        </description>
+        <sheet>
+            <description>Whenever you expend a blood die while below half your maximum hit points, you can add {{constitution:modifier}} to the result.</description>
+        </sheet>
+    </element>
+    
+</elements>

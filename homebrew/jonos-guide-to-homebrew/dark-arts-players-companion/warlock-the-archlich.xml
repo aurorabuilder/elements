@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Archlich Otherworldly Patron</name>
+		<author url="https://drive.google.com/file/d/1Kr3ZKYy3Me0ZFOhOQAmKBZlB9JUauhW5/view">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="warlock-the-archlich.xml" url="https://raw.githubusercontent.com/chris-velox/elements/master/homebrew/jonos-guide-to-homebrew/dark-arts-players-companion/warlock-the-archlich.xml" />
+        </update>
+    </info>
+    
+    <element name="The Archlich" type="Archetype" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_THE_ARCHLICH">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>You have made a pact with an archlich, a creature that has existed since the dawn of the last age and holds secrets of arcane magic that have been forgotten for thousands of years. Such a being desires only to expand its own power and influence, only using you as a pawn in its far larger scheme. Any lich powerful enough to form a pact has lived for many thousands of years, and many of them were involved in the invention of lichdom itself.</p>
+            <h5>EXPANDED SPELL LIST</h5>
+            <p class="indent">The Archlich lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><i>inflict wounds, ray of sickness</i></td></tr>
+                <tr><td>2nd</td><td><i>detect thoughts, Melf’s acid arrow</i></td></tr>
+                <tr><td>3rd</td><td><i>maim, speak with dead</i></td></tr>
+                <tr><td>4th</td><td><i>Evard’s black tentacles, vitriolic sphere</i></td></tr>
+                <tr><td>5th</td><td><i>cloudkill, contagion</i></td></tr>
+            </table>
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_BOND_OF_UNLIFE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDEAD_RESILIENCE" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDYING_FLESH" />
+            <div element="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_SHARED_FATE" />
+        </description>
+        <sheet>
+            <description>You have made a pact with an archlich, a creature that has existed since the dawn of the last age and holds secrets of arcane magic that have been forgotten for thousands of years.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_DPAC_SPELL_MAIM" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_XGTE_SPELL_VITRIOLIC_SPHERE" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" spellcasting="Warlock" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONTAGION" spellcasting="Warlock" />
+            
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_BOND_OF_UNLIFE" level="1" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDEAD_RESILIENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDYING_FLESH" level="10" />
+            <grant type="Archetype Feature" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_SHARED_FATE" level="14" />
+        </rules>
+    </element>
+    
+    <element name="Bond of Unlife" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_BOND_OF_UNLIFE">
+        <description>
+            <p>At 1st level, you can use a bonus action on your turn to create a bond between yourself and a willing creature. The bond lasts for 1 minute, and for the duration you can use a bonus action on each of your turns to siphon a number of hit points equal to 2 + your warlock level from the creature, as long as this can’t reduce the creature to 0 hit points.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You can create a bond between yourself and a willing creature. The bond lasts for 1 minute, and for the duration you can use a bonus action on each of your turns to siphon {{bond of unlife:hp}} hit points from the creature, as long as this can’t reduce the creature to 0 hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="bond of unlife:hp" value="2" />
+            <stat name="bond of unlife:hp" value="level:warlock" />
+        </rules>
+    </element>
+    
+    <element name="Undead Resilience" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDEAD_RESILIENCE">
+        <description>
+            <p>Starting at 6th level, you can call upon your patron to bring you back from the brink of death. When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.</p>
+            <p class="indent">Once you use this feature, you can’t use it again until you complete a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.</description>
+        </sheet>
+    </element>
+    
+    <element name="Undying Flesh" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_UNDYING_FLESH">
+        <description>
+            <p>By 10th level, your body has taken on the attributes of undeath. You have resistance to necrotic damage, and you age at a slower rate. For every 10 years that pass, your body ages only 1 year.</p>
+        </description>
+        <sheet>
+            <description>You have resistance to necrotic damage, and you age at a slower rate. For every 10 years that pass, your body ages only 1 year.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+        </rules>
+    </element>
+    
+    <element name="Shared Fate" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_WARLOCK_ARCHLICH_SHARED_FATE">
+        <description>
+            <p>At 14th level, you can bind yourself to another creature with negative energy. As an action, choose a creature within 30 feet of you. It must make a Wisdom saving throw against your warlock spell save DC. On a failed save, the target’s life becomes tethered with your own. Whenever you take damage within the next minute, the tethered creature takes the same amount of damage as necrotic damage. At the start of each of its turns, the creature can repeat the saving throw, ending the effect on a success.</p>
+            <p class="indent">You must finish a short or long rest before you can use this feature again.</p>
+        </description>
+        <sheet action="Action">
+            <description>Choose a creature within 30 feet of you. It must make a Wisdom saving throw (save DC {{warlock:spellcasting:dc}}). On a failed save, the target’s life becomes tethered with your own. Whenever you take damage within the next minute, the tethered creature takes the same amount of damage as necrotic damage. At the start of each of its turns, the creature can repeat the saving throw, ending the effect on a success.</description>
+        </sheet>
+    </element>
+    
+    <!-- New Pact Boon -->
+    <element name="Pact of the Clock" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CLOAK">
+    <supports>Pactd Boon</supports>
+        <description>
+            <p>You can use a bonus action on your turn to conjure a pact cloak around yourself. When you do so, choose one of the following damage types: Acid, Cold, Fire, Lightning, Necrotic, Poison, Radiant, or Thunder. Whenever you or a creature within 5 feet of you takes damage of the selected damage type, you can use your reaction to reduce that damage by an amount equal to 1d4 + half your Warlock level.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can conjure a pact cloak around yourself. When you do so, choose one of the following damage types: Acid, Cold, Fire, Lightning, Necrotic, Poison, Radiant, or Thunder. Whenever you or a creature within 5 feet of you takes damage of the selected damage type, you can use your reaction to reduce that damage by an amount equal to 1d4 + {{level:warlock:half:up}}.</description>
+        </sheet>
+    </element>
+
+    <!-- New Eldritch Invocations-->
+    <!-- The following section presents new invocations for the warlock. These invocations follow the same rules as invocations found in the Player’s Handbook. -->
+    <element name="Cloak of the Bat" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_CLOAK_OF_THE_BAT">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>15th level, Pact of the Cloak feature</prerequisite>
+        <requirements>[level:15],ID_DAPC_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CLOAK</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 15th level, Pact of the Cloak feature</p>
+            <p>You can use a bonus action on your turn to cause large, bat-like wings to sprout out of your cloak. While you wear the winged cloak, you gain a flying speed equal to your current speed. You can dismiss the wings using another bonus action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can cause large, bat-like wings to sprout out of your cloak. While you wear the winged cloak, you gain a flying speed equal to {{innate speed}} feet. You can dismiss the wings using another bonus action.</description>
+        </sheet>
+    </element>
+    
+    <element name="Ghost-Iron Chains" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_GHOSTIRON_CHAINS">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, Pact of the Chain feature</prerequisite>
+        <requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Pact of the Chain feature</p>
+            <p>Your familiar becomes ghostly in appearance, and gains the ability to become incorporeal. Your familiar can move through other creatures and objects as if they were difficult terrain, but if it ends its turn inside an object it is immediately dismissed to its pocket dimension.</p>
+        </description>
+        <sheet>
+            <description>Your familiar becomes ghostly in appearance, and gains the ability to become incorporeal. Your familiar can move through other creatures and objects as if they were difficult terrain, but if it ends its turn inside an object it is immediately dismissed to its pocket dimension.</description>
+        </sheet>
+    </element>
+    
+    <element name="Mantle of the Everlasting" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_MANTLE_OF_THE_EVERLASTING">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, Pact of the Cloak feature</prerequisite>
+        <requirements>[level:5],ID_DAPC_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CLOAK</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Pact of the Cloak feature</p>
+            <p>While you are wearing your pact cloak and no other armor, your AC equals 10 + your Dexterity modifier + your Charisma modifier.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="ac:everlasting mantle:base" value="10" />
+            <stat name="ac:everlasting mantle:dexterity" value="dexterity:modifier" />
+            <stat name="ac:everlasting mantle:charisma" value="charisma:modifier" />
+            <stat name="ac:everlasting mantle" value="ac:everlasting mantle:base" />
+            <stat name="ac:everlasting mantle" value="ac:everlasting mantle:dexterity" />
+            <stat name="ac:everlasting mantle" value="ac:everlasting mantle:charisma" />
+            <stat name="ac:calculation" value="ac:everlasting mantle" bonus="calculation" equipped="[armor:none]" alt="Mantle of the Everlasting (Warlock)" />
+        </rules>
+    </element>
+    
+    <element name="March of the Restless" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_MARCH_OF_THE_RESTLESS">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level</prerequisite>
+        <requirements>[level:5]</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You can cast <i>animate dead</i> using a warlock spell slot. You can do so twice, and regain both uses when you complete a long rest.</p>
+        </description>
+        <sheet usage="2/Long Rest">
+            <description>You can cast animate dead using a warlock spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellclasting="Warlock" />
+        </rules>
+    </element>
+    
+    <element name="Pact of the Blood" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLOOD">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>7th level</prerequisite>
+        <requirements>[level:7]</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 7th level</p>
+            <p>You can cast <i>blood seal</i> at will as a 2nd-level spell, without expending a spell slot or material components. You still need to pay the hemomancy cost as normal.</p>
+        </description>
+        <sheet>
+            <description>You can cast blood seal at will as a 2nd-level spell, without expending a spell slot or material components. You still need to pay the hemomancy cost as normal.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_DAPC_SPELL_BLOOD_SEAL" />
+        </rules>
+    </element>
+    
+    <element name="Sanguine Blade" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_SANGUINE_BLADE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Blade feature</prerequisite>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Blade feature</p>
+            <p>When you hit a creature with your pact weapon, you can choose to channel blood into your attack, allowing you to damage up to two secondary targets that are within 5 feet of the primary target. If you do so, roll a d4 and lose a number of hit points equal to the number rolled. Each secondary target takes necrotic damage equal to that roll.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with your pact weapon, you can choose to channel blood into your attack, allowing you to damage up to two secondary targets that are within 5 feet of the primary target. If you do so, roll a d4 and lose a number of hit points equal to the number rolled. Each secondary target takes necrotic damage equal to that roll.</description>
+        </sheet>
+    </element>
+    
+    <element name="Sanguine Spear" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_SANGUINE_SPEAR">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>eldritch blast cantrip</prerequisite>
+        <requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <description>
+            <p class="flavor">Prerequisite: eldritch blast cantrip</p>
+            <p>When you hit a creature with <i>eldritch blast</i>, you can choose to channel blood into the spell, allowing you to damage a secondary target within 5 feet of the primary target. If you do so, roll a d4 and lose a number of hit points equal to the number rolled. The secondary target takes necrotic damage equal to that roll.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with eldritch blast, you can choose to channel blood into the spell, allowing you to damage a secondary target within 5 feet of the primary target. If you do so, roll a d4 and lose a number of hit points equal to the number rolled. The secondary target takes necrotic damage equal to that roll.</description>
+        </sheet>
+    </element>
+    
+    <element name="Tales of the Crimson Tome" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_TALES_OF_THE_CRIMSON_TOME">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Tome feature</prerequisite>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Tome feature</p>
+            <p>You can drop a pinch of humanoid blood into your book of shadows, and then ask one question aloud. Over the next minute, the blood manipulates itself into a language of your choice, answering your question in the process. The answer is provided using the knowledge of the humanoid that provided the blood, and is answered in less than 25 words. The blood must be from a living humanoid, and needs to be dropped into the book within 30 seconds of it leaving the body.</p>
+        </description>
+        <sheet>
+            <description>You can drop a pinch of humanoid blood into your book of shadows, and then ask one question aloud. Over the next minute, the blood manipulates itself into a language of your choice, answering your question in the process.</description>
+        </sheet>
+    </element>
+    
+    <element name="Veil of the Night" type="Class Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_CLASS_FEATURE_ELDRITCH_INVOCATION_VEIL_OF_THE_NIGHT">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>9th level, Pact of the Cloak feature</prerequisite>
+        <requirements>[level:9],ID_DAPC_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CLOAK</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 9th level, Pact of the Cloak feature</p>
+            <p>When you are wearing your pact cloak, you can use your action to turn invisible until the start of your next turn. This feature cannot be used two turns in a row.</p>
+        </description>
+        <sheet action="Action">
+            <description>When you are wearing your pact cloak, you can turn invisible until the start of your next turn. This feature cannot be used two turns in a row.</description>
+        </sheet>
+    </element>
+    
+</elements>
