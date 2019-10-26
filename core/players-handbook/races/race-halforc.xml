@@ -4,7 +4,7 @@
 		<name>Half-Orc</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.7">
+		<update version="0.1.8">
 			<file name="race-halforc.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-halforc.xml" />
 		</update>
 	</info>
@@ -57,16 +57,17 @@
       <set name="weight" modifier="2d6">140 lb.</set>
     </setters>
     <rules>
-      <stat name="strength" value="2"/>
-      <stat name="constitution" value="1"/>
+      <stat name="strength" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+      <stat name="constitution" value="1" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
       <stat name="innate speed" value="30" bonus="base"/>
       <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
       <grant type="Language" id="ID_LANGUAGE_COMMON" />
       <grant type="Language" id="ID_LANGUAGE_ORC" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_MENACING" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_RELENTLESS_ENDURANCE" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_SAVAGE_ATTACKS" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_MENACING" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_RELENTLESS_ENDURANCE" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_SAVAGE_ATTACKS" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+      <select type="Race Variant" name="Half-Orc Variant" supports="Half-Orc Variant" optional="true" />
     </rules>
   </element>
 

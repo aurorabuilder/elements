@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Artificer Revisited</name>
-		<update version="0.0.1">
+		<update version="0.0.4">
 			<file name="20190228.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2019/20190228.xml" />
 		</update>
 	</info>
@@ -104,7 +104,7 @@
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARTIFICER_SPECIALIST" level="3" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_TOOL_EXPERTISE" level="3" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT" level="4" />
-			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARCANE_ARMAMENT" level="15" />
+			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARCANE_ARMAMENT" level="5" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_THE_RIGHT_CANTRIP_FOR_THE_JOB" level="10" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_SPELL_STORING_ITEM" level="18" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_SOUL_OF_ARTIFICE" level="20" />
@@ -203,7 +203,7 @@
 			<stat name="artificer:spellcasting:slots:5" value="1" level="19" />
 
 			<stat name="artificer:spellcasting:prepare" value="intelligence:modifier" />
-			<stat name="artificer:spellcasting:prepare" value="level:artificer" />
+			<stat name="artificer:spellcasting:prepare" value="level:artificer:half" />
 
 			<select type="Spell" name="Cantrip (Artificer)" supports="$(spellcasting:list), 0" level="1" number="2" spellcasting="Artificer" />
 			<select type="Spell" name="Cantrip (Artificer)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Artificer" />
@@ -1505,7 +1505,13 @@
 	<append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
 		<supports>UA Artificer</supports>
 	</append>
+	<append id="ID_PHB_SPELL_FAERIE_FIRE">
+		<supports>UA Artificer</supports>
+	</append>
 	<append id="ID_PHB_SPELL_FALSE_LIFE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
 		<supports>UA Artificer</supports>
 	</append>
 	<append id="ID_PHB_SPELL_GREASE">
@@ -1523,9 +1529,9 @@
 	<append id="ID_PHB_SPELL_SANCTUARY">
 		<supports>UA Artificer</supports>
 	</append>
-	<append id="ID_PHB_SPELL_SHIELD_OF_FAITH">
+	<!-- <append id="ID_PHB_SPELL_SHIELD_OF_FAITH">
 		<supports>UA Artificer</supports>
-	</append>
+	</append> -->
 
 	<!-- 2nd level spells -->
 	<append id="ID_PHB_SPELL_AID">
