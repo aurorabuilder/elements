@@ -4,7 +4,7 @@
 		<name>Gunslinger</name>
 		<description>The Gunslinger is a new Fighter Archetype option to the Fighter class, available at 3rd level. This archetype focuses on the ability to design, craft, and utilize powerful, yet dangerous ranged weapons. Through creative innovation and immaculate aim, you become a distant force of death on the battlefield. However, not being a perfect science, firearms carry an inherent instability that can occasionally leave you without a functional means of attack. This is the danger of new, untested technologies in a world where the arcane energies that rule the elements are ever present.</description>
 		<author url="https://www.dmsguild.com/product/170778/Gunslinger-Martial-Archetype-for-Fighters">Matthew Mercer</author>
-        <update version="0.0.1">
+        <update version="0.0.4">
             <file name="fighter-gunslinger.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/fighter-gunslinger.xml" />
         </update>
 	</info>
@@ -71,12 +71,12 @@
 			<p class="indent">You also regain all spent grit points after finishing a short or long rest.</p>
 		</description>
 		<sheet>
-			<description>You have $(grit-points) Grit points. You regain 1 when you score or a critical hit, or when you kill a significant threat.
+			<description>You have {{grit-points}} Grit points. You regain 1 when you score or a critical hit, or when you kill a significant threat.
 			You also regain all spent grit points after finishing a short or long rest.</description>
 		</sheet>
 		<rules>
 			<stat name="grit-points" value="1" bonus="base" />
-			<stat name="grit-points" value="Wisdom Modifier" bonus="base" />
+			<stat name="grit-points" value="wisdom:modifier" bonus="base" />
 		</rules>
 	</element>
 	<element name="Deadeye Shot" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_GUNSLINGER_DEADEYE_SHOT">
@@ -95,7 +95,7 @@
 			<description>Stow and draw firearms as a single object interaction on your turn.</description>
 		</sheet>
 		<rules>
-			<stat name="Initiative" value="Proficiency" bonus="proficiency" />
+			<stat name="initiative" value="proficiency" bonus="proficiency" />
 		</rules>
 	</element>
 	<element name="Violent Shot" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_GUNSLINGER_VIOLENT_SHOT">
@@ -119,23 +119,23 @@
 		</description>
 		<sheet>
 			<description>Spend 1 Grit point to target a specific location on a target’s body.
-			Head: target makes a DC$(trick-shot:dc) Constitution Saving Throw or has disadvantage on attack until end of its next turn.
-			Arms: target makes a DC$(trick-shot:dc) Strength saving throw or drop 1 held item of your choice.
+			Head: target makes a DC{{trick-shot:dc}} Constitution Saving Throw or has disadvantage on attack until end of its next turn.
+			Arms: target makes a DC{{trick-shot:dc}} Strength saving throw or drop 1 held item of your choice.
 			Torso: target is pushed 10ft away from you.
-			Legs/Wings: target makes a DC$(trick-shot:dc) Strength saving throw or is knocked prone.</description>
+			Legs/Wings: target makes a DC{{trick-shot:dc}} Strength saving throw or is knocked prone.</description>
 		</sheet>
 		<rules>
 			<stat name="trick-shot:dc" value="8" />
-			<stat name="trick-shot:dc" value="Proficiency" />
-			<stat name="trick-shot:dc" value="Dexterity Modifier" />
+			<stat name="trick-shot:dc" value="proficiency" />
+			<stat name="trick-shot:dc" value="dexterity:modifier" />
 		</rules>
 	</element>
 	<element name="Lightning Reload" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_GUNSLINGER_LIGHTNING_RELOAD">
 		<description>
 			<p>Starting at 15th level, you can reload any firearm as a bonus action.</p>
 		</description>
-		<sheet>
-			<description>Bonus action to reload a firearm.</description>
+		<sheet action="Bonus Action">
+			<description>Reload a firearm.</description>
 		</sheet>
 	</element>
 	<element name="Piercing Shot" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_GUNSLINGER_PIERCING_SHOT">
@@ -229,7 +229,8 @@
 		<description />
 		<setters>
 			<set name="category">Weapons</set>
-			<set name="cost" currency="">Crafted</set>
+			<set name="cost" currency="gp">0</set>
+			<!-- <set name="cost" currency="">Crafted</set> -->
 			<set name="weight" lb="25">25 lb.</set>
 			<set name="slot">twohand</set>
 			<set name="range">300/1200</set>
@@ -244,7 +245,8 @@
 		<description />
 		<setters>
 			<set name="category">Weapons</set>
-			<set name="cost" currency="">Crafted</set>
+			<set name="cost" currency="gp">0</set>
+			<!-- <set name="cost" currency="">Crafted</set> -->
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">30/60</set>

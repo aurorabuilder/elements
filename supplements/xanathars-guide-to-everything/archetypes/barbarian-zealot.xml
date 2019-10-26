@@ -4,7 +4,7 @@
     <name>Zealot</name>
     <description>The Zealot from Xanathar’s Guide to Everything</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-    <update version="0.0.3">
+    <update version="0.0.5">
       <file name="barbarian-zealot.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/barbarian-zealot.xml" />
     </update>
   </info>
@@ -23,11 +23,11 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_DIVINE_FURY" type="Archetype Feature" level="3" />
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_WARRIOR_OF_THE_GODS" type="Archetype Feature" level="3" />
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_FANATICAL_FOCUS" type="Archetype Feature" level="6" />
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_ZEALOUS_PRESENCE" type="Archetype Feature" level="10" />
-      <grant name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_RAGE_BEYOND_DEATH" type="Archetype Feature" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_DIVINE_FURY" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_WARRIOR_OF_THE_GODS" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_FANATICAL_FOCUS" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_ZEALOUS_PRESENCE" level="10" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_RAGE_BEYOND_DEATH" level="14" />
     </rules>
   </element>
   <element name="Divine Fury" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_DIVINE_FURY">
@@ -35,25 +35,12 @@
       <p>Starting when you choose this path at 3rd level, you can channel divine fury into your weapon strikes. While you’re raging, the first creature you hit on each of your turns with a weapon attack takes extra damage equal to 1d6 + half your barbarian level. The extra damage is necrotic or radiant; you choose the type of damage when you gain this feature.</p>
     </description>
     <sheet>
-      <description>While raging, the first creature you hit on a turn wit ha weapon attack takes an extra 1d6+%hacky half level% necrotic or radiant damage(choose when taking this feature.)</description>
+      <description>While raging, the first creature you hit on a turn with a weapon attack takes an extra 1d6+{{level:barbarian:half}} necrotic or radiant damage(choose when taking this feature.)</description>
     </sheet>
-    <rules>
-      <stat name="hacky half level" value="0" />
-      <stat name="hacky half level" value="1" level="2" />
-      <stat name="hacky half level" value="1" level="4" />
-      <stat name="hacky half level" value="1" level="6" />
-      <stat name="hacky half level" value="1" level="8" />
-      <stat name="hacky half level" value="1" level="10" />
-      <stat name="hacky half level" value="1" level="12" />
-      <stat name="hacky half level" value="1" level="14" />
-      <stat name="hacky half level" value="1" level="16" />
-      <stat name="hacky half level" value="1" level="18" />
-      <stat name="hacky half level" value="1" level="20" />
-    </rules>
   </element>
   <element name="Warrior of the Gods" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ZEALOT_WARRIOR_OF_THE_GODS">
     <description>
-      <p>At 3rd level, your soul is marked for endless battle. If a spell, such as raise dead, has the sole effect of restoring you to life (but not uncleath), the caster doesn’t need material components to cast the spell on you.</p>
+      <p>At 3rd level, your soul is marked for endless battle. If a spell, such as raise dead, has the sole effect of restoring you to life (but not undeath), the caster doesn’t need material components to cast the spell on you.</p>
     </description>
     <sheet>
       <description>When a spell with the sole effect of restoring you to life(not undeath) is cast on you, the caster doesn't need material components.</description>
@@ -64,8 +51,8 @@
     <description>
       <p>Starting at 6th level, the divine power that fuels your rage can protect you. If you fail a saving throw while you’re raging, you can reroll it, and you must use the new roll. You can use this ability only once per rage.</p>
     </description>
-    <sheet>
-      <description>While raging, if you fail a saving throw, you can reroll it, and you must use the new roll.(1/rage)</description>
+    <sheet usage="1/Rage">
+      <description>While raging, if you fail a saving throw, you can reroll it, and you must use the new roll.</description>
     </sheet>
     <rules />
   </element>
@@ -73,8 +60,8 @@
     <description>
       <p>At 10th level, you learn to channel divine power to inspire zealotry in others. As a bonus action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you that can hear you gain advantage on attack rolls and saving throws until the start of your next turn. Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Bonus action: Unleash a battle cry, up to 10 other creatures of your choice within 60ft gain advantage on attack rolls and saving throws until the start of your next turn.(1/long rest)</description>
+    <sheet action="Bonus Action" usage="1/Long Rest">
+      <description>Unleash a battle cry, up to 10 other creatures of your choice within 60ft gain advantage on attack rolls and saving throws until the start of your next turn.</description>
     </sheet>
     <rules></rules>
   </element>

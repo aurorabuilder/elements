@@ -4,7 +4,7 @@
     <name>Necromancer</name>
     <description>The Necromancer class from the D&amp;D Wiki.</description>
         <author url="https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222">Kydo and BigShotFancyMan</author>
-    <update version="0.0.2">
+    <update version="0.0.6">
       <file name="class-necromancer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/classes/class-necromancer.xml" />
     </update>
   </info>
@@ -67,22 +67,22 @@
       <set name="spellcastingAbility">Charisma</set>
     </setters>
     <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WIKI_MULTICLASS_NECROMANCER" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WIKI_MULTICLASS_NECROMANCER" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION"  requirements="!ID_WIKI_MULTICLASS_NECROMANCER"/>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA"  requirements="!ID_WIKI_MULTICLASS_NECROMANCER"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WIKI_MULTICLASS_NECROMANCER" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WIKI_MULTICLASS_NECROMANCER" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_WIKI_MULTICLASS_NECROMANCER"/>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WIKI_MULTICLASS_NECROMANCER"/>
       <select type="Proficiency" name="Skill Proficiency (Necromancer)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_RELIGION" number="2" requirements="!ID_WIKI_MULTICLASS_NECROMANCER"/>
       
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_SPELLCASTING_NECROMANCER" level="1"/>
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_LIFE_TAP" level="1" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_NECROMANCER_OCCULT" level="2" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_SOUL_HARVEST" level="3" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_ABILITYSCOREIMPROVEMENT_NECROMANCER" level="4" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_SPONTANEOUS_UNBURIAL" level="5" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_ANIMATE_MAJOR_UNDEAD" level="7" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_RITUALISTIC_UNBURIAL" level="14" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_MACABRE" level="18" />
-      <grant type="Class Feature" name="ID_WIKI_CLASS_FEATURE_NECROMANCER_SEANCE" level="20" requirements="!ID_WIKI_CLASS_FEATURE_NECROMANCER_GRIM_HARVEST"/>
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_SPELLCASTING_NECROMANCER" level="1"/>
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_LIFE_TAP" level="1" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_NECROMANCER_OCCULT" level="2" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_SOUL_HARVEST" level="3" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_ABILITYSCOREIMPROVEMENT_NECROMANCER" level="4" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_SPONTANEOUS_UNBURIAL" level="5" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_ANIMATE_MAJOR_UNDEAD" level="7" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_RITUALISTIC_UNBURIAL" level="14" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_MACABRE" level="18" />
+      <grant type="Class Feature" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_SEANCE" level="20" requirements="!ID_WIKI_CLASS_FEATURE_NECROMANCER_GRIM_HARVEST"/>
       <select type="Class Feature" name="Variant Feature: Grim Harvest" supports="Necromancer Variant Feature" optional="true" level="20" />
     </rules>
     <multiclass id="ID_WIKI_MULTICLASS_NECROMANCER">
@@ -94,7 +94,7 @@
       </setters>
       <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
       </rules>
     </multiclass>
   </element>
@@ -124,7 +124,7 @@
       <p>You can use an arcane focus as a spellcasting focus for your necromancer spells.</p>
     </description>
     <sheet display="true">
-      <description>You can prepare $(necromancer:spellcasting:prepare) spells from the your spellbook. You use an arcane focus to cast spells. And can also cast Necromancer spells as a ritual.</description>
+      <description>You can prepare {{necromancer:spellcasting:prepare}} spells from the your spellbook. You use an arcane focus to cast spells. And can also cast Necromancer spells as a ritual.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Spellcasting</set>
@@ -135,8 +135,8 @@
     <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
 
-      <grant type="Grants" name="ID_INTERNAL_RITUAL_CASTING" />
-      <grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
+      <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+      <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
 
       <stat name="necromancer:spellcasting:slots:1" value="2" level="1" />
       <stat name="necromancer:spellcasting:slots:1" value="1" level="2" />
@@ -158,33 +158,27 @@
       <stat name="necromancer:spellcasting:slots:8" value="1" level="15" />
       <stat name="necromancer:spellcasting:slots:9" value="1" level="17" />
 
-      <stat name="necromancer:spellcasting:prepare" value="Charisma Modifier" />
+      <stat name="necromancer:spellcasting:prepare" value="charisma:modifier" />
       <stat name="necromancer:spellcasting:prepare" value="level:necromancer" />
 
       <select type="Spell" name="Cantrip (Necromancer)" supports="$(spellcasting:list), 0" level="1" number="2" spellcasting="Necromancer" />
       <select type="Spell" name="Cantrip (Necromancer)" supports="$(spellcasting:list), 0" level="4" number="1" spellcasting="Necromancer" />
       <select type="Spell" name="Cantrip (Necromancer)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Necromancer" />
       
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), 1" level="1" number="6" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="2" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="5" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="6" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="9" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="12" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="15" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="17" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="18" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" number="2" spellcasting="Necromancer" />
-      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" number="2" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="1" number="2" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="2" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="5" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="6" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="9" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="15" spellcasting="Necromancer" />
+      <select type="Spell" name="Spell (Necromancer)" supports="$(spellcasting:list), $(spellcasting:slots)" level="17" spellcasting="Necromancer" />
     </rules>
   </element>
   <element name="Life Tap" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_LIFE_TAP">
@@ -192,17 +186,17 @@
       <p>Starting at 1st level, your touch can siphon the life force of others to bolster your own. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 1d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature. The damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8). You may use this feature a number of times equal to your Charisma modifier(minimum one) and you regain all uses of this feature at the end of a long rest.</p>
     </description>
     <sheet>
-			<description>$(life tap:count)/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 1d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
-			<description level="5">$(life tap:count)/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 2d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature. </description>
-			<description level="11">$(life tap:count)/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 3d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
-			<description level="17">$(life tap:count)/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 4d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
+			<description>{{life tap:count}}/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 1d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
+			<description level="5">{{life tap:count}}/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 2d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature. </description>
+			<description level="11">{{life tap:count}}/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 3d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
+			<description level="17">{{life tap:count}}/long rest. As an action, you can make a melee spell attack against a living creature, dealing necrotic damage equal to 4d8 + your Charisma modifier on a hit. You gain temporary hit points equal to the amount of necrotic damage dealt. If this feature kills the creature, you gain twice as many temporary hit points from using this feature.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Life_Tap</set>
     </setters>
     <rules>
       <stat name="life tap:count" value="1" bonus="life tap" />
-      <stat name="life tap:count" value="Charisma Modifier" bonus="life tap" />
+      <stat name="life tap:count" value="charisma:modifier" bonus="life tap" />
     </rules>
   </element>
   <element name="Necromancer Occult" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_NECROMANCER_OCCULT">
@@ -222,7 +216,7 @@
       <p>Starting at 3rd level, by reaping life you are able to claim a fraction of those unfortunate creatures souls to regenerate your wounds and fortify your body. At the end of your turn, if you or any undead under your control have killed one or more creatures, you gain hit points equal to your necromancer level. If doing so would grant you more hit points than you can have, you gain temporary hit points equal to the amount of excess hit points received.</p>
     </description>
     <sheet>
-      <description>At the end of your turn, if you or any undead under your control have killed one or more creatures, you gain $(level:necromancer) hit points. If doing so would grant you more hit points than you can have, you gain temporary hit points equal to the amount of excess hit points received.</description>
+      <description>At the end of your turn, if you or any undead under your control have killed one or more creatures, you gain {{level:necromancer}} hit points. If doing so would grant you more hit points than you can have, you gain temporary hit points equal to the amount of excess hit points received.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Soul_Harvest</set>
@@ -299,6 +293,9 @@
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Macabre</set>
     </setters>
+    <rules>
+    	<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+    </rules>
   </element>
   <element name="Séance" type="Class Feature" source="D&amp;D Wiki" id="ID_WIKI_CLASS_FEATURE_NECROMANCER_SEANCE">
     <description>
@@ -326,7 +323,7 @@
   </element>
 
   <!-- NECROMANCER OCCULT: KEEPER -->
-  <element name="Keeper" type="Archetype" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_NECROMANCER_KEEPER">
+  <element name="Keeper" type="Archetype" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_NECROMANCER_KEEPER">
     <supports>Necromancer Occult</supports>
     <description>
       <p>An eager doctor's assistant stays late after a failed surgery to stitch the cadaver closed, and prepare it for transport to the undertaker. But while he has the remains here to himself, he sees no harm in a little research. This case was an odd one, and he'd like to know more about it. As he conducts his experiments, he murmurs to the body, "Let's see where it all went wrong, and where we can do better next time."</p>
@@ -343,13 +340,13 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Keeper</set>
     </setters>
     <rules>
-      <grant type="Archetype Feature" name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_LIFE_ON_DEMAND"   level="2"/>
-      <grant type="Archetype Feature" name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_EXPANDED_INTELLECT"  level="6"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_AURA_OF_WELLBEING" level="10"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_REFUSAL" level="14"/>
+      <grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_LIFE_ON_DEMAND"  level="2"/>
+      <grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_EXPANDED_INTELLECT" level="6"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_AURA_OF_WELLBEING" level="10"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_REFUSAL" level="14"/>
     </rules>
   </element>
-  <element name="Life on Demand" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_LIFE_ON_DEMAND">
+  <element name="Life on Demand" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_LIFE_ON_DEMAND">
     <description>
       <p>Beginning at 2nd level, you can accelerate the body's natural healing when it is needed the most. As an action, a creature you touch can expand a number of its hit dice equal to your spellcasting modifier (minimum of 1) to regain hit points. After you use this feature, you must finish a short or long rest.</p>
       <p class="indent">At 5th level, a creature can also add it's Constitution modifier to hit points recovered this way.</p>
@@ -364,7 +361,7 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Life_on_Demand</set>
     </setters>
   </element>
-  <element name="Expanded Intellect" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_EXPANDED_INTELLECT">
+  <element name="Expanded Intellect" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_EXPANDED_INTELLECT">
     <description>
       <p>Beginning at 6th level, your studies of death and undeath have opened up new possibilities for you. You gain the <i>spare the dying</i> cantrip.</p>
       <p class="indent">You also add the following spells to your list of spells to learn from: <i>cure wounds, lesser restoration, beacon of hope, feign death, revivify, death ward, greater restoration, resurrection,</i> and <i>mass heal</i>.</p>
@@ -388,7 +385,7 @@
       <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Necromancer"/>
     </rules>
   </element>
-  <element name="Aura of Wellbeing" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_AURA_OF_WELLBEING">
+  <element name="Aura of Wellbeing" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_AURA_OF_WELLBEING">
     <description>
       <p>Beginning at 10th level, you emanate an aura that rejuvenates and prolongs the life of others around you. If an allied creature begins its turn within 10 feet of you, it gains hit points equal to your proficiency bonus if its hit points are below half its hit point maximum.</p>
     </description>
@@ -399,7 +396,7 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Aura_of_Wellbeing</set>
     </setters>
   </element>
-  <element name="Refusal" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_REFUSAL">
+  <element name="Refusal" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_KEEPER_REFUSAL">
     <description>
       <p>Beginning at 14th level, you can decide to ignore death if it's too inconvenient. If a creature within 5 feet of you that you can touch (including you) drops to 0 hit points, you may use your reaction to cause that creature to drop to 1 hit point instead. You must finish a short or long rest before you can use this feature again.</p>
     </description>
@@ -412,7 +409,7 @@
   </element>
 
   <!-- NECROMANCER OCCULT: REAPER -->
-  <element name="Reaper" type="Archetype" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_NECROMANCER_REAPER">
+  <element name="Reaper" type="Archetype" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_NECROMANCER_REAPER">
     <supports>Necromancer Occult</supports>
     <description>
       <p>The village is quiet during the strangers walk down the roads. No birds are chirping, no children heard playing, no wind blowing. He bends over to grab a flower but it withers before even touched. Death consumes this man. Death consumed the village.</p>
@@ -429,13 +426,13 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Reaper</set>
     </setters>
     <rules>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_DEATHS_KNOWLEDGE" level="2"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_IMPROVED_SOUL_HARVEST" level="6"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_NECROSIS_SPELLCASTING" level="10"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_GRIM" level="14"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_DEATHS_KNOWLEDGE" level="2"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_IMPROVED_SOUL_HARVEST" level="6"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_NECROSIS_SPELLCASTING" level="10"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_GRIM" level="14"/>
     </rules>
   </element>
-  <element name="Death's Knowledge" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_DEATHS_KNOWLEDGE">
+  <element name="Death's Knowledge" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_DEATHS_KNOWLEDGE">
     <description>
       <p>Beginning at 2nd level, some ancient tomes, spell books, or scrolls have provided knowledge to you. Add the following spells to your necromancer spell list: <i>inflict wounds, revivify, speak with dead, commune with dead, raise dead, resurrection,</i> and <i>true resurrection</i>.</p>
       <p class="indent">At 5th level, you may add three spells from any class spell list for which you can cast to your necromancer spell list.</p>
@@ -457,18 +454,18 @@
       <select type="Spell" name="Death's Knowledge" supports="(0)||($(spellcasting:slots))" number="3" level="5" spellcasting="Necromancer"/>
     </rules>
   </element>
-  <element name="Improved Soul Harvest" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_IMPROVED_SOUL_HARVEST">
+  <element name="Improved Soul Harvest" type="Archetype Feature" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_IMPROVED_SOUL_HARVEST">
     <description>
       <p>Starting at 6th level, you've gained the knowledge to channel the souls you harvest into your spells. You may store a number of souls equal to your necromancer level from killing creatures with soul harvest for later use. You can consume souls to regain up to a 3rd level spell slot, which costs 2 souls for 1st level spell and every additional spell level beyond. For instance, a 3rd level spell would consume 6 souls. In addition, when you deal damage to a creature with a spell, you may consume any number of souls in your possession to deal additional necrotic damage equal to the number of souls you consume. </p>
     </description>
     <sheet>
-      <description>You may store $(level:necromancer) souls from killing creatures with soul harvest. You can consume souls to regain up to a 3rd level spell slot, which costs 2 souls per spell level slot. When you deal damage to a creature, you may consume any number of souls in your possession to deal additional necrotic damage equal to the number of souls you consume.</description>
+      <description>You may store {{level:necromancer}} souls from killing creatures with soul harvest. You can consume souls to regain up to a 3rd level spell slot, which costs 2 souls per spell level slot. When you deal damage to a creature, you may consume any number of souls in your possession to deal additional necrotic damage equal to the number of souls you consume.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Improved_Soul_Harvest</set>
     </setters>
   </element>
-  <element name="Necrosis Spellcasting" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_NECROSIS_SPELLCASTING">
+  <element name="Necrosis Spellcasting" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_NECROSIS_SPELLCASTING">
     <description>
       <p>Starting at 10th level, a cloud of stench accompanies the spells that you cast, eating away at the flesh and bone of your victim and distracting them. Any necromancy spells that you cast deal an additional 1d8 necrotic damage.</p>
       <p class="indent">In addition, undead have disadvantage on saving throws against your spells and class features.</p>
@@ -480,7 +477,7 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Necrosis_Spellcasting</set>
     </setters>
   </element>
-  <element name="Grim" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_GRIM">
+  <element name="Grim" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_REAPER_GRIM">
     <description>
       <p>Beginning at 14th level, stories of something supernatural taking lives comes to fruition. Fairy tales depict a Grim Reaper that comes to take souls of people ready to die, but the truth is, the Grim Reaper visits to deal death. An aura surrounds you and saps the life of anything within 5 feet of you. If a creature ends its turn within range it must succeed on a Constitution saving throw or lose hit points equal to the number of souls you have stored. You gain hit points equal to half the hit points the creature lost, rounded up.</p>
     </description>
@@ -493,7 +490,7 @@
   </element>
 
   <!-- NECROMANCER OCCULT: UNDERTAKER -->
-  <element name="Undertaker" type="Archetype" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_NECROMANCER_UNDERTAKER">
+  <element name="Undertaker" type="Archetype" source="D&amp;D Wiki" id="ID_WIKI_ARCHETYPE_NECROMANCER_UNDERTAKER">
     <supports>Necromancer Occult</supports>
     <description>
       <p>In a cemetery, a woman provides a service for a family grieving their lost one. She had spent the evening before prepping the corpse and making everything presentable for the wake. Her services were appreciated and she accepted her thanks, but her real joy would happen after everyone left. She looks at her next corpse, the shopkeep of the funeral home, "Why let the dead rot?"</p>
@@ -510,13 +507,13 @@
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Undertaker</set>
     </setters>
     <rules>
-      <grant type="Archetype Feature" name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNHOLY_RESISTANCE"   level="2"/>
-      <grant type="Archetype Feature"   name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_IMPROVED_ANIMATE_UNDEAD" level="6"/>
-      <grant type="Archetype Feature" name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNDEAD_RESOLVE"   level="10"/>
-      <grant type="Archetype Feature" name="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_LORD_OF_THE_UNDEAD"   level="14"/>
+      <grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNHOLY_RESISTANCE"  level="2"/>
+      <grant type="Archetype Feature"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_IMPROVED_ANIMATE_UNDEAD" level="6"/>
+      <grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNDEAD_RESOLVE"  level="10"/>
+      <grant type="Archetype Feature" id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_LORD_OF_THE_UNDEAD"  level="14"/>
     </rules>
   </element>
-  <element name="Unholy Resistance" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNHOLY_RESISTANCE">
+  <element name="Unholy Resistance" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNHOLY_RESISTANCE">
     <description>
       <p>Beginning at 2nd level, the time you've spent wielding negative energy has made itself a part of you. You have resistance to necrotic damage and your hit point maximum cannot be reduced.</p>
       <p class="indent">At 5th level, this feature extends to any undead under your control.</p>
@@ -528,38 +525,38 @@
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Unholy_Resistance</set>
     </setters>
-    <!-- <rules>
-      <stat name="resistance:necrotic">
-    </rules> -->
+    <rules>
+      <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+    </rules>
   </element>
-  <element name="Improved Animate Undead" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_IMPROVED_ANIMATE_UNDEAD">
+  <element name="Improved Animate Undead" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_IMPROVED_ANIMATE_UNDEAD">
     <description>
       <p>Beginning at 6th level, the negative energy you use to summon your undead is fortified within them. Skeletons and zombies you raise have additional hit points and bonuses to their melee attack rolls equal to your proficiency bonus. In addition, whenever you cast a spell or use a feature or item to raise undead, you raise one additional skeleton or zombie.</p>
     </description>
     <sheet>
-      <description>Skeletons and zombies you raise have additional hit points and bonuses to their melee attack rolls equal to $(Proficiency). In addition, whenever you cast a spell or use a feature or item to raise undead, you raise one additional skeleton or zombie.</description>
+      <description>Skeletons and zombies you raise have additional hit points and bonuses to their melee attack rolls equal to {{proficiency}}. In addition, whenever you cast a spell or use a feature or item to raise undead, you raise one additional skeleton or zombie.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Improved_Animate_Undead</set>
     </setters>
   </element>
-  <element name="Undead Resolve" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNDEAD_RESOLVE">
+  <element name="Undead Resolve" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_UNDEAD_RESOLVE">
     <description>
       <p>Beginning at 10th level, your bond with the dead has strengthened their resolve against that which is holy. Undead you control have advantage on Wisdom saving throws against Turn Undead attempts. In addition, undead you raise add your proficiency bonus to their Armor Class.</p>
     </description>
     <sheet>
-      <description>Undead you control have advantage on Wisdom saving throws against Turn Undead attempts. In addition, undead you raise add $(Proficiency) to their Armor Class.</description>
+      <description>Undead you control have advantage on Wisdom saving throws against Turn Undead attempts. In addition, undead you raise add {{proficiency}} to their Armor Class.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Undead_Resolve</set>
     </setters>
   </element>
-  <element name="Lord of the Undead" type="Archetype Feature" source="D&amp;D Wiki"   id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_LORD_OF_THE_UNDEAD">
+  <element name="Lord of the Undead" type="Archetype Feature" source="D&amp;D Wiki"  id="ID_WIKI_ARCHETYPE_FEATURE_NECROMANCER_UNDERTAKER_LORD_OF_THE_UNDEAD">
     <description>
       <p>Beginning at 14th level, you've reached the epitome of raising undead. Your undead creatures no longer have a damage vulnerability and gain additional hit points equal to your necromancer level. </p>
     </description>
     <sheet>
-      <description>Your undead creatures no longer have a damage vulnerability and gain additional $(level:necromancer) hit points.</description>
+      <description>Your undead creatures no longer have a damage vulnerability and gain additional {{level:necromancer}} hit points.</description>
     </sheet>
     <setters>
       <set name="sourceUrl">https://www.dandwiki.com/w/index.php?title=Necromancer_(5e_Class)&amp;oldid=1134222#Lord_of_the_Undead</set>

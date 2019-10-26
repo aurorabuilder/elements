@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>This month's Unearthed Arcana introduces new feats for fifth edition.</description>
 		<author url="http://dnd.wizards.com/articles/features/feats">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20160606.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2016/20160606.xml" />
 		</update>
 	</info>
@@ -36,7 +36,7 @@
 		</description>
 		<sheet>
 			<description>When using a handaxe, battleaxe, greataxe, warhammer or a maul, you gain +1 to attack rolls with that weapon. 
-			Whenever you have advantage on a melee attack roll you make with the weapon and hit, you can knock the target prone if the lower of the two d20 rolls would also hit the target. Whenever you have disadvantage on a melee attack roll you make with the weapon, the target takes $(fell handed:damage) bludgeoning damage if the attack misses but the higher of the two d20 rolls would have hit. 
+			Whenever you have advantage on a melee attack roll you make with the weapon and hit, you can knock the target prone if the lower of the two d20 rolls would also hit the target. Whenever you have disadvantage on a melee attack roll you make with the weapon, the target takes {{fell handed:damage}} bludgeoning damage if the attack misses but the higher of the two d20 rolls would have hit. 
 			If you use the Help action to aid an ally’s melee attack while you’re wielding the weapon, you knock the target’s shield aside momentarily. In addition to the ally gaining advantage on the attack roll, the ally gains a +2 bonus to the roll if the target is using a shield.</description>
 		</sheet>
 		<rules>
@@ -46,7 +46,7 @@
 			<stat name="warhammer:attack" value="1" />
 			<stat name="maul:attack" value="1" />
 			<stat name="fell handed:damage" value="0" bonus="fell handed" />
-			<stat name="fell handed:damage" value="Strength Modifier" bonus="fell handed" />
+			<stat name="fell handed:damage" value="strength:modifier" bonus="fell handed" />
 		</rules>
 	</element>
 	<element name="Blade Mastery" type="Feat" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_BLADE_MASTERY">
@@ -82,13 +82,13 @@
 		<sheet>
 			<description>When using a flail, you gain +1 to attack rolls with that weapon.
 			As a bonus action on your turn, you can prepare yourself to extend your flail to sweep over targets’ shields. Until the end of this turn, your attack rolls with a flail gain a +2 bonus against any target using a shield.
-			When you hit with an opportunity attack using a flail, the target must succeed on a DC$(flail mastery:dc) Strength saving throw or be knocked prone.</description>
+			When you hit with an opportunity attack using a flail, the target must succeed on a DC{{flail mastery:dc}} Strength saving throw or be knocked prone.</description>
 		</sheet>
 		<rules>
 			<stat name="flail:attack" value="1" />
 			<stat name="flail mastery:dc" value="8" bonus="flail mastery" />
-			<stat name="flail mastery:dc" value="Proficiency" bonus="flail mastery" />
-			<stat name="flail mastery:dc" value="Strength Modifier" bonus="flail mastery" />
+			<stat name="flail mastery:dc" value="proficiency" bonus="flail mastery" />
+			<stat name="flail mastery:dc" value="strength:modifier" bonus="flail mastery" />
 		</rules>
 	</element>
 	<element name="Spear Mastery" type="Feat" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_SPEAR_MASTERY">
@@ -128,9 +128,9 @@
 			<description>Your Intelligence is increased by 1. You gain proficiency with alchemist’s supplies. If you are already proficient with them, you add double your proficiency bonus to checks you make with them. As an action, you can identify one potion within 5 feet of you, as if you had tasted it. You must see the liquid for this benefit to work. Over the course of any short rest, you can temporarily improve the potency of one potion of healing of any rarity. To use this benefit, you must have alchemist’s supplies with you, and the potion must be within reach. If the potion is drunk no more than 1 hour after the short rest ends, the creature drinking the potion can forgo the potion’s die roll and regains the maximum number of hit points that the potion can restore.</description>
 		</sheet>
 		<rules>
-			<stat name="Intelligence" value="1" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES,!ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_PROFICIENCY" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<stat name="intelligence" value="1" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES,!ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
 		</rules>
 	</element>
 	<element name="Alchemist (Alchemist’s Supplies Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_PROFICIENCY">
@@ -141,7 +141,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
 		</rules>
 	</element>
 	<element name="Alchemist (Alchemist’s Supplies Double Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_ALCHEMIST_SUPPLIES_DOUBLE_PROFICIENCY">
@@ -152,7 +152,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Alchemist’s Supplies Proficiency" value="Proficiency" bonus="Proficiency Double" />
+			<stat name="alchemist’s supplies:proficiency" value="proficiency" bonus="double" />
 		</rules>
 	</element>
 
@@ -168,9 +168,9 @@
 			<description>Your Dexterity is increased by 1. You gain proficiency with thieves’ tools. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.</description>
 		</sheet>
 		<rules>
-			<stat name="Dexterity" value="1" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS,!ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_PROFICIENCY" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<stat name="dexterity" value="1" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS,!ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
 		</rules>
 	</element>
 	<element name="Burglar (Thieves’ Tools Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_PROFICIENCY">
@@ -181,7 +181,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
 		</rules>
 	</element>
 	<element name="Burglar (Thieves’ Tools Double Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_BURGLAR_THIEVES_TOOLS_DOUBLE_PROFICIENCY">
@@ -192,7 +192,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Thieves’ Tools Proficiency" value="Proficiency" bonus="Proficiency Double" />
+			<stat name="thieves’ tools:proficiency" value="proficiency" bonus="double" />
 		</rules>
 	</element>
 
@@ -210,9 +210,9 @@
 			<description>Your Constitution is increased by 1. You gain proficiency with cook’s utensils. If you are already proficient with them, you add double your proficiency bonus to checks you make with them. As an action, you can inspect a drink or plate of food within 5 feet of you and determine whether it is poisoned, provided that you can see and smell it. During a long rest, you can prepare and serve a meal that helps you and your allies recover from the rigors of adventuring, provided you have suitable food, cook’s utensils, and other supplies on hand. The meal serves up to six people, and each person who eats it regains two additional Hit Dice at the end of the long rest. In addition, those who partake of the meal have advantage on Constitution saving throws against disease for the next 24 hours.</description>
 		</sheet>
 		<rules>
-			<stat name="Constitution" value="1" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS,!ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_PROFICIENCY" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+			<stat name="constitution" value="1" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS,!ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
 		</rules>
 	</element>
 	<element name="Gourmand (Cook’s Utensils Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_PROFICIENCY">
@@ -223,7 +223,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
 		</rules>
 	</element>
 	<element name="Gourmand (Cook’s Utensils Double Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_GOURMAND_COOKS_UTENSILS_DOUBLE_PROFICIENCY">
@@ -234,7 +234,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Cook’s Utensils Proficiency" value="Proficiency" bonus="Proficiency Double" />
+			<stat name="cook’s utensils:proficiency" value="proficiency" bonus="double" />
 		</rules>
 	</element>
 
@@ -251,9 +251,9 @@
 			<description>Increase your Charisma score by 1, to a maximum of 20. You gain proficiency with the disguise kit. If you are already proficient with it, you add double your proficiency bonus to checks you make with it. If you spend 1 hour observing a creature, you can then spend 8 hours crafting a disguise you can quickly don to mimic that creature. Making the disguise requires a disguise kit. You must make checks as normal to disguise yourself, but you can assume the disguise as an action.</description>
 		</sheet>
 		<rules>
-			<stat name="Charisma" value="1" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT,!ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_PROFICIENCY" />
-			<grant type="Feat Feature" name="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<stat name="charisma" value="1" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT,!ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
 		</rules>
 	</element>
 	<element name="Master of Disguise (Disguise Kit Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_PROFICIENCY">
@@ -264,7 +264,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
 		</rules>
 	</element>
 	<element name="Master of Disguise (Disguise Kit Double Proficiency)" type="Feat Feature" source="Unearthed Arcana: Feats" id="ID_WOTC_UA_FEAT_MASTER_OF_DISGUISE_DISGUISE_KIT_DOUBLE_PROFICIENCY">
@@ -275,7 +275,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="Disguise Kit Proficiency" value="Proficiency" bonus="Proficiency Double" />
+			<stat name="disguise kit:proficiency" value="proficiency" bonus="double" />
 		</rules>
 	</element>
 </elements>

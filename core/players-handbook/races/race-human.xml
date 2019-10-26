@@ -4,8 +4,8 @@
 		<name>Human</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.4">
-			<file name="race-human.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-human.xml" />
+		<update version="0.2.5">
+			<file name="race-human.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-human.xml" />
 		</update>
 	</info>
 
@@ -85,47 +85,28 @@
       <set name="names" type="male">Ander, Blath, Bran, Frath, Geth, Lander, Luth, Malcer, Stor, Taman, Urth</set>
       <set name="names" type="female">Amafrey, Betha, Cefrey, Kethra, Mara, Olga, Silifrey, Westra</set>
       <set name="names" type="surname">Brightwood, Helder, Hornraven, Lackman, Stormwind, Windrivver</set>
-      <set name="names-format">$(name) $(surname)</set>
+      <set name="names-format">{{name}} {{surname}}</set>
       <set name="height" modifier="2d10">4'8"</set>
       <set name="weight" modifier="2d4">110 lb.</set>
     </setters>
     <rules>
-      <stat name="Speed" value="+30" bonus="base"/>
-      <grant type="Size" name="ID_SIZE_MEDIUM"/>
-      <grant type="Language" name="ID_LANGUAGE_COMMON"/>
-      <select type="Language" name="Language (Human)" supports="Starting"/>
-      <stat name="Strength" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <stat name="Dexterity" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <stat name="Constitution" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <stat name="Intelligence" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <stat name="Wisdom" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <stat name="Charisma" value="+1" requirements="!ID_RACE_VARIANT_HUMAN_VARIANT" />
-      <select type="Race Variant" name="Human Variant" supports="Human" optional="true" requirements="ID_INTERNAL_OPTION_ALLOW_FEATS" />
+      <stat name="innate speed" value="30" bonus="base"/>
+      <grant type="Size" id="ID_SIZE_MEDIUM"/>
+      <grant type="Language" id="ID_LANGUAGE_COMMON"/>	  
+      <select type="Language" name="Language (Human)" supports="Starting" requirements="!ID_UA_PS_GRANTS_HUMAN_VARIANT"/>
+      <stat name="strength" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="dexterity" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="constitution" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="intelligence" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="wisdom" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <stat name="charisma" value="1" requirements="!(ID_INTERNAL_GRANTS_REQTEMPFIX||ID_RACE_VARIANT_HUMAN_VARIANT||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_UA_PS_GRANTS_HUMAN_VARIANT)" />
+      <select type="Race Variant" name="Human Variant" supports="Human" optional="true" />
     </rules>
   </element>
- 
-  <element name="Human Trait" type="Race Variant" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN">
-    <!-- temp, keep this element in here but remove the support so it can't be picked, due to it still being in the files that come with the builder -->
-    <!-- <supports>Human</supports> -->
-    <requirements />
-    <description>
-      <p>
-        <span class="feature">Ability Score Increase.</span>Your ability scores each increase by 1.<br />
-      </p>
-    </description>
-    <sheet display="false" />
-    <rules>
-      <stat name="Strength" value="+1"/>
-      <stat name="Dexterity" value="+1"/>
-      <stat name="Constitution" value="+1"/>
-      <stat name="Intelligence" value="+1"/>
-      <stat name="Wisdom" value="+1"/>
-      <stat name="Charisma" value="+1"/>
-    </rules>
-  </element>
-  <element name="Human Variant Trait" type="Race Variant" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT">
+  
+  <element name="Human Variant" type="Race Variant" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT">
     <supports>Human</supports>
-    <requirements />
+    <requirements>ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
     <description>
       <p>If your campaign uses the optional feat rules from the Player’s Handbook, your Dungeon Master might allow these variant traits, all of which replace the human’s Ability Score Increase trait.</p>
       <p>
@@ -134,15 +115,23 @@
         <span class="feature">Feat.</span>You gain one feat of your choice.<br />
       </p>
     </description>
-    <sheet>
-      <description></description>
-    </sheet>
+    <sheet alt="Human" display="false"/>
     <rules>
       <select type="Racial Trait" name="Ability Score Increase (Human Variant)" supports="Human Variant" number="2" />
       <select type="Proficiency" name="Skill Proficiency (Human Variant)" supports="Skill" />
       <select type="Feat" name="Feat (Human Variant)" />
     </rules>
   </element>
+
+  <!--temp fix, todo: undo in next release -->
+  <element name="Req Temp Fix" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_REQTEMPFIX" />
+  <append id="ID_RACE_VARIANT_HUMAN_VARIANT">
+    <rules>
+      <grant type="Grants" id="ID_INTERNAL_GRANTS_REQTEMPFIX"/>
+    </rules>
+  </append>
+  <!--/temp-fix-->
+
   
   <!--Human Variant Ability Score Increase-->
   <element name="Ability Score Increase (Strength)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_STRENGTH">
@@ -153,7 +142,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Strength" value="+1"/>
+      <stat name="strength" value="1" alt="Human Variant" />
     </rules>
   </element>
   <element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_DEXTERITY">
@@ -164,7 +153,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Dexterity" value="+1"/>
+      <stat name="dexterity" value="1" alt="Human Variant" />
     </rules>
   </element>
   <element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_CONSTITUTION">
@@ -175,7 +164,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Constitution" value="+1"/>
+      <stat name="constitution" value="1" alt="Human Variant" />
     </rules>
   </element>
   <element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_INTELLIGENCE">
@@ -186,7 +175,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Intelligence" value="+1"/>
+      <stat name="intelligence" value="1" alt="Human Variant" />
     </rules>
   </element>
   <element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_WISDOM">
@@ -197,7 +186,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Wisdom" value="+1"/>
+      <stat name="wisdom" value="1" alt="Human Variant" />
     </rules>
   </element>
   <element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_HUMAN_VARIANT_CHARISMA">
@@ -208,7 +197,7 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Charisma" value="+1"/>
+      <stat name="charisma" value="1" alt="Human Variant" />
     </rules>
   </element>
 </elements>

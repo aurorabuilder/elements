@@ -4,7 +4,7 @@
     <name>Paladin</name>
     <description>The Paladin class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.3">
+    <update version="0.2.4">
       <file name="class-paladin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-paladin.xml" />
     </update>
   </info>
@@ -31,7 +31,7 @@
       <h5>HIT POINTS</h5>
       <p>
         <span class="emphasis">Hit Dice:</span>1d10 per paladin level<br />
-        <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modefier<br />
+        <span class="emphasis">Hit Points at 1st Level:</span>10 + your Constitution modifier<br />
         <span class="emphasis">Hit Points at Higher Levels:</span>1d10 (or 6) + your Constitution modifier per paladin level after 1st<br />
       </p>
       <h5>PROFICIENCIES</h5>
@@ -76,18 +76,18 @@
     </setters>
     <rules>
         <!-- <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/> -->
-      <!-- <grant type="Grants" name="ID_INTERNAL_GRANTS_AVERAGE_HP_D10" /> -->
+      <!-- <grant type="Grants" id="ID_INTERNAL_GRANTS_AVERAGE_HP_D10" /> -->
 
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
 
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
 
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
 
       <select type="Proficiency" name="Skill Proficiency (Paladin)" supports="Skill,Paladin" number="2" requirements="!ID_WOTC_PHB_MULTICLASS_PALADIN" />
 
@@ -113,11 +113,11 @@
       </setters>
       <rules>
         <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-        <grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+        <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
       </rules>
     </multiclass>
   </element>
@@ -127,12 +127,12 @@
       <p>The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the <i>hallow</i> spell.</p>
       <p class="indent">You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses.</p>
     </description>
-    <sheet>
-      <description>%divine sense:count% / long rest. As an action, you can open your awareness to detect presence of strong evil. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
+    <sheet usage="{{divine sense:count}}/Long Rest" action="Action">
+      <description>You can open your awareness to detect presence of strong evil. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
     </sheet>
     <rules>
       <stat name="divine sense:count" value="1" />
-      <stat name="divine sense:count" value="Charisma Modifier" />
+      <stat name="divine sense:count" value="charisma:modifier" />
     </rules>
   </element>
   <element name="Lay on Hands" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_LAY_ON_HANDS">
@@ -143,7 +143,7 @@
       <p class="indent">This feature has no effect on undead and constructs.</p>
     </description>
     <sheet>
-      <description>As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount (%lay on hands:hp pool%) remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it.</description>
+      <description>As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount ({{lay on hands:hp pool}}) remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it.</description>
     </sheet>
     <rules>
       <stat name="lay on hands:hp pool" value="level:paladin" />
@@ -198,7 +198,7 @@
       <stat name="paladin:spellcasting:slots:5" value="1" level="17" />
       <stat name="paladin:spellcasting:slots:5" value="1" level="19" />
       
-      <stat name="paladin:spellcasting:prepare" value="Charisma Modifier" />
+      <stat name="paladin:spellcasting:prepare" value="charisma:modifier" />
       <stat name="paladin:spellcasting:prepare" value="level:paladin:half" />
     </rules>
   </element>
@@ -230,9 +230,13 @@
       <p class="indent">When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.</p>
       <p class="indent">Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC.</p>
     </description>
+	<sheet>
+		<description>Your oath allows you to channel divine energy to fuel magical effects.</description>
+	</sheet>
     <rules>
       <select type="Archetype" name="Sacred Oath" supports="Sacred Oath" />
-    </rules>
+		<stat name="channel divinity:count" value="1" level="1" bonus="base" />
+	</rules>
   </element>
   <element name="Ability Score Improvement (Paladin)" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_ASI">
     <description>
@@ -240,17 +244,11 @@
     </description>
     <sheet display="false" />
     <rules>
-      <!-- <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_4_PALADIN" level="4" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_8_PALADIN" level="8" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_12_PALADIN" level="12" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_16_PALADIN" level="16" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" />
-      <grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_ASI_19_PALADIN" level="19" requirements="!ID_INTERNAL_OPTION_ALLOW_FEATS" /> -->
       <select type="Class Feature" name="Improvement Option (Paladin 4)" supports="Improvement Option,Paladin,4" level="4" />
       <select type="Class Feature" name="Improvement Option (Paladin 8)" supports="Improvement Option,Paladin,8" level="8" />
       <select type="Class Feature" name="Improvement Option (Paladin 12)" supports="Improvement Option,Paladin,12" level="12" />
       <select type="Class Feature" name="Improvement Option (Paladin 16)" supports="Improvement Option,Paladin,16" level="16" />
       <select type="Class Feature" name="Improvement Option (Paladin 19)" supports="Improvement Option,Paladin,19" level="19" />
-
     </rules>
   </element>
   <element name="Extra Attack" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_EXTRA_ATTACK">
@@ -260,6 +258,9 @@
     <sheet>
       <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
     </sheet>
+	<rules>
+		<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+	</rules>
   </element>
   <element name="Aura of Protection" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_AURA_OF_PROTECTION">
     <description>
@@ -267,13 +268,13 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
-      <description>Whenever you or a friendly creature within %aura of protection:range% feet of you must make a saving throw, the creature gains a +%aura of protection:save bonus% bonus to the saving throw. You must be conscious to grant this bonus.</description>
+      <description>Whenever you or a friendly creature within {{aura of protection:range}} feet of you must make a saving throw, the creature gains a +{{aura of protection:save bonus}} bonus to the saving throw. You must be conscious to grant this bonus.</description>
     </sheet>
     <rules>
       <stat name="aura of protection:range" value="10" />
       <stat name="aura of protection:range" value="30" level="18" />
       <stat name="aura of protection:save bonus" value="1" bonus="base"/>
-      <stat name="aura of protection:save bonus" value="Charisma Modifier" bonus="base"/>
+      <stat name="aura of protection:save bonus" value="charisma:modifier" bonus="base"/>
     </rules>
   </element>
   <element name="Aura of Courage" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_PALADIN_AURA_OF_COURAGE">
@@ -282,7 +283,7 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
-      <description>You and friendly creatures within %aura of courage:range% feet of you can’t be frightened while you are conscious.</description>
+      <description>You and friendly creatures within {{aura of courage:range}} feet of you can’t be frightened while you are conscious.</description>
     </sheet>
     <rules>
       <stat name="aura of courage:range" value="10" />
@@ -302,12 +303,12 @@
       <p>Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.</p>
       <p class="indent">You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>You can use your action to end one spell on yourself or on one willing creature that you touch %cleansing touch:count% / long rest.</description>
+    <sheet usage="{{cleansing touch:count}}/Long Rest">
+      <description>You can use your action to end one spell on yourself or on one willing creature that you touch.</description>
     </sheet>
     <rules>
       <stat name="cleansing touch:count" value="1" bonus="base"/>
-      <stat name="cleansing touch:count" value="Charisma Modifier" bonus="base"/>
+      <stat name="cleansing touch:count" value="charisma:modifier" bonus="base"/>
     </rules>
   </element>
 
@@ -345,31 +346,13 @@
       <h5>OATH OF DEVOTION SPELLS</h5>
       <table>
       <thead>
-        <tr>
-          <td>Paladin Level</td>
-          <td>Spells</td>
-        </tr>
+        <tr> <td>Paladin Level</td> <td>Spells</td> </tr>
       </thead>
-      <tr>
-        <td>3rd</td>
-        <td><em>protection from evil and good, sanctuary</em></td>
-      </tr>
-      <tr>
-        <td>5th</td>
-        <td><em>lesser restoration, zone of truth</em></td>
-      </tr>
-      <tr>
-        <td>9th</td>
-        <td><em>beacon of hope, dispel magic</em></td>
-      </tr>
-      <tr>
-        <td>13th</td>
-        <td><em>freedom of movement, guardian of faith</em></td>
-      </tr>
-      <tr>
-        <td>17th</td>
-        <td><em>commune, flame strike</em></td>
-      </tr>
+      <tr> <td>3rd</td> <td><em>protection from evil and good, sanctuary</em></td> </tr>
+      <tr> <td>5th</td> <td><em>lesser restoration, zone of truth</em></td> </tr>
+      <tr> <td>9th</td> <td><em>beacon of hope, dispel magic</em></td> </tr>
+      <tr> <td>13th</td> <td><em>freedom of movement, guardian of faith</em></td> </tr>
+      <tr> <td>17th</td> <td><em>commune, flame strike</em></td> </tr>
       </table>      
     </description>
     <rules>
@@ -397,8 +380,30 @@
       <p class="indent"><b><i>Turn the Unholy. </i></b>As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.</p>
       <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
     </description>
-    <sheet>
-      <description>You have the Sacred Weapon and Turn the Unholy Channel Divinity options.</description>
+    <sheet display="false" />
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_CHANNEL_DIVINITY_SACRED_WEAPON" />
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_CHANNEL_DIVINITY_TURN_THE_UNHOLY" />
+	</rules>
+  </element>
+  <element name="Channel Divinity: Sacred Weapon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_CHANNEL_DIVINITY_SACRED_WEAPON">
+    <description>
+      <p>As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.</p>
+      <p class="indent">You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.</p>
+    </description>
+    <sheet alt="Sacred Weapon" action="Action" usage="Channel Divinity">
+      <description>You can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add +{{charisma:modifier}} to attack rolls made with that weapon. The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.
+	  You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.</description>
+    </sheet>
+  </element>
+  <element name="Channel Divinity: Turn the Unholy" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_CHANNEL_DIVINITY_TURN_THE_UNHOLY">
+    <description>
+      <p>As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.</p>
+      <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+    </description>
+    <sheet alt="Turn the Unholy" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.
+	  A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</description>
     </sheet>
   </element>
   <element name="Aura of Devotion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PALADIN_AURA_OF_DEVOTION">
@@ -407,7 +412,7 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>      
     </description>
     <sheet>
-      <description>You and friendly creatures within %aura of devotion:range% feet of you can’t be charmed while you are conscious.</description>
+      <description>You and friendly creatures within {{aura of devotion:range}} feet of you can’t be charmed while you are conscious.</description>
     </sheet>
     <rules>
       <stat name="aura of devotion:range" value="10" />
@@ -429,8 +434,8 @@
       <p class="indent">In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
     </description>
-    <sheet>
-      <description>1 / long rest. As an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.</description>
+    <sheet action="Action" usage="1/Long Rest">
+      <description>You can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.</description>
     </sheet>
   </element>
 
@@ -515,17 +520,52 @@
       <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
       <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>      
     </description>
-    <sheet>
-      <description>You have the Nature’s Wrath and Turn the Faithless Channel Divinity options.</description>
+    <sheet display="false" />
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_NATURES_WRATH" />
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_TURN_THE_FAITHLESS" />
+	</rules>
+  </element>
+
+
+  <element name="Channel Divinity: Nature’s Wrath" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_NATURES_WRATH">
+    <description>
+      <p>You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</p>
+    </description>
+    <sheet alt="Nature’s Wrath" action="Action" usage="Channel Divinity">
+      <description>You can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</description>
     </sheet>
   </element>
+  <element name="Channel Divinity: Turn the Faithless" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_TURN_THE_FAITHLESS">
+    <description>
+      <p>You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.</p>
+      <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+      <p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>  
+    </description>
+    <sheet alt="Turn the Faithless" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.
+	  A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.
+	  If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</description>
+    </sheet>
+  </element>
+
+
+
+
+
+
+
+
+
+
+
   <element name="Aura of Warding" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_AURA_OF_WARDING">
     <description>
       <p>Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.</p>
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>      
     </description>
     <sheet>
-      <description>You and friendly creatures within %aura of warding:range% feet of you have resistance to damage from spells.</description>
+      <description>You and friendly creatures within {{aura of warding:range}} feet of you have resistance to damage from spells.</description>
     </sheet>
     <rules>
       <stat name="aura of warding:range" value="10" />
@@ -551,8 +591,11 @@
       </ul>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
     </description>
-    <sheet>
-      <description>1 minute / long rest. At the start of each of your turns, you regain 10 hit points. Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead. Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.</description>
+    <sheet usage="1/Long Rest">
+      <description>For 1 minute you gain the following benefits:
+	  At the start of each of your turns, you regain 10 hit points.
+	  Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.
+	  Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.</description>
     </sheet>
   </element>
 
@@ -637,8 +680,32 @@
       <p class="indent">On a successful save, the creature’s speed is halved for 1 minute or until the creature takes any damage.</p>
       <p class="indent"><b><i>Vow of Enmity.</i></b> As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.</p>     
     </description>
-    <sheet>
+    <sheet display="false">
       <description>You have the Abjure Enemy and Vow of Enmity Channel Divinity options.</description>
+    </sheet>
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY_ABJURE_ENEMY" />
+		<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY_VOW_OF_ENMITY" />
+	</rules>
+  </element>
+  <element name="Channel Divinity: Abjure Enemy" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY_ABJURE_ENEMY">
+    <description>
+      <p>As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.</p>
+      <p class="indent">On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature’s speed is 0, and it can’t benefit from any bonus to its speed.</p>
+      <p class="indent">On a successful save, the creature’s speed is halved for 1 minute or until the creature takes any damage.</p>
+    </description>
+    <sheet alt="Abjure Enemy" action="Action" usage="Channel Divinity">
+      <description>You present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.
+	  On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature’s speed is 0, and it can’t benefit from any bonus to its speed.
+	  On a successful save, the creature’s speed is halved for 1 minute or until the creature takes any damage.</description>
+    </sheet>
+  </element>
+  <element name="Channel Divinity: Vow of Enmity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_CHANNEL_DIVINITY_VOW_OF_ENMITY">
+    <description>
+      <p>As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.</p>
+    </description>
+    <sheet alt="Vow of Enmity" action="Bonus Action" usage="Channel Divinity">
+      <description>You can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.</description>
     </sheet>
   </element>
   <element name="Relentless Avenger" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOV_RELENTLESS_AVENGER">
@@ -666,8 +733,10 @@
       </ul>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>      
     </description>
-    <sheet>
-      <description>1 hour / long rest. Wings sprout from your back and grant you a flying speed of 60 feet. You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.</description>
+    <sheet usage="1/Long Rest">
+      <description>For 1 hour, you gain the following benefits:
+	  Wings sprout from your back and grant you a flying speed of 60 feet.
+	  You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.</description>
     </sheet>
   </element>
 

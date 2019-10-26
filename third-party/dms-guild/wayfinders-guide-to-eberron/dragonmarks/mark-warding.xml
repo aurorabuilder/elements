@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dwarf Dragonmark</name>
+		<description></description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="mark-warding.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-warding.xml" />
+		</update>
+	</info>
+
+	<element name="The Mark of Warding" type="Sub Race" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_WARDING_DRAGONMARK">
+		<supports>Dwarf</supports>
+		<description>
+			<p>The Mark of Warding helps its bearers protect things of value. Using the mark, a dwarf can weave wards and seal portals with mystic force. It also provides its bearer with an intuitive understanding of locks and mechanisms used to protect and seal. The decision each heir has to make is whether they’ll use this power to keep things safe, or whether they’re more interested in opening locks and taking what’s inside. </p>
+			<h4>HOUSE KUNDARAK</h4>
+			<p>If you want to keep something safe —jewels, secrets, prisoners—Kundarak is there to help. The Defenders Guild of House Kundarak trains locksmiths, security specialists, and more. It maintains the infamous prison of Dreadhold, along with a number of smaller prisons. As useful as these services are, it’s the Banking Guild that truely defines the house. Kundarak's lands in the Mror Holds include deep veins of precious metals and stones, and the dwarves have used this wealth to establish the banking industry of Khorvaire. Anyone who makes a living from coin—from bankers to goldsmiths—likely learned their skills at House Kundarak. The security of Kundarak banks is legendary. The house also provides a special service to those who can afford it: a system of extradimensional vaults, allowing a client to store their goods in one location and retrieve them at any other Kundarak enclave.</p>
+			<p class="indent">House Kundarak has a close alliance with House Sivis. Like the House of Scribing, Kundarak has worked to earn the trust of its clients and to establish a reputation for unshakeable integrity. The house has no love of renegade dwarves using their marks to turn a profit, and such rogues will want to avoid the eye of Kundarak.</p>
+			<h4>MARK OF WARDING TRAITS</h4>
+			<p>Characters with the Mark of Warding gain the following traits</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong>Your Dexterity and Intelligence scores increase by 1.</p>
+			<p class="indent"><strong><em>Master of Locks.</em></strong>When you make an Intelligence (History), Intelligence (Investigation), or Thieves’ Tools check involving lock and trap mechanisms, you can roll one Intuition die, a d4, and add the number rolled to the ability check. </p>
+			<p class="indent"><strong><em>Wards and Seals.</em></strong>You can use your mark to cast the alarm spell as a ritual. Starting at 3rd level you can cast arcane lock once with this trait and you regain the ability to do so after a  long rest. Intelligence is your spellcasting ability for these spells. </p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Dwarf (Mark of Warding)" display="false" />
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="dexterity" value="1" />
+			<stat name="intelligence" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARDING_DRAGONMARK_MASTER_OF_LOCKS" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARDING_DRAGONMARK_WARDS_AND_SEALS" />
+		</rules>
+	</element>
+	<element name="Master of Locks" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARDING_DRAGONMARK_MASTER_OF_LOCKS">
+		<description>
+			<p>When you make an Intelligence (History), Intelligence (Investigation), or Thieves’ Tools check involving lock and trap mechanisms, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an History, Investigation, or Thieves’ Tools check involving lock and trap mechanisms, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Wards and Seals" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARDING_DRAGONMARK_WARDS_AND_SEALS">
+		<description>
+			<p>You can use your mark to cast the alarm spell as a ritual. Starting at 3rd level you can cast arcane lock once with this trait and you regain the ability to do so after a  long rest. Intelligence is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You can use your mark to cast the alarm spell as a ritual. (Spellcasting: Intelligence).</description>
+			<description level="3">You can use your mark to cast the alarm spell as a ritual. You can also cast arcane lock once per long rest. (Spellcasting: Intelligence).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ALARM" />
+			<grant type="Spell" id="ID_PHB_SPELL_ARCANE_LOCK" />
+		</rules>
+	</element>
+</elements>

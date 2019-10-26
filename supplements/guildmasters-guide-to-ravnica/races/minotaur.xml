@@ -4,7 +4,7 @@
 		<name>Minotaur</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="minotaur.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/minotaur.xml" />
 		</update>
 	</info>
@@ -41,15 +41,15 @@
 		<setters>
 			<set name="names" type="male">Alovnek, Brogmir, Brozhdar, Dornik, Drakmir, Orazhan, Grozdan, Kalazmir, Klattic, MeJislek, Nirikov, Prezhlek, Radolak, Rugilar, Sarovnek , Svarakov, Trovik, Vraslak, Yarvem</set>
 			<set name="names" type="female">Akra, Bolsa, Cica, Oakka, Drakisla, Eleska , Enka, lrnaya, jaska, Kalka, Makla, Noraka, Pesha, Raisha, Sokali, Takyat, Vrokya, Veska, Yelka, Zarka, Zoka</set>
-			<set name="names-format">$(name)</set>
+			<set name="names-format">{{name}}</set>
 			<set name="height" modifier="2d8">5'4"</set>
 			<set name="weight" modifier="2d6">175 lb.</set>
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="Strength" value="2" />
-			<stat name="Constitution" value="1" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="strength" value="2" />
+			<stat name="constitution" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
 			<grant type="Language" id="ID_GGTR_LANGUAGE_MINOTAUR" />
@@ -64,7 +64,7 @@
 			<p>Your horns are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
 		</description>
 		<sheet>
-			<description>Your horns are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + $(Strength Modifier).</description>
+			<description>Your horns are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6+{{strength:modifier}}.</description>
 		</sheet>
 	</element>    
 	<element name="Goring Rush" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_MINOTAUR_GORING_RUSH">
@@ -80,12 +80,12 @@
 			<p>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to shove that target with your horns. The target must be no more than one size larger than you and within 5 feet of you. Unless it succeeds on a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier, you push it up to 10 feet away from you</p>
 		</description>
 		<sheet>
-			<description>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to shove that target with your horns. The target must be no more than one size larger than you and within 5 feet of you. Unless it succeeds on a DC $(hammering horns:dc) Strength saving throw, you push it up to 10 feet away from you</description>
+			<description>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to shove that target with your horns. The target must be no more than one size larger than you and within 5 feet of you. Unless it succeeds on a DC {{hammering horns:dc}} Strength saving throw, you push it up to 10 feet away from you</description>
 		</sheet>
 		<rules>
 			<stat name="hammering horns:dc" value="8" />
-			<stat name="hammering horns:dc" value="Proficiency" />
-			<stat name="hammering horns:dc" value="Strength Modifier" />
+			<stat name="hammering horns:dc" value="proficiency" />
+			<stat name="hammering horns:dc" value="strength:modifier" />
 		</rules>
 	</element>    
 	<element name="Imposing Presence" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_MINOTAUR_IMPOSING_PRESENCE">

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Halfling Dragonmarks</name>
+		<description></description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="mark-healing.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-healing.xml" />
+		</update>
+	</info>
+
+	<element name="The Mark of Healing" type="Sub Race" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_HEALING_DRAGONMARK">
+		<supports>Halfling</supports>
+		<description>
+			<p>A halfling with the Mark of Healing can save a life with a touch, restoring vitality and the will to live. When dealing with mundane medicine, the mark helps its bearer sense the nature of maladies and afflictions and find the best solution. When equipped with dragonshard focus items, the mark can even draw the dead back from the depths of Dolurrh. </p>
+			<h4>HOUSE JORASCO</h4>
+			<p>The Healer’s Guild provides a vital service to Khorvaire, and the Last War ensured that there was great need for healers. The guild runs the schools that teach medicine and houses of healing that provide both mundane and magical services. If it could save a life, it’s probably tied Jorasco... and it will come with a cost. If you have the gold, Jorasco healers can remove a disease instantly with lesser restoration. If you can't afford such service, they will treat you with mundane techniques (the Medicine skill). House Jorasco is also the source of potions of Healing. While many criticize Jorasco’s demands for payment, the leaders of the house maintain that it’s not about greed; it’s about ensuring the survival and prosperity of the house, so they can continue to help future generations.</p>
+			<p class="indent">While the public face of Jorasco is that of the healer, there are rumors that the house engaged in disturbing experiments during the Last War, working with House Vadalis to develop biological weapons and strange new creatures. A Jorasco heir will have to decide if they want to investigate these rumors... and what they'll do if the rumors are true. </p>
+			<h4>MARK OF HEALING TRAITS</h4>
+			<p>Characters with the Mark of Healing gain the following traits</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1.</p>
+			<p class="indent"><strong><em>Medical Intuition.</em></strong> When you make a Wisdom (Medicine) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Healing Touch.</em></strong> As an action, you can draw power from your dragonmark to spend one of your Hit Dice and revitalize yourself or a creature you touch. Roll the die, add your Wisdom modifier, and the creature regains a number of hit points equal to the total. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Halfling (Mark of Healing)" display="false" />
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="wisdom" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEALING_DRAGONMARK_MEDICAL_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEALING_DRAGONMARK_HEALING_TOUCH" />
+		</rules>
+	</element>
+	<element name="Medical Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEALING_DRAGONMARK_MEDICAL_INTUITION">
+		<description>
+			<p>When you make a Wisdom (Medicine) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Medicine check, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Healing Touch" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEALING_DRAGONMARK_HEALING_TOUCH">
+		<description>
+			<p>As an action, you can draw power from your dragonmark to spend one of your Hit Dice and revitalize yourself or a creature you touch. Roll the die, add your Wisdom modifier, and the creature regains a number of hit points equal to the total. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>Roll one of your hit die, add {{wisdom:modifier}}, and the either you or a creature regains a number of hit points equal to the total.</description>
+		</sheet>
+	</element>
+</elements>
