@@ -4,7 +4,7 @@
         <name>The Luminari</name>
         <description>The Luminari race from The Compendium of Forgotten Secrets.</description>
         <author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
 			<file name="race-luminari.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/races/race-luminari.xml" />
 		</update>
 	</info>
@@ -44,7 +44,8 @@
         <sheet display="false" />
         <rules>
             <select type="Racial Trait" name="Ability Score Increase" supports="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_INTELLIGENCE|ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_WISDOM|ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
-			<stat name="intelligence" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_INTELLIGENCE" />
+			<!-- todo: revert when ability score requirement issue is fixed -->
+			<!-- <stat name="intelligence" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_INTELLIGENCE" />
 			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_INTELLIGENCE" />			
 			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_INTELLIGENCE" />
 			<stat name="intelligence" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_WISDOM" />
@@ -52,7 +53,7 @@
 			<stat name="charisma" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_WISDOM" />
 			<stat name="intelligence" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
 			<stat name="wisdom" value="1" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
-			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" />
+			<stat name="charisma" value="2" requirements="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA" /> -->
             <grant type="Language" id="ID_LANGUAGE_COMMON" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_STARBORN" />
             <grant type="Racial Trait" id="ID_GFP_COFSA_RACIAL_TRAIT_MYSTICAL_POWER" />
@@ -66,18 +67,33 @@
             <p>Your Intelligence score increases by 2, your Wisdom score increases by 1, and your Charisma score increases by 1.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="2" alt="Luminari" />
+			<stat name="wisdom" value="1" alt="Luminari" />			
+			<stat name="charisma" value="1" alt="Luminari" />
+		</rules>
 	</element>	
     <element name="Wisdom" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_WISDOM">
         <description>
             <p>Your Intelligence score increases by 1, your Wisdom score increases by 2, and your Charisma score increases by 1.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Luminari" />
+			<stat name="wisdom" value="2" alt="Luminari" />		
+			<stat name="charisma" value="1" alt="Luminari" />
+		</rules>
 	</element>	
     <element name="Charisma" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_CHARISMA">
         <description>
             <p>Your Intelligence score increases by 1, your Wisdom score increases by 1, and your Charisma score increases by 2.</p>
 		</description>
         <sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Luminari" />
+			<stat name="wisdom" value="1" alt="Luminari" />
+			<stat name="charisma" value="2" alt="Luminari" />
+		</rules>
 	</element>
 	
 	<element name="Starborn" type="Racial Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_RACIAL_TRAIT_LUMINARI_STARBORN">
