@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <update version="0.0.1">
+            <file name="items.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/mirts-undermountain-survival-guide/items.xml" />
+        </update>
+    </info>
+	<element name="Lasso" type="Weapon" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_WEAPON_LASSO">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_DMSG_MUSG_WEAPON_PROPERTY_SPECIAL_LASSO</supports>
+		<description>
+			<p>An ordinary rope may be turned into a lasso.</p>
+			<p>A Large or smaller creature hit by a lasso is Restrained until it is freed. A lasso has no effect on creatures that are formless, or creatures that are Huge or larger. Treat a completely stationary target as having AC 10.</p>
+            <p class="indent">A creature caught by a lasso can use its action to make a DC 10 Dexterity check, freeing itself or another creature within its reach on a success. Dealing 3 slashing damage to the lasso (AC 10) also frees the creature without harming it, ending the effect and turning the lasso into a cut rope.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="sp">5</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">10/20</set>
+			<!-- <set name="damage" type=""></set> -->
+			<set name="proficiency">ID_DMSG_MUSG_WEAPON_PROFICIENCY_LASSO</set>
+		</setters>
+	</element>
+	<element name="Special (Lasso)" type="Weapon Property" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_WEAPON_PROPERTY_SPECIAL_LASSO">
+		<description>
+			<p>A Large or smaller creature hit by a lasso is Restrained until it is freed. A lasso has no effect on creatures that are formless, or creatures that are Huge or larger. Treat a completely stationary target as having AC 10.</p>
+            <p class="indent">A creature caught by a lasso can use its action to make a DC 10 Dexterity check, freeing itself or another creature within its reach on a success. Dealing 3 slashing damage to the lasso (AC 10) also frees the creature without harming it, ending the effect and turning the lasso into a cut rope.</p>
+		</description>
+	</element>
+	<element name="Weapon Proficiency (Lasso)" type="Proficiency" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_WEAPON_PROFICIENCY_LASSO">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_DMSG_MUSG_WEAPON_PROPERTY_SPECIAL_LASSO</supports>
+	</element>
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_DMSG_MUSG_WEAPON_PROFICIENCY_LASSO" />
+		</rules>
+	</append>    
+
+    <!-- magic items can be found in the source: Mordenkainen’s Tome of Marvelous Magic -->
+
+</elements>
