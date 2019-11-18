@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="sorcerer-hellfire.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/archetypes/sorcerer-hellfire.xml" />
+		</update>
+	</info>	
+	<element name="Hellfire Sorcerer" type="Archetype" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_HELLFIRE_SORCERER">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Hellfire sorcerers are gifted with sorcery born of an infernal origin, and a rare one at that. Attuned to the secrets of Hellfire, a flame that burns both flesh and spirit, they are among the rarest and most feared arcanists in the multiverse.</p>
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_SOUL_OF_FIRE" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_FLAMES_OF_HELL" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CLINGING_FLAMES" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_HELLWALK" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CORE_OF_HELLFIRE" />
+		</description>
+		<sheet display="false">
+			<description>A sorcerer whose blood surges with the necrotic flames of hell.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_SOUL_OF_FIRE" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_FLAMES_OF_HELL" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CLINGING_FLAMES" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_HELLWALK" level="14" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CORE_OF_HELLFIRE" level="18" />
+		</rules>
+	</element>
+	<element name="Soul of Fire" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_SOUL_OF_FIRE">
+		<description>
+			<p>At 1st level you are immune to the damage of any of your own spells that are affected by the Flames of Hell metamagic ability.</p>
+		</description>
+		<sheet>
+			<description>You are immune to the damage of any of your own spells that are affected by the Flames of Hell metamagic ability.</description>
+		</sheet>
+	</element>
+	<element name="Flames of Hell" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_FLAMES_OF_HELL">
+		<description>
+			<p>At 1st level you gain access to a metamagic ability that allows you to alter the elemental composition of your spells. By expending Sorcery Points equal to the spell’s level, you may change the damage type of any spell that deals fire, cold, lightning, acid or poison into hellfire, which deals half fire, half necrotic damage (round fractions down). This metamagic ability may be used in conjunction with another metamagic ability, assuming you have adequate sorcery points available.</p>
+		</description>
+		<sheet usage="Meta Magic">
+			<description>Change the damage type of any spell that deals fire, cold, lightning, acid or poison into hellfire, which deals half fire, half necrotic damage (Sorcery Points equal to the spell’s level). This metamagic ability may be used in conjunction with another metamagic ability.</description>
+		</sheet>
+	</element>
+	<element name="Clinging Flames" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CLINGING_FLAMES">
+		<description>
+			<p>At 6th level, whenever you deal damage to a target with a spell of first level or higher that deals fire and/or necrotic damage, the creature is affected by clinging flames and continues to burn, taking an additional amount of that damage type equal to ½ your level at the start of its next turn.</p>
+		</description>
+		<sheet>
+			<description>Whenever you deal damage to a target with a spell of first level or higher that deals fire and/or necrotic damage, the creature is affected by clinging flames and continues to burn, taking an additional {{level:half}} damage of that damage type at the start of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Hellwalk" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_HELLWALK">
+		<description>
+			<p>At 14th level you can teleport to a location you can see within 100 feet. At both your origin and destination points there is a burst of hellfire that deals fire and necrotic damage equal to your level (half of each type) to all adjacent creatures. You regain the use of this ability after a short rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>You can teleport to a location you can see within 100 feet. At both your origin and destination points there is a burst of hellfire that deals {{level:half}} fire and necrotic damage to all adjacent creatures.</description>
+		</sheet>
+	</element>
+	<element name="Core of Hellfire" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_HELLFIRE_CORE_OF_HELLFIRE">
+		<description>
+			<p>At 18th level you become immune to fire and necrotic damage. Additionally your Clinging Flames ability now lasts for 2 turns rather than one.</p>
+		</description>
+		<sheet>
+			<description>You become immune to fire and necrotic damage. Additionally your Clinging Flames ability now lasts for 2 turns rather than one.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_NECROTIC" />
+		</rules>
+	</element>
+</elements>
