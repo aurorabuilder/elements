@@ -4,8 +4,61 @@
 		<update version="0.0.1">
 			<file name="changeling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/races/changeling.xml" />
 		</update>
-	</info>
-	
-	
-	
+	</info>	
+	<element name="Changeling" type="Race" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACE_CHANGELING">
+		<description>
+			<p></p>
+			<h4>A HIDDEN PEOPLE</h4>
+			<p></p>
+			<p class="indent"></p>
+			<h4>MASKS AND PERSONAS</h4>
+			<p></p>
+			<p class="indent"></p>
+			<h4>CHANGELING NAMES</h4>
+			<p></p>
+			<p class="indent"></p>
+			<p><strong>Changeling Names:</strong> description</p>
+			<h4>CHANGELING TRAITS</h4>
+			<p>Your changeling character has the following traits.</p>
+			<p><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 2. In addition, one ability score of your choice increases by 1.</p>
+			<p><strong><em>Age.</em></strong> _______</p>
+			<p><strong><em>Alignement.</em></strong> _______</p>
+			<p><strong><em>Size.</em></strong> _______</p>
+			<p><strong><em>Speed.</em></strong> _______</p>
+			<p><strong><em>Shapechanger.</em></strong> _______</p>
+			<p><strong><em>Changeling Instincts.</em></strong> _______</p>
+			<p><strong><em>Languages.</em></strong> _______</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="generic">name1,name2</set>
+			<set name="names-format">{{generic}}</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="2" />
+			<select type="Ability Score Improvement" name="Ability Score Increase, Changeling" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_CONSTITUTION|ID_INTERNAL_ASI_INTELLIGENCE|ID_INTERNAL_ASI_WISDOM|ID_INTERNAL_ASI_CHARISMA" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_SHAPECHANGER" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_CHANGELING_INSTINCTS" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Language, Changeling" supports="!Monster,!Secret" number="2" />
+		</rules>
+	</element>
+	<element name="Shapechanger" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_SHAPECHANGER">
+		<description>
+			<p></p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	<element name="Changeling Instincts" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_CHANGELING_INSTINCTS">
+		<description>
+			<p></p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>	
 </elements>
