@@ -121,13 +121,13 @@
 			<p class="indent">You can bestow magic on multiple objects, touching one object each time you use this feature, though a single object can only bear one property at a time. The maximum number of objects you can affect with this feature at one time is equal to your Intelligence modifier (minimum of one object). If you try to exceed your maximum, the oldest property immediately ends, and then the new property applies.</p>
 		</description>
 		<sheet>
-			<description>You must have tinker’s tools or other artisan’s tools in hand. You then touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:
+			<description>You must have tinker’s tools or other artisan’s tools in hand. You touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:
 			The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet.
-			Whenever tapped by a creature, the object emits a recorded message that can be heard up to 10 feet away. You utter the message when you bestow this property on the object, and the recording can be no more than 6 seconds long.
-			The object continuously emits your choice of an odor or a nonverbal sound (wind, waves, chirping, or the like). The chosen phenomenon is perceivable up to 10 feet away.
-			A static visual effect appears on one of the object’s surfaces. This effect can be a picture, up to 25 words of text, lines and shapes, or a mixture of these elements, as you like.
+			Whenever tapped by a creature, the object emits a recorded message (no more than 6 seconds long) that can be heard up to 10 feet away.
+			The object continuously emits your choice of an odor or a nonverbal sound. The chosen phenomenon is perceivable up to 10 feet away.
+			A static visual effect appears on one of the object’s surfaces.
 			The chosen property lasts indefinitely. As an action, you can touch the object and end the property early.
-			You can bestow magic on multiple objects, touching one object each time you use this feature, though a single object can only bear one property at a time. The maximum number of objects you can affect with this feature at one time is {{magical tinkering:objects}}. If you try to exceed your maximum, the oldest property immediately ends, and then the new property applies.</description>
+			You can bestow magic on up to {{magical tinkering:objects}} objects.</description>
 		</sheet>
 		<rules>
 			<stat name="magical tinkering:objects" value="1" bonus="base" />
@@ -157,7 +157,7 @@
 			<h5>RITUAL CASTING</h5>
 			<p>You can cast an artificer spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell. 
 			You can also use any item bearing one of your infusions as a spellcasting focus.</description>
 		</sheet>
@@ -198,9 +198,9 @@
 			<p class="indent">You can infuse more than one nonmagical object at the end of a long rest; the maximum number of objects appears in the Infused Items column of the Artificer table. You must touch each of the objects, and each of your infusions can be in only one object at a time. Moreover, no object can bear more than one of your infusions at a time. If you try to exceed your maximum number of infusions, the oldest infusion immediately ends, and then the new infusion applies.</p>			
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item. An infusion works on only certain kinds of objects, as specified in the infusion’s description. If the item requires attunement, you can attune yourself to it the instant you infuse the item.
-			Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after {{item infusions:decay}} days have passed. The infusion also vanishes if you give up your knowledge of the infusion for another one.
-			You can infuse up to {{item infusions:max}} nonmagical objects at the end of a long rest. You must touch each of the objects, and each of your infusions can be in only one object at a time. Moreover, no object can bear more than one of your infusions at a time. If you try to exceed your maximum number of infusions, the oldest infusion immediately ends, and then the new infusion applies.</description>
+			<description>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item.
+			Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after {{item infusions:decay}} days have passed.
+			You can infuse up to {{item infusions:max}} nonmagical objects at the end of a long rest.</description>
 		</sheet>
 		<rules>
 			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="4" level="2" />
@@ -246,7 +246,7 @@
 			<p>At 3rd level, you learn how to produce exactly the tool you need: with tinker’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again.</p>
 		</description>
 		<sheet>
-			<description>With tinker’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again.</description>
+			<description>With tinker’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work.</description>
 		</sheet>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT">
@@ -294,7 +294,7 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You can attune to up to four magic items at once.
+			<description>You can attune to up to {{attunement:max}} items at once.
 			If you craft a magic item with a rarity of common or uncommon, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</description>
 		</sheet>
 		<rules>
@@ -326,8 +326,7 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You can attune to up to five magic items at once.
-			You ignore all class, race, spell, and level requirements on attuning to or using a magic item.</description>
+			<description>You ignore all class, race, spell, and level requirements on attuning to or using a magic item.</description>
 		</sheet>
 		<rules>
 			<stat name="attunement:max" value="5" bonus="base" />
@@ -338,7 +337,7 @@
 		<description>
 			<p>Starting at 18th level, you can attune to up to six magic items at once.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>You can attune to up to six magic items at once.</description>
 		</sheet>
 		<rules>
@@ -454,10 +453,10 @@
 				<tr><td>6</td><td><strong>Transformation.</strong> The drinker’s body is transformed as if by the alter self spell. The drinker determines the transformation caused by the spell, the effects of which last for 10 minutes.</td></tr>
 			</table>
 		</description>
-		<sheet usage="{{experimental elixir:count}}">
-			<description>Whenever you finish a long rest, you can magically produce an experimental elixir in an empty flask you touch. Roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.
-			Creating an experimental elixir requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.
-			You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir’s effect from the Experimental Elixir table.</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can magically produce up to {{experimental elixir:count}} elixirs, each in an empty flask you touch.
+			Any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.
+			You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one.</description>
 		</sheet>
 		<rules>
 			<stat name="experimental elixir:count" value="1"  />
@@ -470,7 +469,7 @@
 			<p>At 5th level, you develop masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your alchemist’s supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your Intelligence modifier (minimum of +1).</p>
 		</description>
 		<sheet>
-			<description>Whenever you cast a spell using your alchemist’s supplies as the spellcasting focus, you gain a +{{alchemical savant:bonus}} bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage.</description>
+			<description>Whenever you cast a spell using your alchemist’s supplies, you gain a +{{alchemical savant:bonus}} bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage.</description>
 		</sheet>
 		<rules>
 			<stat name="alchemical savant:bonus" value="1" bonus="base" />
@@ -486,7 +485,7 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>Whenever a creature drinks an experimental elixir you created, the creature gains temporary hit points equal to 2d6+{{intelligence:modifier}}.
+			<description>Whenever a creature drinks an experimental elixir you created, the creature gains 2d6+{{intelligence:modifier}} temporary hp.
 			You can cast lesser restoration {{restorative reagents:usage}} times per long rest without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus.</description>
 		</sheet>
 		<rules>
@@ -594,8 +593,8 @@
 			</table>
 		</description>
 		<sheet action="Action">
-			<description>You can magically create a eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
-			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot of 1st level or higher. You can have only one cannon at a time and can’t create one while your cannon is present.</description>
+			<description>You can magically create an eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
+			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot of 1st level or higher.</description>
 		</sheet>
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
@@ -608,27 +607,34 @@
 			<p>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</p>
 		</description>
 		<sheet usage="Eldritch Cannon">
-			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
+			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking {{flamethrower cannon:dice:amount}}d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
 		</sheet>
+		<rules>
+			<stat name="flamethrower cannon:dice:amount" value="2" />
+		</rules>
 	</element>
 	<element name="Force Ballista" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
 		<description>
 			<p>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>
 		</description>
 		<sheet usage="Eldritch Cannon">
-			<description>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
+			<description>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista cannon:dice:amount}}d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
 		</sheet>
+		<rules>
+			<stat name="force ballista cannon:dice:amount" value="2" />
+		</rules>
 	</element>
 	<element name="Protector" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
 		<description>
 			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>
 		</description>
 		<sheet usage="Eldritch Cannon">
-			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it 1d8+{{eldritch cannon:protector:temporary hp}} temporary hit points.</description>
+			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it {{protector cannon:dice:amount}}d8+{{protector cannon:temporary hp}} temporary hit points.</description>
 		</sheet>
 		<rules>
-			<stat name="eldritch cannon:protector:temporary hp" value="1" bonus="base" />
-			<stat name="eldritch cannon:protector:temporary hp" value="intelligence:modifier" bonus="base" />
+			<stat name="protector cannon:temporary hp" value="1" bonus="base" />
+			<stat name="protector cannon:temporary hp" value="intelligence:modifier" bonus="base" />
+			<stat name="protector cannon:dice:amount" value="1" />
 		</rules>
 	</element>
 	<element name="Arcane Firearm" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
@@ -637,8 +643,8 @@
 			<p class="indent">You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</p>
 		</description>
 		<sheet>
-			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.
-			You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
+			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm.
+			When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
 		</sheet>
 	</element>
 	<element name="Explosive Cannon" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON">
@@ -649,10 +655,14 @@
 				<li>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>The cannon’s damage rolls all increase by 1d8.
-			As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
-		</sheet>		
+		<sheet action="Action">
+			<description>You can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
+		</sheet>
+		<rules>	
+			<stat name="flamethrower cannon:dice:amount" value="1" />
+			<stat name="force ballista cannon:dice:amount" value="1" />
+			<stat name="protector cannon:dice:amount" value="1" />
+		</rules>
 	</element>
 	<element name="Fortified Position" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION">
 		<description>
@@ -761,7 +771,7 @@
 		<sheet>
 			<description>In combat, the steel defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action.
 			If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.
-			At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you. If you already have a steel defender from this feature, the first one immediately perishes.</description>
+			At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you.</description>
 		</sheet>
 		<rules>
 			<select type="Companion" name="Steel Defender" supports="Steel Defender" default="ID_WOTC_ERLW_COMPANION_ARTIFICER_STEEL_DEFENDER" />
@@ -788,10 +798,14 @@
 			<p class="indent">You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet>
-			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can channel magical energy through the strike to create one of the following effects:
-			The target takes an extra 2d6 force damage.
-			Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d6 hit points to it.</description>
+			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects:
+			The target takes an extra {{arcane jolt damage:dice:amount}}d6 force damage.
+			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt healing:dice:amount}}d6 hit points to it.</description>
 		</sheet>
+		<rules>
+			<stat name="arcane jolt damage:dice:amount" value="2" />
+			<stat name="arcane jolt healing:dice:amount" value="2" />
+		</rules>
 	</element>
 	<element name="Improved Defender" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER">
 		<description>
@@ -803,12 +817,11 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>Your Arcane jolt and steel defender become more powerful:
-			The extra damage and the healing of your Arcane jolt both increase to 4d6.
-			Your steel defender gains a +2 bonus to Armor Class.
-			Whenever your steel defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
+			<description>Whenever your steel defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
 		</sheet>
 		<rules>
+			<stat name="arcane jolt damage:dice:amount" value="2" />
+			<stat name="arcane jolt healing:dice:amount" value="2" />
 			<stat name="companion:ac" value="2" />
 		</rules>
 	</element>
@@ -908,7 +921,6 @@
 	</element>
 	<!-- todo: create companion reaction type  -->
 	
-	<!-- infusions todo: shorten descriptions by creating many of the infusions as items -->
 	<element name="Boots of the Winding Path" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_BOOTS_OF_THE_WINDING_PATH">
 		<supports>Artificer Infusion</supports>
 		<requirements>[level:6]</requirements>
