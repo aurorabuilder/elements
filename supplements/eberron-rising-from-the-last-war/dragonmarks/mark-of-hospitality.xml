@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-hospitality.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-hospitality.xml" />
+		</update>
+	</info>
+	<element name="Mark of Hospitality" type="Sub Race" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_SUB_RACE_MARK_OF_HOSPITALITY">
+		<supports>Halfling</supports>
+		<description>
+			<p>They may not always have gold, but a halfling with the Mark of Hospitality is sure to be rich in friends. The magic of the mark allows the bearer to keep a place clean, and to heat, chill, and season food. But it also helps the bearer connect with others.</p>
+			<p>If you’re a halfling with the Mark of Hospitality, you have this subrace, with the following traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Ever Hospitable.</em></strong> When you make a Charisma (Persuasion) check or an ability check involving brewer’s supplies or cook’s utensils, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Innkeeper’s Magic.</em></strong> You know the prestidigitation cantrip. You can also cast the purify food and drink and unseen servant spells with this trait. Once you cast either spell with this trait, you can’t cast that spell with it again until you finish long rest. Charisma is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Hospitality Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF HOSPITALITY SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>good berry, sleep</em></td></tr>
+				<tr><td>2nd</td><td><em>aid, calm emotions</em></td></tr>
+				<tr><td>3rd</td><td><em>create food and water, Leomund’s tiny hut</em></td></tr>
+				<tr><td>4th</td><td><em>aura of purity, Mordenkainen’s private sanctum</em></td></tr>
+				<tr><td>5th</td><td><em>hallow</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Halfling (Mark of Hospitality)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_HOSPITALITY" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_EVER_HOSPITABLE" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_INNKEEPERS_MAGIC" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Ever Hospitable" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_EVER_HOSPITABLE">
+		<description>
+			<p>When you make a Charisma (Persuasion) check or an ability check involving brewer’s supplies or cook’s utensils, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Persuasion check or an ability check involving brewer’s supplies or cook’s utensils, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Innkeeper’s Magic" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_INNKEEPERS_MAGIC">
+		<description>
+			<p>You know the prestidigitation cantrip. You can also cast the purify food and drink and unseen servant spells with this trait. Once you cast either spell with this trait, you can’t cast that spell with it again until you finish long rest. Charisma is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You know the prestidigitation cantrip. You can also cast the purify food and drink and unseen servant spells with this trait using Charisma as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PRESTIDIGITATION" />
+		</rules>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_HOSPITALITY_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Hospitality Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Hospitality Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>goodberry, sleep</em></td></tr>
+				<tr><td>2nd</td><td><em>aid, calm emotions</em></td></tr>
+				<tr><td>3rd</td><td><em>create food and water, Leomund’s tiny hut</em></td></tr>
+				<tr><td>4th</td><td><em>aura of purity, Mordenkainen’s private sanctum</em></td></tr>
+				<tr><td>5th</td><td><em>hallow</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Hospitality Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_GOODBERRY</extend>
+			<extend>ID_PHB_SPELL_SLEEP</extend>
+			<extend>ID_PHB_SPELL_AID</extend>
+			<extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+			<extend>ID_PHB_SPELL_CREATE_FOOD_AND_WATER</extend>
+			<extend>ID_PHB_SPELL_LEOMUNDS_TINY_HUT</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_PURITY</extend>
+			<extend>ID_PHB_SPELL_MORDENKAINENS_PRIVATE_SANCTUM</extend>
+			<extend>ID_PHB_SPELL_HALLOW</extend>
+		</spellcasting>
+	</element>	
+</elements>
