@@ -99,7 +99,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_ERLW_MULTICLASS_ARTIFICER">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13]</requirements>
+			<requirements>[int:13],!ID_WOTC_UA20190228_CLASS_ARTIFICER,!ID_WOTC_UA20190228_MULTICLASS_ARTIFICER, !ID_WOTC_UA_CLASS_ARTIFICER, !ID_WOTC_UA_MULTICLASS_ARTIFICER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
 			</setters>
@@ -162,10 +162,11 @@
 			You can also use any item bearing one of your infusions as a spellcasting focus.</description>
 		</sheet>
 		<spellcasting name="Artificer" ability="Intelligence" prepare="true">
-			<list>Artificer</list>
+			<list known="true">Artificer</list>
 		</spellcasting>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+			<!-- <grant type="Grants" id="ID_INTERNAL_GRANTS_RITUAL_CASTER" /> -->
 			<stat name="artificer:spellcasting:slots:1" value="2" level="1" />
 			<stat name="artificer:spellcasting:slots:1" value="1" level="3" />
 			<stat name="artificer:spellcasting:slots:1" value="1" level="5" />
@@ -572,19 +573,49 @@
 				<thead>
 					<tr><td>Cannon</td><td>Activation</td></tr>
 				</thead>
-				<tr><td>Flamethrower</td><td>The can non exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</td></tr>
+				<tr><td>Flamethrower</td><td>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</td></tr>
 				<tr><td>Force Ballista</td><td>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</td></tr>
 				<tr><td>Protector</td><td>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</td></tr>
 			</table>
 		</description>
 		<sheet action="Action">
-			<description>Using woodcarver’s tools or smith’s tools, you can magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
+			<description>You can magically create a eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
 			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot of 1st level or higher. You can have only one cannon at a time and can’t create one while your cannon is present.</description>
 		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
+			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
+			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
+		</rules>
 	</element>
-
-	<!-- todo: create elements for the 3 cannons -->
-
+	<element name="Flamethrower" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER">
+		<description>
+			<p>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
+		</sheet>
+	</element>
+	<element name="Force Ballista" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
+		<description>
+			<p>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
+		</sheet>
+	</element>
+	<element name="Protector" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
+		<description>
+			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it 1d8+{{eldritch cannon:protector:temporary hp}} temporary hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="eldritch cannon:protector:temporary hp" value="1" bonus="base" />
+			<stat name="eldritch cannon:protector:temporary hp" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
 	<element name="Arcane Firearm" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
 		<description>
 			<p>At 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.</p>
@@ -861,7 +892,7 @@
 		</sheet>
 	</element>
 	<!-- todo: create companion reaction type  -->
-
+	
 	<!-- infusions todo: shorten descriptions by creating many of the infusions as items -->
 	<element name="Boots of the Winding Path" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_BOOTS_OF_THE_WINDING_PATH">
 		<supports>Artificer Infusion</supports>
@@ -1032,7 +1063,7 @@
 			This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</description> -->
 		</sheet>
 	</element>
-
+	
 	<!-- infused items -->
 	<element name="Boots of the Winding Path" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_BOOTS_OF_THE_WINDING_PATH">
 		<description>
@@ -1212,286 +1243,7 @@
 			<set name="name-format">Returning {{parent}} +{{enhancement}}</set>
 		</setters>
 	</element>
-
-	<!-- append artificer class name to existing spells - can be actually added to existing file later now that the class is official -->
-	<!-- cantrips -->
-	<append id="ID_PHB_SPELL_ACID_SPLASH">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_CREATE_BONFIRE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DANCING_LIGHTS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FIRE_BOLT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_FROSTBITE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_GUIDANCE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_LIGHT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MAGE_HAND">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_MAGIC_STONE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MENDING">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MESSAGE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_POISON_SPRAY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_PRESTIDIGITATION">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_RAY_OF_FROST">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_RESISTANCE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_SHOCKING_GRASP">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_SPARE_THE_DYING">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_THORN_WHIP">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_THUNDERCLAP">
-		<supports>Artificer</supports>
-	</append>
-
-	<!-- 1st-level -->
-	<append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ALARM">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_CATAPULT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_CURE_WOUNDS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DETECT_MAGIC">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DISGUISE_SELF">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FAERIE_FIRE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FALSE_LIFE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FEATHER_FALL">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_GREASE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_IDENTIFY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_JUMP">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_LONGSTRIDER">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_SANCTUARY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_SNARE">
-		<supports>Artificer</supports>
-	</append>
-
-	<!-- 2nd-level -->
-	<append id="ID_PHB_SPELL_AID">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ALTER_SELF">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ARCANE_LOCK">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_BLUR">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_CONTINUAL_FLAME">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DARKVISION">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ENHANCE_ABILITY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ENLARGE_REDUCE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_HEAT_METAL">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_INVISIBILITY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_LESSER_RESTORATION">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_LEVITATE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MAGIC_MOUTH">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MAGIC_WEAPON">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_PYROTECHNICS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ROPE_TRICK">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_SEE_INVISIBILITY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_SKYWRITE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_SPIDER_CLIMB">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_WEB">
-		<supports>Artificer</supports>
-	</append>
-
-	<!-- 3rd-level -->
-	<append id="ID_PHB_SPELL_BLINK">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_CATNAP">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_CREATE_FOOD_AND_WATER">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ELEMENTAL_WEAPON">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_FLAME_ARROWS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FLY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_GLYPH_OF_WARDING">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_HASTE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_REVIVIFY">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_TINY_SERVANT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_WATER_BREATHING">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_WATER_WALK">
-		<supports>Artificer</supports>
-	</append>
-
-	<!-- 4th-level -->
-	<append id="ID_PHB_SPELL_ARCANE_EYE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_ELEMENTAL_BANE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FABRICATE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MORDENKAINENS_FAITHFUL_HOUND">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_MORDENKAINENS_PRIVATE_SANCTUM">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_STONE_SHAPE">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_STONESKIN">
-		<supports>Artificer</supports>
-	</append>
-
-	<!-- 5th-level -->
-	<append id="ID_PHB_SPELL_ANIMATE_OBJECTS">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_BIGBYS_HAND">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_CREATION">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_GREATER_RESTORATION">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_SKILL_EMPOWERMENT">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_XGTE_SPELL_TRANSMUTE_ROCK">
-		<supports>Artificer</supports>
-	</append>
-	<append id="ID_PHB_SPELL_WALL_OF_STONE">
-		<supports>Artificer</supports>
-	</append>
-
-
-
+	
 	<!-- v1.19.3XX workaround -->
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ABILITY_4">
 		<compendium display="false" />
