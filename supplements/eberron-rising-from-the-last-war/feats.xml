@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/feats.xml" />
+		</update>
+	</info>	
+	<element name="Revenant Blade" type="Feat" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_FEAT_REVENANT_BLADE">
+		<requirements>ID_RACE_ELF</requirements>
+		<prerequisite>Elf</prerequisite>
+		<description>
+			<p><em>Prerequisite: Elf</em></p>
+			<p>You are descended from a master of the double-bladed scimitar, and some of that mastery has passed on to you. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Dexterity or Strength score by 1, to a maximum of 20.</li>
+				<li>While you are holding a double-bladed scimitar with two hands, you gain a +1 bonus to Armor Class.</li>
+				<li>A double-bladed scimitar has the finesse property when you wield it.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>While you are holding a double-bladed scimitar with two hands, you gain a +1 bonus to Armor Class.
+			A double-bladed scimitar has the finesse property when you wield it.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase, Revenant Blade" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+			<stat name="ac:misc" value="1" equipped="[primary:double-bladed scimitar]" />
+			<!-- todo: runtime rule property additions -->
+		</rules>
+	</element>	
+	<element name="Aberrant Dragonmark" type="Feat" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_FEAT_ABERRANT_DRAGONMARK">
+		<requirements>!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_WGTE_GRANTS_DARKMARKED</requirements>
+		<prerequisite>No other dragonmark</prerequisite>
+		<description>
+			<p><em>Prerequisite: No other dragonmark</em></p>
+			<p>You have manifested an aberrant dragonmark. Determine its appearance and the flaw associated with it. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Constitution score by 1, to a maximum of 20.</li>
+				<li>You learn a cantrip of your choice from the sorcerer spell list. In addition, choose a 1st-level spell from the sorcerer spell list. You learn that spell and can cast it through your mark. Once you cast it, you must finish a short or long rest before you can cast it again through the mark. Constitution is your spellcasting ability for these spells.</li>
+				<li>When you cast the 1st-level spell through your mark, you can expend one of your Hit Dice and roll it. If you roll an even number, you gain a number of temporary hit points equal to the number rolled. If you roll an odd number, one random creature within 30 feet of you (not including you) takes force damage equal to the number rolled. If no other creatures are in range, you take the damage.</li>
+			</ul>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>You learn spells and can cast them through your mark using Constitution as your spellcasting ability.
+			When you cast the 1st-level spell through your mark, you can expend one of your Hit Dice and roll it. If you roll an even number, you gain a number of temporary hit points equal to the number rolled. If you roll an odd number, one random creature within 30 feet of you (not including you) takes force damage equal to the number rolled. If no other creatures are in range, you take the damage.</description>
+		</sheet>
+		<rules>
+			<stat name="constitution" value="1" />
+			<select type="Spell" name="Cantrip, Aberrant Dragonmark" supports="0,Sorcerer" />
+			<select type="Spell" name="1st-level Spell, Aberrant Dragonmark" supports="1,Sorcerer" />
+		</rules>
+	</element>
+</elements>
