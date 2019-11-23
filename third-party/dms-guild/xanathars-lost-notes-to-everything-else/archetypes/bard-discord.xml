@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Discord</name>
+		<update version="0.0.1">
+			<file name="bard-discord.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/bard-discord.xml" />
+		</update>
+	</info>
+	
+	<element name="College of Discord" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_COLLEGE_OF_DISCORD">
+		<supports>Bard College</supports>
+		<description>
+			<p>Bards of the College of Discord yearn to take the performances to the next level. While some artists feel the need to prepare or learn progressions within a harmonic framework, the extemporaneous nature of the bard’s study encourages inventing variations in their musical repertoire mid performance. This practice usually bleeds into their outlook on life and, whether with accompaniment or solo, these bards are excited to delve into the unknown, no matter the vibe.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BONUS_PROFICIENCIES" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_DISCORD_MELODIC_MAYHEM" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BATTAGLIA" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_DISCORD_ENCORE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_DISCORD_PANDEMONIUM" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BONUS_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_MELODIC_MAYHEM" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BATTAGLIA" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_ENCORE" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_PANDEMONIUM" level="14" />
+		</rules>
+	</element>
+
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BONUS_PROFICIENCIES">
+		<description>
+			<p>When you join the College of Discord at 3rd level, you gain proficiency with medium armor and one additional musical instrument.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with medium armor and one additional musical instrument.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<select type="Proficiency" name="Musical Instrument, College of Discord" supports="Musical Instrument" />
+		</rules>
+	</element>
+	<element name="Melodic Mayhem" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_MELODIC_MAYHEM">
+		<description>
+			<p>Beginning at 3rd level, you gain the ability to use your musical instruments effectively in martial combat. When you wield your musical instrument in one or two hands, and no other weapons, it becomes a weapon that deals 1d6 bludgeoning damage and has the versatile (1d8) property. When used in one hand, it gains the finesse property. Wielded with two hands, your Armor Class increases by 2.</p>
+		</description>
+		<sheet>
+			<description>When you wield your musical instrument in one or two hands, and no other weapons, it becomes a weapon that deals 1d6 bludgeoning damage and has the versatile (1d8) property. When used in one hand, it gains the finesse property. Wielded with two hands, your Armor Class increases by 2.</description>
+		</sheet>
+	</element>
+	<element name="Battaglia" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_BATTAGLIA">
+		<description>
+			<p>Also at 3rd level, you’re able to anticipate the rhythm of battle and adjust to disrupt the flow of your enemies. As a bonus action on your turn, you can choose to teleport to an unoccupied square adjacent to any number of creatures you can see within 30 feet of you. Any Large or smaller creature within 5 feet of your new location must succeed on a Strength saving throw or be knocked prone. At 6th level, the radius of this effect increases to 10 feet, and to 15 feet at 14th level.</p>
+			<p class="indent">You can use this feature a number of times equal to your Charisma modifier and regain all expended uses after you finish a short or long rest.</p>
+			<p class="indent">As part of this bonus action, you can expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number rolled to the save DC. You can choose to use this feature after the creature makes its roll but before the DM announces if it succeeds or fails.</p>
+		</description>
+		<sheet usage="{{charisma:modifier}}/Short Rest">
+			<description>As a bonus action on your turn, you can choose to teleport to an unoccupied square adjacent to any number of creatures you can see within 30 feet of you. Any Large or smaller creature within 5 feet of your new location must succeed on a Strength saving throw or be knocked prone.
+			As part of this bonus action, you can expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number rolled to the save DC. You can choose to use this feature after the creature makes its roll but before the DM announces if it succeeds or fails.</description>
+			<description level="6">As a bonus action on your turn, you can choose to teleport to an unoccupied square adjacent to any number of creatures you can see within 30 feet of you. Any Large or smaller creature within 10 feet of your new location must succeed on a Strength saving throw or be knocked prone.
+			As part of this bonus action, you can expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number rolled to the save DC. You can choose to use this feature after the creature makes its roll but before the DM announces if it succeeds or fails.</description>
+			<description level="14">As a bonus action on your turn, you can choose to teleport to an unoccupied square adjacent to any number of creatures you can see within 30 feet of you. Any Large or smaller creature within 15 feet of your new location must succeed on a Strength saving throw or be knocked prone.
+			As part of this bonus action, you can expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and adding the number rolled to the save DC. You can choose to use this feature after the creature makes its roll but before the DM announces if it succeeds or fails.</description>
+		</sheet>
+	</element>
+	<element name="Encore" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_ENCORE">
+		<description>
+			<p>At 6th level, every success fuels your performance. When you succeed on a Strength, Dexterity, or Constitution saving throw in combat, you gain advantage on your next skill check, saving throw, or attack roll until the end of your next turn.</p>
+			<p class="indent">Additionally, your attacks with your musical instruments count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+		</description>
+		<sheet>
+			<description>When you succeed on a Strength, Dexterity, or Constitution saving throw in combat, you gain advantage on your next skill check, saving throw, or attack roll until the end of your next turn.
+			Additionally, your attacks with your musical instruments count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</description>
+		</sheet>
+	</element>	
+	<element name="Pandemonium" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_DISCORD_PANDEMONIUM">
+		<description>
+			<p>At 14th level, you learn to provoke those the area around you by amplifying the clash of arms and flailing bodies, trumpeting your allies to hasten attack while sending your enemies into dysphonic chaos that is audible with 300 feet of you. Using your action to activate this feature, you create a hyper-sonic field that reverberates out from you in a 30-foot cube which requires concentration and lasts for 1 minute.</p>
+			<p class="indent">When the field appears, friendly creatures within the field experience a haste-like effect and gain a +2 bonus to AC, have advantage on Dexterity saving throws, and gain an additional action on each turn. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. A creature can only benefit from one such effect at a time. While you concentrate on this effect, your speed is 0, and you can only make melee attacks against creatures within 5 feet of you. If you have a fly speed, or are held in place my magical means, you can hover in place.</p>
+			<p class="indent">Additionally, when a hostile creature starts its turn within the field, or moves there for the first time, must make a Wisdom saving throw or be affected for the duration. Affected creatures’ speed is halved, takes a –2 penalty to AC and Dexterity saving throws, and can’t use reactions. On an affected creature’s turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or magic items, it can’t make more than one melee or ranged attack during its turn.</p>
+			<p class="indent">If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn’t take effect until the creature’s next turn, and the creature must use its action on that turn to complete the spell. If it can’t, the spell is wasted. If a creature affected by this feature exits the field, the effect ends for it at the start of its next turn.</p>
+			<p class="indent">When your solo ends, you can’t move or take actions until after your next turn, as a wave of exhaustion sweeps over you. Once you use this feature, you must finish a long rest before you can use it again.</p>
+		</description>
+		<sheet action="Action" usage="Long Rest">
+			<description>You create a hyper-sonic field that reverberates out from you in a 30-foot cube which requires concentration and lasts for 1 minute.		
+			When the field appears, friendly creatures within the field experience a haste-like effect and gain a +2 bonus to AC, have advantage on Dexterity saving throws, and gain an additional action on each turn. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. A creature can only benefit from one such effect at a time. While you concentrate on this effect, your speed is 0, and you can only make melee attacks against creatures within 5 feet of you. If you have a fly speed, or are held in place my magical means, you can hover in place.
+			Additionally, when a hostile creature starts its turn within the field, or moves there for the first time, must make a Wisdom saving throw or be affected for the duration. Affected creatures’ speed is halved, takes a –2 penalty to AC and Dexterity saving throws, and can’t use reactions. On an affected creature’s turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or magic items, it can’t make more than one melee or ranged attack during its turn.
+			If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn’t take effect until the creature’s next turn, and the creature must use its action on that turn to complete the spell. If it can’t, the spell is wasted. If a creature affected by this feature exits the field, the effect ends for it at the start of its next turn.
+			When your solo ends, you can’t move or take actions until after your next turn, as a wave of exhaustion sweeps over you.</description>
+		</sheet>
+	</element>
+</elements>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fey Magic</name>
+		<update version="0.0.1">
+			<file name="sorcerer-fey-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/sorcerer-fey-magic.xml" />
+		</update>
+	</info>
+	
+	<element name="Fey Magic" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEY_MAGIC">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your innate magic comes from fey magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their ancestry back to a lord or lady of the Plane of Faerie. Other fey sorcerers are descendants of warlocks who of made a pact with an archfey. The rarest of these sorcerers are those who travel to the Feywild and manage to absorb some of the plane’s natural magic by happenstance.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_WILD_KNOWLEDGE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_FEY_MAGIC" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_NATURES_ARMOR" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_SYLVAN_EMBRACE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_UNTAMED_CHAMPION" />
+		</description>
+		<sheet display="false">
+			<description>Your innate magic comes from fey magic that was mingled with your blood or that of your ancestors.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_WILD_KNOWLEDGE" level="1" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_FEY_MAGIC" level="1" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_NATURES_ARMOR" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_SYLVAN_EMBRACE" level="14" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_UNTAMED_CHAMPION" level="18" />
+		</rules>
+	</element>
+
+	<element name="Wild Knowledge" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_WILD_KNOWLEDGE">
+		<description>
+			<p>Starting at 1st level, you can speak, understand, and write Sylvan and gain proficiency in the Nature skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You can speak, understand, and write Sylvan and gain proficiency in the Nature skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+		</rules>
+	</element>
+	<element name="Fey Magic" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_FEY_MAGIC">
+		<description>
+			<p>Your link to nature allows you to learn spells from the druid class. When your Spellcasting feature lets you learn or replace a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the druid spell list or the sorcerer spell list. You must otherwise obey all restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+		</description>
+		<sheet display="false">
+			<description>Your link to nature allows you to learn spells from the druid class.</description>
+		</sheet>
+		<spellcasting name="Sorcerer" extend="true">
+			<extend>Druid</extend>
+		</spellcasting>
+	</element>
+	<element name="Nature’s Armor" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_NATURES_ARMOR">
+		<description>
+			<p>Starting at 6th level, you can use a bonus action to make thorny vines cover your skin. The vines last for 1 hour.</p>
+			<p class="indent">While this feature is active, your AC can’t be less than 16, regardless of what kind of armor you wear, and creatures that hit you with melee attacks take piercing damage equal to half your sorcerer level (minimum 1). This damage counts as magical for the purpose of overcoming resistance and immunity to nonmagical damage.</p>
+			<p class="indent">You must finish a short or long rest before you can before you can use this feature again.</p>
+		</description>
+		<sheet usage="Short Rest">
+			<description>You can use a bonus action to make thorny vines cover your skin. The vines last for 1 hour.
+			While this feature is active, your AC can’t be less than 16, regardless of what kind of armor you wear, and creatures that hit you with melee attacks take {{natures armor:damage}} piercing damage. This damage counts as magical for the purpose of overcoming resistance and immunity to nonmagical damage.</description>
+		</sheet>
+		<rules>
+			<stat name="natures armor:damage" value="1" bonus="minimum" />
+			<stat name="natures armor:damage" value="level:sorcerer:half" bonus="minimum" />
+		</rules>
+	</element>
+	<element name="Sylvan Embrace" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_SYLVAN_EMBRACE">
+		<description>
+			<p>When you reach 10th level, you can’t be charmed, frightened, or put to sleep by fey and you can speak, understand, and write Druidic.</p>
+			<p class="indent">Additionally, when you cast a sorcerer spell of 1st level or higher, you can expend 1 sorcery point to make yourself and any equipment you possess invisible until the end of your next turn. This invisibility ends early if you attack or cast a spell.</p>
+		</description>
+		<sheet>
+			<description>You can’t be charmed, frightened, or put to sleep by fey and you can speak, understand, and write Druidic.
+			Additionally, when you cast a sorcerer spell of 1st level or higher, you can expend 1 sorcery point to make yourself and any equipment you possess invisible until the end of your next turn. This invisibility ends early if you attack or cast a spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
+		</rules>
+	</element>
+	<element name="Untamed Champion" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_FEY_MAGIC_UNTAMED_CHAMPION">
+		<description>
+			<p>At 18th level, whenever you cast a cantrip or spell that deals one of the following damage types, you can change the damage to another type on the same list by spending a number of sorcery points equal to the spell’s level: acid, cold, fire, lightning, poison, or thunder. Changing the damage type of a cantrip costs 1 sorcery point.</p>
+			<p class="indent">Additionally, once per turn when you cast a spell of 1st level or higher you can spend all of your movement speed on your turn to teleport up to 15 feet to an unoccupied space that you can see.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a cantrip or spell that deals one of the following damage types, you can change the damage to another type on the same list by spending a number of sorcery points equal to the spell’s level: acid, cold, fire, lightning, poison, or thunder. Changing the damage type of a cantrip costs 1 sorcery point.
+			Additionally, once per turn when you cast a spell of 1st level or higher you can spend all of your movement speed on your turn to teleport up to 15 feet to an unoccupied space that you can see.</description>
+		</sheet>
+	</element>	
+</elements>

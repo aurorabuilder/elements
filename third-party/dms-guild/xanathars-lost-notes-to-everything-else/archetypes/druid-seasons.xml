@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of Seasons</name>
+		<update version="0.0.1">
+			<file name="druid-seasons.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/druid-seasons.xml" />
+		</update>
+	</info>
+	
+	<element name="Circle of Seasons" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_CIRCLE_OF_SEASONS">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids of the Circle of Seasons learn early in their trials that all things are transient. All things that live must die, and those things that don’t live are worn away by the wind and rain.</p>
+			<p class="indent">As a druid of the seasons, you embody nature’s invisible hand. Whether through famine or pestilence, flood or fire, you revere the world’s natural cycle of destruction and rebirth. Your connection to the natural cycles of life and death allows you to burn nature’s enemies and renew her allies.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SEASONS_BONUS_CANTRIP" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SEASONS_SHROUD_OF_SEASONS" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SEASONS_ASHES_OF_LIFE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SEASONS_CHILD_OF_CHANGE" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_SEASONS_NATURAL_DUALITY" />
+		</description>
+		<sheet display="false">
+			<description>Druids of the Circle of Seasons learn early in their trials that all things are transient.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_BONUS_CANTRIP" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_SHROUD_OF_SEASONS" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_ASHES_OF_LIFE" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_CHILD_OF_CHANGE" level="10" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_NATURAL_DUALITY" level="14" />
+		</rules>
+	</element>
+
+	<element name="Bonus Cantrip" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_BONUS_CANTRIP">
+		<description>
+			<p>Starting at 2nd level, you learn one additional druid cantrip of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You learn one additional druid cantrip of your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Bonus Cantrip, Circle of Seasons" supports="Druid, 0" spellcasting="Druid" />
+		</rules>
+	</element>
+	<element name="Shroud of Seasons" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_SHROUD_OF_SEASONS">
+		<description>
+			<p>Starting at 2nd level, you can embrace friend or foe under nature’s shroud.</p>
+			<p class="indent">As an action, you can expend one use of your Wild Shape and choose one creature you can see within 60 feet of you that has at least 1 hit point. That creature must make a Constitution saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following options, which takes effect at the start of the creature’s next turn and lasts for up to 1 minute while you concentrate it. As a bonus action, you cause nature to focus directly on the creature to much greater effect.</p>
+			<p class="indent"><strong><em>Deep Winter’s Freeze.</em></strong> Frost covers the target’s skin. Its movement speed is reduced by 10 feet. Using your bonus action, it takes cold damage equal to 1d4 + your Wisdom modifier.</p>
+			<p class="indent"><strong><em>Fade Rot.</em></strong> A creature is afflicted with pestilence and disease, causing it to suffer one level of exhaustion, and regains only half the normal healing from spells and effects. Using your bonus action, it takes necrotic damage equal to your Wisdom modifier (minimum of 1 damage).</p>
+			<p class="indent"><strong><em>Harvestide.</em></strong> The season of harvest reaps the bounty and readies the land for renewal. A creature under the shroud can use its bonus action on its turn to be showered in radiant energy, and regains hit points equal to 1d4 + your Wisdom modifier.</p>
+			<p class="indent"><strong><em>Wildflame.</em></strong> As a bonus action, you cause flames to flash across the target dealing 1d6 fire damage, and causes the target to ignite in flames. At the start of each of its turns, or until the shroud ends, the target takes fire damage equal to your Wisdom modifier (minimum of 1) and sheds bright light in a 10-foot radius and dim light for an additional 10 feet. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as being submerged in water).</p>
+		</description>
+		<sheet action="Action">
+			<description>You can expend one use of your Wild Shape and choose one creature you can see within 60 feet of you that has at least 1 hit point. That creature must make a Constitution saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following options, which takes effect at the start of the creature’s next turn and lasts for up to 1 minute while you concentrate it.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_DEEP_WINTERS_FREEZE" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_FADE_ROT" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_HARVESTIDE" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_WILDFLAME" />
+		</rules>
+	</element>
+	<element name="Deep Winter’s Freeze" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_DEEP_WINTERS_FREEZE">
+		<description>
+			<p>Frost covers the target’s skin. Its movement speed is reduced by 10 feet. Using your bonus action, it takes cold damage equal to 1d4 + your Wisdom modifier.</p>
+		</description>
+		<sheet action="Shroud of Seasons">
+			<description>Its movement speed is reduced by 10 feet. Using your bonus action, it takes 1d4+{{wisdom:modifier}} cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Fade Rot" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_FADE_ROT">
+		<description>
+			<p>A creature is afflicted with pestilence and disease, causing it to suffer one level of exhaustion, and regains only half the normal healing from spells and effects. Using your bonus action, it takes necrotic damage equal to your Wisdom modifier (minimum of 1 damage).</p>
+		</description>
+		<sheet action="Shroud of Seasons">
+			<description>A creature suffers one level of exhaustion, and regains only half the normal healing from spells and effects. Using your bonus action, it takes {{fade rot:damage}} necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="fade rot:damage" value="1" bonus="base" />
+			<stat name="fade rot:damage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Harvestide" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_HARVESTIDE">
+		<description>
+			<p>The season of harvest reaps the bounty and readies the land for renewal. A creature under the shroud can use its bonus action on its turn to be showered in radiant energy, and regains hit points equal to 1d4 + your Wisdom modifier.</p>
+		</description>
+		<sheet action="Shroud of Seasons">
+			<description>A creature under the shroud can use its bonus action on its turn to be showered in radiant energy, and regains hit points equal to 1d4+{{wisdom:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Wildflame" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SHROUD_OF_SEASONS_WILDFLAME">
+		<description>
+			<p>As a bonus action, you cause flames to flash across the target dealing 1d6 fire damage, and causes the target to ignite in flames. At the start of each of its turns, or until the shroud ends, the target takes fire damage equal to your Wisdom modifier (minimum of 1) and sheds bright light in a 10-foot radius and dim light for an additional 10 feet. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as being submerged in water).</p>
+		</description>
+		<sheet action="Shroud of Seasons">
+			<description>As a bonus action, you cause flames to flash across the target dealing 1d6 fire damage, and causes the target to ignite in flames. At the start of each of its turns, or until the shroud ends, the target takes {{wildflame:damage}} fire damage and sheds bright light in a 10-foot radius and dim light for an additional 10 feet. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as being submerged in water).</description>
+		</sheet>
+		<rules>
+			<stat name="wildflame:damage" value="1" bonus="base" />
+			<stat name="wildflame:damage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ashes of Life" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_ASHES_OF_LIFE">
+		<description>
+			<p>At 6th level, when the target creature of your shroud dies, you can use your reaction to reclaim some of its life force and instantly use it heal yourself or another creature within 60 feet of you a number of hit points equal to your druid level.</p>
+		</description>
+		<sheet>
+			<description>When the target creature of your shroud dies, you can use your reaction to reclaim some of its life force and instantly use it heal yourself or another creature within 60 feet of you {{level:druid}} hit points.</description>
+		</sheet>
+	</element>
+	<element name="Child of Change" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_CHILD_OF_CHANGE">
+		<description>
+			<p>At 10th level, when you use your Shroud of Seasons feature, the shroud descends as a 10-foot cube on a point within range that you choose instead of a single creature. While you concentrate on the shroud, each creature that starts its turn in the area, or moves there for the first time, must succeed on a Constitution saving throw or be affected by its season.</p>
+			<p class="indent">Additionally, while you concentrate on your shroud, you gain resistance to the damage type of the season in effect.</p>
+		</description>
+		<sheet>
+			<description>When you use your Shroud of Seasons feature, the shroud descends as a 10-foot cube on a point within range that you choose instead of a single creature. While you concentrate on the shroud, each creature that starts its turn in the area, or moves there for the first time, must succeed on a Constitution saving throw or be affected by its season.
+			Additionally, while you concentrate on your shroud, you gain resistance to the damage type of the season in effect.</description>
+		</sheet>
+	</element>
+	<element name="Natural Duality" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_SEASONS_NATURAL_DUALITY">
+		<description>
+			<p>Starting at 14th level, the size of your shroud swells to 20 feet and power of each seasons effects and damage doubles.</p>
+			<p class="indent">Additionally, while you concentrate on your shroud, you can cast a concentration spell at the same time. The first time you would fail a saving throw to maintain concentration the spell fails, and the shroud remains.</p>
+		</description>
+		<sheet>
+			<description>The size of your shroud swells to 20 feet and power of each seasons effects and damage doubles.
+			Additionally, while you concentrate on your shroud, you can cast a concentration spell at the same time. The first time you would fail a saving throw to maintain concentration the spell fails, and the shroud remains.</description>
+		</sheet>
+	</element>	
+</elements>

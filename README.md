@@ -1,17 +1,23 @@
-# Elements to extend the Aurora Builder
-Include the additional content provided in this collection by launching the Aurora Builder, going to the **Start > Additional Content** tab and downloading one or more of the index files by providing the URLs below. When you have downloaded the indices you want, click the **Update Content Files** button to start downloading the content.
-When this content gets updated or new content gets added the builder will automatically update your files for you in the background.
+# Aurora
+Visit the [website](http://www.aurorabuilder.com "Aurora Website") for more information about Aurora and check out the [support page](http://www.aurorabuilder.com/support "Aurora Support Page") if you have any questions.
+
+### Extending Content
+Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically.
+<br>
+More information about extending the content can be found [here](http://aurorabuilder.com/content/ "Additional Content").
 
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/core.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana.index
-- https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index
-- https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index
+- https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index *
+- https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index *
 
+_* content from these sources will be restructured in the near future, click [here](http://aurorabuilder.com/posts/37/project-restructure/ "Project Restructure") for more information_
 
-### Support
-Visit the [website](http://www.dndbuilder.net "Aurora Builder Website") for more information, discuss anything related in the [subreddit](https://www.reddit.com/r/aurorabuilder "Aurora Builder Subreddit") and/or [discord channel](https://discord.gg/MmWvNFV), and feel free support the project on [patreon](https://www.patreon.com/aurorabuilder "Patreon page for Aurora Builder") or by making a donation though the website.
-
+### Community Driven Content
+A collection of community driven content for homebrew content can be found [here](http://aurorabuilder.com/content/#community "Community Driven Content").
 
 ### Content Request
-You can request content by creating an issue with the request. When instead you are willing to create requested content, just leave a reply in the issue stating you're working on it.
+You can request content by creating an issue in the appropriate repository with the request.
+<br>
+_No guarantees, people create content in their free time._
