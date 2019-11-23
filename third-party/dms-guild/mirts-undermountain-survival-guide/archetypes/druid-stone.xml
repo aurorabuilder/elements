@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="druid-stone.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/mirts-undermountain-survival-guide/archetype/druid-stone.xml" />
+		</update>
+	</info>
+	<element name="Cirle of Stone" type="Archetype" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_CIRLE_OF_STONE">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids who are members of the Circle of Stone have a special connection with the very bones of the world and commune with the elemental spirits that inhabit mountains, hills, caves, and tunnels. These druids resist change and seek to preserve things as they are. Filled with the strength of stone, these implacable defenders of nature are equally at home above and below the ground.</p>
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SHAPE" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_WALKER" />
+		</description>
+		<sheet>
+			<description>You have a special connection with the very bones of the world and commune with the elemental spirits that inhabit mountains, hills, caves, and tunnels.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SHAPE" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER" level="10" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_WALKER" level="14" />
+		</rules>
+	</element>
+	<element name="Circle Spells" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS">
+		<description>
+			<p>Your mystical connection to the elemental spirits infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells.</p>
+			<p class="indent">Once you gain access to a circle spell, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+			<h5>Circle of Stone Spells</h5>
+			<table>
+				<thead><tr><td>Druid Level</td><td>Spells</td></tr></thead>
+				<tr><td>3rd</td><td><em>dust devil*, spike growth</em></td></tr>
+				<tr><td>5th</td><td><em>erupting earth*, meld into stone</em></td></tr>
+				<tr><td>7th</td><td><em>stone shape, elemental bane*</em></td></tr>
+				<tr><td>9th</td><td><em>wall of stone, conjure elemental</em></td></tr>
+			</table>
+			<p><em>* From Elemental Evil Player’s Companion</em></p>
+		</description>
+		<sheet display="false">
+			<description>You gain access to specific spells as you level up.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_POTA_SPELL_DUSTDEVIL" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MELD_INTO_STONE" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ELEMENTAL_BANE" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_STONE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_ELEMENTAL" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+	<element name="Stone Strength" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH">
+		<description>
+			<p>Starting at 2nd level, you can summon elemental spirits to fill your body with stony strength and protect you from harm. When you take damage, you can use your reaction to roll a number of d6s equal to your druid level and reduce the damage by the total.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="Long Rest">
+			<description>When you take damage, you can use your reaction to roll {{level:druid}}d6 and reduce the damage by the total.</description>
+		</sheet>
+	</element>
+	<element name="Stone Shape" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SHAPE">
+		<description>
+			<p>Starting at 6th level, you can use your Wild Shape to transform into a gargoyle.</p>
+		</description>
+		<sheet>
+			<description>You can use your Wild Shape to transform into a gargoyle.</description>
+		</sheet>
+	</element>
+	<element name="Stone Speaker" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER">
+		<description>
+			<p>Starting at 10th level, you gain the ability to speak with a stone object or surface. The stone can tell you what events have occurred within 10 feet of it in the past 24 hours. Its perspective, perception, and knowledge may limit what details the stone can provide.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{stone speaker:usage}}/Long Rest">
+			<description>You gain the ability to speak with a stone object or surface. The stone can tell you what events have occurred within 10 feet of it in the past 24 hours. Its perspective, perception, and knowledge may limit what details the stone can provide.</description>
+		</sheet>
+		<rules>
+			<stat name="stone speaker:usage" value="1" bonus="base" />
+			<stat name="stone speaker:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Stone Walker" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_STONE_STONE_WALKER">
+		<description>
+			<p>Starting at 14th level, you can move through solid earth or stone as if it was air and without destabilizing it, but you can’t end your movement there. If you do so, you are ejected to the nearest unoccupied space, and you are stunned until the end of your next turn.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="Long Rest">
+			<description>You can move through solid earth or stone as if it was air and without destabilizing it, but you can’t end your movement there. If you do so, you are ejected to the nearest unoccupied space, and you are stunned until the end of your next turn.</description>
+		</sheet>
+	</element>
+</elements>
