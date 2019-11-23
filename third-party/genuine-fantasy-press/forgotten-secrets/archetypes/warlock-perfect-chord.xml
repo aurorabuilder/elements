@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Perfect Chord Patron</name>
+		<description>Perfect Chord Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.1">
+			<file name="warlock-perfect-chord.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-perfect-chord.xml" />
+		</update>
+	</info>
+	
+	<element name="The Perfect Chord" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_PERFECT_CHORD">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have heard the most sublime sound in the world, and it has changed you forever. You’ve taken the resonance into your beating heart and it has brought meaning and inspiration to your days. The Perfect Chord resounds through the quiet places of the world as a clear and harmonious note that spirals with infinite complexity, gaining sentience and life with every sound it collects. It has no motive but to include every sound in the universe within itself, and it inspires others with an endless desire to find new forms of radiant music to call forth and collect.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_SEEKEROFTHESOUND"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_INSTRUMENTOFTHECHORD"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_VOICEOFTHEMAESTRO"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_THEGRANDFINALE"/>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_SEEKEROFTHESOUND" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_INSTRUMENTOFTHECHORD" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_VOICEOFTHEMAESTRO" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_THEGRANDFINALE" level="14" />
+		</rules>
+	</element>	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Perfect Chord lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>PERFECT CHORD EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>shrill whistle, thunderwave</em></td></tr>
+				<tr><td>2nd</td><td><em>knock, silence</em></td></tr>
+				<tr><td>3rd</td><td><em>beacon of hope, resonance</em></td></tr>
+				<tr><td>4th</td><td><em>compulsion, shattersong</em></td></tr>
+				<tr><td>5th</td><td><em>animate objects, awaken</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Perfect Chord lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_GFP_COFSA_SPELL_SHRILL_WHISTLE</extend>
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_KNOCK</extend>
+			<extend>ID_PHB_SPELL_SILENCE</extend>
+			<extend>ID_PHB_SPELL_BEACON_OF_HOPE</extend>
+			<extend>ID_GFP_COFSA_SPELL_RESONANCE</extend>
+			<extend>ID_PHB_SPELL_COMPULSION</extend>
+			<extend>ID_GFP_COFSA_SPELL_SHATTERSONG</extend>
+			<extend>ID_PHB_SPELL_ANIMATE_OBJECTS</extend>
+			<extend>ID_PHB_SPELL_AWAKEN</extend>
+		</spellcasting>
+	</element>	
+	<element name="Seeker of the Sound" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_SEEKEROFTHESOUND">
+		<description>
+			<p>At 1st level, your heartbeat is tuned to the Perfect Chord. You gain proficiency in the Performance skill and with all musical instruments. You can use a musical instrument as a spellcasting focus for your warlock spells, and can play it in place of using a verbal spellcasting component.</p>
+			<p class="indent">When you cast a spell that has only a verbal and somatic component, you can choose to cast it as though it only had a verbal component.</p>
+			<p class="indent">When you cast a spell of 1st level or higher that only has a verbal component, including those modified by this feature, you gain temporary hit points equal to your Charisma modifier that last for one minute.</p>
+		</description>
+		<sheet>
+			<description>You can use a musical instrument as a spellcasting focus for your warlock spells, and can play it in place of using a verbal spellcasting component.
+				When you cast a spell that has only a verbal and somatic component, you can choose to cast it as though it only had a verbal component.
+			When you cast a spell of 1st level or higher that only has a verbal component, including those modified by this feature, you gain {{seeker of sound:thp}} temporary hit points that last for one minute.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_PERFORMANCE"/>
+			<grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_MUSICAL_INSTRUMENT" />
+			<grant type="Proficiency" name="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_MUSICAL_INSTRUMENT" />
+			<stat name="seeker of sound:thp" value="charisma:modifier" />
+		</rules>
+	</element>	
+	<element name="Instrument of the Chord" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_INSTRUMENTOFTHECHORD">
+		<description>
+			<p>At 6th level, your practice teaches you to turn others into your instruments. Using your bonus action, you can curse or harmonize with one creature within 60 feet of you. Each time you cast a spell using a warlock spell slot, you can cause that creature to vibrate in harmony with your spell. If the creature is friendly, its movement speed is doubled until the end of its next turn. If it is hostile, it must make a Constitution saving throw against your warlock spell save DC. If it fails, it is knocked prone. This curse lasts for 1 minute or until the creature enters an area of magical silence. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				Using your bonus action, you can curse or harmonize with one creature within 60 feet of you. Each time you cast a spell using a warlock spell slot, you can cause that creature to vibrate in harmony with your spell. If the creature is friendly, its movement speed is doubled until the end of its next turn. If it is hostile, it must make a Constitution saving throw against your warlock spell save DC. If it fails, it is knocked prone. This curse lasts for 1 minute or until the creature enters an area of magical silence. Once you use this feature, you can’t do so again until you finish a short or long rest.
+			</description>
+		</sheet>
+	</element>	
+	<element name="Voice of the Maestro" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_VOICEOFTHEMAESTRO">
+		<description>
+			<p>At 10th level, your spirit copies the sounds it hears with perfect clarity. You gain resistance to thunder damage. Whenever you cast a spell that makes noise or the illusion of noise, you can cause it to produce any sound you wish. Additionally, you can perfectly mimic the speech and other vocalizations of creatures you have heard, but not spellcasting. Creatures must succeed an Insight check against your warlock spell save DC to determine the sound is a mimicry, and they make this check with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell that makes noise or the illusion of noise, you can cause it to produce any sound you wish. Additionally, you can perfectly mimic the speech and other vocalizations of creatures you have heard, but not spellcasting. Creatures must succeed an Insight check against your warlock spell save DC to determine the sound is a mimicry, and they make this check with disadvantage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" name="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER"/>
+		</rules>
+	</element>	
+	<element name="The Grand Finale" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PERFECT_CHORD_THEGRANDFINALE">
+		<description>
+			<p>Starting at 14th level, you can use your action to call upon a single note of the Perfect Chord. Choose one of the following effects. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+			<ul>
+				<li><h4>Celebration:</h4><p> Each friendly creature within 1 mile of you gains advantage on Charisma checks for 8 hours. During this time, these creatures can use their actions to magically conjure an instrument of their choosing, and they gain proficiency with that instrument for the duration. They can also use their action to summon delicious food or beverages sufficient to satisfy their needs for one day. They can only use each action once. Finally, they can cast any cantrips that you know that are from the schools of illusion or enchantment. After 8 hours, all of the conjured objects vanish and all ongoing effects created or enabled by this feature end.</p></li>
+				<li><h4>Defiance:</h4><p> You unleash a painful sound. Creatures of your choosing within 120 feet of you can choose to use their reaction to drop what they are holding and cover their ears. If they don’t do so, they take 8d10 thunder damage and are deafened for one hour. If they do, they take half as much damage and are not deafened.</p></li>
+				<li><h4>Discord:</h4><p> Each hostile creature within 60 feet of you that can hear you must make a Charisma saving throw against your warlock spell save DC. If they fail, they are frightened of you and of all creatures friendly to you for one minute. A creature can repeat their saving throw at the end of each of its turns, ending the effect on a success.</p></li>
+				<li><h4>Exaltation:</h4><p> Each creature within 60 feet of you that can hear you can use their reaction to cheer. You immediately gain temporary hit points equal to ten times the number of creatures that cheer. These temporary hit points last for 10 minutes.</p></li>
+				<li><h4>Unity:</h4><p> Each friendly creature within 60 feet of you that can hear you can use their reaction to immediately move up to 30 feet and make one weapon attack.</p></li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You can use your action to call upon a single note of the Perfect Chord. Choose one of the following effects. Once you use this feature, you can’t do so again until you finish a long rest.
+			
+			Celebration: Each friendly creature within 1 mile of you gains advantage on Charisma checks for 8 hours. During this time, these creatures can use their actions to magically conjure an instrument of their choosing, and they gain proficiency with that instrument for the duration. They can also use their action to summon delicious food or beverages sufficient to satisfy their needs for one day. They can only use each action once. Finally, they can cast any cantrips that you know that are from the schools of illusion or enchantment. After 8 hours, all of the conjured objects vanish and all ongoing effects created or enabled by this feature end.
+			
+			Defiance: You unleash a painful sound. Creatures of your choosing within 120 feet of you can choose to use their reaction to drop what they are holding and cover their ears. If they don’t do so, they take 8d10 thunder damage and are deafened for one hour. If they do, they take half as much damage and are not deafened.
+			
+			Discord: Each hostile creature within 60 feet of you that can hear you must make a Charisma saving throw against your warlock spell save DC. If they fail, they are frightened of you and of all creatures friendly to you for one minute. A creature can repeat their saving throw at the end of each of its turns, ending the effect on a success.				
+			
+			Exaltation: Each creature within 60 feet of you that can hear you can use their reaction to cheer. You immediately gain temporary hit points equal to ten times the number of creatures that cheer. These temporary hit points last for 10 minutes.
+			
+			Unity: Each friendly creature within 60 feet of you that can hear you can use their reaction to immediately move up to 30 feet and make one weapon attack.</description>
+		</sheet>
+	</element>
+</elements>				
