@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shadowcat Patron</name>
+		<description>Shadowcat Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.1">
+			<file name="warlock-shadowcat.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-shadowcat.xml" />
+		</update>
+	</info>
+
+	<element name="The Shadowcat" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_SHADOWCAT">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your patron is an otherworldly incarnation of fate that strides between planes; a living omen of ill luck and good fortune alike. Drawn to the dreams of mortals, its lesser reflections perch upon the chests of the unwary in their sleep, stealing breath and fragments of life from their victims as they feed upon the nightmares this brings. When they’ve had their fill, they return to their master, who sends them back again to hunt down the creatures that have escaped from the nightmares of those tormented by darker fates. You’ve drawn the attention of this creature, for good or ill, and have made your pact in the deepest shadows of the dark. Now, shadows boil around your hands, both inky black and snow white, tainted and blessed by the touch of the Inverse. You’ve been there, seen the sun of endless emptiness and the void of pure light that shines from beyond the stars, and you have felt the gaze of the nightmares that stare upon you with jealousy, feeling their hate. They know that while you can depart unharmed, their nights are numbered. You’ve stolen their luck, and now you’ll use that power for your own ends.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DREAMSTALKER"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_STOLENLUCK"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_UMBRALLEAP"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DARKAPPARITION"/>
+		</description>
+		<sheet display="false">
+			<description>Your patron is an otherworldly incarnation of fate that strides between planes; a living omen of ill luck and good fortune alike.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DREAMSTALKER" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_STOLENLUCK" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_UMBRALLEAP" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DARKAPPARITION" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Shadowcat lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>SHADOWCAT EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>duskwalk, feather fall</em></td></tr>
+				<tr><td>2nd</td><td><em>shadow armor, silence</em></td></tr>
+				<tr><td>3rd</td><td><em>creeping dark, nondetection</em></td></tr>
+				<tr><td>4th</td><td><em>greater invisibility, unseen claw</em></td></tr>
+				<tr><td>5th</td><td><em>creation, shadow world</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Shadowcat lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_GFP_COFSA_SPELL_DUSKWALK</extend>
+			<extend>ID_PHB_SPELL_FEATHER_FALL</extend>
+			<extend>ID_GFP_COFSA_SPELL_SHADOW_ARMOR</extend>
+			<extend>ID_PHB_SPELL_SILENCE</extend>
+			<extend>ID_GFP_COFSA_CREEPING_DARK</extend>
+			<extend>ID_PHB_SPELL_NONDETECTION</extend>
+			<extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+			<extend>ID_GFP_COFSA_SPELL_UNSEEN_CLAW</extend>
+			<extend>ID_PHB_SPELL_CREATION</extend>
+			<extend>ID_GFP_COFSA_SPELL_SHADOW_WORLD</extend>
+		</spellcasting>
+	</element>
+	<element name="Dream Stalker" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DREAMSTALKER">
+		<description>
+			<p>Starting at 1st level, your patron’s magic allows you to be everywhere and nowhere at once. As an action, you can fade partway into the Inverse, gaining advantage on Stealth checks for 1 hour. When you roll initiative while in this state, you can choose to teleport up to 60 feet to a location within 10 feet of a creature you can see. If you deal damage to the creature with an attack during the first round of combat, you can use your bonus action to steal their breath and spirit. The target takes psychic damage equal to your warlock level and cannot speak or make sound until the start of your next turn. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>As an action, you can fade partway into the Inverse, gaining advantage on Stealth checks for 1 hour. When you roll initiative while in this state, you can choose to teleport up to 60 feet to a location within 10 feet of a creature you can see. If you deal damage to the creature with an attack during the first round of combat, you can use your bonus action to steal their breath and spirit. The target takes {{dream stalker:dmg}} psychic damage and cannot speak or make sound until the start of your next turn. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+        <rules>
+            <stat name="dream stalker:dmg" value="level:warlock" />
+        </rules>
+	</element>
+	<element name="Stolen Luck" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_STOLENLUCK">
+		<description>
+			<p>At 6th level, you can curse an enemy that you can see within 60 feet of you with terrible misfortune as a bonus action. Whenever the target makes an attack roll or ability check, you can use your reaction to roll a d6 after seeing the result. If the result is a 6, the result of their d20 roll is replaced with a 1. This curse lasts for one minute, and ends early if either you or the target are reduced to 0 hit points. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>You can curse an enemy that you can see within 60 feet of you with terrible misfortune as a bonus action. Whenever the target makes an attack roll or ability check, you can use your reaction to roll a d6 after seeing the result. If the result is a 6, the result of their d20 roll is replaced with a 1. This curse lasts for one minute, and ends early if either you or the target are reduced to 0 hit points. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Umbral Leap" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_UMBRALLEAP">
+		<description>
+			<p>Starting at 10th level, whenever you are subject to an effect that requires you to make a Dexterity saving throw, you can use your reaction to instantly dissolve into a dark mist to avoid the initial effect. You reappear in an unoccupied space of your choosing within 30 feet of your initial location. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you are subject to an effect that requires you to make a Dexterity saving throw, you can use your reaction to instantly dissolve into a dark mist to avoid the initial effect. You reappear in an unoccupied space of your choosing within 30 feet of your initial location. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Dark Apparition" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SHADOWCAT_DARKAPPARITION">
+		<description>
+			<p>At 14th level, the Shadowcat’s hunger for nightmares grants you the power to create them. You can no longer be surprised. Your Dream Stalker feature no longer has a limit to the number of times it can be used. Whenever you use your Dream Stalker feature’s bonus action, all hostile creatures within 10 feet of you must make a Wisdom saving throw against your warlock spell save DC. If they fail, they are frightened of you until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>You can no longer be surprised. Your Dream Stalker feature no longer has a limit to the number of times it can be used. Whenever you use your Dream Stalker feature’s bonus action, all hostile creatures within 10 feet of you must make a Wisdom saving throw against your warlock spell save DC. If they fail, they are frightened of you until the end of your next turn.</description>
+		</sheet>
+	</element>
+</elements>

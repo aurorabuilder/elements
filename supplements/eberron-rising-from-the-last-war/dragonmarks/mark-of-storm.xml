@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-storm.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-storm.xml" />
+		</update>
+	</info>
+	<element name="Mark of Storm" type="Race Variant" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACE_VARIANT_MARK_OF_STORM">
+		<supports>Half-Elf Variant</supports>
+		<description>
+			<p>Wind and water welcome the half-elves who carry the Mark of Storm, and some learn to call on the power of the storm itself.</p>
+			<p>If your half-elf character has the Mark of Storm, the following traits replace the half-elf’s Ability Score Increase and Skill Versatility traits in the Player’s Handbook.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 2, and your Dexterity score increases by 1.</p>
+			<p class="indent"><strong><em>Windwright’s Intuition.</em></strong> When you make a Dexterity (Acrobatics) check or any ability check involving navigator’s tools, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Storm’s Boon.</em></strong> You have resistance to lightning damage.</p>
+			<p class="indent"><strong><em>Headwinds.</em></strong> You know the gust cantrip. Starting at 3rd level, you can cast the gust of wind spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Storm Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF STORM SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>feather fall, fog cloud</em></td></tr>
+				<tr><td>2nd</td><td><em>gust of wind, levitate</em></td></tr>
+				<tr><td>3rd</td><td><em>sleet storm, wind wall</em></td></tr>
+				<tr><td>4th</td><td><em>conjure minor elemental, control water</em></td></tr>
+				<tr><td>5th</td><td><em>conjure elemental</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Half-Elf (Mark of Storm)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_STORM" />
+			<stat name="charisma" value="2" />
+			<stat name="dexterity" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_WINDWRIGHTS_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_STORMS_BOON" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_HEADWINDS" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Windwright’s Intuition" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_WINDWRIGHTS_INTUITION">
+		<description>
+			<p>When you make a Dexterity (Acrobatics) check or any ability check involving navigator’s tools, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Acrobatics check or any ability check involving navigator’s tools, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Storm’s Boon" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_STORMS_BOON">
+		<description>
+			<p>You have resistance to lightning damage.</p>
+		</description>
+		<sheet display="false">
+			<description>You have resistance to lightning damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Headwinds" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_HEADWINDS">
+		<description>
+			<p>You know the gust cantrip. Starting at 3rd level, you can cast the gust of wind spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You know the gust cantrip.</description>
+			<description level="3" usage="1/Long Rest">You know the gust cantrip. You can cast the gust of wind spell once with this trait using Charisma as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_GUST" />
+		</rules>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_STORM_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Storm Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Storm Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>feather fall, fog cloud</em></td></tr>
+				<tr><td>2nd</td><td><em>gust of wind, levitate</em></td></tr>
+				<tr><td>3rd</td><td><em>sleet storm, wind wall</em></td></tr>
+				<tr><td>4th</td><td><em>conjure minor elemental, control water</em></td></tr>
+				<tr><td>5th</td><td><em>conjure elemental</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Storm Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_FEATHER_FALL</extend>
+			<extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+			<extend>ID_PHB_SPELL_GUST_OF_WIND</extend>
+			<extend>ID_PHB_SPELL_LEVITATE</extend>
+			<extend>ID_PHB_SPELL_SLEET_STORM</extend>
+			<extend>ID_PHB_SPELL_WIND_WALL</extend>
+			<extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTAL</extend>
+			<extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+			<extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+		</spellcasting>
+	</element>	
+</elements>
