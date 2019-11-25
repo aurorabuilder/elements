@@ -47,50 +47,83 @@
     </element>
     <element name="Psionic Armament" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_PSIONIC_ARMAMENT">
         <description>
-            <p></p>
+            <p>You can channel your psychic power to magically augment your prowess. When you finish a long rest, choose whether to augment your defenses or your strikes. The chosen benefit lasts until you finish a long rest.</p>
+            <p class="indent"><strong><em>Augmented Defenses.</em></strong> When you or a creature you can see within 30 feet of you takes damage, you can use your reaction to roll a d10 and reduce the amount of damage taken by the number rolled. When you reach 10th level in this class, the die changes to a d12.</p>
+            <p class="indent"><strong><em>Augmented Strikes.</em></strong> Once during each of your turns when you hit a creature with a weapon attack, you can also deal 1d4 psychic damage to that target. When you reach 10th level in this class, the psychic damage increases to 1d6.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you finish a long rest, choose whether to augment your defenses or your strikes. The chosen benefit lasts until you finish a long rest.
+            Augmented Defenses. When you or a creature you can see within 30 feet of you takes damage, you can use your reaction to roll a d10 and reduce the amount of damage taken by the number rolled. When you reach 10th level in this class, the die changes to a d12.
+            Augmented Strikes. Once during each of your turns when you hit a creature with a weapon attack, you can also deal 1d4 psychic damage to that target. When you reach 10th level in this class, the psychic damage increases to 1d6.</description>
+            <description level="10">When you finish a long rest, choose whether to augment your defenses or your strikes. The chosen benefit lasts until you finish a long rest.
+            Augmented Defenses. When you or a creature you can see within 30 feet of you takes damage, you can use your reaction to roll a d12 and reduce the amount of damage taken by the number rolled. 
+            Augmented Strikes. Once during each of your turns when you hit a creature with a weapon attack, you can also deal 1d6 psychic damage to that target. </description>
         </sheet>
     </element>
     <element name="Telekinetic Hand" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_TELEKINETIC_HAND">
         <description>
-            <p></p>
+            <p>You learn the mage hand cantrip. You can cast it without components, and you can make the spectral hand invisible. Intelligence is your spellcasting ability for this spell.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>You can cast mage hand without components, and you can make the spectral hand invisible using Intelligence as your spellcasting ability.</description>
         </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+        </rules>
     </element>
     <element name="Strength of Mind" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_STRENGTH_OF_MIND">
         <description>
-            <p></p>
+            <p>As a bonus action, you can telekinetically lash out at a creature you can see within 20 feet of you. The target must make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. On a failed save, the target takes force damage equal to 2d6 plus your Intelligence modifier and is telekinetically moved 15 feet directly toward or away from you (your choice). On a successful save, it takes half as much damage and isn’t moved.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Bonus Action">
+            <description>You can telekinetically lash out at a creature you can see within 20 feet of you. The target must make a DC{{strength of mind:dc}} Strength saving throw. On a failed save, the target takes 2d6+{{intelligence:modifier}} force damage and is telekinetically moved 15 feet directly toward or away from you. On a successful save, it takes half as much damage and isn’t moved.</description>
         </sheet>
+        <rules>
+            <stat name="strength of mind:dc" value="8" />
+            <stat name="strength of mind:dc" value="proficiency" />
+            <stat name="strength of mind:dc" value="intelligence:modifier" />
+        </rules>
     </element>
     <element name="Telekinetic Bulwark" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_TELEKINETIC_BULWARK">
         <description>
-            <p></p>
+            <p>When you take the Attack action, you can forgo one of your attacks to project a bastion of psionic power in a 10-foot radius around yourself. It lasts for 1 minute or until you’re incapacitated. For the duration, you and your allies in that area gain the benefits of half cover and have advantage on Strength saving throws.</p>
+            <p class="indent">Once you use this feature, you can’t do so again until you finish a long rest or until after you use your Second Wind feature.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you take the Attack action, you can forgo one of your attacks to project a bastion of psionic power in a 10-foot radius around yourself. It lasts for 1 minute or until you’re incapacitated. For the duration, you and your allies in that area gain the benefits of half cover and have advantage on Strength saving throws.
+            Once you use this feature, you can’t do so again until you finish a long rest or until after you use your Second Wind feature.</description>
         </sheet>
     </element>
     <element name="Agonizing Strikes" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_AGONIZING_STRIKES">
         <description>
-            <p></p>
+            <p>Your attacks can channel psychic agony. When you hit a creature with a weapon attack, you can also deal 2d10 psychic damage to that target and force it to make a Constitution saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. Unless the save succeeds, the target falls prone, and it suffers disadvantage on ability checks until the end of your next turn.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you hit a creature with a weapon attack, you can also deal 2d10 psychic damage to that target and force it to make a DC{{agonizing strikes:dc}} Constitution saving throw. Unless the save succeeds, the target falls prone, and it suffers disadvantage on ability checks until the end of your next turn.</description>
         </sheet>
+        <rules>
+            <stat name="agonizing strikes:dc" value="8" />
+            <stat name="agonizing strikes:dc" value="proficiency" />
+            <stat name="agonizing strikes:dc" value="intelligence:modifier" />
+        </rules>
     </element>
     <element name="Psychic Dreadnaught" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSYCHIC_WARRIOR_PSYCHIC_DREADNAUGHT">
         <description>
-            <p></p>
+            <p>The power of your mind suffuses your entire being, making you a nigh-unstoppable force on the battlefield. Using your reaction when you take damage, you can give yourself the following benefits for 1 minute or until you’re incapacitated:</p>
+            <ul>
+                <li>At the start of each of your turns, you regain 10 hit points.</li>
+                <li>Your walking speed increases by 10 feet.</li>
+                <li>If you’re prone, you can stand up by spending 5 feet of movement.</li>
+            </ul>
+            <p class="indent">Once you activate this feature, you can’t use it again until you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Reaction" usage="1/Long Rest">
+            <description>When you take damage, you can give yourself the following benefits for 1 minute or until you’re incapacitated:
+            At the start of each of your turns, you regain 10 hit points.
+            Your walking speed increases by 10 feet.
+            If you’re prone, you can stand up by spending 5 feet of movement.</description>
         </sheet>
     </element>
 
