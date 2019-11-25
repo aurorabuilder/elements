@@ -249,129 +249,209 @@
     </element>
     <element name="Psionic Focus" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_PSIONIC_FOCUS">
         <description>
-            <p></p>
+            <p>You have learned to channel psionic energy through a special object: a psionic focus. You gain the object with this feature (see the “Your Psionic Focus” sidebar for how you might have acquired the item).</p>
+            <p class="indent">While your psionic focus is on your person, you gain the following benefits:</p>
+            <ul>
+                <li>The object is a spellcasting focus for you.</li>
+                <li>When you roll psychic or force damage for any of your wizard spells, you can reroll any of those damage dice that rolls a 1, but you must use the new roll.</li>
+            </ul>
+            <p class="indent">If your psionic focus is lost, you can magically recreate it by meditating for 1 hour during a short or long rest, at the end of which the focus appears in your hand.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>While your psionic focus is on your person, you gain the following benefits:
+            The object is a spellcasting focus for you.
+            When you roll psychic or force damage for any of your wizard spells, you can reroll any of those damage dice that rolls a 1, but you must use the new roll.
+            If your psionic focus is lost, you can magically recreate it by meditating for 1 hour during a short or long rest, at the end of which the focus appears in your hand.</description>
         </sheet>
     </element>
     <element name="Psionic Devotion" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_PSIONIC_DEVOTION">
         <description>
-            <p></p>
+            <p>Your study of psionics begins to unleash your mind’s potential. When you gain this feature, choose one of the following cantrips: friends, mage hand, or message. You learn that cantrip if you don’t already know it, and it doesn’t count against the number of wizard cantrips you know.</p>
+            <p class="indent">While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:</p>
+            <ul class="unstyled">
+                <li><strong><em>Friends.</em></strong> When the spell ends, the target doesn’t become hostile to you.</li>
+                <li><strong><em>Mage Hand.</em></strong> You can make the hand invisible when you cast the spell, and controlling the spell is a bonus action for you.</li>
+                <li><strong><em>Message.</em></strong> You don’t need to point toward the target or whisper your message out loud.</li>
+            </ul>
         </description>
         <sheet>
-            <description></description>
+            <description>While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components.</description>
         </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Cantrip, Psionic Devoction" supports="UA Psionic Devotion Spell" />
+        </rules>
     </element>
+
+    <element name="Friends" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONIC_DEVOTION_FRIENDS">
+        <supports>UA Psionic Devotion Spell</supports>
+        <description>
+            <p class="indent">While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:</p>
+            <p><strong><em>Friends.</em></strong> When the spell ends, the target doesn’t become hostile to you.</p>
+        </description>
+        <sheet>
+            <description>When the spell ends, the target doesn’t become hostile to you.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FRIENDS" spellcasting="Wizard" />
+        </rules>
+    </element>
+    <element name="Mage Hand" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONIC_DEVOTION_MAGE_HAND">
+        <supports>UA Psionic Devotion Spell</supports>
+        <description>
+            <p class="indent">While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:</p>
+            <p><strong><em>Mage Hand.</em></strong> You can make the hand invisible when you cast the spell, and controlpng the spell is a bonus action for you.</li>
+        </description>
+        <sheet>
+            <description>You can make the hand invisible when you cast the spell, and controlling the spell is a bonus action for you.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" spellcasting="Wizard" />
+        </rules>
+    </element>
+    <element name="Message" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONIC_DEVOTION_MESSAGE">
+        <supports>UA Psionic Devotion Spell</supports>
+        <description>
+            <p class="indent">While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:</p>
+            <p><strong><em>Message.</em></strong> You don’t need to point toward the target or whisper your message out loud.</p>
+        </description>
+        <sheet>
+            <description>You don’t need to point toward the target or whisper your message out loud.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MESSAGE" spellcasting="Wizard" />
+        </rules>
+    </element>
+
+    <!-- todo: create though form elements? -->
     <element name="Thought Form" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_THOUGHT_FORM">
         <description>
-            <p></p>
+            <p>While you are carrying your psionic focus, you can use a bonus action to magically transform your body into pure psionic energy. The transformation lasts for 10 minutes, until you use a bonus action to assume your normal form, or until you are incapacitated or die.</p>
+            <p class="indent">While in thought form, you are a figure of luminous psychic energy, with your psionic focus hovering within. Your form can appear as anything you wish, but it is obviously magical, is the same size as you, and sheds dim light in a 5-foot-radius. Any other equipment you are wearing or carrying transforms with you and melds into your thought form. You also gain the following benefits:</p>
+            <ul class="unstyled">
+                <li><strong>Psionic Spellcasting.</strong> When you cast a spell while in thought form, you can cast the spell psionically. If you do so, the spell doesn’t require verbal, somatic, or material components that lack a gold cost.</li>
+                <li><strong>Psychic Resilience.</strong> You gain resistance to psychic damage and to bludgeoning, piercing, and slashing damage from nonmagical attacks.</li>
+            </ul>
+            <p class="indent">You can transform using this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Bonus Action" usage="{{thought form:usage}}/Long Rest">
+            <description>While you are carrying your psionic focus, you can magically transform your body into pure psionic energy. The transformation lasts for 10 minutes, until you use a bonus action to assume your normal form, or until you are incapacitated or die.
+            While in thought form, you are a figure of luminous psychic energy, with your psionic focus hovering within. Your form can appear as anything you wish, but it is obviously magical, is the same size as you, and sheds dim light in a 5-foot-radius. Any other equipment you are wearing or carrying transforms with you and melds into your thought form. You also gain the following benefits:
+            Psionic Spellcasting. When you cast a spell while in thought form, you can cast the spell psionically. If you do so, the spell doesn’t require verbal, somatic, or material components that lack a gold cost.
+            Psychic Resilience. You gain resistance to psychic damage and to bludgeoning, piercing, and slashing damage from nonmagical attacks.</description>
         </sheet>
+        <rules>
+            <stat name="thought form:usage" value="1" bonus="base" />
+            <stat name="thought form:usage" value="intelligence:modifier" bonus="base" />
+        </rules>
     </element>
     <element name="Mental Discipline" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_MENTAL_DISCIPLINE">
         <description>
-            <p></p>
+            <p>Your mind’s power expands to greater heights. When you gain this feature, choose one of the following spells: dominate person, scrying, or telekinesis. You can add the spell to your spellbook, and you can cast it without components.</p>
+            <p class="indent">You can also cast the chosen spell once without expending a spell slot. After you do so, you regain the ability to cast the spell without a slot when you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast the chosen spell without components and can cast it once without expending a spell slot.</description>
         </sheet>
+        <rules>
+            <select type="Spell" name="Spell, Mental Discipline" supports="ID_PHB_SPELL_DOMINATE_PERSON|ID_PHB_SPELL_SCRYING|ID_PHB_SPELL_TELEKINESIS" spellcasting="Wizard" />
+        </rules>
     </element>
     <element name="Empowered Psionics" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_EMPOWERED_PSIONICS">
         <description>
-            <p></p>
+            <p>When you deal psychic or force damage with a wizard spell, you can add your Intelligence modifier to the damage against one of the spell’s targets.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you deal psychic or force damage with a wizard spell, you can add {{intelligence:modifier}} to the damage against one of the spell’s targets.</description>
         </sheet>
     </element>
     <element name="Thought Travel" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_PSIONICS_THOUGHT_TRAVEL">
         <description>
-            <p></p>
+            <p>While using your Thought Form, you have a flying speed equal to your walking speed and can hover, and you can move through other creatures and objects as if they were difficult terrain.</p>
+            <p class="indent">You take 1d10 force damage if you end your turn inside an object. If you return to your normal form while inside an object, you are shunted to the nearest unoccupied space, and you take 1d10 force damage for every 5 feet traveled.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>While using your Thought Form, you have a {{speed}} ft. flying speed and can hover, and you can move through other creatures and objects as if they were difficult terrain.
+            You take 1d10 force damage if you end your turn inside an object. If you return to your normal form while inside an object, you are shunted to the nearest unoccupied space, and you take 1d10 force damage for every 5 feet traveled.</description>
         </sheet>
     </element>
 
 	<element name="Ego Whip" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_EGO_WHIP">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You lash the mind of one creature you can see within range, filling it with despair. The target must succeed on an Intelligence saving throw or suffer disadvantage on attack rolls, ability checks, and saving throws, and it can’t cast spells. At the end of each of its turns, the target can make another Intelligence saving throw. On a success, the spell ends on the target.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">4</set>
+			<set name="school">Enchantment</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
-			<set name="isConcentration">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
 	<element name="Id Insinuation" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_ID_INSINUATION">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You unleash a torrent of conflicting desires in the mind of one creature you can see within range, impairing its ability to make decisions. The target must succeed on a Wisdom saving throw or be incapacitated. At the end of each of its turns, it takes 1d12 psychic damage, and it can. then make another Wisdom saving throw. On a success, the spell ends on the target.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">1</set>
+			<set name="school">Enchantment</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
-			<set name="isConcentration">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
 	<element name="Intellect Fortress" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_INTELLECT_FORTRESS">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You create a faintly shimmering barrier of protective psychic power around you. For the duration, you have advantage on all saving throws.</p>
+            <p class="indent">When another creature that you can see within 30 feet of you fails a saving throw, you can use your reaction to allow them to reroll the save. They must use the new roll.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">5</set>
+			<set name="school">Abjuration</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
-			<set name="isConcentration">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
 	<element name="Mental Barrier" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_MENTAL_BARRIER">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You protect your mind with a wall of looping, repetitive thought. Until the start of your next turn, you have advantage on Intelligence, Wisdom, and Charisma saving throws, and you have resistance to psychic damage.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
-			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 reaction, which you take when you are forced to make an Intelligence, a Wisdom, or a Charisma saving throw</set>
+			<set name="range">Self</set>
+			<set name="duration">1 round</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -379,19 +459,20 @@
 	<element name="Mind Sliver" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_MIND_SLIVER">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You drive a disorienting spike of psychic energy into the mind of one creature you can see within range. The target must make an Intelligence saving throw. Unless the saving throw is successful, the target takes 1d6 psychic damage, and the first time it makes a saving throw before the end of your next turn, it must roll a d4 and subtract the number rolled from the save.</p>
+            <p class="indent">This spell’s damage increases by 1d6 when you reach certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">0</set>
+			<set name="school">Enchantment</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 round</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -399,19 +480,20 @@
 	<element name="Mind Thrust" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_MIND_THRUST">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You propel a lance of psionic disruption into the mind of one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can use its action only to Dash or Disengage on its next turn. On a successful save, the target takes half as much damage, and this spell doesn’t limit its action options.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
-			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="level">2</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 round</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -419,19 +501,20 @@
 	<element name="Psionic Blast" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_PSIONIC_BLAST">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You unleash a destructive wave of mental power in a 30-foot cone. Each creature in the area must make a Dexterity saving throw. On a failed save, a target takes 5d8 force damage, is pushed 20 feet directly away from you, and is knocked prone. On a successful save, a target takes half as much damage and isn’t pushed or knocked prone.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
+			<set name="level">3</set>
 			<set name="school">Evocation</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
+			<set name="range">Self (30-foot cone)</set>
 			<set name="duration">Instantaneous</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -439,19 +522,20 @@
 	<element name="Psychic Crush" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_PSYCHIC_CRUSH">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You overload the mind of one creature you can see within range, filling its psyche with discordant emotions. The target must make an Intelligence saving throw. On a failed save, the target takes 12d6 psychic damage and is stunned for 1 minute. On a successful save, the target takes half as much damage and isn’t stunned.</p>
+            <p class="indent">The stunned target can make an Intelligence saving throw at the end of each of its turns. On a successful save, the spell ends on the target.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">6</set>
+			<set name="school">Enchantment</set>
 			<set name="time">1 action</set>
-			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 minute</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -459,19 +543,19 @@
 	<element name="Thought Shield" type="Spell" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_SPELL_THOUGHT_SHIELD">
 		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
 		<description>
-			<p></p>
+			<p>You weave a clouding veil over the mind of one creature you touch. For the duration, the target’s mind can’t be read or detected, creatures can’t telepathically communicate with the target unless the target allows it, and the target has advantage on saving throws against any effect that would determine whether it is telling the truth.</p>
 		</description>
 		<setters>
 			<set name="keywords">psionic</set>
-			<set name="level">1111111111111111111111111111111111</set>
-			<set name="school">Evocation</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
 			<set name="time">1 action</set>
 			<set name="range">Touch</set>
-			<set name="duration">Instantaneous</set>
+			<set name="duration">8 hours</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -479,19 +563,41 @@
 
     <element name="Telekinetic" type="Feat" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_FEAT_TELEKINETIC">
         <description>
-            <p></p>
+            <p>You learn to move things with your mind. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence score by 1, to a maximum of 20.</li>
+                <li>You learn the mage hand cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand invisible.</li>
+                <li>As a bonus action, you can try to shove one creature you can see within 5 feet of the spectral hand created by your mage hand spell. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Intelligence modifier) or be pushed 5 feet away from you.</li>
+            </ul>
         </description>
         <sheet>
-            <description></description>
+            <description>You learn the mage hand cantrip and can cast it without verbal or somatic components, and you can make the spectral hand invisible.
+            As a bonus action, you can try to shove one creature you can see within 5 feet of the spectral hand created by your mage hand spell. When you do so, the target must succeed on a DC{{telekinetic feat:dc}} Strength saving throw or be pushed 5 feet away from you.</description>
         </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+            <stat name="telekinetic feat:dc" value="8" />
+            <stat name="telekinetic feat:dc" value="proficiency" />
+            <stat name="telekinetic feat:dc" value="strength:modifier" />
+        </rules>
     </element>
     <element name="Telepathic" type="Feat" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_FEAT_TELEPATHIC">
         <description>
-            <p></p>
+            <p>You awaken the ability to mentally connect with others. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in one skill of your choice from the following list: Deception, Insight, Intimidation, or Persuasion.</li>
+                <li>You can communicate telepathically with any creature you can see within 30 feet of you. If it understands at least one language, it can respond to you telepathically.</li>
+            </ul>
         </description>
         <sheet>
-            <description></description>
+            <description>You can communicate telepathically with any creature you can see within 30 feet of you. If it understands at least one language, it can respond to you telepathically.</description>
         </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+            <select type="Proficiency" name="Skill Proficiency, Telepathic" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION" />
+        </rules>
     </element>
     
 </elements>
