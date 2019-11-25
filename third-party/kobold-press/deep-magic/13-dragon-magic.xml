@@ -30,6 +30,618 @@
 		</setters>
 	</element>
 
+	<element name="Dragon Mage" type="Archetype" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_ARCHETYPE_DRAGON_MAGE">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Wizards practice the subtle magic of pulling power from thin air and shaping it to fit their needs. Sorcerers tame the chaotic power within themselves, releasing it in barely controlled gouts of magical energy. Mages who walk the path between these two sources of magic are called dragon magi, and they meld the order of dweomery with the chaos of sorcery to grant themselves power that either tradition could never muster alone.</p>
+			<p class="indent">Dragon magi manifest their magic in many styles as diverse as the draconic species and the types of magic that populate the worlds. Kobolds serving as councilors to great wyrms are taught by their masters to harness their innate draconic natures through the use of more traditional spells. A wild-eyed human, oozing sorcerous magic from an ancient draconic ancestor, might find a kindly wizard to help her focus her power. Special legions of dragonborn troops train with a master dragon mage, learning all there is to know to better defend their homeland from invaders.</p>
+			<div element="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_MASK" />
+			<div element="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_HEART" />
+			<div element="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_WINGS" />
+			<div element="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_TAIL" />
+		</description>
+		<sheet display="false">
+			<description>Dragon magi manifest their magic in many styles as diverse as the draconic species and the types of magic that populate the worlds.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_MASK" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_HEART" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_WINGS" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_TAIL" level="14" />
+		</rules>
+	</element>
+	<element name="Invoke Dragon Mask" type="Archetype Feature" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_MASK">
+		<description>
+			<p>Starting at 2nd level, you can invoke a magical dragon mask. The dragon mask is translucent magical force in the form of a dragon’s head that sits atop your shoulders and surrounds your head. Your face is still visible beneath the mask, which does not hinder your vision. To create the mask, you take a bonus action and expend a spell slot. The mask’s duration = (3 rounds × the level of the spell slot expended). The dragon mask remains until its duration ends, you become incapacitated, or you use a bonus action to dismiss it or replace it with another dragon aspect.</p>
+			<p class="indent">While you wear your dragon mask, you gain the following benefits and drawbacks.</p>
+			<ul>
+				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1).</li>
+				<li>You gain a bite attack. As an action, make a melee spell attack against an adjacent target. On a hit, the target takes (1d8 + your Int modifier) piercing damage. This counts as a magical attack for purposes of overcoming a target’s immunity or resistance to piercing damage.</li>
+				<li>You have advantage on Wisdom (Perception) checks and on Charisma (Intimidation) checks.</li>
+				<li>You make ranged and melee spell attacks with disadvantage, and your targets have advantage on their saving throws against your spells.</li>
+				<li>As a bonus action, you can expend an additional spell slot to augment your dragon mask. Your next bite attack is made with advantage and does an additional 1d8 piercing damage per level of the spell slot expended.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>The dragon mask is translucent magical force in the form of a dragon’s head that sits atop your shoulders and surrounds your head. Your face is still visible beneath the mask, which does not hinder your vision. To create the mask, you take a bonus action and expend a spell slot. The mask’s duration = (3 rounds × the level of the spell slot expended). The dragon mask remains until its duration ends, you become incapacitated, or you use a bonus action to dismiss it or replace it with another dragon aspect.
+			You gain a +{{invoke dragon mask:ac}} bonus to your AC.
+			You gain a bite attack. As an action, make a melee spell attack against an adjacent target. On a hit, the target takes (1d8+{{intelligence:modifier}}) piercing damage. This counts as a magical attack for purposes of overcoming a target’s immunity or resistance to piercing damage.
+			You have advantage on Perception checks and on Intimidation checks.
+			You make ranged and melee spell attacks with disadvantage, and your targets have advantage on their saving throws against your spells.
+			As a bonus action, you can expend an additional spell slot to augment your dragon mask. Your next bite attack is made with advantage and does an additional 1d8 piercing damage per level of the spell slot expended.</description>
+		</sheet>
+		<rules>
+			<stat name="invoke dragon mask:ac" value="1" bonus="base" />
+			<stat name="invoke dragon mask:ac" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Invoke Dragon Heart" type="Archetype Feature" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_HEART">
+		<description>
+			<p>Starting at 6th level, you can invoke a magical dragon heart—a translucent magical force in the form of a beating heart that covers your chest. To create the dragon heart, you take a bonus action and expend a spell slot. The dragon heart’s duration = (3 rounds × the level of the spell slot expended). The dragon heart remains until its duration ends, you become incapacitated, or you use a bonus action to dismiss it or replace it with another dragon aspect.</p>
+			<p class="indent">While you wear your dragon heart, you gain the following benefits.</p>
+			<ul>
+				<li>You gain a bonus to Wisdom and Charisma saving throws equal to your Intelligence modifier (minimum of +1).</li>
+				<li>You gain temporary hit points equal to twice your wizard level. Any remaining temporary hit points are lost when your dragon heart aspect ends.</li>
+				<li>You gain a breath attack. As an action, you can exhale a line of energy 30 feet long and 5 feet wide. Each creature in the line must make a successful Dexterity saving throw or take 3d6 damage. The damage type can be acid, cold, fire, or lightning. You choose the damage type the first time you make a breath attack with this dragon heart, and it can’t be changed until you manifest a new dragon heart.</li>
+				<li>As a bonus action, you can spend an additional spell slot to augment your dragon heart. For each level of the expended spell slot, your next breath weapon attack becomes 10 feet longer and does an additional 2d6 damage.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>To create the dragon heart, you take a bonus action and expend a spell slot. The dragon heart’s duration = (3 rounds × the level of the spell slot expended). The dragon heart remains until its duration ends, you become incapacitated, or you use a bonus action to dismiss it or replace it with another dragon aspect.
+			You gain a +{{invoke dragon heart:save bonus}} bonus to Wisdom and Charisma saving throws.
+			You gain {{invoke dragon heart:temp hp}} temporary hp. Any remaining temporary hit points are lost when your dragon heart aspect ends.
+			You gain a breath attack. As an action, you can exhale a line of energy 30 feet long and 5 feet wide. Each creature in the line must make a successful Dexterity saving throw or take 3d6 damage. The damage type can be acid, cold, fire, or lightning. You choose the damage type the first time you make a breath attack with this dragon heart, and it can’t be changed until you manifest a new dragon heart.
+			As a bonus action, you can spend an additional spell slot to augment your dragon heart. For each level of the expended spell slot, your next breath weapon attack becomes 10 feet longer and does an additional 2d6 damage.</description>
+		</sheet>
+		<rules>
+			<stat name="invoke dragon heart:save bonus" value="1" bonus="base" />
+			<stat name="invoke dragon heart:save bonus" value="intelligence:modifier" bonus="base" />
+			<stat name="invoke dragon heart:temp hp" value="level:wizard" />
+			<stat name="invoke dragon heart:temp hp" value="level:wizard" />
+		</rules>
+	</element>
+	<element name="Invoke Dragon Wings" type="Archetype Feature" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_WINGS">
+		<description>
+			<p>Starting at 10th level, you can invoke magical dragon wings of translucent magical force. To create the wings, you take a bonus action and expend a spell slot. The dragon wings’ duration = (2 rounds × the level of the spell slot expended). The dragon wings remain until their duration ends, you become incapacitated, or you use a bonus action to dismiss them or replace them with another dragon aspect.</p>
+			<p class="indent">While you wear your dragon wings, you gain the following benefits.</p>
+			<ul>
+				<li>Your speed increases by 10 feet, and you gain a fly speed equal to your walking speed.</li>
+				<li>You gain resistance to nonmagical bludgeoning, piercing, and slashing damage.</li>
+				<li>You have advantage on melee and ranged spell attack rolls.</li>
+				<li>As a bonus action, you can spend an additional spell slot to augment your dragon wings. Until the start of your next turn, your fly speed increases by (5 feet × the level of the spell slot expended). Additionally, you can choose one creature per level of the expended spell slot; until the start of your next turn, ranged attacks against selected creatures are made with disadvantage, if the target is within 10 feet of you.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>To create the wings, you take a bonus action and expend a spell slot. The dragon wings’ duration = (2 rounds × the level of the spell slot expended). The dragon wings remain until their duration ends, you become incapacitated, or you use a bonus action to dismiss them or replace them with another dragon aspect.
+			Your speed increases by 10 feet, and you gain a fly speed equal to your walking speed.
+			You gain resistance to nonmagical bludgeoning, piercing, and slashing damage.
+			You have advantage on melee and ranged spell attack rolls.
+			As a bonus action, you can spend an additional spell slot to augment your dragon wings. Until the start of your next turn, your fly speed increases by (5 feet × the level of the spell slot expended). Additionally, you can choose one creature per level of the expended spell slot; until the start of your next turn, ranged attacks against selected creatures are made with disadvantage, if the target is within 10 feet of you.</description>
+		</sheet>
+	</element>
+	<element name="Invoke Dragon Tail" type="Archetype Feature" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_TAIL">
+		<description>
+			<p>Starting at 14th level, you can invoke a magical dragon tail. You use a bonus action and spend a spell slot to invoke the dragon tail, which lasts for 1 round per level of the spent spell slot. The dragon tail remains as long as you are not incapacitated, until the duration ends, or until it is dismissed or replaced with a bonus action. The dragon tail is a translucent magical force, in the form of a 15-foot-long appendage capable of striking with incredible force.</p>
+			<p class="indent">While you wear your dragon tail, you gain the following benefits:</p>
+			<ul>
+				<li>You are immune to the grappled condition.</li>
+				<li>You have proficiency on Strength and Dexterity saving throws, and on Strength checks. In addition, you can opt to use your Intelligence modifier instead of your Strength or Dexterity modifier on those saving throws and skill checks.</li>
+				<li>You gain a tail attack. As an action, make a separate melee spell attack against each target within 15 feet of you. Each target that’s hit takes (3d10 + your Int modifier) bludgeoning damage and is pushed 10 feet away from you; it must also make a successful Strength saving throw against your spell save DC or be knocked prone. This attack is considered magical for purposes of overcoming a target’s immunity or resistance to bludgeoning damage.</li>
+				<li>As a reaction, you can make a tail attack against a creature that approaches to within 15 feet of you.</li>
+				<li>As a bonus action, you can expend an additional spell slot to augment your dragon tail. Until the start of your next turn, your dragon tail attack does additional damage = (1d10 × the level of the spell slot expended). In addition, you regain hit points = (3 × the level of the spell slot expended).</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You use a bonus action and spend a spell slot to invoke the dragon tail, which lasts for 1 round per level of the spent spell slot. The dragon tail remains as long as you are not incapacitated, until the duration ends, or until it is dismissed or replaced with a bonus action. The dragon tail is a translucent magical force, in the form of a 15-foot-long appendage capable of striking with incredible force.
+			You are immune to the grappled condition.
+			You have proficiency on Strength and Dexterity saving throws, and on Strength checks. In addition, you can opt to use your Intelligence modifier instead of your Strength or Dexterity modifier on those saving throws and skill checks.
+			You gain a tail attack. As an action, make a separate melee spell attack against each target within 15 feet of you. Each target that’s hit takes (3d10 + {{intelligence:modifier}}) bludgeoning damage and is pushed 10 feet away from you; it must also make a successful Strength saving throw against your spell save DC or be knocked prone. This attack is considered magical for purposes of overcoming a target’s immunity or resistance to bludgeoning damage.
+			As a reaction, you can make a tail attack against a creature that approaches to within 15 feet of you.
+			As a bonus action, you can expend an additional spell slot to augment your dragon tail. Until the start of your next turn, your dragon tail attack does additional damage = (1d10 × the level of the spell slot expended). In addition, you regain hit points = (3 × the level of the spell slot expended).</description>
+		</sheet>
+	</element>
 
+	<element name="Careful Dragon Mask" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_CAREFUL_DRAGON_MASK">
+		<prerequisite>The ability to invoke a dragon mask</prerequisite>
+		<requirements>ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_MASK</requirements>
+		<description>
+			<p><em>Prerequisite: The ability to invoke a dragon mask</em></p>
+			<p>You’ve mastered the ability to cast spells while wearing your dragon mask. With this feat, you no longer have disadvantage on attack rolls with spells and cantrips, and the targets of your spells don’t have advantage on saving throws, while you’re under the effect of your dragon mask.</p>
+		</description>
+		<sheet>
+			<description>You no longer have disadvantage on attack rolls with spells and cantrips, and the targets of your spells don’t have advantage on saving throws, while you’re under the effect of your dragon mask.</description>
+		</sheet>
+	</element>
+	<element name="Dual Dragon Aspect" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_DUAL_DRAGON_ASPECT">
+		<prerequisite>The ability to invoke dragon wings</prerequisite>
+		<requirements>ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_WINGS</requirements>
+		<description>
+			<p><em>Prerequisite: The ability to invoke dragon wings</em></p>
+			<p>You’ve mastered the difficult ability to wear two different dragon aspects at the same time. When you switch from one aspect to another, the aspect you remove lingers for 1 round, provided its maximum duration hasn’t expired. During this 1 round of overlap, both aspects are visible and you have full access to the benefits and drawbacks of both aspects simultaneously.</p>
+		</description>
+		<sheet>
+			<description>When you switch from one aspect to another, the aspect you remove lingers for 1 round, provided its maximum duration hasn’t expired. During this 1 round of overlap, both aspects are visible and you have full access to the benefits and drawbacks of both aspects simultaneously.</description>
+		</sheet>
+	</element>
+	<element name="Fearsome Dragon Mask" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_FEARSOME_DRAGON_MASK">
+		<prerequisite>The ability to invoke a dragon mask</prerequisite>
+		<requirements>ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_MASK</requirements>
+		<description>
+			<p><em>Prerequisite: The ability to invoke a dragon mask</em></p>
+			<p>You can manipulate the visage of your dragon mask to be a terrifying sight to your foes. Any target struck by your mask’s bite attack must make a successful Wisdom saving throw against your spell save DC or be frightened of you until the end of your next turn. If you augmented the attack with a spell slot, the frightened condition lasts an additional number of rounds = the level of the expended spell slot.</p>
+		</description>
+		<sheet>
+			<description>Any target struck by your mask’s bite attack must make a successful Wisdom saving throw or be frightened of you until the end of your next turn. If you augmented the attack with a spell slot, the frightened condition lasts an additional number of rounds = the level of the expended spell slot.</description>
+		</sheet>
+	</element>
+	<element name="Radiant Dragon Heart" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_RADIANT_DRAGON_HEART">
+		<prerequisite>The ability to invoke a dragon heart</prerequisite>
+		<requirements>ID_KBP_DMDM_ARCHETYPE_FEATURE_INVOKE_DRAGON_HEART</requirements>
+		<description>
+			<p><em>Prerequisite: The ability to invoke a dragon heart</em></p>
+			<p>You can link radiant power to your dragon heart. In addition to the damage type done by your dragon heart’s breath attack, the damage is also considered radiant. In addition, a creature that fails its saving throw against the breath weapon is also blinded until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>In addition to the damage type done by your dragon heart’s breath attack, the damage is also considered radiant. In addition, a creature that fails its saving throw against the breath weapon is also blinded until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Find the Titan’s Weakness" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_FIND_THE_TITANS_WEAKNESS">
+		<description>
+			<p>You can spot the weaknesses in a foe’s defenses. You gain the following benefits.</p>
+			<ul>
+				<li>Increase your Wisdom score by 1, to a maximum of 20.</li>
+				<li>As an action, you analyze the defenses of one Large or larger creature you can see. Your next attack against that creature is made with advantage, and the attack scores a critical hit on a natural roll of 18, 19, or 20.</li>
+			</ul>
+		</description>
+		<sheet action="Action">
+			<description>You analyze the defenses of one Large or larger creature you can see. Your next attack against that creature is made with advantage, and the attack scores a critical hit on a natural roll of 18, 19, or 20.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" />
+		</rules>
+	</element>
+	<element name="Fortifying Healer" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_FORTIFYING_HEALER">
+		<prerequisite>The ability to cast at least one spell</prerequisite>
+		<requirements>[type:spell]</requirements>
+		<description>
+			<p><em>Prerequisite: The ability to cast at least one spell</em></p>
+			<p>Your healing magic is augmented by the fortifying magic of resolute bravery. If you target one or more allies with a spell that allows them to regain hit points, those allies are immune to being frightened for a number of rounds = the level of the healing spell. In addition, one ally who healed hit points (your choice) gains inspiration. You must complete a short or long rest before you can grant inspiration again.</p>
+		</description>
+		<sheet>
+			<description>If you target one or more allies with a spell that allows them to regain hp, those allies are immune to being frightened for a number of rounds = the level of the healing spell. In addition, one ally who healed hp gains inspiration (1/Short Rest).</description>
+		</sheet>
+	</element>
+	<element name="Dragonsmith" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_DRAGONSMITH">
+		<description>
+			<p>You have studied the craft of turning components from a dragon’s body into weapons and armor. Working in conjunction with a master weaponsmith or armorsmith, you can create weapons and armor from the teeth, bones, scales, hide, or other parts of a dragon. The cost to create these items is ten times the normal cost of the item. The number and type of items that can be made from a particular dragon’s corpse is up to the GM, but considering how much violence must be inflicted on a dragon to bring it down, the amount of salvageable raw matieral is low; dragons don’t die from superficial damage.</p>
+			<p class="indent">Any type of melee weapon or bow can be made. The resulting weapon, in the hands of a proficient wielder, does an additional 1d6 damage of a type appropriate to the dragon whose body was used to create the weapon. For example, a blue dragon dagger does 1d4 piercing damage plus 1d6 lightning damage.</p>
+			<p class="indent">Any type of armor can be made except padded or chain (shirt or mail). The resulting armor or shield, in the panoply of a proficient user, provides resistance to the damage type appropriate to the source dragon. For example, black dragon scale mail gives its wearer resistance to acid damage.</p>
+		</description>
+		<sheet>
+			<description>Working in conjunction with a master weaponsmith or armorsmith, you can create weapons and armor from the teeth, bones, scales, hide, or other parts of a dragon. The cost to create these items is ten times the normal cost of the item. The number and type of items that can be made from a particular dragon’s corpse is up to the GM, but considering how much violence must be inflicted on a dragon to bring it down, the amount of salvageable raw matieral is low; dragons don’t die from superficial damage.
+			Any type of melee weapon or bow can be made. The resulting weapon, in the hands of a proficient wielder, does an additional 1d6 damage of a type appropriate to the dragon whose body was used to create the weapon. For example, a blue dragon dagger does 1d4 piercing damage plus 1d6 lightning damage.</description>
+		</sheet>
+	</element>
+	<element name="Dragonrider" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_DRAGONRIDER">
+		<prerequisite>Strength or Dexterity 15 or higher</prerequisite>
+		<requirements>[str:15]||[dex:15]</requirements>
+		<description>
+			<p><em>Prerequisite: Strength or Dexterity 15 or higher</em></p>
+			<p>You have trained to climb atop an opponent much larger than yourself, giving you an advantage in combat against enormous foes. You gain the following benefits.</p>
+			<ul>
+				<li>During your movement, you can try to enter the space of a creature at least two size categories larger than you. To do so, conduct a contest between your Strength (Athletics) or Dexterity (Acrobatics) opposed by the creature’s Dexterity (Acrobatics). If you win, you enter the creature’s space and are considered to be riding it. If you lose, you don’t enter the creature’s space and your movement ends.</li>
+				<li>While you’re riding the creature, if it moves, you move with it. You also have advantage on your first melee attack against the creature on each of your turns.</li>
+				<li>The creature’s attacks against a rider are made with disadvantage.</li>
+				<li>The creature can dislodge you by using an action to conduct a contest between its Dexterity (Acrobatics) and your Dexterity (Acrobatics) or Strength (Athletics), whichever you prefer. If it wins the contest, you are flung off the creature and land on your feet, unharmed, in an adjacent space of your choice.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>During your movement, you can try to enter the space of a creature at least two size categories larger than you. To do so, conduct a contest between your Athletics or Acrobatics opposed by the creature’s Acrobatics. If you win, you enter the creature’s space and are considered to be riding it. If you lose, you don’t enter the creature’s space and your movement ends.
+			While you’re riding the creature, if it moves, you move with it. You also have advantage on your first melee attack against the creature on each of your turns.
+			The creature’s attacks against a rider are made with disadvantage.
+			The creature can dislodge you by using an action to conduct a contest between its Acrobatics and your Acrobatics or Athletics, whichever you prefer. If it wins the contest, you are flung off the creature and land on your feet, unharmed, in an adjacent space of your choice.</description>
+		</sheet>
+	</element>
+	<element name="Untreatening" type="Feat" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_FEAT_UNTREATENING">
+		<prerequisite>Charisma 13 or higher</prerequisite>
+		<requirements>[cha:15]</requirements>
+		<description>
+			<p><em>Prerequisite: Charisma 13 or higher</em></p>
+			<p>You’re adept at making yourself seem to be less of a threat than you actually are. You gain the following benefits.</p>
+			<ul>
+				<li>Increase your Charisma score by 1, to a maximum of 20.</li>
+				<li>When a creature two or more size categories larger than you targets you with a melee weapon attack, you can use your reaction to make yourself seem pathetic and unthreatening. The creature must redirect its attack against a different target; if no alternative target is within the attacker’s reach or range, it can still attack you. Until the end of your next turn, your next melee or ranged attack against that creature is made with advantage. You must complete a short or long rest before using this ability again.</li>
+			</ul>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature two or more size categories larger than you targets you with a melee weapon attack, you can use your reaction to make yourself seem pathetic and unthreatening. The creature must redirect its attack against a different target; if no alternative target is within the attacker’s reach or range, it can still attack you. Until the end of your next turn, your next melee or ranged attack against that creature is made with advantage.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" />
+		</rules>
+	</element>
 
+	<element name="Catch the Breath" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_CATCH_THE_BREATH">
+		<supports>Bard, Cleric, Warlock, Wizard</supports>
+		<description>
+			<p>You can cast this spell as a reaction when you’re targeted by a breath weapon. Doing so gives you advantage on your saving throw against the breath weapon. If your saving throw succeeds, you take no damage from the attack even if a successful save normally only halves the damage.</p>
+			<p class="indent">Whether your saving throw succeeded or failed, you absorb and store energy from the attack. On your next turn, you can make a ranged spell attack against a target within 60 feet. On a hit, the target takes 3d10 force damage. If you opt not to make this attack, the stored energy dissipates harmlessly.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage done by your attack increases by 1d10 for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">3</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 reaction</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Claws of the Earth Dragon" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_CLAWS_OF_THE_EARTH_DRAGON">
+		<supports>Bard, Cleric, Sorcerer, Wizard</supports>
+		<description>
+			<p>You summon the power of the earth dragon and shoot a ray at one target within 60 feet. The target falls prone and takes 6d8 bludgeoning damage from being slammed to the ground. If the target was flying or levitating, it takes an additional 1d6 bludgeoning damage per 10 feet it falls. If the target makes a successful Strength saving throw, damage is halved, it doesn’t fall, and it isn’t knocked prone.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the damage done by the attack increases by 1d8 and the range increases by 10 feet for each slot level above 5th.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">5</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Converse With Dragon" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_CONVERSE_WITH_DRAGON">
+		<supports>Bard, Cleric, Ranger, Sorcerer, Wizard</supports>
+		<description>
+			<p>You gain limited telepathy, allowing you to communicate with any creature within 120 feet of you that has the dragon type, regardless of the creature’s languages. A dragon can choose to make a Charisma saving throw to prevent telepathic contact with itself.</p>
+			<p class="indent">This spell doesn’t change a dragon’s disposition toward you or your allies, it only opens a channel of communication. In some cases, unwanted telepathic contact can worsen the dragon’s attitude toward you.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">1</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Deadly Sting" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_DEADLY_STING">
+		<supports>Sorcerer, Wizard</supports>
+		<description>
+			<p>You grow a 10-foot-long tail as supple as a whip, tipped with a horrible stinger. During the spell’s duration, you can use the stinger to make a melee spell attack with a reach of 10 feet. On a hit, the target takes 1d4 piercing damage plus 4d10 poison damage, and a creature must make a successful Constitution saving throw or become vulnerable to poison damage for the duration of the spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">8</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a thorn</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Detect Dragons" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_DETECT_DRAGONS">
+		<supports>Bard, Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>You can detect the presence of dragons and other draconic creatures within your line of sight and 120 feet, regardless of disguises, illusions, and alteration magic such as polymorph. The information you uncover depends on the number of consecutive rounds you spend an action studying a subject or area. On the first round of examination, you detect whether any draconic creatures are present, but not their number, location, identiy, or type. On the second round, you learn the number of such creatures as well as the general condition of the most powerful one. On the third and subsequent rounds, you make a DC 15 Intelligence (Arcana) check; if it succeeds, you learn the age, type, and location of one draconic creature. Note that the spell provides no information on the turn it’s cast unless you have the means to take a second action that turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">2</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Draconic Smite" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_DRACONIC_SMITE">
+		<supports>Paladin</supports>
+		<description>
+			<p>The next time you hit a creature with a melee weapon attack during the spell’s duration, your weapon momentarily takes on the form of a silver dragon’s head. Your attack deals an extra 1d6 cold damage, and up to four other creatures of your choosing within 30 feet of the attack’s target must each make a successful Constitution saving throw or take 1d6 cold damage.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the extra cold damage and the cold damage done to the secondary creatures increases by 1d6 for each slot.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">1</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Dragon Breath" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_DRAGON_BREATH">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You summon draconic power to gain a breath weapon. When you cast dragon breath, you can immediately exhale a cone or line of elemental energy, depending on the type of dragon you select. While the spell remains active, roll a d6 at the start of your turn. On a roll of 5 or 6, you can take a bonus action that turn to use the breath weapon again.</p>
+			<p class="indent">When you cast the spell, choose one of the dragon types listed below. Your choice determines the range and damage of the breath attack for the spell’s duration.</p>
+			<table>
+				<thead>
+					<tr><td>Dragon Type</td><td>Breath Weapon Range</td><td>Breath Weapon Damage</td></tr>
+				</thead>
+				<tr><td>Black</td><td>30-foot line, 5 feet wide</td><td>6d6 acid damage</td></tr>
+				<tr><td>Blue</td><td>30-foot line, 5 feet wide</td><td>6d6 lightning damage</td></tr>
+				<tr><td>Green</td><td>15-foot cone</td><td>6d6 poison damage</td></tr>
+				<tr><td>Red</td><td>15-foot cone</td><td>6d6 fire damage</td></tr>
+				<tr><td>White</td><td>15-foot cone</td><td>6d6 cold damage</td></tr>
+			</table>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 2d6 for each slot level above 5th.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">5</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (15-foot cone or 30-foot line)</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of a dragon’s tooth</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Dragon Roar" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_DRAGON_ROAR">
+		<supports>Bard, Sorcerer, Wizard</supports>
+		<description>
+			<p>Your voice is amplified to assault the mind of one creature. The target must make a Charisma saving throw. If it fails, the target takes 1d4 psychic damage and is frightened of you until the start of your next turn. A target can be affected by your dragon roar only once per 24 hours.</p>
+			<p class="indent">This spell’s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">0</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Enhance Greed" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_ENHANCE_GREED">
+		<supports>Bard, Cleric, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You detect precious metals, gems, and jewelry within 60 feet. You do not discern their exact location, only their presence and direction. Their exact location is revealed if you are within 10 feet of the spot.</p>
+			<p class="indent">Enhance greed penetrates barriers but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of dirt or wood.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 10 minutes and another 30 feet can be added to its range for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">2</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Kobold’s Fury" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_KOBOLDS_FURY">
+		<supports>Bard, Cleric, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>Your touch infuses the rage of a threatened kobold into the target. The target has advantage on melee weapon attacks until the end of its next turn. In addition, its next successful melee weapon attack against a creature larger than itself does an additional 2d8 damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">1</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">1 round</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a kobold scale</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Lair Sense" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_LAIR_SENSE">
+		<supports>Wizard</supports>
+		<description>
+			<p>You set up a magical boundary around your lair. The boundary can’t exceed the dimensions of a 100-foot cube, but within that maximum, you can shape it as you like—to follow the walls of a building or cave, for example. While the spell lasts, you instantly become aware of any Tiny or larger creature that enters the enclosed area. You know the creature’s type but nothing else about it. You are also aware when creatures leave the area.</p>
+			<p class="indent">This awareness is enough to wake you from sleep, and you receive the knowledge as long as you’re on the same plane of existence as your lair.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, add 50 feet to the maximum dimensions of the cube and add 12 hours to the spell’s duration for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">2</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">24 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">treasure worth at least 500 gp, which is not consumed in casting</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Legend Killer" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_LEGEND_KILLER">
+		<supports>Sorcerer, Wizard</supports>
+		<description>
+			<p>You tap into the life force of a creature that is capable of performing legendary actions. When you cast the spell, the target creature must make a successful Constitution saving throw or lose the ability to take legendary actions for the spell’s duration. A creature can’t use legendary resistance to automatically succeed on the saving throw against this spell. An affected creature repeats the saving throw at the end of its turn, regaining 1 legendary action on a success. It continues repeating the saving throw until the spell ends or it regains all its legendary actions.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">7</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver scroll describing the spell’s target worth at least 1,000 gp, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Phantom Dragon" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_PHANTOM_DRAGON">
+		<supports>Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>You tap your dragon magic to make an ally appear as a draconic beast. The target of the spell appears to be a dragon of size Large or smaller. Upon first seeing this illusion, observers make a Wisdom saving throw to see through it.</p>
+			<p class="indent">You can use an action to make the illusionary dragon seem ferocious. Choose one creature within 30 feet of the illusionary dragon to make a Wisdom saving throw. If it fails, the creature is frightened of the “dragon.” The creature remains frightened until is uses an action to make a successful Wisdom saving throw or the spell’s duration expires.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, increase the number of targets the illusion can frighten by 1 per slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">3</set>
+			<set name="school">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of dragon egg shell</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Raid the Lair" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_RAID_THE_LAIR">
+		<supports>Bard, Ranger, Wizard</supports>
+		<description>
+			<p>You create an invisible circle of protective energy centered on yourself with a radius of 10 feet. This field moves with you. The caster and all allies within the energy field are protected against dragons’ lair actions.</p>
+			<ul>
+				<li>Attack rolls resulting directly from lair actions are made with disadvantage.</li>
+				<li>Saving throws resulting directly from lair actions are made with advantage, and damage done by these lair actions is halved.</li>
+				<li>Lair actions occur on an initiative count 10 lower than normal.</li>
+			</ul>
+			<p class="indent">The caster has advantage on Constitution saving throws to maintain concentration on this spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">4</set>
+			<set name="school">Abjuration</set>
+			<set name="time">10 minutes</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of the dragon whose lair you are raiding</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Scale Rot" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_SCALE_ROT">
+		<supports>Bard, Cleric, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You summon death and decay to plague your enemies. One creature of your choosing within 30 feet of you that has natural armor must make a Constitution saving throw. If it fails, attacks against that creature’s Armor Class are made with advantage, and the creature can’t regain hit points through any means. An effected creature can end the effect by using an action to make a successful Constitution saving throw. A successful saving throw ends the effect on that creature and makes the creature immune to further castings of scale rot for 24 hours.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the number of affected targets increases by 1 per slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">4</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of rotten meat</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Shade" type="Spell" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_SPELL_SHADE">
+		<supports>Bard, Cleric, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You create a magical screen across your eyes. While the screen remains, you are immune to blindness caused by visible effects, such as color spray. The spell doesn’t alleviate blindness that’s already been inflicted on you. If you normally suffer penalties on attacks or ability checks while in sunlight (such as those caused by sunlight sensitivity), those penalties don’t apply while you’re under the effect of this spell.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 10 minutes for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragon magic</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	
+	<!-- todo: create for all dragon types -->
+	<element name="Red Dragon Weapon" type="Magic Item" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_MAGIC_ITEM_DRAGON_WEAPON">
+		<description>
+			<p>The weapon, in the hands of a proficient wielder, does an additional 1d6 fire damage</p>
+		</description>
+		<setters>
+			<set name="keywords">dragonsmith</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="any melee weapon or bow">Weapon</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_GROUP_BOWS</set>
+			<set name="name-format">Red Dragon {{parent}}</set>
+			<set name="damage" type="fire">1d6</set>
+		</setters>
+	</element>	
+	<element name="Red Dragon Armor" type="Magic Item" source="Deep Magic: Dragon Magic" id="ID_KBP_DMDM_MAGIC_ITEM_DRAGON_ARMOR">
+		<description>
+			<p>The armor or shield, in the panoply of a proficient user, provides resistance to fire damage type.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragonsmith</set>
+			<set name="category">Magic Armor</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any except padded or chain">Armor</set>
+			<set name="armor">(ID_INTERNAL_ARMOR_GROUP_SHIELD|ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY),!Padded,!Chain Shirt,!Chain Mail</set>
+			<set name="name-format">Red Dragon {{parent}}</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
 </elements>
