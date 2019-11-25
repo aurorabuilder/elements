@@ -151,43 +151,75 @@
     </element>
     <element name="Psychic Blade" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_SOULKNIFE_PSYCHIC_BLADE">
         <description>
-            <p></p>
+            <p>As a bonus action, you can create a magical blade of shimmering psychic power from one or both of your hands. While one of your hands is manifesting a blade, you can’t hold anything in that hand. You can dismiss one or both blades at any time (no action required), and they disappear if you’re incapacitated.</p>
+            <p class="indent">The blade is a simple melee weapon with the finesse, light, and thrown properties. It has a normal range of 30 feet and a long range of 60 feet, and it deals 1d6 psychic damage on a hit. If you throw the blade as part of an attack, it vanishes immediately after it hits or misses its target. The blade otherwise disappears the instant it leaves your hand.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Bonus Action">
+            <description>You can create a magical blade of shimmering psychic power from one or both of your hands. While one of your hands is manifesting a blade, you can’t hold anything in that hand. You can dismiss one or both blades at any time, and they disappear if you’re incapacitated.
+            The blade is a simple melee weapon with the finesse, light, and thrown properties. It has a normal range of 30 feet and a long range of 60 feet, and it deals 1d6 psychic damage on a hit. If you throw the blade as part of an attack, it vanishes immediately after it hits or misses its target. The blade otherwise disappears the instant it leaves your hand.</description>
         </sheet>
     </element>
     <element name="Psionic Enhancement" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_SOULKNIFE_PSIONIC_ENHANCEMENT">
         <description>
-            <p></p>
+            <p>You can focus your psionic power to give yourself an extraordinary ability. When you finish a long rest, you gain one of the following benefits of your choice, which lasts until you finish a long rest:</p>
+            <ul>
+                <li>You can communicate telepathically with any creature you can see within 30 feet of you. If a creature can speak at least one language, it can respond to you telepathically.</li>
+                <li>Increase your walking speed by 5 feet.</li>
+                <li>Your hit point maximum and your current hit points increase by an amount equal to your Intelligence modifier plus your rogue level.</li>
+            </ul>
         </description>
         <sheet>
-            <description></description>
+            <description>When you finish a long rest, you gain one of the following benefits of your choice, which lasts until you finish a long rest:
+            You can communicate telepathically with any creature you can see within 30 feet of you. If a creature can speak at least one language, it can respond to you telepathically.
+            Increase your walking speed by 5 feet.
+            Your hit point maximum and your current hit points increase by {{psionic enhancement:hp}}.</description>
         </sheet>
+        <rules>
+            <stat name="psionic enhancement:hp" value="intelligence:modifier" />
+            <stat name="psionic enhancement:hp" value="level:rogue" />
+        </rules>
     </element>
     <element name="Terrifying Blade" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_SOULKNIFE_TERRIFYING_BLADE">
         <description>
-            <p></p>
+            <p>Your psychic blades can now stoke terror within a target: When you damage a creature with your Psychic Blade, you can force the target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Intelligence modifier). On a failed save, the creature is frightened of you until the start of your next turn. On a successful save, the creature isn’t frightened and is immune to your Terrifying Blade for 24 hours.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you damage a creature with your Psychic Blade, you can force the target to make a DC{{terrifying blade:dc}} Wisdom saving throw. On a failed save, the creature is frightened of you until the start of your next turn. On a successful save, the creature isn’t frightened and is immune to your Terrifying Blade for 24 hours.</description>
         </sheet>
+        <rules>
+            <stat name="terrifying blade:dc" value="8" />
+            <stat name="terrifying blade:dc" value="proficiency" />
+            <stat name="terrifying blade:dc" value="intelligence:modifier" />
+        </rules>
     </element>
     <element name="Psychic Veil" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_SOULKNIFE_PSYCHIC_VEIL">
         <description>
-            <p></p>
+            <p>You can weave a veil of psionic static to mask your physical presence. As an action, you can magically become invisible, along with anything you are wearing or carrying, for 10 minutes. This invisibility ends if you make an attack or if you force a creature to make a saving throw.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Action" usage="{{psychic veil:usage}}/Long Rest">
+            <description>You can magically become invisible, along with anything you are wearing or carrying, for 10 minutes. This invisibility ends if you make an attack or if you force a creature to make a saving throw.</description>
         </sheet>
+        <rules>
+            <stat name="psychic veil:usage" value="1" bonus="base" />
+            <stat name="psychic veil:usage" value="intelligence:modifier" bonus="base" />
+        </rules>
     </element>
     <element name="Rend Mind" type="Archetype Feature" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_FEATURE_SOULKNIFE_REND_MIND">
         <description>
-            <p></p>
+            <p>You can sweep your Psychic Blade directly through a creature’s mind. As an action while you have at least one Psychic Blade manifested, you can force a creature you can see within 30 feet of you to make an Intelligence saving throw (DC equal to 10 + your proficiency bonus + your Intelligence modifier). If you are hidden from the target, it has disadvantage on the save. On a failed save, the target takes 12d6 psychic damage, and it is stunned until the start of your next turn. On a successful save, the target takes half as much damage and isn’t stunned. One of your Psychic Blades vanishes after using this feature.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet action="Action" usage="{{rend mind:usage}}/Long Rest">
+            <description>While you have at least one Psychic Blade manifested, you can force a creature you can see within 30 feet of you to make a DC {{rend mind:dc}} Intelligence saving throw. If you are hidden from the target, it has disadvantage on the save. On a failed save, the target takes 12d6 psychic damage, and it is stunned until the start of your next turn. On a successful save, the target takes half as much damage and isn’t stunned. One of your Psychic Blades vanishes after using this feature.</description>
         </sheet>
+        <rules>
+            <stat name="rend mind:dc" value="8" />
+            <stat name="rend mind:dc" value="proficiency" />
+            <stat name="rend mind:dc" value="intelligence:modifier" />
+            <stat name="rend mind:usage" value="1" bonus="base" />
+            <stat name="rend mind:usage" value="intelligence:modifier" bonus="base" />
+        </rules>
     </element>
 
     <element name="Psionics" type="Archetype" source="Unearthed Arcana: Fighter, Rogue, and Wizard" id="ID_WOTC_UA20191125_ARCHETYPE_PSIONICS">
