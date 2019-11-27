@@ -9,13 +9,14 @@ More information about extending the content can be found [here](http://aurorabu
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/core.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements.index
 - https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana.index
-- https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index *
-- https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index *
-
-_* content from these sources will be restructured in the near future, click [here](http://aurorabuilder.com/posts/37/project-restructure/ "Project Restructure") for more information_
+- https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index
+- https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index
 
 ### Community Driven Content
-A collection of community driven content for homebrew content can be found [here](http://aurorabuilder.com/content/#community "Community Driven Content").
+A collection of community driven content can be found [here](http://aurorabuilder.com/content/#community "Community Driven Content") this includes homebrew content posted on reddit and dnd wiki. Be sure to include the new index files when you're using homebrew content from any of these sources.
+
+- [Reddit](https://aurorabuilder.com/posts/891/community-driven-content-reddit/ "Reddit")
+- [D&D Wiki](https://aurorabuilder.com/posts/943/community-driven-contentdnd-wiki/ "D&D Wiki")
 
 ### Content Request
 You can request content by creating an issue in the appropriate repository with the request.
