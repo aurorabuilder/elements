@@ -1,11 +1,11 @@
 ---
 name: Content Request
-about: Request content for the Aurora Builder.
-title: Content Request - [name]
+about: Request additional content for Aurora.
+title: ''
 labels: content request
 assignees: ''
 
 ---
 
 **Source URL**
-A link to the source of the requested content. (website or pdf)
+A link to the website where the requested content is publicly available.
