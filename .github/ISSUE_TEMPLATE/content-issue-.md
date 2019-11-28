@@ -1,8 +1,8 @@
 ---
 name: 'Content Issue '
-about: Create a report to help us improve the content.
+about: Create an issue to help improve the content.
 title: ''
-labels: ''
+labels: content issue
 assignees: ''
 
 ---

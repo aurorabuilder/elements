@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Discordant</name>
+		<update version="0.0.1">
+			<file name="fighter-discordant.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/fighter-discordant.xml" />
+		</update>
+	</info>
+	<element name="Discordant" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_DISCORDANT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>In battle, blades clash and ring, shields break and snap, warriors yell and scream, and beneath it all, the sound of violence reigns supreme. One sound, however, stands out above the rest in your memory: the eternal song of the Perfect Chord, a manifestation of light and sound that bore witness to your conflict, collecting the cries of the wounded and the yells of the victors before vanishing once more. Inspired by this melody, you have dedicated your martial focus to the creation of dissonance, adjusting the vibrations of the universe to inflict a discordant cacophony of destructive power upon your adversaries. With weapons singing a tale of triumph and despair, you stand valiant before the chaos of everlasting war.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_RING_THE_BLADE" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_HEAR_THE_SILENCE" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_DEFY_HARMONY" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_SHATTER_SYNCRONICITY" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_STRIKE_UNHINDERED" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_AS_PERFECT_IMPERFECTION" />
+		</description>
+		<sheet display="false">
+			<description>You have dedicated your martial focus to the creation of dissonance.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_RING_THE_BLADE" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_HEAR_THE_SILENCE" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_DEFY_HARMONY" level="7" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_SHATTER_SYNCRONICITY" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_STRIKE_UNHINDERED" level="15" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_AS_PERFECT_IMPERFECTION" level="18" />	
+			<stat name="discordant:maximum modifier" value="strength:modifier" bonus="base" />
+			<stat name="discordant:maximum modifier" value="dexterity:modifier" bonus="base" />
+			<stat name="discordant:maximum modifier" value="constitution:modifier" bonus="base" />
+			<stat name="discordant:maximum modifier" value="intelligence:modifier" bonus="base" />
+			<stat name="discordant:maximum modifier" value="wisdom:modifier" bonus="base" />
+			<stat name="discordant:maximum modifier" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ring the Blade" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_RING_THE_BLADE">
+		<description>
+			<p>When you choose this archetype at 3rd level, you learn to make your blades sing with destructive energy. While you are wielding a melee weapon, you can use a bonus action to make it ring with sonorous power for one minute. If the weapon leaves your hand, it stops ringing.</p>
+			<p class="indent">While a weapon is ringing, it inflicts thunder damage instead of the normal type. Whenever a creature other than you starts its turn within 5 feet if you while your weapon is ringing, it takes thunder damage equal to your highest ability score modifier.</p>
+			<p class="indent">As an action while holding a ringing weapon, you can unleash this energy, generating sharpened edges of pure sound to lash out in all directions around you and causing the weapon to stop ringing. When you do this, each creature other than you within 15 feet of you takes thunder damage equal to the damage dice of the weapon plus your highest ability score modifier.</p>
+			<p class="indent">You can unleash the energy within a ringing weapon twice, and you regain these uses when you finish a short or long rest.</p>
+			<p class="indent">Starting at 7th level, unleashing this energy inflicts twice as much damage, and it inflicts three times as much damage at 15th level.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Unleash 2/Short Rest">
+			<description>While you are wielding a melee weapon, you can make it ring with sonorous power for one minute. If the weapon leaves your hand, it stops ringing.
+			While a weapon is ringing, it inflicts thunder damage instead of the normal type. Whenever a creature other than you starts its turn within 5 feet if you while your weapon is ringing, it takes {{discordant:maximum modifier}} thunder damage.
+			As an action while holding a ringing weapon, you can unleash this energy, generating sharpened edges of pure sound to lash out in all directions around you and causing the weapon to stop ringing. When you do this, each creature other than you within 15 feet of you takes thunder damage equal to the damage dice of the weapon + {{ring the blade:unleash damage}}.</description>
+			<description level="7">While you are wielding a melee weapon, you can make it ring with sonorous power for one minute. If the weapon leaves your hand, it stops ringing.
+			While a weapon is ringing, it inflicts thunder damage instead of the normal type. Whenever a creature other than you starts its turn within 5 feet if you while your weapon is ringing, it takes {{discordant:maximum modifier}} thunder damage.
+			As an action while holding a ringing weapon, you can unleash this energy, generating sharpened edges of pure sound to lash out in all directions around you and causing the weapon to stop ringing. When you do this, each creature other than you within 15 feet of you takes thunder damage equal to twice the damage dice of the weapon + {{ring the blade:unleash damage}}.</description>
+			<description level="15">While you are wielding a melee weapon, you can make it ring with sonorous power for one minute. If the weapon leaves your hand, it stops ringing.
+			While a weapon is ringing, it inflicts thunder damage instead of the normal type. Whenever a creature other than you starts its turn within 5 feet if you while your weapon is ringing, it takes {{discordant:maximum modifier}} thunder damage.
+			As an action while holding a ringing weapon, you can unleash this energy, generating sharpened edges of pure sound to lash out in all directions around you and causing the weapon to stop ringing. When you do this, each creature other than you within 15 feet of you takes thunder damage equal to three times the damage dice of the weapon + {{ring the blade:unleash damage}}.</description>
+		</sheet>
+		<rules>
+			<stat name="ring the blade:unleash damage" value="discordant:maximum modifier" />
+			<stat name="ring the blade:unleash damage" value="discordant:maximum modifier" level="7" />
+			<stat name="ring the blade:unleash damage" value="discordant:maximum modifier" level="15" />
+		</rules>
+	</element>
+	<element name="Hear the Silence" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_HEAR_THE_SILENCE">
+		<description>
+			<p>Also at 3rd level, you learn to stop noise around you by disrupting your own heartbeat. As a bonus action, you can cast silence centered on yourself. When cast in this way, it requires no verbal, somatic, or material components, lasts until the start of your next turn, and affects a 5-foot-radius sphere centered on you.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can cast silence centered on yourself. When cast in this way, it requires no verbal, somatic, or material components, lasts until the start of your next turn, and affects a 5-foot-radius sphere centered on you.</description>
+		</sheet>
+	</element>
+	<element name="Defy Harmony" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_DEFY_HARMONY">
+		<description>
+			<p>At 7th level, you move against the beat of the universe, like nails upon life’s chalkboard. You gain proficiency in the Intimidation skill. When you wield a weapon that is ringing, your attacks with that weapon ignore disadvantage caused by your target being heavily obscured.</p>
+		</description>
+		<sheet>
+			<description>When you wield a weapon that is ringing, your attacks with that weapon ignore disadvantage caused by your target being heavily obscured.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element>
+	<element name="Shatter Syncronicity" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_SHATTER_SYNCRONICITY">
+		<description>
+			<p>At 10th level, you learn to further manipulate sound and silence. Friendly creatures within 15 feet of you gain resistance to thunder damage. When a hostile creature takes thunder damage as a result of starting its turn within 5 feet of you while your weapon is ringing, it becomes disrupted by eldritch vibrations that interfere with spellcasting. If it tries to cast a spell with a verbal component before the start of your next turn, it takes 2d10 thunder damage immediately after casting the spell. If this would cause it to make a concentration saving throw, it makes this saving throw with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>Friendly creatures within 15 feet of you gain resistance to thunder damage. When a hostile creature takes thunder damage as a result of starting its turn within 5 feet of you while your weapon is ringing, it becomes disrupted by eldritch vibrations that interfere with spellcasting. If it tries to cast a spell with a verbal component before the start of your next turn, it takes 2d10 thunder damage immediately after casting the spell. If this would cause it to make a concentration saving throw, it makes this saving throw with disadvantage.</description>
+		</sheet>
+	</element>
+	<element name="Strike Unhindered" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_STRIKE_UNHINDERED">
+		<description>
+			<p>At 15th level, while your weapon is ringing, you can use a bonus action to take the Dash action. When you do, you automatically break free from any creature grappling you. After you use this bonus action, any creature or object other than you within 5 feet of you at any time during your turn takes thunder damage equal to your highest ability score modifier at the end of your turn.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>While your weapon is ringing, you can take the Dash action. When you do, you automatically break free from any creature grappling you. After you use this, any creature or object other than you within 5 feet of you at any time during your turn takes {{discordant:maximum modifier}} thunder damage at the end of your turn.</description>
+		</sheet>
+	</element>
+	<element name="As Perfect Imperfection" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_DISCORDANT_AS_PERFECT_IMPERFECTION">
+		<description>
+			<p>At 18th level, your path has taken you to the final measure, as you at last become the metronome of the Chord. Your heartbeat is as unstoppable as it is unpredictable, and your pulse thunders in your ears. Whenever you are below half your maximum hit points, you can unleash the energy within a ringing weapon without expending your use of the feature.</p>
+			<p class="indent">Whenever you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead. Once you do so, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you are below half your maximum hit points, you can unleash the energy within a ringing weapon without expending your use of the feature.
+			Whenever you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead once per long rest.</description>
+		</sheet>
+	</element>
+	
+	<element name="Crashing Symbol" type="Class Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_CLASS_FEATURE_DISCORDANT_CRASHING_SYMBOL">
+		<prerequisite>Discordant archetype</prerequisite>
+		<requirements>ID_GFP_COFSA_ARCHETYPE_DISCORDANT</requirements>
+		<description>
+			<p><em>Prerequisite: Discordant archetype</em></p>
+			<p>When you are hit by an attack, you can use your reaction to unleash a burst of sound. If the attacker is within 10 feet of you and can hear, they suffer disadvantage on their next attack against you before the start of their next turn.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you are hit by an attack, you can use your reaction to unleash a burst of sound. If the attacker is within 10 feet of you and can hear, they suffer disadvantage on their next attack against you before the start of their next turn.</description>
+		</sheet>
+	</element>
+	<element name="Sonic Blade" type="Class Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_CLASS_FEATURE_DISCORDANT_SONIC_BLADE">
+		<prerequisite>Discordant archetype</prerequisite>
+		<requirements>ID_GFP_COFSA_ARCHETYPE_DISCORDANT</requirements>
+		<description>
+			<p><em>Prerequisite: Discordant archetype</em></p>
+			<p>When you take the Attack action on your turn and make an attack with your ringing weapon, you can choose to hone the disruptive sound. If this attack hits a creature that is concentrating on a spell, it has disadvantage on the saving throw to maintain concentration.</p>
+		</description>
+		<sheet>
+			<description>When you take the Attack action on your turn and make an attack with your ringing weapon, you can choose to hone the disruptive sound. If this attack hits a creature that is concentrating on a spell, it has disadvantage on the saving throw to maintain concentration.</description>
+		</sheet>
+	</element>
+</elements>

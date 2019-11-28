@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Wizard Revisited</name>
 		<description>After releasing the 28-page mystic last week, we have a short Unearthed Arcana installment this week: two Arcane Tradition options for the wizard.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/wizard-revisited">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="20170320.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170320.xml" />
 		</update>
 	</info>
@@ -407,7 +407,7 @@
 		<description>
 			<p>At 6st level, you gain the light cantrip if you don’t already know it.</p>
 		</description>
-		<sheet />
+		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_LIGHT" spellcasting="Wizard" />
 		</rules>
@@ -1179,8 +1179,8 @@
 			<description>While wearing heavy armor, you gain a +1 bonus to AC.</description>
 		</sheet>
 		<rules>
-			<stat name="AC" value="+1" equipped="[armor:heavy]" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirement="!ID_WOTC_UA20170320_XGTE_ARCHETYPE_FEATURE_FORGE_DOMAIN_SAINT_OF_FORGE_AND_FIRE"/>
+			<stat name="ac:misc" value="+1" equipped="[armor:heavy]" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
 		</rules>
 	</element> 
 	<element name="Saint of Forge and Fire" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_UA20170320_XGTE_ARCHETYPE_FEATURE_FORGE_DOMAIN_SAINT_OF_FORGE_AND_FIRE">
@@ -1291,12 +1291,12 @@
 		<description>
 			<p>At 10th level, you gain the ability to impede death’s progress. As a reaction when you or a creature you can see within 30 feet of you suffers a critical hit, you can turn that hit into a normal hit. Any effects triggered by a critical hit are canceled. You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
 		</description>
-		<sheet action="Reaction" usage="{{sentinel death's door:count}}/Long Rest">
+		<sheet action="Reaction" usage="{{sentinel deaths door:count}}/Long Rest">
 			<description>When you or a creature you can see within 30ft of you suffers a critical hit, turn that hit into a normal hit.</description>
 		</sheet>
 		<rules>
-			<stat name="sentinel death's door:count" value="1" bonus="base" />
-			<stat name="sentinel death's door:count" value="wisdom:modifier" bonus="base" />
+			<stat name="sentinel deaths door:count" value="1" bonus="base" />
+			<stat name="sentinel deaths door:count" value="wisdom:modifier" bonus="base" />
 		</rules>
 	</element>
 	<element name="Keeper of Souls" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_UA20170320_XGTE_ARCHETYPE_FEATURE_GRAVE_DOMAIN_KEEPER_OF_SOULS">
@@ -1484,7 +1484,7 @@
 		<description>
 			<p>At 6th level, you gain proficiency in the Survival and Nature skills. Your proficiency bonus is doubled for any ability checks you make that use those skills.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>You gain proficiency in the Survival and Nature skills. Your proficiency bonus is doubled for any ability checks you make that use those skills.</description>
 		</sheet>
 		<rules>
