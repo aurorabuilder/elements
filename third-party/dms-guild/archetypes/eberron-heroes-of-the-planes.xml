@@ -48,50 +48,94 @@
 	</element>
 	<element name="Research Proficiency" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_RESEARCH_PROFICIENCY">
 		<description>
-			<p></p>
+			<p>When you adopt this specialization at 3rd level, you gain proficiency with the Investigation skill. If you are already proficient with the skill, you become proficient with a different skill of your choice. Your proficiency bonus is doubled for any Intelligence (Investigation) checks you make.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency with the Investigation skill. If you are already proficient with the skill, you become proficient with a different skill of your choice. Your proficiency bonus is doubled for any Investigation checks you make.</description>
 		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Research Proficiency" supports="Skill" default="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<stat name="investigation:proficiency" value="proficiency" bonus="double" />
+		</rules>
 	</element>
 	<element name="Chaotician Spells" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_CHAOTICIAN_SPELLS">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown on the Chaotician Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+			<p><strong>ALCHEMIST SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>chromatic orb, witch bolt</em></td></tr>
+				<tr><td>5th</td><td><em>phantasmal force, silence</em></td></tr>
+				<tr><td>9th</td><td><em>call lightning, slow</em></td></tr>
+				<tr><td>13th</td><td><em>confusion, polymorph</em></td></tr>
+				<tr><td>17th</td><td><em>destructive wave, reincarnate</em></td></tr>
+			</table>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Chaotician Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
 		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CHROMATIC_ORB" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WITCH_BOLT" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PHANTASMAL_FORCE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SILENCE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CALL_LIGHTNING" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLOW" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONFUSION" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_REINCARNATE" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
 	</element>
 	<element name="Chaos Zone" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_CHAOS_ZONE">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can tap into the unstable chaos that forms the basis of existence. As a bonus action, you can choose a point you can see within 30 feet of you, creating a region of chaotic reality originating from that point. This region is a cube, 10 feet on each side, which is always considered dim light from the shifting of images seen through it.</p>
+			<p class="indent">When a hostile creature in this zone of chaos rolls an attack roll or ability check, it must roll a d4 and subtract the result from that roll. Conversely, when a friendly creature in this zone makes an attack roll or ability check, it rolls a d4 and adds the result to that roll. This d4 becomes a d6 at 10th level.</p> 
+			<p class="indent">When you create the zone and as a bonus action on your turns while it persists, you can control the zone, moving it up to 20 feet in a direction of your choice. You can then cause a bolt of energy to jump from the region. Make a ranged spell attack against a creature within 20 feet of your chaos zone. On a hit, the target takes 2d8 lightning damage.</p>
+			<p class="indent">The chaos zone lasts for 10 minutes or until you end it early as an action. Once you create a chaos zone, you cannot do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher when you create it.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You can choose a point you can see within 30 feet of you, creating a region of chaotic reality originating from that point. This region is a cube, 10 feet on each side, which is always considered dim light from the shifting of images seen through it.
+			When a hostile creature in this zone of chaos rolls an attack roll or ability check, it must roll a d4 and subtract the result from that roll. Conversely, when a friendly creature in this zone makes an attack roll or ability check, it rolls a d4 and adds the result to that roll.
+			When you create the zone and as a bonus action on your turns while it persists, you can control the zone, moving it up to 20 feet in a direction of your choice. You can then cause a bolt of energy to jump from the region. Make a ranged spell attack against a creature within 20 feet of your chaos zone. On a hit, the target takes 2d8 lightning damage.
+			The chaos zone lasts for 10 minutes or until you end it early as an action. Once you create a chaos zone, you cannot do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher when you create it.</description>
+			<description level="10">You can choose a point you can see within 30 feet of you, creating a region of chaotic reality originating from that point. This region is a cube, 10 feet on each side, which is always considered dim light from the shifting of images seen through it.
+			When a hostile creature in this zone of chaos rolls an attack roll or ability check, it must roll a d6 and subtract the result from that roll. Conversely, when a friendly creature in this zone makes an attack roll or ability check, it rolls a d6 and adds the result to that roll.
+			When you create the zone and as a bonus action on your turns while it persists, you can control the zone, moving it up to 20 feet in a direction of your choice. You can then cause a bolt of energy to jump from the region. Make a ranged spell attack against a creature within 20 feet of your chaos zone. On a hit, the target takes 2d8 lightning damage.
+			The chaos zone lasts for 10 minutes or until you end it early as an action. Once you create a chaos zone, you cannot do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher when you create it.</description>
 		</sheet>
 	</element>
 	<element name="Chaos Control" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_CHAOS_CONTROL">
 		<description>
-			<p></p>
+			<p>At 5th level, you can channel raw chaos through your own body. When you cast one of your artificer spells while you or a creature targeted by the spell are in your chaos zone, you can roll 1d8 and add it to one damage roll for the spell. The lightning damage from your chaos zone also increases to 3d8 if you use it while you or the strike’s target are in the chaos zone.</p>
+			<p class="indent">You also know how to shift space itself to your benefit. When you move while in your chaos zone, you can choose to have it move with you and keep you in its area. Furthermore, when you move your chaos zone using your bonus action, you can choose to allow creatures within the zone to move with it, without provoking opportunity attacks. If a creature is unwilling to move, it can make a Charisma saving throw against your spell save DC. The creature is not moved on a successful save.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you cast one of your artificer spells while you or a creature targeted by the spell are in your chaos zone, you can roll 1d8 and add it to one damage roll for the spell. The lightning damage from your chaos zone also increases to 3d8 if you use it while you or the strike’s target are in the chaos zone.
+			When you move while in your chaos zone, you can choose to have it move with you and keep you in its area. Furthermore, when you move your chaos zone using your bonus action, you can choose to allow creatures within the zone to move with it, without provoking opportunity attacks. If a creature is unwilling to move, it can make a Charisma saving throw. The creature is not moved on a successful save.</description>
 		</sheet>
 	</element>
 	<element name="Spell Rejection" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_SPELL_REJECTION">
 		<description>
-			<p></p>
+			<p>At 9th level, you can channel magic away from you using complex arcane equations. When you are the target of a spell, you can use your reaction to have that spell target one randomly-selected creature in your chaos zone instead of you. If there are no creatures in your chaos zone other than you or if the selected creature is already a target of that spell, this ability fails.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum once). You regain any expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction" usage="{{spell rejection:usage}}/Long Rest">
+			<description>When you are the target of a spell, you can have that spell target one randomly-selected creature in your chaos zone instead of you. If there are no creatures in your chaos zone other than you or if the selected creature is already a target of that spell, this ability fails.</description>
 		</sheet>
+		<rules>
+			<stat name="spell rejection:usage" value="1" bonus="base" />
+			<stat name="spell rejection:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Chaos Unbound" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_CHAOTICIAN_CHAOS_UNBOUND">
 		<description>
-			<p></p>
+			<p>By 15th level, your chaotic artifice becomes even more potent. The chaos zone you create is now a cube with 20-foot sides, instead of 10. When you hit a creature in your chaos zone with your zone’s lightning, that creature subtracts a d8 from the next saving throw it makes before the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>The chaos zone you create is now a cube with 20-foot sides, instead of 10. When you hit a creature in your chaos zone with your zone’s lightning, that creature subtracts a d8 from the next saving throw it makes before the end of your next turn.</description>
 		</sheet>
 	</element>
 
@@ -118,35 +162,53 @@
 	</element>
 	<element name="Frozen Fury" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WINTER_HEART_FROZEN_FURY">
 		<description>
-			<p></p>
+			<p>At 3rd level, your connection to Risia and its impossible colds manifests physically. Your body temperature drops, and your skin develops a terrible pallor. The mist of your breath can be seen even in the hottest summer days. You are resistant to cold damage, and you ignore the effects of both extreme cold and extreme heat.</p>
+			<p class="indent">You also gain the ability to freeze your foes in place, channeling an icy energy through your weaponry. When you hit a creature with a melee weapon attack while raging, you can choose to reduce that creature’s speed to 0 until the end of its next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You ignore the effects of both extreme cold and extreme heat.
+			When you hit a creature with a melee weapon attack while raging, you can choose to reduce that creature’s speed to 0 until the end of its next turn.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
 	</element>
 	<element name="Frigid Grace" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WINTER_HEART_FRIGID_GRACE">
 		<description>
-			<p></p>
+			<p>At 6th level, the ground freezes beneath your very feet. While you are raging, you can take the Dash action as a bonus action, skating across the ground as it freezes before you. When you do so, the ground of the spaces you walk through before the end of your turn becomes slick with ice. This ice melts at the start of your next turn. A hostile creature that walks on this ice for the first time on its turn must make a Dexterity saving throw with a DC equal to 8 + your Constitution modifier + your proficiency bonus. On a failed save, the creature falls prone.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>While you are raging, you can take the Dash action as a bonus action, skating across the ground as it freezes before you. When you do so, the ground of the spaces you walk through before the end of your turn becomes slick with ice. This ice melts at the start of your next turn. A hostile creature that walks on this ice for the first time on its turn must make a DC{{frigid grace:dc}} Dexterity saving throw. On a failed save, the creature falls prone.</description>
 		</sheet>
+		<rules>
+			<stat name="frigid grace:dc" value="8" />
+			<stat name="frigid grace:dc" value="proficiency" />
+			<stat name="frigid grace:dc" value="constitution:modifier" />
+		</rules>
 	</element>
 	<element name="Ice Step" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WINTER_HEART_ICE_STEP">
 		<description>
-			<p></p>
+			<p>At 10th level, the supernatural cold in your body gives you mobility. The ice you create from your Frigid Grace allows you to walk across liquid surfaces as they freeze beneath you. This liquid remains frozen for 1 minute, allowing creatures to follow in your wake.</p>
+			<p class="indent">Furthermore, when a creature falls prone from your Frigid Grace, it takes 2d8 cold damage.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>The ice you create from your Frigid Grace allows you to walk across liquid surfaces as they freeze beneath you. This liquid remains frozen for 1 minute, allowing creatures to follow in your wake.
+			When a creature falls prone from your Frigid Grace, it takes 2d8 cold damage.</description>
 		</sheet>
 	</element>
 	<element name="Arctic Soul" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WINTER_HEART_ARCTIC_SOUL">
 		<description>
-			<p></p>
+			<p>At 14th level, your body becomes colder than ice as Risia’s frigid waters fill your veins. You no longer age, your body frozen in time. You also become immune to cold damage and resistant to fire damage.</p>
+			<p class="indent">When you affect a creature with your Frozen Fury, you can force the creature to make a Constitution saving throw against your Frigid Grace save DC. On a failed save, the creature is restrained until the end of its next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You no longer age, your body frozen in time.
+			When you affect a creature with your Frozen Fury, you can force the creature to make a  DC{{frigid grace:dc}} Constitution saving throw. On a failed save, the creature is restrained until the end of its next turn.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
 	</element>
 
 	
@@ -171,34 +233,123 @@
 	</element>
 	<element name="Lore of the Dead" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, you can draw out hidden knowledge by listening to the cries of the Graysong. When you finish a long rest, choose one of the following skills: Arcana, History, Medicine, Nature, Religion, or Survival. Until you finish another long rest, you become proficient with that skill, and you double your proficiency bonus when making an ability check with that skill.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you finish a long rest, choose one of the following skills: Arcana, History, Medicine, Nature, Religion, or Survival. Until you finish another long rest, you become proficient with that skill, and you double your proficiency bonus when making an ability check with that skill.</description>
 		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Archetype Feature, Lore of the Dead" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (Arcana)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_ARCANA">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with Arcana, and you double your proficiency bonus when making an ability check with Arcana.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />			
+			<stat name="arcana:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (History)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_HISTORY">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with History, and you double your proficiency bonus when making an ability check with History.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />			
+			<stat name="history:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (Medicine)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_MEDICINE">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with Medicine, and you double your proficiency bonus when making an ability check with Medicine.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />			
+			<stat name="medicine:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (Nature)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_NATURE">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with Nature, and you double your proficiency bonus when making an ability check with Nature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />			
+			<stat name="nature:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (Religion)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_RELIGION">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with Religion, and you double your proficiency bonus when making an ability check with Religion.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />			
+			<stat name="religion:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Lore of the Dead (Survival)" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_LORE_OF_THE_DEAD_SURVIVAL">
+		<compendium display="false" />
+		<supports>Lore of the Dead</supports>
+		<description>
+			<p>You become proficient with Survival, and you double your proficiency bonus when making an ability check with Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />			
+			<stat name="survival:proficiency" value="proficiency" bonus="double" />
+		</rules>
 	</element>
 	<element name="Grayfear" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_GRAYFEAR">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can channel the Graysong to drive creatures away in fear. As a bonus action, you can expend one of your Bardic Inspiration dice and choose one or more creatures you can see within 30 feet of you, up to your Charisma modifier (minimum 1 target). Each target must make a Wisdom saving throw against your spellcasting save DC. A creature that fails this saving throw must use its reaction to move up to its speed away from you along the safest route, and it has disadvantage on the first attack roll it makes before the end of its next turn.</p>
+			<p class="indent">Undead make this saving throw with disadvantage, and a creature immune to the frightened condition automatically succeeds this saving throw.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You can expend one of your Bardic Inspiration dice and choose up to {{grayfear:creatures}} creatures you can see within 30 feet of you. Each target must make a Wisdom saving throw. A creature that fails this saving throw must use its reaction to move up to its speed away from you along the safest route, and it has disadvantage on the first attack roll it makes before the end of its next turn.
+			Undead make this saving throw with disadvantage, and a creature immune to the frightened condition automatically succeeds this saving throw.</description>
 		</sheet>
+		<rules>
+			<stat name="grayfear:creatures" value="1" bonus="base" />
+			<stat name="grayfear:creatures" value="charisma:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Draw Back from Death" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_DRAW_BACK_FROM_DEATH">
 		<description>
-			<p></p>
+			<p>At 6th level, you learn how to draw creatures back from the gray of Dolurrh. When a creature within 30 feet of you is reduced to 0 hit points, you can use your reaction to have it instead be reduced to 1 hit point. The target then gains temporary hit points equal to 3 x your bard level.</p>
+			<p class="indent">After you use this ability on a creature, that creature cannot benefit from this feature again until it finishes a short or long rest.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When a creature within 30 feet of you is reduced to 0 hit points, you can use your reaction to have it instead be reduced to 1 hit point. The target then gains {{draw back from death:temp hp}} temporary hp.
+			After you use this ability on a creature, that creature cannot benefit from this feature again until it finishes a short or long rest.</description>
 		</sheet>
+		<rules>
+			<stat name="draw back from death:temp hp" value="level:bard" />
+			<stat name="draw back from death:temp hp" value="level:bard" />
+			<stat name="draw back from death:temp hp" value="level:bard" />
+		</rules>
 	</element>
 	<element name="Gray Rendition" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GRAYSONG_GRAY_RENDITION">
 		<description>
-			<p></p>
+			<p>At 14th level, you learn how to emulate the Graysong itself, bringing its terribleness to bear against your foes. As an action, you can force each creature of your choice within 30 feet of you that can hear you to make a Wisdom saving throw. On a failed save, a creature takes 4d8 psychic damage and is paralyzed until the start of your next turn or until it takes damage. A creature under the effects of your Grayfear automatically fails this saving throw. A creature immune to the frightened condition that fails this save takes this psychic damage but is not paralyzed.</p>
+			<p class="indent">Once you use this feature, you cannot use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can force each creature of your choice within 30 feet of you that can hear you to make a Wisdom saving throw. On a failed save, a creature takes 4d8 psychic damage and is paralyzed until the start of your next turn or until it takes damage. A creature under the effects of your Grayfear automatically fails this saving throw. A creature immune to the frightened condition that fails this save takes this psychic damage but is not paralyzed.</description>
 		</sheet>
 	</element>
 
@@ -211,7 +362,7 @@
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_SPELLS" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_KEEPER_OF_STORIES" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_FAIRY_WHIM" />
-			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CHANNEL_DIVINITY_OVERWHELMING_FANTASIA" />
+			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CD_OVERWHELMING_FANTASIA" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WALK_AMONG_THE_COMMONFOLK" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_DIVINE_STRIKE" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WELLSPRING_OF_INSPIRATION" />
@@ -223,7 +374,7 @@
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_SPELLS" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_KEEPER_OF_STORIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_FAIRY_WHIM" level="1" />
-			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CHANNEL_DIVINITY_OVERWHELMING_FANTASIA" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CD_OVERWHELMING_FANTASIA" level="2" />
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WALK_AMONG_THE_COMMONFOLK" level="6" />
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_DIVINE_STRIKE" level="8" />
 			<grant type="Archetype Feature" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WELLSPRING_OF_INSPIRATION" level="17" />
@@ -237,73 +388,86 @@
 				<thead>
 					<tr><td>Cleric Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>1st</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>3rd</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>7th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>9th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>1st</td><td><em>comprehend languages, heroism</em></td></tr>
+				<tr><td>3rd</td><td><em>enthrall, magic mouth</em></td></tr>
+				<tr><td>5th</td><td><em>fear, tongues</em></td></tr>
+				<tr><td>7th</td><td><em>confusion, conjure woodland beings</em></td></tr>
+				<tr><td>9th</td><td><em>legend lore, seeming</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false"/>
 		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx1" level="1" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx2" level="1" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx3" level="3" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx4" level="3" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx5" level="5" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx6" level="5" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx7" level="7" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx8" level="7" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx9" level="9" spellcasting="Cleric" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx0" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HEROISM" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENTHRALL" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MAGIC_MOUTH" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FEAR" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_TONGUES" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_WOODLAND_BEINGS" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SEEMING" level="9" spellcasting="Cleric" prepared="true" />
 		</rules>
 	</element>
 	<element name="Keeper of Stories" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_KEEPER_OF_STORIES">
 		<description>
-			<p></p>
+			<p>You are learned in the ways of the fey, Thelanis, and their relationship with the greater world. At 1st level, you learn to read, write, and speak Sylvan, and you become proficient with the History skill.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You learn to read, write, and speak Sylvan, and you become proficient with the History skill.</description>
 		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+		</rules>
 	</element>
 	<element name="Fairy Whim" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_FAIRY_WHIM">
 		<description>
-			<p></p>
+			<p>Starting at 1st level, your magic is suffused with the fleeting nature of the fey. When you cast a spell using a spell slot of 1st level or higher, a creature of your choice within 30 feet of you can use its reaction to move up to its speed without provoking opportunity attacks. You can choose yourself to benefit from this feature.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you cast a spell using a spell slot of 1st level or higher, a creature of your choice within 30 feet of you can use its reaction to move up to its speed without provoking opportunity attacks. You can choose yourself to benefit from this feature.</description>
 		</sheet>
 	</element>
-	<element name="Channel Divinity: Overwhelming Fantasia" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CHANNEL_DIVINITY_OVERWHELMING_FANTASIA">
+	<element name="Channel Divinity: Overwhelming Fantasia" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_CD_OVERWHELMING_FANTASIA">
 		<description>
-			<p></p>
+			<p>At 2nd level, you can use your Channel Divinity to draw a creature’s mind into a mythical tale from which it cannot escape.</p>
+			<p class="indent">As an action, you can target a creature within 30 feet of you that can hear you and force it to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened (your choice) of you and up to 5 other creatures you choose for 1 hour. The creature can repeat this saving throw whenever it takes damage, ending the effect on a success.</p>
+			<p class="indent">Creature with truesight are immune to this effect.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet alt="Overwhelming Fantasia" action="Action" usage="Channel Divinity">
+			<description>You can target a creature within 30 feet of you that can hear you and force it to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened of you and up to 5 other creatures you choose for 1 hour. The creature can repeat this saving throw whenever it takes damage, ending the effect on a success.
+			Creature with truesight are immune to this effect.</description>
 		</sheet>
 	</element>
 	<element name="Walk Among the Commonfolk" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WALK_AMONG_THE_COMMONFOLK">
 		<description>
-			<p></p>
+			<p>At 6th level, you can change your appearance to take on a mystical quality, often emulating the greatest characters of your favorite tales. You can cast disguise self without expending a spell slot. When cast in this way, the spell allows you to add your Wisdom modifier to any Charisma checks you make.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum once), regaining any expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="{{walk among the commonfolk:usage}}/Long Rest">
+			<description>You can cast disguise self without expending a spell slot. When cast in this way, the spell allows you to add {{wisdom:modifier}} to any Charisma checks you make.</description>
 		</sheet>
+		<rules>
+			<stat name="walk among the commonfolk:usage" value="1" bonus="base" />
+			<stat name="walk among the commonfolk:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_DIVINE_STRIKE">
 		<description>
-			<p></p>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with the raw energy of a story’s power. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage to the target.</description>
+			<description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 psychic damage to the target.</description>
 		</sheet>
 	</element>
 	<element name="Wellspring of Inspiration" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_STORY_DOMAIN_WELLSPRING_OF_INSPIRATION">
 		<description>
-			<p></p>
+			<p>At 17th level, your achievements and closeness to divinity inspires awe in those around you. A creature that benefits from your Fairy Whim ability can add your Wisdom modifier to any attack rolls, ability checks, and saving throws it makes before the start of your next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>A creature that benefits from your Fairy Whim ability can add {{wisdom:modifier}} to any attack rolls, ability checks, and saving throws it makes before the start of your next turn.</description>
 		</sheet>
 	</element>
 	
@@ -331,34 +495,41 @@
 	</element>
 	<element name="Vermin Swarm" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GLOAMING_VERMIN_SWARM">
 		<description>
-			<p></p>
+			<p>At 2nd level, you call on swarms of vermin, infused with negative energy, to harry your foes. As an action, you can expend a use of your Wild Shape to summon a swarm of rats, flies, spiders, centipedes, bats, and so on. The swarm appears as two 5-foot cubes, each originating from points you choose within 30 feet of you. The spaces your swarm occupies are considered difficult terrain and are lightly obscured, though you can see through them clearly.</p>
+			<p class="indent">At the end of each of your turns, you can move each cube of the swarm up to 20 feet in directions of your choice, including up and down. As well, you can cause one of the cubes to move up to 20 feet as a bonus action. If the cube stops in a creature’s space, you can make a melee spell attack against that creature, dealing 2d6 necrotic damage on a hit. That space of the swarm becomes heavily obscured until the end of your next turn, though you can still see through it clearly.</p>
+			<p class="indent">Your swarm remains for 1 hour after you summon it or until you summon another swarm. You can dismiss the swarm early as a bonus action. If any individual cube of the swarm if ever more than 120 feet away from you, that portion of the swarm disperses early.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action">
+			<description>You can expend a use of your Wild Shape to summon a swarm. The swarm appears as two 5-foot cubes, each originating from points you choose within 30 feet of you. The spaces your swarm occupies are considered difficult terrain and are lightly obscured, though you can see through them clearly.
+			At the end of each of your turns, you can move each cube of the swarm up to 20 feet in directions of your choice, including up and down. As well, you can cause one of the cubes to move up to 20 feet as a bonus action. If the cube stops in a creature’s space, you can make a melee spell attack against that creature, dealing 2d6 necrotic damage on a hit. That space of the swarm becomes heavily obscured until the end of your next turn, though you can still see through it clearly.
+			Your swarm remains for 1 hour after you summon it or until you summon another swarm. You can dismiss the swarm early as a bonus action. If any individual cube of the swarm if ever more than 120 feet away from you, that portion of the swarm disperses early.</description>
 		</sheet>
 	</element>
 	<element name="Power from Death" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GLOAMING_POWER_FROM_DEATH">
 		<description>
-			<p></p>
+			<p>At 6th level, you and your vermin swarm can draw on the dark energy that fester in a corpse upon its death. When you reduce a creature to 0 hit points with a spell of 1st level or higher or with the damage from your Vermin Swarm, you can use your reaction to regain a number of hit points equal to that creature’s maximum number of Hit Dice + your Wisdom modifier. Your Vermin Swarm’s remaining duration extends by a number of minutes equal to the hit points you regained.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>When you reduce a creature to 0 hit points with a spell of 1st level or higher or with the damage from your Vermin Swarm, you can use your reaction to regain a number of hit points equal to that creature’s maximum number of Hit Dice + {{wisdom:modifier}}. Your Vermin Swarm’s remaining duration extends by a number of minutes equal to the hit points you regained.</description>
 		</sheet>
 	</element>
 	<element name="Child of Winter" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GLOAMING_CHILD_OF_WINTER">
 		<description>
-			<p></p>
+			<p>By 10th level, your body becomes suffused with dark energy. You become immune to poison and disease. You also become resistant to necrotic damage.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You become immune to poison and disease.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
 	</element>
 	<element name="Overwhelming Darkness" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_GLOAMING_OVERWHELMING_DARKNESS">
 		<description>
-			<p></p>
+			<p>Starting at 14th level, your Vermin Swarm appears as dark or skeletal shades that overrun your enemies. When you hit a creature with your Vermin Swarm, the target has disadvantage on the next saving throw it makes before the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with your Vermin Swarm, the target has disadvantage on the next saving throw it makes before the end of your next turn.</description>
 		</sheet>
 	</element>
 
@@ -387,42 +558,132 @@
 	</element>
 	<element name="Beast Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE">
 		<description>
-			<p></p>
+			<p>At 3rd level, you learn how to emulate an animal by taking on a specific stance. The flow of energy through your body empowers you and gives you unique insights usually seen only through the eyes of beasts. You learn two stances at 3rd level, choosing from the list below. You learn a third stance at 7th level, and a fourth at 10th level. When you gain a fighter level, you can replace one stance you know with another of your choice.</p>
+			<p class="indent">You can enter a stance of your choice as a bonus action. You remain in the stance for up to 10 minutes, until you are incapacitated, or until you end the stance early (requiring no action). You can enter your Beast Stance twice, regaining your expended uses when you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Bear Stance.</em></strong> When you hit a creature with a weapon attack, you can push it 5 feet away from you. The first time you make a weapon attack against the creature you push before the end of your next turn, you can roll 1d8 and add it to the damage roll.</p>
+			<p class="indent"><strong><em>Chameleon Stance.</em></strong> When you take the Attack action, you can replace an attack with the Hide action (replacing one of your attacks if you have Extra Attack). You can do so if you are currently being observed, though you are no longer hidden from a creature if you end this turn in its field of vision.</p>
+			<p class="indent"><strong><em>Hawk Stance.</em></strong> If you take any fall damage in this stance, subtract 2 x your fighter level from the damage roll (to a minimum of 0 damage). While in this stance, your long and high jump distances are doubled. If you jump 10 feet immediately before making a melee weapon attack, you can roll 1d8 and add it to the weapon’s damage roll.</p>
+			<p class="indent"><strong><em>Leopard Stance.</em></strong> While in this stance, you gain a climb speed of 20 feet. If you take the Dash or Disengage actions, you can make one weapon attack as a bonus action on that turn. On a hit, you can roll 1d8 and add it to the weapon’s damage roll.</p>
+			<p class="indent"><strong><em>Ox Stance.</em></strong> When you make a Strength, Constitution, or Wisdom saving throw while in this stance, you can roll 1d6 and add it to the result. If you move at least 20 feet in this stance before making a melee weapon attack and hit a creature with it, you can use your reaction to shove the creature. When you do, you can roll 1d8 and add the result to the attack’s damage roll and to your Strength (Athletics) check for the shove.</p>
+			<p class="indent"><strong><em>Rabbit Stance.</em></strong> While in this stance, your walking speed increases by 10 feet. When you move and would provoke an opportunity attack, you can spend 5 extra feet of movement (if available) to not provoke that attack. If you hit the attacking creature with your next weapon attack before the end of your turn, you can roll 1d8 and add it to the damage roll.</p>
+			<p class="indent"><strong><em>Tortoise Stance.</em></strong> You gain temporary hit points equal to half your fighter level when you enter this stance and at the beginning of each of your turns while in this stance. Any remaining temporary hit points vanish when your stance ends. Your speed is reduced by 10 feet while in this stance.</p>
+			<p class="indent"><strong><em>Wolf Stance.</em></strong> Once per turn when you make a weapon attack against a creature, you can roll 1d6 and add it to your attack roll. The target must be within 5 feet of a creature other than you that is hostile to it.</p>
+		</description>
+		<sheet action="Bonus Action" usage="2/Short Rest">
+			<description>You can enter a stance of your choice. You remain in the stance for up to 10 minutes, until you are incapacitated, or until you end the stance early.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Beast Stance" supports="Savager Beast Stance" level="3" number="2" />
+			<select type="Archetype Feature" name="Beast Stance" supports="Savager Beast Stance" level="6" />
+			<select type="Archetype Feature" name="Beast Stance" supports="Savager Beast Stance" level="10" />
+		</rules>
+	</element>
+	<element name="Bear Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Bear">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can push it 5 feet away from you. The first time you make a weapon attack against the creature you push before the end of your next turn, you can roll 1d8 and add it to the damage roll.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with a weapon attack, you can push it 5 feet away from you. The first time you make a weapon attack against the creature you push before the end of your next turn, you can roll 1d8 and add it to the damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Chameleon Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Chameleon">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>When you take the Attack action, you can replace an attack with the Hide action (replacing one of your attacks if you have Extra Attack). You can do so if you are currently being observed, though you are no longer hidden from a creature if you end this turn in its field of vision.</p>
+		</description>
+		<sheet>
+			<description>When you take the Attack action, you can replace an attack with the Hide action. You can do so if you are currently being observed, though you are no longer hidden from a creature if you end this turn in its field of vision.</description>
+		</sheet>
+	</element>
+	<element name="Hawk Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Hawk">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>If you take any fall damage in this stance, subtract 2 x your fighter level from the damage roll (to a minimum of 0 damage). While in this stance, your long and high jump distances are doubled. If you jump 10 feet immediately before making a melee weapon attack, you can roll 1d8 and add it to the weapon’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>If you take any fall damage in this stance, subtract {{hawk stance:subtract}} from the damage roll. While in this stance, your long and high jump distances are doubled. If you jump 10 feet immediately before making a melee weapon attack, you can roll 1d8 and add it to the weapon’s damage roll.</description>
+		</sheet>
+		<rules>
+			<stat name="hawk stance:subtract" value="level:fighter" />
+			<stat name="hawk stance:subtract" value="level:fighter" />
+		</rules>
+	</element>
+	<element name="Leopard Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Leopard">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>While in this stance, you gain a climb speed of 20 feet. If you take the Dash or Disengage actions, you can make one weapon attack as a bonus action on that turn. On a hit, you can roll 1d8 and add it to the weapon’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>While in this stance, you gain a climb speed of 20 feet. If you take the Dash or Disengage actions, you can make one weapon attack as a bonus action on that turn. On a hit, you can roll 1d8 and add it to the weapon’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Ox Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Ox">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>When you make a Strength, Constitution, or Wisdom saving throw while in this stance, you can roll 1d6 and add it to the result. If you move at least 20 feet in this stance before making a melee weapon attack and hit a creature with it, you can use your reaction to shove the creature. When you do, you can roll 1d8 and add the result to the attack’s damage roll and to your Strength (Athletics) check for the shove.</p>
+		</description>
+		<sheet>
+			<description>When you make a Strength, Constitution, or Wisdom saving throw while in this stance, you can roll 1d6 and add it to the result. If you move at least 20 feet in this stance before making a melee weapon attack and hit a creature with it, you can use your reaction to shove the creature. When you do, you can roll 1d8 and add the result to the attack’s damage roll and to your Athletics check for the shove.</description>
+		</sheet>
+	</element>
+	<element name="Rabbit Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Rabbit">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>While in this stance, your walking speed increases by 10 feet. When you move and would provoke an opportunity attack, you can spend 5 extra feet of movement (if available) to not provoke that attack. If you hit the attacking creature with your next weapon attack before the end of your turn, you can roll 1d8 and add it to the damage roll.</p>
+		</description>
+		<sheet>
+			<description>While in this stance, your walking speed increases by 10 feet. When you move and would provoke an opportunity attack, you can spend 5 extra feet of movement to not provoke that attack. If you hit the attacking creature with your next weapon attack before the end of your turn, you can roll 1d8 and add it to the damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Tortoise Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Tortoise">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>You gain temporary hit points equal to half your fighter level when you enter this stance and at the beginning of each of your turns while in this stance. Any remaining temporary hit points vanish when your stance ends. Your speed is reduced by 10 feet while in this stance.</p>
+		</description>
+		<sheet>
+			<description>You gain {{level:fighter:half}} temporary hp when you enter this stance and at the beginning of each of your turns while in this stance. Any remaining temporary hp vanish when your stance ends. Your speed is reduced by 10 feet while in this stance.</description>
+		</sheet>
+	</element>
+	<element name="Wolf Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_STANCE_Wolf">
+		<supports>Savager Beast Stance</supports>
+		<description>
+			<p>Once per turn when you make a weapon attack against a creature, you can roll 1d6 and add it to your attack roll. The target must be within 5 feet of a creature other than you that is hostile to it.</p>
+		</description>
+		<sheet>
+			<description>Once per turn when you make a weapon attack against a creature, you can roll 1d6 and add it to your attack roll. The target must be within 5 feet of a creature other than you that is hostile to it.</description>
 		</sheet>
 	</element>
 	<element name="Beast Mind" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_BEAST_MIND">
 		<description>
-			<p></p>
+			<p>At 7th level, you become more in-tune with your primal self. You can cast speak with animals and beast sense, once each. Wisdom is your spellcasting ability for these spells. You regain your use of each spell when you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Short Rest">
+			<description>You can cast speak with animals and beast sense, once each using Wisdom as your spellcasting ability.</description>
 		</sheet>
 	</element>
 	<element name="Swift Stance" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_SWIFT_STANCE">
 		<description>
-			<p></p>
+			<p>At 10th level, your stances increase in power, as does your skill in using them. While in a Beast Stance, you can use your bonus action to enter a different stance you know without starting a new Beast Stance.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>While in a Beast Stance, you can use your bonus action to enter a different stance you know without starting a new Beast Stance.</description>
 		</sheet>
 	</element>
 	<element name="Stance Mastery" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_STANCE_MASTERY">
 		<description>
-			<p></p>
+			<p>At 15th level, you push your beast stances beyond mortal limits. Your Beast Stance now lasts for 1 hour.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Your Beast Stance now lasts for 1 hour.</description>
 		</sheet>
 	</element>
 	<element name="Primal Master" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_SAVAGER_PRIMAL_MASTER">
 		<description>
-			<p></p>
+			<p>At 18th level, you become one with the animals you emulate. When you finish a long rest, choose one of the Beast Stance options you know. You benefit from that stance’s effects even while not in that stance until you finish another long rest. You can end this effect early as a bonus action.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you finish a long rest, choose one of the Beast Stance options you know. You benefit from that stance’s effects even while not in that stance until you finish another long rest. You can end this effect early as a bonus action.</description>
 		</sheet>
 	</element>
 
@@ -449,34 +710,51 @@
 	</element>
 	<element name="Phantasmal Fist" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_DREAM_WALKER_PHANTASMAL_FIST">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can use your ki to manipulate the minds of your opponents. When you hit a creature with a melee weapon attack, you can spend 1 ki point to force that creature to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened (your choice) by you until the start of your next turn. The first time a creature charmed or frightened in this way rolls a saving throw before the start of your next turn, it must roll your Martial Arts die and subtract it from the result.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="Ki">
+			<description>When you hit a creature with a melee weapon attack, you can spend 1 ki point to force that creature to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened by you until the start of your next turn. The first time a creature charmed or frightened in this way rolls a saving throw before the start of your next turn, it must roll your Martial Arts die and subtract it from the result.</description>
 		</sheet>
 	</element>
 	<element name="Day Dreamer" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_DREAM_WALKER_DAY_DREAMER">
 		<description>
-			<p></p>
+			<p>Starting at 6th level, your body enters a state somewhere between wake and sleep. You are as aware of your surroundings while unconscious as you are awake.</p>
+			<p class="indent">You can also cast several spells using your ki, as you bring dreamstuff into reality. You can spend 2 ki points to cast alter self or 3 ki points to cast major image, without providing material components. You also learn the minor illusion cantrip.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="Ki">
+			<description>You are as aware of your surroundings while unconscious as you are awake.
+			You can also cast several spells using your ki, as you bring dreamstuff into reality. You can cast alter self (2 ki) or major image (3 ki), without providing material components.</description>
 		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+		</rules>
 	</element>
 	<element name="Sleep Walker" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_DREAM_WALKER_SLEEP_WALKER">
 		<description>
-			<p></p>
+			<p>At 11th level, you learn how to take shortcuts through the Region of Dreams to far-off lands. As an action, you can spend 7 ki points and choose a location within a number of miles of you equal to 10 x your monk level. You or a creature friendly to you that you can touch you must have seen that location before. You and up to 6 willing creatures of your choice within 15 feet of you are then teleported to that location. A creature that is overencumbered fails to teleport. Creatures teleported in this way traverse a bubble of dream space in Dal Quor itself and arrive after 1d12 + 1 minutes, rolling for each creature individually.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="Ki">
+			<description>You can spend 7 ki points and choose a location within {{sleep walker:range}} miles of you. You or a creature friendly to you that you can touch you must have seen that location before. You and up to 6 willing creatures of your choice within 15 feet of you are then teleported to that location. A creature that is overencumbered fails to teleport. Creatures teleported in this way traverse a bubble of dream space in Dal Quor itself and arrive after 1d12 + 1 minutes, rolling for each creature individually.</description>
 		</sheet>
+		<rules>
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+			<stat name="sleep walker:range" value="level:monk" />
+		</rules>
 	</element>
 	<element name="Dream Maker" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_DREAM_WALKER_DREAM_MAKER">
 		<description>
-			<p></p>
+			<p>At 17th level, you have become more dream than living being, and reality itself bends in pleasant ways. When you finish a long rest during which you meditate, up to 5 creatures of your choice within 30 feet of you gain the benefits of a greater restoration spell.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you finish a long rest during which you meditate, up to 5 creatures of your choice within 30 feet of you gain the benefits of a greater restoration spell.</description>
 		</sheet>
 	</element>
 
@@ -487,6 +765,13 @@
 			<p>Eberron’s history is long, and the long-lived races know this best of all. To lose centuries of experience and knowledge is tragic, even unthinkable. Among the elves of Xen’drik and Aerenal, ancestral worship is taken to an entirely new extreme. The Aereni bring back some that die through strange ritual, powered by the dedication of their descendants’ faith in them, and the Qaltiar elves worship spirits thought to be kept alive by their dedication. And among their descendants, those dedicated to their Forebearers are not uncommon.</p>
 			<p class="indent">These holy warriors are connected to the sunlit plane of Irian more than any creatures saving the Undying themselves. The energy they give to those that came before is returned to them tenfold, and with this energy they preserve the ways of the past. This cycle continues across centuries, becoming stronger with each new generation. As such a paladin, you may be the latest and greatest of your line, with dedication to spare.</p>
 			<p class="indent">As you embrace the Oath of the Forebearer, you should choose a particular ancestor to follow, often one that is truly legendary. Work with your DM to come up with a set of traits, ideals, and flaws that this ancestor embraces, to guide your character’s particular oath.</p>
+			<h5>Tenets of the Forebearer</h5>
+			<p>The Oath of the Forebearer is concerned, perhaps obsessed, with the past. It is a religious devotion to the memories of the great beings that gave you life, the giants whose shoulders you ride through life. While the ideals of one’s patron ancestor greatly vary, the core tenets of this oath are universal.</p>
+			<p class="indent"><strong><em>Honor Your Ancestors.</em></strong> I will strive to accept, embrace, and fulfill the ideals of those that came before me.</p>
+			<p class="indent"><strong><em>Tradition Over Ease.</em></strong> I will not shrug off the duty to my forebearer’s legacy for the sake of modern comforts.</p>
+			<p class="indent"><strong><em>Surpass Your Ancestors.</em></strong> While I remain true to my heritage, I do not ignore opportunities to exceed their deeds.</p>
+			<p class="indent"><strong><em>Forge Your Path.</em></strong> When my ancestors have no guidance, I take charge to stay true to their spirit and make it my own.</p>
+
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_OATH_SPELLS" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_CD_ANCESTRAL_DEDICATION" />
 			<div element="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_CD_CHANNEL_THE_UNDYING" />
@@ -508,71 +793,82 @@
 	</element>
 	<element name="Oath Spells" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_OATH_SPELLS">
 		<description>
-			<p>You gain oath spells at the paladin levels listed in the Oath of the Shacklebreaker Spells table. See the Sacred Oath class feature for how oath spells work.</p>
-			<h5>OATH OF THE SHACKLEBREAKER SPELLS</h5>
+			<p>You gain oath spells at the paladin levels listed in the Oath of the Forebearer Spells table. See the Sacred Oath class feature for how oath spells work.</p>
+			<h5>OATH OF THE FOREBEARER SPELLS</h5>
 			<table>
 				<thead>
 					<tr><td>Paladin Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>3rd</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>9th</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>13th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>17th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>3rd</td><td><em>false life, guiding bolt</em></td></tr>
+				<tr><td>5th</td><td><em>enhance ability, prayer of healing</em></td></tr>
+				<tr><td>9th</td><td><em>beacon of hope, mass healing word</em></td></tr>
+				<tr><td>13th</td><td><em>death ward, guardian of faith</em></td></tr>
+				<tr><td>17th</td><td><em>commune, legend lore</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false"/>
 		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx1" level="3" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx2" level="3" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx3" level="5" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx4" level="5" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx5" level="9" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx6" level="9" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx7" level="13" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx8" level="13" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx9" level="17" spellcasting="Paladin" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_xxxxx0" level="17" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENHANCE_ABILITY" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PRAYER_OF_HEALING" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_HEALING_WORD" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMMUNE" level="17" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="17" spellcasting="Paladin" prepared="true" />
 		</rules>
 	</element>
 	<element name="Channel Divinity: Ancestral Dedication" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_CD_ANCESTRAL_DEDICATION">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can call upon the spirits of your ancestors for guidance by using your Channel Divinity as an action. Choose 1 skill and 2 languages. For 1 hour or until you use this Channel Divinity option again, you become proficient with that skill if you aren’t already, and your proficiency bonus is doubled for any ability check that uses that skill. During this time, you also know how to speak, read, and write the chosen languages if you don’t already.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet alt="Ancestral Dedication" action="Action" usage="Channel Divinity">
+			<description>Choose 1 skill and 2 languages. For 1 hour or until you use this Channel Divinity option again, you become proficient with that skill if you aren’t already, and your proficiency bonus is doubled for any ability check that uses that skill. During this time, you also know how to speak, read, and write the chosen languages if you don’t already.</description>
 		</sheet>
 	</element>
 	<element name="Channel Divinity: Channel the Undying" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_CD_CHANNEL_THE_UNDYING">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can present your holy symbol and recite a prayer to the Undying Court as an action, using your Channel Divinity. Any magical darkness within 30 feet of you is dispelled. This area is magically filled with bright light for 10 minutes, giving off dim light out to 30 feet beyond the area’s edge. This area does not move with you.</p>
+			<p class="indent">Each undead in this area when you use this feature must make a Constitution saving throw or take radiant damage equal to 2d8 + your paladin level.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet alt="Channel the Undying" action="Action" usage="Channel Divinity">
+			<description>Any magical darkness within 30 feet of you is dispelled. This area is magically filled with bright light for 10 minutes, giving off dim light out to 30 feet beyond the area’s edge. This area does not move with you.
+			Each undead in this area when you use this feature must make a Constitution saving throw or take 2d8+{{level:paladin}} radiant damage.</description>
 		</sheet>
 	</element>
 	<element name="Aura of Light" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_AURA_OF_LIGHT">
 		<description>
-			<p></p>
+			<p>At 7th level, your body channels the healing light of Irian as you become a prism for your forebearers’ might. If a creature within 10 feet of you (not including yourself) would be reduced to 0 hit points, you can immediately spend 1 point of your Lay on Hands to make it drop to 1 hit point instead, requiring no action.</p>
+			<p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>If a creature within 10 feet of you (not including yourself) would be reduced to 0 hit points, you can immediately spend 1 point of your Lay on Hands to make it drop to 1 hit point instead, requiring no action.</description>
+			<description level="18">If a creature within 30 feet of you (not including yourself) would be reduced to 0 hit points, you can immediately spend 1 point of your Lay on Hands to make it drop to 1 hit point instead, requiring no action.</description>
 		</sheet>
 	</element>
 	<element name="Blessing of the Court" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_BLESSING_OF_THE_COURT">
 		<description>
-			<p></p>
+			<p>Starting at 15th level, the memories of your deeds, found throughout those you have interacted with, infuses you with the divine energy of faith. You no longer age and cannot die of old age. If you ever die, you return to life with 1 hit point after 1d4 hours unless your body is destroyed or decapitated. If no one on the same plane as your dead body remembers you, your body instead turns to dust.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You no longer age and cannot die of old age. If you ever die, you return to life with 1 hit point after 1d4 hours unless your body is destroyed or decapitated. If no one on the same plane as your dead body remembers you, your body instead turns to dust.</description>
 		</sheet>
 	</element>
 	<element name="Rite of the Council" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FOREBEARER_RITE_OF_THE_COUNCIL">
 		<description>
-			<p></p>
+			<p>At 20th level, you can call upon the power of the planesfaring ascendant councilors. As an action, you take on a desiccated appearance as light spills from your body, transforming for 1 minute. While transformed, you gain the following benefits:</p>
+			<ul>
+				<li>You can cast any paladin spell you have prepared at its lowest level without expending a spell slot.</li>
+				<li>At the start of each of your turns, you regain 20 hit points.</li>
+			</ul>
+			<p>Once you use this feature, you cannot use it again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You take on a desiccated appearance as light spills from your body, transforming for 1 minute. While transformed, you gain the following benefits:
+			You can cast any paladin spell you have prepared at its lowest level without expending a spell slot.
+			At the start of each of your turns, you regain 20 hit points.</description>
 		</sheet>
 	</element>
 
@@ -603,51 +899,107 @@
 	</element>
 	<element name="Fire Binder Magic" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_FIRE_BINDER_MAGIC">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Fire Binder Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+			<h5>Fire Binder Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>searing smite</em></td></tr>
+                <tr><td>5th</td><td><em>heat metal</em></td></tr>
+                <tr><td>9th</td><td><em>fireball</em></td></tr>
+                <tr><td>13th</td><td><em>fire shield</em></td></tr>
+                <tr><td>17th</td><td><em>commune</em></td></tr>
+            </table>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You learn an additional spell when you reach certain levels in this class, as shown in the Fire Binder Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</description>
 		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SEARING_SMITE" spellcasting="Ranger" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_HEAT_METAL" spellcasting="Ranger" level="5" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Ranger" level="9" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Ranger" level="13" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMMUNE" spellcasting="Ranger" level="17" />
+		</rules>
 	</element>
 	<element name="Conflagrating Strike" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_CONFLAGRATING_STRIKE">
 		<description>
-			<p></p>
+			<p>At 3rd level, fire dances at your fingertips and enwraps your weapons. When you hit a creature with a weapon attack, you can cause it to catch fire for 1 minute. At the start of each of the creature’s turns while it is on fire, it takes 1d6 fire damage. It must then make a Dexterity saving throw against your spell save DC, dousing the flames on a success. You cannot set a creature on fire again until the start of your next turn.</p>
+			<p class="indent">This fire damage increases to 2d6 when you reach 11th level.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with a weapon attack, you can cause it to catch fire for 1 minute. At the start of each of the creature’s turns while it is on fire, it takes 1d6 fire damage. It must then make a Dexterity saving throw, dousing the flames on a success. You cannot set a creature on fire again until the start of your next turn.</description>
+			<description level="11">When you hit a creature with a weapon attack, you can cause it to catch fire for 1 minute. At the start of each of the creature’s turns while it is on fire, it takes 2d6 fire damage. It must then make a Dexterity saving throw, dousing the flames on a success. You cannot set a creature on fire again until the start of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="Blessing of Flame" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BLESSING_OF_FLAME">
 		<description>
-			<p></p>
+			<p>At 3rd level, the fire bound to you gives you resistance to fire damage. You also learn the control flames and produce flame cantrips, which you can cast at will. Wisdom is your spellcasting ability for these spells. Control flames is found in Xanathar’s Guide to Everything.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You learn the control flames and produce flame cantrips, which you can cast at will. Wisdom is your spellcasting ability for these spells.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_PHB_SPELL_PRODUCE_FLAME" spellcasting="Ranger" />
+		</rules>
 	</element>
 	<element name="Blazing Portent" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BLAZING_PORTENT">
 		<description>
-			<p></p>
+			<p>At 7th level, you gain insight into the Burning Promise and can divine through flames. You can cast augury, without expending a spell slot. Instead of its normal material components, you need an open flame to stare into while casting the spell, such as the one from your produce flame.</p>
+			<p class="indent">After casting this spell, your unique insights into the future protect you from harm. Until you finish a long rest or are hit by an attack, attack rolls against you are made with disadvantage.</p>
+			<p class="indent">You can cast this spell a number of times equal to your Wisdom modifier (minimum once). You regain any expended uses when you finish a long rest</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="{{blazing portent:usage}}/Long Rest">
+			<description>You can cast augury, without expending a spell slot. Instead of its normal material components, you need an open flame to stare into while casting the spell, such as the one from your produce flame.
+			After casting this spell, your unique insights into the future protect you from harm. Until you finish a long rest or are hit by an attack, attack rolls against you are made with disadvantage.</description>
 		</sheet>
+		<rules>
+			<stat name="blazing portent:usage" value="1" bonus="base" />
+			<stat name="blazing portent:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Bearer of Fire" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BEARER_OF_FIRE">
 		<description>
-			<p></p>
+			<p>At 11th level, a great fire begins to burn within you. You gain one of the following features, your choice:</p>
+			<p class="indent"><strong><em>Blazing Blades.</em></strong> As a bonus action, you can wreathe one or two melee weapons you are wielding in fire. They remain alight until you douse them as a bonus action or until you are no longer wielding them. These weapons deal fire damage instead of their normal damage type, and your reach with them increases by 5 feet.</p>
+			<p class="indent"><strong><em>Pyroclastic Missile.</em></strong> When you would subject a creature to your Conflagrating Strike with a ranged weapon attack, each creature within 5 feet of the target is also set on fire.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Bearer of Fire" supports="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BEARER_OF_FIRE_BLAZING_BLADES|ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BEARER_OF_FIRE_PYROCLASTIC_MISSILE" />
+		</rules>
+	</element>
+	<element name="Blazing Blades" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BEARER_OF_FIRE_BLAZING_BLADES">
+		<description>
+			<p>As a bonus action, you can wreathe one or two melee weapons you are wielding in fire. They remain alight until you douse them as a bonus action or until you are no longer wielding them. These weapons deal fire damage instead of their normal damage type, and your reach with them increases by 5 feet.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can wreathe one or two melee weapons you are wielding in fire. They remain alight until you douse them as a bonus action or until you are no longer wielding them. These weapons deal fire damage instead of their normal damage type, and your reach with them increases by 5 feet.</description>
+		</sheet>
+	</element>
+	<element name="Pyroclastic Missile" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_BEARER_OF_FIRE_PYROCLASTIC_MISSILE">
+		<description>
+			<p>When you would subject a creature to your Conflagrating Strike with a ranged weapon attack, each creature within 5 feet of the target is also set on fire.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you would subject a creature to your Conflagrating Strike with a ranged weapon attack, each creature within 5 feet of the target is also set on fire.</description>
 		</sheet>
 	</element>
 	<element name="Fulfilling the Promise" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_FIRE_BINDER_FULFILLING_THE_PROMISE">
 		<description>
-			<p></p>
+			<p>At 15th level, you become immune to fire damage, as flames both mundane and magical refuse to harm you.</p>
+			<p class="indent">When you would set a creature on fire with your Conflagrating Strike, you can instead force it to make a Charisma saving throw against your spell save DC. On a failed save, the creature disappears as it is banished to Fernia, where it is incapacitated and takes 5d10 fire damage at the end of each of its turns. The creature can repeat this saving throw at the end of each of its turns. It reappears in the space it left or in the nearest unoccupied space on a successful save or when it is reduced to 0 hit points.</p>
+			<p class="indent">You cannot try to banish another creature in this way until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Short Rest">
+			<description>When you would set a creature on fire with your Conflagrating Strike, you can instead force it to make a Charisma saving throw. On a failed save, the creature disappears as it is banished to Fernia, where it is incapacitated and takes 5d10 fire damage at the end of each of its turns. The creature can repeat this saving throw at the end of each of its turns. It reappears in the space it left or in the nearest unoccupied space on a successful save or when it is reduced to 0 hit points.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+		</rules>
 	</element>
 
 
@@ -674,42 +1026,65 @@
 	</element>
 	<element name="Devil’s Tongue" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_COINMONGER_DEVILS_TONGUE">
 		<description>
-			<p></p>
+			<p>At 3rd level, your words gain a honeyed, even sickly-sweet quality. Whenever you roll a Charisma (Persuasion or Deception) check, roll 1d6 and add it to the result.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Whenever you roll a Persuasion or Deception check, roll 1d6 and add it to the result.</description>
 		</sheet>
 	</element>
 	<element name="Otherworldly Wealth" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_COINMONGER_OTHERWORLDLY_WEALTH">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can channel the power of the Immeasurable Market in exchange for your own energy, purchasing magical effects. You have a number of Syranian coins equal to your rogue level + your Charisma modifier. These coins are made of an iridescent metal and feature a crystal on one side and an angel on the other. These Syranian coins disappear and are replaced by a new set of coins when you finish a long rest.</p>
+			<p class="indent">As a bonus action, you can grab a number of these coins that you are carrying and spend them. The coins vanish, and you gain a benefit of your choice from the list below. Each effect has a minimum cost listed that you must spend to choose that effect.</p>
+			<p class="indent"><strong><em>Syranian Stipend (1 or more coins).</em></strong> Each Syranian coin you spend for this feature becomes a nonmagical gold piece.</p>
+			<p class="indent"><strong><em>Market’s Guiding Hand (1 coin).</em></strong> The first time you hit with a weapon attack in the next minute, you can deal sneak attack damage even if you would not otherwise be able to.</p>
+			<p class="indent"><strong><em>Gold-Weighted Strike (1 coin).</em></strong> Your sneak attack damage increases by 1d6. This increase lasts until you next use your sneak attack or you finish a long rest.</p>
+			<p class="indent"><strong><em>Aura of Regulation (1 coin).</em></strong> Until the start of your next turn, any creature that attacks you or any friendly creatures within 5 feet of you must roll 1d6 and subtracts the result from its attack roll.</p>
+			<p class="indent"><strong><em>Premium Services (2 coins).</em></strong> Before the end of your turn, you can use your action to cast one of the following spells of your choice, without material components: alarm, bless, charm person, cure wounds, false life, find familiar, or unseen servant. Charisma is your spellcasting ability for these spells, as you purchase this magic directly from the spirits of Syrania.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You have {{syranian coins:amount}} Syranian coins. They disappear and are replaced by a new set of coins when you finish a long rest.
+			You can grab a number of these coins that you are carrying and spend them. The coins vanish, and you gain a benefit of your choice from the list below. Each effect has a minimum cost listed that you must spend to choose that effect.
+			Syranian Stipend (1+). Each Syranian coin you spend for this feature becomes a nonmagical gold piece.
+			Market’s Guiding Hand (1). The first time you hit with a weapon attack in the next minute, you can deal sneak attack damage even if you would not otherwise be able to.
+			Gold-Weighted Strike (1). Your sneak attack damage increases by 1d6. This increase lasts until you next use your sneak attack or you finish a long rest.
+			Aura of Regulation (1). Until the start of your next turn, any creature that attacks you or any friendly creatures within 5 feet of you must roll 1d6 and subtracts the result from its attack roll.
+			Premium Services (2). Before the end of your turn, you can use your action to cast one of the following spells of your choice, without material components: alarm, bless, charm person, cure wounds, false life, find familiar, or unseen servant. Charisma is your spellcasting ability for these spells, as you purchase this magic directly from the spirits of Syrania.</description>
 		</sheet>
+		<rules>
+			<stat name="syranian coins:amount" value="level:rogue" />
+			<stat name="syranian coins:amount" value="charisma:modifier" />
+		</rules>
 	</element>
 	<element name="An Eye for Quality" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_COINMONGER_AN_EYE_FOR_QUALITY">
 		<description>
-			<p></p>
+			<p>At 9th level, you can magically determine worth. You can cast identify as an action, without material components, targeting a creature or object within 30 feet of you that you can see. If you target a mundane object, you determine its monetary value, as well as one fact about the object’s history. When you sell an item that you’ve used this feature on, you can sell it for 20% more than you normally could. Charisma is your spellcasting ability for this spell.</p>
+			<p class="indent">You can cast the spell in this way a number of times equal to your Charisma modifier (minimum once). You regain any expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="{{an eye for quality:usage}}/Long Rest">
+			<description>You can cast identify (charisma), without material components, targeting a creature or object within 30 feet of you that you can see. If you target a mundane object, you determine its monetary value, as well as one fact about the object’s history. When you sell an item that you’ve used this feature on, you can sell it for 20% more than you normally could.</description>
 		</sheet>
+		<rules>
+			<stat name="an eye for quality:usage" value="1" bonus="base" />
+			<stat name="an eye for quality:usage" value="charisma:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Special Delivery" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_COINMONGER_SPECIAL_DELIVERY">
 		<description>
-			<p></p>
+			<p>At 13th level, you can purchase things directly from the Immeasurable Market. As an action, you can spend one of the Syranian coins from your Otherworldly Wealth and up to 100 gp in mundane coins that you are carrying. These coins all vanish. You then choose any number of mundane items worth in total no more than the coins you spent (see chapter 5 of the Player’s Handbook for such equipment). Those items are magically teleported from the Immeasurable Market itself into your hands, into containers you are carrying, and onto the ground within 10 feet of you, as you choose.</p>
+			<p class="indent">Once you use this feature, you cannot use it again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can spend one of the Syranian coins from your Otherworldly Wealth and up to 100 gp in mundane coins that you are carrying. These coins all vanish. You then choose any number of mundane items worth in total no more than the coins you spent. Those items are magically teleported from the Immeasurable Market itself into your hands, into containers you are carrying, and onto the ground within 10 feet of you, as you choose.</description>
 		</sheet>
 	</element>
 	<element name="Money Makes the World Go ‘Round" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_COINMONGER_MONEY_MAKES_THE_WORLD_GO_ROUND">
 		<description>
-			<p></p>
+			<p>At 17th level, you can purchase the almighty power of Syrania to change the very world around you. You gain the following option for your Otherworldly Wealth.</p>
+			<p class="indent"><strong><em>The World is Yours (17 coins).</em></strong> You can use an action before the end of your turn to cast wish. Charisma is your spellcasting ability for this spell. If you permanently lose your ability to cast wish, you regain your ability to cast it after 7 days.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="Otherworldly Wealth">
+			<description>The World is Yours (17). You can use an action before the end of your turn to cast wish using Charisma as your spellcasting ability. If you permanently lose your ability to cast wish, you regain your ability to cast it after 7 days.</description>
 		</sheet>
 	</element>
 
@@ -738,42 +1113,62 @@
 	</element>
 	<element name="Martial Talent" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WARSOUL_MARTIAL_TALENT">
 		<description>
-			<p></p>
+			<p>At 1st level, the knowledge of a thousand war-weary spirits awakens in your mind. You become proficient with light armor, medium armor, shields, simple weapons, and martial weapons. You can use any simple or martial weapon you wield as a spellcasting focus. You also become proficient with the History skill, as your mind opens to the causes and effects of wars across history.</p>
+			<p class="indent">You also gain one simple or martial weapon of your choice with which you’ve trained your martial magic.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You can use any simple or martial weapon you wield as a spellcasting focus.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+		</rules>
 	</element>
 	<element name="Warrior’s Vigor" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WARSOUL_WARRIORS_VIGOR">
 		<description>
-			<p></p>
+			<p>Starting at 1st level, the power of the Battleground strengthens your physical resolve. Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.</p>
+			<p class="indent">As an action, you can expend a spell slot to close your wounds and ready yourself for further battle. You regain hit points equal to 1d6 + your sorcerer level, plus an extra 1d6 hit points for each slot level beyond 1st.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action">
+			<description>You can expend a spell slot to regain 1d6+{{level:sorcerer}} hp, plus an extra 1d6 hp for each slot level beyond 1st.</description>
 		</sheet>
+		<rules>
+			<stat name="hp" value="level:sorcerer" />
+		</rules>
 	</element>
 	<element name="War Blade" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WARSOUL_WAR_BLADE">
 		<description>
-			<p></p>
+			<p>At 6th level, any weapon you wield is imbued with supernatural might. While you wield a simple or martial weapon, it is considered a magic weapon that grants a +1 bonus to attack and damage rolls if it does not already give a similar bonus to attack and damage rolls. This increases to +2 when you reach 14th level.</p>
+			<p class="indent">When you take the Attack action on your turn, you can attack twice, instead of once. This does not stack with similar features like Extra Attack.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>While you wield a simple or martial weapon, it is considered a magic weapon that grants a +1 bonus to attack and damage rolls if it does not already give a similar bonus to attack and damage rolls.
+			When you take the Attack action on your turn, you can attack twice, instead of once. This does not stack with similar features like Extra Attack.</description>
+			<description level="14">While you wield a simple or martial weapon, it is considered a magic weapon that grants a +2 bonus to attack and damage rolls if it does not already give a similar bonus to attack and damage rolls.
+			When you take the Attack action on your turn, you can attack twice, instead of once. This does not stack with similar features like Extra Attack.</description>
 		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" />
+		</rules>
 	</element>
 	<element name="Swarm of Swords" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WARSOUL_SWARM_OF_SWORDS">
 		<description>
-			<p></p>
+			<p>At 14th level, you can conjure the swarming blades of Shavarath to harry your enemies. When a creature takes an action within 30 feet of you, you can use your reaction to deal 2d8 force damage to that creature.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>When a creature takes an action within 30 feet of you, you can deal 2d8 force damage to that creature.</description>
 		</sheet>
 	</element>
 	<element name="Warrior’s Aegis" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_WARSOUL_WARRIORS_AEGIS">
 		<description>
-			<p></p>
+			<p>At 18th level, spirits leap forth to defend you from harm. Whenever you take bludgeoning, piercing, or slashing damage, it is reduced by an amount equal to your Charisma modifier.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Whenever you take bludgeoning, piercing, or slashing damage, it is reduced by {{charisma:modifier}}.</description>
 		</sheet>
 	</element>
 	
@@ -807,59 +1202,59 @@
 				<thead>
 					<tr><td>Spell Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>1st</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>2nd</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>3rd</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>4th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>1st</td><td><em>command, guiding bolt</em></td></tr>
+				<tr><td>2nd</td><td><em>arcane lock, zone of truth</em></td></tr>
+				<tr><td>3rd</td><td><em>blink, slow</em></td></tr>
+				<tr><td>4th</td><td><em>death ward, stone shape</em></td></tr>
+				<tr><td>5th</td><td><em>animate objects, wall of force</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false">
 			<description>Lawbringer lets you choose from an expanded list of spells when you learn a warlock spell.</description>
 		</sheet>
 		<spellcasting name="Warlock" extend="true">
-			<extend>ID_PHB_SPELL_xxxxx1</extend>
-			<extend>ID_PHB_SPELL_xxxxx2</extend>
-			<extend>ID_PHB_SPELL_xxxxx3</extend>
-			<extend>ID_PHB_SPELL_xxxxx4</extend>
-			<extend>ID_PHB_SPELL_xxxxx5</extend>
-			<extend>ID_PHB_SPELL_xxxxx6</extend>
-			<extend>ID_PHB_SPELL_xxxxx7</extend>
-			<extend>ID_PHB_SPELL_xxxxx8</extend>
-			<extend>ID_PHB_SPELL_xxxxx9</extend>
-			<extend>ID_PHB_SPELL_xxxxx0</extend>
+			<extend>ID_PHB_SPELL_COMMAND</extend>
+			<extend>ID_PHB_SPELL_GUIDING_BOLT</extend>
+			<extend>ID_PHB_SPELL_ARCANE_LOCK</extend>
+			<extend>ID_PHB_SPELL_ZONE_OF_TRUTH</extend>
+			<extend>ID_PHB_SPELL_BLINK</extend>
+			<extend>ID_PHB_SPELL_SLOW</extend>
+			<extend>ID_PHB_SPELL_DEATH_WARD</extend>
+			<extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+			<extend>ID_PHB_SPELL_ANIMATE_OBJECTS</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_FORCE</extend>
 		</spellcasting>
 	</element>
 	<element name="Word of the Law" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_LAWBRINGER_WORD_OF_THE_LAW">
 		<description>
-			<p></p>
+			<p>At 1st level, the Lawbringer has taught you how to bring order to the world around you with a single word. As an action, you can cause each creature within 10 feet of you (not including yourself) that can hear you to lose its reaction and have its speed reduced to 0 feet until the end of its next turn. You cannot do this again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can cause each creature within 10 feet of you (not including yourself) that can hear you to lose its reaction and have its speed reduced to 0 feet until the end of its next turn.</description>
 		</sheet>
 	</element>
 	<element name="Hands of Fate" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_LAWBRINGER_HANDS_OF_FATE">
 		<description>
-			<p></p>
+			<p>At 6th level, whenever you or a creature within 30 feet of you rolls a d20, you can use your reaction to make the roll equal a number of your choice between 1 and 12. You can use this feature after the d20 is rolled but before any effects of the roll take place. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>Whenever you or a creature within 30 feet of you rolls a d20, you can make the roll equal a number of your choice between 1 and 12. You can use this feature after the d20 is rolled but before any effects of the roll take place.</description>
 		</sheet>
 	</element>
 	<element name="Enforcing Order" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_LAWBRINGER_ENFORCING_ORDER">
 		<description>
-			<p></p>
+			<p>At 10th level, you can stop your enemies in their tracks. When a creature would move while within 30 feet of you, you can use your reaction to force it to make a Wisdom saving throw against your pact magic save DC. On a failed save, its speed is reduced to 0 feet until the end of its turn.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>When a creature would move while within 30 feet of you, you can force it to make a Wisdom saving throw. On a failed save, its speed is reduced to 0 feet until the end of its turn.</description>
 		</sheet>
 	</element>
 	<element name="Restoring Touch" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_LAWBRINGER_RESTORING_TOUCH">
 		<description>
-			<p></p>
+			<p>At 14th level, you learn how to restore a creature to a previous state, as it is recorded within the Infinite Archives. As an action, you can touch yourself or a willing creature to restore the target’s hit points to their count from 10 minutes beforehand. If you touch a dead creature that died within the last 10 minutes, it returns to life. You cannot do this again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can touch yourself or a willing creature to restore the target’s hit points to their count from 10 minutes beforehand. If you touch a dead creature that died within the last 10 minutes, it returns to life.</description>
 		</sheet>
 	</element>
 
@@ -888,42 +1283,66 @@
 	</element>
 	<element name="Ritual of Revelation" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_REVELATION_RITUAL_OF_REVELATION">
 		<description>
-			<p></p>
+			<p>Starting at 2nd level, you can access the insights of the aberrant realms. When you take a short rest and use your Arcane Recovery, you can choose to access the revelatory essence of Xoriat instead of regaining spell slots. You learn one piece of lore about a subject of your choice. The nature of the lore is determined by the DM, usually consisting of one true statement about the subject. This revealed lore is always true but not necessarily useful, and it is often revealed by visions, disembodied voices, or other eldritch phenomenon.</p>
+			<p class="indent">You gain more information from this feature as your understanding of Xoriat grows, increasing to two pieces of lore at 6th level, three at 10th level, and four at 14th level. These extra pieces of lore can each be on a different subject of your choice.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you take a short rest and use your Arcane Recovery, you can choose to access the revelatory essence of Xoriat instead of regaining spell slots. You learn one piece of lore about a subject of your choice. This revealed lore is always true but not necessarily useful, and it is often revealed by visions, disembodied voices, or other eldritch phenomenon.</description>
+			<description level="6">When you take a short rest and use your Arcane Recovery, you can choose to access the revelatory essence of Xoriat instead of regaining spell slots. You learn two pieces of lore about a subject of your choice. This revealed lore is always true but not necessarily useful, and it is often revealed by visions, disembodied voices, or other eldritch phenomenon.</description>
+			<description level="10">When you take a short rest and use your Arcane Recovery, you can choose to access the revelatory essence of Xoriat instead of regaining spell slots. You learn three pieces of lore about a subject of your choice. This revealed lore is always true but not necessarily useful, and it is often revealed by visions, disembodied voices, or other eldritch phenomenon.</description>
+			<description level="14">When you take a short rest and use your Arcane Recovery, you can choose to access the revelatory essence of Xoriat instead of regaining spell slots. You learn four pieces of lore about a subject of your choice. This revealed lore is always true but not necessarily useful, and it is often revealed by visions, disembodied voices, or other eldritch phenomenon.</description>
 		</sheet>
 	</element>
 	<element name="All-Seeing Eye" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_REVELATION_ALL_SEEING_EYE">
 		<description>
-			<p></p>
+			<p>At 2nd level, you can see past a creature’s façade and learn its true intentions. As an action, choose a creature within 30 feet of you that you can see. It has disadvantage on attack rolls against you, it cannot make opportunity attacks against you, and you magically know when it lies to you. This benefit lasts while you can see the creature and it is within 30 feet of you, until you are incapacitated, or until you use this feature again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action">
+			<description>Choose a creature within 30 feet of you that you can see. It has disadvantage on attack rolls against you, it cannot make opportunity attacks against you, and you magically know when it lies to you. This benefit lasts while you can see the creature and it is within 30 feet of you, until you are incapacitated, or until you use this feature again.</description>
 		</sheet>
 	</element>
 	<element name="Warper of Flesh" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_REVELATION_WARPER_OF_FLESH">
 		<description>
-			<p></p>
+			<p>At 6th level, your studies unlock terrible secrets: blood magic, flesh warping, and worse. And yet, you cannot deny their usefulness. When you cast a transmutation spell using a spell slot targeting only one creature, you can grant the creature one of the following extra benefits that last until the spell ends.</p>
+			<ul>
+				<li>The creature gains temporary hit points equal to the level of the spell x 5. Any remaining temporary hit points vanish when the spell ends.</li>
+				<li>The creature’s speed increases by a number of feet equal to the level of the spell x 5.</li>
+				<li>The creature’s reach increases by 5 feet, or 10 feet if the spell is of 6th level or higher.</li>
+				<li>When the creature hits with a weapon attack, it deals extra acid or poison damage (your choice) equal to 2 x the level of the spell.</li>
+			</ul>
+			<p>The creature affected by the spell has its anatomy altered, usually in horrible ways. Its limbs may extend unnaturally, it may grow chitinous plating, or it may start to spontaneously bleed or exude toxic bile. Its body returns to normal when the spell ends.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum once). You regain your uses of this feature when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="{{warper of flesh:usage}}/Long Rest">
+			<description>When you cast a transmutation spell using a spell slot targeting only one creature, you can grant the creature one of the following extra benefits that last until the spell ends.
+			The creature gains temporary hp equal to the level of the spell x 5. Any remaining temporary hit points vanish when the spell ends.
+			The creature’s speed increases by a number of feet equal to the level of the spell x 5.
+			The creature’s reach increases by 5 feet, or 10 feet if the spell is of 6th level or higher.
+			When the creature hits with a weapon attack, it deals extra acid or poison damage equal to 2 x the level of the spell.
+			The creature affected by the spell has its anatomy altered, usually in horrible ways. Its limbs may extend unnaturally, it may grow chitinous plating, or it may start to spontaneously bleed or exude toxic bile. Its body returns to normal when the spell ends.</description>
 		</sheet>
+		<rules>
+			<stat name="warper of flesh:usage" value="1" bonus="base" />
+			<stat name="warper of flesh:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Lucid Mind" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_REVELATION_LUCID_MIND">
 		<description>
-			<p></p>
+			<p>At 10th level, the revelations of Xoriat have pushed your mind beyond the boundaries of mortal experience, allowing you unmatched clarity. You become immune to psychic damage. When you would make an ability check or saving throw using your Wisdom or Charisma, you can use your Intelligence instead.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you would make an ability check or saving throw using your Wisdom or Charisma, you can use your Intelligence instead.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_PSYCHIC" />
+		</rules>
 	</element>
 	<element name="Gift of Revelation" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_DMSG_EHP_ARCHETYPE_FEATURE_REVELATION_GIFT_OF_REVELATION">
 		<description>
-			<p></p>
+			<p>At 14th level, you can bestow some of the forbidden knowledge you’ve learned upon your allies. When you use your Ritual of Revelation, you can choose a creature within 30 feet of you and bestow your knowledge upon it. Choose a spell of 1st, 2nd, or 3rd level in your spellbook. The creature can cast that spell three times without expending a spell slot, using your spellcasting ability. The creature loses any remaining uses when you use this feature again.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you use your Ritual of Revelation, you can choose a creature within 30 feet of you and bestow your knowledge upon it. Choose a spell of 1st, 2nd, or 3rd level in your spellbook. The creature can cast that spell three times without expending a spell slot, using your spellcasting ability. The creature loses any remaining uses when you use this feature again.</description>
 		</sheet>
 	</element>
 
