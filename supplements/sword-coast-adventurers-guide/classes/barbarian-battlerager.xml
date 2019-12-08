@@ -4,7 +4,7 @@
 		<name>Path of the Battlerager</name>
 		<description>The Path of the Battlerager archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.0.6">
+		<update version="0.0.7">
 			<file name="barbarian-battlerager.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/barbarian-battlerager.xml" />
 		</update>
 	</info>
@@ -15,15 +15,17 @@
 		<requirements>ID_SRD_RACE_DWARF</requirements>
 		<description>
 			<p>Known as <i>Kuldjargh</i> (literally "axe idiot") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, spiked armor and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.</p>
-			<h5>RESTRICTION: DWARVES ONLY</h5>
-			<p>Only dwarves can follow the Path of the Battlerager. The battlerager fills a particular niche in dwarven society and culture.</p>
-			<p class="indent">Your DM can lift this restriction to better suit the campaign. The restriction exists for the Forgotten Realms. It might not apply to your DM's setting or your DM's version of the Realms.</p>
+			<div class="sidebar">
+				<h5>RESTRICTION: DWARVES ONLY</h5>
+				<p>Only dwarves can follow the Path of the Battlerager. The battlerager fills a particular niche in dwarven society and culture.</p>
+				<p class="indent">Your DM can lift this restriction to better suit the campaign. The restriction exists for the Forgotten Realms. It might not apply to your DM's setting or your DM's version of the Realms.</p>
+			</div>
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PATH_OF_THE_BATTLERAGER_BATTLERAGER_ARMOR" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PATH_OF_THE_BATTLERAGER_RECKLESS_ABANDON" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PATH_OF_THE_BATTLERAGER_BATTLERAGER_CHARGE" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PATH_OF_THE_BATTLERAGER_SPIKED_RETRIBUTION" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Known as Kuldjargh (literally "axe idiot") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager.</description>
 		</sheet>
 		<rules>
@@ -51,7 +53,7 @@
 			<p>Beginning at 6th level, when you use Reckless Attack while raging, you also gain temporary hit points equal to your Constitution modifier (minimum of 1). They vanish if any of them are left when your rage ends.</p>
 		</description>
 		<sheet>
-			<description>When you use Reckless Attack while raging, you also gain {{reckless abandon:hp:temp}} temporary hit points. They vanish if any of them are left when your rage ends.</description>
+			<description>When you use Reckless Attack while raging, you also gain {{reckless abandon:hp:temp}} temporary hp. They vanish if any of them are left when your rage ends.</description>
 		</sheet>
 		<rules>
 			<stat name="reckless abandon:hp:temp" value="1" bonus="reckless abandon" />
@@ -62,10 +64,9 @@
 		<description>
 			<p>Beginning at 10th level, you can take the Dash action as a bonus action while you are raging.</p>
 		</description>
-		<sheet>
-			<description>You can take the Dash action as a bonus action while you are raging.</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Dash action while you are raging.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Spiked Retribution" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PATH_OF_THE_BATTLERAGER_SPIKED_RETRIBUTION">
 		<description>
@@ -74,7 +75,6 @@
 		<sheet>
 			<description>When a creature within 5 feet of you hits you with a melee attack, the attacker takes 3 piercing damage if you are raging, aren't incapacitated, and are wearing spiked armor.</description>
 		</sheet>
-		<rules />
 	</element>
 
 	<!-- Spiked Armor -->
