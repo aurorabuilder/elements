@@ -4,23 +4,19 @@
 		<name>Bladesinging</name>
 		<description>The Bladesinging archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.1.3">
+		<update version="0.1.4">
 			<file name="wizard-bladesinging.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/wizard-bladesinging.xml" />
 		</update>
 	</info>
 
-	<!-- option to allow non-elf/half-elf to select the archetype  -->
-	<element name="Bladesinging (Lift Restriction)" type="Option" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_OPTION_BLADESINGING">
+	<element name="Bladesinger" type="Option" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_OPTION_BLADESINGING">
 		<description>
 			<p>Only elves and half-elves can choose the bladesinger arcane tradition. In the world of Faerûn, elves closely guard the secrets of bladesinging.</p>
 			<p class="indent">Your DM can lift this restriction to better suit the campaign. The restriction reflects the story of bladesingers in the Forgotten Realms, but it might not apply to your DM’s setting or your DM’s version of the Realms.</p>
 		</description>
 		<setters>
-			<set name="short">Only elves and half-elves can choose the bladesinger arcane tradition.</set>
+			<set name="short">Allow any race to choose the Bladesinger arcane tradition.</set>
 		</setters>
-		<sheet>
-			<description>Only elves and half-elves can choose the bladesinger arcane tradition. In the world of Faerûn, elves closely guard the secrets of bladesinging. Your DM can lift this restriction to better suit the campaign. The restriction reflects the story of bladesingers in the Forgotten Realms, but it might not apply to your DM’s setting or your DM’s version of the Realms.</description>
-		</sheet>
 	</element>
 
 	<element name="Bladesinging" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_BLADESINGING">
@@ -28,16 +24,18 @@
 		<requirements>ID_RACE_ELF||ID_RACE_HALFELF||ID_WOTC_SCAG_OPTION_BLADESINGING</requirements>
 		<description>
 			<p>Bladesingers are elves who bravely defend their people and lands. They are elf wizards who master a school of sword fighting grounded in a tradition of arcane magic. In combat, a bladesinger uses a series of intricate, elegant maneuvers that fend off harm and allow the bladesinger to channel magic into devastating attacks and a cunning defense.</p>
-			<h5>RESTRICTION: ELVES ONLY</h5>
-			<p>Only elves and half-elves can choose the bladesinger arcane tradition. In the world of Faerûn, elves closely guard the secrets of bladesinging.</p>
-			<p class="indent">Your DM can lift this restriction to better suit the campaign. The restriction reflects the story of bladesingers in the Forgotten Realms, but it might not apply to your DM’s setting or your DM’s version of the Realms.</p>
+			<div class="sidebar">
+				<h5 class="caption">RESTRICTION: ELVES ONLY</h5>
+				<p>Only elves and half-elves can choose the bladesinger arcane tradition. In the world of Faerûn, elves closely guard the secrets of bladesinging.</p>
+				<p class="indent">Your DM can lift this restriction to better suit the campaign. The restriction reflects the story of bladesingers in the Forgotten Realms, but it might not apply to your DM’s setting or your DM’s version of the Realms.</p>
+			</div>
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" />
 			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Bladesingers are elves who bravely defend their people and lands.</description>
 		</sheet>
 		<rules>
@@ -68,7 +66,7 @@
 			<p class="indent">You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time you choose (no action required).</p>
 			<p class="indent">While your Bladesong is active, you gain the following benefits:</p>
 			<ul>
-				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of + 1).</li>
+				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1).</li>
 				<li>Your walking speed increases by 10 feet.</li>
 				<li>You have advantage on Dexterity (Acrobatics) checks .</li>
 				<li>You gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +l).</li>
@@ -76,7 +74,7 @@
 			<p class="indent">You can use this feature twice. You regain all expended uses of it when you finish a short or long rest.</p>
 		</description>
 		<sheet usage="2/Short Rest">
-			<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +{{bladesong:intelligence}} AC, +10 speed, advantage on Acrobatics checks, +{{bladesong:intelligence}} to concentration checks.</description>
+			<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +{{bladesong:intelligence}} AC, +10 walking speed, advantage on Acrobatics checks, +{{bladesong:intelligence}} to concentration checks.</description>
 		</sheet>
 		<rules>
 			<stat name="bladesong:intelligence" value="1" bonus="bladesong" />
@@ -98,17 +96,16 @@
 		<description>
 			<p>Beginning at 10th level, you can direct your magic to absorb damage while your Bladesong is active. When you take damage, you can use your reaction to expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot’s level.</p>
 		</description>
-		<sheet>
+		<sheet action="Reaction">
 			<description>When you take damage, you can use your reaction to expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot’s level.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Song of Victory" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY">
 		<description>
 			<p>Starting at 14th level, you add your Intelligence modifier (minimum of +1) to the damage of your melee weapon attacks while your Bladesong is active.</p>
 		</description>
 		<sheet>
-			<description>You add +{{bladesong:intelligence}} to the damage of your melee weapon attacks while your Bladesong is active.</description>
+			<description>+{{bladesong:intelligence}} to the damage of your melee weapon attacks while your Bladesong is active.</description>
 		</sheet>
 		<rules>
 			<!-- +bladesong:intelligence on melee damage, condition bladesong active -->
