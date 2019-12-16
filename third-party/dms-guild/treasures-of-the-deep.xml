@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Treasures of the Deep</name>
+		<update version="0.0.2">
+			<file name="treasures-of-the-deep.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/treasures-of-the-deep.xml" />
+		</update>
+	</info>
+
+	<element name="Treasures of the Deep" type="Source" source="Core" id="ID_DMSG_TOTD_SOURCE_TREASURES_OF_THE_DEEP">
+		<description>
+			<p><em>Forgotten shipwrecks. Underwater caverns. Hidden pirate coves. Haunted lighthouses. These are just a few locations where powerful magic items are waiting to be discovered by adventurers brave and bold enough to explore the savage seas and untamed oceans.</em></p>
+			<p>Inspired by the official Dungeons &amp; Dragons adventure Ghosts of Saltmarsh, this product supplements that content by providing additional rewards and ideas for players and Dungeon Masters. These are the types of items adventurers might find inside a shipwreck at the bottom of the ocean, locked away in a chest found in a pirate cove, wielded by a kua-toa shaman, hidden in an underwater cave, or guarded by a legendary sea creature. The items are meant to enhance the immersion of sea based adventures and inspire players to connect more with the nautical theme.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">TOTD</set>
+			<set name="url">https://www.dmsguild.com/product/275730/Treasures-of-the-Deep</set>
+			<set name="image">https://www.dmsguild.com/images/8957/275730.png</set>
+			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=Steve%20%22Jaspor%22%20Orr">Steve "Jaspor" Orr, Bill Putrino</set>
+			<set name="third-party">true</set>
+			<set name="release">20190514</set>
+		</setters>
+	</element>
+
+	<element name="Amphibious Armor" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_ARMOR_AMPHIBIOUS_ARMOR">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor and you have a swimming speed of 40 feet. While wearing this armor underwater, it will automatically create a magical air pocket around your head, allowing you to breathe normally. The air pocket exists until the armor is removed or you are no longer underwater</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Amphibious {{parent}}, +1</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:enhancement" value="1" />
+			<stat name="speed:swim" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Anchor of Transference" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_ANCHOR_OF_TRANSFERENCE">
+		<description>
+			<p>This metal anchor measures about 3 feet tall and 2 feet wide. While touching the anchor, you can use an action to speak its command word and change its weight. The anchor can be transformed to weight as little as 1 pound, as much as 10,000 pounds, or any weight in between. A creature may use an action to move the anchor if it weighs 1,000 pounds or more, with a successful DC 23 Strength check moving the anchor 10 feet. The DC of the Strength check increases by one for each additional 1,000 of weight, up to a DC of 32 to move a 10,000 pound anchor. The weight of the anchor can be modified in this way twice a day, with the charges restored daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>	
+	<element name="Cloak of the Kraken" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_CLOAK_OF_THE_KRAKEN">
+		<description>
+			<p>While wearing this cloak, you may use an action to make a Tentacle Attack. A tentacle sprouts from the cloak, does damage, and has a chance to grapple the target if you choose to. Tentacle Attack can only be used once per long rest.</p>
+			<p class="indent"><strong><em>Tentacle Attack.</em></strong> Melee Weapon Attack: +6 to hit, reach 30 ft., one target. Hit: 3d6 bludgeoning damage.</p>
+			<p class="indent"><strong><em>Grapple.</em></strong> Target makes a DC 13 Strength (Athletics) or Dexterity (Acrobatics) check. If the target fails, it becomes grappled and restrained.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Compass of Seeking" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_COMPASS_OF_SEEKING">
+		<description>
+			<p>This compass has 5 charges. While holding it, you can use an action and expend 1 charge to cast the locate object spell from it. The compass regains 1d4+1 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="charges">5</set>
+		</setters>
+	</element>	
+	<element name="Conch of Booming Voice" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_CONCH_OF_BOOMING_VOICE">
+		<description>
+			<p>You can use an action to speak into this conch. The conch magically amplifies your voice, increasing its volume and allowing you to influence creatures within a 60 foot radius. The conch has 3 charges and regains 1d4 - 1 charges daily at dawn. The charges may be used to activate the following effects:</p>
+			<p class="indent"><strong><em>Amplified Message.</em></strong> Words spoken through the conch using this effect can be heard clearly by all creatures within 300 feet. The sound can penetrate most barriers, but it is blocked by 1 foot of lead or any magical barriers.</p>
+			<p class="indent"><strong><em>Howl of Terror.</em></strong> A loud terrifying howl is emitted from the conch. Each hostile creature that can hear within a 60 foot radius must succeed on a DC 13 Wisdom saving throw or become frightened of you for 1 minute. While it is frightened in this way, a creature must spend its turns trying to move as far away from you as it can, and it cannot willingly move to a space within 30 feet of you. It also cannot take reactions.</p>
+			<p class="indent"><strong><em>Command of Inspiration.</em></strong> Loud words of motivation are emitted from the conch, encouraging your allies in battle. Each friendly creature that can hear within a 60 foot radius has advantage on its next attack roll.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Eye Patch Map" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_EYE_PATCH_MAP">
+		<description>
+			<p>This eye patch has 2 charges. While you wear this eye patch, you can use an action the speak its command word to activate an effect that allows you to see the layout of the surrounding area. You can detect walls, hallways, and doors. You cannot detect any creatures, items, or traps. This effect has a range of a 100-foot-cube area centered on you. The effect lasts for one hour. The effect can penetrate most barriers, but it is blocked by 10 feet of stone, 1 foot of common metal, a thin sheet of lead, or 20 feet of wood or dirt. The eye patch regains all its charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>	
+	<element name="Figurine of Wondrous Power, Coral Sea Horse" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_FIGURINE_OF_WONDROUS_POWER_CORAL_SEA_HORSE">
+		<description>
+			<p>This statuette of a sea horse is made of a light pink coral material and is small enough to fit in your pocket. Using an action to speak its command word transforms the figurine into a living giant sea horse that obeys your commands. It can become a giant sea horse for up to 6 hours and can be ridden as a mount while in water. Once it has been used, it can’t be used again until 2 days have passed.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Flippers of Speed" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_FLIPPERS_OF_SPEED">
+		<description>
+			<p>While you wear these flippers, you can use a bonus action to speak their command word to activate them. Once activated, your swimming speed becomes twice your usual walking speed. The duration of the effect lasts for 10 minutes, after which you return to normal swimming speed. This effect cannot be used again until finishing a long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>	
+	<element name="Harpoon of Travel" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_HARPOON_OF_TRAVEL">
+		<description>
+			<p>You gain +1 bonus to attack and damage rolls made with this weapon. The harpoon has 4 charges. While attuned to this weapon, you can use a bonus action to speak its command word and teleport to the harpoon’s location as if you had cast the misty step spell. The range may be up to 60 feet and you do not have to see the harpoon in order to teleport to it. The harpoon regains all its charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">spear</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="spear">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Spear</set>
+			<set name="charges">4</set>
+		</setters>
+	</element>
+	<element name="Majestic Pearl" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_MAJESTIC_PEARL">
+		<description>
+			<p>A gritty looking pearl that allows its holder and party to travel between the Material Plane and the Elemental Plane of Water. Upon speaking the command word, you and any creature touching you will be transported to the opposite plane. This effect only works while you are in the Material Plane or the Plane of Water. The Majestic Pearl’s power needs 24 hours to recharge before it can be used again.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Peg Leg of Thunder" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_PEG_LEG_OF_THUNDER">
+		<description>
+			<p>To attune to the peg leg, you must press the artifact against the stump of your leg severed at the knee. (The leg may have been removed by accident or willingly.) The peg leg attaches itself to your leg and becomes a functioning appendage. If the peg leg is ever removed, you suffer 3d10 necrotic damage and lose attunement. While attuned to the peg leg, your walking speed decreases by 5 feet. The peg leg has 3 charges. While wearing it, you can use an action to stomp the leg and cast the thunderwave spell (save DC 15) from it. The peg leg regains all its charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>	
+	<element name="Pocket Plank" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_POCKET_PLANK">
+		<description>
+			<p>This pocket sized piece of wood expands into a long and narrow wooden plank when its command word is spoken. If you hold the piece of wood and use an action to speak the command word, the wood grows from a small rectangle of light wood into a 5 foot by 20 foot sturdy wooden plank. The plank can hold up to 1,000 pounds of weight. As a bonus action, you can command the plank to move toward a destination you choose up to 30 feet away. The plank will magically remain in place until another bonus action is used to move it to a new location or an action is used to speak the command word to transform it back to its pocket size.</p>
+			<p class="indent">If the weight on the plank exceeds 1,000 pounds, the effect immediately ends and the plank transforms back to its pocket size. Any creatures or items on the plank when it shrinks are dropped immediately. Creatures take 1d6 bludgeoning damage for every 10 feet they fall. Creatures land prone, unless they avoid taking any damage from the fall.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Pristine Grain Of Sand" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_PRISTINE_GRAIN_OF_SAND">
+		<description>
+			<p>A single grain of sand that a dying wizard infused with the last of his magic powers. This grain of sand my act as a reagent for any spell regardless of the reagent’s price. If the reagent is typically consumed during the casting of the spell, then the grain of sand is consumed as well.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>	
+	<element name="Seaweed Weed" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_SEAWEED_WEED">
+		<description>
+			<p>Upon eating the seaweed weed you become calm and relaxed, healing yourself for 2d6 + 4 hit points. However, you are incredibly hungry within minutes. You have disadvantage on your next saving throw unless you eat something to satisfy your hunger. You cannot benefit from the weed’s healing effect again until 4 days have passed.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Shark Tooth Sword" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_SHARK_TOOTH_SWORD">
+		<description>
+			<p>You gain +1 bonus to attack and damage rolls made with this weapon. When you hit a creature with an attack using this magic weapon, the jagged teeth cause it to bleed for 1d4 rounds. At the start of each of the wounded creature’s turns, the creature suffers 1d6 piercing damage for the duration of the effect.</p>
+		</description>
+		<setters>
+			<set name="keywords">sword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Shark Tooth Sword, +1</set>
+		</setters>
+	</element>
+	<element name="Speaking Shells" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_SPEAKING_SHELLS">
+		<description>
+			<p>Speaking shells come in groups of 1d4 + 1 and have matching coloring and patterns in the shell contours. While you touch one shell, you can use an action to cast the sending spell from it to the other shells. Once the shells are used to communicate in this way, they can’t be used again until after a short rest.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Staff of Netting" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_STAFF_OF_NETTING">
+		<description>
+			<p>This staff can be wielded as a magic quarterstaff that grants a +1 bonus to attack and damage rolls made with it. While you hold this staff, magic can neither reduce your speed nor cause you to be paralyzed or restrained. The staff has 4 charges. While holding it, you can use an action to expend 1 charge to cast the web spell from it, using your spell save DC. The staff regains 1d4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1 the staff turns to sand and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="type">Staff</set>
+			<set name="attunement" addition="by a bard, cleric, druid, sorcerer, warlock, or wizard">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="charges">4</set>
+		</setters>
+	</element>	
+	<element name="Tricorn Hat of Influence" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_TRICORN_HAT_OF_INFLUENCE">
+		<description>
+			<p>This hat has 5 charges. As a bonus action, you may touch the brim of the hat to expend a charge and activate its effect. While activated, the hat gives you advantage on Charisma (Persuasion) checks and Charisma (Intimidation) checks. The effect lasts for 10 minutes. The hat regains 1d4 + 1 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">5</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Turtle Shell Shield" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_SHIELD_TURTLE_SHELL_SHIELD">
+		<description>
+			<p>While holding this shield, you gain a +1 bonus to AC. This bonus is in addition to the shield’s normal bonus to AC. While holding this shield, you can speak its command word as a bonus action to cause it to extend. The outer rim of the shield expands, providing additional protection and an additional +2 bonus to AC. The shield remains expanded for 10 minutes, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield contracts back to its original size. The shield can’t be used this way again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Turtle Shell {{parent}}, +1</set>
+		</setters>
+		<rules>
+			<stat name="ac:shield" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+	<element name="The Captain’s Log" type="Magic Item" source="Treasures of the Deep" id="ID_DMSG_TOTD_MAGIC_ITEM_CAPTAINS_LOG">
+		<description>
+			<p>This leather-bound journal contains 100 pages recounting the stories and exploits of Captain James Murgan. Reading a story aloud may inspire those around you. Roll a 1d100 and refer to the table on the following page to select the title of a chapter within the book. One or more players may tell an original story inspired by the title. At the DM’s discretion, they may award inspiration to each player that told a tale worthy of legend. This book cannot be used again in this way until 3 days have passed.</p>
+			<p class="indent"><strong><em>Captain’s Insight.</em></strong> The Captain’s Log has magically inherited much of the experience and knowledge that Captain Murgan gained during his years at sea. While attuned to the Log, you gain proficiency in the Intelligence (History) skill and with navigator’s tools.</p>
+			<p class="indent"><strong><em>Ghost Ship.</em></strong> While attuned to the Captain’s Log, you can use an action to speak its command word to transform it into a ship. When the word is spoken, the book opens and a ghostly fog pours out in a 30-foot radius from the book. The fog’s area is heavily obscured. Once the fog has filled its entire 30-foot radius area, the ship appears. The ship is 40 feet long, 15 feet wide, and 8 feet deep. The ship has a deck, rowing seats, six sets of oars, a rudder, an anchor, a deck cabin, and a mast with a rectangular sail. The ship can hold twenty Medium creatures comfortably. When the book becomes the ship, its weight becomes that of a normal vessel its size. An action can be used to speak its command word, causing the boat to transform back into the book, provided that no creatures are aboard. The ghostly fog surrounds the boat as it changes shape. Any objects in the vessel appear outside the book after it transforms.</p>
+			<p class="indent"><strong><em>Curse of the Drowned Sailor.</em></strong> The Captain’s Log has witnessed more than a few sailors fall overboard and drown, and those events have left an impression on the book. When you first become attuned to the artifact, you feel the sense of dread of the countless sailors who have drowned in the book’s vicinity and you take 4d10 psychic damage.</p>
+			<p class="indent">While attuned to the artifact and you are more than 10 feet away from it, your ears and lungs are filled with the sensation of rushing water and you feel as if you are drowning. You can hold your breath for a number of minutes equal to 1 + your Constitution modifier (minimum of 1 minute). When you run out of breath, you can survive for a number of rounds equal to your Constitution modifier (minimum of 1 round). At the start of your next turn, you drop to 0 Hit Points and are dying, and you cannot regain Hit Points or be stabilized until you are within 10 feet of the Log and can breathe again. If you remain out of range of the book, you begin dying from this drowning effect and must roll death saving throws. On your third success, you become stable, end the drowning effect, and lose your attunement to the Log. On your third failure, you die, and your soul is consumed by the Log. You cannot be restored to life by any means while your soul remains imprisoned. Destroying the Log will release your soul.</p>
+			<p class="indent"><strong><em>Destroying the Log.</em></strong> Destroying the Captain’s Log requires it be left in direct sunlight for 100 consecutive days. At the end of the 100th day, the book shrivels into an unreadable mass and loses its powers. If the book is destroyed while a creature is attuned to it, that creature dies. Any souls that were trapped inside the Log are set free. Submerging the book in salt water for 1d20 + 1 years will repair its condition and restore its powers.</p>
+			<table>
+				<thead>
+					<tr><td>d100</td><td>Chapter Title</td></tr>
+				</thead>
+				<tr><td>01</td><td>The Dragon Games</td></tr>
+				<tr><td>02</td><td>Black Sails</td></tr>
+				<tr><td>03</td><td>The Mermaid</td></tr>
+				<tr><td>04</td><td>Walked The Plank But Didn’t Get Wet</td></tr>
+				<tr><td>05</td><td>The Drunk And The Skunk</td></tr>
+				<tr><td>06</td><td>The Hanging of Ajgus</td></tr>
+				<tr><td>07</td><td>Serpent’s Tail</td></tr>
+				<tr><td>08</td><td>The Floating Head</td></tr>
+				<tr><td>09</td><td>Where’s My Bloody Ship?</td></tr>
+				<tr><td>10</td><td>The Painted Man</td></tr>
+				<tr><td>11</td><td>I Found The End Of The World!</td></tr>
+				<tr><td>12</td><td>The Missing Rum</td></tr>
+				<tr><td>13</td><td>Loose Lips Sink Ships</td></tr>
+				<tr><td>14</td><td>I Think His Name Was Redondo</td></tr>
+				<tr><td>15</td><td>She Was The One That Got Away</td></tr>
+				<tr><td>16</td><td>I Was Only 12 Paces Away From...</td></tr>
+				<tr><td>17</td><td>We Want The Redhead</td></tr>
+				<tr><td>18</td><td>X Never Marks The Spot</td></tr>
+				<tr><td>19</td><td>Marooned</td></tr>
+				<tr><td>20</td><td>Catman</td></tr>
+				<tr><td>21</td><td>The Haunted Ship</td></tr>
+				<tr><td>22</td><td>The Crow That Roared</td></tr>
+				<tr><td>23</td><td>Collateral Damage</td></tr>
+				<tr><td>24</td><td>Shakey Jake</td></tr>
+				<tr><td>25</td><td>The Burning Bridge</td></tr>
+				<tr><td>26</td><td>My Friend, The Werewolf</td></tr>
+				<tr><td>27</td><td>The Seed Puzzle</td></tr>
+				<tr><td>28</td><td>Buying A Ladder</td></tr>
+				<tr><td>29</td><td>The One-Eyed Sir</td></tr>
+				<tr><td>20</td><td>Disguise Kit Mayhem</td></tr>
+				<tr><td>31</td><td>The Idiot Pit</td></tr>
+				<tr><td>32</td><td>Jail Break</td></tr>
+				<tr><td>33</td><td>The Colored Cloak Murders</td></tr>
+				<tr><td>34</td><td>Leap Before You Look</td></tr>
+				<tr><td>35</td><td>Dancing In The Pollen</td></tr>
+				<tr><td>36</td><td>The Siren’s Song</td></tr>
+				<tr><td>37</td><td>Dark Vendetta</td></tr>
+				<tr><td>38</td><td>Band Of Bojas</td></tr>
+				<tr><td>39</td><td>The Silver Arrow</td></tr>
+				<tr><td>40</td><td>Kidnapped By Hags</td></tr>
+				<tr><td>41</td><td>The Storm To End All Storms</td></tr>
+				<tr><td>42</td><td>The Empty Dingy</td></tr>
+				<tr><td>43</td><td>Frozen Ocean</td></tr>
+				<tr><td>44</td><td>The Foggy Morning</td></tr>
+				<tr><td>45</td><td>A Dangerous Game Of Cards</td></tr>
+				<tr><td>46</td><td>You Wouldn’t Believe What We Loaded The Cannons With</td></tr>
+				<tr><td>47</td><td>The Talking Sharks</td></tr>
+				<tr><td>48</td><td>Pick Pockets</td></tr>
+				<tr><td>49</td><td>This Book Is Going To Kill Me</td></tr>
+				<tr><td>50</td><td>Raining Crabs</td></tr>
+				<tr><td>51</td><td>The Repeating Day</td></tr>
+				<tr><td>52</td><td>I’ve Never Seen The Sea So Calm</td></tr>
+				<tr><td>53</td><td>The Poisoned Eel</td></tr>
+				<tr><td>54</td><td>Potion Testing</td></tr>
+				<tr><td>55</td><td>The Squeaky Levers</td></tr>
+				<tr><td>56</td><td>Mage Asylum</td></tr>
+				<tr><td>57</td><td>The Temple Of Boom</td></tr>
+				<tr><td>58</td><td>Of Mimics And Men</td></tr>
+				<tr><td>59</td><td>The Jig Is Up</td></tr>
+				<tr><td>60</td><td>Slaves To The Grind</td></tr>
+				<tr><td>61</td><td>The Crystal Relics</td></tr>
+				<tr><td>62</td><td>My Favorite Tavern</td></tr>
+				<tr><td>63</td><td>The Woman With Two Left Feet</td></tr>
+				<tr><td>64</td><td>House Of Mirrors</td></tr>
+				<tr><td>65</td><td>100 Bottles of Rum on the Wall</td></tr>
+				<tr><td>66</td><td>The Joke’s On Him</td></tr>
+				<tr><td>67</td><td>The Joke Was On Me</td></tr>
+				<tr><td>68</td><td>Blood In The Water</td></tr>
+				<tr><td>69</td><td>The Chase</td></tr>
+				<tr><td>70</td><td>Beer Drinking Fools</td></tr>
+				<tr><td>71</td><td>Seven Spells Well Spent</td></tr>
+				<tr><td>72</td><td>The Crewless Ship</td></tr>
+				<tr><td>73</td><td>Stalked</td></tr>
+				<tr><td>74</td><td>Who’s Baby Is That?</td></tr>
+				<tr><td>75</td><td>That Time We All Dressed As Wenches</td></tr>
+				<tr><td>76</td><td>A Meal at Fudd’s</td></tr>
+				<tr><td>77</td><td>The Red Menace</td></tr>
+				<tr><td>78</td><td>A Not So Soft Landing</td></tr>
+				<tr><td>79</td><td>The Devil Inside</td></tr>
+				<tr><td>80</td><td>Burning Windmills</td></tr>
+				<tr><td>81</td><td>Catch Of The Day</td></tr>
+				<tr><td>82</td><td>It Wasn’t My Fault</td></tr>
+				<tr><td>83</td><td>Crooked Dice</td></tr>
+				<tr><td>84</td><td>Deaf For A Week</td></tr>
+				<tr><td>85</td><td>Don’t Drink The Water</td></tr>
+				<tr><td>86</td><td>Red Sky In Morning, Take Warning</td></tr>
+				<tr><td>87</td><td>I Never Thought I’d Be Smuggling Myself</td></tr>
+				<tr><td>88</td><td>The Family Heirloom</td></tr>
+				<tr><td>89</td><td>That Island Doesn’t Belong There</td></tr>
+				<tr><td>90</td><td>My Last Port Of Call</td></tr>
+				<tr><td>91</td><td>The Man With Too Many Scarves</td></tr>
+				<tr><td>92</td><td>Does Anyone Speak Giant?</td></tr>
+				<tr><td>93</td><td>Rats In The Hallway</td></tr>
+				<tr><td>94</td><td>An Ace Up The Sleeve</td></tr>
+				<tr><td>95</td><td>The Bottom Of A Whirlpool</td></tr>
+				<tr><td>96</td><td>A Pair Of Brown Eyes</td></tr>
+				<tr><td>97</td><td>Streams Of Whiskey</td></tr>
+				<tr><td>98</td><td>The Sunken Vault</td></tr>
+				<tr><td>99</td><td>The Woman With The Skull And Crossbones Tattoo</td></tr>
+				<tr><td>100</td><td>The First Rule of Captain’s Log (Inspiration for all)</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Artifact</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+		</rules>
+	</element>
+</elements>

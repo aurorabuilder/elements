@@ -4,7 +4,7 @@
 		<name>Outlander</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="background-outlander.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/backgrounds/background-outlander.xml" />
 		</update>
 	</info>
@@ -22,7 +22,7 @@
 			<p>You’ve been to strange places and seen things that others cannot begin to fathom. Consider some of the distant lands you have visited, and how they impacted you. You can roll on the following table to determine your occupation during your time in the wild, or choose one that best fits your character.</p>
 			<table>
 				<thead>
-					<tr><td>d10</td><td>Origin</td></tr>
+					<tr><td class="col-10">d10</td><td>Origin</td></tr>
 				</thead>
 				<tr><td>1</td><td>Forester</td></tr>
 				<tr><td>2</td><td>Trapper</td></tr>
@@ -39,13 +39,16 @@
 			<h5>Suggested Characteristics</h5>
 			<p>Often considered rude and uncouth among civilized folk, outlanders have little respect for the niceties of life in the cities. The ties of tribe, clan, family, and the natural world of which they are a part are the most important bonds to most outlanders.</p>
 		</description>
+		<setters>
+			<set name="short">Athletics, Survival, Instrument, Language </set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
 			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_WANDERER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
 			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select type="Proficiency" name="Musical Instrument (Outlander)" supports="Musical Instrument" />
-			<select type="Language" name="Language (Outlander)" supports="Starting" />
+			<select type="Language" name="Language (Outlander)" supports="Standard||Exotic" />
 			<select name="Origin" type="List">
 				<item id="1">Forester</item>
 				<item id="2">Trapper</item>
