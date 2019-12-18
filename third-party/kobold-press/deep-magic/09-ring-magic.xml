@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Ring Magic</name>
+		<update version="0.0.1">
+			<file name="09-ring-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/09-ring-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Ring Magic" type="Source" source="Core" id="ID_KBP_DMRM_SOURCE_DEEP_MAGIC_RING_MAGIC">
+		<description>
+			<p><strong>Deep Magic of the Dwarf-Rings!</strong></p>
+			<p>Since the dawn of the world, dwarven smiths have fashioned rings of surpassing beauty—but it is not for the sake of beauty alone that these rings are made. There is power in them, which can be unlocked by the wise. Ring magic practitioners channel their magic through these rune-etched metal bands, increasing the devastation wreaked upon their foes; and can even imbue them with spells that someone else can unleash later.</p>
+			<p>Deep Magic: Ring Magic brings the secrets of ring magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>New ring magic feats, and a new Ring Warden arcane tradition</li>
+				<li>12 new spells, including enchant ring, curse ring, and create ring servant (with monster stats for this new construct), and more!</li>
+				<li>New magic items: molten fire forge, oathbound ring, warden’s link, and Karrek’s Bastion</li>
+				<li>The history of ring magic, the dwarves who are its masters, and the secrets of their legendary stronghold</li>
+			</ul>
+			<p>Journey deep within the earth, to places where molten rock flows like rivers, and the sounds of hammers never cease. Here you will find the true power of the rings—learn their ways, and use them wisely and well.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMRM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-ring-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM-9-Ring-Magic.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20170327</set>
+			<!-- <set name="release">20170411</set> -->
+		</setters>
+	</element>
+
+	<element name="Circle Spellcaster" type="Feat" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_FEAT_CIRCLE_SPELLCASTER">
+		<prerequisite>The ability to cast at least one spell.</prerequisite>
+		<requirements>[type:spell]</requirements>
+		<description>
+			<p><strong><em>Prerequisite:</em></strong> The ability to cast at least one spell.</p>
+			<p>You have learned to create a circular flow of magic between yourself and an allied spellcaster to bolster your spells. You gain the following benefits.</p>
+			<ul>
+				<li>Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</li>
+				<li>You can spend 2 hours (including during a long rest) creating a mystical bond with another spellcaster. Both of you must spend this time in meditation, and you must remain within 10 feet of each other. Once the bond is formed, you can work together to bolster one another’s magic. When one of you casts a spell that requires concentration, the other can use their reaction to help maintain the spell. If the caster must make a Constitution saving throw to maintain concentration on the spell, both of you make the saving throw. If either of you succeeds, concentration is unbroken. If both saving throws fail, you both lose concentration on any spells you are currently maintaining and you both take 2d6 psychic damage from the strain. You can maintain this bond with only one spellcaster at a time. If you create a new bond, the previous bond breaks. Otherwise, it lasts until the end of your next long rest.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You can spend 2 hours (including during a long rest) creating a mystical bond with another spellcaster. Both of you must spend this time in meditation, and you must remain within 10 feet of each other. Once the bond is formed, you can work together to bolster one another’s magic. When one of you casts a spell that requires concentration, the other can use their reaction to help maintain the spell. If the caster must make a Constitution saving throw to maintain concentration on the spell, both of you make the saving throw. If either of you succeeds, concentration is unbroken. If both saving throws fail, you both lose concentration on any spells you are currently maintaining and you both take 2d6 psychic damage from the strain. You can maintain this bond with only one spellcaster at a time. If you create a new bond, the previous bond breaks. Otherwise, it lasts until the end of your next long rest.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase, Circle Spellcaster" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Ring-Bound" type="Feat" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_FEAT_RING_BOUND">
+		<description>
+			<p>You have acquired a ring-magic-imbued ring as a token of respect. You gain the following benefits.</p>
+			<ul>
+				<li>You have advantage on saving throws against transmutation spells.</li>
+				<li>You can physically bind your ring token to a weapon with 1 hour of work that can be completed during a short rest. While the ring is attached to the weapon, you can use a bonus action to make the weapon magical until the start of your next turn. After activating this ability twice, you must complete a short or long rest before using it again.</li>
+				<li>Ring wardens and others who respect the traditions of ring magic are favorably disposed toward you. Their starting attitude toward you automatically improves by one step, and you have advantage on Charisma checks related to social interaction with such creatures.</li>
+			</ul>
+			<div class="reference">
+				<div element="ID_KBP_DMRM_MAGIC_ITEM_RING_MAGIC_IMBUED_RING" />
+			</div>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against transmutation spells.
+			You can physically bind your ring token to a weapon with 1 hour of work that can be completed during a short rest. While the ring is attached to the weapon, you can use a bonus action to make the weapon magical until the start of your next turn. After activating this ability twice, you must complete a short or long rest before using it again.
+			Ring wardens and others who respect the traditions of ring magic are favorably disposed toward you. Their starting attitude toward you automatically improves by one step, and you have advantage on Charisma checks related to social interaction with such creatures.</description>
+		</sheet>
+	</element>
+
+	<element name="Ring Warden" type="Archetype" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_RING_WARDEN">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>The dwarves long ago discovered the means to imbue magic into metal rings, and the ring wardens were born. With a focus on the school of transmutation, they blend dwarven craftsmanship with arcane might. The ring wardens are rare outside dwarven nations, but they are easy to recognize thanks to their signature ring-staves.</p>
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_TRANSMUTATION_SAVANT" />
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONUS_PROFICIENCY" />
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONDED_RING_STAFF" />
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_MASTER_METALSMITH" />
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_IMBUE_RING" />
+			<div element="ID_KBP_DMRM_ARCHETYPE_FEATURE_RING_BOND" />
+		</description>
+		<sheet>
+			<description>The dwarves long ago discovered the means to imbue magic into metal rings, and the ring wardens were born.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_TRANSMUTATION_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONUS_PROFICIENCY" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONDED_RING_STAFF" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_MASTER_METALSMITH" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_IMBUE_RING" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_RING_BOND" level="14" />
+		</rules>
+	</element>
+	<element name="Transmutation Savant" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_TRANSMUTATION_SAVANT">
+		<description>
+			<p>Beginning when you select this tradition at 2nd level, the gold and time you must spend to copy a transmutation spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a transmutation spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Bonus Proficiency" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONUS_PROFICIENCY">
+		<description>
+			<p>At 2nd level, you gain proficiency in your choice of blacksmith’s or jeweler’s tools.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in your choice of blacksmith’s or jeweler’s tools.</description>
+		</sheet>
+		<rules>
+			<!-- todo: check if blacksmith tools are the default smith tools -->
+			<select type="Proficiency" name="Bonus Proficiency, Ring Warden" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_JEWELERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Bonded Ring-Staff" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_BONDED_RING_STAFF">
+		<description>
+			<p>Starting at 2nd level, you create a special quarterstaff with two metal rings embedded in it or fastened around it. You can use your ring-staff as an arcane focus. Creating an additional ring takes 8 hours of work with blacksmith’s or jeweler’s tools and costs 5 gp in raw materials. Your ring-staff can incorporate a number of rings equal to your wizard level.</p>
+			<p class="indent">When you roll damage for a spell while holding your ring-staff, you can add your proficiency bonus to the result. If the spell generates multiple damage rolls against multiple targets (such as scorching ray), you must choose which roll gains the benefit before you roll it. You can use this ability a number of times equal to the number of metal rings fashioned into your ring-staff, up to a maximum of your Intelligence modifier (minimum of 1). You regain all expended uses when you finish a short or long rest.</p>
+			<div class="reference">
+				<div element="ID_KBP_DMRM_MAGIC_ITEM_RING_STAFF" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can use your ring-staff as an arcane focus. Creating an additional ring takes 8 hours of work with blacksmith’s or jeweler’s tools and costs 5 gp in raw materials. Your ring-staff can incorporate {{level:wizard}} rings.
+			When you roll damage for a spell while holding your ring-staff, you can add a +{{proficiency}} bonus to the result. If the spell generates multiple damage rolls against multiple targets, you must choose which roll gains the benefit before you roll it. You can use this ability a number of times equal to the number of metal rings fashioned into your ring-staff, up to a maximum of {{intelligence:modifier}}. You regain all expended uses when you finish a short or long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="bonded ring staff:damage rolls" value="1" bonus="base" />
+			<stat name="bonded ring staff:damage rolls" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Master Metalsmith" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_MASTER_METALSMITH">
+		<description>
+			<p>Beginning at 6th level, you can add double your normal proficiency bonus with the tools you chose at 2nd level. When using your chosen tools to craft mundane or magical items, you make double the normal progress each day.</p>
+			<p class="indent">Additionally, you learn the formula to craft a single type of magical ring chosen from the following list: ring of jumping, ring of mind shielding, ring of protection, ring of the ram, ring of regeneration, ring of resistance. At the GM’s discretion, you can choose a ring not listed here. You must meet all the standard prerequisites for crafting the ring and pay the required gold as normal, along with any special materials or conditions set by the GM.</p>
+		</description>
+		<sheet>
+			<description>You can add double your normal proficiency bonus with the tools you chose at 2nd level. When using your chosen tools to craft mundane or magical items, you make double the normal progress each day.
+			Additionally, you learn the formula to craft a single type of magical ring chosen from the following list: ring of jumping, ring of mind shielding, ring of protection, ring of the ram, ring of regeneration, ring of resistance. At the GM’s discretion, you can choose a ring not listed here. You must meet all the standard prerequisites for crafting the ring and pay the required gold as normal, along with any special materials or conditions set by the GM.</description>
+		</sheet>
+	</element>
+	<element name="Imbue Ring" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_IMBUE_RING">
+		<description>
+			<p>Starting at 10th level, you can imbue magic into the rings embedded in your ring-staff. When you cast a spell, you can choose to imbue the spell into one of the rings. As long as the spell is imbued, you can’t regain the expended spell slot. As an action, you can remove an imbued ring from the staff and give it to another creature (or hold it yourself). A creature holding an imbued ring can release the imbued spell as an action. Attack rolls, saving throws, and damage are based on the caster who imbued the ring, but the creature holding the ring counts as the spell’s caster for all other purposes.</p>
+			<p class="indent">An imbued ring is considered an ongoing spell for purposes of dispel magic. You can have a number of rings imbued at one time equal to your proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell, you can choose to imbue the spell into one of the rings. As long as the spell is imbued, you can’t regain the expended spell slot. As an action, you can remove an imbued ring from the staff and give it to another creature (or hold it yourself). A creature holding an imbued ring can release the imbued spell as an action. Attack rolls, saving throws, and damage are based on the caster who imbued the ring, but the creature holding the ring counts as the spell’s caster for all other purposes.
+			An imbued ring is considered an ongoing spell for purposes of dispel magic. You can have {{proficiency}} rings imbued at one time.</description>
+		</sheet>
+	</element>
+	<element name="Ring Bond" type="Archetype Feature" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_ARCHETYPE_FEATURE_RING_BOND">
+		<description>
+			<p>At 14th level, with 1 hour of work (which can be done during a short rest), you can embed a single magical ring into your ring-staff. As long as you hold the ring-staff, you gain the effects of the embedded ring as if you were attuned to it and wearing it (including any negative effects of attuning to the item, such as curses). This ring doesn’t count as one of your three attuned magic items.</p>
+			<p class="indent">You can remove an embedded ring (along with its attunement) with 1 hour of work, and you can replace it with a new one at the same time.</p>
+		</description>
+		<sheet>
+			<description>With 1 hour of work, you can embed a single magical ring into your ring-staff. As long as you hold the ring-staff, you gain the effects of the embedded ring as if you were attuned to it and wearing it (including any negative effects of attuning to the item, such as curses). This ring doesn’t count as one of your three attuned magic items.
+			You can remove an embedded ring with 1 hour of work, and you can replace it with a new one at the same time.</description>
+		</sheet>
+	</element>
+
+	<element name="Ring-Staff" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_RING_STAFF">
+		<description>
+			<p>A special quarterstaff with two metal rings embedded in it or fastened around it. You can use your ring-staff as an arcane focus. Creating an additional ring takes 8 hours of work with blacksmith’s or jeweler’s tools and costs 5 gp in raw materials. Your ring-staff can incorporate a number of rings equal to your wizard level.</p>
+			<p class="indent">When you roll damage for a spell while holding your ring-staff, you can add your proficiency bonus to the result. If the spell generates multiple damage rolls against multiple targets (such as scorching ray), you must choose which roll gains the benefit before you roll it. You can use this ability a number of times equal to the number of metal rings fashioned into your ring-staff, up to a maximum of your Intelligence modifier (minimum of 1). You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="type" addition="ring warden">Staff</set>
+		</setters>
+	</element>
+	<element name="Ring-Magic-Imbued Ring" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_RING_MAGIC_IMBUED_RING">
+		<description>
+			<p>A ring-magic-imbued ring which you acquired as a token of respect.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+		</setters>
+	</element>
+
+	<element name="Bitter Chains" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_BITTER_CHAINS">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>The spiked ring in your hand multiplies itself into a long, barbed chain to ensnare a creature you touch. Make a melee spell attack against the target. On a hit, the target is bound in metal chains for the duration. While bound, the target can move only at half speed and has disadvantage on attack rolls, saving throws, and Dexterity checks. If it moves more than 5 feet during a turn, it takes 3d6 piercing damage from the barbs.</p>
+			<p class="indent">The creature can escape from the chains by using an action and making a successful Strength or Dexterity check against your spell save DC, or if the chains are destroyed. The chains have AC 18 and 20 hit points.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Ring">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a spiked metal ring</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Circle of Devastation" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_CIRCLE_OF_DEVASTATION">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You create a 10-foot tall, 20-foot radius ring of destructive energy around a point you can see within range. The area inside the ring is difficult terrain.</p>
+			<p class="indent">When you cast the spell and as a bonus action on each of your turns, you can choose one of the following damage types: cold, fire, lightning, necrotic, or radiant. Creatures and objects that touch the ring, that are inside it when it’s created, or that end their turn inside the ring take 6d6 damage of the chosen type, or half damage with a successful Constitution saving throw. A creature or object reduced to 0 hit points by the spell is reduced to fine ash.</p>
+			<p class="indent">At the start of each of your subsequent turns, the ring’s radius expands by 20 feet. Any creatures or objects touched by the expanding ring are subject to its effects immediately.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">9</set>
+			<set name="school" addition="Ring">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">1 mile</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a metal ring</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Circle of Wind" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_CIRCLE_OF_WIND">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>Light wind encircles you, leaving you in the center of a mild vortex. You gain a +2 bonus to your AC against ranged attacks. You also have advantage on saving throws against extreme environmental heat and against harmful gases, vapors, and inhaled poisons.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Ring">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">8 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a crystal ring</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Create Ring Servant" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_CREATE_RING_SERVANT">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You touch two metal rings and infuse them with life, creating a short-lived but sentient construct known as a ring servant (see “New Monster: Ring Servant”). The ring servant appears adjacent to you. It reverts to the rings used to cast the spell when it drops to 0 hit points or when the spell ends.</p>
+			<p class="indent">The ring servant is friendly to you and your companions for the duration. Roll initiative for the ring servant, which acts on its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don’t issue any commands to the ring servant, it defends itself and you from hostile creatures but otherwise takes no actions.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="Ring">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">two metal rings</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Curse Ring" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_CURSE_RING">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You lay a curse upon a ring that isn’t being worn or carried. When you cast this spell, select one of the possible effects of bestow curse. The next creature who willingly wears the ring suffers the chosen effect with no saving throw. The curse transfers from the ring to the wearer once the ring is put on; the ring becomes a mundane ring that can be taken off, but the curse remains on the creature that put it on until the curse is removed or dispelled. An identify spell cast on the cursed ring reveals the fact that it is cursed.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Ring">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Permanent until discharged</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">250 gp worth of diamond dust, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Enchant Ring" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_ENCHANT_RING">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You enchant a ring that isn’t being worn or carried. The next creature who willingly wears the ring becomes charmed by you for 1 week or until it is harmed by you or your ally. If the creature dons the ring while directly threatened by you or your ally, the spell fails.</p>
+			<p class="indent">The charmed creature regards you as a friend. When the spell ends, it doesn’t know it was charmed by you, but it does realize its feeling toward you changed (potentially vastly) in a short time. How the creature reacts and regards you in the future is up to the GM.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Ring">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Permanent until discharged</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">500 gp worth of diamond dust, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Hoarfrost" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_HOARFROST">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A melee weapon you are holding is imbued with deep cold. For the duration, a rime of frost covers the weapon and light vapor rises from it if the temperature of the surrounding area is above freezing. The weapon becomes magical and deals an additional 1d4 cold damage on a successful hit. The spell ends if you cast it again or if you let go of the weapon.</p>
+			<p class="indent">The spell’s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Ring">Evocation</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">Touch</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an iron ring that has been subjected to freezing temperature for at least a day</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Innocuous Aspect" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_INNOCUOUS_ASPECT">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A ring of false vision encircles all creatures within 20 feet of you. You and every creature within the area that you choose to affect take on the appearance of a single type of harmless creature or object chosen by you. Each image is identical, and only vision is affected. Sounds, movement, or physical inspection can give the ruse away.</p>
+			<p class="indent">A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, that creature sees through the image.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Ring">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a paper ring</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Reverberate" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_REVERBERATE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You strike the ground with the metal ring, shaking the earth ahead of you with the impact. Creatures and unattended objects touching the ground in a 15-foot cone emanating from you take 4d6 thunder damage and fall prone; a successful Dexterity saving throw halves the damage and prevents the creature from falling pone.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Ring">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a metal ring</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Ringstrike" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_RINGSTRIKE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You infuse up to two metal rings with magic, causing them to revolve in a slow orbit around your head or hand. For the duration, when you hit a target within the spell’s range with an attack, you can launch one of the rings to strike the target as well. The target takes 1d10 bludgeoning damage and must succeed on a Strength saving throw or be pushed 5 feet directly away from you. The ring is destroyed when it strikes.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, you can affect up to two additional rings for each spell slot above 1st.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Ring">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a metal ring for each strike granted by the spell, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Ringward" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_RINGWARD">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>This spell causes the iron ring to become a faintly shimmering ring of energy that spins slowly around you at a radius of 15 feet. For the duration, you and your allies inside the protective energy ring have advantage on saving throws against spells and gain resistance to one type of damage of your choice.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="Ring">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an iron ring worth 200 gp, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Spinning Axes" type="Spell" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_SPELL_SPINNING_AXES">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>Spinning axes made of luminous force burst out from you in a ring shape, striking all creatures within 10 feet of you. Each creature within 10 feet of you takes 5d8 force damage, or half damage with a successful Dexterity saving throw. Creatures that aren’t undead or constructs and that are damaged by this spell begin bleeding. A bleeding creature takes 2d6 necrotic damage at the end of its turn. Bleeding can be stopped by using an action to make a successful Wisdom (Medicine) check against your spell save DC or by any amount of magical healing or regeneration. Bleeding stops automatically after 1 minute.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">ring magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Ring">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an iron ring</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Molten Fire Forge" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_MOLTEN_FIRE_FORGE">
+		<description>
+			<p>This magical furnace and anvil were patterned off the original forges in the deep halls of the ring wardens. Rarely, a molten fire forge is given as a gift to a warlord who champions the cause of the wardens and proves himself an unwavering ally.</p>
+			<p class="indent">A character proficient with blacksmith’s tools who creates a weapon or armor of sufficient quality using the forge finds his creations imbued with magic. The forge allows for the creation of magic weapons and armor without the need to find a formula. The maximum quality of item produced is one rarity less than that of the forge itself; a rare molten fire forge can produce uncommon items, such as a weapon +1, or adamantine armor, for example. The creator must provide the required gold and makes progress toward completion as normal for crafting a magic item. If the creator doesn’t meet the level requirement for the rarity of the item being created, the creator can attempt a Wisdom check with blacksmith’s tools; the DC = 10, plus 5 for every rarity level above uncommon. If the check succeeds, the item is created successfully. On a failure, the enchantment fails and the gold and time are spent creating a nonmagical, but likely high quality, item.</p>
+			<p class="indent">Any item created with the molten fire forge requires GM approval. The GM may require special components or materials in addition to the normal gold cost.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare, Very Rare, or Legendary</set>
+		</setters>
+	</element>
+	<element name="Oathbound Ring" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_OATHBOUND_RING">
+		<description>
+			<p>This adamantine ring is plain on the outside, but dwarven runes demanding honor and fidelity are inscribed on the inside of the band. The few oathbound rings known to exist were given to nondwarf visitors to the halls of the ring wardens, both to ensure the secrets of ring magic and to protect the wardens’ trusted friends.</p>
+			<p class="indent">When you attune to this ring, you willingly swear an oath to an individual or an organization, such as the ring wardens. The oath must be specific about a service you will undertake or some action you will refrain from taking.</p>
+			<p class="indent">While attuned to the ring, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks, and you can’t voluntarily violate the terms of your oath. If a spell or other effect would force you to violate the oath, that spell or effect fails immediately. In the case of an oath of secrecy, mind-reading powers or effects return no useful information if they seek out the knowledge you are sworn to keep. When a creature directly attempts to prevent you from fulfilling your oath, you have advantage on attack rolls, saving throws, and ability checks made against the creature until it no longer opposes you or it dies. If you die while wearing the ring, spells such as speak with dead also automatically fail if the questions asked of your corpse would violate your oath.</p>
+			<p class="indent">Once you are attuned to the ring, you can’t voluntarily break that attunement, and the ring can’t be removed. The ring is immune to psychic, poison, bludgeoning, piercing, and slashing damage, has AC 20 with a damage threshold of 30, and 50 hit points.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PIERCING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_SLASHING" />
+		</rules>
+	</element>
+	<element name="Warden’s Link" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_WARDENS_LINK">
+		<description>
+			<p>This metal ring is 3 inches in diameter and adorned with dwarven runes. These rings were created by ring wardens to aid their allies in battle, and each one has a specific enchantment reserved for armor, a shield, or a weapon. The warden’s link has a rarity one category higher than the enchantment it bears; for example, a warden’s link enchanted to provide the effects of armor of resistance or a weapon +2 is very rare.</p>
+			<p class="indent">A warden’s link confers magical effects when attached to a nonmagical suit of armor, shield, or weapon. Attaching the ring requires 1 hour of work with appropriate tools (leatherworker’s tools or blacksmith’s tools, usually) that can be completed during a short rest. A similar process can remove the ring. While the ring is attached to the correct type of item, the item becomes magical and gains the effects carried by the ring. If the enchantment requires attunement, it can be attuned during the same hour it takes to attach the warden’s link by the person doing the work. Someone else must devote a different hour to attuning.</p>
+			<p class="indent">Rumors abound regarding warden’s links that confer the effects of legendary or even artifact-power enchantments, but the truth of such stories is no longer known.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rarity Varies</set>
+		</setters>
+	</element>
+	<element name="Karrek’s Bastion" type="Magic Item" source="Deep Magic: Ring Magic" id="ID_KBP_DMRM_MAGIC_ITEM_KARREKS_BASTION">
+		<description>
+			<p>Karrek was a dwarven warlord in the time when ring wardens were struggling to realize the full potential of their discovery. Without him, the order would have died before it was born. During the nascent ring wardens’ trek into the earth to find their home, they ran afoul of a great evil host in the depths. They fought bitterly for every inch of ground but were doomed to be driven out of the molten fire caverns or destroyed utterly.</p>
+			<p class="indent">One of the pilgrims, a clansman of Karrek’s, sent word of their plight to the surface stronghold, and Karrek himself answered. He led a force of dwarf shocktroops into the depths and turned the tide of battle. Grievously wounded during the fighting, the stubborn chief waved off more than first aid, refusing to be bedridden while there was work to be done and his people to protect. His wounds worsened and on his death bed, the ring wardens showed him their thanks by offering him the chance to protect his people for all time; they bound his soul into an adamantine ring, where he maintains his vigil still.</p>
+			<p class="indent">Karrek’s Bastion resembles a warden’s link. It’s a magical, sentient, adamantine ring 3 inches in diameter, decorated with gold-inlaid runes. When the ring is attached to a nonmagical weapon, the weapon</p>
+			<ul>
+				<li>becomes magical with a +3 bonus to attack and damage rolls,</li>
+				<li>scores a critical hit on a roll of 19 or 20, and</li>
+				<li>does an additional 1d10 fire damage per hit, or 3d10 fire damage to orcs, giants, goblins, and undead.</li>
+			</ul>
+			<p class="indent"><strong><em>Random Properties.</em></strong> Karrek’s Bastion has the following random properties</p>
+			<ul>
+				<li>2 minor beneficial properties</li>
+				<li>1 minor detrimental property</li>
+				<li>1 major detrimental property</li>
+			</ul>
+			<p class="indent"><strong><em>Unyielding Spirit.</em></strong> While you carry Karrek’s Bastion on your person, you have resistance to necrotic damage, your hit point maximum can’t be reduced, and you can’t be frightened.</p>
+			<p class="indent"><strong><em>Spells.</em></strong> While the ring is on your person, you can use an action to cast one of the following spells (save DC 18) from it: death ward, heat metal, or stone shape. Once you use the ring to cast a spell, you can’t cast that spell again from it until the next dawn.</p>
+			<p class="indent"><strong><em>Sentience.</em></strong> Karrek’s Bastion is a sentient, Lawful Good item with Intelligence 14, Wisdom 16, and Charisma 18. It has hearing and darkvision out to 120 feet. The item communicates telepathically with its wielder and can speak, read, and understand Common and Dwarvish.</p>
+			<p class="indent"><strong><em>Personality.</em></strong> The item’s purpose is to defend the ring wardens and their allies and to drive back the foes of the dwarves. It is stubborn, brave to a fault, and enjoys humorous wordplay. It urges its wielder to attach it to a maul above all other weapons, but it will grudgingly accept any martial weapon. Trying to attach it to a finesse or ranged weapon is sure to cause a personality conflict.</p>
+			<p class="indent">Karrek’s Bastion deeply hates anyone who steals or misuses the secrets of ring magic, and it drives its wielder to harry such individuals to their doom and recover the stolen secrets.</p>
+			<p class="indent"><strong><em>Destroying Karrek’s Bastion.</em></strong> The adamantine ring must be laid on the first of the forges in the halls of the ring wardens, and one ring warden must slay another ring warden with the forge hammer. While the hammer is still soaked with warm blood, it can be used to unmake the ring on the forge.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Artifact</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<!-- todo: create as a weapon -->
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+	<!-- todo: ring servant monster on p11 -->
+
+</elements>
