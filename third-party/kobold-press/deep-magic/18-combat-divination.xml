@@ -138,8 +138,8 @@
 		<description>
 			<p>Starting at 1st level, you can take the Dodge action as a bonus action on your turn. You can do this a number of times equal to your Constitution modifier (minimum of 1). You regain expended uses after finishing a long or short rest.</p>
 		</description>
-		<sheet usage="{{quickening:usage}}/Short Rest">
-			<description>You can take the Dodge action as a bonus action on your turn.</description>
+		<sheet action="Bonus Action" usage="{{quickening:usage}}/Short Rest">
+			<description>You can take the Dodge action on your turn.</description>
 		</sheet>
 		<rules>
 			<stat name="quickening:usage" value="1" bonus="base" />
@@ -201,7 +201,7 @@
 	<element name="Expanded Spell List" type="Archetype Feature" source="Deep Magic: Combat Divination" id="ID_KBP_DMCD_ARCHETYPE_FEATURE_SIBYL_EXPANDED_SPELL_LIST">
 		<description>
 			<p>The Sibyl lets you choose from an expanded list of spells when you learn a warlock spell. You can choose any combat divination magic spell when you learn a new spell. The following spells are added to the warlock spell list for you.</p>
-			<h5>THE SIBYL EXPANDED SPELLS</h5>
+			<h5 class="caption">THE SIBYL EXPANDED SPELLS</h5>
 			<table>
 				<thead>
 					<tr><td>Spell Level</td><td>Spells</td></tr>
@@ -343,10 +343,14 @@
 		<description>
 			<p>At 3rd level, you gain the ability to cast spells.</p>
 			<p class="indent"><strong><em>Cantrips..</em></strong> You learn two cantrips of your choice from the wizard spell list. You learn an additional cantrip of your choice from the wizard spell list at 10th level.</p>
-			<p class="indent"><strong><em>Spell Slots.</em></strong> The Prescient Knight Spellcasting table indicates how many spell slots you have available for casting spells. You regain used spell slots upon completing a long rest.</p>		
-			<table>
+			<p class="indent"><strong><em>Spell Slots.</em></strong> The Prescient Knight Spellcasting table indicates how many spell slots you have available for casting spells. You regain used spell slots upon completing a long rest.</p>
+			<p class="indent"><strong><em>Spells Known of 1st level and Higher.</em></strong> The Prescient Knight Spellcasting table shows how many spells are known at 1st level and higher. When choosing this martial tradition, you learn three 1st-level spells. You are limited in your selection to wizard spells of the divination and abjuration schools. Additionally, you can choose any divination spell with a casting time of 1 reaction or 1 bonus action, whether or not it’s on the wizard spell list. You learn additional spells as you progress; newly learned spells have the same school and list restrictions as your original spells.</p>
+			<p class="indent">Whenever you gain a level, you can replace one spell you know with another from among those spells you can know.</p>
+			<p class="indent"><strong><em>Spellcasting Ability.</em></strong> Intelligence is your spellcasting ability. Use your Intelligence modifier when making an attack roll with a spell and when determining you spell saving throw DC.</p>	
+			<h5 class="caption">THE PRESCIENT KNIGHT</h5>	
+			<table class="class-features">
 				<thead>
-					<tr><td>Fighter Level</td><td>Cantrips Known</td><td>Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+					<tr><td class="col-10">Fighter Level</td><td class="col-10">Cantrips Known</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
 				</thead>
 				<tr><td>3rd</td><td>2</td><td>3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
 				<tr><td>4th</td><td>2</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
@@ -367,9 +371,6 @@
 				<tr><td>19th</td><td>3</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
 				<tr><td>20th</td><td>3</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
 			</table>
-			<p class="indent"><strong><em>Spells Known of 1st level and Higher.</em></strong> The Prescient Knight Spellcasting table shows how many spells are known at 1st level and higher. When choosing this martial tradition, you learn three 1st-level spells. You are limited in your selection to wizard spells of the divination and abjuration schools. Additionally, you can choose any divination spell with a casting time of 1 reaction or 1 bonus action, whether or not it’s on the wizard spell list. You learn additional spells as you progress; newly learned spells have the same school and list restrictions as your original spells.</p>
-			<p class="indent">Whenever you gain a level, you can replace one spell you know with another from among those spells you can know.</p>
-			<p class="indent"><strong><em>Spellcasting Ability.</em></strong> Intelligence is your spellcasting ability. Use your Intelligence modifier when making an attack roll with a spell and when determining you spell saving throw DC.</p>
 		</description>
 		<sheet display="false" />
 		<spellcasting name="Prescient Knight" ability="Intelligence" prepare="false" allowReplace="true">
@@ -387,17 +388,17 @@
 			<stat name="prescient knight:spellcasting:slots:4" value="1" level="19" />
 			<select type="Spell" name="Cantrip, Prescient Knight" supports="$(spellcasting:list), 0" level="3" number="2" spellcasting="Prescient Knight" />
 			<select type="Spell" name="Cantrip, Prescient Knight" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Prescient Knight" />
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="3" number="3" spellcasting="Prescient Knight" />
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="4" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="7" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="8" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="10" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="11" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="13" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="14" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="16" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="19" spellcasting="Prescient Knight"/>
-			<select type="Spell" name="Spellcasting, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="20" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="3" number="3" spellcasting="Prescient Knight" />
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="4" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="7" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="8" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="10" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="11" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="13" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="14" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="16" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="19" spellcasting="Prescient Knight"/>
+			<select type="Spell" name="Spell, Prescient Knight" supports="($(spellcasting:list)||Divination,(Reaction||Bonus Action)),$(spellcasting:slots)" level="20" spellcasting="Prescient Knight"/>
 		</rules>
 	</element>
 	<element name="Martial Caster" type="Archetype Feature" source="Deep Magic: Combat Divination" id="ID_KBP_DMCD_ARCHETYPE_FEATURE_PRESCIENT_MARTIAL_CASTER">
