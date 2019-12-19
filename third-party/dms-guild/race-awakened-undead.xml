@@ -414,7 +414,85 @@
         </rules>
     </element>
 
+    <!-- Necropolitan -->
+    <element name="Necropolitan" type="Sub Race" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_SUB_RACE_NECROPOLITAN">
+        <supports>Awakened Undead</supports>
+        <description>
+            <p>For all the arguable benefits it offers, some souls seek out the gifts of undeath, sacrificing their mortality for a chance at ever-greater power. Necropolitans are oncemortals who have undergone the ritual of Crucimigration, a painful process that strips them of their mortality and replaces it with a dark necromantic energy. A necropoplitan’s skin tightens and bleaches or becomes ashen, and the irises of their eyes pale to a frosty blue-white. </p>
+            <p class="indent">Crucimigration itself has similarities to certain paths to lichdom, and rumor has it that becoming a necropolitan can be the first step towards transforming into a lich, gradually and free of the terrible sacrifices usually involved in such a process. Stories also abound of a mysterious city named Nocturnus, hidden away and filled with the undead, where necropolitans rule throngs of mortals that aspire to become as undead as their masters.</p>
+            <p>
+            <span class="feature">Ability Score Increase. </span>Your Intelligence or Charisma score increases by 2. <br />
+            <span class="feature">Dead Fortitude. </span>As a bonus action on your turn, you can pull upon the necromantic force animating you to gain temporary hit points equal to your total character level + your Constitution modifier (minimum 1) that last for up to one minute. Once you use this ability, you must finish a short or long rest before you can use it again. <br />
+            <span class="feature">Tools of the Grave. </span>You gain proficiency with your choice of one of the following sets of tools: alchemist’s supplies, calligrapher’s supplies, leatherworker’s tools, or the poisoner’s kit.<br />
+            <span class="feature">Necropolitan Magic. </span>You know the chill touch cantrip. When you reach 5th level, you can also cast the ray of enfeeblement spell once per day; you must finish a long rest in order to cast the spell again using this trait. Choose either Intelligence or Charisma as your spellcasting ability for these spells.<br />
+            </p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Increase (Necropolitan)" supports="ID_DMSG_WHAU_ASI_UNDEAD_CHARISMA|ID_DMSG_WHAU_ASI_UNDEAD_INTELLIGENCE" />
+            <grant type="Racial Trait" id="ID_DMSG_WHAU_RACIAL_TRAIT_DEAD_FORTITUDE" />
+            <grant type="Racial Trait" id="ID_DMSG_WHAU_RACIAL_TRAIT_TOOLS_OF_THE_GRAVE" />
+            <grant type="Racial Trait" id="ID_DMSG_WHAU_RACIAL_TRAIT_NECROPOLITAN_MAGIC" />
+        </rules>
+    </element>
+    <element name="Dead Fortitude" type="Racial Trait" source="source" id="ID_DMSG_WHAU_RACIAL_TRAIT_DEAD_FORTITUDE">
+        <description>
+            <p>As a bonus action on your turn, you can pull upon the necromantic force animating you to gain temporary hit points equal to your total character level + your Constitution modifier (minimum 1) that last for up to one minute. Once you use this ability, you must finish a short or long rest before you can use it again.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You can pull upon the necromantic force animating you to gain {{necropolitan dead fortitude:hp}} temporary hit points that last for up to one minute.</description>
+        </sheet>
+        <rules>
+            <stat name="necropolitan dead fortitude:hp" value="1" bonus="base" />
+            <stat name="necropolitan dead fortitude:hp" value="constitution:modifier" bonus="base" />
+            <stat name="necropolitan dead fortitude:hp" value="level" />
+        </rules>
+    </element>
+    <element name="Tools of the Grave" type="Racial Trait" source="source" id="ID_DMSG_WHAU_RACIAL_TRAIT_TOOLS_OF_THE_GRAVE">
+        <description>
+            <p>You gain proficiency with your choice of one of the following sets of tools: alchemist’s supplies, calligrapher’s supplies, leatherworker’s tools, or the poisoner’s kit.</p>
+        </description>
+        <sheet display="false">
+            <description>You gain proficiency with your choice of one of the following sets of tools: alchemist’s supplies, calligrapher’s supplies, leatherworker’s tools, or the poisoner’s kit.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Tools of the Grave (Necropolitan)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+        </rules>
+    </element>
+    <element name="Necropolitan Magic" type="Racial Trait" source="source" id="ID_DMSG_WHAU_RACIAL_TRAIT_NECROPOLITAN_MAGIC">
+        <description>
+            <p>You know the chill touch cantrip. When you reach 5th level, you can also cast the ray of enfeeblement spell once per day; you must finish a long rest in order to cast the spell again using this trait. Choose either Intelligence or Charisma as your spellcasting ability for these spells.</p>
+        </description>
+        <sheet>
+            <description>You know the Chill Touch cantrip.</description>
+            <description level="5">You know the Chill Touch cantrip and also can cast Ray of Enfeeblement once per long rest. (Spellcasting ability can be Intelligence or Charisma)</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHILL_TOUCH" />
+            <grant type="Spell" id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" />
+        </rules>
+    </element>
+
     <!-- Feats -->
+    <element name="Banshee Wail" type="Feat" source="source" id="ID_DMSG_WHAU_FEAT_BANSHEE_WAIL">
+        <prerequisite>Awakened Undead (Ghost)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_GHOST</requirements>
+        <description>
+            <p><i>Prerequisite: Awakened Undead (Ghost)</i></p>
+            <p>Increase your Charisma or Wisdom by 1, to a maximum of 20.</p>
+            <p class="indent">As an action on your turn, you can emit an unearthly wail that rattles the souls of your opponents. Each creature within 20 feet of you that is not an undead or construct must make a Constitution saving throw with a DC of 8 + your proficiency bonus + your choice of either your Charisma modifier or Wisdom modifier. A creature that fails this saving throw takes psychic damage equal to 2d10 + your total character level, or half this amount on a success.</p>
+            <p class="indent">Once you use this ability, you cannot use it again until you have finished a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest" action="Action">
+            <description>Each creature within 20 feet of you that is not an undead or construct must make a Constitution saving throw (DC {{banshee wail:dc}}). A creature that fails this saving throw takes 2d10+{{level}} psychic damage, or half this amount on a success.</description>
+        </sheet>
+        <rules>
+            <stat name="banshee wail:dc" value="8" />
+            <stat name="banshee wail:dc" value="proficiency" />
+            <stat name="banshee wail:dc" value="charisma:modifier" bonus="base" />
+            <stat name="banshee wail:dc" value="wisdom:modifier" bonus="base" />
+        </rules>
+    </element>
     <element name="Dark Reaping" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_DARK_REAPING">
         <prerequisite>Awakened Undead (Revenant)</prerequisite>
         <requirements>ID_DMSG_WHAU_SUB_RACE_REVENANT</requirements>
@@ -437,6 +515,38 @@
 			<select type="Ability Score Improvement" name="Dark Reaping" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CHARISMA" />
 		</rules>
 	</element>
+    <element name="Four Arms" type="Feat" source="source" id="ID_DMSG_WHAU_FEAT_FOUR_ARMS">
+        <prerequisite>Awakened Undead (Skeleton)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_SKELETON</requirements>
+        <description>
+            <p><i>Prerequisite: Awakened Undead (Skeleton)</i></p>
+            <p>You add two additional arms to your frame, for a total of four. At any one time, you can hold up to four onehanded objects, a pair of two-handed objects, or a twohanded object and two one-handed objects. Also, the weight you can carry is doubled, and you gain a climbing speed of 30 feet.</p>
+            <p class="indent">You are able to use your Them Bones trait if at least two of your hands are unoccupied, and using Them Bones occupies two of your hands. If all of your hands are unoccupied, you can use Them Bones for two different purposes at the same time, though doing so occupies all your hands.</p>
+            <p class="indent">Having four arms does not grant you any additional attacks, and your attacks and actions are unchanged except as listed here. </p>
+        </description>
+        <sheet>
+            <description>You can add an addtional 2 arms to your frame. These arms allow you hold up to four one-handed objects or a pair of two-handed objects or any combination as long as your arms allow it. You carrying capacity is also doubled.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:climb" value="30" bonus="base" />
+        </rules>
+    </element>
+    <element name="Ghoulish Agility" type="Feat" source="source" id="ID_DMSG_WHAU_FEAT_Ghoulish Agility">
+        <prerequisite>Awakened Undead (Ghoul)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_GHOUL</requirements>
+        <description>
+            <p><i>Prerequisite: Awakened Undead (Ghoul)</i></p>
+            <p>Increase your Strength or Dexterity by 1, to a maximum of 20.</p>
+            <p class="indent">You become exceedingly nimble. Your jump distance and height triple, and you gain a climbing speed of 30 feet. If at least one of your hands is unoccupied, you can stoop into a beastly gait as you run, increasing your land movement speed by 10 feet.</p>
+            <p class="indent">Additionally, you can use the Dodge action as a bonus action. Once you do so, you must finish a short or long rest before you can do so again.</p>
+        </description>
+        <sheet>
+            <description>Your jump distance and height triple, if one of your hands is unoccupied you can increase you walk speed by 10 ft. You can also dodge as a bonus action once per short or long rest.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:climb" value="30" bonus="base" /> 
+        </rules>
+    </element>
     <element name="Ghostly Magic" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_GHOSTLY_MAGIC">
         <prerequisite>Awakened Undead (Ghost)</prerequisite>
         <requirements>ID_DMSG_WHAU_SUB_RACE_GHOST</requirements>
@@ -475,6 +585,51 @@
             <stat name="paralytic claw:success" value="1" />
 		</rules>
 	</element>
+    <element name="Necropolitan High Magic" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_NECROPOLITAN_HIGH_MAGIC">
+        <prerequisite>Awakened Undead (Necropolitan)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_NECROPOLITAN</requirements>
+		<description>
+            <p><i>Prerequisite: Awakened Undead (Necropolitan)</i></p>
+            <p>You have mastered your animating force, and can use it to cast spells of dark necromantic power. You learn the toll the dead cantrip. You also learn the blindness/deafness and animate dead spells, each of which you can cast once at its lowest possible spell level without expending a spell slot. If you are using animate dead from this source to reassert control over a creature, it can only ever assert control over one creature. You regain the ability to cast those two spells in this way when you finish a long rest. Intelligence is your spellcasting ability for all three spells.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You learn Toll the Dead, Blindness/Deafness and Animate Dead. Spellcasting: Intelligence.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_TOLL_THE_DEAD" />
+            <grant type="Spell" id="ID_PHB_SPELL_BLINDNESS_DEAFNESS" />
+            <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" />
+        </rules>
+    </element>
+    <element name="Phylactery" type="Feat" source="source" id="ID_DMSG_WHAU_FEAT_PHYLACTERY">
+        <prerequisite>Awakened Undead (Necropolitan), 12th Level</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_NECROPOLITAN, [level:12]</requirements>
+		<description>
+            <p><i>Prerequisite: Awakened Undead (Necropolitan), 12th Level</i></p>
+            <p>You have learned the secret to creating a phylactery, much like a lich, in order to stave off annihilation. As a ritual that takes 24 hours to complete, you can designate as your phylactery one non-magical object on your person worth at least 2,500 gp that you can hold in one hand. Once the ritual is completed and you have made an object your phylactery, you cannot perform this ritual again until 300 days have passed. Conducting the ritual again after this time causes your initial phylactery to become mundane once more, and the new object becomes your phylactery.</p>
+            <p class="indent">Your phylactery has 30 hit points, an AC of 18, and immunity to all damage except radiant and bludgeoning, piercing, and slashing damage done by silvered weapons. If you die while your phylactery exists, and you are on the same plane as your phylactery, you reform adjacent to your phylactery after 24 hours. If you are resurrected by some other means before this time, you do not reform via your phylactery. When your phylactery has you reform, a new body is created for you, and your old body disintegrates into dust. The objects and clothing on the person of your old body are unaffected, but your new body is formed without any of the objects your old body possessed.</p>
+            <p class="indent">Once you have reformed with your phylactery, you cannot do so again for 30 days. If you die within this time, your phylactery will not reform you, though you can still be resurrected by other means.</p>
+        </description>
+        <sheet>
+            <description>You desginate one object worth at least 2500gp and undergo a ritual for 24h to create a phylactery. If you die while it exists and you are on the same plane, you reform adjacent to your phylactery after 24h. You can only reform once every 30 days. The ritual for making a phylactery cannot be repeated until 300 days have passed since the previous ritual.</description>
+        </sheet>
+    </element>
+    <element name="Rites of Revenge" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_RITES_OF_REVENGE">
+        <prerequisite>Awakened Undead (Revenant)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_REVENANT</requirements>
+		<description>
+            <p><i>Prerequisite: Awakened Undead (Revenant)</i></p>
+            <p>You are able to use minor mysticism in your pursuit of those who have wronged you. You learn the true strike cantrip and can cast it with a bonus action instead of an action, but afterwards you must finish a short or long rest before you can cast it with a bonus action again. You also learn the hunter’s mark spell, which you can cast twice at its lowest possible spell level without expending a spell slot.</p>
+            <p class="indent">You regain all expended castings of hunter’s mark when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+        </description>
+        <sheet>
+            <description>You learn True Strike and can cast it as a bonus action 1/Long Rest. You also learn Hunter's Mark and can cast it 2/Long Rest. Spellcasting: Charisma.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_TRUE_STRIKE" />
+            <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" />
+        </rules>
+    </element>
     <element name="Tomb Magic" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_TOMB_MAGIC">
         <prerequisite>Awakened Undead (Mummy)</prerequisite>
         <requirements>ID_DMSG_WHAU_SUB_RACE_MUMMY</requirements>
@@ -516,6 +671,27 @@
             <grant type="Spell" id="ID_PHB_SPELL_FIND_FAMILIAR" />
 		</rules>
 	</element>
+    <element name="Under Wraps" type="Feat" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_FEAT_UNDER_WRAPS">
+        <prerequisite>Awakened Undead (Mummy)</prerequisite>
+        <requirements>ID_DMSG_WHAU_SUB_RACE_MUMMY</requirements>
+		<description>
+            <p><i>Prerequisite: Awakened Undead (Mummy)</i></p>
+            <p>Increase your Strength, Wisdom, or Charisma by 1, to a maximum of 20.</p>
+            <p class="indent">Further, in place of one of the attacks you would make with the Attack action, you can utter a blasphemous word, causing your bandages to spring to life and wrap around a Large or smaller creature you can see within 15 feet of you. That creature makes its choice of a Strength (Athletics) or a Dexterity (Acrobatics) check against a DC of 8 + your proficiency bonus + your choice of one of your modifiers out of either Strength, Wisdom, or Charisma. If the creature fails this check, it is grappled by you. This grapple does not occupy a hand. You can only have one creature grappled in this way at a time, and checks a creature makes to escape this grapple are made against the same DC the creature made its initial check against, in place of your Strength (Athletics) check.</p>
+            <p class="indent">Additionally, you can use a bonus action on your turn to attempt to make a grapple in this way. Once you do so, you must finish a short or long rest before you can use this ability as a bonus action again.</p>
+        </description>
+        <sheet>
+            <description>When you attempt a grapple you can use your bandages to make the grapple check. This grapple does not occupy one of your hands but you can only have one creature grappled this way. Additionally you can attempt a grapple as a bonus action but can only do it once per short rest. When you grapple the DC is {{under wraps grapple:dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="under wraps grapple:dc" value="8" />
+            <stat name="under wraps grapple:dc" value="proficiency" />
+            <stat name="under wraps grapple:dc" value="strength:modifier" bonus="bonus" />
+            <stat name="under wraps grapple:dc" value="wisdom:modifier" bonus="bonus" />
+            <stat name="under wraps grapple:dc" value="charisma:modifier" bonus="bonus" />
+            <select type="Ability Score Improvement" name="Under Wraps" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
 	
 	<!-- Past Life -->
 	<!-- more races from official sources can be added, and you can create a custom element that supports 'Awakened Undead Past Life' -->
@@ -879,6 +1055,30 @@
         <rules>
             <stat name="charisma" value="2" alt="Awakened Undead" />
         </rules>
+    </element>
+
+    <!-- Spells -->
+    <element name="Crucimigration" type="Spell" source="Walrock Homebrew: Awakened Undead" id="ID_DMSG_WHAU_SPELL_Crucimigration">
+        <supports>Cleric, Warlock, Wizard</supports>
+        <description>
+            <p>A willing, living humanoid creature other than the spell’s caster is bound to the standing pole, which is raised into place, and the cursed nails driven through the creature’s palms. During the spell’s casting, the creature experiences intense agony similar to molten metal being poured through its veins, but takes no damage from this.</p>
+            <p class="indent">The spell’s caster must remain within range, chanting and making somatic gestures, for the spell’s entire casting time. If the spell’s caster has direct control over at least two zombies or similar undead (such as with the spell animate dead), they can be instructed to fulfill the spell’s verbal and somatic components, even if they ordinarily cannot speak.</p>
+            <p class="indent">Upon the spell’s completion, the willing creature dies and is instantly resurrected as an awakened undead with the necropolitan subrace, using the race it formerly belonged to for the awakened undead’s Past Life racial trait. If the spell is interrupted before completion, the willing creature dies but is not resurrected, and the spell slot and any material components are consumed.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">Necromancy</set>
+            <set name="time">24 hours</set>
+            <set name="range">30</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">two cursed nails, a standing pole, crushed black quartz worth 3000 gp which the spell consumes</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
     </element>
 
 </elements>
