@@ -2,147 +2,121 @@
 <elements>
 	<info>
 		<name>Half-Elf</name>
-		<description></description>
-		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.7">
+		<update version="0.1.9">
 			<file name="race-halfelf.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-halfelf.xml" />
 		</update>
 	</info>
+	<element name="Half-Elf" type="Race" source="Player’s Handbook" id="ID_RACE_HALFELF">
+		<description>
+			<p class="flavor">Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves. Some half-elves live among humans, set apart by their emotional and physical differences, watching friends and loved ones age while time barely touches them. Others live with the elves, growing restless as they reach adulthood in the timeless elven realms, while their peers continue to live as children. Many half-elves, unable to fit into either society, choose lives of solitary wandering or join with other misfits and outcasts in the adventuring life.</p>
+			<h4>OF TWO WORLDS</h4>
+			<p>To humans, half-elves look like elves, and to elves, they look human. In height, they’re on par with both parents, though they’re neither as slender as elves nor as broad as humans. They range from under 5 feet to about 6 feet tall, and from 100 to 180 pounds, with men only slightly taller and heavier than women. Half-elf men do have facial hair, and sometimes grow beards to mask their elven ancestry. Half-elven coloration and features lie somewhere between their human and elf parents, and thus show a variety even more pronounced than that found among either race. They tend to have the eyes of their elven parents.</p> 
+			<h4>DIPLOMATS OR WANDERERS</h4>
+			<p>Half-elves have no lands of their own, though they are welcome in human cities and somewhat less welcome in elven forests. In large cities in regions where elves and humans interact often, half-elves are sometimes numerous enough to form small communities of their own. They enjoy the company of other half-elves, the only people who truly understand what it is to live between these two worlds.</p>
+			<p class="indent">In most parts of the world, though, half-elves are uncommon enough that one might live for years without meeting another. Some half-elves prefer to avoid company altogether, wandering the wilds as trappers, foresters, hunters, or adventurers and visiting civilization only rarely. Like elves, they are driven by the wanderlust that comes of their longevity. Others, in contrast, throw themselves into the thick of society, putting their charisma and social skills to great use in diplomatic roles or as swindlers.</p>
+			<h4>HALF-ELF NAMES</h4>
+			<p>Half-elves use either human or elven naming conventions. As if to emphasize that they don’t really fit in to either society, half-elves raised among humans are often given elven names, and those raised among elves often take human names.</p>
+			<h4>HALF-ELF TRAITS</h4>
+			<p>Your half-elf character has some qualities in common with elves and some that are unique to half-elves.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong>Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong>Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong>Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others’ demands, and sometimes prove unreliable, or at least unpredictable.</p>
+			<p class="indent"><strong><em>Size.</em></strong>Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong>Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong>Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
+			<p class="indent"><strong><em>Skill Versatility.</em></strong>You gain proficiency in two skills of your choice.</p>
+			<p class="indent"><strong><em>Languages.</em></strong>You can speak, read, and write Common, Elvish, and one extra language of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Adran, Aelar, Aramil, Arannis, Aust, Beiro, Berrian, Carric , Enialis, Erdan, Erevan, Galinndan, Hadarai, Heian, Himo, Immeral, Ivellios, Laucian, Mindartis, Paelias, Peren, Quarion, Riardon, Rolen, Soveliss, Thamior, Tharivol, Theren, Varis</set>
+			<set name="names" type="female">Adrie, Althaea, Anastrianna, Andraste, Antinua, Bethrynna, Birel, Caelynn, Drusilia, Enna, Felosial, Ielenia, Jelenneth, Keyleth, Leshanna, Lia, Meriele, Mialee, Naivara, Quelenna, Quillathe, Sariel, Shanairra, Shava, Silaqui, Theirastra, Thia, Vadania, Valanthe, Xanaphia</set>
+			<set name="names" type="surname">Brightwood, Helder, Hornraven, Lackman, Stormwind, Windrivver, Amakiir, Amastacia, Galanodel, Holimion, Ilphelkiir, Liadon, Meliamne, Nai'lo, Siannodel, Xiloscient</set>
+			<set name="names-format">{{name}} {{surname}}</set>
+			<set name="height" modifier="2d8">4'9"</set>
+			<set name="weight" modifier="2d4">110 lb.</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<select type="Racial Trait" name="Ability Score Increase (Half-Elf)" supports="Half-Elf" number="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<stat name="innate speed" value="30" bonus="base"/>
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_ELVISH" />
+			<select type="Language" name="Language (Half-Elf)" supports="Standard||Exotic" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SKILL_VERSATILITY" requirements="!(ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK)"/>
+			<select type="Race Variant" name="Half-Elf Variant" supports="Half-Elf Variant" optional="true" />
+		</rules>
+	</element>
+	<element name="Fey Ancestry" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</description>
+		</sheet>
+	</element>
+	<element name="Skill Versatility" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_SKILL_VERSATILITY">
+		<description>
+			<p>You gain proficiency in two skills of your choice.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Half-Elf)" supports="Skill" number="2" />
+		</rules>
+	</element>
 
-  <!-- Half-Elf -->
-  <element name="Half-Elf" type="Race" source="Player’s Handbook" id="ID_RACE_HALFELF">
-    <supports />
-    <requirements />
-    <description>
-      <p class="flavor">Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves. Some half-elves live among humans, set apart by their emotional and physical differences, watching friends and loved ones age while time barely touches them. Others live with the elves, growing restless as they reach adulthood in the timeless elven realms, while their peers continue to live as children. Many half-elves, unable to fit into either society, choose lives of solitary wandering or join with other misfits and outcasts in the adventuring life.</p>
-
-      <h4>OF TWO WORLDS</h4>
-      <p>To humans, half-elves look like elves, and to elves, they look human. In height, they’re on par with both parents, though they’re neither as slender as elves nor as broad as humans. They range from under 5 feet to about 6 feet tall, and from 100 to 180 pounds, with men only slightly taller and heavier than women. Half-elf men do have facial hair, and sometimes grow beards to mask their elven ancestry. Half-elven coloration and features lie somewhere between their human and elf parents, and thus show a variety even more pronounced than that found among either race. They tend to have the eyes of their elven parents.</p> 
-
-      <h4>DIPLOMATS OR WANDERERS</h4>
-      <p>Half-elves have no lands of their own, though they are welcome in human cities and somewhat less welcome in elven forests. In large cities in regions where elves and humans interact often, half-elves are sometimes numerous enough to form small communities of their own. They enjoy the company of other half-elves, the only people who truly understand what it is to live between these two worlds.</p>
-      <p class="indent">In most parts of the world, though, half-elves are uncommon enough that one might live for years without meeting another. Some half-elves prefer to avoid company altogether, wandering the wilds as trappers, foresters, hunters, or adventurers and visiting civilization only rarely. Like elves, they are driven by the wanderlust that comes of their longevity. Others, in contrast, throw themselves into the thick of society, putting their charisma and social skills to great use in diplomatic roles or as swindlers.</p>
- 
-      <h4>HALF-ELF NAMES</h4>
-      <p>Half-elves use either human or elven naming conventions. As if to emphasize that they don’t really fit in to either society, half-elves raised among humans are often given elven names, and those raised among elves often take human names.</p>
-
-      <h4>HALF-ELF TRAITS</h4>
-      <p>Your half-elf character has some qualities in common with elves and some that are unique to half-elves.</p>
-      <p>
-        <span class="feature">Ability Score Increase.</span>Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.<br/>
-        <span class="feature">Age.</span>Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.<br/>
-        <span class="feature">Alignment.</span>Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others’ demands, and sometimes prove unreliable, or at least unpredictable.<br/>
-        <span class="feature">Size.</span>Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.<br/>
-        <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
-        <span class="feature">Darkvision.</span>Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.<br/>
-        <span class="feature">Fey Ancestry.</span>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.<br/>
-        <span class="feature">Skill Versatility.</span>You gain proficiency in two skills of your choice.<br/>
-        <span class="feature">Languages.</span>You can speak, read, and write Common, Elvish, and one extra language of your choice.<br/>
-      </p>
-    </description>
-    <sheet display="false" />
-    <setters>
-      <set name="names" type="male">Adran, Aelar, Aramil, Arannis, Aust, Beiro, Berrian, Carric , Enialis, Erdan, Erevan, Galinndan, Hadarai, Heian, Himo, Immeral, Ivellios, Laucian, Mindartis, Paelias, Peren, Quarion, Riardon, Rolen, Soveliss, Thamior, Tharivol, Theren, Varis</set>
-      <set name="names" type="female">Adrie, Althaea, Anastrianna, Andraste, Antinua, Bethrynna, Birel, Caelynn, Drusilia, Enna, Felosial, Ielenia, Jelenneth, Keyleth, Leshanna, Lia, Meriele, Mialee, Naivara, Quelenna, Quillathe, Sariel, Shanairra, Shava, Silaqui, Theirastra, Thia, Vadania, Valanthe, Xanaphia</set>
-      <set name="names" type="surname">Brightwood, Helder, Hornraven, Lackman, Stormwind, Windrivver, Amakiir, Amastacia, Galanodel, Holimion, Ilphelkiir, Liadon, Meliamne, Nai'lo, Siannodel, Xiloscient</set>
-      <set name="names-format">{{name}} {{surname}}</set>
-      <set name="height" modifier="2d8">4'9"</set>
-      <set name="weight" modifier="2d4">110 lb.</set>
-    </setters>
-    <rules>
-      <stat name="charisma" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
-      <select type="Racial Trait" name="Ability Score Increase (Half-Elf)" supports="Half-Elf" number="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
-      <stat name="innate speed" value="30" bonus="base"/>
-      <grant type="Size" id="ID_SIZE_MEDIUM" />
-      <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" id="ID_LANGUAGE_COMMON" />
-      <grant type="Language" id="ID_LANGUAGE_ELVISH" />
-      <select type="Language" name="Language (Half-Elf)" supports="Starting" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_SKILL_VERSATILITY" requirements="!(ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF||ID_WOTC_WGTE_GRANTS_DARKMARKED)"/>
-      <select type="Race Variant" name="Half-Elf Variant" supports="Half-Elf Variant" optional="true" />
-    </rules>
-  </element>
-
-  <element name="Fey Ancestry" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY">
-    <supports></supports>
-    <requirements />
-    <description>
-      <p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
-    </description>
-    <sheet>
-      <description>Advantage on saving throws against being charmed, and magic can’t put you to sleep.</description>
-    </sheet>
-    <rules />
-  </element>
-  <element name="Skill Versatility" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_SKILL_VERSATILITY">
-    <supports />
-    <requirements />
-    <description>
-      <p>You gain proficiency in two skills of your choice.</p>
-    </description>
-    <sheet display="false"/>
-    <rules>
-      <select type="Proficiency" name="Skill Proficiency (Half-Elf)" supports="Skill" number="2" />
-    </rules>
-  </element>
-  
-
-
-
-  <element name="Ability Score Increase (Strength)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_STRENGTH">
-    <supports>Half-Elf</supports>
-    <requirements />
-    <description>
-      <p>Your Strength increases by 1.</p>
-    </description>
-    <rules>
-      <stat name="strength" value="1"/>
-    </rules>
-  </element>
-
-  <element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_DEXTERITY">
-    <supports>Half-Elf</supports>
-    <requirements />
-    <description>
-      <p>Your Dexterity increases by 1.</p>
-    </description>
-    <rules>
-      <stat name="dexterity" value="1"/>
-    </rules>
-  </element>
-
-  <element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_CONSTITUTION">
-    <supports>Half-Elf</supports>
-    <requirements />
-    <description>
-      <p>Your Constitution increases by 1.</p>
-    </description>
-    <rules>
-      <stat name="constitution" value="1"/>
-    </rules>
-  </element>
-
-  <element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_INTELLIGENCE">
-    <supports>Half-Elf</supports>
-    <requirements />
-    <description>
-      <p>Your Intelligence increases by 1.</p>
-    </description>
-    <rules>
-      <stat name="intelligence" value="1"/>
-    </rules>
-  </element>
-
-  <element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_WISDOM">
-    <supports>Half-Elf</supports>
-    <requirements />
-    <description>
-      <p>Your Wisdom increases by 1.</p>
-    </description>
-    <rules>
-      <stat name="wisdom" value="1"/>
-    </rules>
-  </element>
-
+	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_STRENGTH">
+		<compendium display="false" />
+		<supports>Half-Elf</supports>
+		<description>
+			<p>Your Strength score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="strength" value="1"/>
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_DEXTERITY">
+		<compendium display="false" />
+		<supports>Half-Elf</supports>
+		<description>
+			<p>Your Dexterity score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="dexterity" value="1"/>
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Half-Elf</supports>
+		<description>
+			<p>Your Constitution score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="constitution" value="1"/>
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Half-Elf</supports>
+		<description>
+			<p>Your Intelligence score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="intelligence" value="1"/>
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_WISDOM">
+		<compendium display="false" />
+		<supports>Half-Elf</supports>
+		<description>
+			<p>Your Wisdom score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="wisdom" value="1"/>
+		</rules>
+	</element>
 </elements>

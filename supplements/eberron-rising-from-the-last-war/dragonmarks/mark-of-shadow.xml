@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-shadow.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-shadow.xml" />
+		</update>
+	</info>	
+	<element name="Mark of Shadow" type="Sub Race" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_SUB_RACE_MARK_OF_SHADOW">
+		<supports>Elf</supports>
+		<description>
+			<p>The Mark of Shadow lets an elf weave illusions, crafting magic to distract or delight. It also allows its bearer to sculpt shadows, making it easy to avoid detection.</p>
+			<p>If you're an elf with the Mark of Shadow, you have this subrace, with the following traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Cunning Intuition.</em></strong> When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Shape Shadows.</em></strong> You know the minor illusion cantrip. Starting at 3rd level, you can cast the invisibility spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF SHADOW SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>disguise self, silent image</em></td></tr>
+				<tr><td>2nd</td><td><em>darkness, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>clairvoyance, major image</em></td></tr>
+				<tr><td>4th</td><td><em>greater invisibility, hallucinatory terrain</em></td></tr>
+				<tr><td>5th</td><td><em>mislead</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Elf (Mark of Shadow)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_SHADOW" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_CUNNING_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_SHAPE_SHADOWS" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Cunning Intuition" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_CUNNING_INTUITION">
+		<description>
+			<p>When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Performance or Stealth check, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Shape Shadows" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_SHAPE_SHADOWS">
+		<description>
+			<p>You know the minor illusion cantrip. Starting at 3rd level, you can cast the invisibility spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You know the minor illusion cantrip using Charisma as your spellcasting ability.</description>
+			<description level="3" usage="1/Long Rest">You know the minor illusion cantrip. You can cast the invisibility spell once with this trait using Charisma as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+		</rules>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SHADOW_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Shadow Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>disguise self, silent image</em></td></tr>
+				<tr><td>2nd</td><td><em>darkness, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>clairvoyance, major image</em></td></tr>
+				<tr><td>4th</td><td><em>greater invisibility, hallucinatory terrain</em></td></tr>
+				<tr><td>5th</td><td><em>mislead</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_DISGUISE_SELF</extend>
+			<extend>ID_PHB_SPELL_SILENT_IMAGE</extend>
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+			<extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+			<extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+			<extend>ID_PHB_SPELL_MAJOR_IMAGE</extend>
+			<extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+			<extend>ID_PHB_SPELL_HALLUCINATORY_TERRAIN</extend>
+			<extend>ID_PHB_SPELL_MISLEAD</extend>
+		</spellcasting>
+	</element>	
+</elements>

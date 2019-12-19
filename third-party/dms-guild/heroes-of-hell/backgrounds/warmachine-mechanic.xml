@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="warmachine-mechanic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/warmachine-mechanic.xml" />
+		</update>
+	</info>	
+	<element name="Infernal Warmachine Mechanic" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_INFERNAL_WARMACHINE_MECHANIC">
+		<description>
+			<p>You are fascinated by the infernal warmachines that have become prevalent on Avernus. You have become adept at maintaining and repairing – usually by highly dangerous improvised jury-rigging - the constantly malfunctioning vehicles.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Investigation</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (land), Smith’s tools</li>
+				<li><strong>Languages:</strong> Infernal</li>
+				<li><strong>Equipment:</strong> A club, a set of smith’s tools, a set of common clothes, a trinket of two bone dice linked by a chain, and a pouch containing 10gp</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_JURY_RIG" />
+		</description>
+		<setters>
+			<set name="short">Investigation, Vehicles (Land), Smith’s Tools, Infernal</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_JURY_RIG" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Jury-Rig" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_JURY_RIG">
+		<description>
+			<p>You are able to scrounge, scavenge and repurpose the various detritus in Avernus to keep infernal war machines running well after they should have failed. Any war machine your work on takes half the usual time to affect repairs, and gains a number of additional hit points equal to your class level.</p>
+		</description>
+		<sheet alt="Jury-Rig">
+			<description>You are able to scrounge, scavenge and repurpose the various detritus in Avernus to keep infernal war machines running well after they should have failed. Any war machine your work on takes half the usual time to affect repairs, and gains {{level}} additional hit points.</description>			
+		</sheet>
+	</element>
+</elements>

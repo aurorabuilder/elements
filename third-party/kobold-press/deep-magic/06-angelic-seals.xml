@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Angelic Seals</name>
+		<update version="0.0.1">
+			<file name="06-angelic-seals.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/06-angelic-seals.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Angelic Seals" type="Source" source="Core" id="ID_KBP_DMAS_SOURCE_DEEP_MAGIC_ANGELIC_SEALS">
+		<description>
+			<p><strong>Call Down the Deep Magic of the Heavens!</strong></p>
+			<p>The heavenly planes shine with light and power, where deities both benevolent and stern look down from their thrones. The most powerful of their servants are mighty beyond mortal ken, and their very names seethe with the essence of creation. The secrets of harnessing the power of the angels is hidden within those names—and you have learned to tap that potential!</p>
+			<p>Deep Magic: Angelic Seals brings the secrets of angelic magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>A new Angelic Scribe arcane tradition, with 10 angelic seals that bind the power of celestial messengers through their names</li>
+				<li>New angelic magic feats: Heavenly Scribe and Heaven’s Chosen</li>
+				<li>10 new spells, including angelic guardian, blade of wrath, seal of sanctuary, and more!</li>
+			</ul>
+			<p>In the ages since the first angelic names were carved into earthly forms, the battles between light and darkness have tested the limits of the heavenly host. Will you join the struggle to protect the righteous? Or tempt angelic wrath with your pursuit of power?</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMAS</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-angelic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM6-Angelic-Seals-Cover.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20161026</set>
+		</setters>
+	</element>
+
+	<element name="Heavenly Scribe" type="Feat" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_FEAT_HEAVENLY_SCRIBE">
+		<requirements>[int:13]</requirements>
+		<prerequisite>Intelligence 13</prerequisite>
+		<description>
+			<p><em>Prerequisite: Intelligence 13</em></p>
+			<p>You have discovered the name of an angel and deciphered the means to invoke a sliver of its power. You gain the following benefits:</p>
+			<ul>
+				<li>You learn the Celestial language if you don’t already know it.</li>
+				<li>You learn one angelic seal of your choice from among those available to the Angelic Scribe arcane tradition. If it requires a saving throw, your DC equals 8 + your proficiency bonus + your Intelligence modifier.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You learn one angelic seal from among those available to the Angelic Scribe arcane tradition. If it requires a saving throw, use DC{{heavenly scribe angelic seal:dc}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+			<stat name="heavenly scribe angelic seal:dc" value="8" />
+			<stat name="heavenly scribe angelic seal:dc" value="proficiency" />
+			<stat name="heavenly scribe angelic seal:dc" value="intelligence:modifier" />
+			<select type="Archetype Feature" name="Angelic Seal, Heavenly Scribe" supports="Angelic Seal" />
+		</rules>
+	</element>	
+	<element name="Heaven’s Chosen" type="Feat" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_FEAT_HEAVENS_CHOSEN">
+		<requirements>!ID_ALIGNMENT_LAWFUL_EVIL,!ID_ALIGNMENT_NEUTRAL_EVIL,!ID_ALIGNMENT_CHAOTIC_EVIL</requirements>
+		<prerequisite>Any nonevil alignment</prerequisite>
+		<description>
+			<p><em>Prerequisite: Any nonevil alignment</em></p>
+			<p>You have drawn the attention of a benevolent celestial spirit that protects you from harm. When you fail a saving throw, you can choose to roll a new saving throw with a single d20 regardless of any circumstances that would otherwise impose advantage or disadvantage.</p>
+			<p class="indent">You can’t use this feat again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you fail a saving throw, you can choose to roll a new saving throw with a single d20 regardless of any circumstances that would otherwise impose advantage or disadvantage.</description>
+		</sheet>
+	</element>
+
+	<element name="Angelic Scribe" type="Archetype" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_ANGELIC_SCRIBE">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>You study the angelic seals that bind the power of celestial messengers through their names, and you shape that power into magical effects. Beyond the seals and wardings themselves, you learn esoteric spells to call down the essence of the angelic host. Most angelic scribes take up their craft out of reverence and a desire to protect the righteous; a few tempt angelic wrath with their lust for power that’s otherwise beyond their grasp.</p>
+			<div element="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_SAVANT" />
+			<div element="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_SCRIBE" />
+			<div element="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_WARDING_SEAL" />
+			<div element="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_GREATER_SEAL" />
+			<div element="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_WRATH" />
+		</description>
+		<sheet display="false">
+			<description>You study the angelic seals that bind the power of celestial messengers through their names, and you shape that power into magical effects.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_SCRIBE" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_WARDING_SEAL" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_GREATER_SEAL" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_WRATH" level="14" />
+		</rules>
+	</element>
+	<element name="Angelic Savant" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_SAVANT">
+		<description>
+			<p>Beginning when you select this tradition at 2nd level, the gold and time you must spend to copy an angelic magic spell into your spellbook is halved.</p>
+			<p class="indent">When you gain a level, one of the two spells you learn for gaining a level can be an angelic magic spell even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be an angelic magic cantrip even if you’ve never previously encountered it.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy an angelic magic spell into your spellbook is halved.
+			When you gain a level, one of the two spells you learn for gaining a level can be an angelic magic spell even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be an angelic magic cantrip even if you’ve never previously encountered it.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>Angelic Magic</extend>
+		</spellcasting>
+	</element>
+	<element name="Seal Scribe" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_SCRIBE">
+		<description>
+			<p>Starting at 2nd level, you learn the Celestial language if you don’t already know it, and you gain the ability to scribe angelic seals.</p>
+			<p class="indent"><strong><em>Seals.</em></strong> You learn two angelic seals of your choice, which are detailed below under “Angelic Seals.” You can spend 10 minutes scribing an angelic seal you know on paper, canvas, stone tiles, or some other token that can be carried or displayed. Alternatively, you can spend 8 hours using appropriate artisan tools to carve or etch a more permanent seal into harder material. Once you have a seal, you can activate it as an action.</p>
+			<p class="indent">You can have one active seal at a time. The number of active seals you can maintain increases by 1 at 6th level (2 seals), 10th level (3 seals), and 14th level (4 seals). As a bonus action, you can deactivate a seal. A broken or defaced seal deactivates immediately.</p>
+			<p class="indent">A creature can gain the benefits of one active seal it holds or openly wears. The seal’s delicate magic is suppressed while its user concentrates on a spell or a similar effect. A suppressed seal still counts against your total number of active seals allowed.</p>
+			<p class="indent">You learn one additional angelic seal of your choice at 6th, 10th, and 14th levels. Each time you learn a new seal, you can also replace one seal you know with a different one.</p>
+		</description>
+		<sheet>
+			<description>You can spend 10 minutes scribing an angelic seal you know on paper, canvas, stone tiles, or some other token that can be carried or displayed.
+			Alternatively, you can spend 8 hours using appropriate artisan tools to carve or etch a more permanent seal into harder material. Once you have a seal, you can activate it as an action.
+			You can have {{seal scribe:active seals}} active seal(s) at a time. As a bonus action, you can deactivate a seal. A broken or defaced seal deactivates immediately.
+			A creature can gain the benefits of one active seal it holds or openly wears. The seal’s delicate magic is suppressed while its user concentrates on a spell or a similar effect. A suppressed seal still counts against your total number of active seals allowed.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+			<stat name="seal scribe:active seals" value="1" />
+			<stat name="seal scribe:active seals" value="1" level="6" />
+			<stat name="seal scribe:active seals" value="1" level="10" />
+			<stat name="seal scribe:active seals" value="1" level="14" />
+			<stat name="seal scribe:dc" value="8" />
+			<stat name="seal scribe:dc" value="proficiency" />
+			<stat name="seal scribe:dc" value="intelligence:modifier" />
+			<select type="Archetype Feature" name="Angelic Seal, Seal Scribe" supports="Angelic Seal" />
+			<select type="Archetype Feature" name="Angelic Seal, Seal Scribe" supports="Angelic Seal" level="6" />
+			<select type="Archetype Feature" name="Angelic Seal, Seal Scribe" supports="Angelic Seal" level="10" />
+			<select type="Archetype Feature" name="Angelic Seal, Seal Scribe" supports="Angelic Seal" level="14" />
+		</rules>
+	</element>
+	<element name="Warding Seal" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_WARDING_SEAL">
+		<description>
+			<p>Beginning at 6th level, you learn to place warding seals to protect areas. This follows the same rules for scribing an angelic seal, but the seal must be on the ground, the floor, or a similarly solid portion of a structure such as a wall, column, or ceiling. As an action, you can touch the seal to activate it. You must maintain concentration on the effect as if concentrating on a spell.</p>
+			<p class="indent">Once activated, the warding seal creates a spiritual, spherical boundary with a radius of 30 feet, or surrounding a small building or series of rooms of similar dimension (a 22-foot cube, for example, or any space of approximately 11,000 cubic feet). Aberrations, fey, fiends, and undead cannot physically cross that boundary, cast spells across it, or project their abilities across it unless they make a successful Charisma saving throw against your spell save DC. A creature that fails the saving throw can try again on its next turn. A creature that succeeds and moves across the boundary into the protected area isn’t affected by the boundary while it remains inside (the boundary impedes only incoming entities and effects, not outgoing), but it must contend with the ward again if it leaves the area.</p>
+			<p class="indent">If a creature can see the seal when it makes the saving throw, it has disadvantage.</p>
+			<p class="indent">Additionally, when a creature you can see and who is carrying an active seal is targeted by an attack, you can use your reaction to impose disadvantage on the attack roll.</p>
+		</description>
+		<sheet action="Action">
+			<description>You learn to place warding seals to protect areas. This follows the same rules for scribing an angelic seal, but the seal must be on the ground, the floor, or a similarly solid portion of a structure such as a wall, column, or ceiling. As an action, you can touch the seal to activate it. You must maintain concentration on the effect as if concentrating on a spell.
+			Once activated, the warding seal creates a spiritual, spherical boundary with a radius of 30 feet, or surrounding a small building or series of rooms of similar dimension. Aberrations, fey, fiends, and undead cannot physically cross that boundary, cast spells across it, or project their abilities across it unless they make a successful DC{{intelligence:modifier}} Charisma saving throw. A creature that fails the saving throw can try again on its next turn. A creature that succeeds and moves across the boundary into the protected area isn’t affected by the boundary while it remains inside, but it must contend with the ward again if it leaves the area.
+			If a creature can see the seal when it makes the saving throw, it has disadvantage.
+			Additionally, when a creature you can see and who is carrying an active seal is targeted by an attack, you can use your reaction to impose disadvantage on the attack roll.</description>
+		</sheet>
+	</element>
+	<element name="Greater Seal" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_GREATER_SEAL">
+		<description>
+			<p>Starting at 10th level, you can use an action to empower one active angelic seal or warding seal to greater effect. If you choose an angelic seal, its user gains the greater benefit of the seal for 1 minute. This replaces the normal benefit while it is active. If you choose a warding seal, for the next hour a creature that fails its saving throw against the ward takes 6d6 radiant damage and automatically fails further saves against the ward during this time.</p>
+			<p class="indent">You can use this ability twice, and you regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="2/Short Rest">
+			<description>You can empower one active angelic seal or warding seal to greater effect. If you choose an angelic seal, its user gains the greater benefit of the seal for 1 minute. This replaces the normal benefit while it is active. If you choose a warding seal, for the next hour a creature that fails its saving throw against the ward takes 6d6 radiant damage and automatically fails further saves against the ward during this time.</description>
+		</sheet>
+	</element>
+	<element name="Angelic Wrath" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_ANGELIC_WRATH">
+		<description>
+			<p>At 14th level, you add conjure celestial to your spellbook, and it is a wizard spell for you.</p>
+			<p class="indent">Additionally, you can use a bonus action to infuse your seals with angelic wrath. For 1 minute, you and anyone in possession of one of your active seals within 30 feet of you deal an additional 1d8 radiant damage with weapon attacks.</p>
+			<p class="indent">You can’t use this ability again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>Infuse your seals with angelic wrath. For 1 minute, you and anyone in possession of one of your active seals within 30 feet of you deal an additional 1d8 radiant damage with weapon attacks.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_CELESTIAL" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Benevolence (Amnayeth)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_BENEVOLENCE_AMNAYETH">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>This seal allows its user to retry a failed ability check to improve another creature’s attitude.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> As an action, the user can cause a creature who can hear the user to make a Wisdom saving throw against your spell save DC or be charmed for 10 minutes. This seal can’t be used again on the same creature until the user finishes a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>This seal allows its user to retry a failed ability check to improve another creature’s attitude.
+			Greater: As an action, the user can cause a creature who can hear the user to make a Wisdom saving throw against your spell save DC or be charmed for 10 minutes. This seal can’t be used again on the same creature until the user finishes a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Clarity (Simil)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_CLARITY_SIMIL">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>The user adds half your Intelligence modifier (minimum of 1) to its Wisdom (Insight) and Wisdom (Perception) checks.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> The user gains blindsight with a range of 10 feet.</p>
+		</description>
+		<sheet>
+			<description>The user adds {{clarity seal:bonus}} to its Insight and Perception checks.
+			Greater: The user gains blindsight with a range of 10 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="clarity seal:bonus" value="1" bonus="base" />
+			<stat name="clarity seal:bonus" value="intelligence:modifier:half" bonus="base" />
+		</rules>
+	</element>
+	<element name="Fortitude (Rikbil)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_FORTITUDE_RIKBIL">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>When it is hit with an attack, the user can use its reaction to add 2 to its AC against that attack. It must be able to see the attacker to use this effect.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> The user gains resistance to nonmagical bludgeoning, piercing, and slashing damage.</p>
+		</description>
+		<sheet>
+			<description>When it is hit with an attack, the user can use its reaction to add 2 to its AC against that attack. It must be able to see the attacker to use this effect.
+			Greater: The user gains resistance to nonmagical bludgeoning, piercing, and slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Fortune (Barrateth)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_FORTUNE_BARRATETH">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>The use can add 1 to an attack roll, saving throw, or ability check. The addition is made after rolling the die but before the GM reveals whether it was a success or failure.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> After making an attack roll, saving throw, or ability check, the user can roll another d20 and choose which result to use. The second roll is made after the initial roll but before the GM reveals whether that roll was a success or failure. After using this seal, it can’t be used again until the user finishes a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>The use can add 1 to an attack roll, saving throw, or ability check. The addition is made after rolling the die but before the GM reveals whether it was a success or failure.
+			Greater: After making an attack roll, saving throw, or ability check, the user can roll another d20 and choose which result to use. The second roll is made after the initial roll but before the GM reveals whether that roll was a success or failure. After using this seal, it can’t be used again until the user finishes a short or long rest</description>
+		</sheet>
+	</element>
+	<element name="Glory (Vrechiel)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_GLORY_VRECHIEL">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>When the user reduces an enemy to 0 hit points, the user gains temporary hit points equal to your Intelligence modifier (minimum of 1).</p>
+			<p class="indent"><strong><em>Greater:</em></strong> At the start of its turn, the user gains temporary hit points equal to your wizard level.</p>
+		</description>
+		<sheet>
+			<description>When the user reduces an enemy to 0 hit points, the user gains {{glory seal:temporary hp}} temporary hit points.
+			Greater: At the start of its turn, the user gains {{level:wizard}} temporary hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="glory seal:temporary hp" value="1" bonus="base" />
+			<stat name="glory seal:temporary hp" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Humility (Ophanim)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_HUMILITY_OPHANIM">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>The user adds half your Intelligence modifier (minimum of 1) to its Dexterity (Stealth) checks. It loses this bonus until the start of its next turn when it takes a hostile action (any action that could inflict intentional damage on a creature).</p>
+			<p class="indent"><strong><em>Greater:</em></strong> If it hasn’t taken a hostile action this turn, the user can use its action to present an aura of humility. A creature that wishes to attack the user must succeed on a Wisdom saving throw against your spell save DC or choose another target. If there are no other targets it wishes to attack, the creature wastes its action doing nothing.</p>
+		</description>
+		<sheet>
+			<description>The user adds {{humility seal:bonus}} to its Stealth checks. It loses this bonus until the start of its next turn when it takes a hostile action (any action that could inflict intentional damage on a creature).
+			Greater: If it hasn’t taken a hostile action this turn, the user can use its action to present an aura of humility. A creature that wishes to attack the user must succeed on a Wisdom saving throw against your spell save DC or choose another target. If there are no other targets it wishes to attack, the creature wastes its action doing nothing.</description>
+		</sheet>
+		<rules>
+			<stat name="humility seal:bonus" value="1" bonus="base" />
+			<stat name="humility seal:bonus" value="intelligence:modifier:half" bonus="base" />			
+		</rules>
+	</element>
+	<element name="Judgement (Chamule)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_JUDGEMENT_CHAMULE">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>When the user hits a creature with an opportunity attack, the user can move up to half its speed, provided it ends the move no farther from the creature it hit.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> As a reaction when it is hit with an attack, the user can cause the attacker to take radiant damage equal to your Intelligence modifier (minimum of 1), if the attacker is within 60 feet of the user.</p>
+		</description>
+		<sheet>
+			<description>When the user hits a creature with an opportunity attack, the user can move up to half its speed, provided it ends the move no farther from the creature it hit.
+			Greater: As a reaction when it is hit with an attack, the user can cause the attacker to take {{judgement seal:damage}} radiant damage, if the attacker is within 60 feet of the user.</description>
+		</sheet>
+		<rules>
+			<stat name="judgement seal:damage" value="1" bonus="base" />
+			<stat name="judgement seal:damage" value="intelligence:modifier" bonus="base" />			
+		</rules>
+	</element>
+	<element name="Recovery (Jelaal)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_RECOVERY_JELAAL">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>This seal allows the user to automatically pass its first death saving throw, at which time it regains 1 hit point. Once used, this effect doesn’t function again until the user finishes a short or long rest.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> When the user regains hit points, it regains an additional number of hit points equal to your Intelligence modifier (minimum of 1).</p>
+		</description>
+		<sheet>
+			<description>This seal allows the user to automatically pass its first death saving throw, at which time it regains 1 hit point. (1/User Short Rest).
+			Greater: When the user regains hit points, it regains an additional {{recovery seal:hp}} hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="recovery seal:hp" value="1" bonus="base" />
+			<stat name="recovery seal:hp" value="intelligence:modifier" bonus="base" />			
+		</rules>
+	</element>
+	<element name="Temperance (Iaothe)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_TEMPERANCE_IAOTHE">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>When it makes a Wisdom saving throw, the user can use its reaction to add your Intelligence modifier to the roll (minimum of 1). The bonus is added after the die is rolled but before the GM reveals whether the saving throw succeeds or fails. This ability doesn’t function again until the user finishes a short or long rest.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> The user can’t be charmed or frightened.</p>
+		</description>
+		<sheet>
+			<description>When it makes a Wisdom saving throw, the user can use its reaction to add {{temperance seal:bonus}} to the roll. The bonus is added after the die is rolled but before the GM reveals whether the saving throw succeeds or fails. This ability doesn’t function again until the user finishes a short or long rest.
+			Greater: The user can’t be charmed or frightened.</description>
+		</sheet>
+		<rules>
+			<stat name="temperance seal:bonus" value="1" bonus="base" />
+			<stat name="temperance seal:bonus" value="intelligence:modifier" bonus="base" />			
+		</rules>
+	</element>
+	<element name="Wrath (Xapanie)" type="Archetype Feature" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_ARCHETYPE_FEATURE_ANGELIC_SCRIBE_SEAL_WRATH_XAPANIE">
+		<supports>Angelic Seal</supports>
+		<description>
+			<p>Once on the user’s turn when it hits with a weapon attack, the attack deals 1 additional point of weapon damage.</p>
+			<p class="indent"><strong><em>Greater:</em></strong> The user’s attacks are magical, and once on the user’s turn when it hits with a weapon attack, the attack deals an additional amount of radiant damage equal to half your wizard level.</p>
+		</description>
+		<sheet>
+			<description>Once on the user’s turn when it hits with a weapon attack, the attack deals 1 additional point of weapon damage.
+			Greater: The user’s attacks are magical, and once on the user’s turn when it hits with a weapon attack, the attack deals an additional {{level:wizard:half}} radiant damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Angelic Guardian" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_ANGELIC_GUARDIAN">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You conjure a minor celestial manifestation to protect a creature you can see within range. A faintly glowing figure resembling a human head and shoulders hovers within 5 feet of the target for the duration. The figure moves to interpose itself between the target and any incoming attacks, granting the target +2 to AC. If the target fails a Dexterity saving throw while the spell is active, it can use its reaction to roll a new save. The spell then ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Angelic">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Benediction" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_BENEDICTION">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You call down a blessing in the name of an angel of protection. A creature you can see within range shimmers with a faint white light. The next time the creature takes damage, it can roll 1d4 and reduce the damage by the result. The spell then ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Angelic">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Blade of Wrath" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_BLADE_OF_WRATH">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You create a sword of pure white fire in your free hand. The blade is similar in size and shape to a longsword, and it lasts for the duration. If you let go of the blade it disappears, but you can call it forth again as a bonus action.</p>
+			<p class="indent">You can use your action to make a melee spell attack with the blade. On a hit, the target takes 2d8 fire damage and 2d8 radiant damage. An aberration, fey, fiend, or undead creature damaged by the blade must succeed on a Wisdom saving throw or be frightened until the start of your next turn.</p>
+			<p class="indent">The blade sheds bright light in a 20-foot radius and dim light for an additional 20 feet.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the fire damage or the radiant damage (your choice) increases by 1d8 for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Angelic">Evocation</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">a rebuke of evil, written in Celestial</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Blazing Chariot" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_BLAZING_CHARIOT">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>Calling upon the might of the angels, you conjure a flaming chariot made of gold and mithral in an unoccupied space you can see within range. Two horses made of fire and light pull the chariot. You and up to three other Medium or smaller creatures you designate can board the chariot (at the cost of 5 feet of movement) and are unharmed by the flames. Any other creature who touches the chariot or hits it or a creature riding in it with a melee attack while within 5 feet of the chariot takes 3d6 fire damage and 3d6 radiant damage.</p>
+			<p class="indent">The chariot is AC 18, has 50 hit points, is immune to fire, poison, psychic, and radiant damage, and is resistant to all other nonmagical damage. The horses are not separate creatures but are part of the chariot. The chariot vanishes if it’s reduced to 0 hit points, and any creature riding it falls. The chariot has a speed of 50 feet and a fly speed of 40 feet.</p>
+			<p class="indent">On your turn, you can guide the chariot in place of your own movement. You can direct it to Dash, Disengage, or Dodge by using your bonus action. As an action, you can cause the chariot to overrun creatures in its path. For the remainder of the turn, the chariot can enter a hostile creature’s space. The creature takes damage as if it touched the chariot and must make a successful Strength saving throw or be knocked prone.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Angelic">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a small golden wheel worth 250 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Blessed Halo" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_BLESSED_HALO">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>A nimbus of golden light surrounds your head for the duration. The halo sheds bright light in a 20-foot radius and dim light for an additional 20 feet. This spell grants you a pool of 10 points of healing. When you cast the spell and as an action on subsequent turns during the spell’s duration, you can expend points from this pool to restore an equal number of lost hit points to one creature within the spell’s bright light that you can see.</p>
+			<p class="indent">Additionally, you have advantage on Charisma checks made against good creatures within the light shed by the halo.</p>
+			<p class="indent">If any of this spell’s area overlaps an area of magical darkness created by a spell of 2nd level or lower, the spell that created the darkness is dispelled.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the spell’s pool of healing increases by 5 points for each spell slot above 2nd and this spell dispels darkness spells of a level equal to the slot used in casting blessed halo.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Angelic">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Deva’s Wings" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_DEVAS_WINGS">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You touch a willing creature. The target grows feathery wings of pure white that grant it a flying speed of 60 feet (hover) for the duration. When the creature takes the attack action, it can use a bonus action to make a melee weapon attack with the wings with a reach of 10 feet. If the wing attack hits, the target takes 1d6 plus your spellcasting ability modifier in bludgeoning damage and must make a successful Strength saving throw or fall prone. When the spell ends, the wings disappear and target falls if it was aloft.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, you can choose one additional target for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Angelic">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">a wing feather from any bird marked with an angelic symbol</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Greater Seal of Sanctuary" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_GREATER_SEAL_OF_SANCTUARY">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You inscribe an angelic seal on the ground, floor, or other solid component of a structure. The seal creates a spherical, spiritual boundary with a radius of 100 feet. For the duration, aberrations, elementals, fey, fiends, and undead who approach within 5 feet of the boundary know they are about to cross a deadly barrier. If the creature comes into contact with the boundary, it must make a Charisma saving throw. On a failure, it takes 15d8 radiant damage, it’s repelled to 5 feet outside the boundary, and it can’t target anything on the opposite side of the boundary with attacks, spells, or abilities. If the creature is a fiend that isn’t on its home plane, it is immediately destroyed instead of taking damage. On a successful save, the creature takes half as much radiant damage and can cross the boundary.</p>
+			<p class="indent">While within 100 feet of the seal (inside the boundary), aberrations, elementals, fey, fiends, and undead have disadvantage on ability checks, attack rolls, and saving throws, and each takes 4d8 radiant damage at the start of its turn.</p>
+			<p class="indent">All of these effects apply to the specified creatures trying to cross the boundary by any means, including teleportation and extradimensional travel.</p>
+			<p class="indent">Creatures other than aberrations, elementals, fey, fiends, and undead can’t be charmed or frightened while within 100 feet of the seal.</p>
+			<p class="indent">The seal has 75 hit points, has resistance to bludgeoning, piercing, and slashing damage, and is immune to psychic and poison damage. If the seal is reduced to 0 hit points, the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">9</set>
+			<set name="school" addition="Angelic">Abjuration</set>
+			<set name="time">10 minutes</set>
+			<set name="range">Touch</set>
+			<set name="duration">24 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">incense and special inks worth 500 gp, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Heavenly Crown" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_HEAVENLY_CROWN">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>A glowing golden crown appears on your head and sheds dim light in a 30-foot radius, invoking the majesty of the heavenly planes. When you cast the spell and as a bonus action on subsequent turns, you can target one willing creature within 30 feet of you that you can see. If the target can hear you, it can use its reaction to make one melee weapon attack and then move up to half its speed, or vice versa.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Angelic">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot sphere)</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">a small golden crown worth 50 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Quintessence" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_QUINTESSENCE">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>By calling on an archangel, you become infused with celestial essence and take on angelic features such as golden skin, glowing eyes, and ethereal wings. For the duration of the spell, your AC can’t be less than 20, you can’t be frightened, and you are immune to necrotic damage.</p>
+			<p class="indent">In addition, each hostile creature that starts its turn within 120 feet of you or enters that area for the first time on a turn must succeed on a Wisdom saving throw or be frightened for 1 minute. A creature frightened in this way is restrained. A frightened creature repeats the saving throw at the end of its turn, ending the effect on itself on a success. If a creature’s saving throw is successful or if the effect ends for it, the creature is immune to the frightening effect of the spell until you cast quintessence again.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="Angelic">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (120-foot sphere)</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Seal of Sanctuary" type="Spell" source="Deep Magic: Angelic Seals" id="ID_KBP_DMAS_SPELL_SEAL_OF_SANCTUARY">
+		<supports>Cleric,Paladin,Warlock,Wizard,Angelic Magic</supports>
+		<description>
+			<p>You inscribe an angelic seal on the ground, floor, or other solid component of a structure. The seal creates a spherical, spiritual boundary with a radius of 50 feet. For the duration, aberrations, elementals, fey, fiends, and undead who approach within 5 feet of the boundary know they are about to cross a dangerous barrier. If the creature comes into contact with the boundary, it must make a Charisma saving throw. On a failure, it takes 10d8 radiant damage, it’s repelled to 5 feet outside the boundary, and it can’t target anything on the opposite side of the boundary with attacks, spells, or abilities. On a successful save, the creature takes half as much radiant damage and can cross the boundary. While within 50 feet of the seal (inside the boundary), aberrations, elementals, fey, fiends, and undead have disadvantage on ability checks, attack rolls, and saving throws. All of these effects apply to the specified creatures trying to cross the boundary by any means, including teleportation and extradimensional travel.</p>
+			<p class="indent">Creatures other than aberrations, elementals, fey, fiends, and undead can’t be charmed or frightened while within the area.</p>
+			<p class="indent">The seal has 50 hit points, has resistance to bludgeoning, piercing, and slashing damage, and is immune to psychic and poison damage. If the seal is reduced to 0 hit points, the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">angelic magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="Angelic">Abjuration</set>
+			<set name="time">10 minutes</set>
+			<set name="range">Touch</set>
+			<set name="duration">24 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">incense and special inks worth 250 gp, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+</elements>

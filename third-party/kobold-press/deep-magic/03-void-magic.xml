@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Void Magic</name>
+		<update version="0.0.1">
+			<file name="03-void-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/03-void-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Void Magic" type="Source" source="Core" id="ID_KBP_DMVM_SOURCE_DEEP_MAGIC_VOID_MAGIC">
+		<description>
+			<p><strong>Speak Not the Words. Read Not the Glyphs!</strong></p>
+			<p>The speech of the void is oblivion given form. It corrupts and degrades physical reality. The Great Old Ones murmur it to their followers in nightmares, and it is whispered by creatures that dwell in the silent, cold expanses between the stars. Void magic is anathema to existence itself. Only the mad, desperate, or power-hungry seek to wield it—and you are one of them.</p>
+			<p>Deep Magic: Void Magic brings the secrets of these dark conjurations into your 5e campaign, featuring:</p>
+			<ul>
+				<li>A Void school of wizard magic, with two new feats: Void Channeler, and Void Scribe</li>
+				<li>A Void Speaker arcane tradition, with new abilities including Whispers of the Void, Rebuke from Beyond, and Powerful Echo</li>
+				<li>13 new spells, including conjure voidborn, life drain, maddening whispers, word of misfortune, and more!</li>
+			</ul>
+			<p>Who can say what drives you to master the magic of the void, casting spells that threaten to unmake the universe itself? Yet it may be that someday, when all seems lost, you will be the one who has the power to save the world.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMVM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-void-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM3-Void-Magic-Cover.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20160830</set>
+		</setters>
+	</element>
+
+	<element name="Void Magic" type="Magic School" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_MAGIC_SCHOOL_VOID_MAGIC">
+		<description>
+			<p>Void magic comprises a dangerous school of wizardry that exists alongside, but in the shadows of, the more well-known practices. his magic is anathema to existence itself, making it diicult to master and dangerous even to study. Dabblers rarely produce efects more profound than minor injury, property damage, and psychological scars to themselves and those around them. More serious investigations into void magic can spell disaster. Only alien creatures whose psychology and physiology defy human understanding seem capable of commanding void magic with relative ease; even beings as anomalous as aboleths respect and fear the power of void magic.</p>
+			<p class="indent">Void magic spells can never be added to a wizard’s spellbook as part of the two spells learned automatically for gaining a level (with the exception of void savants; see below). To learn a void magic spell, a wizard must find an NPC void speaker who’s willing to impart the knowledge or discover the spell writen as a spell scroll, in a captured spellbook, carved on a temple wall, or some other form of recorded lore. Alternatively, if the GM allows it, a character who sees and hears a void magic spell being cast can add it to his or her spell book, using the same rules as transcribing a spell from a scroll.</p>
+			<p class="indent">Despite void magic’s strange origins, it still functions similarly to other arcane magic on a fundamental level. Void magic follows all the normal rules for spellcasting and is susceptible to dispelling, countermagic, and antimagic as normal. Void magic spells always have a verbal component and can’t, under any circumstance, be cast without it.</p>
+		</description>
+	</element>
+
+	<element name="Void Channeler" type="Feat" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_FEAT_VOID_CHANNELER">
+		<description>
+			<p>As an action, you can speak aloud a word or short phrase in void speech. One creature of your choice within 10 feet that can hear you must succeed on a Wisdom saving throw against this magic (DC 8 + your proiciency bonus + your Charisma modiier) or be frightened of you for 1 minute. A frightened creature can repeat the saving throw at the end of its turn, ending the efect on itself on a success.</p>
+			<p class="indent">Other creatures who can hear you sufer minor reactions to the void speech such as spontaneous nosebleeds, headaches, bits of hair falling out, and other unsetling efects. The first time you use this ability, you sufer no adverse efect. If you use it again before completing a short or long rest, you take 1d4 necrotic damage. Each additional time you use it before finishing a rest, the necrotic damage increases by 1d4.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can speak aloud a word or short phrase in void speech. One creature of your choice within 10 feet that can hear you must succeed on a DC{{void channeler:dc}} Wisdom saving throw or be frightened of you for 1 minute. A frightened creature can repeat the saving throw at the end of its turn, ending the efect on itself on a success.
+			Other creatures who can hear you sufer minor reactions to the void speech such as spontaneous nosebleeds, headaches, bits of hair falling out, and other unsetling efects. The first time you use this ability, you sufer no adverse efect. If you use it again before completing a short or long rest, you take 1d4 necrotic damage. Each additional time you use it before finishing a rest, the necrotic damage increases by 1d4.</description>
+		</sheet>
+		<rules>
+			<stat name="void channeler:dc" value="8" />
+			<stat name="void channeler:dc" value="proficiency" />
+			<stat name="void channeler:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Void Scribe" type="Feat" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_FEAT_VOID_SCRIBE">
+		<description>
+			<p>As an action, you can use a writing medium to inscribe a magical void glyph on an unatended object within reach. As long as the glyph remains intact, the object is vulnerable to necrotic damage and it takes 1d6 necrotic damage at the end of your turn.</p>
+			<p class="indent">For the glyph to remain intact, you must concentrate on it as if concentrating on a spell. In addition to the normal demands of concentration, you must also make a successful DC 10 Constitution saving throw at the start of your turn or the glyph crumbles away and ceases to function.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can use a writing medium to inscribe a magical void glyph on an unatended object within reach. As long as the glyph remains intact, the object is vulnerable to necrotic damage and it takes 1d6 necrotic damage at the end of your turn.
+			For the glyph to remain intact, you must concentrate on it as if concentrating on a spell. In addition to the normal demands of concentration, you must also make a successful DC 10 Constitution saving throw at the start of your turn or the glyph crumbles away and ceases to function.</description>
+		</sheet>
+	</element>
+	
+	<element name="Void Speaker" type="Archetype" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_VOID_SPEAKER">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Given the nature of void magic, it comes as no surprise that a tradition of wizards sprang up from the study of void speech. Void speakers are a standoish and secretive lot, prone to delving into crumbling, monster-prowled ruins and the dark corners of moldering libraries with equal caution; carelessly reading a text that may be sprinkled with void glyphs can be just as deadly as stumbling into a den of trolls. As you focus your study on void speech, you learn to properly invoke the words and glyphs to empower your magic and to tap the vast potential of the void.</p>
+			<p class="indent">Some void speakers risk the darkness for the sake of knowledge or defense against that which lies beyond. Others succumb to the madness and corruption that void magic touches and become living conduits for the horror seeking entry into the mortal world.</p>
+			<div element="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_VOID_SAVANT" />
+			<div element="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_WHISPERS_OF_THE_VOID" />
+			<div element="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_REBUKE_FROM_BEYOND" />
+			<div element="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_POWERFUL_ECHO" />
+			<div element="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_MANIFESTATION" />
+			<div class="reference">
+				<div element="ID_KBP_DMVM_MAGIC_SCHOOL_VOID_MAGIC" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>You learn to properly invoke the words and glyphs to empower your magic and to tap the vast potential of the void.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_VOID_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_WHISPERS_OF_THE_VOID" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_REBUKE_FROM_BEYOND" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_POWERFUL_ECHO" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_MANIFESTATION" level="14" />
+		</rules>
+	</element>
+	<element name="Void Savant" type="Archetype Feature" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_VOID_SAVANT">
+		<description>
+			<p>Beginning when you select this tradition at 2nd level, the gold and time you must spend to copy a void spell into your spellbook is halved.</p>
+			<p class="indent">When you gain a level, one of the two spells you learn for gaining a level can be a void magic spell, even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be a void magic cantrip, even if you’ve never previously encountered it.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a void spell into your spellbook is halved.
+			When you gain a level, one of the two spells you learn for gaining a level can be a void magic spell, even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be a void magic cantrip, even if you’ve never previously encountered it.</description>
+		</sheet>
+		<spellcasting name="Wizard" extend="true">
+			<extend>Void Magic</extend>
+		</spellcasting>
+	</element>
+	<element name="Whispers of the Void" type="Archetype Feature" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_WHISPERS_OF_THE_VOID">
+		<description>
+			<p>Starting at 2nd level, as a bonus action immediately before you cast a spell of 1st level or higher, you can utter a few words of void speech and weave its dark magic into your spell. The tainted spell disorients one creature you can see that the spell afects when you cast it. The creature has disadvantage on the next atack roll or ability check it makes before the start of your next turn. You can’t use this feature if you are unable to speak.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Immediately before you cast a spell of 1st level or higher, you can utter a few words of void speech and weave its dark magic into your spell. The tainted spell disorients one creature you can see that the spell afects when you cast it. The creature has disadvantage on the next atack roll or ability check it makes before the start of your next turn. You can’t use this feature if you are unable to speak.</description>
+		</sheet>
+	</element>
+	<element name="Rebuke from Beyond" type="Archetype Feature" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_REBUKE_FROM_BEYOND">
+		<description>
+			<p>Beginning at 6th level, when you are damaged by a creature within 60 feet, you can use your reaction to bark a destructive word of void speech. If the creature can hear you, it takes necrotic damage equal to half your wizard level plus your Intelligence modiier. You can use this ability a number of times equal to your Intelligence modiier (minimum of 1), and you regain all expended uses when you finish a long rest. You can’t use this ability if you are unable to speak.</p>
+		</description>
+		<sheet action="Reaction" usage="{{rebuke from beyond:usage}}/Long Rest">
+			<description>When you are damaged by a creature within 60 feet, you can use your reaction to bark a destructive word of void speech. If the creature can hear you, it takes {{rebuke from beyond:damage}} necrotic damage. You can’t use this ability if you are unable to speak.</description>
+		</sheet>
+		<rules>
+			<stat name="rebuke from beyond:damage" value="level:wizard:half" />
+			<stat name="rebuke from beyond:damage" value="intelligence:modifier" />
+			<stat name="rebuke from beyond:usage" value="1" bonus="base" />
+			<stat name="rebuke from beyond:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Powerful Echo" type="Archetype Feature" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_POWERFUL_ECHO">
+		<description>
+			<p>Starting at 10th level, when you cast a void magic spell that targets only one creature, you can have it target a second creature. Additionally, you have advantage on Constitution saving throws made to maintain concentration on void spells.</p>
+		</description>
+		<sheet>
+			<description>When you cast a void magic spell that targets only one creature, you can have it target a second creature. Additionally, you have advantage on Constitution saving throws made to maintain concentration on void spells.</description>
+		</sheet>
+	</element>
+	<element name="Manifestation" type="Archetype Feature" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_ARCHETYPE_FEATURE_VOID_SPEAKER_MANIFESTATION">
+		<description>
+			<p>At 14th level, you can use your action to pronounce a complicated phrase in void speech. Choose a point you can see within 60 feet. The area within 20 feet of that point is shrouded in dim light for one minute. Any creature hostile to you within the area is vulnerable to necrotic damage and has disadvantage on Wisdom checks. An afected creature that starts its turn in the area or that enters the area for the first time on its turn takes 3d6 necrotic damage, or half damage with a successful Constitution saving throw (using your spell save DC). Once you use this ability, you can’t use it again until you finish a short or long rest. You can’t use this feature if you’re unable to speak.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can pronounce a complicated phrase in void speech. Choose a point you can see within 60 feet. The area within 20 feet of that point is shrouded in dim light for one minute. Any creature hostile to you within the area is vulnerable to necrotic damage and has disadvantage on Wisdom checks. An afected creature that starts its turn in the area or that enters the area for the first time on its turn takes 3d6 necrotic damage, or half damage with a successful DC{{intelligence:modifier}} Constitution saving throw. You can’t use this feature if you’re unable to speak.</description>
+		</sheet>
+	</element>
+	
+	<element name="Conjure Minor Voidborn" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_CONJURE_MINOR_VOIDBORN">
+		<description>
+			<p>You summon fiends or aberrations that appear in unoccupied spaces you can see within range. You choose one of the following options for what appears:</p>
+			<ul>
+				<li>One creature of challenge rating 2 or lower</li>
+				<li>Two creatures of challenge rating 1 or lower</li>
+				<li>Four creatures of challenge rating 1/2 or lower</li>
+				<li>Eight creatures of challenge rating 1/4 or lower</li>
+			</ul>
+			<p>Summoned creatures disappear when they drop to 0 hit points or when the spell ends.</p>
+			<p class="indent">The summoned creatures do not directly atack you or your companions. Roll initiative for the summoned creatures as a group; they take their own turns on their initiative result. They atack your enemies and try to stay within 90 feet of you, but they control their own actions. The summoned creatures despise being bound, so they might harm or impede you and your companions with secondary efects (but not direct atacks) if the opportunity arises. At the beginning of the creatures’ turn, you can use your reaction to verbally command them. They obey your commands for that turn, and you take 1d6 psychic damage at the end of the turn.</p>
+			<p class="indent">If your concentration is broken, the creatures don’t disappear. Instead, you can no longer command them and they become hostile to you and your companions. They will atack you and your allies if they believe they have a chance to win the ight or to inlict meaningful harm, but they won’t ight if they fear it would mean their own death. The creatures can’t be dismissed by you, but they disappear 1 hour ater being summoned.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a 7th- or 9th-level spell slot, you choose one of the summoning options above, and more creatures appear: twice as many with a 7th-level spell slot and three times as many with a 9th-level spell slot.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">5</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 minute</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Conjure Voidborn" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_CONJURE_VOIDBORN">
+		<description>
+			<p>You summon a fiend or aberration of challenge rating 6 or lower, which appears in an unoccupied space that you can see within range. The creature disappears when it drops to 0 hit points or when the spell ends.</p>
+			<p class="indent">Roll initiative for the creature, which takes its own turns. It atacks the nearest creature on its turn. At the start of the iend’s turn, you can use your reaction to command the creature by speaking in void speech. It obeys your verbal command, and you take 2d6 psychic damage at the end of the creature’s turn.</p>
+			<p class="indent">If your concentration is broken, the creature doesn’t disappear. Instead you can no longer issue commands to the iend, and it becomes hostile to you and your companions. It will atack you and your allies if it believes it has a chance to win the ight or to inlict meaningful harm, but it won’t ight if it fears it would mean its own death. The creature can’t be dismissed by you, but it disappears 1 hour ater you summoned it.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 8th level or higher, the challenge rating increases by 1 for each slot level above 7th.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">7</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Crushing Curse" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_CRUSHING_CURSE">
+		<description>
+			<p>You speak a word of void speech. Choose a creature you can see within range. If the target can hear you, it must succeed on a Wisdom saving throw or take 1d6 psychic damage and be deafened for 1 minute. A deafened creature can repeat the saving throw at the end of each of its turns, ending the deafness on a success. A creature deafened in this way can still hear void speech.</p>
+			<p class="indent">This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">0</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Destructive Resonance" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_DESTRUCTIVE_RESONANCE">
+		<description>
+			<p>You shout a scathing string of void speech that assaults the minds of any creatures who hear it. Each creature in a 15-foot cone who can hear you takes 4d6 psychic damage, or half damage with a successful Wisdom saving throw. Creatures damaged by this spell can’t take reactions until the start of their next turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">2</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (15-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Glimpse of The Void" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_GLIMPSE_OF_THE_VOID">
+		<description>
+			<p>Mutering void speech, you force images of terror and nonexistence upon your foes. Each creature in a 30-foot cube within range must make an Intelligence saving throw. On a failed save, the creature goes insane for the duration. While insane, a creature takes no actions other than to shriek, wail, gibber, and babble unintelligibly. The GM controls the creature’s movement, which is erratic.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">8</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a scrap of parchment with void glyph scrawlings</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Life Drain" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_LIFE_DRAIN">
+		<description>
+			<p>With a snarled word of void speech, you create a swirling vortex of purple energy. Choose a point you can see within range. Creatures within 15 feet of the point take 10d6 necrotic damage, or half damage with a successful Constitution saving throw. For each creature damaged by the spell, you can choose one other creature within range, including yourself, that is not a construct or undead. The secondary targets regain hit points equal to half the necrotic damage you rolled.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 7th level or higher, the vortex’s damage increases by 1d6 for each slot level above 6th.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">6</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Living Shadows" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_LIVING_SHADOWS">
+		<description>
+			<p>You whisper sibilant words of void speech that cause shadows to writhe with unholy life. Choose a point you can see within range. Writhing shadows spread out in a 15-foot-radius sphere centered on that point, grasping at creatures in the area. A creature that starts its turn in the area or that enters the area for the first time on its turn must make a successful Strength saving throw or be restrained by the shadows. A creature that starts its turn restrained by the shadows must make a successful Constitution saving throw or gain one level of exhaustion.</p>
+			<p class="indent">A restrained creature can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">5</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Maddening Whispers" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_MADDENING_WHISPERS">
+		<description>
+			<p>You whisper a string of void speech toward a target that can hear you. The target must succeed on a Charisma saving throw or be incapacitated. While incapacitated by this spell, the target’s speed is 0 and it can’t beneit from increases to its speed. To maintain the efect, you must use your action on subsequent turns to continue whispering; otherwise, the spell ends. The spell also ends if the target takes damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">2</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Nether Weapon" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_NETHER_WEAPON">
+		<description>
+			<p>You whisper in void speech and touch a weapon. Until the spell ends, the weapon turns pitch black, becomes magical if it wasn’t before, and it does 2d6 necrotic damage in addition to its normal damage on a successful hit. A creature that takes necrotic damage from the enchanted weapon can’t regain hit points until the start of your next turn.</p>
+			<p class="indent">hen you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d6 for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">4</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">ink, chalk, or some other writing medium</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Protection From The Void" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_PROTECTION_FROM_THE_VOID">
+		<description>
+			<p>Until the spell ends, one willing creature you touch has resistance to necrotic and psychic damage, and has advantage on saving throws against void spells.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">1</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a small bar of silver worth 15 sp, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Void Rift" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_VOID_RIFT">
+		<description>
+			<p>You speak a hideous string of void speech that leaves your mouth bloodied, causing a rit into absolute nothingness to tear open. The rit takes the form of a 10-foot-radius sphere, and it forms around a point you can see within range. The area within 40 feet of the sphere’s outer edge becomes diicult terrain as the void tries to draw everything into itself. All creatures that start their turns within 40 feet of the sphere or that enter that area for the first time on their turn must succeed on a Strength saving throw or be pulled 15 feet toward the rit. Creatures that start their turn in contact with the rit or that come into contact with it for the first time on their turn take 8d10 necrotic damage. Creatures inside the rit are blinded and deafened. Unatended objects within 40 feet of the rit are drawn 15 feet toward it at the start of your turn, and take damage as creatures.</p>
+			<p class="indent">hile concentrating on the spell, you take 2d6 necrotic damage at the end of your turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">9</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">300 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">a black opal carved with a void glyph worth 500 gp</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Void Strike" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_VOID_STRIKE">
+		<description>
+			<p>With a short phrase of void speech, you gather writhing darkness around your hand. When you cast the spell, and as an action on subsequent turns, you can unleash a bolt of darkness at a target within range. Make a ranged spell atack. If your target is in dim light or darkness, you have advantage on the roll. On a hit, the target takes 5d8 necrotic damage and is frightened of you until the start of your next turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast the spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">3</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Word of Misfortune" type="Spell" source="Deep Magic: Void Magic" id="ID_KBP_DMVM_SPELL_WORD_OF_MISFORTUNE">
+		<description>
+			<p>You hiss a word of void speech. Choose one creature you can see within range. The next time the creature makes a saving throw during the spell’s duration, it must roll a d4 and subtract the result from the total of the saving throw. The spell then ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">void magic</set>
+			<set name="level">0</set>
+			<set name="school">Void Magic</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+</elements>

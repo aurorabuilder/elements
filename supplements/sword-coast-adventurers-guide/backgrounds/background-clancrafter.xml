@@ -4,7 +4,7 @@
 		<name>Clan Crafter</name>
 		<description>Clan Crafter Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="background-clancrafter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/backgrounds/background-clancrafter.xml" />
 		</update>
 	</info>
@@ -12,24 +12,27 @@
 	<element name="Clan Crafter" type="Background" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_CLAN_CRAFTER">
 		<description>
 			<p>The Stout Folk are well known for their artisanship and the worth of their handiworks, and you have been trained in that ancient tradition. For years you labored under a dwarf master of the craft, enduring long hours. and dismissive, sour-tempered treatment in order to gain the fine skills you possess today.</p>
-			<p class="indent">You are most likely a dwarf, but not necessarily- particularly in the North, the shield dwarf clans learned long ago that only proud fools who are more concerned for their egos than their craft turn away promising apprentices, even those of other races. If you aren't a dwarf, however, you have taken a solemn oath never to take on an apprentice in the craft: it is not for nondwarves to pass on the skills of Moradin’s favored children. You would have no difficulty, however, finding a dwarf master who was willing to receive potential apprentices who came with your recommendation.</p>
+			<p class="indent">You are most likely a dwarf, but not necessarily- particularly in the North, the shield dwarf clans learned long ago that only proud fools who are more concerned for their egos than their craft turn away promising apprentices, even those of other races. If you aren’t a dwarf, however, you have taken a solemn oath never to take on an apprentice in the craft: it is not for nondwarves to pass on the skills of Moradin’s favored children. You would have no difficulty, however, finding a dwarf master who was willing to receive potential apprentices who came with your recommendation.</p>
 			<ul class="unstyled">
 				<li> <strong>Skill Proficiencies:</strong> History, Insight</li>
-				<li> <strong>Tool Proficiencies:</strong> One type of artisan's tools</li>
+				<li> <strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
 				<li> <strong>Languages:</strong> Dwarvish or one other of your choice if you already speak Dwarvish</li>
-				<li> <strong>Equipment:</strong> A set of artisan's tools with which you are proficient, a maker's mark chisel used to mark your handiwork with the symbol of the clan of crafters you learned your skill from, a set of traveler's clothes, and a pouch containing 5 gp and a gem worth 10 gp</li>
+				<li> <strong>Equipment:</strong> A set of artisan’s tools with which you are proficient, a maker’s mark chisel used to mark your handiwork with the symbol of the clan of crafters you learned your skill from, a set of traveler’s clothes, and a pouch containing 5 gp and a gem worth 10 gp</li>
 			</ul>
 			<div element="ID_SCAG_BACKGROUND_CLAN_CRAFTER_RESPECTSTOUTFOLK" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
-			<p>Use the tables for the guild artisan background in the Player's Handbook as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a clan crafter. (For instance, consider the words "guild" and "clan" to be interchangeable.)</p>
+			<p>Use the tables for the guild artisan background in the Player’s Handbook as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a clan crafter. (For instance, consider the words "guild" and "clan" to be interchangeable.)</p>
 			<p class="indent">Your bond is almost certainly related to the master or the clan that taught you, or else to the work that you produce. Your ideal might have to do with maintaining the high quality of your work or preserving the dwarven traditions of craftsmanship.</p>
 		</description>
+		<setters>
+			<set name="short">History, Insight, Artisan’s Tool, Dwarvish or Language</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
 			<select type="Proficiency" name="Tool Proficiency (Clan Crafter)" supports="Artisan tools" />
 			<!-- todo: implement something like a default-behaviour attribute hide and selection when default is available, but when unable to set default -> allow user selection -->
-			<select type="Language" name="Language (Clan Crafter)" default="ID_LANGUAGE_DWARVISH" default-behaviour="force" />
+			<select type="Language" name="Language (Clan Crafter)" supports="Standard||Exotic" default="ID_LANGUAGE_DWARVISH" default-behaviour="force" />
 			<grant type="Background Feature" id="ID_SCAG_BACKGROUND_CLAN_CRAFTER_RESPECTSTOUTFOLK" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
 			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Personality Trait" type="List" number="2">

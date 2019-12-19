@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="rogue-relichunter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/archetypes/rogue-relichunter.xml" />
+		</update>
+	</info>	
+	<element name="Relic Hunter" type="Archetype" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_RELIC_HUNTER">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>Avernus is the layer of temptation and lost opportunity. The battlefields of the plane are littered with trinkets of interest, objects of value and artifacts of great power. Relic Hunters scour the wasteland ruins in search of the hidden treasures of the blood war.</p>
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_TRASH_AND_TREASURE" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_KNACK" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_QUICK_APPRAISAL" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_USE_MAGIC_DEVICE" />
+			<div element="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_HIDDEN_RESOURCES" />
+		</description>
+		<sheet display="false">
+			<description>A treasure seeker versed in sifting the debris strewn battlefields of Avernus.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_TRASH_AND_TREASURE" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_KNACK" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_QUICK_APPRAISAL" level="9" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_USE_MAGIC_DEVICE" level="13" />
+			<grant type="Archetype Feature" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_HIDDEN_RESOURCES" level="17" />
+		</rules>
+	</element>
+	<element name="Trash and Treasure" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_TRASH_AND_TREASURE">
+		<description>
+			<p>Starting at 3rd level, you have a talent for sifting worthwhile objects from junk. You can automatically gauge the relative value of any object in gold pieces, and add a bonus to your Perception and Investigation skill checks equal to half your level (round down), but only with regards to finding, identifying and separating out hidden or concealed objects of value from other objects (such as battle debris or junk piles). This does not allow you to find deliberately hidden objects in crafted concealment (such as secret compartments or passages).</p>
+		</description>
+		<sheet>
+			<description>You can automatically gauge the relative value of any object in gold pieces, and add +{{trash and treasure:bonus}} to your Perception and Investigation skill checks, but only with regards to finding, identifying and separating out hidden or concealed objects of value from other objects. This does not allow you to find deliberately hidden objects in crafted concealment.</description>
+		</sheet>
+		<rules>
+			<stat name="trash and treasure:bonus" value="level:half" />
+		</rules>
+	</element>
+	<element name="Knack" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_KNACK">
+		<description>
+			<p>Starting at 3rd level, you can detect magical auras by touch. This acts as the detect magic spell, except it has no range and you must be touching an object to use this ability on it.</p>
+		</description>
+		<sheet>
+			<description>You can detect magical auras by touch. This acts as the detect magic spell, except it has no range and you must be touching an object to use this ability on it.</description>
+		</sheet>
+	</element>
+	<element name="Quick Appraisal" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_QUICK_APPRAISAL">
+		<description>
+			<p>At 6th level you may attune to a magical item by tinkering with it for 1 minute rather than the usual hour required. This ability does not confer knowledge of the item before attunement, and does not protect you from any adverse effects—such as curses—of attunement.</p>
+		</description>
+		<sheet>
+			<description>You may attune to a magical item by tinkering with it for 1 minute rather than the usual hour required. This ability does not confer knowledge of the item before attunement, and does not protect you from any adverse effects—such as curses—of attunement.</description>
+		</sheet>
+	</element>
+	<element name="Use Magic Device" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_USE_MAGIC_DEVICE">
+		<description>
+			<p>By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.</p>
+		</description>
+		<sheet>
+			<description>You ignore all class, race, and level requirements on the use of magic items.</description>
+		</sheet>
+	</element>
+	<element name="Hidden Resources" type="Archetype Feature" source="Heroes of Hell" id="ID_DMSG_HOH_ARCHETYPE_FEATURE_RELIC_HUNTER_HIDDEN_RESOURCES">
+		<description>
+			<p>You are able to attune to one additional magical item beyond your normal limit of 3.</p>
+		</description>
+		<sheet>
+			<description>You are able to attune to one additional magical item beyond your normal limit of 3.</description>
+		</sheet>
+		<rules>
+			<stat name="attunement:max" value="1" />
+		</rules>
+	</element>
+</elements>

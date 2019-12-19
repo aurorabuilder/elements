@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="hellborn.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/hellborn.xml" />
+		</update>
+	</info>
+	<element name="Hellborn" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_HELLBORN">
+		<description>
+			<p>Mortals do frequent hell for various reasons - adventurers, crusaders, merchants, slavers, slaves and ...lawyers. You were born in Hell, your parents belonging to that very limited group that reside on the lower planes. Life is tough, but not impossible, for mortals here, but with the right knowledge and a little luck some survive long enough to make a go of it. Your time here has hardened you, and you are wise to the plane's dangers.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Any one of your choice</li>
+				<li><strong>Languages:</strong> Infernal</li>
+				<li><strong>Equipment:</strong> A set of common clothes, a knife, your citizenship 'papers' (flayed skin scroll) , a random trinket (chapter 5 of the PHB), and a pouch containing 10gp.</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_ADAPTATION" />
+		</description>
+		<setters>
+			<set name="short">History, Survival, Tool, Infernal</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Tool Proficiency, Hellborn" supports="Tool" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_ADAPTATION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Adaptation" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_ADAPTATION">
+		<description>
+			<p>Living your entire life in Hell, you have adapted in some ways. You have advantage to all saving throws to endure environmental conditions that impose exhaustion.</p>
+		</description>
+		<sheet alt="Adaptation">
+			<description>Living your entire life in Hell, you have adapted in some ways. You have advantage to all saving throws to endure environmental conditions that impose exhaustion.</description>
+		</sheet>
+	</element>
+</elements>

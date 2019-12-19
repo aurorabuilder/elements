@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-scribing.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-scribing.xml" />
+		</update>
+	</info>
+	<element name="Mark of Scribing" type="Sub Race" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_SUB_RACE_MARK_OF_SCRIBING">
+		<supports>Gnome</supports>
+		<description>
+			<p>The Mark of Scribing deals with communication-both the written and spoken word. A gnome who bears the mark can feel words as though they are living creatures, struggling to make their meaning known. The mark provides a range of gifts. It translates languages, but it also allows its bearer to communicate with others at a distance.</p>
+			<p>If you’re a gnome with the Mark of Scribing, you have this subrace, with the following traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Gifted Scribe.</em></strong> When you make an Intelligence (History) check or an ability check using calligrapher’s supplies, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Scribe’s Insight.</em></strong> You know the message cantrip. You can also cast comprehend languages once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the magic mouth spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF SCRIBING SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>comprehend languages, illusory script</em></td></tr>
+				<tr><td>2nd</td><td><em>animal messenger, silence</em></td></tr>
+				<tr><td>3rd</td><td><em>sending, tongues</em></td></tr>
+				<tr><td>4th</td><td><em>arcane eye, confusion</em></td></tr>
+				<tr><td>5th</td><td><em>dream</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Gnome (Mark of Scribing)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_SCRIBING" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_GIFTED_SCRIBE" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_SCRIBES_INSIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Gifted Scribe" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_GIFTED_SCRIBE">
+		<description>
+			<p>When you make an Intelligence (History) check or an ability check using calligrapher’s supplies, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an History check or an ability check using calligrapher’s supplies, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Scribe’s Insight" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_SCRIBES_INSIGHT">
+		<description>
+			<p>You know the message cantrip. You can also cast comprehend languages once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the magic mouth spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You know the message cantrip. You can also cast comprehend languages once (Short Rest) with this trait using Intelligence as your spellcasting ability.</description>
+			<description level="3">You know the message cantrip. You can also cast comprehend languages (Short Rest) and magic mouth (Long Rest) once with this trait using Intelligence as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MESSAGE" />
+		</rules>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_SCRIBING_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Scribing Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>comprehend languages, illusory script</em></td></tr>
+				<tr><td>2nd</td><td><em>animal messenger, silence</em></td></tr>
+				<tr><td>3rd</td><td><em>sending, tongues</em></td></tr>
+				<tr><td>4th</td><td><em>arcane eye, confusion</em></td></tr>
+				<tr><td>5th</td><td><em>dream</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_COMPREHEND_LANGUAGES</extend>
+			<extend>ID_PHB_SPELL_ILLUSORY_SCRIPT</extend>
+			<extend>ID_PHB_SPELL_ANIMAL_MESSENGER</extend>
+			<extend>ID_PHB_SPELL_SILENCE</extend>
+			<extend>ID_PHB_SPELL_SENDING</extend>
+			<extend>ID_PHB_SPELL_TONGUES</extend>
+			<extend>ID_PHB_SPELL_ARCANE_EYE</extend>
+			<extend>ID_PHB_SPELL_CONFUSION</extend>
+			<extend>ID_PHB_SPELL_DREAM</extend>
+		</spellcasting>
+	</element>
+</elements>

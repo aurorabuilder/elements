@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="changeling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/races/changeling.xml" />
+		</update>
+	</info>	
+	<element name="Changeling" type="Race" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACE_CHANGELING">
+		<description>
+			<p>Changelings can shift their forms with a thought. Many changelings use this gift as a form of artistic and emotional expression. It’s also an invaluable tool for grifters, spies, and others who wish to deceive. This leads many people to treat changelings with suspicion.</p>
+			<h4>A HIDDEN PEOPLE</h4>
+			<p>Wherever humans live, changelings reside also; the question is whether their presence is known.</p>
+			<p class="indent">Changelings are born to one of three paths. A few are raised in stable communities where changelings are true to their nature and deal openly with the people around them. Some are orphans, raised by other races, who find their way in the world without ever knowing another like themselves. Others are part of nomadic changeling clans spread across the Five Nations, families who keep their true nature hidden from the single- skins. Some clans maintain safe havens in major cities and communities, but most prefer to wander the unpredictable path of the god known as the Traveler.</p>
+			<p class="indent">In creating a changeling adventurer, consider the character’s relationships with people around them. Does the character conceal their true changeling nature? Do they embrace it? Do they have connections to other changelings or are they alone and in search of companions?</p>
+			<h4>MASKS AND PERSONAS</h4>
+			<p>In their true form, changelings are pale, with colorless eyes and silver-white hair. It is rare to see a changeling in that form, for a typical changeling changes their shape the way others might change clothes. A casual shapeone created on the spur of the moment, with no depth or history-is called a mask. A mask can be used to express a mood or to serve a specific purpose and then might never be used again. However, many changelings develop identities that have more depth. They build an identity over time, crafting a persona with a history and beliefs. This focused identity helps a changeling pinpoint a particular skill or emotion. A changeling adventurer might have personas for many situations, including negotiation, investigation, and combat.</p>
+			<p class="indent">Personas can be shared by multiple changelings; there might be three healers in a community, but whoever is on duty will adopt the persona of Tek, the kindly old medic. Personas can even be passed down through a family, allowing a younger changeling to take advantage of contacts established by the persona’s previous users.</p>
+			<h4>CHANGELING NAMES</h4>
+			<p>A changeling might use a different name for each mask and persona and adopt new names as easily as they change faces. The true name of a changeling tends to be simple and monosyllabic; however, there are often accents to a changeling’s name that are expressed through shapeshifting, something single-skins will likely miss. So, two changelings might have the name Jin, but one is Jin-with-vivid-blue-eyes and one is Jin-with-golden-nails.</p>
+			<p class="indent">Changelings have a fluid relationship with gender, seeing it as one characteristic to change among many.</p>
+			<p><strong>Changeling Names:</strong> Aunn, Bin, Cas, Dox, Fie, Hars, Jin, Lam, Mas, Nix, Ot, Paik, Ruz, Sim, Toox, Vil, Yug</p>
+			<h4>CHANGELING TRAITS</h4>
+			<p>Your changeling character has the following traits.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 2. In addition, one ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Changelings mature slightly faster than humans but share a similar lifespan-typically a century or less. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Changelings tend toward pragmatic neutrality, and few changelings embrace evil.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Your size is Medium. To set your height and weight randomly, start with rolling a size modifier:</p>
+			<p style="margin-left:10px;padding-bottom:10px;">Size modifier = 2d4<br/>Height = 5 feet + 1 inch + your size modifier in inches<br/>Weight in pounds = 115 + (2d4 x your size modifier)</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Shapechanger.</em></strong> As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your size changes. You can make yourself appear as a member of another race, though none of your game statistics change. You can’t duplicate the appearance of a creature you’ve never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren’t changed by this trait.</p>
+			<p class="indent">You stay in the new form until you use an action to revert to your true form or until you die.</p>
+			<p class="indent"><strong><em>Changeling Instincts.</em></strong> You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and two other languages of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="generic">Aunn, Bin, Cas, Dox, Fie, Hars, Jin, Lam, Mas, Nix, Ot, Paik, Ruz, Sim, Toox, Vil, Yug</set>
+			<set name="names-format">{{generic}}</set>
+			<set name="height">5'1" + 2d4"</set>
+			<set name="weight">115 + (2d4 x 2d4) lb.</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="2" />
+			<select type="Ability Score Improvement" name="Ability Score Increase, Changeling" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_CONSTITUTION|ID_INTERNAL_ASI_INTELLIGENCE|ID_INTERNAL_ASI_WISDOM|ID_INTERNAL_ASI_CHARISMA" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_SHAPECHANGER" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_CHANGELING_INSTINCTS" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Language, Changeling" supports="Standard||Exotic" number="2" />
+		</rules>
+	</element>
+	<element name="Shapechanger" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_SHAPECHANGER">
+		<description>
+			<p>As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your size changes. You can make yourself appear as a member of another race, though none of your game statistics change. You can’t duplicate the appearance of a creature you’ve never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren’t changed by this trait.</p>
+			<p class="indent">You stay in the new form until you use an action to revert to your true form or until you die.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your size changes. You can make yourself appear as a member of another race, though none of your game statistics change. You can’t duplicate the appearance of a creature you’ve never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren’t changed by this trait.
+			You stay in the new form until you use an action to revert to your true form or until you die.</description>
+		</sheet>
+	</element>
+	<element name="Changeling Instincts" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_CHANGELING_CHANGELING_INSTINCTS">
+		<description>
+			<p>You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Changeling Instincts" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION" number="2" />
+		</rules>
+	</element>	
+</elements>

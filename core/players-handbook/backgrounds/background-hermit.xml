@@ -4,14 +4,12 @@
 		<name>Hermit</name>
 		<description>Hermit Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="background-hermit.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/backgrounds/background-hermit.xml" />
 		</update>
 	</info>
 
 	<element name="Hermit" type="Background" source="Player’s Handbook" id="ID_BACKGROUND_HERMIT">
-		<supports />
-		<requirements />
 		<description>
 			<p>You lived in seclusion—either in a sheltered community such as a monastery, or entirely a lone—for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.</p>
 			<ul class="unstyled">
@@ -41,11 +39,14 @@
 			<h5>OTHER HERMITS</h5>
 			<p>This hermit background assumes a contemplative sort of seclusion that allows room for study and prayer. If you want to play a rugged wilderness recluse who lives off the land while shunning the company of other people, look at the outlander background. On the other hand, if you want to go in a more religious direction, the acolyte might be what you’re looking for. Or you could even be a charlatan, posing as a wise and holy person and letting pious fools support you.</p>
 		</description>
+		<setters>
+			<set name="short">Medicine, Religion, Herbalism kit, Language</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
-			<select type="Language" name="Language (Hermit)" supports="Starting" />
+			<select type="Language" name="Language (Hermit)" supports="Standard||Exotic" />
 			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_DISCOVERY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
 			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Life of Seclusion" type="List" optional="true">

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Gray Portrait Patron</name>
+		<description>Gray Portrait Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.1">
+			<file name="warlock-gray-portrait.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-gray-portrait.xml" />
+		</update>
+	</info>
+	
+	<element name="The Gray Portrait" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_GRAY_PORTRAIT">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your dedication to art and beauty has led you to discover the art of creating a Gray Portrait: an artifact that your soul and body are bound to that channels the ambitions you have always held but never revealed. The portrait reflects your inner self and the dark desires you hold, and suffers the damage you would take, the diseases you would contract, and the cruelty you may inflict. It grants you the power to use your art to perform feats of incredible magic, and to paint beauty and ugliness alike upon the fabric of reality. This freedom often has hideous consequences, as you are forever tormented by the demands of that horrible self that lurks within your painted mirror. You are not yourself. You are a copy, a false perfection created by a master, and your master’s demands must be met. The Portrait requires it.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_BOUNDTOTHEPORTRAIT"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_HUNGERWITHIN"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THEPAINTEDWORLD"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THECANVASOFREALITY"/>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_BOUNDTOTHEPORTRAIT" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_HUNGERWITHIN" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THEPAINTEDWORLD" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THECANVASOFREALITY" level="14" />
+		</rules>
+	</element>
+	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Gray Portrait lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>ASHEN WOLF EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>color spray, sanctuary</em></td></tr>
+				<tr><td>2nd</td><td><em>calm emotions, enhance ability</em></td></tr>
+				<tr><td>3rd</td><td><em>glyph of warding, sending</em></td></tr>
+				<tr><td>4th</td><td><em>death ward, stone shape</em></td></tr>
+				<tr><td>5th</td><td><em>mislead, seeming</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Gray Portrait lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_COLOR_SPRAY</extend>
+			<extend>ID_PHB_SPELL_SANCTUARY</extend>
+			<extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+			<extend>ID_PHB_SPELL_ENHANCE_ABILITY</extend>
+			<extend>ID_PHB_SPELL_GLYPH_OF_WARDING</extend>
+			<extend>ID_PHB_SPELL_SENDING</extend>
+			<extend>ID_PHB_SPELL_DEATH_WARD</extend>
+			<extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+			<extend>ID_PHB_SPELL_MISLEAD</extend>
+			<extend>ID_PHB_SPELL_SEEMING</extend>
+		</spellcasting>
+	</element>
+	
+	<element name="Bound to the Portrait" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_BOUNDTOTHEPORTRAIT">
+		<description>
+		<p>At 1st level, you create and magically bind yourself to your Gray Portrait. The Gray Portrait is a Small or Medium object that weighs at least 15 pounds, has AC 15, hit points equal to four times your warlock level, resistance to all damage, and uses your statistics for saving throws. It can be repaired at a rate of 1 hit point per minute. You can choose to see through the Portrait’s eyes at any time and are always aware of its current state. If your portrait is destroyed, you tirelessly construct another during your next long rest, and you gain no benefit from that long rest.</p>
+		<p class="indent">If a spell has the sole effect of restoring you to life, such as revivify, the caster can cast the spell on the portrait as though it were your whole corpse without using material components,causing you to step forth from your portrait. However, if your portrait is destroyed and you are dead, you can’t be revived without the use of the wish spell.</p>
+		<p class="indent">You can use your action to cure yourself of any effect that is causing you to be poisoned, diseased, cursed, blinded, or deafened, sending the affliction to appear on your portrait. You can’t do this if it is destroyed.</p>
+		</description>
+		<sheet>
+			<description>The Gray Portrait is a Small or Medium object that weighs at least 15 pounds, has AC 15, {{gray portrait:health}} hit points, resistance to all damage, and uses your statistics for saving throws. It can be repaired at a rate of 1 hit point per minute. You can choose to see through the Portrait’s eyes at any time and are always aware of its current state. If your portrait is destroyed, you tirelessly construct another during your next long rest, and you gain no benefit from that long rest. You can use your action to cure yourself of any effect that is causing you to be poisoned, diseased, cursed, blinded, or deafened, sending the affliction to appear on your portrait. You can’t do this if it is destroyed.</description>
+		</sheet>
+		<rules>
+			<stat name="gray portrait:health" value="level:warlock" />
+			<stat name="gray portrait:health" value="level:warlock" />
+			<stat name="gray portrait:health" value="level:warlock" />
+			<stat name="gray portrait:health" value="level:warlock" />
+		</rules>
+	</element>
+	
+	<element name="Hunger Within" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_HUNGERWITHIN">
+		<description>
+			<p>At 6th level, your portrait’s desires begin to catch up to you, and only cruelty or creation will sate it. Whenever a creature succeeds on a saving throw against a spell you cast using a warlock spell slot, you can use your bonus action to tear an unseen fraction of their life from them. When you do, you learn the target’s ability scores. For 1 minute, you gain advantage on ability checks and saving throws associated with their highest ability score, and they gain disadvantage on their first saving throw associated with that score. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever a creature succeeds on a saving throw against a spell you cast using a warlock spell slot, you can use your bonus action to tear an unseen fraction of their life from them. When you do, you learn the target’s ability scores. For 1 minute, you gain advantage on ability checks and saving throws associated with their highest ability score, and they gain disadvantage on their first saving throw associated with that score. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	
+	<element name="The Painted World" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THEPAINTEDWORLD">
+		<description>
+			<p>At 10th level, your distinction between reality and the false world of art grows ever thinner. As a bonus action, you can touch an artwork that is Large or larger, creating a portal to a demiplane. The demiplane can be up to 100 feet in every dimension, depending on the level of detail present in the artwork. Any object, creature, or effect can pass through into the art demiplane freely as though the art was an open doorway to another room. The demiplane duplicates the subject of the artwork, containing all objects and locations depicted therein. Everything within the artwork is static, including painted creatures, instantly disintegrates to dust if removed, and has no value. While within, everything from the real world changes in appearance to match the style of the art. A creature trying to detect that something within the art demiplane is real has disadvantage on checks made to do so, and creatures standing still within the art demiplane have advantage on Stealth checks. While you are in an art demiplane, you have advantage on checks made to identify objects, people, and concepts represented within. If you leave the demiplane or if the painting is an animate image and it changes appearance or moves, every creature and object that entered from the real world is immediately ejected and the demiplane vanishes.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action, you can touch an artwork that is Large or larger, creating a portal to a demiplane. While you are in an art demiplane, you have advantage on checks made to identify objects, people, and concepts represented within. If you leave the demiplane or if the painting is an animate image and it changes appearance or moves, every creature and object that entered from the real world is immediately ejected and the demiplane vanishes.</description>
+		</sheet>
+	</element>	
+	<element name="The Canvas of Reality" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAY_PORTRAIT_THECANVASOFREALITY">
+		<description>
+			<p>At 14th level, you learn to change the fabric of the universe to suit the cruel desires of your portrait. Whenever you cast a spell using a warlock spell slot, you can choose a 20-foot cube you can see within 60 feet of you. You can reshape unattended nonmagical objects within that space into different nonmagical objects. The new objects must be of the same size category as the previous objects or smaller and must be of equal or lesser value (measured in gold pieces) and can be of any material or quality so long as it meets the other requirements. For example, you could turn a pile of crates into a collection of chairs, a tree into a mound of ash, a diamond into a fine ruby, or a fortress wall into a pile of sand.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell using a warlock spell slot, you can choose a 20-foot cube you can see within 60 feet of you. You can reshape unattended nonmagical objects within that space into different nonmagical objects. The new objects must be of the same size category as the previous objects or smaller and must be of equal or lesser value (measured in gold pieces) and can be of any material or quality so long as it meets the other requirements.</description>
+		</sheet>
+	</element>	
+</elements>

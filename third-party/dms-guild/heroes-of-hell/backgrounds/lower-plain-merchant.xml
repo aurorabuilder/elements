@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="lower-plain-merchant.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/lower-plain-merchant.xml" />
+		</update>
+	</info>	
+	<element name="Lower Planar Merchant" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_LOWER_PLANAR_MERCHANT">
+		<description>
+			<p>You come from the merchant class, the lifeblood of any civilization. The trade in Hell is booming, if you have little care for the ethical or morality of certain types of goods. You are sharp minded and silver tongued, able to assess good deals from bad, and sell your wears to even the most savvy buyers. Devils are shrewd negotiators and dangerous rivals, but you love a challenge - and a little risk - and rarely are you bested in mercantile matters.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Insight, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> None</li>
+				<li><strong>Languages:</strong> Infernal</li>
+				<li><strong>Equipment:</strong> A set of scales, an abacus, a magnifying glass, a small ledger, ink and quill, an infernal trade permit (a flayed skin scroll), a set of gaudy clothes, and a belt pouch with 10 gp.</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_APPRAISER" />
+		</description>
+		<setters>
+			<set name="short">Deception, Insight, Persuasion, Infernal</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_APPRAISER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Appraiser" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_APPRAISER">
+		<description>
+			<p>You can always tell the approximate value of strange currency (relative to standard coinage), as well as the exotic trade goods and equipment found in the markets of Hell. You can always find a local market or trading house no matter where you travel, and know the correct procedures to obtain permits to trade in the various hubs and cities.</p>
+		</description>
+		<sheet alt="Appraiser">
+			<description>You can always tell the approximate value of strange currency, as well as the exotic trade goods and equipment found in the markets of Hell. You can always find a local market or trading house no matter where you travel, and know the correct procedures to obtain permits to trade in the various hubs and cities.</description>
+		</sheet>
+	</element>
+</elements>

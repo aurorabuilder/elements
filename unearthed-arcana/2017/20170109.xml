@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Artificer</name>
         <description>Makers of magic-infused objects, artificers are defined by their inventive nature.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/artificer">Wizards of the Coast</author>
-        <update version="0.1.2">
+        <update version="0.1.4">
             <file name="20170109.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170109.xml" />
         </update>
     </info>
@@ -22,10 +22,8 @@
 			<set name="release">20170109</set>
 		</setters>
 	</element>
-
+    
     <element name="Artificer" type="Class" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_ARTIFICER">
-        <supports />
-        <requirements />
         <description>
             <p>A gnome sits hunched over a workbench, carefully using needle and thread to wave runes into a leather satchel. The bag shudders as she completes her work, and a sudden, loud pop echoes through the room as a portal to an extra-dimensional space springs to being in the bag's interior. She beams with pride at her newly crafted <em>bag of holding.</em></p>
             <p class="indent">A troll growls in hunger as it looms over a dwarf, who slides a long, metal tube from a holster at his belt. With a thunderous roar, a gout of flame erupts from the tube, and the troll's growls turn into shrieks of panic as it turns to flee.</p>
@@ -123,7 +121,7 @@
         <multiclass id="ID_WOTC_UA_MULTICLASS_ARTIFICER">
 			  <!-- no multiclass info provided in UA, using recommendations from mike mearls (wotcstaff) -->
             <prerequisite>Intelligence 13</prerequisite>
-            <requirements>[int:13], !(ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER)</requirements>
+            <requirements>[int:13], !(ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER||ID_WOTC_ERLW_CLASS_ARTIFICER||ID_WOTC_ERLW_MULTICLASS_ARTIFICER)</requirements>
             <setters>
                 <set name="multiclass proficiencies">Light armor, simple weapons, two tools of your choice</set>
             </setters>
@@ -135,7 +133,7 @@
             </rules>
         </multiclass>
         <spellcasting name="Artificer" ability="Intelligence" allowReplace="true">
-            <list>Artificer</list>
+            <list>UA20170109 Artificer</list>
         </spellcasting>
     </element>
     <element name="Artificer Specialist" type="Class Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_FEATURE_ARTIFICER_ARTIFICER_SPECIALIST">
@@ -144,7 +142,7 @@
         </description>
         <sheet display="false" />
         <rules>
-            <select type="Archetype" name="Artificer Specialist" supports="Artificer Specialist" />
+            <select type="Archetype" name="Artificer Specialist" supports="UA20170109 Artificer Specialist" />
         </rules>
     </element>
     <element name="Magic Item Analysis" type="Class Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_FEATURE_ARTIFICER_MAGIC_ITEM_ANALYSIS">
@@ -182,8 +180,6 @@
         <sheet display="false" />
     </element>
     <element name="Spellcasting" type="Class Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_FEATURE_ARTIFICER_SPELLCASTING">
-        <supports>Artificer</supports>
-        <requirements />
         <description>
             <p>As part of your study of magic, you gain the ability to cast spells at 3rd level. The spells you learn are limited in scope, primarily concerned with modifying creatures and objects or creating items.</p>
             <h5>Spell Slots</h5>
@@ -286,7 +282,8 @@
             <select type="Spell" name="Spell (Artificer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="20" spellcasting="Artificer"/>
         </rules>
     </element>
-    <element name="Ability Score Improvement (Artificer)" type="Class Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_FEATURE_ABILITYSCOREIMPROVEMENT_ARTIFICER">
+    <element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_FEATURE_ABILITYSCOREIMPROVEMENT_ARTIFICER">
+        <compendium display="false" />
         <description>
             <p>When you reach 4th level, and again at 8th, 12th, 16th, and 18th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
         </description>
@@ -358,8 +355,7 @@
     
     <!-- Alchemist -->
     <element name="Alchemist" type="Archetype" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_ALCHEMIST">
-        <supports>Artificer Specialist</supports>
-        <requirements />
+        <supports>UA20170109 Artificer Specialist</supports>
         <description>
             <p>An alchemist is an expert at combining exotic reagents to produce a variety of materials, from healing draughts that can mend a wound in moments to clinging goo that slows creatures down.</p>
             <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMISTS_SATCHEL" />
@@ -559,8 +555,7 @@
     
     <!-- Gunsmith -->
     <element name="Gunsmith" type="Archetype" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_GUNSMITH">
-        <supports>Artificer Specialist</supports>
-        <requirements />
+        <supports>UA20170109 Artificer Specialist</supports>
         <description>
             <p>A master of engineering, you forge a firearm powered by a combination of science and magic.</p>
             <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_GUNSMITH_MASTER_SMITH" />
