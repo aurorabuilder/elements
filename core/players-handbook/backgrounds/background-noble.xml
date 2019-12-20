@@ -4,7 +4,7 @@
 		<name>Noble</name>
 		<description>Noble Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="background-noble.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/backgrounds/background-noble.xml" />
 		</update>
 	</info>
@@ -33,11 +33,14 @@
 			<h4>VARIANT FEATURE: RETAINERS</h4>
 			<p>If your character has a noble background, you may select this background feature instead of Position of Privilege. You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused.</p>
 		</description>
+		<setters>
+			<set name="short">History, Persuasion, Gaming Set, Language</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
 			<select type="Proficiency" name="Gaming Set (Noble)" supports="Gaming Set" />
-			<select type="Language" name="Language (Noble)" supports="Starting" />
+			<select type="Language" name="Language (Noble)" supports="Standard||Exotic" />
 			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_POSITIONOFPRIVILEGE" requirements="!ID_WOTC_PHB_BACKGROUND_FEATURE_KNIGHT_RETAINERS,!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
 			<select type="Background Variant" name="Variant Noble" supports="Variant Noble" optional="true" />
 			<select type="Background Feature" name="Variant Feature" supports="Background Feature, Noble || Optional Background Feature" optional="true" requirements="!ID_WOTC_PHB_BACKGROUND_VARIANT_NOBLE_KNIGHT" />

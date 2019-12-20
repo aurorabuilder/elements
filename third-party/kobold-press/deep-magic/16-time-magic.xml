@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Time Magic</name>
+		<update version="0.0.1">
+			<file name="16-time-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/16-time-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Time Magic" type="Source" source="Core" id="ID_KBP_DMTM_SOURCE_DEEP_MAGIC_TIME_MAGIC">
+		<description>
+			<p><strong>Magic Measured in Moments—and Eternities!</strong></p>
+			<p>The control and manipulation of time is an esoteric and mysterious branch of magic. Spellcasters who seek to alter time have the potential to perform incredible deeds. That potential is tempered by the great danger of intervening with time, which resists mortal interference. Deep Magic: Time Magicbrings the secrets of temporal magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>A divine option for the Time Domain and a Timekeeper arcane tradition for wizards</li>
+				<li>A Lost Traveller Background for those who wander in time</li>
+				<li>12 new spells, including accelerate, chronal lance, time loop, and wall of time</li>
+			</ul>
+			<p>Mastery of time itself brings immense power to the caster, but runs enormous risks--not least attracting the attention of archmages and the gods themselves for your meddling! Seize this power boldly, and with respect for the dangers it contains!</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMTM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-time-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM15_Time_Magic.jpg</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<!-- <set name="release">20180905</set> -->
+			<set name="release">20181205</set>
+		</setters>
+	</element>
+
+	<element name="Time Domain" type="Archetype" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_TIME_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>Most spellcasters and sages agree that significant alterations to time are undesirable, but they disagree strongly on what constitutes a significant alteration. As might be expected, those of Good alignment typically try to protect time from those who seek to make significant changes or bend time to their will, while those of Evil alignment try to change what’s passed for their own selfish purposes.</p>
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_SPELLS" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_STEWARD_OF_TIME" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_TIMES_EMBRACE" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_TIMES_GUARDIAN" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_DIVINE_STRIKE" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_MASTERY_OF_TIME" />
+		</description>
+		<sheet display="false">
+			<description>Most spellcasters and sages agree that significant alterations to time are undesirable, but they disagree strongly on what constitutes a significant alteration.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_STEWARD_OF_TIME" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_TIMES_EMBRACE" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_TIMES_GUARDIAN" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_DIVINE_STRIKE" level="8" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_MASTERY_OF_TIME" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric levels listed in the Time Domain Spells table. See the Divine Domain class feature in the Player’s Handbook for how domain spells work.</p>
+			<h5 class="caption">TIME DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>expeditious retreat, withered sight</em></td></tr>
+				<tr><td>3rd</td><td><em>decelerate, time step</em></td></tr>
+				<tr><td>5th</td><td><em>haste, slow</em></td></tr>
+				<tr><td>7th</td><td><em>reset, time vortex</em></td></tr>
+				<tr><td>9th</td><td><em>legend lore, wall of time</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_WITHERED_SIGHT" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_DECELERATE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_TIME_STEP" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HASTE" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLOW" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_RESET" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_TIME_VORTEX" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_WALL_OF_TIME" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Steward of Time" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_STEWARD_OF_TIME">
+		<description>
+			<p>At 1st level, you learn two of the following languages: Ankeshelian, Illyrian, Morphoi, Northern Tongue, or Vos’Ghaen. You become proficient in the History skill. In addition, you learn the quicken cantrip, which does not count against the number of cleric cantrips you know.</p>
+		</description>
+		<sheet display="false">
+			<description>You learn two of the following languages: Ankeshelian, Illyrian, Morphoi, Northern Tongue, or Vos’Ghaen. You become proficient in the History skill. In addition, you learn the quicken cantrip, which does not count against the number of cleric cantrips you know.</description>
+		</sheet>
+		<rules>
+			<select type="Language" name="Language, Steward of Time" supports="Steward of Time" number="2" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Spell" id="ID_KBP_DMTM_SPELL_QUICKEN" spellcasting="Cleric" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Time’s Embrace" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_TIMES_EMBRACE">
+		<description>
+			<p>Starting at 2nd level, you can react quickly to dangerous situations. When you are surprised at the beginning of an encounter, you can use your Channel Divinity to not be surprised. When you need to make a Dexterity saving throw, you can use your Channel Divinity to make the saving throw with advantage.</p>
+		</description>
+		<sheet alt="Time’s Embrace" usage="Channel Divinity">
+			<description>When you are surprised at the beginning of an encounter, you can use your Channel Divinity to not be surprised. When you need to make a Dexterity saving throw, you can use your Channel Divinity to make the saving throw with advantage.</description>
+		</sheet>
+	</element>
+	<element name="Time’s Guardian" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_TIMES_GUARDIAN">
+		<description>
+			<p>At 6th level, you can use your reaction to gain a +3 bonus to AC against an attack made against you. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1). You regain all uses of this ability after a long rest. Additionally, you never suffer the negative aftereffect of the haste spell and can act normally when the spell ends.</p>
+		</description>
+		<sheet action="Reaction" usage="{{times guardian:usage}}/Long Rest">
+			<description>You can gain a +3 bonus to AC against an attack made against you. Additionally, you never suffer the negative aftereffect of the haste spell and can act normally when the spell ends.</description>
+		</sheet>
+		<rules>
+			<stat name="times guardian:usage" value="1" bonus="base" />
+			<stat name="times guardian:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_DIVINE_STRIKE">
+		<description>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target.</description>
+			<description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 damage of the same type dealt by the weapon to the target.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Mastery of Time" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIME_DOMAIN_CD_MASTERY_OF_TIME">
+		<description>
+			<p>At 17th level, you can use your Channel Divinity to stop the flow of time. The effect is identical to the time stop spell: you can take 3 turns in a row when the effect is triggered. You must complete a long rest before using this ability again.</p>
+			<p class="indent">You can also use your Channel Divinity to allow you and your allies to ignore the effects of a temporal anomaly such as a time storm or a time rift for one minute. This effect is centered on you with a radius of 20 feet.</p>
+		</description>
+		<sheet alt="Mastery of Time" usage="Channel Divinity">
+			<description>You can use your Channel Divinity to stop the flow of time. The effect is identical to the time stop spell: you can take 3 turns in a row when the effect is triggered. You must complete a long rest before using this ability again.
+			You can also use your Channel Divinity to allow you and your allies to ignore the effects of a temporal anomaly such as a time storm or a time rift for one minute. This effect is centered on you with a radius of 20 feet.</description>
+		</sheet>
+	</element>
+
+	<element name="Timekeeper" type="Archetype" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_TIMEKEEPER">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>A timekeeper uses seconds and minutes not as a way to measure life but as the key to great and mysterious power. The tradition of the timekeepers began in the magocracies of the West prior to the Great Mage Wars. Many timekeepers find themselves responsible for keeping watch over the dread walkers of the Wastes, to ensure they are never freed from stasis. Others seek to rediscover the lost spells and rituals that allowed long-gone mages to halt the dread walkers in the first place.</p>
+			<p class="indent">Except as noted below, timekeepers function as wizards and use the wizard spell list. A timekeeper has the following class features.</p>
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TEMPORAL_SAVANT" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_BONDED_TIMEPIECE" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_EXTENDED_MAGIC" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_HASTENED" />
+			<div element="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TIME_MASTERY" />
+		</description>
+		<sheet display="false">
+			<description>A timekeeper uses seconds and minutes not as a way to measure life but as the key to great and mysterious power.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TEMPORAL_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_BONDED_TIMEPIECE" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_EXTENDED_MAGIC" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_HASTENED" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TIME_MASTERY" level="14" />
+		</rules>
+	</element>
+	<element name="Temporal Savant" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TEMPORAL_SAVANT">
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy a transmutation spell into your spellbook is halved. When gaining a level, you can select a temporal spell even if you’ve never encountered it before. You also gain proficiency with clockwork tools (25 gp, 2 lb).</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a transmutation spell into your spellbook is halved. When gaining a level, you can select a temporal spell even if you’ve never encountered it before.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_KBP_DMC_PROFICIENCY_TOOL_CLOCKMAKERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Bonded Timepiece" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_BONDED_TIMEPIECE">
+		<description>
+			<p>Starting at 2nd level, you create a special timepiece that can be held easily in one hand, usually a clockwork watch or hourglass. You can use the timepiece as an arcane focus.</p>
+			<p class="indent">You have 2 temporal points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You regain all spent temporal points when you finish a long rest. You are unable to spend temporal points without holding your bonded timepiece.</p>
+			<p class="indent">You can spend 1 temporal point as a reaction or a bonus action to gain one of the following effects for 1 round, or spend 2 temporal points as a bonus action to grant a creature you touch one of the following effects for 1 round:</p>
+			<ul>
+				<li>You can use a bonus action on your next turn to Dash, Disengage, Hide, or Use an Object.</li>
+				<li>Your AC increases by 2.</li>
+				<li>You gain advantage on a Dexterity check</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have {{temporal points}} temporal points / long rest. You are unable to spend temporal points without holding your bonded timepiece.
+			You can spend 1 temporal point as a reaction or a bonus action to gain one of the following effects for 1 round, or spend 2 temporal points as a bonus action to grant a creature you touch one of the following effects for 1 round:
+			You can use a bonus action on your next turn to Dash, Disengage, Hide, or Use an Object
+			Your AC increases by 2
+			You gain advantage on a Dexterity check</description>
+		</sheet>
+		<rules>
+			<stat name="temporal points" value="level:wizard" />
+		</rules>
+	</element>
+	<element name="Extended Magic" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_EXTENDED_MAGIC">
+		<description>
+			<p>At 6th level, when you cast a spell whose duration is 1 minute or longer, you can spend 1 temporal point to double the spell’s duration. The maximum duration obtainable is 24 hours.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell whose duration is 1 minute or longer, you can spend 1 temporal point to double the spell’s duration. The maximum duration obtainable is 24 hours.</description>
+		</sheet>
+	</element>
+	<element name="Hastened" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_HASTENED">
+		<description>
+			<p>At 10th level, you add the haste spell to your spellbook, if it is not there already. You never suffer the negative aftereffects of the haste spell and can act normally when the spell ends.</p>
+			<p class="indent">You can also cast haste without expending a spell slot, but the spell affects only you. Once you cast haste this way, you can’t do so again until you finish a short or long rest. You can still cast it normally using an available spell slot.</p>
+		</description>
+		<sheet>
+			<description>You never suffer the negative aftereffects of the haste spell and can act normally when the spell ends.
+			You can also cast haste without expending a spell slot, but the spell affects only you. Once you cast haste this way, you can’t do so again until you finish a short or long rest. You can still cast it normally using an available spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_HASTE" spellcasting="Wizard" />
+		</rules>
+	</element>
+	<element name="Time Mastery" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ARCHETYPE_FEATURE_TIMEKEEPER_TIME_MASTERY">
+		<description>
+			<p>At 14th level, you can choose to ignore environmental time effects such as those created by a time storm or a time rift.</p>
+			<p class="indent">Also, you can spend temporal points in the following ways.</p>
+			<ul>
+				<li>When you cast a spell with a casting time of 1 action, you can spend 2 temporal points to reduce the casting time for this casting to 1 bonus action.</li>
+				<li>When you must make a saving throw against slow or any temporal spell, you can spend 2 temporal points to succeed on the saving throw automatically. You can make the decision to spend the points after rolling the die and seeing the result.</li>
+				<li>As a reaction when another creature casts time stop, you can spend 5 temporal points to act during the spell’s duration. You and the spell’s original caster alternate taking turns, with the original caster acting first. You have the same restrictions as the original caster. If the original caster ends the spell, it ends for everyone; if you take an action that ends the spell, it ends only for you, not for the original caster.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You can choose to ignore environmental time effects such as those created by a time storm or a time rift.
+			When you cast a spell with a casting time of 1 action, you can spend 2 temporal points to reduce the casting time for this casting to 1 bonus action.
+			When you must make a saving throw against slow or any temporal spell, you can spend 2 temporal points to succeed on the saving throw automatically. You can make the decision to spend the points after rolling the die and seeing the result.
+			As a reaction when another creature casts time stop, you can spend 5 temporal points to act during the spell’s duration. You and the spell’s original caster alternate taking turns, with the original caster acting first. You have the same restrictions as the original caster. If the original caster ends the spell, it ends for everyone; if you take an action that ends the spell, it ends only for you, not for the original caster.</description>
+		</sheet>
+	</element>
+
+	<element name="Clockwork Watch" type="Item" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ITEM_CLOCKWORK_WATCH">
+		<description>
+			<p>A special timepiece that can be held easily in one hand. You can use this timepiece as an arcane focus.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic, bonded timepiece, temporal</set>
+			<set name="category">Spellcasting Focus</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+		</setters>
+	</element>
+	<element name="Hourglass" type="Item" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_ITEM_HOURGLASS">
+		<description>
+			<p>A special timepiece that can be held easily in one hand. You can use this timepiece as an arcane focus.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic, Bonded Timepiece, temporal</set>
+			<set name="category">Spellcasting Focus</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+		</setters>
+	</element>
+
+	<element name="Time-Lost Traveler" type="Background" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_BACKGROUND_TIME_LOST_TRAVELER">
+		<description>
+			<p>You come from the past. Whether you just escaped from magical stasis, were resurrected by a time storm in the Wastes, were sent forward in time by lost gods, or were the victim of some other magical occurrence, you’ve found yourself hundreds of years or more from your time of origin. The world has changed in the interim, but you have unrivaled knowledge about the cultures and relics of past times.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Cartographer’s tools or navigator’s tools </li>
+				<li><strong>Languages:</strong> One of the following—Ankeshelian, Illyrian, Morphoi, or Vos’Ghaen</li>
+				<li><strong>Equipment:</strong> A leather case containing a map of a now-ancient city, a bullseye lantern, a set of traveler’s clothes, a trinket brought from your time, and a pouch containing 25 gp in antique coins.</li>
+			</ul>
+			<div element="ID_KBP_DMTM_BACKGROUND_FEATURE_ANACHRONISTIC_KNOWLEDGE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Travelers who become lost in time are tenacious survivors. They may feel that their time was superior, or may be pleasantly surprised by the changes that have occurred in the world. In either case, they make their way in the new world to the best of their ability.</p>
+		</description>
+		<setters>
+			<set name="short">History, Survival, Cartographer’s Tools / Navigator’s Tools, Ankeshelian / Illyrian / Morphoi / Vos’Ghaen</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Tool Proficiency, Time-Lost Traveler" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+			<select type="Language" name="Language, Time-Lost Traveler" supports="Time Lost Traveler" />
+			<grant type="Background Feature" id="ID_KBP_DMTM_BACKGROUND_FEATURE_ANACHRONISTIC_KNOWLEDGE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I don’t speak much. No one must learn where or when I came from.</item>
+				<item id="2">I am fascinated by clockwork, and I collect examples whenever possible.</item>
+				<item id="3">I try to find out about the cultures of everyone I meet.</item>
+				<item id="4">I make sure to always carry traveling supplies with me.</item>
+				<item id="5">I make sure to live life to the fullest, in the here and now.</item>
+				<item id="6">I am often struck by the knowledge that the people and places I knew are gone.</item>
+				<item id="7">I pretend great naivete or ignorance for my own reasons.</item>
+				<item id="8">I am far happier in ancient ruins than I am in other places.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Aspiration. I know that I was sent here for a reason. (Any)</item>
+				<item id="2">Determination. I must find a way to return to my time. (Neutral)</item>
+				<item id="3">Protection. I have seen the horrors of history, and I will ensure they never happen again. (Good)</item>
+				<item id="4">Greed. I know where the treasures were buried. Finders keepers. (Evil)</item>
+				<item id="5">Freedom. I am no longer bound by the moral constraints of my original time. (Chaotic)</item>
+				<item id="6">Necessity. I know that time must not be tampered with. (Lawful)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I had a family. I need to find out what happened to my descendants.</item>
+				<item id="2">Something has gone wrong with the flow of time, and I must redress this problem.</item>
+				<item id="3">The city I came from has fallen from great heights. I can restore its prominence.</item>
+				<item id="4">I must raise my fame and fortune to prove that I belong in this time.</item>
+				<item id="5">I protect ancient sites from those who would seek to plunder their riches.</item>
+				<item id="6">Someone else was also sent through time when I was. I need to find that person.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I believe earlier people were superior. I constantly complain about modern values.</item>
+				<item id="2">I let everyone know that I was part of every significant historical event, somehow.</item>
+				<item id="3">I become enraged when anyone questions my version of history.</item>
+				<item id="4">I judge other races harshly based on my time’s perception of them.</item>
+				<item id="5">I will not make friends. They can be lost in an instant.</item>
+				<item id="6">I take a very long time when I search or study historical sites.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Anachronistic Knowledge" type="Background Feature" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_BACKGROUND_FEATURE_ANACHRONISTIC_KNOWLEDGE">
+		<description>
+			<p>When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, or some other race. You apply double your proficiency bonus on History checks when the check is related to knowledge from ancient times. You either lived in those times or they were recent history to you.</p>
+		</description>
+		<sheet alt="Anachronistic Knowledge">
+			<description>When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, or some other race. You apply double your proficiency bonus on History checks when the check is related to knowledge from ancient times. You either lived in those times or they were recent history to you.</description>
+		</sheet>
+	</element>
+
+	<element name="Accelerate" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_ACCELERATE">
+		<supports>Bard,Cleric,Druid,Sorcerer,Wizard, Temporal Magic</supports>
+		<description>
+			<p>Choose up to three willing creatures within range, which may include you. Until the end of the spell, the target’s movement speed doubles. The target can also take a bonus action on each of its turns. This bonus action can only be used to take the Dash action. In addition, the creature has advantage on Dexterity saving throws while under the effect of this spell.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, you can affect an additional creature for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a toy top</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Anomalous Object" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_ANOMALOUS_OBJECT">
+		<supports>Wizard, Temporal Magic</supports>
+		<description>
+			<p>By touching an object, you retrieve another version of the object from elsewhere in time. If the object is attended, you must succeed on a melee spell attack roll against the creature holding or controlling the object. Any effect that affects the original object also affects the duplicate (charges spent, damage taken, etc.) and any effect that affects the duplicate also affects the original object. If either object is destroyed, both are destroyed. This spell does not affect sentient items or unique artifacts.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="Temporal">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an hourglass</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Chronal Lance" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_CHRONAL_LANCE">
+		<supports>Sorcerer,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You send glowing lances of temporal energy streaking toward three separate targets. Each target must make a successful Wisdom saving throw or its speed is halved and it has disadvantage on Dexterity ability checks (but not saving throws). An affected creature repeats the saving throw at the end of its turn, ending the effect on itself on a success.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, you can create an additional lance to target one additional creature for each slot level above 1st.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a gear spring</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Decelerate" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_DECELERATE">
+		<supports>Druid,Paladin,Ranger,Sorcerer,Warlock,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You slow the flow of time around a creature. The creature must make a successful Wisdom saving throw or its speed is halved (rounded up to the nearest 5-foot increment). Until the effect ends, the creature’s speed is halved again at the start of each of your turns. For example, a character with a speed of 30 feet fails its saving throw, dropping its speed to 15 feet. At the start of your next turn, the creature’s speed drops to 10 feet, then to 5 feet on the following round. Decelerate can’t reduce a creature’s speed to less than 5 feet. The spell ends after 1 minute or when the target uses its action to make a successful Wisdom saving throw.</p>
+			<p class="indent">When you cast this spell using a spell slot of 3rd level or higher, you can affect an additional creature for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a toy top</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Quicken" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_QUICKEN">
+		<supports>Bard,Sorcerer,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to its next initiative roll or Dexterity saving throw. The target can roll the die before or after the d20 roll. The spell then ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Reset" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_RESET">
+		<supports>Bard,Cleric,Druid,Paladin,Wizard, Temporal Magic</supports>
+		<description>
+			<p>Temporal energy bursts from you to bathe the battlefield. Choose up to four creatures within range. If the creature is your ally, it can reroll its initiative check twice, keeping whichever of the two results it prefers. If the target is your enemy, it must make a successful Wisdom saving throw or reroll its initiative check twice, keeping whichever of the two results you prefer. New initiative results go into effect at the start of the next round.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, you can affect one additional creature for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Time Loop" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_TIME_LOOP">
+		<supports>Bard,Cleric,Druid,Sorcerer,Warlock,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You capture the target in a loop of time. The creature is teleported to the space where it began its previous turn. The target then makes a Wisdom saving throw. If it succeeds, the spell’s effect ends. If it fails, the creature must repeat the actions it took on its previous turn, following the same sequence of moves and actions to the best of its ability. It doesn’t need to move along the same path or attack the same target, but if it moved, then attacked, on its previous turn, its only option is to move, then attack, this turn. If the space where the target began its previous turn is occupied or it’s impossible for the target to take the same action (if it cast a spell but it’s now unable to do so, for example), the target is incapacitated.</p>
+			<p class="indent">An affected target repeats the saving throw at the end of its turn, ending the effect on itself on a success. For as long as the duration lasts, the target teleports back to its starting point at the start of each of its turns and it must repeat the same sequence of moves and actions.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Temporal">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a metal loop</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Time Step" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_TIME_STEP">
+		<supports>Bard,Cleric,Ranger,Warlock,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You briefly step forward in time. You disappear from your location and reappear at the beginning of your next turn in a location within 30 feet of the space you disappeared from. You can’t be affected by anything that happens during the interval you’re missing, and you aren’t aware of anything that happens during that time.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Temporal">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Time Vortex" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_TIME_VORTEX">
+		<supports>Sorcerer,Warlock,Wizard, Temporal Magic</supports>
+		<description>
+			<p>This spell destabilizes the flow of time in the target area, subjecting creatures caught in the vortex to temporal fluctuations that are visible as a spherical distortion with a 10-foot radius. Each creature within the sphere when you cast the spell must succeed on a Wisdom saving throw or be affected by the time vortex. While the spell lasts, a creature that enters the sphere or begins its turn inside the sphere must also make a Wisdom saving throw or be affected. Once a creature’s Wisdom saving throw succeeds, it is immune to this time vortex.</p>
+			<p class="indent">An affected creature can’t take reactions and must roll a d10 at the start of its turn to determine its behavior for that turn.</p>
+			<table>
+				<thead>
+					<tr><td>d10</td><td>Roll Effect</td></tr>
+				</thead>
+				<tr><td>1-2</td><td>The creature is affected as if by slow until the start of its next turn.</td></tr>
+				<tr><td>3-5</td><td>The creature is stunned until the start of its next turn.</td></tr>
+				<tr><td>6-8</td><td>The creature’s initiative result is reduced by 5. The creature begins using this new initiative result next round. Multiple occurrences of this effect for the same creature are cumulative.</td></tr>
+				<tr><td>9-10</td><td>The creature’s speed is halved until the start of its next turn.</td></tr>
+			</table>
+			<p class="indent">You can move the temporal vortex 10 feet each round as a bonus action. An affected creature repeats the saving throw at the end of its turn, ending the effect on itself on a success.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Temporal">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a clockwork butterfly</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Wall of Time" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_WALL_OF_TIME">
+		<supports>Cleric,Sorcerer,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You create a wall of shimmering, transparent blocks and rotating but intangible gears on a solid surface within range. You can make a straight wall up to 60 feet long, 20 feet high, and 1 foot thick, or a circular wall up to 20 feet high, 1 foot thick, and forming a closed circle 20 feet in diameter. Nonmagical ranged attacks that cross the wall vanish into time with no other effect. Ranged spell attacks and ranged weapon attacks made with magical weapons that pass through the wall are made with disadvantage. A creature that intentionally enters or passes through the wall is affected as if they had just failed their initial saving throw against the slow spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Temporal">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an hourglass</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Withered Sight" type="Spell" source="Deep Magic: Time Magic" id="ID_KBP_DMTM_SPELL_WITHERED_SIGHT">
+		<supports>Bard,Cleric,Druid,Ranger,Warlock,Wizard, Temporal Magic</supports>
+		<description>
+			<p>You cause the eyes of a creature you can see within range to age rapidly. The target must make a Constitution saving throw. If it fails, the creature has disadvantage on Perception rolls and attack rolls. An affected creature repeats the saving throw at the end of its turn, ending the effect with a success. This spell has no effect on a creature that is blind or that doesn’t use its eyes to see.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.</p>
+		</description>
+		<setters>
+			<set name="keywords">time magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Temporal">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a dried lizard’s eye</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+</elements>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Shadow Magic</name>
+		<update version="0.0.1">
+			<file name="10-shadow-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/10-shadow-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Shadow Magic" type="Source" source="Core" id="ID_KBP_DMSM_SOURCE_DEEP_MAGIC_SHADOW_MAGIC">
+		<description>
+			<p><strong>Dark Power From the Realm of Shadow</strong></p>
+			<p>Let others wonder what dangers lurk within the shadows: you learned long ago that the true power is shadow itself. Through deep study and practice—or a long-ago mark on your bloodline—you can draw mysterious, unsettling energy from the alien dimension known as the Shadow Realm, and turn it to your own use.</p>
+			<p>Those who fear the shadows, also fear you. Let them.</p>
+			<p>Deep Magic: Shadow Magic brings the secrets of shadow magic into your 5th Edition campaign, featuring:</p>
+			<ul>
+				<li>A Shadow Bloodline sorcerous origin, with Tainted Shadows, Evil Eye, Dark Illusions, and more</li>
+				<li>The Light-Eater: a new warlock patron, with new pact boons</li>
+				<li>A new Whisper roguish archtype, with new abilities including Dark Trickery, Shadow Road, and Misdirection</li>
+				<li>20 new spells, including banshee wail, claws of darkness, malevolent waves, umbral storm, and more</li>
+			</ul>
+			<p>Where darkness brings dread to others, for you it brings a fierce joy and a surge of power. The shadows are your dominion; and by drawing upon them, you become a force to be reckoned with!</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMSM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-shadow-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM9-Shadow-Magic.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20170328</set>
+		</setters>
+	</element>
+
+	<element name="Shadow Bloodline" type="Archetype" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_SHADOW_BLOODLINE">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your magic comes from a place drained of color, where light fights a losing battle against the relentless encroachment of darkness. In the distant past, your ancestors were touched by the Shadow Realm, and this contact left its mark on your family bloodline.</p>
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINT_OF_SHADOW" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_EVIL_EYE" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_DARK_ILLUSIONS" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_PASSAGE_THROUGH_THE_DARK" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINTED_SHADOWS" />
+		</description>
+		<sheet display="false">
+			<description>Your magic comes from a place drained of color, where light fights a losing battle against the relentless encroachment of darkness.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINT_OF_SHADOW" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_EVIL_EYE" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_DARK_ILLUSIONS" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_PASSAGE_THROUGH_THE_DARK" level="14" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINTED_SHADOWS" level="18" />
+		</rules>
+		<!-- todo: validate, need latest pdf version -->
+		<spellcasting name="Sorcerer" extend="true">
+			<extend>Shadow Magic</extend>
+		</spellcasting>
+	</element>
+	<element name="Taint of Shadow" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINT_OF_SHADOW">
+		<description>
+			<p>Your magic always acts a bit differently than that of other casters. Your magical fire burns with a deep purple flame that sheds little light but casts inky shadows. The influence of the Shadow Realm can be seen in every manifestation of your magic, whether that’s shadowy bonds tightening around the target of a hold person spell or the shadows that swirl like storm clouds inside your dimension door. At 1st level, you gain darkvision out to 60 feet. Within that range, you see through magical darkness as if it were dim light.</p>
+		</description>
+		<sheet>
+			<description>Within 60 feet, you see through magical darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+		</rules>
+	</element>
+	<element name="Evil Eye" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_EVIL_EYE">
+		<description>
+			<p>Starting at 1st level, you can gaze at one creature within 60 feet of you and with a bonus action, mark that creature with darkness. The marked creature has disadvantage on its next attack roll or skill check involving sight unless it makes a successful Charisma saving throw. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{evil eye:usage}}/Long Rest">
+			<description>You can gaze at one creature within 60 feet of you and mark that creature with darkness. The marked creature has disadvantage on its next attack roll or skill check involving sight unless it makes a successful DC{{spellcasting:dc:cha}} Charisma saving throw.</description>
+		</sheet>
+		<rules>
+			<stat name="evil eye:usage" value="1" bonus="base" />
+			<stat name="evil eye:usage" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dark Illusions" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_DARK_ILLUSIONS">
+		<description>
+			<p>Starting at 6th level, you have advantage on saving throws against illusion magic. You can also cast blur or mirror image by spending 2 sorcery points.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against illusion magic. You can also cast blur or mirror image by spending 2 sorcery points.</description>
+		</sheet>
+	</element>
+	<element name="Passage Through the Dark" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_PASSAGE_THROUGH_THE_DARK">
+		<description>
+			<p>At 14th level, you gain the ability to traverse between patches of darkness. When you are lightly or heavily obscured you can, as a bonus action, step through a shadow and emerge from another shadow up to 200 feet away. You can stay inside the shadow connection for a number of rounds equal to your Charisma modifier (minimum of 1) if you choose to; while there, you are invisible, nothing can affect you, and you can’t affect anything else. Each use of this ability costs you 4 sorcery points.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you are lightly or heavily obscured you can step through a shadow and emerge from another shadow up to 200 feet away. You can stay inside the shadow connection for {{passage through the dark:rounds}} rounds if you choose to; while there, you are invisible, nothing can affect you, and you can’t affect anything else. Each use of this ability costs you 4 sorcery points.</description>
+		</sheet>
+		<rules>
+			<stat name="passage through the dark:rounds" value="1" bonus="base" />
+			<stat name="passage through the dark:rounds" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Tainted Shadows" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_SHADOW_BLOODLINE_TAINTED_SHADOWS">
+		<description>
+			<p>Beginning at 18th level, you can emanate an aura of energy from the Shadow Realm. By spending 4 sorcery points, you radiate an aura of shadow that causes everything within 15 feet of you to become lightly obscured because of dim lighting. Any portion of that area that’s already dimly lit becomes completely dark instead. Enemy creatures that start their turns inside this aura take 10 necrotic damage and must succeed on a Wisdom saving throw or become frightened of this effect. The effect lasts until the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>By spending 4 sorcery points, you radiate an aura of shadow that causes everything within 15 feet of you to become lightly obscured because of dim lighting. Any portion of that area that’s already dimly lit becomes completely dark instead. Enemy creatures that start their turns inside this aura take 10 necrotic damage and must succeed on a DC{{spellcasting:dc:cha}} Wisdom saving throw or become frightened of this effect. The effect lasts until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="The Light-Eater" type="Archetype" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_THE_LIGHT_EATER">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have made a pact with a being from the Plane of Shadows whose goal is to plunge the world into unending darkness. You may or may not share this ambition, but you’ve sworn loyalty to this entity. Unlike fiends who seek to corrupt and destroy, lighteaters want to make the Material Plane more like their own Shadow Realm. Many light-eaters were once liches, shadow dragons, death knights, vampiric wizards, or other shadow beings that existed long enough to amass great power before abandoning their former paths to pursue the glorifcation of the night as an end in itself.</p>
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_EXPANDED_SPELL_LIST" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_DARKNESS_CALLS" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_LIVING_SHADOW" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_UNSHAKABLE" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_CALL_FROM_SHADOW" />
+			<div class="reference">
+				<div element="ID_KBP_DMSM_INFORMATION_LIGHT_EATER_PACT_BOONS" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>You have made a pact with a being from the Plane of Shadows whose goal is to plunge the world into unending darkness.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_DARKNESS_CALLS" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_LIVING_SHADOW" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_UNSHAKABLE" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_CALL_FROM_SHADOW" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Light-Eater lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5 class="caption">THE LIGHT-EATER EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>ray of sickness, cloying darkness</em></td></tr>
+				<tr><td>2nd</td><td><em>blindness/deafness, dark path</em></td></tr>
+				<tr><td>3rd</td><td><em>fear, legion</em></td></tr>
+				<tr><td>4th</td><td><em>shadow monsters, night terrors</em></td></tr>
+				<tr><td>5th</td><td><em>dark dementing, Shadow Realm gateway</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Light-Eater lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+			<extend>ID_KBP_DMSM_SPELL_CLOYING_DARKNESS</extend>
+			<extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+			<extend>ID_KBP_DMSM_SPELL_DARK_PATH</extend>
+			<extend>ID_PHB_SPELL_FEAR</extend>
+			<extend>ID_KBP_DMSM_SPELL_LEGION</extend>
+			<extend>ID_KBP_DMSM_SPELL_SHADOW_MONSTERS</extend>
+			<extend>ID_KBP_DMSM_SPELL_NIGHT_TERRORS</extend>
+			<extend>ID_KBP_DMSM_SPELL_DARK_DEMENTING</extend>
+			<extend>ID_KBP_DMSM_SPELL_SHADOW_REALM_GATEWAY</extend>
+		</spellcasting>
+	</element>
+	<element name="Darkness Calls" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_DARKNESS_CALLS">
+		<description>
+			<p>Starting at 1st level, the shadows give you the power to draw a small part of the Shadow Realm into the Material Plane. As an action you can force all creatures within 10 feet of you to make a Wisdom saving throw. Those that fail are blinded until the end of your next turn, by bits of the Shadow Realm clouding their eyes. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can force all creatures within 10 feet of you to make a DC{{spellcasting:dc:cha}} Wisdom saving throw. Those that fail are blinded until the end of your next turn, by bits of the Shadow Realm clouding their eyes.</description>
+		</sheet>
+	</element>
+	<element name="Living Shadow" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_LIVING_SHADOW">
+		<description>
+			<p>Beginning at 6th level, the shadows around you sometimes take on a life of their own and defend you when you’re in danger by transporting enemies away through the Shadow Realm. When you take damage, you can use your reaction to transport the creature that damaged you through the shadows to an unoccupied space up to 60 feet away. The affected creature must succeed on a Wisdom saving throw against your spell save DC or take 2d6 cold damage and become frightened of you until the end of its next turn. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When you take damage, you can use your reaction to transport the creature that damaged you through the shadows to an unoccupied space up to 60 feet away. The affected creature must succeed on a DC{{spellcasting:dc:cha}} Wisdom saving throw or take 2d6 cold damage and become frightened of you until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Unshakable" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_UNSHAKABLE">
+		<description>
+			<p>Starting at 10th level, your patron fortifies your mind against fear, letting you shake off even the worst of its effects. You gain immunity to fear-based effects and to the frightened condition. Anytime an enemy uses an effect that would cause fear in you, you can use your reaction to redirect it back at that creature; unless the creature makes a successful Wisdom saving throw, it becomes frightened of you for 1 minute. A frightened creature repeats the saving throw every time it takes damage, ending the effect on itself with a success.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>You gain immunity to fear-based effects and to the frightened condition. Anytime an enemy uses an effect that would cause fear in you, you can use your reaction to redirect it back at that creature; unless the creature makes a successful DC{{spellcasting:dc:cha}} Wisdom saving throw, it becomes frightened of you for 1 minute. A frightened creature repeats the saving throw every time it takes damage, ending the effect on itself with a success.</description>
+		</sheet>
+	</element>
+	<element name="Call from Shadow" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_LIGHT_EATER_CALL_FROM_SHADOW">
+		<description>
+			<p>Starting at 14th level, you can use an action to summon a shadow horror, which appears in an unoccupied space within 30 feet. The shadow horror uses the statistics of a chuul, but it also understands Common. Roll initiative for the summoned creature, which has its own turns. The shadow horror is friendly to you and obeys your verbal commands. It remains for up to one hour or until it’s reduced to 0 hit points. While present, it obeys simple verbal commands from you; if you give it no commands, it defends itself. You must maintain concentration on the shadow horror as if concentrating on a spell. If your concentration is broken, the creature vanishes. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can summon a shadow horror, which appears in an unoccupied space within 30 feet. The shadow horror uses the statistics of a chuul, but it also understands Common. Roll initiative for the summoned creature, which has its own turns. The shadow horror is friendly to you and obeys your verbal commands. It remains for up to one hour or until it’s reduced to 0 hit points. While present, it obeys simple verbal commands from you; if you give it no commands, it defends itself. You must maintain concentration on the shadow horror as if concentrating on a spell. If your concentration is broken, the creature vanishes.</description>
+		</sheet>
+	</element>
+
+	<element name="Light Eater Pact Boons" type="Information" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_INFORMATION_LIGHT_EATER_PACT_BOONS">
+		<description>
+			<p>When you select your pact boon at 3rd level, it is subtly altered in the following ways.</p>
+			<p class="indent"><strong><em>Pact of the Chain.</em></strong> Your familiar can take the Hide action whenever it’s in dim light or darkness. It has disadvantage on attack rolls and Wisdom (Perception) checks while in bright light. The same penalties apply to you while you’re using its senses or casting spells through it, while it’s in bright light.</p>
+			<p class="indent"><strong><em>Pact of the Blade.</em></strong> The Dark one grants a blade made of an unearthly, shadowy material that is nearly invisible in dim light or darkness. Each time you create it, you can choose whether it does its standard damage type or necrotic damage.</p>
+			<p class="indent"><strong><em>Pact of the Tome.</em></strong> Your book is literally a book of shadow; shadowy vapor drips from it whenever it is opened or held, and it weighs nothing.</p>
+		</description>
+	</element>
+
+	<element name="Whisper" type="Archetype" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_WHISPER">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>You’ve dedicated your life to the arts of deception, disappearing, and illusion. Somewhere along that path, you encountered something from the Shadow Realm that showed you how to truly be one with the shadows—or perhaps you learned your best tricks from the shadows themselves. All whispers have been touched by a shadow, performed a ritual to bind a shadow to themselves, or drawn in energy from the Shadow Realm to enhance their stealthiness and to become supreme thieves, assassins, or spies.</p>
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_DARK_TRICKERY" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_FADE_AWAY" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_SHADOW_ROAD" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_BECOME_SHADOW" />
+			<div element="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_MISDIRECTION" />
+		</description>
+		<sheet display="false">
+			<description>You’ve dedicated your life to the arts of deception, disappearing, and illusion.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_DARK_TRICKERY" level="3" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_FADE_AWAY" level="3" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_SHADOW_ROAD" level="9" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_BECOME_SHADOW" level="13" />
+			<grant type="Archetype Feature" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_MISDIRECTION" level="17" />
+		</rules>
+	</element>
+	<element name="Dark Trickery" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_DARK_TRICKERY">
+		<description>
+			<p>Starting at 3rd level, you gain darkvision to 60 feet if you did not already have it. You also can use the minor illusion and douse light cantrips.</p>
+		</description>
+		<sheet>
+			<description>You also can use the minor illusion and douse light cantrips.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+			<grant type="Spell" id="ID_KBP_DMSM_SPELL_DOUSE_LIGHT" />
+		</rules>
+	</element>
+	<element name="Fade Away" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_FADE_AWAY">
+		<description>
+			<p>When you choose this archetype at 3rd level, you become able to take the Hide action while you’re in dim light or darkness, even if you’re being observed. You have advantage on the Dexterity (Stealth) check to become hidden. After using this feature, you must complete a short or long rest before using it again. You gain an additional use of this ability at 7th level and at 15th level.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>You become able to take the Hide action while you’re in dim light or darkness, even if you’re being observed. You have advantage on the Stealth check to become hidden.</description>
+			<description level="7" usage="2/Short Rest">You become able to take the Hide action while you’re in dim light or darkness, even if you’re being observed. You have advantage on the Stealth check to become hidden.</description>
+			<description level="15" usage="3/Short Rest">You become able to take the Hide action while you’re in dim light or darkness, even if you’re being observed. You have advantage on the Stealth check to become hidden.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Road" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_SHADOW_ROAD">
+		<description>
+			<p>Starting at 9th level, you can step from one area of dim light or darkness directly into another that is no more than 60 feet away. Doing so uses an action. You must be able to see the destination or be familiar with its location. If you weren’t already hidden, you you can make a Dexterity (Stealth) check to hide as part of this action. After using this ability, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can step from one area of dim light or darkness directly into another that is no more than 60 feet away. You must be able to see the destination or be familiar with its location. If you weren’t already hidden, you you can make a Stealth check to hide as part of this action.</description>
+		</sheet>
+	</element>
+	<element name="Become Shadow" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_BECOME_SHADOW">
+		<description>
+			<p>At level 13, you learn to harness Shadow Realm energy to vanish. While you’re in dim light or darkness, you can use an action to become invisible. You remain invisible for 1 hour or until you attack or cast a spell. If you enter an area illuminated with bright light, you must make a successful DC 15 Dexterity (Stealth) check to remain invisible. After using this ability, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>While you’re in dim light or darkness, you can become invisible. You remain invisible for 1 hour or until you attack or cast a spell. If you enter an area illuminated with bright light, you must make a successful DC 15 Stealth check to remain invisible.</description>
+		</sheet>
+	</element>
+	<element name="Misdirection" type="Archetype Feature" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_ARCHETYPE_FEATURE_WHISPER_MISDIRECTION">
+		<description>
+			<p>When you reach 17th level, you learn the displacer beast’s trick of making itself appear in a slightly different location. Attacks against you have disadvantage. If an attack hits you, this ability is disrupted until the start of your next turn. This ability also does not protect you while you’re unconscious or incapacitated.</p>
+		</description>
+		<sheet>
+			<description>You learn the displacer beast’s trick of making itself appear in a slightly different location. Attacks against you have disadvantage. If an attack hits you, this ability is disrupted until the start of your next turn. This ability also does not protect you while you’re unconscious or incapacitated.</description>
+		</sheet>
+	</element>
+
+	<element name="Banshee Wail" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_BANSHEE_WAIL">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You emit a soul-shattering wail. Every creature within a 30-foot cone who hears the wail must make a Wisdom saving throw. Those that fail lose half their remaining hit points and become frightened of you; a frightened creature repeats the saving throw at the end of its turn, ending the effect on itself with a success. Those that succeed take 3d10 psychic damage and aren’t frightened. This spell has no effect on constructs and undead.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Shadow">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a swatch from a death shroud</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Become Nightwing" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_BECOME_NIGHTWING">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>By channeling the essence of the Shadow Realm into yourself, this spell imbues you with wings of shadow. For the duration of the spell, you gain a fly speed of 60 feet and a new attack action: nightwing breath.</p>
+			<p class="indent"><strong><em>Nightwing Breath (recharge 4–6).</em></strong> You exhale shadow-substance in a 30-foot cone. Each creature in the area takes 5d6 necrotic damage, or half damage with a successful Dexterity saving throw.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Shadow">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a crow’s eye</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Black Ribbons" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_BLACK_RIBBONS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You pull pieces of the Shadow Realm into your own reality, causing a 20-foot cube to fill with inky ribbons that turn the area into difficult terrain and wrap around nearby creatures. Any creature that ends its turn in the area becomes restrained by the shadow ribbons until the end of its next turn unless it makes a successful Dexterity saving throw. Once a creature makes this saving throw successfully, it can’t be restrained again by these black ribbons, but it’s still affected by the difficult terrain.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">40 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of ribbon</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Call Shadow Mastiff" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_CALL_SHADOW_MASTIFF">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You conjure a shadow mastiff from the essence of the Shadow Realm. This creature obeys your verbal commands to aid you in battle or to seek out a specific creature.</p>
+			<p class="indent">The mastiff is friendly to you and your companions. Roll initiative for the mastiff; it acts on its own turn. It obeys simple, verbal commands from you (giving a command takes no action on your part), within its ability to act.</p>
+			<p class="indent">The mastiff disappears when it drops to 0 hit points or when the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a dog’s tooth</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Claws of Darkness" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_CLAWS_OF_DARKNESS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You shape shadows into claws that grow from your fingers and drip inky blackness. You can make melee spell attacks with these claws that deal 1d10 cold damage, and the claws have a reach of 10 feet.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Shadow">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Cloak in Shadow" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_CLOAK_IN_SHADOW">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You siphon energy from the Shadow Realm to protect yourself from an immediate threat. As a reaction, you pull shadows around yourself to distort reality. The attack against you is made with disadvantage and you have resistance to radiant damage until the start of your next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Shadow">Abjuration</set>
+			<set name="time">1 reaction, which you take when you are targeted by an attack but before the roll is made</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Cloying Darkness" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_CLOYING_DARKNESS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You reach out with a hand of decaying shadows. Make a ranged spell attack. If it hits, the target takes 2d8 necrotic damage and must make a Constitution saving throw. If it fails, its visual organs are enveloped in shadow until the start of your next turn, causing it to treat all lighting as if it’s one step lower in intensity (it treats bright light as dim, dim light as darkness, and darkness as magical darkness).</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Shadow">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">1 round</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Conjure Shadow Titan" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_CONJURE_SHADOW_TITAN">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You summon a shadow titan, which appears in an unoccupied space that you can see within range. The shadow titan’s statistics are identical to a stone giant’s, with two differences: its camouflage ability works in dim light instead of rocky terrain, and the “rocks” it hurls are composed of shadow-stuff and cause cold damage.</p>
+			<p class="indent">The shadow titan is friendly to you and your companions. Roll initiative for the shadow titan; it acts on its own turn. It obeys verbal or telepathic commands that you issue to it (giving a command takes no action on your part). If you don’t issue any commands to the shadow titan, it defends itself from hostile creatures but otherwise takes no actions.</p>
+			<p class="indent">The shadow titan disappears when it drops to 0 hit points or when the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 minute</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Dark Dementing" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_DARK_DEMENTING">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>A dark shadow creeps across the target’s mind and leaves a small bit of shadow essence behind, triggering a profound fear of the dark. The target creature must make a Charisma saving throw. If it fails, the target is afflicted with a long-term madness effect. If the saving throw succeeds, the target is afflicted with a short-term madness effect.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Shadow">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a moonstone</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Dark Path" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_DARK_PATH">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You conjure a shadowy road between points to create a bridge or path where there was none before. This can bridge a chasm or create a smooth path through difficult terrain to speed movement. The dark path is 10 feet wide and up to 50 feet long. It can support up to 500 pounds of weight at one time. A creature that adds more weight than the path can support sinks through the path as if it didn’t exist.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a lodestone</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Darkbolt" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_DARKBOLT">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You say a quick invocation to create a black nimbus around your hand, then hurl three rays of darkness at one or more targets in range. The rays can be divided between targets however you like. Make a ranged spell attack for each target (not each ray); each ray that hits does 1d10 cold damage. A target that was hit by any number of rays must make a successful Constitution saving throw or be unable to use a reaction until the start of its next turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell at 3rd level or higher, you create one additional ray for each level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Shadow">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Douse Light" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_DOUSE_LIGHT">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>With a hand gesture and an incantation, you are able to douse a single, small source of light within range. This spell extinguishes a torch, a candle, a lantern, or a light or dancing lights cantrip.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Shadow">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Legion" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_LEGION">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You call down a legion of shadowy soldiers in a 10‑foot cube. They are conjured from the Shadow Realm, and their features resemble a mockery of once-living creatures. Whenever a creature starts its turn inside the cube, within 5 feet of it, or enters the cube for the first time on its turn, the conjured shades make an attack using your melee spell modifier; if it hits, the target takes 3d8 necrotic damage. The space inside the cube is difficult terrain.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a toy soldier</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Malevolent Waves" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_MALEVOLENT_WAVES">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You create an invisible miasma that fills the area within 30 feet of you. All of your allies have advantage on Dexterity (Stealth) checks they make within 30 feet of you, and all of your enemies are poisoned while within that radius.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="Shadow">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a profane object that has been bathed in blood</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Negative Image" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_NEGATIVE_IMAGE">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You create a shadow-tunnel between your location and one other creature you can see within range. You and that creature instantly swap positions. If the target creature is unwilling to exchange places with you, it can resist the effect by making a Charisma saving throw. If the save succeeds, the spell has no effect.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of reflective obsidian</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Night Terrors" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_NIGHT_TERRORS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You amplify the fear of darkness that lurks in the heart of all creatures. Select a target point you can see within the spell’s range. Every creature within 20 feet of that point becomes frightened of you until the start of your next turn and must make a successful Wisdom saving throw or become paralyzed. A paralyzed creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a success. Creatures immune to being frightened are not affected by night terrors.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Shadow">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a crow’s eye</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Shadow Monsters" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_SHADOW_MONSTERS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>Your spell targets up to 2 creatures within range. Each creature must make a Wisdom saving throw. If the saving throw fails, the creature perceives its allies as hostile, shadowy monsters, and it must attack its nearest ally. An affected creature repeats the saving throw at the end of its turn, ending the effect on itself with a successful save.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> If shadow monsters is cast with a 5thlevel or higher spell slot, one additional creature can be targeted for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Shadow">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a doll</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Shadow Puppets" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_SHADOW_PUPPETS">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You are able to animate the shadow of a creature within range, causing it to attack the creature who cast it. Make a melee spell attack against the creature. If it hits, the target takes 2d8 psychic damage and must make a successful Intelligence saving throw or be paralyzed until the start of your next turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Shadow">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pinch of powdered lead</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Shadow Realm Gateway" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_SHADOW_REALM_GATEWAY">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>By drawing a circle of black chalk up to 15 feet in diameter and chanting for one minute, you open a portal directly into the Plane of Shadow. The portal fills the chalk circle and appears as a vortex of inky blackness; nothing can be seen through it. Any object or creature that passes through the portal instantly arrives safely in the Shadow Realm. The portal remains open for one minute or until you lose concentration on it, and it can be used to travel between the Shadow Realm and the chalk circle, in both directions, as many times as desired during the spell’s duration.</p>
+			<p class="indent">This spell can only be cast as a ritual.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Shadow">Conjuration</set>
+			<set name="time">1 minute</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of black chalk</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Umbral Storm" type="Spell" source="Deep Magic: Shadow Magic" id="ID_KBP_DMSM_SPELL_UMBRAL_STORM">
+		<supports>Shadow Magic</supports>
+		<description>
+			<p>You create a channel to a region of the Shadow Realm that is inimical to life and order. A storm of dark, raging entropy fills a sphere 20 feet in radius, centered on a point you can see within range. Any creature that starts its turn in the storm or enters it for the first time on its turn takes 6d8 necrotic damage and gains one level of exhaustion; a successful Constitution saving throw halves the damage and prevents exhaustion.</p>
+			<p class="indent">You can use a bonus action on your turn to move the area of the storm 30 feet in any direction.</p>
+		</description>
+		<setters>
+			<set name="keywords">shadow magic</set>
+			<set name="level">9</set>
+			<set name="school" addition="Shadow">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+</elements>
