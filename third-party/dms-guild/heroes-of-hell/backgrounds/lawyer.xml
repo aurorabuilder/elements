@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.3">
+			<file name="lawyer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/lawyer.xml" />
+		</update>
+	</info>	
+	<element name="Lawyer" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_LAWYER">
+		<description>
+			<p>Hell has a special place set aside for lawyers. The plane has very strict hierarchical and legal systems, and those than can navigate - and exploit - these laws can do very well for themselves. You completed your training at a fine legal academy and were destined for the world of courtroom conflict before your life took an unexpected, adventurous turn. Now you put your expensive education and sharp wit toward overcoming very different adversaries.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Intimidation, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> Scribes tools</li>
+				<li><strong>Languages:</strong> Infernal, and one of your choice</li>
+				<li><strong>Equipment:</strong> A thick, leather-bound tome of the Infernal Legal Code, a set of professional clothes, and a belt pouch with 15gp.</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_RED_TAPE_NAVIGATOR" />
+		</description>
+		<setters>
+			<set name="short">Intimidation, Persuasion, Scribe’s Tools, Infernal, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<!-- todo: validate scribe tools -->
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<select type="Language" name="Language, Lawyer" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_RED_TAPE_NAVIGATOR" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Red Tape Navigator" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_RED_TAPE_NAVIGATOR">
+		<description>
+			<p>You know the law, both civil and criminal, and the systems that surround it. You can determine if any proposed (or undertaken) action is against the law, and the likely charges or grievances that will arise as a result. You know how to navigate the bureaucratic systems surrounding the law, and know who to talk to (and what forms to fill) in order to get though those systems.</p>
+		</description>
+		<sheet alt="Red Tape Navigator">
+			<description>You know the law, both civil and criminal, and the systems that surround it. You can determine if any proposed (or undertaken) action is against the law, and the likely charges or grievances that will arise as a result. You know how to navigate the bureaucratic systems surrounding the law, and know who to talk to (and what forms to fill) in order to get though those systems.</description>
+		</sheet>
+	</element>
+</elements>

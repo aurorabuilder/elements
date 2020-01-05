@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Runeguard</name>
+		<update version="0.0.1">
+			<file name="fighter-runeguard.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/fighter-runeguard.xml" />
+		</update>
+	</info>
+	
+	<element name="Runeguard" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_RUNEGUARD">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>The runeguard seeks the magical power within ancient languages, and to hasten the speed of their blade and strengthen of their armor by imbuing them with the power of these runes.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNECRAFT" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNESCRIPT" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_EYES_OF_THE_ARCANIST" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_MASTERY" />
+		</description>
+		<sheet display="false">
+			<description>A seeker of magical power within ancient languages, and to hasten the speed of their blade and strengthen of their armor by imbuing them with the power of these runes.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNECRAFT" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNESCRIPT" level="3" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_EYES_OF_THE_ARCANIST" level="7" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING" level="10" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_MASTERY" level="18" />
+		</rules>
+	</element>
+
+	<element name="Master Runes" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES">
+		<description>
+			<p>When you choose this archetype at 3rd level, you learn five master runes; Ild (fire), Kalt (frost), Ond (spirit), Stein (Stone), and Vind (wind). While these names are known to you as the basis for empowering your equipment, their application continues to require diligent study, constant trial, and repeated error to evoke the unique properties from each variant invocation.</p>
+		</description>
+		<sheet>
+			<description>You learn five master runes; Ild, Kalt, Ond, Stein, and Vind.</description>
+		</sheet>
+		<rules>
+			<!-- <grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_ILD" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_KALT" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_OND" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_STEIN" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_VIND" /> -->
+		</rules>
+	</element>
+	<element name="Runecraft" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNECRAFT">
+		<description>
+			<p>At 3rd level, you learn augmentations that utilize the master runes to enhance your martial prowess. Their effects are based on how you invoke them, generating defensive properties to thwart your foes’ advance or deal decisive blows.</p>
+			<p class="indent"><strong><em>Ritual Crafting.</em></strong> Each runic combination must be inscribed and empowered into your equipment over the course of 8 hours, which can be done during a long rest. Each piece of equipment must be within your reach throughout the ritual, at the conclusion of which, you infuse a part of your being into the runes, causing them to glow slightly with your own spiritual essence.</p>
+			<p class="indent">The rune’s power fades if it moves more than 100 feet away from you and can’t be used by anyone other than you.</p>
+			<p class="indent"><strong><em>Runic Augmentations.</em></strong> You learn three runic augmentations of your choice, which are detailed under “Runic Augmentations” below. Each augmentation is specific to its master rune; for instance, if you learn the Sokn augmentation of the Ild master rune, you don’t gain the ability to use the Sokn augmentation with other master runes unless you also learn that specific combination.</p>
+			<p class="indent">Once you activate one of your runic augmentations, you must finish a short or long rest before you can use it again.</p>
+			<p class="indent">You learn two additional augmentations at 7th, 10th, 15th, and 18th level. Each time you learn new augmentations, you can choose to replace one you already know with a different one.</p>
+			<p class="indent"><strong><em>Augmentation Activation.</em></strong> During your turn, you can activate a single runic augmentation by focusing on the rune’s power. You can activate one of these augmentations on your turn using your bonus action to empower your attacks (Sokn), your reaction to entrench your defenses (Vard) or skillfully enhance another ability (Hagr) with your action.</p>
+			<p class="indent">Activating a rune requires concentration, which lasts a number of rounds equal to your proficiency bonus + your Constitution modifier (minimum of 3). While you concentrate on a rune, you can cast spells but you can’t concentrate on a rune and a spell at the same time. You gain the ability to concentrate on two runes at once at 10th level.</p>
+			<p class="indent"><strong><em>Saving Throws.</em></strong> Some of your runic augmentations require your target to make a saving throw to resist the effects. The saving throw DC is calculated as follows:</p>
+			<center>
+				<p><strong>Runic save DC</strong> = 8 + your proficiency bonus + your Constitution modifier</p>
+			</center>
+		</description>
+		<sheet>
+			<description>Each runic combination must be inscribed and empowered into your equipment over the course of 8 hours, which can be done during a long rest. Each piece of equipment must be within your reach throughout the ritual, at the conclusion of which, you infuse a part of your being into the runes, causing them to glow slightly with your own spiritual essence. The rune’s power fades if it moves more than 100 feet away from you and can’t be used by anyone other than you.
+			Once you activate one of your runic augmentations, you must finish a short or long rest before you can use it again.
+			Activating a rune requires concentration, which lasts {{runic augmentation:concentration rounds}} rounds. While you concentrate on a rune, you can cast spells but you can’t concentrate on a rune and a spell at the same time. </description>
+			<description level="10">Each runic combination must be inscribed and empowered into your equipment over the course of 8 hours, which can be done during a long rest. Each piece of equipment must be within your reach throughout the ritual, at the conclusion of which, you infuse a part of your being into the runes, causing them to glow slightly with your own spiritual essence. The rune’s power fades if it moves more than 100 feet away from you and can’t be used by anyone other than you.
+			Once you activate one of your runic augmentations, you must finish a short or long rest before you can use it again.
+			Activating a rune requires concentration, which lasts {{runic augmentation:concentration rounds}} rounds. While you concentrate on a rune, you can cast spells but you can’t concentrate on more than two runes and a spell at the same time.</description>
+		</sheet>
+		<rules>
+			<stat name="runic augmentation:concentration rounds" value="proficiency" />
+			<stat name="runic augmentation:concentration rounds" value="3" bonus="minimum" />
+			<stat name="runic augmentation:concentration rounds" value="constitution:modifier" bonus="minimum" />
+			<stat name="runeguard:runic save:dc" value="8" />
+			<stat name="runeguard:runic save:dc" value="proficiency" />
+			<stat name="runeguard:runic save:dc" value="constitution:modifier" />
+
+			<select type="Archetype Feature" name="Runeguard Runic Augmentations" supports="Runeguard Runic Augmentations, !Tal" number="3" />
+			<select type="Archetype Feature" name="Runeguard Runic Augmentations" supports="Runeguard Runic Augmentations, !Tal" number="2" level="7" />
+			<select type="Archetype Feature" name="Runeguard Runic Augmentations" supports="Runeguard Runic Augmentations, !Tal" number="2" level="10" />
+			<select type="Archetype Feature" name="Runeguard Runic Augmentations" supports="Runeguard Runic Augmentations, !Tal" number="2" level="15" />
+			<select type="Archetype Feature" name="Runeguard Runic Augmentations" supports="Runeguard Runic Augmentations, !Tal" number="2" level="18" />
+		</rules>
+	</element>
+	<element name="Runescript" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNESCRIPT">
+		<description>
+			<p>At 3rd level, you gain proficiency in the Arcana and Religion skills. Additionally, you double your proficiency bonus when making Intelligence checks that involve identifying magical writing, such as arcane sigils or divine text.</p>
+		</description>
+		<sheet>
+			<description>You double your proficiency bonus when making Intelligence checks that involve identifying magical writing, such as arcane sigils or divine text.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+		</rules>
+	</element>
+	<element name="Eyes of the Arcanist" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_EYES_OF_THE_ARCANIST">
+		<description>
+			<p>Starting at 7th level, if you spend at least 1 minute observing the flow of magic in the immediate area, you can detect familiar patterns in the weave. The DM tells you the general location of magic writing used in rite or ritual within 60 feet of you, whether active or dormant, and you know the type (arcane, divine, or otherwise) of any script you sense but not its exact purpose or power. You can use this feature a number of times a day equal to your proficiency bonus.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Day">
+			<description>If you spend at least 1 minute observing the flow of magic in the immediate area, you can detect familiar patterns in the weave. The DM tells you the general location of magic writing used in rite or ritual within 60 feet of you, whether active or dormant, and you know the type (arcane, divine, or otherwise) of any script you sense but not its exact purpose or power.</description>
+		</sheet>
+	</element>
+	<element name="Sentinel’s Reckoning" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING">
+		<description>
+			<p>Beginning at 10th level, you can unleash the energy of your runes to devastating effect by shouting the command word Tal as an action (see “Tal” under Runic Augmentations). Choose one Tal effect from the runes you have active, and all active augmentations go dormant until you finish a short or long rest. You can still use other augmentations you have yet to activate. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+			<p class="indent">Starting at 15th level, you can use this feature twice before a rest, but only once per turn.</p>
+		</description>
+		<sheet>
+			<description usage="Short Rest">You can unleash the energy of your runes to devastating effect by shouting the command word Tal as an action. Choose one Tal effect from the runes you have active, and all active augmentations go dormant until you finish a short or long rest. You can still use other augmentations you have yet to activate.</description>
+			<description usage="2/Short Rest, 1/Turn" level="15">You can unleash the energy of your runes to devastating effect by shouting the command word Tal. Choose one Tal effect from the runes you have active, and all active augmentations go dormant until you finish a short or long rest. You can still use other augmentations you have yet to activate.</description>
+		</sheet>
+		<rules>	
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_ILD" requirements="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_ILD||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_ILD||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_ILD"/>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_KALT" requirements="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_KALT||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_KALT||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_KALT"/>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_OND" requirements="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_OND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_OND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_OND"/>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_STEIN" requirements="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_STEIN||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_STEIN||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_STEIN"/>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_VIND" requirements="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_VIND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_VIND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_VIND"/>
+		</rules>
+	</element>
+	<element name="Runic Mastery" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_MASTERY">
+		<description>
+			<p>At 18th level, you can have three runes activate and you no longer need to concentrate on your runic augmentations.</p>
+		</description>
+		<sheet>
+			<description>You can have three runes activate and you no longer need to concentrate on your runic augmentations.</description>
+		</sheet>
+	</element>
+	
+	<!-- master runes -->
+	<element name="Ild" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_ILD">		
+		<description>
+			<p>Ild is the master rune of fire.</p>
+		</description>
+		<sheet display="false">
+			<description>Ild is the master rune of fire.</description>
+		</sheet>
+	</element>
+	<element name="Kalt" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_KALT">
+		<description>
+			<p>Kalt is the master rune of frost.</p>
+		</description>
+		<sheet display="false">
+			<description>Kalt is the master rune of frost.</description>
+		</sheet>
+	</element>
+	<element name="Ond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_OND">
+		<description>
+			<p>Ond is the master rune of spirit.</p>
+		</description>
+		<sheet display="false">
+			<description>Ond is the master rune of spirit.</description>
+		</sheet>
+	</element>
+	<element name="Stein" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_STEIN">
+		<description>
+			<p>Stein is the master rune of stone.</p>
+		</description>
+		<sheet display="false">
+			<description>Stein is the master rune of stone.</description>
+		</sheet>
+	</element>
+	<element name="Vind" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_MASTER_RUNES_VIND">
+		<description>
+			<p>Vind is the master rune of wind.</p>
+		</description>
+		<sheet display="false">
+			<description>Vind is the master rune of wind.</description>
+		</sheet>
+	</element>
+
+	<!-- runic augmentations -->
+	<!-- {{runeguard:runic save:dc}} -->
+	<element name="Sokn, Ild" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_ILD">
+		<supports>Runeguard Runic Augmentations, Sokn, Ild</supports>
+		<description>
+			<p><em>Attack Augmentation</em></p>
+			<p>You can activate a rune with the Sokn augmentation as a bonus action. A rune’s power only affects the weapon it is inscribed on.</p>
+			<p class="indent"><strong><em>Ild.</em></strong> Once per turn, when you hit a creature with a weapon attack, you ignite the target. At the start of each of the burning creature’s turns, it takes 1d4 fire damage for each time you’ve burned it, and it can then make a Constitution saving throw, ending the effect of all such burns on itself on a success. Alternatively, the burned creature, or a creature within 5 feet of it, can use an action to make a Wisdom (Medicine) check against your runic save DC, ending the effect of all burns on it on a success.</p>
+		</description>
+		<setters>
+			<set name="short">Attack Augmentation</set>
+		</setters>
+		<sheet action="Bonus Action">
+			<description>Once per turn, when you hit a creature with a weapon attack, you ignite the target. At the start of each of the burning creature’s turns, it takes 1d4 fire damage for each time you’ve burned it, and it can then make a DC{{runeguard:runic save:dc}} Constitution saving throw, ending the effect of all such burns on itself on a success. Alternatively, the burned creature, or a creature within 5 feet of it, can use an action to make a Medicine check against your runic save DC ({{runeguard:runic save:dc}}), ending the effect of all burns on it on a success.</description>
+		</sheet>
+	</element>
+	<element name="Sokn, Kalt" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_KALT">
+		<supports>Runeguard Runic Augmentations, Sokn, Kalt</supports>
+		<description>
+			<p><em>Attack Augmentation</em></p>
+			<p>You can activate a rune with the Sokn augmentation as a bonus action. A rune’s power only affects the weapon it is inscribed on.</p>
+			<p class="indent"><strong><em>Kalt.</em></strong> When you hit a creature with a weapon attack, it can’t take reactions until the start of its next turn.</p>
+		</description>
+		<setters>
+			<set name="short">Attack Augmentation</set>
+		</setters>
+		<sheet action="Bonus Action">
+			<description>When you hit a creature with a weapon attack, it can’t take reactions until the start of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Sokn, Ond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_OND">
+		<supports>Runeguard Runic Augmentations, Sokn, Ond</supports>
+		<description>
+			<p><em>Attack Augmentation</em></p>
+			<p>You can activate a rune with the Sokn augmentation as a bonus action. A rune’s power only affects the weapon it is inscribed on.</p>
+			<p class="indent"><strong><em>Ond.</em></strong> Once per turn, when you hit a creature with a weapon attack, you deal an additional 1d4 necrotic damage and you recover hit points equal to the necrotic damage dealt.</p>
+		</description>
+		<setters>
+			<set name="short">Attack Augmentation</set>
+		</setters>
+		<sheet action="Bonus Action">
+			<description>Once per turn, when you hit a creature with a weapon attack, you deal an additional 1d4 necrotic damage and you recover hit points equal to the necrotic damage dealt.</description>
+		</sheet>
+	</element>
+	<element name="Sokn, Stein" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_STEIN">
+		<supports>Runeguard Runic Augmentations, Sokn, Stein</supports>
+		<description>
+			<p><em>Attack Augmentation</em></p>
+			<p>You can activate a rune with the Sokn augmentation as a bonus action. A rune’s power only affects the weapon it is inscribed on.</p>
+			<p class="indent"><strong><em>Stein.</em></strong> When you hit a Large or smaller creature with a weapon attack, it must make a Strength saving throw, falling prone on a failed save.</p>
+		</description>
+		<setters>
+			<set name="short">Attack Augmentation</set>
+		</setters>
+		<sheet action="Bonus Action">
+			<description>When you hit a Large or smaller creature with a weapon attack, it must make a Strength saving throw, falling prone on a failed save.</description>
+		</sheet>
+	</element>
+	<element name="Sokn, Vind" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_VIND">
+		<supports>Runeguard Runic Augmentations, Sokn, Vind</supports>
+		<description>
+			<p><em>Attack Augmentation</em></p>
+			<p>You can activate a rune with the Sokn augmentation as a bonus action. A rune’s power only affects the weapon it is inscribed on.</p>
+			<p class="indent"><strong><em>Vind.</em></strong> When a creature hits you with a melee attack, you can use your reaction to make a melee weapon attack against that creature.</p>
+		</description>
+		<setters>
+			<set name="short">Attack Augmentation</set>
+		</setters>
+		<sheet action="Bonus Action">
+			<description>When a creature hits you with a melee attack, you can use your reaction to make a melee weapon attack against that creature.</description>
+		</sheet>
+	</element>
+	
+	<element name="Vard, Ild" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_ILD">
+		<supports>Runeguard Runic Augmentations, Vard, Ild</supports>
+		<description>
+			<p><em>Defense Augmentation</em></p>
+			<p>You can activate a rune with the Vard augmentation as a reaction. A rune’s power can only be used while wearing the armor or holding the shield it is inscribed on.</p>
+			<p class="indent"><strong><em>Ild.</em></strong> When you are hit by a melee attack, the attacker takes fire damage equal to your proficiency bonus.</p>
+		</description>
+		<setters>
+			<set name="short">Defense Augmentation</set>
+		</setters>
+		<sheet action="Reaction">
+			<description>When you are hit by a melee attack, the attacker takes {{proficiency}} fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Vard, Kalt" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_KALT">
+		<supports>Runeguard Runic Augmentations, Vard, Kalt</supports>
+		<description>
+			<p><em>Defense Augmentation</em></p>
+			<p>You can activate a rune with the Vard augmentation as a reaction. A rune’s power can only be used while wearing the armor or holding the shield it is inscribed on.</p>
+			<p class="indent"><strong><em>Kalt.</em></strong> When you are hit by a melee attack, the damage you take from the attack is reduced an amount equal to your proficiency bonus.</p>
+		</description>
+		<setters>
+			<set name="short">Defense Augmentation</set>
+		</setters>
+		<sheet action="Reaction">
+			<description>When you are hit by a melee attack, the damage you take from the attack is reduced by {{proficiency}}.</description>
+		</sheet>
+	</element>
+	<element name="Vard, Ond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_OND">
+		<supports>Runeguard Runic Augmentations, Vard, Ond</supports>
+		<description>
+			<p><em>Defense Augmentation</em></p>
+			<p>You can activate a rune with the Vard augmentation as a reaction. A rune’s power can only be used while wearing the armor or holding the shield it is inscribed on.</p>
+			<p class="indent"><strong><em>Ond.</em></strong> You gain a bonus to saving throws made to resist being frightened equal to your Constitution modifier.</p>
+		</description>
+		<setters>
+			<set name="short">Defense Augmentation</set>
+		</setters>
+		<sheet action="Reaction">
+			<description>You gain a +{{constitution:modifier}} bonus to saving throws made to resist being frightened.</description>
+		</sheet>
+	</element>
+	<element name="Vard, Stein" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_STEIN">
+		<supports>Runeguard Runic Augmentations, Vard, Stein</supports>
+		<description>
+			<p><em>Defense Augmentation</em></p>
+			<p>You can activate a rune with the Vard augmentation as a reaction. A rune’s power can only be used while wearing the armor or holding the shield it is inscribed on.</p>
+			<p class="indent"><strong><em>Stein.</em></strong> You have advantage on saving throws made to resist being moved against your will.</p>
+		</description>
+		<setters>
+			<set name="short">Defense Augmentation</set>
+		</setters>
+		<sheet action="Reaction">
+			<description>You have advantage on saving throws made to resist being moved against your will.</description>
+		</sheet>
+	</element>
+	<element name="Vard, Vind" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_VIND">
+		<supports>Runeguard Runic Augmentations, Vard, Vind</supports>
+		<description>
+			<p><em>Defense Augmentation</em></p>
+			<p>You can activate a rune with the Vard augmentation as a reaction. A rune’s power can only be used while wearing the armor or holding the shield it is inscribed on.</p>
+			<p class="indent"><strong><em>Vind.</em></strong> Ranged attacks made against you have disadvantage as wind whips around you.</p>
+		</description>
+		<setters>
+			<set name="short">Defense Augmentation</set>
+		</setters>
+		<sheet action="Reaction">
+			<description>Ranged attacks made against you have disadvantage as wind whips around you.</description>
+		</sheet>
+	</element>
+
+	<element name="Hagr, Ild" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_ILD">
+		<supports>Runeguard Runic Augmentations, Hagr, Ild</supports>
+		<description>
+			<p><em>Ability Augmentation</em></p>
+			<p>You can activate a rune with the Hagr augmentation as an action. This rune must be inscribed on your body to be activated.</p>
+			<p class="indent"><strong><em>Ild.</em></strong> You can add your Constitution modifier to your Strength (Athletics) and Dexterity (Acrobatics) ability checks.</p>
+		</description>
+		<setters>
+			<set name="short">Ability Augmentation</set>
+		</setters>
+		<sheet action="Action">
+			<description>You can add your Constitution modifier ({{constitution:modifier}}) to your Athletics and Acrobatics ability checks.</description>
+		</sheet>
+	</element>
+	<element name="Hagr, Kalt" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_KALT">
+		<supports>Runeguard Runic Augmentations, Hagr, Kalt</supports>
+		<description>
+			<p><em>Ability Augmentation</em></p>
+			<p>You can activate a rune with the Hagr augmentation as an action. This rune must be inscribed on your body to be activated.</p>
+			<p class="indent"><strong><em>Kalt.</em></strong> You ignore difficult terrain and can walk safely across still or gently moving water.</p>
+		</description>
+		<setters>
+			<set name="short">Ability Augmentation</set>
+		</setters>
+		<sheet action="Action">
+			<description>You ignore difficult terrain and can walk safely across still or gently moving water.</description>
+		</sheet>
+	</element>
+	<element name="Hagr, Ond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_OND">
+		<supports>Runeguard Runic Augmentations, Hagr, Ond</supports>
+		<description>
+			<p><em>Ability Augmentation</em></p>
+			<p>You can activate a rune with the Hagr augmentation as an action. This rune must be inscribed on your body to be activated.</p>
+			<p class="indent"><strong><em>Ond.</em></strong> When you receive healing from any source, you also gain temporary hit points equal to 5 + your proficiency bonus.</p>
+		</description>
+		<setters>
+			<set name="short">Ability Augmentation</set>
+		</setters>
+		<sheet action="Action">
+			<description>When you receive healing from any source, you also gain {{hagr-ond:temporary hp}} temporary hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="hagr-ond:temporary hp" value="5" />
+			<stat name="hagr-ond:temporary hp" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Hagr, Stein" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_STEIN">
+		<supports>Runeguard Runic Augmentations, Hagr, Stein</supports>
+		<description>
+			<p><em>Ability Augmentation</em></p>
+			<p>You can activate a rune with the Hagr augmentation as an action. This rune must be inscribed on your body to be activated.</p>
+			<p class="indent"><strong><em>Stein.</em></strong> You have advantage on death saving throws and Constitution saving throws made to maintain concentration.</p>
+		</description>
+		<setters>
+			<set name="short">Ability Augmentation</set>
+		</setters>
+		<sheet action="Action">
+			<description>You have advantage on death saving throws and Constitution saving throws made to maintain concentration.</description>
+		</sheet>
+	</element>
+	<element name="Hagr, Vind" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_VIND">
+		<supports>Runeguard Runic Augmentations, Hagr, Vind</supports>
+		<description>
+			<p><em>Ability Augmentation</em></p>
+			<p>You can activate a rune with the Hagr augmentation as an action. This rune must be inscribed on your body to be activated.</p>
+			<p class="indent"><strong><em>Vind.</em></strong> Your movement speed increases by a number of feet equal to 5 times your Constitution modifier (minimum 5 feet).</p>
+		</description>
+		<setters>
+			<set name="short">Ability Augmentation</set>
+		</setters>
+		<sheet action="Action">
+			<description>Your movement speed increases by {{hagr-vind:speed}}.</description>
+		</sheet>
+		<rules>
+			<stat name="hagr-vind:constitution" value="constitution:modifier" />
+			<stat name="hagr-vind:constitution" value="constitution:modifier" />
+			<stat name="hagr-vind:constitution" value="constitution:modifier" />
+			<stat name="hagr-vind:constitution" value="constitution:modifier" />
+			<stat name="hagr-vind:constitution" value="constitution:modifier" />
+
+			<stat name="hagr-vind:speed" value="5" bonus="minimum" />
+			<stat name="hagr-vind:speed" value="hagr-vind:constitution" bonus="minimum" />
+		</rules>
+	</element>
+
+	<!-- tal runic augmentations -->
+	<element name="Tal, Ild" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_ILD">
+		<!-- <supports>Runeguard Runic Augmentations, Tal, Ild</supports> -->
+		<requirements>ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING,(ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_ILD||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_ILD||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_ILD)</requirements>
+		<description>
+			<p><em>Reckoning</em></p>
+			<p>Once you gain the Sentinel’s Reckoning feature at 10th level, you can activate a rune with the Tal command word as an action. This rune manifests in the air around you when activated.</p>
+			<p class="indent"><strong><em>Ild.</em></strong> Each creature within a 5-foot-radius of you must make a Dexterity saving throw, taking fire damage equal to 2d6 × the number of runes you have active on a failed save, or half as much damage on a successful one.</p>			
+		</description>
+		<sheet action="Action" usage="Sentinel’s Reckoning">
+			<description>Each creature within a 5-foot-radius of you must make a Dexterity saving throw, taking fire damage equal to 2d6 × the number of runes you have active on a failed save, or half as much damage on a successful one.</description>
+		</sheet>
+	</element>
+	<element name="Tal, Kalt" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_KALT">
+		<!-- <supports>Runeguard Runic Augmentations, Tal, Kalt</supports> -->
+		<requirements>ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING,(ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_KALT||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_KALT||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_KALT)</requirements>
+		<description>
+			<p><em>Reckoning</em></p>
+			<p>Once you gain the Sentinel’s Reckoning feature at 10th level, you can activate a rune with the Tal command word as an action. This rune manifests in the air around you when activated.</p>
+			<p class="indent"><strong><em>Kalt.</em></strong> An eruption of magical frost blasts from you in a radius equal to 10 feet × the number of runes you have active. All creatures of your choice within the area must succeed on a Strength saving throw or be restrained for a number of rounds equal to the number of active runes. At the end of each of their turns, they can repeat the saving throw to break free.</p>
+		</description>
+		<sheet action="Action" usage="Sentinel’s Reckoning">
+			<description>An eruption of magical frost blasts from you in a radius equal to 10 feet × the number of runes you have active. All creatures of your choice within the area must succeed on a Strength saving throw or be restrained for a number of rounds equal to the number of active runes. At the end of each of their turns, they can repeat the saving throw to break free.</description>
+		</sheet>
+	</element>
+	<element name="Tal, Ond" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_OND">
+		<!-- <supports>Runeguard Runic Augmentations, Tal, Ond</supports> -->
+		<requirements>ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING,(ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_OND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_OND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_OND)</requirements>
+		<description>
+			<p><em>Reckoning</em></p>
+			<p>Once you gain the Sentinel’s Reckoning feature at 10th level, you can activate a rune with the Tal command word as an action. This rune manifests in the air around you when activated.</p>
+			<p class="indent"><strong><em>Ond.</em></strong> Life spirits swirl about you in a 5-foot-radius. All creatures of your choice within that radius regain hit points equal to 1d6 × the number of runes you have active.</p>
+		</description>
+		<sheet action="Action" usage="Sentinel’s Reckoning">
+			<description>Life spirits swirl about you in a 5-foot-radius. All creatures of your choice within that radius regain hit points equal to 1d6 × the number of runes you have active.</description>
+		</sheet>
+	</element>
+	<element name="Tal, Stein" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_STEIN">
+		<!-- <supports>Runeguard Runic Augmentations, Tal, Stein</supports> -->
+		<requirements>ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING,(ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_STEIN||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_STEIN||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_STEIN)</requirements>
+		<description>
+			<p><em>Reckoning</em></p>
+			<p>Once you gain the Sentinel’s Reckoning feature at 10th level, you can activate a rune with the Tal command word as an action. This rune manifests in the air around you when activated.</p>
+			<p class="indent"><strong><em>Stein.</em></strong> You release your runic power in an arc before you, creating a cone of difficult terrain as jagged earth erupts equal to 5 feet × the number of runes you have active. When a creature enters this area for the first time on a turn or starts its turn there, it takes 2d4 slashing damage.</p>
+		</description>
+		<sheet action="Action" usage="Sentinel’s Reckoning">
+			<description>You release your runic power in an arc before you, creating a cone of difficult terrain as jagged earth erupts equal to 5 feet × the number of runes you have active. When a creature enters this area for the first time on a turn or starts its turn there, it takes 2d4 slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Tal, Vind" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_TAL_VIND">
+		<!-- <supports>Runeguard Runic Augmentations, Tal, Vind</supports> -->
+		<requirements>ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_SENTINELS_RECKONING,(ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_SOKN_VIND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_VARD_VIND||ID_XLN_ARCHETYPE_FEATURE_RUNEGUARD_RUNIC_AUGMENTATIONS_HAGR_VIND)</requirements>
+		<description>
+			<p><em>Reckoning</em></p>
+			<p>Once you gain the Sentinel’s Reckoning feature at 10th level, you can activate a rune with the Tal command word as an action. This rune manifests in the air around you when activated.</p>
+			<p class="indent"><strong><em>Vind.</em></strong> A furious cyclone whips up a strong wind around you. All creatures within a 10-foot-radius must succeed a Strength saving throw or take 1d10 bludgeoning damage, be pushed a number of feet equal to 5 × the number of runes you have active (minimum of 5 feet), and fall prone. On a success, a creature takes half as much damage and isn’t knocked prone.</p>
+		</description>
+		<sheet action="Action" usage="Sentinel’s Reckoning">
+			<description>A furious cyclone whips up a strong wind around you. All creatures within a 10-foot-radius must succeed a Strength saving throw or take 1d10 bludgeoning damage, be pushed a number of feet equal to 5 × the number of runes you have active (minimum of 5 feet), and fall prone. On a success, a creature takes half as much damage and isn’t knocked prone.</description>
+		</sheet>
+	</element>
+
+</elements>

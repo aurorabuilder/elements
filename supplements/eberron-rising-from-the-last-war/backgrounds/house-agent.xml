@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="house-agent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/backgrounds/house-agent.xml" />
+		</update>
+	</info>	
+	<element name="House Agent" type="Background" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT">
+		<description>
+			<p>You have sworn fealty to a dragonmarked house. If you have a dragonmark, you’re likely a member of one of the house’s influential families; otherwise you’re an outsider who hopes to make your fortune through the house. Your main task is to serve as the eyes of your house, but you could be called on at any time to act as its hand. Such missions can be perilous but lucrative.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Investigation, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> Two proficiencies from the House Tool Proficiencies table</li>
+				<li><strong>Equipment:</strong> A set of fine clothes, house signet ring, identification papers, and a purse containing 20 gp</li>
+			</ul>
+			<br/>
+			<p><strong>HOUSE TOOL PROFICIENCIES</strong></p>
+			<table>
+				<thead>
+					<tr><td>Your House</td><td>Proficiencies</td></tr>
+				</thead>
+				<tr><td>Cannith</td><td>Alchemist’s supplies and tinker’s tools</td></tr>
+				<tr><td>Deneith</td><td>One gaming set and vehicles (land)</td></tr>
+				<tr><td>Ghallanda</td><td>Brewer’s supplies and cook’s utensils</td></tr>
+				<tr><td>Jorasco</td><td>Alchemist’s supplies and herbalism kit</td></tr>
+				<tr><td>Kundarak</td><td>Thieves’ tools and tinker’s tools</td></tr>
+				<tr><td>Lyrandar</td><td>Navigator’s tools and vehicles (air and sea)</td></tr>
+				<tr><td>Medani</td><td>Disguise kit and thieves’ tools</td></tr>
+				<tr><td>Orien</td><td>One gaming set and vehicles (land)</td></tr>
+				<tr><td>Phiarlan</td><td>Disguise kit and one musical instrument</td></tr>
+				<tr><td>Sivis</td><td>Calligrapher’s tools and forgery kit</td></tr>
+				<tr><td>Tharashk</td><td>One gaming set and thieves’ tools</td></tr>
+				<tr><td>Thuranni</td><td>One musical instrument and poisoner’s kit</td></tr>
+				<tr><td>Vadalis</td><td>Herbalism kit and vehicles (land)</td></tr>
+			</table>
+			<h4>ROLE</h4>
+			<p>You always gather information for your house, but when a baron give you a specific mission, what sort of work do you do? The House Agent Role table gives possibilities.</p>
+			<p><strong>HOUSE AGENT ROLE</strong></p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Role</td></tr>
+				</thead>
+				<tr><td>1</td><td>Acquisition</td></tr>
+				<tr><td>2</td><td>Investigation</td></tr>
+				<tr><td>3</td><td>Research &amp; Development</td></tr>
+				<tr><td>4</td><td>Security</td></tr>
+				<tr><td>5</td><td>Intimidation</td></tr>
+				<tr><td>6</td><td>Exploration</td></tr>
+				<tr><td>7</td><td>Negotiation</td></tr>
+				<tr><td>8</td><td>Covert Operations</td></tr>
+			</table>
+			<div element="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_AGENT_HOUSE_CONNECTIONS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>House agents are diverse. Consider the house you serve and the work you do when choosing characteristics.</p>
+		</description>
+		<setters>
+			<set name="short">Investigation, Persuasion, 2 Tools (Dragonmarked House)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Background Feature" name="Tool Proficiency, House Agent" supports="House Agent Tool Proficiency" />
+			<grant type="Background Feature" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_AGENT_HOUSE_CONNECTIONS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="House Agent Role" optional="true">
+				<item id="1">Acquisition</item>
+				<item id="2">Investigation</item>
+				<item id="3">Research &amp; Development</item>
+				<item id="4">Security</item>
+				<item id="5">Intimidation</item>
+				<item id="6">Exploration</item>
+				<item id="7">Negotiation</item>
+				<item id="8">Covert Operations</item>
+			</select>
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I’m always looking to improve efficiency.</item>
+				<item id="2">I love to share trivia about my house’s business.</item>
+				<item id="3">I never forget an insult against me or my house.</item>
+				<item id="4">I’m enthusiastic about everything my house does.</item>
+				<item id="5">I represent my house and take pride in my looks.</item>
+				<item id="6">I’m critical of monarchies and limits on the houses.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Common Good. My house serves a vital function, and its prosperity will help everyone. (Good)</item>
+				<item id="2">Tradition. I uphold traditions of my house and bring honor to my family. (Lawful)</item>
+				<item id="3">Innovation. Abandon old traditions and find better ways to do things. (Chaotic)</item>
+				<item id="4">Power. I want to ensure the prosperity of my house and wield its power myself. (Evil)</item>
+				<item id="5">Discovery. I want to learn all I can, both for my house and for my own curiosity. (Any)</item>
+				<item id="6">Comfort. I want to ensure that me and mine enjoy the best things in life. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My house is my family. I would do anything for it.</item>
+				<item id="2">I love someone from another house, but the relationship is forbidden.</item>
+				<item id="3">Someone I love was killed by a rival faction within my house, and I will have revenge.</item>
+				<item id="4">I don’t care about the house as a whole, but I would do anything for my old mentor.</item>
+				<item id="5">My house must evolve, and I’ll lead the evolution.</item>
+				<item id="6">I’m determined to impress the leaders of my house, and to become a leader myself.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m fixated on following official protocols.</item>
+				<item id="2">I’m obsessed with conspiracy theories and worried about secret societies and hidden demons.</item>
+				<item id="3">My house and blood line make me the best!</item>
+				<item id="4">My secret could get me expelled from my house.</item>
+				<item id="5">My religious beliefs aren’t widespread in my house.</item>
+				<item id="6">I’m working for a hidden faction in my house that gives me secret assignments.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: House Connections" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_AGENT_HOUSE_CONNECTIONS">
+		<supports>Background Feature, Primary</supports>
+		<description>
+			<p>As an agent of your house, you can always get food and lodging for yourself and your friends at a house enclave. When the house assigns you a mission, it will usually provide you with the necessary supplies and transportation. Beyond this, you have many old friends, mentors, and rivals in your house, and you may encounter one of them when you interact with a house business. The degree to which such acquaintances are willing to help you depends on your current standing in your house.</p>
+		</description>
+		<sheet alt="House Connections">
+			<description>As an agent of your house, you can always get food and lodging for yourself and your friends at a house enclave. When the house assigns you a mission, it will usually provide you with the necessary supplies and transportation. Beyond this, you have many old friends, mentors, and rivals in your house, and you may encounter one of them when you interact with a house business. The degree to which such acquaintances are willing to help you depends on your current standing in your house.</description>
+		</sheet>
+	</element>
+	
+	<element name="House Cannith" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_CANNITH">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with alchemist’s supplies and tinker’s tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Deneith" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_DENEITH">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with one gaming set and vehicles (land).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Gaming Set, House Deneith" supports="Gaming Set" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+		</rules>
+	</element>
+	<element name="House Ghallanda" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_GHALLANDA">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with brewer’s supplies and cook’s utensils.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+		</rules>
+	</element>
+	<element name="House Jorasco" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_JORASCO">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with alchemist’s supplies and herbalism kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+	<element name="House Kundarak" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_KUNDARAK">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with thieves’ tools and tinker’s tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Lyrandar" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_LYRANDAR">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with navigator’s tools and vehicles (air and sea).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<!-- <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" /> -->
+			<grant type="Proficiency" id="ID_WOTC_ERLW_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_AIR_SEA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Medani" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_MEDANI">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with disguise kit and thieves’ tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Orien" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_ORIEN">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with one gaming set and vehicles (land).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Gaming Set, House Orien" supports="Gaming Set" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+		</rules>
+	</element>
+	<element name="House Phiarlan" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_PHIARLAN">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with disguise kit and one musical instrument.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<select type="Proficiency" name="Musical Instrument, House Phiarlan" supports="Musical Instrument" />
+		</rules>
+	</element>
+	<element name="House Sivis" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_SIVIS">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with calligrapher’s tools and forgery kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+		</rules>
+	</element>
+	<element name="House Tharashk" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_THARASHK">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with one gaming set and thieves’ tools.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Gaming Set, House Tharashk" supports="Gaming Set" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
+	<element name="House Thuranni" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_THURANNI">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with one musical instrument and poisoner’s kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Musical Instrument, House Phiarlan" supports="Musical Instrument" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+		</rules>
+	</element>
+	<element name="House Vadalis" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_BACKGROUND_FEATURE_HOUSE_TOOL_VADALIS">
+		<supports>House Agent Tool Proficiency</supports>
+		<requirements>ID_WOTC_ERLW_BACKGROUND_HOUSE_AGENT</requirements>
+		<description>
+			<p>You gain proficiency with herbalism kit and vehicles (land).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+		</rules>
+	</element>
+</elements>

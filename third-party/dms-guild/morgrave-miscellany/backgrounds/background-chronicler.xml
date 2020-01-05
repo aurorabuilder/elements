@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Chronicler</name>
+		<description>The Chronicler Background from Morgrave Miscellany.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker &amp; Ruty Rutenberg</author>
+		<update version="0.0.2">
+			<file name="background-chronicler.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/morgrave-miscellany/backgrounds/background-chronicler.xml" />
+		</update>
+	</info>	
+	<element name="Chronicler" type="Background" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_CHRONICLER">
+		<description>
+			<p>People need news, and you’re the one to provide it. You could be an investigative reporter searching for issues of national importance such as conspiracies, corruption, threats of war, or news about the Mourning. You could be gathering gossip, or sharing the tales of bold adventurers, so make sure your friends do something worthy of a story! You could also be a general agent of the Library of Korranberg, always watchful for anything that could expand the repository of general knowledge.</p>
+			<h4>Chronicle</h4>
+			<p>As a chronicler, you work for an ongoing publication. What’s your agency, and what are they best known for? Do you work for the trusted Korranberg Chronicle, or are a muckraker for the Daily Prophecy?</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Insight, Investigation</li>
+				<li><strong>Tool Proficiencies:</strong> Calligrapher’s supplies</li>
+				<li><strong>Languages:</strong> Any one</li>
+				<li><strong>Equipment:</strong> Calligrapher’s supplies, a set of common clothes, and a pouch containing an ink pen, a bottle of ink, ten sheets of paper, and 5 gp</li>
+			</ul>
+			<div element="ID_DMSG_MGMS_BACKGROUND_FEATURE_CHRONICLER_PRESS_PASS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You’ve spent your life asking questions and uncovering secrets. You may be driven by insatiable curiosity, or you could have a deep belief that the people deserve to know all that can be known.</p>
+		</description>			
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<select type="Language" name="Language (Chronicler)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_CHRONICLER_PRESS_PASS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Chronicle" type="List" optional="true">
+				<item id="1">The Korranberg Chronicle. The most trusted source of news across Khorvaire.</item>
+				<item id="2">The Sharn Inquisitive. A blend of national news and the local gossip of Sharn.</item>
+				<item id="3">Aureon’s Arcanix. A monthly publication on the latest developments in magic.</item>
+				<item id="4">The Wayfinder’s Weekly. A digest of the exciting deeds of legendary adventurers across Eberron.</item>
+				<item id="5">The Voice of Cyre. A chronicle focusing on the plight of Cyran refugees and helping to preserve Cyran culture.</item>
+				<item id="6">The Voice of the Flame. A Thrane publication dealing with news and inspiring stories of interest to followers of the Silver Flame.</item>
+				<item id="7">The Daily Prophecy. A fringe publication focusing on conspiracy theories and bizarre rumors. Headlines like, “Dragons are running Zilargo! King Kaius is a vampire!” are commonplace.</item>
+				<item id="8">The Library of Korranberg. You gather knowledge on behalf of the grandest repository of information in Khorvaire.</item>
+			</select>
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I’m always asking questions, even when it’s inappropriate.</item>
+				<item id="2">I’m constantly taking notes on everything around me.</item>
+				<item id="3">I frequently narrate the events around me.</item>
+				<item id="4">I’m sure there’s more to the story, whatever the story may be.</item>
+				<item id="5">I never use one word when I could use five.</item>
+				<item id="6">I’m always chasing after celebrities.</item>
+				<item id="7">I’ll do anything to get a good story.</item>
+				<item id="8">I have a pen name and exaggerated personality I use when I’m reporting.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Balance. Revealing the absolute truth is all that matters, regardless of whether it tips the balance towards good or evil. (Neutral)</item>
+				<item id="2">Honor. The best way to fight corruption and evil is to expose it to the public. (Good)</item>
+				<item id="3">Revolution. Opponents who can’t be fought with swords can be beaten with words. You use your writing to undermine established authority and introduce new ideas. (Chaotic)</item>
+				<item id="4">Civilization. It’s your duty to record the history of your nation and to preserve and celebrate the values of your culture. (Lawful)</item>
+				<item id="5">Power. Truth is irrelevant. People believe what they want to believe, or what you want them to believe. How can you use your writing to gain power and influence? (Evil)</item>
+				<item id="6">Entertainment. People need diversion and entertainment. You’re not interested in news; you just want to find brilliant stories to share. (Any)</item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">I’m sure that one of the other party members has a grand destiny, and I’m going to record their story from the very beginning.</item>
+				<item id="2">My family was ruined by a corrupt conspiracy. I’m going to expose this cabal and bring it down.</item>
+				<item id="3">The people have a right to know the truth.</item>
+				<item id="4">People need to know about the long-term impact of the war.</item>
+				<item id="5">I’m going to break the story of the century.</item>
+				<item id="6">I want my work to bring people together.</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m convinced there’s a vast conspiracy behind everything that goes wrong.</item>
+				<item id="2">I won’t take “no” for an answer.</item>
+				<item id="3">I’ve made a lot of enemies with my writing.</item>
+				<item id="4">I don’t trust anyone. Everyone has something to hide.</item>
+				<item id="5">I’m happy to exploit my friends to get a good story.</item>
+				<item id="6">Once I’ve settled on a story, I become completely obsessed with it.</item>
+				</select>
+		</rules>		
+	</element>	
+	<element name="Feature: Press Pass" type="Background Feature" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_CHRONICLER_PRESS_PASS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You’re an established reporter for a known source of news. You can often get access to restricted events for yourself and your “crew” so you can cover the story. People familiar with your work may be excited to talk to you, and even people who have something to hide may not want to turn you away without explanation. Of course, using your credentials in this way draws a lot of attention!</p>
+		</description>
+		<sheet alt="Press Pass" />
+	</element>
+</elements>

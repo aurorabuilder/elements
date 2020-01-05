@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<info>
+		<name>Path of the Accursed</name>
+		<description>Path of the Accursed Primal Path from The Compendium of Forgotten Secrets</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
+		<update version="0.0.1">
+			<file name="barbarian-accursed-path.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/compendium-of-forgotten-secrets/archetypes/barbarian-accursed-path.xml" />
+		</update>
+	</info>
+	
+	<element name="Path of the Accursed" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED">
+		<supports>Primal Path</supports>
+		<description>
+			<p>There is a place beyond time, filled with malignant intelligence and ruinous intent. This is the Accursed Archive – the singular repository of all knowledge known to mortal men, populated with the darkest of secrets and the foulest of heresies. You managed to find a tome of these blighted mysteries and stepped through the door to nowhere that led to the Archive at some point in your past, yet your mind cracked under the weight of the knowledge contained within and the horrible vistas of forgotten power that stood just within your feeble mortal grasp. Now you have finally realized that the true source of your furious rage is both defiance and acceptance of the madness that lies within the Accursed Archive.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_LURKING_FEAR" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_FROM_BEYOND" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_THING_ON_THE_DOORSTEP" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_WHAT_THE_MOON_BRINGS" />
+		</description>
+		<sheet display="true">
+			<description>The true source of your furious rage is both defiance and acceptance of the madness that lies within the Accursed Archive.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_LURKING_FEAR" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_FROM_BEYOND" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_THING_ON_THE_DOORSTEP" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_WHAT_THE_MOON_BRINGS" level="14" />
+		</rules>
+	</element>
+	
+	<element name="The Lurking Fear" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_LURKING_FEAR">
+		<description>
+			<p>At 3rd level, you have yet to come to terms with what you have witnessed within the Archive, and in your bouts of rage you ramble about these twisted things even as your tongue fights to stop. You gain resistance to all damage inflicted by frightened creatures while you are raging. </p>
+			<p class="indent">Whenever you are raging, each creature that starts its turn within 10 feet of you must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. Once a creature fails this saving throw, it can’t be frightened by this feature again for one minute.</p>
+			<p class="indent">Additionally, you can use your Charisma modifier in place of your Intelligence modifier when making skill checks and saving throws.</p>
+		</description>
+		<sheet>
+			<description>Whenever you are raging, each creature that starts its turn within 10 feet of you must succeed on a Wisdom saving throw (DC {{lurking fear:dc}}) or be frightened of you until the end of your next turn. Once a creature fails this saving throw, it can’t be frightened by this feature again for one minute. Additionally, you can use your Charisma modifier in place of your Intelligence modifier when making skill checks and saving throws.</description>
+		</sheet>
+		<rules>
+			<stat name="lurking fear:dc" value="8" />
+			<stat name="lurking fear:dc" value="proficiency" />
+			<stat name="lurking fear:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+	
+	<element name="From Beyond" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_FROM_BEYOND">
+		<description>
+			<p>Starting at 6th level, your words seem to cut at the minds of those who listen even more horribly than before. You can cast dark secret once, and you recover this use whenever you enter a rage. Charisma is your spellcasting ability for this spell.</p>
+		</description>
+		<sheet usage="1/Rage">
+			<description>Dark Secret (Spellcasting: Charisma)</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_GFP_COFSA_SPELL_DARK_SECRET" />
+		</rules>
+	</element>
+	
+	<element name="The Thing On The Doorstep" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_THE_THING_ON_THE_DOORSTEP">
+		<description>
+			<p>At 10th level, your hallucinations slowly enter reality, as the dark tendrils of the Silent One move at the corners of your vision. Whenever you enter a rage, you can choose to unleash the horrors that dwell within your mind upon the world. Choose a number of creatures within 30 feet of you equal to or less than your Charisma modifier. Each one is pulled to an open space within 5 feet of you, or the nearest available space, by massive tendrils that spawn from the air around you. Until the end of your turn, when the tendrils disappear, you cannot suffer disadvantage from any source on any check made to grapple one of these creatures.</p>
+		</description>
+		<sheet>
+			<description>Choose {{charisma:modifier}} creatures within 30 ft of you, these creatures are pulled to an open space within 5 ft of you and you cannot suffer disadvantage on grapple checks against them for the rest of your turn.</description>
+		</sheet>
+	</element>
+	
+	<element name="What The Moon Brings" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_PATH_OF_THE_ACCURSED_WHAT_THE_MOON_BRINGS">
+		<description>
+			<p>At 14th level, you finally accept the things you learned within the Archive and realize that the ruinous secrets it unleashes upon the world are merely the statements of a truth that mankind has long dreaded to learn. The Silent Ones are not villains, but are guardians, destined to safeguard the universe from those who would exploit the foul heresies of the Accursed Archive, and so you begin your preparations to join their ranks. </p>
+			<p class="indent">Whenever you reduce a creature to 0 hit points, you can choose to allow a Silent One to lash out from within your skin, ensnaring another unwary soul and twisting their flesh from its good purpose. Choose a creature within 30 feet of you. The target must make a Strength (Athletics) or Dexterity (Acrobatics) check contested by your own Strength (Athletics) check. If the target fails, the tendril snares them and drags them into the closest open space near you, and the creature gains one level of exhaustion. A creature cannot be affected by this feature more than once per turn.</p>
+		</description>
+		<sheet>
+			<description>When you reduce a creature to 0 HP you can choose a creature within 30 ft of you, making an Athletics/Acrobatics checked constested by your Athletics check. On a fail they are dragged to an open space beside you and suffer one level of exhaustion. A creature can only be affected by this once per turn.</description>
+		</sheet>
+	</element>
+	
+</elements>

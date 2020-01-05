@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	
+	<info>
+		<name>Ashen Wolf Patron</name>
+		<description>Ashen Wolf Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.1">
+			<file name="warlock-ashen-wolf.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-ashen-wolf.xml" />
+		</update>
+	</info>
+	
+	<element name="The Ashen Wolf" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_ASHEN_WOLF">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You’ve made a pact with a primal spirit of fire and the hunt – a scourge of the forests and fields, and a harbinger of ill fate. This creature is wise and cunning, making deals with those who have the potential to bring ruin and change. Some consider the beast to be native to the Plane of Elemental Fire; others call it a fiend from the darkest hells. Whatever its origin, the ember-eyed wolf often extracts payment in the form of wishes gone awry: a demand for power becomes a battle to retain one’s humanity, while a request for a peaceful resolution often has a price that brings constant regret.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BREATHOFSMOKE"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_FEASTFORTHEFIRE"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_ENDLESSPURSUIT"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BEASTOFTHEBURNINGEND"/>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BREATHOFSMOKE" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_FEASTFORTHEFIRE" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_ENDLESSPURSUIT" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BEASTOFTHEBURNINGEND" level="14" />
+		</rules>
+	</element>
+	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Ashen Wolf lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>ASHEN WOLF EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>hunter's pace, inflict wounds</em></td></tr>
+				<tr><td>2nd</td><td><em>flame blade, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>funeral pyre, haste</em></td></tr>
+				<tr><td>4th</td><td><em>ashen pack, wall of fire</em></td></tr>
+				<tr><td>5th</td><td><em>cloudkill, hungering hate</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Ashen Wolf lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_GFP_COFSA_SPELL_HUNTERS_PACE</extend>
+			<extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+			<extend>ID_PHB_SPELL_FLAME_BLADE</extend>
+			<extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+			<extend>ID_GFP_COFSA_SPELL_FUNERAL_PYRE</extend>
+			<extend>ID_PHB_SPELL_HASTE</extend>
+			<extend>ID_GFP_COFSA_SPELL_ASHEN_PACK</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_FIRE</extend>
+			<extend>ID_PHB_SPELL_CLOUDKILL</extend>
+			<extend>ID_GFP_COFSA_SPELL_HUNGERING_HATE</extend>
+		</spellcasting>
+	</element>
+	
+	<element name="Breath of Smoke" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BREATHOFSMOKE">
+		<description>
+			<p>Starting at 1st level, you can use your action to exhale blistering embers in a 15-foot cone. Each creature in that area must make a Constitution saving throw against your warlock spell save DC. Creature that fail take fire damage equal to your warlock level + your Charisma modifier and are blinded until the end of their next turn.</p>
+			<p class="indent">If you activate this feature again before finishing a short or long rest, you gain one level of exhaustion.</p>
+			<p class="indent">Additionally, you can breathe and see normally in smoke or ash-filled air.</p>
+		</description>
+		<sheet>
+			<description>You can use your action to exhale blistering embers in a 15-foot cone. Each creature in that area must make a Constitution saving throw against your warlock spell save DC. Creature that fail take {{breath of smoke:dmg}} fire damage and are blinded until the end of their next turn. If you activate this feature again before finishing a short or long rest, you gain one level of exhaustion. Additionally, you can breathe and see normally in smoke or ash-filled air.</description>
+		</sheet>
+		<rules>
+			<stat name="breath of smoke:dmg" value="level:warlock" />
+			<stat name="breath of smoke:dmg" value="charisma:modifier" />
+		</rules>
+	</element>
+	
+	<element name="Feast for the Fire" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_FEASTFORTHEFIRE">
+		<description>
+			<p>Beginning at 6th level, you have gained the ability to mark a target for sacrifice to the Ashen Wolf. As a bonus action, choose one creature you can see within 60 feet of you. For one minute, the target is cursed by the Ashen Wolf. The curse ends early if the target dies. Until the curse ends, the target loses any resistance to fire damage, and opportunity attacks against the target are made with advantage. Once you use this feature, you can’t do so again until you finish a short or long rest. At 10th level, the curse grows in strength as your connection with your patron deepens. The target also loses any immunity to fire damage.</p>
+		</description>
+		<sheet>
+			<description>
+				As a bonus action, choose one creature you can see within 60 feet of you. For one minute, the target is cursed by the Ashen Wolf. The curse ends early if the target dies. Until the curse ends, the target loses any resistance to fire damage, and opportunity attacks against the target are made with advantage. Once you use this feature, you can’t do so again until you finish a short or long rest. At 10th level, the curse grows in strength as your connection with your patron deepens. The target also loses any immunity to fire damage.
+			</description>
+		</sheet>
+	</element>
+	
+	<element name="Endless Pursuit" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_ENDLESSPURSUIT">
+		<description>
+			<p>At 10th level, your patron grants you a portion of its primal stamina. You gain resistance to fire damage. Whenever you finish a short rest, you can choose to reduce your level of exhaustion by one. You can do this once, and this use recovers whenever you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You gain resistance to fire damage. Whenever you finish a short rest, you can choose to reduce your level of exhaustion by one. You can do this once, and this use recovers whenever you finish a long rest.</description>
+		</sheet>
+	</element>
+	
+	<element name="Beast of the Burning End" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ASHEN_WOLF_BEASTOFTHEBURNINGEND">
+		<description>
+			<p>At 14th level, you unlock the power to incarnate in the form of your patron. As an action, you wrap yourself in the guise of a massive  flaming lupine creature. For 1 minute, or until you exit this incarnation as a bonus action, you gain the following benefits.</p>
+			<ul>
+				<li>Your size becomes Medium or Large (your choice).</li>
+				<li>You ignore all levels of exhaustion.</li>
+				<li>Your speed increases by 20 feet.</li>
+				<li>You have advantage on melee attack rolls against a creature if at least one of your allies is within 5 feet of the creature and the ally isn’t incapacitated.</li>
+				<li>You are immune to fire damage.</li>
+			</ul>
+			<p>When you use this feature, two hell hounds burst forth from your burning flesh into spaces within 5 feet of you. They obey any verbal commands that you issue to them (no action required by you). If you don’t issue any commands to them or are incapacitated, they defend themselves and you from hostile creatures, but otherwise take no actions. They act on your initiative count, have twice as many hit points as a normal hell hound, and are considered elementals instead of their normal type. When you exit this incarnation, the hell hounds instantly turn to ash. Your body immediately attempts to reabsorb the ash as it swirls back to you from up to 300 feet away. If a hell hound has died or the ash cannot return to you due to distance, you gain one level of exhaustion per missing hound. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				<p>At 14th level, you unlock the power to incarnate in the form of your patron. As an action, you wrap yourself in the guise of a massive  flaming lupine creature. For 1 minute, or until you exit this incarnation as a bonus action, you gain the following benefits.</p>
+				<p>Your size becomes Medium or Large (your choice).</p>
+				<p>You ignore all levels of exhaustion.</p>
+				<p>Your speed increases by 20 feet.</p>
+				<p>You have advantage on melee attack rolls against a creature if at least one of your allies is within 5 feet of the creature and the ally isn’t incapacitated.</p>
+				<p>You are immune to fire damage.</p>
+				<p>When you use this feature, two hell hounds burst forth from your burning flesh into spaces within 5 feet of you. They obey any verbal commands that you issue to them (no action required by you). If you don’t issue any commands to them or are incapacitated, they defend themselves and you from hostile creatures, but otherwise take no actions. They act on your initiative count, have twice as many hit points as a normal hell hound, and are considered elementals instead of their normal type. When you exit this incarnation, the hell hounds instantly turn to ash. Your body immediately attempts to reabsorb the ash as it swirls back to you from up to 300 feet away. If a hell hound has died or the ash cannot return to you due to distance, you gain one level of exhaustion per missing hound. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+			</description>
+		</sheet>
+	</element>
+	
+</elements>

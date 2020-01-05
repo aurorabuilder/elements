@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>	
+	<info>
+		<name>Eternal Citadel Patron</name>
+		<description>Eternal Citadel Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.2">
+			<file name="warlock-eternal-citadel.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-eternal-citadel.xml" />
+		</update>
+	</info>
+	
+	<element name="The Eternal Citadel" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_ETERNAL_CITADEL">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You’ve made a pact with the Eternal Citadel, a massive yet empty bastion that seems to wander between worlds, collecting travelers and releasing them once they agree to serve. The Eternal Citadel communicates through the silent transfer of emotions and feelings – an instinctual sense to follow a course of action, no matter how enigmatic it may seem. An unknown number of people have sworn their allegiance to the Citadel, and few ever meet, but they all serve the same end, known or otherwise: preservation against the forces that seek destruction.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_RIGHTEOUSGUARDIAN"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_FORCEOFPRESERVATION"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BUILDEROFWALLS"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BOUNDTOTHEAEONS"/>
+		</description>
+		<sheet>
+			<description>You’ve made a pact with the Eternal Citadel, a massive yet empty bastion that seems to wander between worlds.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_RIGHTEOUSGUARDIAN" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_FORCEOFPRESERVATION" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BUILDEROFWALLS" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BOUNDTOTHEAEONS" level="14" />
+		</rules>
+	</element>
+	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Eternal Citadel lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>ETERNAL CITADEL EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>defy ruin, sanctuary</em></td></tr>
+				<tr><td>2nd</td><td><em>arcane lock, warding bond</em></td></tr>
+				<tr><td>3rd</td><td><em>glyph of warding, tiny hut</em></td></tr>
+				<tr><td>4th</td><td><em>resilient sphere, stoneskin</em></td></tr>
+				<tr><td>5th</td><td><em>passwall, wall of stone</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Eternal Citadel lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_GFP_COFSA_SPELL_DEFY_RUIN</extend>
+			<extend>ID_PHB_SPELL_SANCTUARY</extend>
+			<extend>ID_PHB_SPELL_ARCANE_LOCK</extend>
+			<extend>ID_PHB_SPELL_WARDING_BOND</extend>
+			<extend>ID_PHB_SPELL_GLYPH_OF_WARDING</extend>
+			<extend>ID_PHB_SPELL_TINY_HUT</extend>
+			<extend>ID_PHB_SPELL_RESILIENT_SPHERE</extend>
+			<extend>ID_PHB_SPELL_STONESKIN</extend>
+			<extend>ID_PHB_SPELL_PASSWALL</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_STONE</extend>
+		</spellcasting>
+	</element>
+	
+	<element name="Righteous Guardian" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_RIGHTEOUSGUARDIAN">
+		<description>
+			<p>At 1st level, you gain the ability to shield yourself and others from harm. Whenever you or an ally within 30 feet takes damage, you can use your reaction to create a mystical barrier of energy. The amount of damage taken is reduced by half your warlock level + your Charisma modifier (minimum 1) after applying resistances or vulnerabilities. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				Whenever you or an ally within 30 feet takes damage, you can use your reaction to create a mystical barrier of energy. The amount of damage taken is reduced by {{righteous guardian:reduction}} after applying resistances or vulnerabilities. You can use this feature {{righteous guardian:uses}} times, and you regain all expended uses of it when you finish a long rest.
+			</description>
+		</sheet>
+		<rules>
+			<stat name="righteous guardian:reduction" value="level:warlock:half" />
+			<stat name="righteous guardian:reduction" value="charisma:modifier" />
+			<stat name="righteous guardian:uses" value="charisma:modifier" />
+		</rules>
+	</element>
+	
+	<element name="Force of Preservation" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_FORCEOFPRESERVATION">
+		<description>
+			<p>At 6th level, you gain the ability to fortify yourself further. Whenever you take damage, you can use your reaction to become immune to the damage from that effect or attack, and you gain temporary hit points equal to half your warlock level. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				Whenever you take damage, you can use your reaction to become immune to the damage from that effect or attack, and you gain  {{force of preservation:temporary health}} temporary hit points. Once you use this feature, you can’t use it again until you finish a short or long rest.
+			</description>
+		</sheet>
+		<rules>
+			<stat name="force of preservation:temporary health" value="level:warlock:half" />
+		</rules>
+	</element>
+	
+	<element name="Builder of Walls" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BUILDEROFWALLS">
+		<description>
+			<p>At 10th level, your connection with the Eternal Citadel deepens, enabling you to call upon it for defense. You learn two spells with the word “wall” in their name that are of 5th level or lower, they count as warlock spells for you, and they do not count against your total spells known. You can’t choose wall of force as one of these spells. You can cast one of these two spells once without expending a spell slot. Once you do so, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast one of these two spells once without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<!-- need a basic text match for " wall ", or restrict to PHB and COFSA "wall" spells -->
+			<select type="Spell" name="Builder of Walls" supports="Builder of Walls" number="2" spellcasting="Warlock" />
+			<!-- todo: implement regex match name support? -->
+		</rules>
+	</element>
+	
+	<element name="Bound to the Aeons" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_ETERNAL_CITADEL_BOUNDTOTHEAEONS">
+		<description>
+			<p>At 14th level, your oath to the Eternal Citadel becomes irrevocable. You no longer age and cannot be magically aged. You also do not require food or water. Additionally, you can call down an onslaught of timeless power from the central spire of the Citadel to burn away the souls of your foes. During your turn, you can use an action to choose a location that you can see within 200 feet of you. An infinitely tall 10-foot-radius cylinder expands in that space, illuminating it with bright otherworldly light. At the start of your next turn, a beam of golden energy shoots down from the sky, and creatures within the area must make a Charisma saving throw against your warlock spell save DC. If they fail, they take 7d6 radiant damage, 7d6 force damage, and are blinded until the start of your next turn. If they succeed, they take half as much damage and are not blinded. This beam passes through obstacles without damaging them. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				<p>During your turn, you can use an action to choose a location that you can see within 200 feet of you. An infinitely tall 10-foot-radius cylinder expands in that space, illuminating it with bright otherworldly light. At the start of your next turn, a beam of golden energy shoots down from the sky, and creatures within the area must make a Charisma saving throw against your warlock spell save DC. If they fail, they take 7d6 radiant damage, 7d6 force damage, and are blinded until the start of your next turn. If they succeed, they take half as much damage and are not blinded. This beam passes through obstacles without damaging them. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+			</description>
+		</sheet>
+	</element>
+
+	<!-- append builder of walls support to a collection of spells that have 'wall' in their name -->
+	<append id="ID_PHB_SPELL_PASSWALL">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_FIRE">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_STONE">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WIND_WALL">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_LIGHT">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_SAND">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_WATER">
+		<supports>Builder of Walls</supports>
+	</append>
+	<append id="ID_GFP_COFSA_SPELL_WALL_OF_OOZE">
+		<supports>Builder of Walls</supports>
+	</append>
+
+</elements>

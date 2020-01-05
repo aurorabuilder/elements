@@ -1,87 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <elements>
-  <info>
-    <name>Purple Dragon Knight</name>
-    <description>Purple Dragon Knight archetype from the Sword Coast Adventurer’s Guide.</description>
-    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-    <update version="0.0.6">
-      <file name="fighter-purpledragonknight.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/fighter-purpledragonknight.xml" />
-    </update>
-  </info>
+	<info>
+		<name>Purple Dragon Knight</name>
+		<description>Purple Dragon Knight archetype from the Sword Coast Adventurer’s Guide.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
+		<update version="0.0.7">
+			<file name="fighter-purpledragonknight.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/classes/fighter-purpledragonknight.xml" />
+		</update>
+	</info>
 
-  <element name="Purple Dragon Knight" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_PURPLE_DRAGON_KNIGHT">
-    <supports>Martial Archetype</supports>
-    <description>
-      <p>Purple Dragon knights are warriors who hail from the kingdom of Cormyr. Pledged to protect the crown, they take the fight against evil beyond their kingdom's borders. They are tasked with wandering the land as knights errant, relying on their judgment, bravery, and fidelity to the code of chivalry to guide them in defeating evildoers.</p>
-      <p class="indent">A Purple Dragon knight inspires greatness in others by committing brave deeds in battle. The mere presence of a knight in a hamlet is enough to cause some orcs and bandits to seek easier prey. A lone knight is a skilled warrior, but a knight leading a band of allies can transform even the most poorly equipped militia into a ferocious war band.</p>
-      <p class="indent">A knight prefers to lead through deeds, not words. As a knight spearheads an attack, the knight's actions can awaken reserves of courage and conviction in allies that they never suspected they had.</p>
-      <h5>RESTRICTION: KNIGHTHOOD</h5>
-      <p>Purple Dragon knights are tied to a specific order of Cormyrean knighthood.</p>
-      <p class="indent"><b>Banneret</b> serves as the generic name for this archetype if you use it in other campaign settings or to model warlords other than Purple Dragon knights.</p>
-      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY" />
-      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY" />
-      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE" />
-      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK" />
-    </description>
-    <sheet>
-      <description>Purple Dragon knights are warriors who hail from the kingdom of Cormyr</description>
-    </sheet>
-    <rules>
-      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY" level="3"/>
-      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY" level="7"/>
-      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE" level="10"/>
-      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK" level="15"/>
-    </rules>
-  </element>
-
-  <element name="Rallying Cry" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY">
-    <description>
-      <p>When you choose this archetype at 3rd level, you learn how to inspire your allies to fight on past their injuries.</p>
-      <p class="indent">When you use your Second Wind feature, you can choose up to three creatures within 60 feet of you that are allied with you. Each one regains hit points equal to your fighter level, provided that the creature can see or hear you.</p>
-    </description>
-    <sheet>
-      <description>When you use your Second Wind feature, you can choose up to three creatures within 60 feet of you that are allied with you. Each one regains {{level:fighter}} hit points, provided that the creature can see or hear you.</description>
-    </sheet>
-    <rules />
-  </element>
-
-  <element name="Royal Envoy" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY">
-    <description>
-      <p>A Purple Dragon knight serves as an envoy of the Cormyrean crown. Knights of high standing are expected to conduct themselves with grace.</p>
-      <p class="indent">At 7th level, you gain proficiency in the Persuasion skill. If you are already proficient in it, you gain proficiency in one of the following skills of your choice: Animal Handling, Insight, Intimidation, or Performance.</p>
-      <p class="indent">Your proficiency bonus is doubled for any ability check you make that uses Persuasion. You receive this benefit regardless of the skill proficiency you gain from this feature.</p>
-    </description>
-    <sheet display="false">
-      <description>A Purple Dragon knight serves as an envoy of the Cormyrean crown. Knights of high standing are expected to conduct themselves with grace</description>
-    </sheet>
-    <rules>
-      <select type="Proficiency" name="Royal Envoy" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" default="ID_PROFICIENCY_SKILL_PERSUASION" default-behaviour="force" />
-      <!-- requirements set due to not implemented default behaviour, would mark as proficienct when user selected something else, can be removed after default behaviour is implemented -->
-      <stat name="persuasion:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_PERSUASION"/>
-    </rules>
-  </element>
-
-  <element name="Inspiring Surge" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE">
-    <description>
-      <p>Starting at 10th level, when you use your Action Surge feature, you can choose one creature within 60 feet of you that is allied with you. That creature can make one melee or ranged weapon attack with its reaction, provided that it can see or hear you.</p>
-      <p class="indent">Starting at 18th level, you can choose two allies within 60 feet of you, rather than one.</p>
-    </description>
-    <sheet>
-      <description>When you use your Action Surge feature, you can choose one creature within 60 feet of you that is allied with you. That creature can make one melee or ranged weapon attack with its reaction, provided that it can see or hear you.</description>
-      <description level="18">When you use your Action Surge feature, you can choose two creatures within 60 feet of you that are allied with you. Those creatures can make one melee or ranged weapon attack with their reaction, provided that they can see or hear you.</description>
-    </sheet>
-    <rules />
-  </element>
-
-  <element name="Bulwark" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK">
-    <description>
-      <p>Beginning at 15th level, you can extend the benefit of your Indomitable feature to an ally. When you decide to use Indomitable to reroll an Intelligence, a Wisdom, or a Charisma saving throw and you aren't incapacitated, you can choose one ally within 60 feet of you that also failed its saving throw against the same effect. If that creature can see or hear you, it can reroll its saving throw and must use the new roll.</p>
-    </description>
-    <sheet>
-      <description>When you decide to use Indomitable to reroll an Intelligence, a Wisdom, or a Charisma saving throw and you aren't incapacitated, you can choose one ally within 60 feet of you that also failed its saving throw against the same effect. If that creature can see or hear you, it can reroll its saving throw and must use the new roll.</description>
-    </sheet>
-    <rules />
-  </element>
-
-
+	<element name="Purple Dragon Knight" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_PURPLE_DRAGON_KNIGHT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>Purple Dragon knights are warriors who hail from the kingdom of Cormyr. Pledged to protect the crown, they take the fight against evil beyond their kingdom's borders. They are tasked with wandering the land as knights errant, relying on their judgment, bravery, and fidelity to the code of chivalry to guide them in defeating evildoers.</p>
+			<p class="indent">A Purple Dragon knight inspires greatness in others by committing brave deeds in battle. The mere presence of a knight in a hamlet is enough to cause some orcs and bandits to seek easier prey. A lone knight is a skilled warrior, but a knight leading a band of allies can transform even the most poorly equipped militia into a ferocious war band.</p>
+			<p class="indent">A knight prefers to lead through deeds, not words. As a knight spearheads an attack, the knight's actions can awaken reserves of courage and conviction in allies that they never suspected they had.</p>
+			<div class="sidebar">
+				<h5>RESTRICTION: KNIGHTHOOD</h5>
+				<p>Purple Dragon knights are tied to a specific order of Cormyrean knighthood.</p>
+				<p class="indent"><b>Banneret</b> serves as the generic name for this archetype if you use it in other campaign settings or to model warlords other than Purple Dragon knights.</p>
+			</div>
+			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY" />
+			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY" />
+			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE" />
+			<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK" />
+		</description>
+		<sheet display="false">
+			<description>Purple Dragon knights are warriors who hail from the kingdom of Cormyr</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK" level="15"/>
+		</rules>
+	</element>
+	<element name="Rallying Cry" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_RALLYING_CRY">
+		<description>
+			<p>When you choose this archetype at 3rd level, you learn how to inspire your allies to fight on past their injuries.</p>
+			<p class="indent">When you use your Second Wind feature, you can choose up to three creatures within 60 feet of you that are allied with you. Each one regains hit points equal to your fighter level, provided that the creature can see or hear you.</p>
+		</description>
+		<sheet>
+			<description>When you use your Second Wind feature, you can choose up to three creatures within 60 feet of you that are allied with you. Each one regains {{level:fighter}} hp, provided that the creature can see or hear you.</description>
+		</sheet>
+	</element>
+	<element name="Royal Envoy" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_ROYAL_ENVOY">
+		<description>
+			<p>A Purple Dragon knight serves as an envoy of the Cormyrean crown. Knights of high standing are expected to conduct themselves with grace.</p>
+			<p class="indent">At 7th level, you gain proficiency in the Persuasion skill. If you are already proficient in it, you gain proficiency in one of the following skills of your choice: Animal Handling, Insight, Intimidation, or Performance.</p>
+			<p class="indent">Your proficiency bonus is doubled for any ability check you make that uses Persuasion. You receive this benefit regardless of the skill proficiency you gain from this feature.</p>
+		</description>
+		<sheet display="false">
+			<description>A Purple Dragon knight serves as an envoy of the Cormyrean crown. Knights of high standing are expected to conduct themselves with grace</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Royal Envoy" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" default="ID_PROFICIENCY_SKILL_PERSUASION" default-behaviour="force" />
+			<!-- requirements set due to not implemented default behaviour, would mark as proficienct when user selected something else, can be removed after default behaviour is implemented -->
+			<stat name="persuasion:proficiency" value="proficiency" bonus="double" requirements="ID_PROFICIENCY_SKILL_PERSUASION"/>
+		</rules>
+	</element>
+	<element name="Inspiring Surge" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_INSPIRING_SURGE">
+		<description>
+			<p>Starting at 10th level, when you use your Action Surge feature, you can choose one creature within 60 feet of you that is allied with you. That creature can make one melee or ranged weapon attack with its reaction, provided that it can see or hear you.</p>
+			<p class="indent">Starting at 18th level, you can choose two allies within 60 feet of you, rather than one.</p>
+		</description>
+		<sheet>
+			<description>When you use your Action Surge feature, you can choose one creature within 60 feet of you that is allied with you. That creature can make one melee or ranged weapon attack with its reaction, provided that it can see or hear you.</description>
+			<description level="18">When you use your Action Surge feature, you can choose two creatures within 60 feet of you that are allied with you. Those creatures can make one melee or ranged weapon attack with their reaction, provided that they can see or hear you.</description>
+		</sheet>
+	</element>
+	<element name="Bulwark" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_PURPLE_DRAGON_KNIGHT_BULWARK">
+		<description>
+			<p>Beginning at 15th level, you can extend the benefit of your Indomitable feature to an ally. When you decide to use Indomitable to reroll an Intelligence, a Wisdom, or a Charisma saving throw and you aren't incapacitated, you can choose one ally within 60 feet of you that also failed its saving throw against the same effect. If that creature can see or hear you, it can reroll its saving throw and must use the new roll.</p>
+		</description>
+		<sheet>
+			<description>When you decide to use Indomitable to reroll an Intelligence, a Wisdom, or a Charisma saving throw and you aren't incapacitated, you can choose one ally within 60 feet of you that also failed its saving throw against the same effect. If that creature can see or hear you, it can reroll its saving throw and must use the new roll.</description>
+		</sheet>
+	</element>
 </elements>

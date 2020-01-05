@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: The Artificer Returns</name>
+		<update version="0.0.3">
+			<file name="20190514.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2019/20190514.xml" />
+		</update>
+	</info>
+	
+	<element name="Unearthed Arcana: The Artificer Returns" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20190514">
+		<description>
+			<p>In February, we presented a revised version of a new character class: the artificer, a master of magical invention. Today we return to that class, now with even more content! Here’s what’s been added:</p>
+			<ul>
+				<li>New subclasses—the Archivist and the Battle Smith</li>
+				<li>A revised spell list, including spells from Xanathar’s Guide to Everything</li>
+				<li>New infusions—Enhanced Wand, Repeating Shot, and Repulsion Shield</li>
+				<li style="text-decoration: line-through">A revision to multiclassing—round up when determining spell slots</li>
+			</ul>
+			<p>We’re considering various changes to the class, but we’d love to hear from you before we start the remodeling. With that in mind, we invite you to give this new version of the artificer a read and to try it out in play. Soon a survey will appear on the D&amp;D website. Please let us know in that survey what you think of the artificer.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20190514</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/artificer-returns</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20190514</set>
+		</setters>
+	</element>
+	
+	<!-- Archivist -->
+	<element name="Archivist" type="Archetype" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_ARTIFICER_ARCHIVIST">
+		<supports>UA Artificer Specialist</supports>
+		<description>
+			<p>What are the best ways to store vast amounts of information? That question has occupied chroniclers and librarians for centuries. Scrolls and books were the finest information-storing methods for a long time, but the first Archivists imagined something greater: storing information in a real or an artificial mind. What library could match a mental archive capable of accessing information in seconds? As they work towards this goal, Archivists have become masters of storing knowledge and creating artificial intelligences fueled by magic. These techniques have yet to be perfected and institutionalized, and of all artificers, archivists are on the cutting edge of arcane science.</p>
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARCHIVIST_SPELLS" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_MIND_NETWORK" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_PURE_INFORMATION" />
+		</description>
+		<setters>
+			<set name="short">A master of storing knowledge and creating artificial intelligences fueled by magic.</set>
+		</setters>
+		<sheet display="false">
+			<description>A master of storing knowledge and creating artificial intelligences fueled by magic.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARCHIVIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_MIND_NETWORK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_PURE_INFORMATION" level="14" />
+		</rules>
+	</element>
+	<element name="Tools of the Trade" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_TOOLS_OF_THE_TRADE">
+		<description>
+			<p>By the time you adopt this specialty at 3rd level, you’re deeply familiar with employing its tools.</p>
+			<p class="indent"><strong><em>Proficiencies.</em></strong> You gain proficiency with calligrapher’s supplies and the forgery kit, assuming you don’t already have them. You also gain calligrapher’s supplies and a forgery kit for free—the result of tinkering you’ve done as you’ve prepared for this specialization.</p>
+			<p class="indent"><strong><em>Crafting.</em></strong> If you craft a magic item in the scroll category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</p>
+		</description>
+		<sheet>
+			<description>If you craft a magic item in the scroll category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+		</rules>
+	</element>
+	<element name="Archivist Spells" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARCHIVIST_SPELLS">
+		<description>
+			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Archivist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+			<h6>Archivist Spells</h6>
+			<table>
+				<thead><tr><td>Artificer Level</td><td>Spell</td></tr></thead>
+				<tr><td>3rd</td><td>comprehend languages, dissonant whispers</td></tr>
+				<tr><td>5th</td><td>detect thoughts, locate object</td></tr>
+				<tr><td>9th</td><td>hypnotic pattern, tongues</td></tr>
+				<tr><td>13th</td><td>locate creature, phantasmal killer</td></tr>
+				<tr><td>17th</td><td>legend lore, modify memory</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" level="3" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISSONANT_WHISPERS" level="3" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" level="5" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" level="9" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_TONGUES" level="9" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" level="13" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PHANTASMAL_KILLER" level="13" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="17" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" level="17" spellcasting="Artificer" prepared="true" />
+		</rules>
+	</element>
+	<element name="Artificial Mind" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND">
+		<description>
+			<p>At 3rd level, you discover how to awaken a mind inside an object. Whenever you finish a long rest and your calligrapher’s supplies are with you, you can magically rouse a keen mind within a Tiny, nonmagical object on which you write mystical symbols. The object is a magic item while the mind is inside it, and you can use it as a spellcasting focus. If you already have an artificial mind from this feature, the first one immediately dissipates.</p>
+			<p class="indent">The magic item has the following properties.</p>
+			<p class="indent"><strong><em>Telepathic Advisor.</em></strong> The artificial mind telepathically supplies you with advice and information about certain topics: while the item is on your person, you have proficiency in two skills of your choice; the item’s main material determines which skills you can choose from, as shown on the Artificial Mind table in the Skill Proficiencies column, for the nature of the object affects the mind’s knowledge.</p>
+			<p class="indent"><strong><em>Manifest Mind.</em></strong> As a bonus action while the item is on your person, you can cause the mind to manifest as a Tiny spectral presence, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and invulnerable, and it sheds dim light in a 10-foot radius. You determine its appearance; the Artificial Mind table offers suggested appearances based on the object’s main material.</p>
+			<p class="indent">While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the mind’s senses, instead of your own, until your concentration ends (as if concentrating on a spell).</p>
+			<p class="indent">As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from its magic item or if you dismiss it as a bonus action.</p>
+			<p class="indent">When you cast an artificer spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. You can do so a number of times per day equal to your Intelligence modifier (at least once), and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Information Overload.</em></strong> As an action while the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 1d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well. The damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8) in this class.</p>
+			<p class="indent">Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</p>
+			<h5>ARTIFICIAL MIND</h5>
+			<table>
+				<thead>
+					<tr><td>Main Material</td><td>Skill Proficiencies</td><td>Suggested Appearance</td></tr>
+				</thead>
+				<tr><td>Animal {parchment, leather, bone}</td><td>Animal Handling, Insight, Medicine, Perception, Survival</td><td>A beast or a humanoid visage with antlers</td></tr>
+				<tr><td>Mineral {glass, stone, metal}</td><td>Deception, Intimidation, Performance, Persuasion</td><td>A robotic or golem-like face</td></tr>
+				<tr><td>Plant {paper, wood}</td><td>Arcana, History, Investigation, Nature, Religion</td><td>A bespectacled visage or a treant</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest and your calligrapher’s supplies are with you, you can magically rouse a keen mind within a tiny, nonmagical object. The object is a magic item while the mind is inside it, and you can use it as a spellcasting focus.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Artifical Mind" supports="UA Artificial Mind" />
+			<!-- <grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_TELEPATHIC_ADVISOR" /> -->
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_MANIFEST_MIND" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD" />
+		</rules>
+	</element>
+	<!-- elements to improve readability a bit for these larger elements -->
+	<element name="Manifest Mind" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_MANIFEST_MIND">
+		<description>
+			<p>As a bonus action while the item is on your person, you can cause the mind to manifest as a Tiny spectral presence, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and invulnerable, and it sheds dim light in a 10-foot radius. You determine its appearance; the Artificial Mind table offers suggested appearances based on the object’s main material.</p>
+			<p class="indent">While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the mind’s senses, instead of your own, until your concentration ends (as if concentrating on a spell).</p>
+			<p class="indent">As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from its magic item or if you dismiss it as a bonus action.</p>
+			<p class="indent">When you cast an artificer spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. You can do so a number of times per day equal to your Intelligence modifier (at least once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Artificial Mind">
+			<description>While the item is on your person, you can cause the mind to manifest as a tiny spectral presence, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and invulnerable, and it sheds dim light in a 10-foot radius.
+			While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the mind’s senses, instead of your own, until your concentration ends (as if concentrating on a spell).
+			As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from its magic item or if you dismiss it as a bonus action.
+			When you cast an artificer spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. You can do so {{intelligence:modifier}} times per day, and you regain all expended uses when you finish a long rest.</description>
+		</sheet>
+	</element>
+	<element name="Information Overload" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD">
+		<description>
+			<p>As an action while the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 1d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well. The damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8) in this class.</p>
+			<p class="indent">Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</p>
+		</description>
+		<sheet action="Action" usage="Artificial Mind">
+			<description>While the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 1d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well.
+			Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</description>
+			<description level="5">While the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 2d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well.
+			Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</description>
+			<description level="11">While the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 3d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well.
+			Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</description>
+			<description level="17">While the item is on your person, you can try to magically overload the thoughts of one creature you or the mind can see that is within 5 feet of the manifested mind, channeling a jumble of information from the artificial mind. Unless the target succeeds on an Intelligence saving throw against your spell save DC, the target takes 4d8 psychic damage, and the next attack roll against it before the end of your next turn has advantage, since it is temporarily too distracted to defend itself well.
+			Whenever you deal damage with this feature, you can expend a spell slot to deal extra damage to the target. The extra damage is 2d8 for a 1st level spell slot, plus 1d8 for each spell level higher than first.</description>
+		</sheet>
+	</element>
+	<!-- Artifical Minds -->
+	<element name="Animal" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_ANIMAL">
+		<supports>UA Artificial Mind</supports>
+		<description>
+			<p class="flavor">parchment, leather, bone</p>
+			<p>A beast or a humanoid visage with antlers.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Artifical Mind" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
+		</rules>
+	</element>
+	<element name="Mineral" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_MINERAL">
+		<supports>UA Artificial Mind</supports>
+		<description>
+			<p class="flavor">glass, stone, metal</p>
+			<p>A robotic or golem-like face.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Artifical Mind" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" number="2" />
+		</rules>
+	</element>
+	<element name="Plant" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_ARTIFICIAL_MIND_PLANT">
+		<supports>UA Artificial Mind</supports>
+		<description>
+			<p class="flavor">paper, wood</p>
+			<p>A bespectacled visage or a treant.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Artifical Mind" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" number="2" />
+		</rules>
+	</element>
+
+	<element name="Mind Network" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_MIND_NETWORK">
+		<description>
+			<p>At 6th level, you’ve learned how to use your artifices to access minds, both to communicate and to harm.</p>
+			<p class="indent"><strong><em>Magical Telephony.</em></strong> While you have your Artificial Mind item on your person, you can communicate telepathically with anyone carrying an item bearing one of your artificer infusions, as the mind transmits your thoughts to each other. That person can also communicate telepathically with you as long as they have the item. This two-way communication can even cross planar boundaries.</p>
+			<p class="indent"><strong><em>Psychic Damage.</em></strong> When you make a psychic damage roll for an artificer spell or for Information Overload, you gain a bonus to the damage roll equal to your Intelligence modifier (minimum bonus of +1).</p>
+		</description>
+		<sheet>
+			<description>Magical Telephony. While you have your Artificial Mind item on your person, you can communicate telepathically with anyone carrying an item bearing one of your artificer infusions, as the mind transmits your thoughts to each other. That person can also communicate telepathically with you as long as they have the item. This two-way communication can even cross planar boundaries.
+			Psychic Damage. When you make a psychic damage roll for an artificer spell or for Information Overload, you gain a +{{intelligence:modifier}} bonus to the damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Pure Information" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_ARCHIVIST_PURE_INFORMATION">
+		<description>
+			<p>At 14th level, your Artificial Mind is able to receive and transmit more information than ever before.</p>
+			<p class="indent"><strong><em>Mind Overload.</em></strong> When you expend a spell slot to increase the damage of Information Overload, the target must succeed on an Intelligence saving throw against your spell save DC or be stunned until the end of your next turn.</p>
+			<p class="indent"><strong><em>Infoportation.</em></strong> As an action while your Artificial Mind magic item is on your person, you cause the mind to turn you into pure information, teleporting you to the unoccupied space nearest to the spectral mind or to an item bearing one of your artificer infusions, where you physically reappear.</p>
+			<p class="indent">You can teleport in this way once for free and must finish a long rest before doing so again. You can also use this special ability by expending a spell slot of 2nd level or higher.</p>
+		</description>
+		<sheet>
+			<description>Mind Overload. When you expend a spell slot to increase the damage of Information Overload, the target must succeed on an Intelligence saving throw against your spell save DC or be stunned until the end of your next turn.
+			Infoportation. As an action while your Artificial Mind magic item is on your person, you cause the mind to turn you into pure information, teleporting you to the unoccupied space nearest to the spectral mind or to an item bearing one of your artificer infusions, where you physically reappear.
+			You can teleport in this way once for free and must finish a long rest before doing so again. You can also use this special ability by expending a spell slot of 2nd level or higher.</description>
+		</sheet>
+	</element>
+
+	<!-- Battle Smith -->
+	<element name="Battle Smith" type="Archetype" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_ARTIFICER_BATTLE_SMITH">
+		<supports>UA Artificer Specialist</supports>
+		<description>
+			<p>Armies require protection, and someone has to put things back together if defenses fail. A combination of protector and medic, a Battle Smith is an expert at defending others and repairing both material and personnel. To aid in their work, Battle Smiths are usually accompanied by an iron defender, a protective companion of their own creation. Many soldiers tell stories of nearly dying before being saved by a Battle Smith and an iron defender.</p>
+			<p class="indent">Battle Smiths played a key role in House Cannith’s work on battle constructs and the original warforged, and after the Last War, these artificers led efforts to aid those who were injured in the war’s horrific battles.</p>
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IRON_DEFENDER" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT" />
+			<div element="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER" />
+		</description>
+		<setters>
+			<set name="short">An expert at defending others and repairing both material and personnel.</set>
+		</setters>
+		<sheet display="false">
+			<description>An expert at defending others and repairing both material and personnel.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IRON_DEFENDER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER" level="14" />
+		</rules>
+	</element>
+	<element name="Tools of the Trade" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE">
+		<description>
+			<p>By the time you adopt this specialty at 3rd level, you’re deeply familiar with employing its tools.</p>
+			<p class="indent"><strong><em>Proficiencies.</em></strong> You gain proficiency with leatherworker’s tools and smith’s tools, assuming you don’t already have them. You also gain leatherworker’s tools and smith’s tools for free—the result of tinkering you’ve done as you’ve prepared for this specialization.</p>
+			<p class="indent"><strong><em>Crafting.</em></strong> If you craft a magic item in the armor category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</p>
+		</description>
+		<sheet>
+			<description>If you craft a magic item in the armor category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Battle Smith Spells" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS">
+		<description>
+			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+			<h6>Battle Smith Spells</h6>
+			<table>
+				<thead><tr><td>Artificer Level</td><td>Spell</td></tr></thead>
+				<tr><td>3rd</td><td>heroism, searing smite</td></tr>
+				<tr><td>5th</td><td>branding smite, warding bond</td></tr>
+				<tr><td>9th</td><td>aura of vitality, blinding smite</td></tr>
+				<tr><td>13th</td><td>aura of purity, staggering smite</td></tr>
+				<tr><td>17th</td><td>banishing smite, mass cure wounds</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_HEROISM" level="3" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SEARING_SMITE" level="3" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_BRANDING_SMITE" level="5" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" level="5" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" level="9" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLINDING_SMITE" level="9" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" level="13" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_STAGGERING_SMITE" level="13" spellcasting="Artificer" prepared="true" />			
+			<grant type="Spell" id="ID_PHB_SPELL_BANISHING_SMITE" level="17" spellcasting="Artificer" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="17" spellcasting="Artificer" prepared="true" />
+		</rules>
+	</element>
+	<element name="Battle Ready" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY">
+		<description>
+			<p>When you reach 3rd level, your combat training and your experiments with magic and have paid off in two ways:</p>
+			<ul>
+				<li>You gain proficiency with martial weapons.</li>
+				<li>When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+		</rules>
+	</element>
+	<element name="Iron Defender" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IRON_DEFENDER">
+		<description>
+			<p>By 3rd level, the tinkering in your free time has borne you a faithful companion, an iron defender. This metallic creature resembles a hound, a cougar, a bear, or another four-legged creature of your choice. It is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the iron defender stat block.</p>
+			<p class="indent">In combat, the iron defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, or Help action.</p>
+			<p class="indent">If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The iron defender returns to life after 1 minute with all its hit points restored.</p>
+			<p class="indent">At the end of a long rest, you can create a new iron defender if you have your smith’s tools with you. If you already have an iron defender from this feature, the first one immediately perishes.</p>
+		</description>
+		<sheet>
+			<description>In combat, the iron defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, or Help action.
+			If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The iron defender returns to life after 1 minute with all its hit points restored.
+			At the end of a long rest, you can create a new iron defender if you have your smith’s tools with you. If you already have an iron defender from this feature, the first one immediately perishes.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Iron Defender" supports="UA Artificer Iron Defender" default="ID_WOTC_UA20190514_COMPANION_ARTIFICER_BATTLE_SMITH_IRON_DEFENDER" />
+		</rules>
+	</element>
+	<element name="Arcane Jolt" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT">
+		<description>
+			<p>At 6th level, you learn new ways to channel arcane energy through your weapon attacks and your iron defender.</p>
+			<p class="indent">First, your iron defender’s bite attack is now considered magical for the purposes of bypassing resistances and immunities, thanks to enhancements you’ve made to the creature in your free time.</p>
+			<p class="indent">Second, when you or your iron defender hits a target with a magic weapon attack, you can channel magical energy through the strike to create one of the following effects:</p>
+			<ul>
+				<li>The target takes an extra 2d4 force damage.</li>
+				<li>Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d4 hit points to it.</li>
+			</ul>
+			<p>You can channel this magical energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>Your iron defender’s bite attack is now considered magical for the purposes of bypassing resistances and immunities.
+			When you or your iron defender hits a target with a magic weapon attack, you can channel magical energy through the strike to create one of the following effects:
+			The target takes an extra {{arcane jolt:dice count}}d4 force damage.
+			Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring {{arcane jolt:dice count}}d4 hit points to it.
+			You can channel this magical energy {{intelligence:modifier}} times, but you can do so no more than once on a turn. You regain all expended uses of this feature when you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane jolt:dice count" value="2" bonus="base" />
+		</rules>
+	</element>
+	<element name="Improved Defender" type="Archetype Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER">
+		<description>
+			<p>At 14th level, your Arcane Jolt and iron defender become more powerful:</p>
+			<ul>
+				<li>The extra damage and the healing of your Arcane Jolt both increase to 4d4.</li>
+				<li>Whenever your iron defender uses its Defensive Pounce, the attacker takes force damage equal to 1d4 + your Intelligence modifier.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Whenever your iron defender uses its Defensive Pounce, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane jolt:dice count" value="4" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Iron Defender" type="Companion" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_ARTIFICER_BATTLE_SMITH_IRON_DEFENDER">
+		<supports>UA Artificer Iron Defender</supports>
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">15 (natural armor)</set>
+			<set name="hp">equal to five times your level in this class + your Intelligence modifier + the iron defender’s Constitution modifier</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="skills">Perception +4</set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral</set>
+			<!-- Damage Immunities poison -->
+			<!-- Condition Immunities charmed, exhaustion, poisoned -->
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_UA20190514_COMPANION_TRAIT_IRON_DEFENDER_MIGHT_OF_THE_MASTER,ID_WOTC_UA20190514_COMPANION_TRAIT_IRON_DEFENDER_VIGILANT</set>
+			<set name="actions">ID_WOTC_UA20190514_COMPANION_ACTION_IRON_DEFENDER_BITE,ID_WOTC_UA20190514_COMPANION_ACTION_IRON_DEFENDER_REPAIR,ID_WOTC_UA20190514_COMPANION_REACTION_IRON_DEFENDER_DEFENSIVE_POUNCH</set>
+			<!-- <set name="reactions">ID_WOTC_UA20190514_COMPANION_REACTION_IRON_DEFENDER_DEFENSIVE_POUNCH</set> -->
+		</setters>
+		<rules>		
+			<stat name="iron defender:hp" value="level:artificer" />
+			<stat name="iron defender:hp" value="level:artificer" />
+			<stat name="iron defender:hp" value="level:artificer" />
+			<stat name="iron defender:hp" value="level:artificer" />
+			<stat name="iron defender:hp" value="level:artificer" />
+			<stat name="iron defender:hp" value="intelligence:modifier" />
+			<stat name="iron defender:hp" value="2" />	<!-- companion con mod -->
+
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="iron defender:hp" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Might of the Master" type="Companion Trait" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_TRAIT_IRON_DEFENDER_MIGHT_OF_THE_MASTER">
+		<description>
+			<p>The following numbers increase by 1 when your proficiency bonus increases by 1: the iron defender’s skill bonuses and the bonuses to hit and damage of its bite, and the number of hit points restored by its Repair action.</p>
+		</description>
+		<sheet>
+			<description>The following numbers increase by 1 when your proficiency bonus increases by 1: the iron defender’s skill bonuses and the bonuses to hit and damage of its bite, and the number of hit points restored by its Repair action.</description>
+		</sheet>
+		<rules>			
+			<!-- <stat name="might-of-the-master:bonus" value="0" />
+			<stat name="might-of-the-master:bonus" value="1" requirements="[character:5]" />
+			<stat name="might-of-the-master:bonus" value="1" requirements="[character:9]" />
+			<stat name="might-of-the-master:bonus" value="1" requirements="[character:13]" />
+			<stat name="might-of-the-master:bonus" value="1" requirements="[character:17]" /> -->
+
+			<!-- <stat name="companion:acrobatics:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:animal handling:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:arcana:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:athletics:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:deception:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:history:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:insight:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:intimidation:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:investigation:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:medicine:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:nature:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:perception:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:performance:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:persuasion:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:religion:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:sleight of hand:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:stealth:misc" value="might-of-the-master:bonus" />
+			<stat name="companion:survival:misc" value="might-of-the-master:bonus" /> -->
+		</rules>
+	</element>
+	<element name="Vigilant" type="Companion Trait" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_TRAIT_IRON_DEFENDER_VIGILANT">
+		<description>
+			<p>The iron defender can’t be surprised</p>
+		</description>
+		<sheet>
+			<description>The iron defender can’t be surprised</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_ACTION_IRON_DEFENDER_BITE">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target you can see. Hit: 1d8 + 2 piercing damage.</p>
+		</description>
+		<setter>
+			<set name="action">Bonus Action</set>
+		</setter>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target you can see. Hit: 1d8 + 2 piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Repair" type="Companion Action" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_ACTION_IRON_DEFENDER_REPAIR">
+		<description>
+			<p>The magical mechanisms inside the iron defender restore 2d8 + 2 hit points to itself or to one construct or object within 5 feet of it.</p>
+		</description>
+		<setter>
+			<set name="action">Bonus Action</set>
+		</setter>
+		<sheet usage="3/Day">
+			<description>The magical mechanisms inside the iron defender restore 2d8 + 2 hit points to itself or to one construct or object within 5 feet of it.</description>
+		</sheet>
+	</element>
+	<!-- todo: implement companion reactions -->
+	<element name="Defensive Pounce" type="Companion Action" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_COMPANION_REACTION_IRON_DEFENDER_DEFENSIVE_POUNCH">
+		<description>
+			<p>The iron defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the iron defender.</p>
+		</description>
+		<setter>
+			<set name="action">Bonus Action</set>
+		</setter>
+		<sheet>
+			<description>The iron defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the iron defender.</description>
+		</sheet>
+	</element>
+
+	<!-- todo: possible implement half rounded up (custom rule) for multiclassing as per UA 20190514, if this is in the final version -->
+	
+	<!-- Infusions -->
+	<element name="Enhanced Wand" type="Class Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_WAND">
+		<supports>UA Artificer Infusion</supports>
+		<description>
+			<p><em>Item: A wand (requires attunement)</em></p>
+			<p>While holding this wand, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
+			<p class="indent">The bonus increases to +2 when you reach 12th level in this class.</p>
+		</description>
+		<sheet>
+			<description>While holding this wand (requires attunement), a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description>
+			<description level="12">While holding this wand (requires attunement), a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description>
+		</sheet>
+	</element>
+	<element name="Repeating Shot" type="Class Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_CLASS_FEATURE_ARTIFICER_INFUSION_REPEATING_SHOT">
+		<supports>UA Artificer Infusion</supports>
+		<description>
+			<p><em>Item: A simple or martial weapon with the ammunition property (requires attunement)</em></p>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.</p>
+			<p class="indent">The weapon requires no ammunition; it magically produces one piece of ammunition each time you make a ranged attack with it, unless you manually load it. The ammunition produced by the weapon vanishes the instant after the it hits or misses a target.</p>
+		</description>
+		<sheet>
+			<description>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.
+			The weapon requires no ammunition; it magically produces one piece of ammunition each time you make a ranged attack with it, unless you manually load it. The ammunition produced by the weapon vanishes the instant after the it hits or misses a target.</description>
+		</sheet>
+	</element>
+	<element name="Repulsion Shield" type="Class Feature" source="Unearthed Arcana: The Artificer Returns" id="ID_WOTC_UA20190514_CLASS_FEATURE_ARTIFICER_INFUSION_REPULSION_SHIELD">
+		<supports>UA Artificer Infusion</supports>
+		<requirements>[level:8]</requirements>
+		<description>
+			<p><em>Prerequisite: 8th-level artificer</em></p>
+			<p><em>Item: A shield (requires attunement)</em></p>
+			<p>A creature gains a +1 bonus to Armor Class while wielding this shield. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to push the attacker up to 15 feet away. Once used, this reaction can’t be used again until the wielder finishes a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>A creature gains a +1 bonus to Armor Class while wielding this shield. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to push the attacker up to 15 feet away. Once used, this reaction can’t be used again until the wielder finishes a short or long rest.</description>
+		</sheet>
+	</element>
+
+	<!-- XGTE spells -->
+	<append id="ID_XGTE_SPELL_CREATE_BONFIRE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FROSTBITE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MAGIC_STONE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_THUNDERCLAP">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CATAPULT">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SNARE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_PYROTECHNICS">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SKYWRITE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CATNAP">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FLAME_ARROWS">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_TINY_SERVANT">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ELEMENTAL_BANE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_VITRIOLIC_SPHERE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SKILL_EMPOWERMENT">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_TRANSMUTE_ROCK">
+		<supports>UA Artificer</supports>
+	</append>
+</elements>

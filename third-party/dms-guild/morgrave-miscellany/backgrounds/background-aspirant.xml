@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Aspirant</name>
+		<description>The Aspirant Background from Morgrave Miscellany.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker &amp; Ruty Rutenberg</author>
+		<update version="0.0.2">
+			<file name="background-aspirant.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/morgrave-miscellany/backgrounds/background-aspirant.xml" />
+		</update>
+	</info>
+	
+	<element name="Aspirant" type="Background" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_ASPIRANT">
+		<description>
+			<p>The druidic sects of Khorvaire are as organized and established as any divine faith. You have spent your life in the service of a druidic sect, serving as an intermediary between civilization and the wild. You are trained in the rituals and rites of your sect; you can offer both spiritual and practical guidance to those who follow you into the wilderness. You don’t have to be a druid, and you might not be able to perform magic, but you understand the primal mysteries of your sect, and the world itself is your temple.</p>
+			<p class="indent">Choose a druid sect, or work with your DM to develop a new nature focused order. The Druid section contains a sample of organizations, from the Eberron setting. Were you a youth brought up learning about the seasons and solstice from the rural priests of your homeland? Perhaps you were a warden watching over travelers, an initiate performing the sacred rites, an advisor guiding a farming community, and it is up to you to discern why you decided to leave?</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Nature, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Herbalism kit</li>
+				<li><strong>Languages:</strong> Any one</li>
+				<li><strong>Equipment:</strong> A druidic focus (a gift to you when you entered the sect), a shepherd’s wood staff, a set of traveler’s clothes, an herbalism kit, and a pouch containing 5 gp</li>
+			</ul>
+			<div element="ID_DMSG_MGMS_BACKGROUND_FEATURE_ASPIRANT_WILD_HOSPITALITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You’re shaped by your devotion to the ideals of your sect and the time you’ve spent in the wilds. You have little experience with large cities and the demands of high society.</p>
+		</description>			
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<select type="Language" name="Language (Aspirant)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_ASPIRANT_WILD_HOSPITALITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I talk to every animal I meet, even if they can’t talk back.</item>
+				<item id="2">I have a parable for every occasion.</item>
+				<item id="3">I see omens in the actions of animals.</item>
+				<item id="4">I’m always interested in discussing the weather.</item>
+				<item id="5">I prefer to sleep under the open sky.</item>
+				<item id="6">I continually question the ways of the civilized world.</item>
+				<item id="7">I model my behavior on a particular animal.</item>
+				<item id="8">I always want to talk shop with hunters and farmers.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Protection. The common people must be protected from the dangers of the natural world, and nature must be defended from the ignorance and greed of outsiders. (Wardens of the Wood)</item>
+				<item id="2">Nature. When civilization harnesses unnatural forces and defies the laws of nature, it should be challenged; even if these violations are allowed to continue, people should realize the dangers of their actions. (Ashbound)</item>
+				<item id="3">Preservation. The cycle of life and death is a vital balance. Destroy the undead. Search for ways to strengthen the pack, and offer a merciful end to suffering. (Children of Winter)</item>
+				<item id="4">Order. Protect the natural world from threats that come from beyond reality such as aberrations, fiends, and other things with no place in the world. (Gatekeepers)</item>
+				<item id="5">Freedom. Search for signs of the fey in the world around you. Respect the ways of the fey. Look for ways to bring a touch of wonder into everyday life. (Greensingers)</item>
+				<item id="6">Balance. Preserve balance in all things: the balance between civilization and the wild, life and death, the material world and the planes. (Any)</item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">I will do anything to protect my adopted pack.</item>
+				<item id="2">I am determined to discover the cause of the Mourning.</item>
+				<item id="3">I must find the answer to a question set by the leader of my sect.</item>
+				<item id="4">It’s my duty to care for commoners and show them the right path.</item>
+				<item id="5">I am carrying a relic that must be protected from those who would destroy it.</item>
+				<item id="6">I am pursuing an enemy of my sect and will not rest until I have destroyed them.</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I distrust those who wield arcane magic or unnatural power.</item>
+				<item id="2">I don’t understand the customs of the civilized world.</item>
+				<item id="3">I believe the weak should be allowed to perish.</item>
+				<item id="4">I don’t understand civilized politics or power structures.</item>
+				<item id="5">I never back down from a challenge.</item>
+				<item id="6">I’m often unintentionally rude.</item>
+				</select>
+		</rules>			
+	</element>	
+	<element name="Feature: Wild Hospitality" type="Background Feature" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_ASPIRANT_WILD_HOSPITALITY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>As an aspirant, you can perform the rituals of your sect and can demand respect from those who share your faith. You and your adventuring companions can expect to receive shelter and support in any established outpost of your sect, though druidic outposts are often sparse in what they can provide. Nature itself will also provide for you; when in the wilderness you can find food and fresh water for yourself and up to five people each day, provided you aren’t in an unnatural or exceptionally barren environment.</p>
+		</description>
+		<sheet alt="Wild Hospitality" />
+	</element>
+</elements>

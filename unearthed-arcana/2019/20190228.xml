@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Artificer Revisited</name>
-		<update version="0.0.1">
+		<update version="0.0.6">
 			<file name="20190228.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2019/20190228.xml" />
 		</update>
 	</info>
@@ -104,14 +104,14 @@
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARTIFICER_SPECIALIST" level="3" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_TOOL_EXPERTISE" level="3" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT" level="4" />
-			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARCANE_ARMAMENT" level="15" />
+			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ARCANE_ARMAMENT" level="5" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_THE_RIGHT_CANTRIP_FOR_THE_JOB" level="10" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_SPELL_STORING_ITEM" level="18" />
 			<grant type="Class Feature" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_SOUL_OF_ARTIFICE" level="20" />
 		</rules>
 		<multiclass id="ID_WOTC_UA20190228_MULTICLASS_ARTIFICER">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13], !(ID_WOTC_UA_CLASS_ARTIFICER||ID_WOTC_UA_MULTICLASS_ARTIFICER)</requirements>
+			<requirements>[int:13], !(ID_WOTC_UA_CLASS_ARTIFICER||ID_WOTC_UA_MULTICLASS_ARTIFICER||ID_WOTC_ERLW_CLASS_ARTIFICER||ID_WOTC_ERLW_MULTICLASS_ARTIFICER)</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
 			</setters>
@@ -203,7 +203,7 @@
 			<stat name="artificer:spellcasting:slots:5" value="1" level="19" />
 
 			<stat name="artificer:spellcasting:prepare" value="intelligence:modifier" />
-			<stat name="artificer:spellcasting:prepare" value="level:artificer" />
+			<stat name="artificer:spellcasting:prepare" value="level:artificer:half" />
 
 			<select type="Spell" name="Cantrip (Artificer)" supports="$(spellcasting:list), 0" level="1" number="2" spellcasting="Artificer" />
 			<select type="Spell" name="Cantrip (Artificer)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Artificer" />
@@ -271,6 +271,7 @@
 		</sheet>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT">
+		<compendium display="false" />
 		<description>
 			<p>When you reach 4th, 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
 		</description>
@@ -1354,6 +1355,7 @@
 		</sheet>
 	</element>
 	
+
 	<!-- magic items -->
 	<element name="Boots of the Winding Path" type="Magic Item" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_MAGIC_ITEM_INFUSED_BOOTS_OF_THE_WINDING_PATH">
 		<description>
@@ -1441,7 +1443,7 @@
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
-
+	
 	<!-- unearthed arcana artificer spell list -->
 	<append id="ID_PHB_SPELL_ACID_SPLASH">
 		<supports>UA Artificer</supports>
@@ -1505,7 +1507,13 @@
 	<append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
 		<supports>UA Artificer</supports>
 	</append>
+	<append id="ID_PHB_SPELL_FAERIE_FIRE">
+		<supports>UA Artificer</supports>
+	</append>
 	<append id="ID_PHB_SPELL_FALSE_LIFE">
+		<supports>UA Artificer</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
 		<supports>UA Artificer</supports>
 	</append>
 	<append id="ID_PHB_SPELL_GREASE">
@@ -1523,9 +1531,9 @@
 	<append id="ID_PHB_SPELL_SANCTUARY">
 		<supports>UA Artificer</supports>
 	</append>
-	<append id="ID_PHB_SPELL_SHIELD_OF_FAITH">
+	<!-- <append id="ID_PHB_SPELL_SHIELD_OF_FAITH">
 		<supports>UA Artificer</supports>
-	</append>
+	</append> -->
 
 	<!-- 2nd level spells -->
 	<append id="ID_PHB_SPELL_AID">
@@ -1666,6 +1674,7 @@
 
 	<!-- UA workaround -->
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_4">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 4</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<description>
@@ -1677,6 +1686,7 @@
 		</rules>
 	</element>
 	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_4">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 4</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
 		<description>
@@ -1691,6 +1701,7 @@
 		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_8">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 8</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<description>
@@ -1702,6 +1713,7 @@
 		</rules>
 	</element>
 	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_8">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 8</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
 		<description>
@@ -1716,6 +1728,7 @@
 		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_12">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 12</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<description>
@@ -1727,6 +1740,7 @@
 		</rules>
 	</element>
 	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_12">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 12</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
 		<description>
@@ -1741,6 +1755,7 @@
 		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_16">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 16</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<description>
@@ -1752,6 +1767,7 @@
 		</rules>
 	</element>
 	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_16">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 16</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
 		<description>
@@ -1766,6 +1782,7 @@
 		</rules>
 	</element> 
 	<element name="Ability Score Improvement" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_ABILITY_19">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 19</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<description>
@@ -1777,6 +1794,7 @@
 		</rules>
 	</element>
 	<element name="Feat" type="Class Feature" source="Unearthed Arcana: Artificer Revisited" id="ID_WOTC_UA20190228_CLASS_FEATURE_FEAT_19">
+		<compendium display="false" />
 		<supports>Improvement Option, UA Artificer, 19</supports>
 		<requirements>ID_WOTC_UA20190228_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
 		<description>

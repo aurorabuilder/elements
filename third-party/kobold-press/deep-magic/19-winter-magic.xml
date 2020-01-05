@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Winter Magic</name>
+		<update version="0.0.1">
+			<file name="19-winter-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/19-winter-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Winter Magic" type="Source" source="Core" id="ID_KBP_DMWM_SOURCE_DEEP_MAGIC_WINTER_MAGIC">
+		<description>
+			<p><strong>Winter Has Come!</strong></p>
+			<p>The seasons have power, and that of winter is respected by all living beings—indeed, most of their lives the rest of the year are devoted to preparing to meet it. Winter is blinding snow, and ice driven by howling winds; it is branches stripped bare and hung with icicles, landscapes buried in drifts of white. You have learned to command its power, and unleash on your foes. The 20 pages of Deep Magic: Winter Magicbring the secrets of winter magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>A new Blizzard’s Heart primal path for barbarians</li>
+				<li>The Frozen One, a warlock patron who is the embodiment of winter</li>
+				<li>Fimbulwinter’s Advent, a new rune ritual</li>
+				<li>20 new spells, including clash of glaciers, ice fortress, steal warmth, and more!</li>
+			</ul>
+			<p>Those who oppose you would do well to plan long and carefully. Like winter, you are a force to be reckoned with: a combination of elemental power, dangerous beauty, and the relentless nature of the storm.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMWM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-winter-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM19-Winter-COVER.jpg</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20190625</set>
+		</setters>
+	</element>
+
+	<element name="Blizzard’s Heart" type="Archetype" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_BLIZZARDS_HEART">
+		<supports>Primal Path</supports>
+		<description>
+			<p>Only the hardiest of folk can survive the near constant wintry weather that besets the Northlands. Among them, barbarians following the Path of the Blizzard’s Heart dance to the wind and swirling snow in mighty winter storms. When rage takes them, they whirl in a similar fashion to these storms. Even when they are calm, they barely conceal the danger beneath their surface, much like winter seems tranquil after a devastating snowstorm.</p>
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_STINGING_SNOW" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_OMEN_OF_STORMS" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_ICY_BLOWS" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_WHIRL_OF_ICE" />
+		</description>
+		<sheet display="false">
+			<description>Only the hardiest of folk can survive the near constant wintry weather that besets the Northlands.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_STINGING_SNOW" level="3" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_OMEN_OF_STORMS" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_ICY_BLOWS" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_WHIRL_OF_ICE" level="14" />
+		</rules>
+	</element>
+	<element name="Stinging Snow" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_STINGING_SNOW">
+		<description>
+			<p>Starting when you choose this path at 3rd level, while you rage, snow swirls around you in your space. You can see through the snow to make melee attacks without penalty, but you have disadvantage on ranged attacks. Other creatures that rely on sight have disadvantage on ranged attacks against you, and you have +2 AC against melee attacks.</p>
+		</description>
+		<sheet>
+			<description>While you rage, snow swirls around you in your space. You can see through the snow to make melee attacks without penalty, but you have disadvantage on ranged attacks. Other creatures that rely on sight have disadvantage on ranged attacks against you, and you have +2 AC against melee attacks.</description>
+		</sheet>
+	</element>
+	<element name="Omen of Storms" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_OMEN_OF_STORMS">
+		<description>
+			<p>Beginning at 6th level, you can cast sleet storm, centered on yourself, once. You are immune to the spell’s effects. The save DC for this spell equals 8 + your proficiency bonus + your Wisdom modifier. You must finish a long rest before using this ability again.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast sleet storm (DC{{omen of storms:dc}}), centered on yourself, once. You are immune to the spell’s effects.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" />
+			<stat name="omen of storms:dc" value="8" />
+			<stat name="omen of storms:dc" value="proficiency" />
+			<stat name="omen of storms:dc" value="wisdom:modifier" />
+		</rules>
+	</element>
+	<element name="Icy Blows" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_ICY_BLOWS">
+		<description>
+			<p>Beginning at 10th level, while raging, your melee weapon attacks deal additional cold damage equal to your Wisdom modifier.</p>
+		</description>
+		<sheet>
+			<description>While raging, your melee weapon attacks deal an additional {{wisdom:modifier}} cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Whirl of Ice" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_BLIZZARDS_HEART_WHIRL_OF_ICE">
+		<description>
+			<p>Starting at 14th level, while raging, you can use your action to make a melee attack against any number of creatures within 5 feet of you. Make separate attack and damage rolls for each target.</p>
+		</description>
+		<sheet>
+			<description>While raging, you can use your action to make a melee attack against any number of creatures within 5 feet of you. Make separate attack and damage rolls for each target.</description>
+		</sheet>
+	</element>
+
+	<element name="Winter Domain" type="Archetype" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_WINTER_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>Nearly every part of the world must deal with a change in temperature and the coming of winter. Nowhere is this more evident than in the extreme north and extreme south, where winter is a pervasive part of life. As civilization expands into inhospitable terrain and environments, its reliance increases on divine providence to ensure survivability.</p>
+			<p class="indent">Good-aligned clerics appeal to winter deities such as Boreas to spare their people the worst of bitter cold, storms that last for days, and other calamities caused by weather. They couch the onset of winter as necessary for strengthening their people and as a respite from toil, pointing to the peacefulness of the frozen, snow-draped landscape. Evil clerics embrace the storms and brutal conditions and even enhance them to advance their deities’ agendas and to spread fear through their enemies.</p>
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DOMAIN_SPELLS" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_A_COLD_WIND" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_CD_SNOW_WALKER" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DEEP_COLD" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DIVINE_STRIKE" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_BRINGER_OF_WINTERS_WRATH" />
+		</description>
+		<sheet display="false">
+			<description>Good-aligned clerics appeal to winter deities such as Boreas to spare their people the worst of bitter cold, storms that last for days, and other calamities caused by weather.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_A_COLD_WIND" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_CD_SNOW_WALKER" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DEEP_COLD" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DIVINE_STRIKE" level="8" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_BRINGER_OF_WINTERS_WRATH" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric levels listed in the Winter Domain Spells table. See the Divine Domain class feature in the Player’s Handbook for how domain spells work.</p>
+			<h5 class="caption">WINTER DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>breathtaking wind, icicle daggers</em></td></tr>
+				<tr><td>3rd</td><td><em>creeping ice, gust of wind</em></td></tr>
+				<tr><td>5th</td><td><em>sleet storm, steal warmth</em></td></tr>
+				<tr><td>7th</td><td><em>fusillade of ice, ice storm</em></td></tr>
+				<tr><td>9th</td><td><em>clash of glaciers, cone of cold</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_BREATHTAKING_WIND" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_ICICLE_DAGGERS" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_CREEPING_ICE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_STEAL_WARMTH" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_FUSILLADE_OF_ICE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_KBP_DMWM_SPELL_CLASH_OF_GLACIERS" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="A Cold Wind" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_A_COLD_WIND">
+		<description>
+			<p>At 1st level, you learn the ray of frost cantrip and you gain proficiency in the skills Nature and Survival.</p>
+		</description>
+		<sheet display="false">
+			<description>You learn the ray of frost cantrip.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_FROST" spellcasting="Cleric" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Snow Walker" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_CD_SNOW_WALKER">
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to grant yourself the ability to walk on the surface of snow, ignoring any movement penalties it would normally cause. Ice supports your weight no matter how thin the ice is, and you can travel on it as if you’re wearing ice skates. You still leave tracks on snow and ice.</p>
+			<p class="indent">Additionally, in snowy environments, your vision is not impaired by snow and you have advantage on Dexterity (Stealth) checks to hide.</p>
+		</description>
+		<sheet alt="Snow Walker" usage="Channel Divinity">
+			<description>Grant yourself the ability to walk on the surface of snow, ignoring any movement penalties it would normally cause. Ice supports your weight no matter how thin the ice is, and you can travel on it as if you’re wearing ice skates. You still leave tracks on snow and ice.
+			Additionally, in snowy environments, your vision is not impaired by snow and you have advantage on Stealth checks to hide.</description>
+		</sheet>
+	</element>
+	<element name="Deep Cold" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DEEP_COLD">
+		<description>
+			<p>Beginning at 6th level, when you deal cold damage to a creature, it must make a successful Constitution saving throw against your spell save DC or it can't use reactions until the start of your.</p>
+		</description>
+		<sheet>
+			<description>When you deal cold damage to a creature, it must make a successful DC{{spellcasting:dc:wis}} Constitution saving throw or it can't use reactions until the start of your.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_DIVINE_STRIKE">
+		<description>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold damage to the target.</description>
+			<description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 cold damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Bringer Of Winter’s Wrath" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_WINTER_BRINGER_OF_WINTERS_WRATH">
+		<description>
+			<p>Starting at 17th level, you gain resistance to cold. Additionally, you can use your action to surround yourself with swirling snow that fills a 20-foot radius. All other creatures have disadvantage on Wisdom (Perception) checks and attack rolls against you. Creatures other than you inside the snow-filled area have disadvantage on saving throws against magic that deals cold damage. The swirling snow lasts for 1 minute or until you dismiss it as a bonus action.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can surround yourself with swirling snow that fills a 20-foot radius. All other creatures have disadvantage on Perception checks and attack rolls against you. Creatures other than you inside the snow-filled area have disadvantage on saving throws against magic that deals cold damage. The swirling snow lasts for 1 minute or until you dismiss it as a bonus action.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+
+	<element name="The Frozen One" type="Archetype" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_THE_FROZEN_ONE">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your patron is the embodiment of winter. This is typically a mask of Boreas, but powerful ice maidens, ice devils, and other creatures associated with the cold can serve as patrons.</p>
+			<p class="indent">Your patron seeks to immerse the world in eternal winter or bring about some similar fate. While you may not share this goal, you have sworn fealty to this being and you act as its agent to spread winter wherever you roam.</p>
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_EXPANDED_SPELL_LIST" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_DEFLECTIVE_ICE" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_FROZEN_PATH" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_ICY_BODY" />
+			<div element="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_WINTRY_BLAST" />
+			<div class="reference">
+				<div element="ID_KBP_DMWM_INFORMATION_PACT_BOON" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>Your patron is the embodiment of winter.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_DEFLECTIVE_ICE" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_FROZEN_PATH" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_ICY_BODY" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_WINTRY_BLAST" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Frozen One lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5 class="caption">THE FROZEN ONE EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>create or destroy water, fog cloud</em></td></tr>
+				<tr><td>2nd</td><td><em>blur, ice hammer</em></td></tr>
+				<tr><td>3rd</td><td><em>protection from energy (cold only), sleet storm</em></td></tr>
+				<tr><td>4th</td><td><em>ice storm, wintry glide</em></td></tr>
+				<tr><td>5th</td><td><em>cone of cold, ice fortress</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Frozen One lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_CREATE_OR_DESTROY_WATER</extend>
+			<extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+			<extend>ID_PHB_SPELL_BLUR</extend>
+			<extend>ID_KBP_DMWM_SPELL_ICE_HAMMER</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_ENERGY</extend>
+			<extend>ID_PHB_SPELL_SLEET_STORM</extend>
+			<extend>ID_PHB_SPELL_ICE_STORM</extend>
+			<extend>ID_KBP_DMWM_SPELL_WINTRY_GLIDE</extend>
+			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+			<extend>ID_KBP_DMWM_SPELL_ICE_FORTRESS</extend>
+		</spellcasting>
+	</element>
+	<element name="Deflective Ice" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_DEFLECTIVE_ICE">
+		<description>
+			<p>Starting at 1st level, you can bring a small chunk of ice to your aid. As a reaction when a creature makes a weapon attack against you, the ice shields you from the attack. The creature has disadvantage on its attack roll. Regardless of the result of the attack, the ice melts away immediately afterward. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature makes a weapon attack against you, the ice shields you from the attack. The creature has disadvantage on its attack roll. Regardless of the result of the attack, the ice melts away immediately afterward.</description>
+		</sheet>
+	</element>
+	<element name="Frozen Path" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_FROZEN_PATH">
+		<description>
+			<p>Beginning at 6th level, as part of your move for 1 turn, you can leave a layer of ice on the ground along your path. This ice persists for 1 minute. A creature other than you that enters a space of ice must make a successful Dexterity saving throw against your spell save DC or fall prone in that space. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>As part of your move for 1 turn, you can leave a layer of ice on the ground along your path. This ice persists for 1 minute. A creature other than you that enters a space of ice must make a successful DC{{spellcasting:dc:cha}} Dexterity saving throw or fall prone in that space.</description>
+		</sheet>
+	</element>
+	<element name="Icy Body" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_ICY_BODY">
+		<description>
+			<p>Beginning at 10th level, your skin takes on an icy sheen. You are immune to cold damage, and you have advantage on Strength and Dexterity checks you make to escape from being grappled.</p>
+		</description>
+		<sheet>
+			<description>You are immune to cold damage, and you have advantage on Strength and Dexterity checks you make to escape from being grappled.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" />
+		</rules>
+	</element>
+	<element name="Wintry Blast" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_ARCHETYPE_FEATURE_FROZEN_WINTRY_BLAST">
+		<description>
+			<p>Starting at 14th level, you can designate a creature you see within 60 feet of you. It must make a Constitution saving throw against your warlock spell save DC. If it fails, it feels numbing cold emanating from your patron. The creature takes 10d10 cold damage and must make another Constitution saving throw. If the second saving throw fails, the creature is also restrained for 1 minute. A restrained creature repeats the saving throw at the end of its turn, ending the restraint on a success. You must complete a short or long rest before using this feature again.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>You can designate a creature you see within 60 feet of you. It must make a DC{{spellcasting:dc:cha}} Constitution saving throw. If it fails, it feels numbing cold emanating from your patron. The creature takes 10d10 cold damage and must make another Constitution saving throw. If the second saving throw fails, the creature is also restrained for 1 minute. A restrained creature repeats the saving throw at the end of its turn, ending the restraint on a success.</description>
+		</sheet>
+	</element>
+
+	<element name="Pact Boon" type="Information" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_INFORMATION_PACT_BOON">
+		<description>
+			<p><strong><em>Pact of the Blade.</em></strong> Your pact weapon has a patina of ice and small icicles dangle from it. When you create or summon your pact weapon, you can choose whether it does its standard damage type or cold damage.</p>
+			<p><strong><em>Pact of the Chain.</em></strong> When you conjure your familiar or change its form, you can choose the form of an ice mephit in addition to the usual options granted by the pact boon. When you use your action to command your mephit familiar to attack, it can use its breath or cast an innate spell instead.</p>
+			<p><strong><em>Pact of the Tome.</em></strong> Your book is formed from rune‑etched sheets of ice that are cold to the touch to everyone but you. The book is immune to cold damage.</p>
+		</description>
+	</element>
+
+	<element name="Boreal Aura" type="Class Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_CLASS_FEATURE_INVOCATION_BOREAL_AURA">	
+		<supports>Eldritch Invocation</supports>
+		<requirements>[level:3],ID_KBP_DMWM_ARCHETYPE_THE_FROZEN_ONE</requirements>	
+		<prerequisite>3rd level, Frozen One patron</prerequisite>
+		<description>
+			<p><strong>Prerequisite:</strong> 3rd level, Frozen One patron</p>
+			<p>Ice and snow cascade around you. As long as you maintain concentration, your melee attacks do an additional 1d6 cold damage. Attackers within 5 feet of you who hit you in melee take 1d6 cold damage.</p>
+		</description>
+		<sheet>
+			<description>As long as you maintain concentration, your melee attacks do an additional 1d6 cold damage. Attackers within 5 feet of you who hit you in melee take 1d6 cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Horrific Wintry Visage" type="Class Feature" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_CLASS_FEATURE_INVOCATION_HORRIFIC_WINTRY_VISAGE">	
+		<supports>Eldritch Invocation</supports>
+		<requirements>[level:5],ID_KBP_DMWM_ARCHETYPE_THE_FROZEN_ONE</requirements>	
+		<prerequisite>5th level, Frozen One patron</prerequisite>
+		<description>
+			<p><strong>Prerequisite:</strong> 5th level, Frozen One patron</p>
+			<p>You can cast <em>sculpt snow</em> once using a warlock slot. Creatures that see your sculpture for the first time must make a successful Wisdom saving throw against your spell save DC or become frightened of the sculpture for 1 round. You must finish a long rest before using this invocation again.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast sculpt snow once using a warlock slot. Creatures that see your sculpture for the first time must make a successful DC{{spellcasting:dc:cha}} Wisdom saving throw or become frightened of the sculpture for 1 round.</description>
+		</sheet>
+	</element>
+
+
+	<!-- todo: rune ritual p6 -->
+	
+	<element name="Breathtaking Wind" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_BREATHTAKING_WIND">
+		<supports>Druid, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You target a creature with a blast of wintry air. That creature must make a successful Constitution saving throw or become unable to speak or cast spells with a vocal component for the duration of the spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Winter">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Chilling Words" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_CHILLING_WORDS">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You choose a phrase that freezes the blood of a target creature. The target must make a successful Wisdom saving throw when chilling words is cast. On a successful saving throw, the spell has no effect. On a failed saving throw, the target is susceptible to the phrase for the duration of the spell.</p>
+			<p class="indent">When a susceptible target hears the phrase, it must make a successful Constitution saving throw or take 1d6 cold damage and become restrained for 1 round. Whether the Constitution saving throw succeeds or fails, the target can’t be affected by the phrase for 1 minute afterward. Once a creature utters the phrase to the target, that creature can’t affect the target with the phrase for the spell’s duration.</p>
+			<p class="indent">You also have the option to make a final utterance of the phrase (even if you’ve used the phrase on this target previously). On hearing the final utterance, the target takes 4d6 cold damage and is restrained for 1 minute; or, with a successful Constitution saving throw, it takes half damage and is restrained for 1 round. After this final utterance, the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Winter">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 8 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a frozen strip of paper with any writing on it</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Clash Of Glaciers" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_CLASH_OF_GLACIERS">
+		<supports>Druid, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>Ice streaks from your fingers and forms two long blocks that smash together, crushing creatures in a line 100 feet long. Each creature in the area takes 5d6 bludgeoning damage plus 5d6 cold damage, or half damage with a successful Dexterity saving throw.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d6 for each slot level above 5th. You decide whether each extra die does bludgeoning or cold damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Winter">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (100-foot line)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of cracked glass</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Creeping Ice" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_CREEPING_ICE">
+		<supports>Druid, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You create a sheet of ice that covers a 5-foot square within range and lasts for the spell’s duration. The iced area is difficult terrain.</p>
+			<p class="indent">A creature in the area when you cast the spell must make a successful Strength saving throw or be restrained by ice that rapidly encases it. A creature restrained by the ice takes 2d6 cold damage at the start of its turn. A restrained creature can use an action to make a Strength check against your spell save DC, freeing itself on a success, but it has disadvantage on this check. The creature can also be freed (and the spell ended) by inflicting at least 20 fire damage on the ice. The restrained creature takes half damage from fire attacks against the ice.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the area increases to a 10-foot square, the ice deals 4d6 cold damage, and 40 fire damage is needed to melt it. When you cast this spell using a spell slot of 7th level or higher, the area increases to a 20-foot square, the ice deals 6d6 cold damage, and a total of 60 fire damage is needed to melt it.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Evercold" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_EVERCOLD">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You target a creature within the spell’s range, and that creature must make a successful Wisdom saving throw or take 1d6 cold damage. In addition, the target is cursed to feel as if it’s exposed to extreme cold. For the duration of evercold, the target must make a successful DC 10 Constitution saving throw at the end of each hour or gain one level of exhaustion. The target has advantage on the hourly saving throws if wearing suitable cold-weather clothing, but it has disadvantage on saving throws against other spells and magic that deal cold damage (regardless of its clothing) for the spell’s duration.</p>
+			<p class="indent">The spell can be ended by its caster or by dispel magic or remove curse.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Winter">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Until dispelled</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an insect that froze to death</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Freeze Blood" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_FREEZE_BLOOD">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>When you cast freeze blood as a successful melee spell attack against a living creature with a circulatory system, the creature’s blood freezes. For the spell’s duration, the affected creature’s speed is halved and it takes 4d10 cold damage at the beginning of your turns. If the creature takes bludgeoning damage from a critical hit, the attack’s damage dice are rolled three times instead of twice. An affected creature repeats the saving throw at the end of its turn, ending the effect on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Frostbitten Fingers" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_FROSTBITTEN_FINGERS">
+		<supports>Druid, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You fire a ray of intense cold that instantly induces frostbite. With a successful ranged spell attack, this spell causes one of the target’s hands to lose sensation. When the spell is cast, the target must make a successful Dexterity saving throw to maintain its grip on any object with the affected hand. The saving throw must be repeated every time the target tries to manipulate, wield, or pick up an item with the affected hand. Additionally, the target has disadvantage on Dexterity and Strength checks that require the use of both hands.</p>
+			<p class="indent">After every 10 minutes of being affected by frostbitten fingers, the target must make a successful Constitution saving throw or take 1d6 cold damage and lose one of the fingers on the affected hand, beginning with the pinkie.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a patch of frostbitten skin</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Fusillade Of Ice" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_FUSILLADE_OF_ICE">
+		<supports>Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You unleash a spray of razor-sharp ice shards. Creatures in the 30-foot cone take 4d6 cold damage and 3d6 piercing damage, or half damage with a successful Dexterity saving throw.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by your choice of 1d6 cold damage or 1d6 piercing damage for each slot level above 4th. You can make a different choice (cold damage or piercing damage) for each slot level above 4th. Casting this spell with a spell slot of 6th level or higher increases the range to a 60-foot cone.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Winter">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a dagger shaped like an icicle</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Ice Fortress" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_ICE_FORTRESS">
+		<supports>Cleric, Sorcerer, Wizard</supports>
+		<description>
+			<p>A gleaming fortress of ice springs from a square area of ground that you can see within range. It is a 10-foot cube (including floor and roof). The fortress can’t overlap any other structures, but any creatures in its space are harmlessly lifted up as the ice rises into position. The walls are made of ice (AC 13), have 120 hit points each, and are immune to cold, necrotic, poison, and psychic damage. Reducing a wall to 0 hit points destroys it and has a 50 percent chance to cause the roof to collapse. A damaged wall can be repaired by casting a spell that deals cold damage on it, on a point-for-point basis.</p>
+			<p class="indent">Each wall has two arrow slits. One wall also includes an ice door with an arcane lock. You designate at the time of the fort’s creation which creatures can enter the fortification. The door has AC 18 and 60 hit points, or it can be broken open with a successful DC 25 Strength (Athletics) check (DC 15 if the arcane lock is dispelled).</p>
+			<p class="indent">The fortress catches and reflects light so that creatures outside the fortress who rely on sight have disadvantage on Perception checks and attack rolls made against those within the fortress, if it’s in an area of bright sunlight.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, you can increase the length or width of the fortification by 5 feet for every slot level above 5th. You can make a different choice (width or length) for each slot level above 5th.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Until dispelled or destroyed</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a miniature keep carved from ice or glass that is consumed in the casting</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Ice Hammer" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_ICE_HAMMER">
+		<supports>Cleric, Ranger</supports>
+		<description>
+			<p>When you cast ice hammer, a warhammer fashioned from ice appears in your hands. This weapon functions as a standard warhammer in all ways, and it deals an additional 1d10 cold damage on a hit. You can drop the warhammer or give it to another creature.</p>
+			<p class="indent">The warhammer melts and is destroyed when it or its user accumulates 20 or more fire damage.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you create one additional ice warhammer for each slot level above 2nd. Alternatively, you can create half as many warhammers (round down), but each is oversized (1d10 bludgeoning damage, or 1d12 if wielded with two hands, plus 2d8 cold damage). Creatures that aren’t proficient with warhammers have disadvantage on attack rolls with these oversized weapons.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a miniature hammer carved from ice or glass</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Icicle Daggers" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_ICICLE_DAGGERS">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>When you cast this spell, six icicles appear in your hand. Each icicle has the same properties as a dagger but deals an additional 1d4 cold damage on a hit.</p>
+			<p class="indent">The icicle daggers melt a few seconds after leaving your hand, making it impossible for other creatures to wield them. Provided the surrounding temperature is at or below freezing, the daggers last for as long as you hold them. If the temperature is above freezing, the daggers melt after an hour. They also melt instantly if they or you accumulate 10 or more fire damage.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> If you cast this spell using a spell slot of 2nd level or higher, you can create two additional daggers for each slot level above 1st. If you cast this spell using a spell slot of 4th level or higher, daggers that leave your hand don’t melt until the start of your next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous or special</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a miniature dagger shaped like an icicle</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Protective Ice" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_PROTECTIVE_ICE">
+		<supports>Cleric</supports>
+		<description>
+			<p>When you cast protective ice, you encase a willing target in icy, medium armor equivalent to a breastplate (AC 14). A creature without the appropriate armor proficiency has the usual penalties. If the target is already wearing armor, it only uses the better of the two armor classes.</p>
+			<p class="indent">A creature that strikes a target encased in protective ice with a melee attack while within 5 feet of it takes 1d6 cold damage.</p>
+			<p class="indent">If the armor’s wearer takes fire damage, an equal amount of damage is done to the armor, which has 30 hit points and is damaged only when its wearer takes fire damage. Damaged ice can be repaired by casting a spell that deals cold damage on it, on a point-for-point basis, but the armor can’t have more than 30 points repaired.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a 4th-level spell slot, it creates splint armor (AC 17, 40 hit points). If you cast this spell using a 5th-level spell slot, it creates plate armor (AC 18, 50 hit points). The armor’s hit points increase by 10 for each spell slot above 5th but the AC remains 18. Additionally, if you cast this spell using a spell slot of 4th level or higher, the armor deals an additional +2 cold damage for each spell slot above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Winter">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a seed encased in ice or glass</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Sculpt Snow" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_SCULPT_SNOW">
+		<supports>Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>When you cast sculpt snow in an area filled with snow, you can create one Large object, two Medium objects, or four smaller objects from snow. With a casting time of 1 action, your sculptings bear only a crude resemblance to generic creatures or objects. If you increase the casting time to 1 minute, your creations take on a more realistic appearance and can even vaguely resemble specific creatures; the resemblance isn’t strong enough to fool anyone but the creature can be recognized. The sculptures are as durable as a typical snowman.</p>
+			<p class="indent">Sculptures created by this spell can be animated with animate objects or comparable magic. Animated sculptures gain the AC, hit points, and other attributes provided by that spell. When they attack, they deal normal damage plus a similar amount of cold damage; an animated Medium sculpture, for example, deals 2d6 + 1 bludgeoning damage plus 2d6 + 1 cold damage.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you can sculpt one additional Large object for each slot level above 2nd. Two Large objects can be replaced with one Huge object.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Sheen Of Ice" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_SHEEN_OF_ICE">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>A small icy globe shoots from your finger to a point within range and then explodes in a spray of ice. Every creature within 20 feet of that point must make a successful Dexterity saving throw or become coated in ice for 1 minute. Ice-coated creatures move at half speed. An invisible creature becomes outlined by the ice so it loses the benefits of invisibility while the ice remains. The spell ends for a specific creature if that creature takes 5 or more fire damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Winter">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">water within a glass globe</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Snow Fort" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_SNOW_FORT">
+		<supports>Cleric, Sorcerer, Wizard</supports>
+		<description>
+			<p>This spell creates a simple “fort” from packed snow. The snow fort springs from the ground in an unoccupied space within range. It encircles a 10-foot area with sloping walls 4 feet high. The fort provides half cover (+2 AC) against ranged and melee attacks coming from outside the fort. The walls have AC 12, 30 hit points per side, are immune to cold, necrotic, poison, and psychic damage, and are vulnerable to fire damage. A damaged wall can be repaired by casting a spell that deals cold damage on it, on a point-forpoint basis, up to a maximum of 30 points.</p>
+			<p class="indent">The spell also creates a dozen snowballs that can be thrown (range 20/60) and that deal 1d4 bludgeoning damage plus 1d4 cold damage on a hit.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a ring carved from chalk or white stone</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Snowy Coat" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_SNOWY_COAT">
+		<supports>Druid, Ranger</supports>
+		<description>
+			<p>This spell makes a slight alteration to a target creature’s appearance that gives it advantage on Dexterity (Stealth) checks to hide in snowy terrain. In addition, the target can use a bonus action to make itself invisible in snowy terrain for 1 minute. The spell ends at the end of the minute or when the creature attacks or casts a spell.</p>
+			<p class="indent">When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Steal Warmth" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_STEAL_WARMTH">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>When you cast steal warmth after taking cold damage, you can select a living creature within 5 feet of you. That creature takes the cold damage instead, or half damage with a successful Constitution saving throw. You regain hit points equal to the amount of cold damage taken by the target.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the distance to the target you can affect with this spell increases by 5 feet for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Winter">Necromancy</set>
+			<set name="time">1 reaction, which you take when you take cold damage from magic</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Thin The Ice" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_THIN_THE_ICE">
+		<supports>Druid, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You target a point within range. That point becomes the top center of a cylinder 10 feet in radius and 40 feet deep. All ice inside that area melts immediately. The uppermost layer of ice seems to remain intact and sturdy, but it covers a 40-foot-deep pit filled with ice water. A successful Wisdom (Survival) check or passive Perception check against your spell save DC notices the thin ice. If a creature weighing more than 20 pounds (or a greater weight specified by you when you cast the spell), the ice gives way. Unless the creature makes a successful Dexterity saving throw, it falls into the icy water, taking 2d6 cold damage plus whatever other problems are caused by water, by armor, or by being drenched in a freezing environment. The water gradually refreezes normally.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of sunstone</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Winterdark" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_WINTERDARK">
+		<supports>Druid, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>This spell invokes the deepest part of night on the winter solstice. You target a 40-foot-radius, 60-foothigh cylinder centered on a point within range, which is plunged into darkness and unbearable cold. All creatures in the area when you cast the spell and at the beginning of your turn must make a successful Constitution saving throw or take 1d6 cold damage and gain one level of exhaustion. Creatures immune to cold are also immune to the exhaustion effect, as are creatures wearing cold weather gear or otherwise adapted to cold.</p>
+			<p class="indent">As a bonus action, you can move the center of the effect 20 feet.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Winter">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Wintry Glide" type="Spell" source="Deep Magic: Winter Magic" id="ID_KBP_DMWM_SPELL_WINTRY_GLIDE">
+		<supports>Druid</supports>
+		<description>
+			<p>Upon casting wintry glide, you can travel via ice or snow without crossing the intervening space. If you are adjacent to a mass of ice or snow, you can enter it by expending 5 feet of movement. You can immediately exit from that mass of ice or snow at any point within 500 feet that’s part of the contiguous mass of ice or snow, by expending another 5 feet of movement. When you enter the ice or snow, you instantly know the extent of the material within 500 feet. You must have at least 10 feet of movement available when you cast the spell or it fails.</p>
+			<p class="indent">If the mass of ice or snow is somehow destroyed while you are transiting it, you must make a successful Constitution saving throw against your spell save DC to avoid taking 4d6 bludgeoning damage and falling prone at the midpoint of a line between your entrance point and your intended exit point.</p>
+		</description>
+		<setters>
+			<set name="keywords">winter magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Winter">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+</elements>

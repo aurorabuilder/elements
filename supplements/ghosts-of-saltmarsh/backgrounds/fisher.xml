@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fisher Background</name>
+		<update version="0.0.2">
+			<file name="fisher.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/ghosts-of-saltmarsh/backgrounds/fisher.xml" />
+		</update>
+	</info>
+	
+	<element name="Fisher" type="Background" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_FISHER">
+		<description>
+			<p>You have spent your life aboard fishing vessels or combing the shallows for the bounty of the ocean. Perhaps you were born into a family of fisher folk, working with your kin to feed your village. Maybe the job was means to and end—a way out of an undesirable circumstance that forced you to take up life aboard a ship. Regardless of how you begain, you soon fell in live with the sea, the art of fishing, and the promise of the eternal horizon.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Survival</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> Fishing tackle, a net, a favorite fishing lure or oiled leather wading boots, a set of traveler’s clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_GOS_BACKGROUND_FEATURE_HARVEST_THE_WATER" />
+			<h5>FISHING TALE</h5>			
+			<p>You can tell a compelling tale, whether tall or true, to impress and entertain others. Once a day, you can tell your story to willing listeners. At the DM’s discretion, a number of those listeners become friendly toward you; this is not a magical effect, and continued amicability on their part depends on your actions. You can roll on the following table to help determine the theme of your tale or choose one that best fits your character. Alternatively, work with your DM to create your own fishing tale.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Tale</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Lobster Wrestling.</strong> You fought in hand to hand combat with an immense lobster.</td></tr>
+				<tr><td>2</td><td><strong>It Dragged the Boat.</strong> You nearly caught a fish of monstrous size that pulled your boat for miles.</td></tr>
+				<tr><td>3</td><td><strong>Fins of Pure Gold.</strong> You caught a sea animal whose fins were made of pure gold, but another fisher stole it.</td></tr>
+				<tr><td>4</td><td><strong>Ghost Fish.</strong> You are haunted by a ghostly fish that only you can see.</td></tr>
+				<tr><td>5</td><td><strong>Nemesis Clam.</strong> A large clam containing a pearl the size of your head claimed one of your fingers before jetting away, one day, you’ll find that clam.</td></tr>
+				<tr><td>6</td><td><strong>It Swallowed the Sun.</strong> You once saw a fish leap from the water and turn day into night.</td></tr>
+				<tr><td>7</td><td><strong>Dive into the Abyss.</strong> You found yourself in an underwater cave leading to the Abyss, and your luck has been sour ever since.</td></tr>
+				<tr><td>8</td><td><strong>Love Story.</strong> You fell in love with a creature of pure water, but your brief romance ended tragically.</td></tr>
+			</table>
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Fishers succeed only if they spend time at their jobs. As such, most fishers have a strong work ethic, and they admire others who earn their living honestly. Fishers tend to be superstitious, forming attachments to particular fishing lures or special fishing spots. They have a connection ot the bodies of water in which they fish, and they think poorly of those whose actions adversely affect their livelihood.</p>
+		</description>
+		<setters>
+			<set name="short">History, Survival, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Language, Fisher" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_GOS_BACKGROUND_FEATURE_HARVEST_THE_WATER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I am unmoved by the wrath of nature.</item>
+				<item id="2">My friends are my crew; we sink or float together.</item>
+				<item id="3">I need long stretches of quiet to clear my head.</item>
+				<item id="4">Rich folk don’t know the satisfaction of hard work.</item>
+				<item id="5">I laugh heartly, feel deeply, and fear nothing.</item>
+				<item id="6">I work hard; nature offers no handouts.</item>
+				<item id="7">I dislike bargaining; state your price and mean it.</item>
+				<item id="8">Luck favors me, and I take risks others might not.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Camaraderie. Good people make even the longest voyage bearable. (Good)</item>
+				<item id="2">Luck. Our luck depends on respecting its rules—now throw this salt over your shoulder. (Lawful)</item>
+				<item id="3">Daring. The richest bounty goes to those who risk everything. (Chaotic)</item>
+				<item id="4">Plunder. Take all that you can and leave nothing for the scavengers. (Evil)</item>
+				<item id="5">Balance. Do not fish the same spot twice in a row; suppress your greed, and nature will reward you. (Neutral)</item>
+				<item id="6">Hard Work. No wave can move a soul hard at work. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I lost something important in the deep sea, and I intent to find it.</item>
+				<item id="2">Someone else’s greed destroyed my livelihood, and I will be compensated.</item>
+				<item id="3">I will fish the many famous waters of this land.</item>
+				<item id="4">The gods saved me during a terrible storm, and I will honor this gift.</item>
+				<item id="5">My destiny awaits me at the bottom of a particular pond in the feywild.</item>
+				<item id="6">I must repay my village’s debt.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I am judgemental, especially of those I deep homebodies or otherwise lazy.</item>
+				<item id="2">I become depressed and anxious if I’m away from the sea too long.</item>
+				<item id="3">I have lived a hard life and find it difficult to empathize with others.</item>
+				<item id="4">I am inclined to tell long-winded stories at inopportune times.</item>
+				<item id="5">I work hard, but i play harder.</item>
+				<item id="6">I am obsessed with catching an elusive aquatic beast, often to the detriment of other pursuits.</item>
+			</select>
+		</rules>
+	</element>	
+	<element name="Feature: Harvest the Water" type="Background Feature" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_FEATURE_HARVEST_THE_WATER">
+		<description>
+			<p>You gain advantage on ability checks made using fishing tackle. If you have access to a body of water that sustains marine life, you can maintain a moderate lifestyle while working as a fisher, and you can catch enough food to feed yourself and up to ten other people each day.</p>
+		</description>
+		<sheet alt="Harvest the Water" />
+	</element>	
+</elements>

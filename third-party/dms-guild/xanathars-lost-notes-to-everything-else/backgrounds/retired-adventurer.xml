@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Retired Adventurer Background</name>
+		<update version="0.0.3">
+			<file name="retired-adventurer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/backgrounds/retired-adventurer.xml" />
+		</update>
+	</info>
+	
+	<element name="Retired Adventurer" type="Background" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_RETIRED_ADVENTURER">
+		<description>
+			<p>You have lived a life of adventure already and retired to something quieter. You thought you were done and to that end may have given away all your old gear and spent all your treasure. Little did you know something would pull you back into your old life. If you choose this background you have some exciting questions to answer.</p>
+			<p class="indent">You determine what your past looked like. What adventures have you already had? How much time did you spend adventuring before retirement? Who was your most-hated enemy? Who did you adventure with? Why did you hang it up?</p>
+			<p class="indent">Something happened that made you lose your edge and finally honed adventuring skills. Has age or luxurious retirement made you soft? Did a physical or magical accident take some abilities from you? Did a supernatural force steal your mojo?</p>
+			<p class="indent">You have decided to walk the road of adventure once again. Why? Was it because you ran out of gold and want to earn some more the only way you know how? Did you become restless in retirement and are now seeking the thrill of battle? Are you out to prove you can still live up to your legend? Are you out for vengeance? A noble quest? To tie up one final lose end you didn’t realize until now was undone? Whatever the reason, you’re back on the road and ready to dive into another dungeon.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Insight</li>
+				<li><strong>Tool Proficiencies:</strong> One type of gaming set</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> An old map to a secret dungeon you never got around to visiting, a set of common clothes, a set of bone dice or a deck of cards, and a purse containing 25 gp</li>
+			</ul>
+			<div element="ID_XLN_BACKGROUND_FEATURE_CLIST_CELEBRITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>As a voice of experience in your party, you know the danger of the road you walk. You understand when to be cautious and when it is time to take a risk. You have the right advice, warnings, and stories for all situations. Even if you don’t know what you’re doing, your past makes others look to you for leadership.</p>
+		</description>
+		<setters>
+			<set name="short">History, Insight, Gaming Set, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<select type="Proficiency" name="Gaming Set, Retired Adventurer" supports="Gaming Set" />
+			<select type="Language" name="Language, Retired Adventurer" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_XLN_BACKGROUND_FEATURE_CLIST_CELEBRITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I have no idea how to tell a short story.</item>
+				<item id="2">I’m sure of my first instincts and always act on them. </item>
+				<item id="3">Anyone younger than I am needs my advice.</item>
+				<item id="4">I don’t enjoy physical contact with others unless it is my fist in their faces.</item>
+				<item id="5">I show my numerous scars to help drive points home.</item>
+				<item id="6">When I laugh, the volume of my voice fills up the entire room.</item>
+				<item id="7">Nothing pleases me more than a good meal, good company, and job well done.</item>
+				<item id="8">I often correct others when their lack of manners offends me.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Generosity. Everything I have I share with those around me and in need. (Good)</item>
+				<item id="2">Good Times. I take advantage of every opportunity to have fun. (Chaotic)</item>
+				<item id="3">Power. Those who don’t tremble at my name will have reason enough to do so soon. (Evil)</item>
+				<item id="4">Logic. Emotions shouldn’t make decisions for us. (Lawful)</item>
+				<item id="5">Greater Good. I would gladly give my life to defend those who can’t defend themselves. (Good)</item>
+				<item id="6">Live and Let Live. Just because we disagree doesn’t mean we have to kill each other. (Neutral)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I never found that magic item I wanted in my early career.</item>
+				<item id="2">There’s more than a few broken hearts in my past.</item>
+				<item id="3">There is an inn I frequent where no one knows about my past life and I’d like to keep it that way.</item>
+				<item id="4">I can’t go back to the town I accidentally partially leveled.</item>
+				<item id="5">My old adventuring companions get together now and then to relive the good old days.</item>
+				<item id="6">A famous song is actually about one of my greatest battles.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I don’t take the advice of others because I know best always.</item>
+				<item id="2">Violence solves most problems.</item>
+				<item id="3">Ale is my very, very best friend.</item>
+				<item id="4">I really don’t know when to shut up.</item>
+				<item id="5">I tend to fall asleep at times when I should be alert.</item>
+				<item id="6">I am sarcastic at all times, especially when least appropriate.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: C-List Celebrity" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_CLIST_CELEBRITY">
+		<description>
+			<p>Whenever you are in a civilized area that knows of you past adventures, you can live a aristocratic life style for free as people wish to honor your past deeds. You can also use your influence to gain audiences with important political figures and get random gifts from admiring fans. However if you choose to use your influence in this way, it also alerts anyone in the area looking for you of your location and draws attention to your party.</p>
+		</description>
+		<sheet alt="C-List Celebrity" />
+	</element>	
+</elements>

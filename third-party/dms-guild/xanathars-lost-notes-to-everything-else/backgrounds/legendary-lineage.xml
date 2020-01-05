@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Legendary Lineage Background</name>
+		<update version="0.0.3">
+			<file name="legendary-lineage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/backgrounds/legendary-lineage.xml" />
+		</update>
+	</info>
+	
+	<element name="Legendary Lineage" type="Background" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_LEGENDARY_LINEAGE">
+		<description>
+			<p>You have heroes in your family background and the story of your ancestors is known far and wide. Perhaps your parents were a famous adventuring duo, or a grandparent hunted and killed great evils. Maybe your heroic bloodline has many heroes within it going back as far as any can remember. Whatever the case, the deeds of those who came before you are great and the public’s expectation of your accomplishments is even greater. The weight of your family name affects all you do.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, History</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (land)</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A set of traveler’s clothes, a wood figure made in the likeness of an ancestor, a signet ring, a gaming set in which you are proficient, and a belt pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_XLN_BACKGROUND_FEATURE_GOOD_REPUTATION" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You’ve lived a different life than those less famous than you, and probably don’t know yourself as well as you should. Since birth you’ve been told you are special and destined for greatness, which is an idea you may be eager to prove or disprove. You’re used to being under pressure and to folks talking about you both to your face and behind your back. As you start your adventuring career you have a choice to make. Most people of a heroic lineage who adventure either embrace the family name or try to get out there and make their own way. The result, however, is the same – a determined hero trying to show the world they’re something more just a lucky kid with the right parents.</p>
+		</description>
+		<setters>
+			<set name="short">Athletics, History, Vehicles (Land), Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<select type="Language" name="Language, Legendary Lineage" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_XLN_BACKGROUND_FEATURE_GOOD_REPUTATION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I am polite and humble to all who fawn over me.</item>
+				<item id="2">I’m sure you’ve heard of the great heroes of my family, but let me tell you anyway.</item>
+				<item id="3">I am quiet in public and don’t enjoy being noticed.</item>
+				<item id="4">I boast about how I will put my ancestors’ deeds to shame.</item>
+				<item id="5">I am attracted to people who don’t fawn over me right away.</item>
+				<item id="6">I often find reasons to excuse myself from large groups of people who love me for my name.</item>
+				<item id="7">I am able to fake smile for anyone, even if I hate that person.</item>
+				<item id="8">I always ask for people to give me free stuff because I can.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Family. I intend to uphold my family name. (Lawful)</item>
+				<item id="2">Superiority. I was born better than everyone and so I deserve better than everyone. (Evil)</item>
+				<item id="3">Individuality. I am not my family’s name and will make my own legend. (Chaotic)</item>
+				<item id="4">Leadership. I feel a call beyond my heritage to protect the people who look to me. (Good)</item>
+				<item id="5">Aspiration. I want to make the people who believe in me proud. (Neutral)</item>
+				<item id="6">Generosity. I was lucky to be born into this family and I will give back to those less fortunate. (Good)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I wield the same weapon my ancestor used.</item>
+				<item id="2">No one knows the real me like my childhood best friend.</item>
+				<item id="3">A parent won’t respect me until I make good on the family name.</item>
+				<item id="4">I would do anything to protect the town where I grew up.</item>
+				<item id="5">I have my eye on a quiet cottage to which I plan to retire.</item>
+				<item id="6">I feel like the only person who really gets me is my dog.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I can only handle so much fawning before I explode in anger.</item>
+				<item id="2">If not praised constantly, I doubt myself.</item>
+				<item id="3">If you speak ill of my ancestors, I will punch you in the face.</item>
+				<item id="4">I prefer to have someone else fix my personal problems.</item>
+				<item id="5">I put down others to boost my own confidence.</item>
+				<item id="6">If something is fashionable, I will avoid it at all costs.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Good Reputation" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_GOOD_REPUTATION">
+		<description>
+			<p>Since your family name is known, you can reap many benefits by flying the flag of your heritage. People in positions of power and privilege are willing to take a meeting with you and grant you favors. The DM decides the extent and effect of these favors, but they shouldn’t involve lavish gifts or great personal risk to the granter.</p>
+		</description>
+		<sheet alt="Good Reputation" />
+	</element>
+</elements>

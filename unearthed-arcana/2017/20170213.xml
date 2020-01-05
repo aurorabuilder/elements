@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Warlock and Wizard</name>
         <description>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/warlock-and-wizard">Wizards of the Coast</author>
-        <update version="0.0.6">
+        <update version="0.0.8">
             <file name="20170213.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170213.xml" />
         </update>
     </info>
@@ -50,7 +50,7 @@
             <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD" />
             <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_QUEENS_RIGHT_HAND" />
         </description>
-        <sheet>
+        <sheet display="false">
             <description>You patron is the Raven Queen, a mysterious being who rules the Shadowfell from a palace of ice deep within that dread realm.</description>
         </sheet>
         <rules>
@@ -62,8 +62,6 @@
         </rules>
     </element>
     <element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_EXPANDED_SPELL_LIST">
-        <supports>Warlock</supports>
-        <requirements />
         <description>
             <p>The Raven Queen lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
             <h5>Raven Queen Expanded Spells</h5>
@@ -103,7 +101,12 @@
             <p class="indent">At the end of a short or long rest, you can call the raven back to you—no matter where it is or whether it died—and it reappears within 5 feet of you.</p>
         </description>
         <sheet>
-            <description>While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a +{{seninel raven:perception}} bonus to your passive Perception score and to Perception checks.</description>
+            <description>While the raven is perched on your shoulder, you gain darkvision with a range of 30 feet and a +{{seninel raven:perception}} bonus to your passive Perception score and to Perception checks.
+            You can see through the raven’s eyes and hear what it hears while it is within 100 feet of you.
+            In combat, you roll initiative for the raven and control how it acts. If it is slain by a creature, you gain advantage on all attack rolls against the killer for the next 24 hours.
+            The raven doesn’t require sleep. While it is within 100 feet of you, it can awaken you from sleep as a bonus action.
+            The raven vanishes when it dies, if you die, or if the two of you are separated by more than 5 miles.
+            At the end of a short or long rest, you can call the raven back to you—no matter where it is or whether it died—and it reappears within 5 feet of you.</description>
         </sheet>
         <rules>
             <stat name="seninel raven:perception" value="charisma:modifier" />
@@ -113,17 +116,16 @@
         <description>
             <p>At 6th level, you gain the ability to merge with your raven spirit. As a bonus action when your raven is perched on your shoulder, your body merges with your raven’s form. While merged, you become Tiny, you replace your speed with the raven’s, and you can use your action only to Dash, Disengage, Dodge, Help, Hide, or Search. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.</p>
         </description>
-        <sheet>
-            <description>As a bonus action when your raven is perched on your shoulder, your body merges with your raven’s form. While merged, you become Tiny, you replace your speed with the raven’s, and you can use your action only to Dash, Disengage, Dodge, Help, Hide, or Search. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.</description>
+        <sheet action="Bonus Action">
+            <description>When your raven is perched on your shoulder, your body merges with your raven’s form. While merged, you become Tiny, you replace your speed with the raven’s, and you can use your action only to Dash, Disengage, Dodge, Help, Hide, or Search. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.</description>
         </sheet>
-        <rules />
     </element>
     <element name="Raven’s Shield" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_RAVENS_SHIELD">
         <description>
             <p>At 10th level, the Raven Queen grants you a protective blessing. You gain advantage on death saving throws, immunity to the frightened condition, and resistance to necrotic damage.</p>
         </description>
         <sheet>
-            <description>You gain advantage on death saving throws, immunity to the frightened condition, and resistance to necrotic damage.</description>
+            <description>You gain advantage on death saving throws, immunity to the frightened condition.</description>
         </sheet>
         <rules>
 		    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
@@ -133,13 +135,72 @@
         <description>
             <p>Starting at 14th level, you can channel the Raven Queen’s power to slay a creature. You can cast finger of death. After you cast the spell with this feature, you can’t do so again until you finish a long rest.</p>
         </description>
-        <sheet>
-            <description>You can cast finger of death. After you cast the spell with this feature, you can’t do so again until you finish a long rest.</description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast finger of death.</description>
         </sheet>
-        <rules />
     </element>
 
-    <!-- Invocations related to the Raven Queen -->
+    <!-- Invocations -->
+    <element name="Aspect of the Moon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_ASPECT_OF_THE_MOON">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Archfey patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY</requirements>
+        <description>
+            <p><em>Prerequisite: The Archfey patron</em></p>
+            <p>You have gained the Maiden of the Moon’s favor. You no longer need to sleep and can’t be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading and keeping watch.</p>
+        </description>
+        <sheet>
+            <description>You no longer need to sleep and can’t be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading and keeping watch.</description>
+        </sheet>
+    </element>
+    <element name="Burning Hex" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_BURNING_HEX">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Hexblade patron</prerequisite>
+        <requirements>ID_WOTC_XGTE_ARCHETYPE_HEXBLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Hexblade patron</em></p>
+            <p>As a bonus action, you cause a target cursed by your Hexblade’s Curse to take fire damage equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You cause a target cursed by your Hexblade’s Curse to take {{burning hex:fire damage}} fire damage.</description>
+        </sheet>
+        <rules>
+            <stat name="burning hex:fire damage" value="1" bonus="base" />
+            <stat name="burning hex:fire damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Caiphon’s Beacon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CAIPHONS_BEACON">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Great Old One patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE</requirements>
+        <description>
+            <p><em>Prerequisite: The Great Old One patron</em></p>
+            <p>The purple star Caiphon is the doom of inexperienced mariners. Those who use its deceptive light to guide their travels invariably come to ruin. You gain proficiency in the Deception and Stealth skills, and you have advantage on attack rolls against charmed creatures.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on attack rolls against charmed creatures.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+        </rules>
+    </element>
+    <element name="Chilling Hex" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CHILLING_HEX">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Hexblade patron</prerequisite>
+        <requirements>ID_WOTC_XGTE_ARCHETYPE_HEXBLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Hexblade patron</em></p>
+            <p>As a bonus action, you cause frost to swirl around a target cursed by your Hexblade’s Curse, dealing cold damage to each of your enemies within 5 feet of the target. The cold damage equals your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You cause frost to swirl around a target cursed by your Hexblade’s Curse, dealing {{chilling hex:cold damage}} cold damage to each of your enemies within 5 feet of the target.</description>
+        </sheet>
+        <rules>
+            <stat name="chilling hex:cold damage" value="1" bonus="base" />
+            <stat name="chilling hex:cold damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
     <element name="Chronicle of the Raven Queen" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_CHRONICLE_OF_THE_RAVEN_QUEEN">
         <supports>Eldritch Invocation, Pact of the Tome</supports>
         <prerequisite>Raven Queen patron, Pact of the Tome feature</prerequisite>
@@ -151,7 +212,152 @@
         <sheet>
             <description>You can place a corpse’s hand or similar appendage on your Book of Shadows and ask one question aloud. After 1 minute, the answer appears written in blood in your book. The answer is provided by the dead creature’s spirit to the best of its knowledge and is translated into a language of your choice. You must use this ability within 1 minute of a creature’s death, and a given creature can only be asked one question in this manner.</description>
         </sheet>
-        <rules />
+    </element>
+    <element name="Claw of Acamar" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CLAW_OF_ACAMAR">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Great Old One patron, Pact of the Blade feature</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Great Old One patron, Pact of the Blade feature</em></p>
+            <p>You can create a black, lead flail using your Pact of the Blade feature. The flail’s head is sculpted to resemble a pair of grasping tentacles. The weapon has the reach property. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 necrotic damage to the target per spell level, and you can reduce the creature’s speed to 0 feet until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>You can create a black, lead flail using your Pact of the Blade feature. The weapon has the reach property. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 necrotic damage to the target per spell level, and you can reduce the creature’s speed to 0 feet until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Cloak of Baalzebul" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CLOAK_OF_BAALZEBUL">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Fiend patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND</requirements>
+        <description>
+            <p><em>Prerequisite: The Fiend patron</em></p>
+            <p>As a bonus action, you can conjure a swarm of buzzing flies around you. The swarm grants you advantage on Charisma (Intimidation) checks but disadvantage on all other Charisma checks. In addition, a creature that starts its turn within 5 feet of you takes poison damage equal to your Charisma modifier. You can dismiss the swarm with another bonus action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can conjure a swarm of buzzing flies around you. The swarm grants you advantage on Intimidation checks but disadvantage on all other Charisma checks. In addition, a creature that starts its turn within 5 feet of you takes {{charisma:modifier}} poison damage. You can dismiss the swarm with another bonus action.</description>
+        </sheet>
+    </element>
+    <element name="Curse Bringer" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CURSE_BRINGER">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Hexblade patron, Pact of the Blade feature</prerequisite>
+        <requirements>ID_WOTC_XGTE_ARCHETYPE_HEXBLADE,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Hexblade patron, Pact of the Blade feature</em></p>
+            <p>You can create a greatsword forged from silver, with black runes etched into its blade, using your Pact of the Blade feature. If you reduce a target cursed by your Hexblade’s Curse to 0 hit points with this sword, you can immediately change the target of the curse to a different creature. This change doesn’t extend the curse’s duration.</p>
+            <p class="indent">When you hit a creature with this weapon, you can expend a spell slot to deal an additional 2d8 slashing damage to the target per spell level, and you can reduce the creature’s speed to 0 feet until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>You can create a greatsword forged from silver, with black runes etched into its blade, using your Pact of the Blade feature. If you reduce a target cursed by your Hexblade’s Curse to 0 hit points with this sword, you can immediately change the target of the curse to a different creature. This change doesn’t extend the curse’s duration.
+            When you hit a creature with this weapon, you can expend a spell slot to deal an additional 2d8 slashing damage to the target per spell level, and you can reduce the creature’s speed to 0 feet until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Kiss of Mephistopheles" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_KISS_OF_MEPHISTOPHELES">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, the Fiend patron, eldritch blast cantrip</prerequisite>
+        <requirements>[level:5],ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND,ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <description>
+            <p><em>Prerequisite: 5th level, the Fiend patron, eldritch blast cantrip</em></p>
+            <p>You can channel the fires of Mephistopheles through your eldritch blast. When you hit a creature with that cantrip, you can cast fireball as a bonus action using a warlock spell slot. However, the spell must be centered on a creature you hit with eldritch blast.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you hit a creature with eldritch blast, you can cast fireball using a warlock spell slot. However, the spell must be centered on a creature you hit with eldritch blast.</description>
+        </sheet>
+    </element>
+    <element name="Frost Lance" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_FROST_LANCE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Archfey patron, eldritch blast cantrip</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY,ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <description>
+            <p><em>Prerequisite: The Archfey patron, eldritch blast cantrip</em></p>
+            <p>You draw on the gifts of the Prince of Frost to trap your enemies in ice. When you hit a creature with your eldritch blast cantrip one or more times on your turn, you can reduce that creature’s speed by 10 feet until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with your eldritch blast cantrip one or more times on your turn, you can reduce that creature’s speed by 10 feet until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Gaze of Khirad" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_GAZE_OF_KHIRAD">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>7th level, the Great Old One patron</prerequisite>
+        <requirements>[level:7],ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE</requirements>
+        <description>
+            <p><em>Prerequisite: 7th level, the Great Old One patron</em></p>
+            <p>You gain the piercing gaze of the blue star Khirad. As an action, you can see through solid objects to a range of 30 feet until the end of the current turn. During that time, you perceive objects as ghostly, transparent images.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can see through solid objects to a range of 30 feet until the end of the current turn. During that time, you perceive objects as ghostly, transparent images.</description>
+        </sheet>
+    </element>
+    <element name="Grasp of Hadar" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_GRASP_OF_HADAR">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Great Old One patron, eldritch blast cantrip</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE,ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <description>
+            <p><em>Prerequisite: The Great Old One patron, eldritch blast cantrip</em></p>
+            <p>Once during your turn when you hit a creature with your eldritch blast cantrip, you can move that creature in a straight line 10 feet closer to yourself.</p>
+        </description>
+        <sheet>
+            <description>Once during your turn when you hit a creature with your eldritch blast cantrip, you can move that creature in a straight line 10 feet closer to yourself.</description>
+        </sheet>
+    </element>
+    <element name="Green Lord’s Gift" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_GREEN_LORDS_GIFT">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Archfey patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY</requirements>
+        <description>
+            <p><em>Prerequisite: The Archfey patron</em></p>
+            <p>The Green Lord oversees a verdant realm of everlasting summer. Your soul is linked to his power. Whenever you regain hit points, you treat any dice rolled to determine the hit points you regain as having rolled their maximum value.</p>
+        </description>
+        <sheet>
+            <description>Whenever you regain hit points, you treat any dice rolled to determine the hit points you regain as having rolled their maximum value.</description>
+        </sheet>
+    </element>
+    <element name="Improved Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_WEAPON">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, Pact of the Blade feature</prerequisite>
+        <requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: 5th level, Pact of the Blade feature</em></p>
+            <p>Any weapon you create using your Pact of the Blade feature is a +1 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>
+        </description>
+        <sheet>
+            <description>Any weapon you create using your Pact of the Blade feature is a +1 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</description>
+        </sheet>
+    </element>
+    <element name="Mace of Dispater" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_MACE_OF_DISPATER">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Fiend patron, Pact of the Blade feature</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Fiend patron, Pact of the Blade feature</em></p>
+            <p>When you create your pact weapon as a mace, it manifests as an iron mace forged in Dis, the second of the Nine Hells. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 force damage to the target per spell level, and you can knock the target prone if it is Huge or smaller.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 force damage to the target per spell level, and you can knock the target prone if it is Huge or smaller.</description>
+        </sheet>
+    </element>
+    <element name="Moon Bow" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_MOON_BOW">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Archfey patron, Pact of the Blade feature</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: The Archfey patron, Pact of the Blade feature</em></p>
+            <p>You can create a longbow using your Pact of the Blade feature. When you draw back its string and fire, it creates an arrow of white wood, which vanishes after 1 minute. You have advantage on attack rolls against lycanthropes with the bow. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 radiant damage to the target per spell level.</p>
+        </description>
+        <sheet>
+            <description>You can create a longbow using your Pact of the Blade feature. When you draw back its string and fire, it creates an arrow of white wood, which vanishes after 1 minute. You have advantage on attack rolls against lycanthropes with the bow. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 radiant damage to the target per spell level.</description>
+        </sheet>
+    </element>
+    <element name="Path of the Seeker" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_PATH_OF_THE_SEEKER">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Seeker patron</prerequisite>
+        <requirements>ID_WOTC_UA_ARCHETYPE_WARLOCK_THE_SEEKER</requirements>
+        <description>
+            <p><em>Prerequisite: The Seeker patron</em></p>
+            <p>The Seeker bids you to travel in search of knowledge, and little can prevent you from waling this path. You ignore difficult terrain, have advantage on all checks to escape a grapple, manacles, or rope bindings, and advantage on saving throws against being paralyzed.</p>
+        </description>
+        <sheet>
+            <description>You ignore difficult terrain, have advantage on all checks to escape a grapple, manacles, or rope bindings, and advantage on saving throws against being paralyzed.</description>
+        </sheet>
     </element>
     <element name="Raven Queen’s Blessing" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_RAVEN_QUEENS_BLESSING">
         <supports>Eldritch Invocation</supports>
@@ -164,22 +370,126 @@
         <sheet>
             <description>When you score a critical hit with your eldritch blast cantrip, pick yourself or an ally you can see within 30 feet of you. The chosen creature can immediately expend a Hit Die to regain hit points equal to the roll + the creature’s Constitution modifier (minimum of 1 hit point).</description>
         </sheet>
-        <rules />
     </element>
+    <element name="Relentless Hex" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_RELENTLESS_HEX">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, the Hexblade patron</prerequisite>
+        <requirements>[level:5],ID_WOTC_XGTE_ARCHETYPE_HEXBLADE</requirements>
+        <description>
+            <p><em>Prerequisite: 5th level, the Hexblade patron</em></p>
+            <p>Your Hexblade’s Curse creates a temporary bond between you and your target. As a bonus action, you can magically teleport to a space you can see within 5 feet of the target cursed by your Hexblade’s Curse. To do so, you must be able to see the target and must be within 30 feet of it.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can magically teleport to a space you can see within 5 feet of the target cursed by your Hexblade’s Curse. To do so, you must be able to see the target and must be within 30 feet of it.</description>
+        </sheet>
+    </element>
+    <element name="Sea Twins’ Gift" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_SEA_TWINS_GIFT">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Archfey patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY</requirements>
+        <description>
+            <p><em>Prerequisite: The Archfey patron</em></p>
+            <p>The Sea Twins rule seas in the Feywild. Their gift allows you to travel through water with ease. You can breathe underwater, and you gain a swimming speed equal to your walking speed.</p>
+            <p class="indent">You can also cast water breathing using a warlock spell slot. Once you cast it using this invocation, you can’t do so again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can breathe underwater. You can also cast water breathing using a warlock spell slot.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:swim" value="speed" bonus="base" />
+        </rules>
+    </element>
+    <element name="Seeker’s Speech" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_SEEKERS_SPEECH">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Seeker patron</prerequisite>
+        <requirements>ID_WOTC_UA_ARCHETYPE_WARLOCK_THE_SEEKER</requirements>
+        <description>
+            <p><em>Prerequisite: The Seeker patron</em></p>
+            <p>Your quest for knowledge allows you to master any spoken language. When you complete a long rest, you can pick two languages. You gain the ability to speak, read, and write the chosen languages until you finish your next long rest.</p>
+        </description>
+        <sheet>
+            <description>When you complete a long rest, you can pick two languages. You gain the ability to speak, read, and write the chosen languages until you finish your next long rest.</description>
+        </sheet>
+        <rules>
+            <select type="Language" name="Language, Seeker’s Speech" supports="Standard||Exotic" number="2" />
+        </rules>
+    </element>
+    <element name="Shroud of Ulban" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_SHROUD_OF_ULBAN">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>18th level, the Great Old One patron</prerequisite>
+        <requirements>[level:18],ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE</requirements>
+        <description>
+            <p><em>Prerequisite: 18th level, the Great Old One patron</em></p>
+            <p>The blue-white star Ulban maintains a fickle presence among the stars, fluttering into view only to herald a dire omen. As an action, you can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.</description>
+        </sheet>
+    </element>
+    <element name="Superior Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_SUPERIOR_PACT_WEAPON">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>9th level, Pact of the Blade feature</prerequisite>
+        <requirements>[level:9],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: 9th level, Pact of the Blade feature</em></p>
+            <p>Any weapon you create using your Pact of the Blade feature is a +2 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>
+        </description>
+        <sheet>
+            <description>Any weapon you create using your Pact of the Blade feature is a +2 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</description>
+        </sheet>
+    </element>
+    <element name="Tomb of Levistus" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_TOMB_OF_LEVISTUS">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>The Fiend patron</prerequisite>
+        <requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND</requirements>
+        <description>
+            <p><em>Prerequisite: The Fiend patron</em></p>
+            <p>As a reaction when you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain 10 temporary hit points per warlock level, which take as much of the triggering damage as possible. You also gain vulnerability to fire damage, your speed drops to 0, and you are incapacitated. All of these effects end when the ice melts.</p>
+            <p class="indent">Once you use this invocation, you can’t use it again until you finish a short or long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="1/Short Rest">
+            <description>When you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain {{tomb of levistus:temporary hp}} temporary hp, which take as much of the triggering damage as possible. You also gain vulnerability to fire damage, your speed drops to 0, and you are incapacitated. All of these effects end when the ice melts.</description>
+        </sheet>
+        <rules>
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+            <stat name="tomb of levistus:temporary hp" value="level:warlock" />
+        </rules>
+    </element>
+    <element name="Ultimate Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_ULTIMATE_PACT_WEAPON">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>15th level, Pact of the Blade feature</prerequisite>
+        <requirements>[level:15],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+        <description>
+            <p><em>Prerequisite: 15th level, Pact of the Blade feature</em></p>
+            <p>Any weapon you create using your Pact of the Blade feature is a +3 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>
+        </description>
+        <sheet>
+            <description>Any weapon you create using your Pact of the Blade feature is a +3 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</description>
+        </sheet>
+    </element>
+
     <!-- Lore Mastery -->
     <element name="Lore Mastery" type="Archetype" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY">
         <supports>Arcane Tradition</supports>
         <description>
             <p>Lore Mastery is an arcane tradition fixated on understanding the underlying mechanics of magic. It is the most academic of all arcane traditions. The promise of uncovering new knowledge or proving (or discrediting) a theory of magic is usually required to rouse its practitioners from their laboratories, academies, and archives to persue a life of adventure.</p>
-    			<p class="indent">Known as savants, followers of this tradition are a bookish lot who see beauty and mystery in the application of magic. The results of a spell are less interesting to them than the process that creates it. Some savants take haughty attitude toward those who follow a tradition focused on a single school of magic, seeing them as provincial and lacking the sophistication needed to master true magic. Other savants are generous teachers, countering ignorance and deception with deep knowledge and good humor.</p>
+    		<p class="indent">Known as savants, followers of this tradition are a bookish lot who see beauty and mystery in the application of magic. The results of a spell are less interesting to them than the process that creates it. Some savants take haughty attitude toward those who follow a tradition focused on a single school of magic, seeing them as provincial and lacking the sophistication needed to master true magic. Other savants are generous teachers, countering ignorance and deception with deep knowledge and good humor.</p>
             <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" />
             <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS" />
             <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING" />
             <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY" />
             <div element="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC" />
         </description>
-        <sheet>
-            <description>Lore Mastery is an arcane tradition fixated on understanding the underlying mechnanics of magic. The promise of uncovering new knowledge or proving (or discrediting) a theory of magic is usually required to rouse its practitioners from their laboratories, academies, and archives to persue a life of adventure.</description>
+        <sheet display="false">
+            <description>Lore Mastery is an arcane tradition fixated on understanding the underlying mechnanics of magic.</description>
         </sheet>
         <rules>
             <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_LORE_MASTER" level="2"/>
@@ -208,47 +518,39 @@
     <element name="Spell Secrets" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_SPELL_SECRETS">
         <description>
             <p>At 2nd level, you master the first in a series of arcane secrets uncovered by your extensive studies.</p>
-    			<p class="indent">When you cast a spell with a spell slot and the spell deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). You replace one energy type for another by altering the spell's formula as you cast it.</p>
-    			<p class="indent">When you cast a spell with a spell slot and the spell requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</p>
+            <p class="indent">When you cast a spell with a spell slot and the spell deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). You replace one energy type for another by altering the spell's formula as you cast it.</p>
+            <p class="indent">When you cast a spell with a spell slot and the spell requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</p>
         </description>
         <sheet>
             <description>When you cast a spell with a spell slot that deals acid, cold, fire, force, lightning, necrotic, radiant, or thunder damage, you can substitute that damage type with one other type from that list (you can change only one damage type per casting of a spell). When you cast a spell that requires a saving throw, you can change saving throw from one ability score to another of your choice. Once you change a saving throw in this way, you can't do so again until you finish a short or long rest.</description>
         </sheet>
-        <rules>
-        </rules>
     </element>
     <element name="Alchemical Casting" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_ALCHEMICAL_CASTING">
         <description>
             <p>At 6th level, you learn to augment spells in a variety of ways. When you cast a spell with a spell slot, you can expend one additional spell slot to augment its effects for this casting, mixing the raw stuff of magic into your spell slot you expend.</p>
-    			<p class="indent">An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by 2d10 force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.</p>
-    			<p class="indent">An additional 2nd-level spell slot can increase the spell's range. If the spell's range is at least 30 feet, it becomes 1 miles.</p>
-    			<p class="indent">An additional 3rd-level spell slot can increase the spell's potency. Increase the spell's save DC by 2.</p>
+            <p class="indent">An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by 2d10 force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.</p>
+            <p class="indent">An additional 2nd-level spell slot can increase the spell's range. If the spell's range is at least 30 feet, it becomes 1 miles.</p>
+            <p class="indent">An additional 3rd-level spell slot can increase the spell's potency. Increase the spell's save DC by 2.</p>
         </description>
         <sheet>
             <description>You can expend one additional spell slot to augment your casting. An additional 1st-level increases damage of the spell by 2d10 force damage once on the turn you cast the spell. An additional 2nd-level spell slot increases range to a 1 mile. An additional 3rd-level spell slot increases spell's save DC by 2.</description>
         </sheet>
-        <rules>
-        </rules>
     </element>
     <element name="Prodigious Memory" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_PRODIGIOUS_MEMORY">
         <description>
             <p>At 10th level, you have attained greater mastery of spell preparation. As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</p>
         </description>
-        <sheet>
-            <description>As a bonus action you can replace one spell you have prepared with another spell from your spellbook. You can't use this feature again until you finish a short or long rest.</description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You can replace one spell you have prepared with another spell from your spellbook.</description>
         </sheet>
-        <rules>
-        </rules>
     </element>
     <element name="Master of Magic" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_LORE_MASTERY_MASTER_OF_MAGIC">
         <description>
             <p>At 14th level, your knowledge of magic allows you to duplicate almost any spell. As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. If the spell isn't a wizard spell, it counts as a wizard spell when you cast it. The ability to cast the spell vanishes from your mind when you cast it or when current turn ends.</p>
     			<p class="indent">You can't use this feature again until you finish a long rest.</p>
         </description>
-        <sheet>
-            <description>As a bonus action, you can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot. You can't use this feature again until you finish a long rest.</description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>You can call to mind the ability to cast spell of your choice from any class's spell list. The spell must be of a level for which you have spell slots, you mustn't have it prepared, and you follow normal rules for casting it, including expending a spell slot.</description>
         </sheet>
-        <rules>
-        </rules>
     </element>
 </elements>

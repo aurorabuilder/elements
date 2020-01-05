@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mark of Storm</name>
+		<description>Mark of Storm from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="mark-storm.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-storm.xml" />
+		</update>
+	</info>
+	<element name="The Mark of Storm" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM">
+		<supports>Half-Elf Variant</supports>
+		<description>
+			<p>Wind and water welcome the half-elf who carries the Mark of Storm. The wind catches them when they fall, and they swim with remarkable speed. Those who possess the Greater Dragonmark and dragonshard focus items can call on even greater powers, shaping the weather and calling on the power of the storm. </p>
+			<h4>HOUSE LYRANDAR</h4>
+			<p>House Lyrandar has long ruled the seas. Their galleons harness air and water elementals and are faster than any mundane vessel. Control of the sea and river trade gave Lyrandar considerable power. Now they reach out to the skies. Merely a decade old, Lyrandar airships are already shifting the balance of power in overland travel, previously dominated by House Orien’s lightning rail. House Lyrandar also controls the air in a more literal way. The Raincallers’ Guild can use the Mark of Storm to control the weather for its clients, but at a considerable price.</p>
+			<p class="indent">House Lyrandar is made up of half-elves. For many of its members, it’s more than simply family or business—it is the closest thing their people have to a homeland. House Lyrandar is ambitious and often acts in what it sees as the interests of all half-elves. Lyrandar heirs have been helping the Valenar elves run their young kingdom, and some believe that Valenar could become a true homeland for the Khoravar.</p>
+			<h4>MARK OF STORM TRAITS</h4>
+			<p>The Mark of Storm manifests exclusively on half-elves. These traits replace the half-elf Ability Score Increase, Skill Versatility, and Languages traits given in the Player’s Handbook. </p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity and Charisma scores both increase by 1. In addition, one ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Sea Monkey.</em></strong> You have a swimming speed of 30 feet.</p>
+			<p class="indent"><strong><em>Windwright's Intuition.</em></strong> When you make a Dexterity (Acrobatics) check or any ability check involving operating or maintaining a water or air vehicle, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Storm's Blessing.</em></strong> You have resistance to lightning damage.</p>
+			<p class="indent"><strong><em>Headwinds.</em></strong> You know the gust cantrip. When you reach 3rd level, you can cast the gust of wind spell once with this trait and regain the ability to do so when you finish a long rest. </p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Elvish.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Half-Elf (Mark of Storm)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="charisma" value="1" />
+			<stat name="dexterity" value="1" />			
+			<stat name="innate speed:swim" value="30" bonus="base" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Storm)" supports="Ability Score Increase, Mark of Storm" number="1"/>
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WINDWRIGHT_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_MARK_OF_STORM_STORMS_BLESSING" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEADWINDS" />
+		</rules>
+	</element>
+	<element name="Windwright's Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WINDWRIGHT_INTUITION">
+		<description>
+			<p>When you make a Dexterity (Acrobatics) check or any ability check involving operating or maintaining a water or air vehicle, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Acrobatics check or any ability check involving operating or maintaining a water or air vehicle, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Storm’s Blessing" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_MARK_OF_STORM_STORMS_BLESSING">
+		<description>
+			<p>You have resistance to lightning damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to lightning damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Headwinds" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_HEADWINDS">
+		<description>
+			<p>You know the gust cantrip. When you reach 3rd level, you can cast the gust of wind spell once with this trait and regain the ability to do so when you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You know the gust cantrip.</description>
+			<description level="3">You know the gust cantrip and you can cast the gust of wind spell once per long rest.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_GUST" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" level="3"/>
+		</rules>
+	</element>
+
+	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_STRENGTH">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Strength score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="strength" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_DEXTERITY">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Dexterity score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="dexterity" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Constitution score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="constitution" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Intelligence score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="intelligence" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_WISDOM">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Wisdom score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="wisdom" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_STORM_CHARISMA">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Storm</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_STORM</requirements>
+		<description>
+			<p>Your Charisma score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="charisma" value="1" alt="The Mark of Storm" />
+		</rules>
+	</element>
+</elements>

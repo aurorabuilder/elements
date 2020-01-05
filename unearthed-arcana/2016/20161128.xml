@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Druid Circles and Wild Shape</name>
+		<description>New options sprout for the druid this week: three new Druid Circle options and an optional rule for gaining different beast shapes for Wild Shape. We invite you to read the options' descriptions, make characters with them, and see whether you like them.</description>
+		<author url="https://dnd.wizards.com/articles/unearthed-arcana/druid-circles-and-wild-shape">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="20161128.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2016/20161128.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Druid Circles and Wild Shape" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20161128">
+		<description>
+			<p>New options sprout for the druid this week: three new Druid Circle options and an optional rule for gaining different beast shapes for Wild Shape. We invite you to read the options' descriptions, make characters with them, and see whether you like them.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20161128</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/druid-circles-and-wild-shape</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20161128</set>
+		</setters>
+	</element>
+
+	<element name="Circle of Twilight" type="Archetype" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_CIRCLE_OF_TWILIGHT">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>The Circle of Twilight seeks to exterminate undead creatures and preserve the natural cycle of life and death that rules over the cosmos. Their magic allows them to manipulate the boundary between life and death, sending their foes to their final rest while keeping their allies from that fate.</p>
+			<p class="indent">These druids seek out lands that have been tainted by undeath. Such places are grim and foreboding. Once vibrant forests become gloomy, haunted places devoid of animals and filled with plants dying a slow, lingering death. The Circle of Twilight goes to such places to banish undeath and restore life.</p>
+			<div element="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_HARVESTS_SCYTHE" />
+			<div element="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_SPEECH_BEYOND_THE_GRAVE" />
+			<div element="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_WATCHER_AT_THE_THRESHOLD" />
+			<div element="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_PATHS_OF_THE_DEAD" />
+		</description>
+		<sheet>
+			<description>The Circle of Twilight seeks to exterminate undead creatures and preserve the natural cycle of life and death that rules over the cosmos.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_HARVESTS_SCYTHE" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_SPEECH_BEYOND_THE_GRAVE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_WATCHER_AT_THE_THRESHOLD" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_PATHS_OF_THE_DEAD" level="14" />
+		</rules>
+	</element>
+	<element name="Harvest's Scythe" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_HARVESTS_SCYTHE">
+		<description>
+			<p>Starting at 2nd level, you learn to unravel and harvest the life energy of other creatures. You can augment your spells to drain the life force from creatures. You have a pool of energy represented by a number of d10s equal to your druid level.</p>
+			<p class="indent">When you roll damage for a spell, you can increase that damage by spending dice from the pool. You can spend a number of dice equal to half your druid level or less. Roll the spent dice and add them to the damage as necrotic damage. If you kill one or more hostile creatures with a spell augmented in this way, you or an ally of your choice that you can see within 30 feet of you regains 2 hit points per die spent to increase the spell’s damage, or 5 hit points per die if at least one of the slain creatures was undead.</p>
+			<p class="indent">You regain the expended dice when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{harvests scythe:pool}}d10/Long Rest">
+			<description>When you roll damage for a spell, you can increase that damage by spending dice from the pool. You can spend a number of dice equal to {{level:druid:half}} or less. Roll the spent dice and add them to the damage as necrotic damage. If you kill one or more hostile creatures with a spell augmented in this way, you or an ally of your choice that you can see within 30 feet of you regains 2 hit points per die spent to increase the spell’s damage, or 5 hit points per die if at least one of the slain creatures was undead.</description>
+		</sheet>
+		<rules>
+			<stat name="harvests scythe:pool" value="level:druid" />
+		</rules>
+	</element>
+	<element name="Speech Beyond the Grave" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_SPEECH_BEYOND_THE_GRAVE">
+		<description>
+			<p>At 6th level, you gain the ability to reach beyond death’s veil in search of knowledge. Using this feature, you can cast <i>speak with dead</i> without material components, and you understand what the target of this casting says. It can understand your questions, even if you don’t share a language or it is not intelligent enough to speak.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Rest">
+			<description>You can cast <i>speak with dead</i> without material components, and you understand what the target of this casting says. It can understand your questions, even if you don’t share a language or it is not intelligent enough to speak.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+		</rules>
+	</element>
+	<element name="Watcher at the Threshold" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_WATCHER_AT_THE_THRESHOLD">
+		<description>
+			<p>At 10th level, you gain resistance to necrotic and radiant damage. In addition, while you aren’t incapacitated, any ally within 30 feet of you has advantage on death saving throws.</p>
+		</description>
+		<sheet>
+			<description>While you aren’t incapacitated, any ally within 30 feet of you has advantage on death saving throws.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+	<element name="Paths of the Dead" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_PATHS_OF_THE_DEAD">
+		<description>
+			<p>At 14th level, your mastery of death allows you to tread the paths used by ghosts and other spirits. Using this feature, you can cast <i>etherealness</i>. Once the spell ends, you can’t cast it with this feature again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Rest">
+			<description>Using this feature, you can cast <i>etherealness</i>.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ETHEREALNESS" />
+		</rules>
+	</element>
+</elements>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Polymorphed Background</name>
+		<update version="0.0.3">
+			<file name="polymorphed.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/backgrounds/polymorphed.xml" />
+		</update>
+	</info>
+	
+	<element name="Polymorphed" type="Background" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_Polymorphed">
+		<description>
+			<p>You were transformed into an animal or monster and lived that way for years. You most likely entered this form unwillingly but how you came down with this affliction is up to you. A caster with an axe to grind may have cast <em>true polymorph</em> for some petty offense committed by you or a loved one. Maybe you unwittingly donned a cursed magic item. Perhaps you activated some arcane trap when you accidentally stumbled into an ancient ruin. You could have made the choice willingly to infiltrate some group of monsters or hide as a beast from someone hunting you. You also should decide who or what changed you back to your true form.</p>
+			<p class="indent">You were in your alternate form for years. How was living in that form different from the way you lived your life before? In what ways were you more powerful? Less powerful? Do you miss the strength of your old form or are you glad to be back in your own flesh?</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Survival and choose one additional from either Animal Handling or Deception.</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A bag of caltrops, a realistic ink drawing of your polymorphed form, a set of common clothes, and a belt pouch with 5 gp</li>
+			</ul>
+			<div element="ID_XLN_BACKGROUND_FEATURE_KINDRED_SPIRIT" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You have spent so much time in the skin of another form that you’re not comfortable with your true body. This discomfort may manifest in a physical form like fidgeting, wearing baggy or eccentric clothing, or the need to change your appearance through tattoos or piercings. You may have more of a subconscious mental tick like targeting the appearance of others to make yourself feel better or nightmares of once again living in your polymorphed form. Your old form was a prison that hid your true self, but it was also a way to keep yourself shielded from harm.</p>
+		</description>
+		<setters>
+			<set name="short">Survival, Animal Handling / Deception, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Skill Proficiency, Polymorphed" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_DECEPTION" />
+			<select type="Language" name="Language, Polymorphed" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_XLN_BACKGROUND_FEATURE_KINDRED_SPIRIT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE,!ID_XLN_BACKGROUND_FEATURE_BODY_HORROR"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature || Background Feature, Polymorphed" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I am always fidgeting because I am uncomfortable.</item>
+				<item id="2">I retained a rude physical behavior of my polymorphed form.</item>
+				<item id="3">I obsess over my appearance and wear eccentric outfits.</item>
+				<item id="4">I always judge the way others look.</item>
+				<item id="5">I am unsure of what to say when people ask about me.</item>
+				<item id="6">I often speak in my head by accident instead of aloud.</item>
+				<item id="7">I find it’s easier to lie than give real personal details.</item>
+				<item id="8">I must keep touching my body to reassure myself I’m in it.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Freedom. People should be free to express who they are. (Chaotic)</item>
+				<item id="2">Power. If it gets me what I want, I’ll manipulate anyone. (Evil)</item>
+				<item id="3">Security. All people deserve a place where they feel at peace. (Good)</item>
+				<item id="4">Beauty. All people should appreciate who they are. (Neutral)</item>
+				<item id="5">Authority. If you respect authority, you will be protected. (Lawful)</item>
+				<item id="6">Dog Eat Dog. To survive you must be the smartest or strongest. (Neutral)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I have altered my appearance to look like my polymorphed form.</item>
+				<item id="2">Some friends I made in my polymorphed form don’t know I’ve been turned back.</item>
+				<item id="3">I carry a piece of my old body.</item>
+				<item id="4">The place where I spent most of my time while polymorphed is home to me.</item>
+				<item id="5">I still haven’t seen my family since before I was polymorphed.</item>
+				<item id="6">I still enjoy eating what I ate in my polymorphed form.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I want to be back in my polymorphed form.</item>
+				<item id="2">I sometimes believe I still possess abilities of my polymorphed form that I no longer have.</item>
+				<item id="3">All transmutation magic is terrible and must be stopped.</item>
+				<item id="4">I physically hurt myself for assurance I am in my true form</item>
+				<item id="5">It’s easier to back down from an argument than try to convince someone I’m right.</item>
+				<item id="6">The opinions of my friends are more important than my own.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Kindred Spirit" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_KINDRED_SPIRIT">
+		<description>
+			<p>Nonhostile creatures of the same type as your polymorphed form are inclined to like you. These creatures might help guide you to a place if they know its location, provide you with shelter, or shield you from danger, provided they aren’t put directly into harm’s way.</p>
+		</description>
+		<sheet alt="Kindred Spirit" />
+	</element>
+	<element name="Variant Feature: Body Horror" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_BODY_HORROR">
+		<supports>Background Feature, Polymorphed</supports>
+		<description>
+			<p>This feature is meant for games using the variant madness rules in chapter 8 of the Dungeon Master’s Guide. Before choosing this feature you must ask your DM. You have spent so much time in the form of another creature that you aren’t easily shocked by bodily manipulation and mutilation. Whenever such a sight would cause you to save against a madness effect you automatically succeed.</p>
+		</description>
+		<sheet alt="Body Horror">
+			<description>You have spent so much time in the form of another creature that you aren’t easily shocked by bodily manipulation and mutilation. Whenever such a sight would cause you to save against a madness effect you automatically succeed.</description>
+		</sheet>
+	</element>
+</elements>

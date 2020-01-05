@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Marine Background</name>
+		<update version="0.0.2">
+			<file name="marine.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/ghosts-of-saltmarsh/backgrounds/marine.xml" />
+		</update>
+	</info>
+	
+	<element name="Marine" type="Background" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_MARINE">
+		<description>
+			<p>You were trained for battle on sandy beaches and rocky shores. You have launched midnight raids from swift ships whose names evoke terror in the hearts of your adversaries. The water is your second home, the rain your shelter, and the crashing waves your battle cry.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (water, land)</li>
+				<li><strong>Equipment:</strong> A dagger that belonged to a fallen comrade, a folded flag emblazoned with the symbol of your ship or company, a set of traveler’s clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_GOS_BACKGROUND_FEATURE_MARINE_STEADY" />
+			<h5>HARDSHIP ENDURED</h5>			
+			<p>Hardship in your past has forged you into an unstoppable living weapon. This hardship is essential to you and is at the heart of a personal philosophy or ethos that often guides your actions. You can roll on the following table to determine this hardship or choose one that bests fits your character.</p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Hardship</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Nearly Drowned.</strong> You hid underwater to avoid detection by enemies and held your breath for an extremely long time. Just before you would have died, you had a revelation about your existence.</td></tr>
+				<tr><td>2</td><td><strong>Captured.</strong> You spent months enduring thirst, starvation, and torture at the hands of your enemy, but you never broke.</td></tr>
+				<tr><td>3</td><td><strong>Sacrifice.</strong> You enabled the escape of your fellow soldiers, but at great cost to yourself. Some of your past comrades may thing you’re dead.</td></tr>
+				<tr><td>4</td><td><strong>Juggernaut.</strong> No reasonable explanation can explain how you survived a particular battle. Every arrow and bolt missed you. You slew scores of enemies single-handedly and led your comrades to victory.</td></tr>
+				<tr><td>5</td><td><strong>Stowaway.</strong> For days, you hid in the bilge of an enemy ship, surviving on brackish water and foolhardy rats. At the right moment, you crept up to the deck and took over the ship on your own.</td></tr>
+				<tr><td>6</td><td><strong>Leave None Behind.</strong> You carried an injured marine for miles to avoid capture and death.</td></tr>
+			</table>
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Marines are looked up to by other soldiers and respected by their superiors. They are veteran warriors who rarely lose composure on the battlefield. Marines who leave the service tend to work as mercenaries, but their combat experience also makes them excellent adventurers. Though they are self-reliant, marines tend to operate best in groups, valuing camaraderie and the companionship of like-minded individuals.</p>
+		</description>
+		<setters>
+			<set name="short">Athletics, Survival, Vehicles (Water, Land)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Background Feature" id="ID_WOTC_GOS_BACKGROUND_FEATURE_MARINE_STEADY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I speak rarely but mean every word I say.</item>
+				<item id="2">I laugh loudly and see the humor in stressful situations.</item>
+				<item id="3">I prefer to solve problems without violence, but I finish fights decisively.</item>
+				<item id="4">I enjoy being out in nature; poor weather never sours my mood.</item>
+				<item id="5">I am dependable</item>
+				<item id="6">I am always working on some project or other.</item>
+				<item id="7">I become cantankerous and quiet in the rain.</item>
+				<item id="8">When the sea is within my sight, my mood is jovial and optimistic.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Teamwork. Success depends on cooperation and communication. (Good)</item>
+				<item id="2">Code. The marines’ code provides a solution for every problem, and following it is imperative. (Lawful)</item>
+				<item id="3">Embracing. Life is messy. Throwing yourself into the worst of it is necessary to get the job done. (Chaotic)</item>
+				<item id="4">Might. The strong train so that they might rule those who are weak. (Evil)</item>
+				<item id="5">Bravery. To act when others quake in fear—this is the essense of the warrior. (Any)</item>
+				<item id="6">Perseverance. No injury or obstacle can turn me from my goal. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I face danger and evil to offset and unredeemable act in my past.</item>
+				<item id="2">I. Will. Finish. The. Job.</item>
+				<item id="3">I must set an example of hope for those who have given up.</item>
+				<item id="4">I’m searching for a fellow marine captured by an elusive enemy.</item>
+				<item id="5">Fear leads to tyranny, and both must be eradicated.</item>
+				<item id="6">My commander betrayed my unit, and I will have revenge.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I grow combative and unpredictable when I drink.</item>
+				<item id="2">I find civilian life difficult and struggle to say the right thing in social situations.</item>
+				<item id="3">My intensity can drive others away.</item>
+				<item id="4">I hold grudges and have difficulty forgiving others.</item>
+				<item id="5">I become irrational when innocent people are hurt.</item>
+				<item id="6">I sometimes stay up all night listening to the ghosts of my fallen enemies.</item>
+			</select>
+		</rules>
+	</element>	
+	<element name="Feature: Steady" type="Background Feature" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_FEATURE_MARINE_STEADY">
+		<description>
+			<p>You can move twice the normal amount of time (up to 16 hours) each day before being subject to the effect of a forced march (see “Travel Pace” in chapter 8 of the Player’s Handbook). Additionally, you can automatically find a safe route to land a boat on shore, provided such a route exists.</p>
+		</description>
+		<sheet alt="Steady">
+			<description>You can move twice the normal amount of time (up to 16 hours) each day before being subject to the effect of a forced march. Additionally, you can automatically find a safe route to land a boat on shore, provided such a route exists.</description>
+		</sheet>
+	</element>
+</elements>

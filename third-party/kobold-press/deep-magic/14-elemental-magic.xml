@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Elemental Magic</name>
+		<update version="0.0.1">
+			<file name="14-elemental-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/14-elemental-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Elemental Magic" type="Source" source="Core" id="ID_KBP_DMEM_SOURCE_DEEP_MAGIC_ELEMENTAL_MAGIC">
+		<description>
+			<p><strong>Magic that Soars, Flows, Burns, and Crushes!</strong></p>
+			<p>Primal forces seethe beyond the boundaries of the world, in planes where the four elements clash and vie with each other for dominion. Air howls free and swift! Earth stands indomitable and unyielding! Fire rages unchecked! Water ebbs and flows!</p>
+			<p>Some mortals carry a spark of elemental magic in their very souls, while those who study arcane lore bend its secrets to their will. Others—out of desperation or arrogance—strike bargains with beings of unfathomable power from the Elemental Planes.</p>
+			<p>Deep Magic: Elemental Magic brings the secrets of elemental magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>An Elemental Essence sorcerous origin, the Genie Lord warlock patron, and an Elementalism arcane tradition for wizards</li>
+				<li>Two new elemental magic feats: Negotiator and Survivor</li>
+				<li>17 new spells, including rolling thunder, flame wave, caustic torrent, and spire of stone</li>
+			</ul>
+			<p>Channeling the primal forces of creation is a dangerous calling, but its power is like none other. Let your mortal form be the conduit for these planar energies, and unleash the fury of the elements on your foes!</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMEM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-elemental-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM14-Elemental-Magic-COVER.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20171121</set>
+		</setters>
+	</element>
+
+	<element name="Negotiator" type="Feat" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_FEAT_NEGOTIATOR">
+		<description>
+			<p>You have honed the knack of the deal and counter offer, perhaps by crossing words with creatures used to getting the upper hand in negotiations. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Charisma score by 1, to a maximum of 20.</li>
+				<li>When you attempt to convince a creature to engage in a course of action or to change its attitude with a Charisma (Persuasion) check and fail, you can retry the check on your next turn with disadvantage.</li>
+				<li>When you purchase a good or service, you can attempt an opposed Charisma (Persuasion) check versus the seller’s Wisdom (Insight). If you win the contest, you secure a 10 percent discount on the transaction. Once you use this feature on a given individual, you can’t use it on them again for one week.</li>
+				<li>When you pay for lifestyle expenses during downtime, they are halved.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you attempt to convince a creature to engage in a course of action or to change its attitude with a Persuasion check and fail, you can retry the check on your next turn with disadvantage.
+			When you purchase a good or service, you can attempt an opposed Persuasion check versus the seller’s Insight. If you win the contest, you secure a 10 percent discount on the transaction. Once you use this feature on a given individual, you can’t use it on them again for one week.
+			When you pay for lifestyle expenses during downtime, they are halved.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" />
+		</rules>
+	</element>
+	<element name="Survivor" type="Feat" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_FEAT_SURVIVOR">
+		<description>
+			<p>You are well-versed in surviving in hostile environments, even thriving where others are sure to perish. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Constitution or Wisdom score by 1, to a maximum of 20.</li>
+				<li>You require only half of the food and water normally required for a creature of your size.</li>
+				<li>You can withstand extreme temperatures indefinitely, and you automatically pass saving throws made against extreme heat and cold for a number of days equal to your Constitution or Wisdom modifier, whichever is lower. After this time, you must make saving throws as normal until you spend 24 hours in a comfortable temperature.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You require only half of the food and water normally required for a creature of your size.
+			You can withstand extreme temperatures indefinitely, and you automatically pass saving throws made against extreme heat and cold for a number of days equal to your Constitution or Wisdom modifier, whichever is lower. After this time, you must make saving throws as normal until you spend 24 hours in a comfortable temperature.</description>
+		</sheet>
+		<rules>
+			<stat name="constitution" value="1" />
+		</rules>
+	</element>
+
+	<element name="Elemental Essence" type="Archetype" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_ELEMENTAL_ESSENCE">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your innate magic arises from elemental power suffused into your being. You might have an elemental creature, such as genie, in your ancestry. Perhaps you lived most of your life near a portal to one of the Elemental Planes, and the ambient magic of the plane saturated everything you ate and drank. Perhaps a magical conjuring went awry, and the essence of an elemental merged with your own. Whatever the ultimate source, you are a walking conduit to an elemental plane.</p>
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_MANIFEST_AURA" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL" />
+		</description>
+		<sheet display="false">
+			<description>Your innate magic arises from elemental power suffused into your being.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_MANIFEST_AURA" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT" level="14" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL" level="18" />
+		</rules>
+	</element>
+
+	<element name="Elemental Heritage" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE">
+		<description>
+			<p>At 1st level, choose one element from the Elemental Heritage table. You can speak, read, and write the language associated with your heritage, and its damage type is used by features you gain later.</p>
+			<p><strong>ELEMENTAL HERITAGE</strong></p>
+			<table>
+				<thead>
+					<tr><td>Element</td><td>Language</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Air</td><td>Auran</td><td>Lightning or Thunder (choose one)</td></tr>
+				<tr><td>Earth</td><td>Terran</td><td>Bludgeoning</td></tr>
+				<tr><td>Fire</td><td>Ignan</td><td>Fire</td></tr>
+				<tr><td>Water</td><td>Aquan</td><td>Cold</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Elemental Heritage" supports="Elemental Heritage" />
+		</rules>
+	</element>	
+	<!-- Elemental Heritage -->
+	<element name="Elemental Heritage, Air" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR">
+		<compendium display="false" />
+		<supports>Elemental Heritage</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE</requirements>
+		<description>
+			<p>You can speak, read, and write Auran, and the lightning or thunder damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+			<select type="Archetype Feature" name="Air Damage Type" supports="Elemental Heritage Air Damage Type" />
+		</rules>
+	</element>
+	<element name="Lightning" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_LIGHTNING">
+		<compendium display="false" />
+		<supports>Elemental Heritage Air Damage Type</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR</requirements>
+		<description>
+			<p>The lightning damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Thunder" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_THUNDER">
+		<compendium display="false" />
+		<supports>Elemental Heritage Air Damage Type</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR</requirements>
+		<description>
+			<p>The thunder damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Elemental Heritage, Earth" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH">
+		<compendium display="false" />
+		<supports>Elemental Heritage</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE</requirements>
+		<description>
+			<p>You can speak, read, and write Terran, and the bludgeoning damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_TERRAN" />
+		</rules>
+	</element>
+	<element name="Elemental Heritage, Fire" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE">
+		<compendium display="false" />
+		<supports>Elemental Heritage</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE</requirements>
+		<description>
+			<p>You can speak, read, and write Ignan, and the fire damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_IGNAN" />
+		</rules>
+	</element>
+	<element name="Elemental Heritage, Water" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER">
+		<compendium display="false" />
+		<supports>Elemental Heritage</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_HERITAGE</requirements>
+		<description>
+			<p>You can speak, read, and write Aquan, and the cold damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+		</rules>
+	</element>
+	<!-- /Elemental Heritage -->
+	<element name="Manifest Aura" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_MANIFEST_AURA">
+		<description>
+			<p>Starting at 1st level, you gain the ability to channel your elemental power into a swirling aura. As a bonus action, you can surround yourself in a magical aura of elemental material or energy appropriate to your heritage for one minute. While the aura persists, you gain the following benefits:</p>
+			<ul>
+				<li>When you are attacked, you can use your reaction to impose disadvantage on the attack roll before the attack hits or misses.</li>
+				<li>When you cast a spell of 1st level or higher, the aura around you intensifies until the start of your next turn. During this time, any creature that ends its turn within 5 feet of you or that enters a space within 5 feet of you takes 1d6 damage of the type associated with your heritage element. This damage increases by 1d6 when you reach 7th level (2d6).</li>
+			</ul>
+			<p>You can use this ability twice. You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="2/Long Rest">
+			<description>You can surround yourself in a magical aura of elemental material or energy appropriate to your heritage for one minute. While the aura persists, you gain the following benefits:
+			When you are attacked, you can use your reaction to impose disadvantage on the attack roll before the attack hits or misses.
+			When you cast a spell of 1st level or higher, the aura around you intensifies until the start of your next turn. During this time, any creature that ends its turn within 5 feet of you or that enters a space within 5 feet of you takes 1d6 damage of the type associated with your heritage element.</description>
+			<description level="7">You can surround yourself in a magical aura of elemental material or energy appropriate to your heritage for one minute. While the aura persists, you gain the following benefits:
+			When you are attacked, you can use your reaction to impose disadvantage on the attack roll before the attack hits or misses.
+			When you cast a spell of 1st level or higher, the aura around you intensifies until the start of your next turn. During this time, any creature that ends its turn within 5 feet of you or that enters a space within 5 feet of you takes 2d6 damage of the type associated with your heritage element.</description>
+		</sheet>
+	</element>
+	<element name="Infuse Elements" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS">
+		<description>
+			<p>Starting at 6th level, you gain resistance to the damage type associated with your heritage.</p>
+			<p class="indent">Additionally, when you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion (fire and embers dance in the area, wind swirls around a bolt of energy, etc.) and inflicts the following additional effects depending on your heritage:</p>
+			<ul>
+				<li><strong>Air.</strong> The creature is buffeted by strong winds, arcs of lighting, and claps of thunder. It can’t take reactions until the start of its next turn.</li>
+				<li><strong>Earth.</strong> The creature is partially petrified and restrained until the start of your next turn.</li>
+				<li><strong>Fire.</strong> The creature is seared by your fiery magic. It is frightened until the end of its next turn. Creatures that are immune to fire are unaffected.</li>
+				<li><strong>Water.</strong> The creature is disoriented as the world seems to roll and pitch in waves. It is poisoned until the end of its next turn.</li>
+			</ul>
+		</description>
+		<sheet display="false">
+			<description>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion and inflicts the additional effects depending on your heritage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_LIGHTNING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_THUNDER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER" />
+			
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_AIR" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_EARTH" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_WATER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER" />
+		</rules>
+	</element>
+	<!-- Infuse Elements -->
+	<element name="Air" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_AIR">
+		<compendium display="false" />
+		<description>
+			<p>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion (fire and embers dance in the area, wind swirls around a bolt of energy, etc.) and inflicts the following additional effects depending on your heritage:</p>
+			<ul>
+				<li><strong>Air.</strong> The creature is buffeted by strong winds, arcs of lighting, and claps of thunder. It can’t take reactions until the start of its next turn.</li>
+			</ul>
+		</description>
+		<sheet alt="Infuse Elements (Air)">
+			<description>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion and inflicts the additional effects depending on your heritage.
+			The creature is buffeted by strong winds, arcs of lighting, and claps of thunder. It can’t take reactions until the start of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Earth" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_EARTH">
+		<compendium display="false" />
+		<description>
+			<p>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion (fire and embers dance in the area, wind swirls around a bolt of energy, etc.) and inflicts the following additional effects depending on your heritage:</p>
+			<ul>
+				<li><strong>Earth.</strong> The creature is partially petrified and restrained until the start of your next turn.</li>
+			</ul>
+		</description>
+		<sheet alt="Infuse Elements (Earth)">
+			<description>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion and inflicts the additional effects depending on your heritage.
+			The creature is partially petrified and restrained until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Fire" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion (fire and embers dance in the area, wind swirls around a bolt of energy, etc.) and inflicts the following additional effects depending on your heritage:</p>
+			<ul>
+				<li><strong>Fire.</strong> The creature is seared by your fiery magic. It is frightened until the end of its next turn. Creatures that are immune to fire are unaffected.</li>
+			</ul>
+		</description>
+		<sheet alt="Infuse Elements (Fire)">
+			<description>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion and inflicts the additional effects depending on your heritage.
+			The creature is seared by your fiery magic. It is frightened until the end of its next turn. Creatures that are immune to fire are unaffected.</description>
+		</sheet>
+	</element>
+	<element name="Water" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_INFUSE_ELEMENTS_WATER">
+		<compendium display="false" />
+		<description>
+			<p>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion (fire and embers dance in the area, wind swirls around a bolt of energy, etc.) and inflicts the following additional effects depending on your heritage:</p>
+			<ul>
+				<li><strong>Water.</strong> The creature is disoriented as the world seems to roll and pitch in waves. It is poisoned until the end of its next turn.</li>
+			</ul>
+		</description>
+		<sheet alt="Infuse Elements (Water)">
+			<description>When you damage a creature with a spell, you can spend 1 sorcery point to lace it with the power of your heritage element. The spell takes on a visual cast that reflects the elemental infusion and inflicts the additional effects depending on your heritage.
+			The creature is disoriented as the world seems to roll and pitch in waves. It is poisoned until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<!-- /Infuse Elements -->
+	<element name="Elemental Jaunt" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT">
+		<description>
+			<p>At 14th level, you can teleport by skimming the outer boundary of the Elemental Planes. As a bonus action, you can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:</p>
+			<ul>
+				<li><strong>Air.</strong> When you appear within 5 feet of an area of wind (whether natural or magical), you create a cyclonic burst of wind. All creatures within 10 feet of you must succeed on a Constitution saving throw or take 2d6 slashing damage and be blinded by dust and debris until the start of your next turn.</li>
+				<li><strong>Earth.</strong> When you appear within 5 feet of nonmagical, unworked stone filling at least one five-foot square, you create tremors in the earth that ripple outward from you. Each creature within 10 feet of you that is touching the ground must succeed on a Strength saving throw or take 4d6 bludgeoning damage and fall prone.</li>
+				<li><strong>Fire.</strong> When you appear within 5 feet of a fire at least the size of a campfire, you create a burst of flame around yourself. Each creature within 10 feet must succeed on a Dexterity saving throw or take 2d6 fire damage and ignite. Until a creature takes an action to douse the fire, the target takes 1d6 fire damage at the start of each of its turns.</li>
+				<li><strong>Water.</strong> When you appear within 5 feet of at least 50 gallons of water, you create a torrent of water that assails the creatures around you. Each creature within 10 feet of you must succeed on a Constitution saving throw or take 2d6 bludgeoning damage and choke on the water that forces its way into the creature’s throat. A choking creature can’t speak and has disadvantage on attack rolls and ability checks until the start of your next turn. Creatures that don’t have to breathe or that can breathe water don’t choke.</li>
+			</ul>
+			<p class="indent">Saving throws against these effects are made against your spell save DC. You can use this feature twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_AIR" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_EARTH" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_WATER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER" />
+		</rules>
+	</element>
+	<!-- Elemental Jaunt -->
+	<element name="Air" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_AIR">
+		<compendium display="false" />
+		<description>
+			<p>You can teleport by skimming the outer boundary of the Elemental Planes. As a bonus action, you can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:</p>
+			<ul>
+				<li><strong>Air.</strong> When you appear within 5 feet of an area of wind (whether natural or magical), you create a cyclonic burst of wind. All creatures within 10 feet of you must succeed on a Constitution saving throw or take 2d6 slashing damage and be blinded by dust and debris until the start of your next turn.</li>
+			</ul>
+			<p class="indent">Saving throws against these effects are made against your spell save DC. You can use this feature twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet alt="Elemental Jaunt (Air)" action="Bonus Action" usage="2/Short Rest">
+			<description>You can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:
+			When you appear within 5 feet of an area of wind, you create a cyclonic burst of wind. All creatures within 10 feet of you must succeed on a Constitution saving throw or take 2d6 slashing damage and be blinded by dust and debris until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Earth" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_EARTH">
+		<compendium display="false" />
+		<description>
+			<p>You can teleport by skimming the outer boundary of the Elemental Planes. As a bonus action, you can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:</p>
+			<ul>
+				<li><strong>Earth.</strong> When you appear within 5 feet of nonmagical, unworked stone filling at least one five-foot square, you create tremors in the earth that ripple outward from you. Each creature within 10 feet of you that is touching the ground must succeed on a Strength saving throw or take 4d6 bludgeoning damage and fall prone.</li>
+			</ul>
+			<p class="indent">Saving throws against these effects are made against your spell save DC. You can use this feature twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet alt="Elemental Jaunt (Earth)" action="Bonus Action" usage="2/Short Rest">
+			<description>You can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:
+			When you appear within 5 feet of nonmagical, unworked stone filling at least one five-foot square, you create tremors in the earth that ripple outward from you. Each creature within 10 feet of you that is touching the ground must succeed on a Strength saving throw or take 4d6 bludgeoning damage and fall prone.</description>
+		</sheet>
+	</element>
+	<element name="Fire" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>You can teleport by skimming the outer boundary of the Elemental Planes. As a bonus action, you can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:</p>
+			<ul>
+				<li><strong>Fire.</strong> When you appear within 5 feet of a fire at least the size of a campfire, you create a burst of flame around yourself. Each creature within 10 feet must succeed on a Dexterity saving throw or take 2d6 fire damage and ignite. Until a creature takes an action to douse the fire, the target takes 1d6 fire damage at the start of each of its turns.</li>
+			</ul>
+			<p class="indent">Saving throws against these effects are made against your spell save DC. You can use this feature twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet alt="Elemental Jaunt (Fire)" action="Bonus Action" usage="2/Short Rest">
+			<description>You can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:
+			When you appear within 5 feet of a fire at least the size of a campfire, you create a burst of flame around yourself. Each creature within 10 feet must succeed on a Dexterity saving throw or take 2d6 fire damage and ignite. Until a creature takes an action to douse the fire, the target takes 1d6 fire damage at the start of each of its turns.</description>
+		</sheet>
+	</element>
+	<element name="Water" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_JAUNT_WATER">
+		<compendium display="false" />
+		<description>
+			<p>You can teleport by skimming the outer boundary of the Elemental Planes. As a bonus action, you can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:</p>
+			<ul>
+				<li><strong>Water.</strong> When you appear within 5 feet of at least 50 gallons of water, you create a torrent of water that assails the creatures around you. Each creature within 10 feet of you must succeed on a Constitution saving throw or take 2d6 bludgeoning damage and choke on the water that forces its way into the creature’s throat. A choking creature can’t speak and has disadvantage on attack rolls and ability checks until the start of your next turn. Creatures that don’t have to breathe or that can breathe water don’t choke.</li>
+			</ul>
+			<p class="indent">Saving throws against these effects are made against your spell save DC. You can use this feature twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet alt="Elemental Jaunt (Water)" action="Bonus Action" usage="2/Short Rest">
+			<description>You can magically teleport up to 60 feet to an unoccupied space you can see. When you appear, you can, depending on your heritage element, create the following effects:
+			When you appear within 5 feet of at least 50 gallons of water, you create a torrent of water that assails the creatures around you. Each creature within 10 feet of you must succeed on a Constitution saving throw or take 2d6 bludgeoning damage and choke on the water that forces its way into the creature’s throat. A choking creature can’t speak and has disadvantage on attack rolls and ability checks until the start of your next turn. Creatures that don’t have to breathe or that can breathe water don’t choke.</description>
+		</sheet>
+	</element>
+	<!-- /Elemental Jaunt -->
+	<element name="Elemental Soul" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL">
+		<description>
+			<p>At 18th level, you gain immunity to the damage type associated with your heritage.</p>
+			<p class="indent">Depending on your elemental heritage, you also gain one of the following benefits:</p>
+			<ul>
+				<li><strong>Air.</strong> You gain a magical flying speed equal to your current walking speed. Additionally, during your turn you can spend 1 sorcery point to become insubstantial wind and mist. Until the start of your next turn, you gain a number of benefits: You can enter a hostile creature’s space, you can move through a space as narrow as 1 inch without squeezing, you are immune to the effects of strong wind, and you are resistant to bludgeoning, piercing, and slashing damage from nonmagical attacks.</li>
+				<li><strong>Earth.</strong> You gain a burrow speed equal to your current walking speed, and you can burrow through nonmagical, unworked earth and stone. While doing so, you don’t disturb the material you move through. Additionally, you can spend 1 sorcery point to become stony and unyielding until the start of your next turn. During this time, you are resistant to piercing and slashing damage, immune to poison damage, and you can’t be petrified or poisoned.</li>
+				<li><strong>Fire.</strong> Your speed increases by 10 feet. Additionally, during your turn you can spend 1 sorcery point to become fiery and insubstantial. Until the start of your next turn, you can move through a hostile creature’s space. The first time you enter a creature’s space on a turn, that creature takes 1d10 fire damage and ignites. Until it takes an action to douse the fire, an ignited creature takes 1d10 fire damage at the start of its turn.</li>
+				<li><strong>Water.</strong> You gain a swimming speed equal to your current walking speed, and you can breathe both water and air. Additionally, during your turn you can spend 1 sorcery point to take on a watery form. Until the start of your next turn, you can enter a hostile creature’s space and move through a space as narrow as 1 inch wide without squeezing. When you enter a hostile creature’s space, the creature must succeed on a Strength saving throw against your spell save DC or fall prone.</li>
+			</ul>
+		</description>
+		<sheet display="false">
+			<description>You gain immunity to the damage type associated with your heritage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_LIGHTNING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_LIGHTNING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_THUNDER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR_THUNDER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_BLUDGEONING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER" />
+			
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_AIR" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_AIR" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_EARTH" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_EARTH" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_FIRE" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_WATER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_HERITAGE_WATER" />
+		</rules>
+	</element>
+	<!-- Elemental Soul -->
+	<element name="Air" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_AIR">
+		<compendium display="false" />
+		<description>
+			<p>At 18th level, you gain immunity to the damage type associated with your heritage.</p>
+			<p class="indent">Depending on your elemental heritage, you also gain one of the following benefits:</p>
+			<ul>
+				<li><strong>Air.</strong> You gain a magical flying speed equal to your current walking speed. Additionally, during your turn you can spend 1 sorcery point to become insubstantial wind and mist. Until the start of your next turn, you gain a number of benefits: You can enter a hostile creature’s space, you can move through a space as narrow as 1 inch without squeezing, you are immune to the effects of strong wind, and you are resistant to bludgeoning, piercing, and slashing damage from nonmagical attacks.</li>
+			</ul>
+		</description>
+		<sheet alt="Elemental Soul (Air)">
+			<description>During your turn you can spend 1 sorcery point to become insubstantial wind and mist. Until the start of your next turn, you gain a number of benefits: You can enter a hostile creature’s space, you can move through a space as narrow as 1 inch without squeezing, you are immune to the effects of strong wind, and you are resistant to bludgeoning, piercing, and slashing damage from nonmagical attacks.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:fly" value="speed30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Earth" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_EARTH">
+		<compendium display="false" />
+		<description>
+			<p>At 18th level, you gain immunity to the damage type associated with your heritage.</p>
+			<p class="indent">Depending on your elemental heritage, you also gain one of the following benefits:</p>
+			<ul>
+				<li><strong>Earth.</strong> You gain a burrow speed equal to your current walking speed, and you can burrow through nonmagical, unworked earth and stone. While doing so, you don’t disturb the material you move through. Additionally, you can spend 1 sorcery point to become stony and unyielding until the start of your next turn. During this time, you are resistant to piercing and slashing damage, immune to poison damage, and you can’t be petrified or poisoned.</li>
+			</ul>
+		</description>
+		<sheet alt="Elemental Soul (Earth)">
+			<description>You can burrow through nonmagical, unworked earth and stone. While doing so, you don’t disturb the material you move through. Additionally, you can spend 1 sorcery point to become stony and unyielding until the start of your next turn. During this time, you are resistant to piercing and slashing damage, immune to poison damage, and you can’t be petrified or poisoned.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:burrow" value="speed" bonus="base" />
+		</rules>
+	</element>
+	<element name="Fire" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>At 18th level, you gain immunity to the damage type associated with your heritage.</p>
+			<p class="indent">Depending on your elemental heritage, you also gain one of the following benefits:</p>
+			<ul>
+				<li><strong>Fire.</strong> Your speed increases by 10 feet. Additionally, during your turn you can spend 1 sorcery point to become fiery and insubstantial. Until the start of your next turn, you can move through a hostile creature’s space. The first time you enter a creature’s space on a turn, that creature takes 1d10 fire damage and ignites. Until it takes an action to douse the fire, an ignited creature takes 1d10 fire damage at the start of its turn.</li>
+			</ul>
+		</description>
+		<sheet alt="Elemental Soul (Fire)">
+			<description>During your turn you can spend 1 sorcery point to become fiery and insubstantial. Until the start of your next turn, you can move through a hostile creature’s space. The first time you enter a creature’s space on a turn, that creature takes 1d10 fire damage and ignites. Until it takes an action to douse the fire, an ignited creature takes 1d10 fire damage at the start of its turn.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:misc" value="10" requirements="[innate speed:1]" />
+			<stat name="innate speed:climb:misc" value="10" requirements="[innate speed:climb:1]" />
+			<stat name="innate speed:fly:misc" value="10" requirements="[innate speed:fly:1]" />
+			<stat name="innate speed:swim:misc" value="10" requirements="[innate speed:swim:1]" />
+			<stat name="innate speed:burrow:misc" value="10" requirements="[innate speed:burrow:1]" />
+		</rules>
+	</element>
+	<element name="Water" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ESSENCE_ELEMENTAL_SOUL_WATER">
+		<compendium display="false" />
+		<description>
+			<p>At 18th level, you gain immunity to the damage type associated with your heritage.</p>
+			<p class="indent">Depending on your elemental heritage, you also gain one of the following benefits:</p>
+			<ul>
+				<li><strong>Water.</strong> You gain a swimming speed equal to your current walking speed, and you can breathe both water and air. Additionally, during your turn you can spend 1 sorcery point to take on a watery form. Until the start of your next turn, you can enter a hostile creature’s space and move through a space as narrow as 1 inch wide without squeezing. When you enter a hostile creature’s space, the creature must succeed on a Strength saving throw against your spell save DC or fall prone.</li>
+			</ul>
+		</description>
+		<sheet alt="Elemental Soul (Water)">
+			<description>You can breathe both water and air. Additionally, during your turn you can spend 1 sorcery point to take on a watery form. Until the start of your next turn, you can enter a hostile creature’s space and move through a space as narrow as 1 inch wide without squeezing. When you enter a hostile creature’s space, the creature must succeed on a Strength saving throw or fall prone.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:swim" value="speed" bonus="base" />
+		</rules>
+	</element>
+	<!-- /Elemental Soul -->
+
+	<element name="The Genie Lord" type="Archetype" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_THE_GENIE_LORD">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have made a pact with a powerful ruler of genie kind on one of the Elemental Planes. The genie lords’ aims swing wildly from inscrutable by mortal minds to startlingly simple and innocuous. Genie lords struggle endlessly to one-up each other, and rivalries between these elemental rulers can engulf entire nations. If they think it will gain them an advantage, genie lords aren’t above bribing a rival’s mortal agents to switch sides.</p>
+			<p class="indent">Genie Lords include: Astallah, djinni Calipha of the Bright Wind from the Plane of Air; Ghorek, dao Khan of the Onyx Depths on the Plane of Earth; Ixingaltrix, efreeti Emir and Keeper of the Molten Tower on the Plane of Fire; and Saliandla, marid Pasha of the Pearl Fane from the Plane of Water.</p>
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_GENIE_LORDS_FAVOR" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_TRANSFER_ELEMENTS" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_MINOR_WISH" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_HERALDS_ASPECT" />
+			<div class="reference">
+				<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_PACT_BOONS" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>You have made a pact with a powerful ruler of genie kind on one of the Elemental Planes.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_GENIE_LORDS_FAVOR" level="1" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_TRANSFER_ELEMENTS" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_MINOR_WISH" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_HERALDS_ASPECT" level="14" />
+
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_PACT_BOONS" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Genie Lord lets you choose from an expanded list of spells when you learn a warlock spell. You can choose an elemental magic spell when you learn a new spell. For you, the following spells are added to the warlock spell list.</p>
+			<h5 class="caption">GENIE LORD EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>chromatic orb, thunderwave</em></td></tr>
+				<tr><td>2nd</td><td><em>gust of wind, sleet storm</em></td></tr>
+				<tr><td>3rd</td><td><em>protection from energy, water breathing</em></td></tr>
+				<tr><td>4th</td><td><em>conjure minor elementals, fire shield</em></td></tr>
+				<tr><td>5th</td><td><em>creation, wall of stone</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Genie Lord lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_CHROMATIC_ORB</extend>
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_GUST_OF_WIND</extend>
+			<extend>ID_PHB_SPELL_SLEET_STORM</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_ENERGY</extend>
+			<extend>ID_PHB_SPELL_WATER_BREATHING</extend>
+			<extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTALS</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_PHB_SPELL_CREATION</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_STONE</extend>
+		</spellcasting>
+	</element>
+	<element name="Genie Lord’s Favor" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_GENIE_LORDS_FAVOR">
+		<description>
+			<p>At 1st level you can speak, read, and write Primordial. You understand and can be understood by any creature that speaks Auran, Ignan, Terran, or Aquan.</p>
+			<p class="indent">Additionally, your patron grants you a token that can absorb elemental power. You gain a magical gemstone with the following properties:</p>
+			<ul>
+				<li>You can use the gem as an arcane focus.</li>
+				<li>The gem can store elemental power in the form of damage. When an enemy causes you to take acid, cold, fire, lighting, or thunder damage, you can choose to transfer some of the damage into the gem instead of suffering it yourself, up to the capacity currently remaining in the gem. It has a maximum capacity for damage equal to twice your warlock level plus your charisma modifier.</li>
+				<li>While the gem stores any amount of elemental power, you can use your action to cause it to shed bright light in a 20-foot radius and dim light for an additional 20 feet, to shed dim light in a 5-foot radius, or to douse the light.</li>
+			</ul>
+			<p class="indent">If you lose your token, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous token. When you die, the token splinters to slivers.</p>
+		</description>
+		<sheet>
+			<description>Your patron grants you a token that can absorb elemental power. You gain a magical gemstone with the following properties:
+			You can use the gem as an arcane focus.
+			The gem can store elemental power in the form of damage. When an enemy causes you to take acid, cold, fire, lighting, or thunder damage, you can choose to transfer some of the damage into the gem instead of suffering it yourself, up to the capacity currently remaining in the gem. It has a maximum capacity for {{magical gemtone:capacity}} damage.
+			While the gem stores any amount of elemental power, you can use your action to cause it to shed bright light in a 20-foot radius and dim light for an additional 20 feet, to shed dim light in a 5-foot radius, or to douse the light.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+			<stat name="magical gemtone:capacity" value="level:warlock" />
+			<stat name="magical gemtone:capacity" value="level:warlock" />
+			<stat name="magical gemtone:capacity" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Transfer Elements" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_TRANSFER_ELEMENTS">
+		<description>
+			<p>Starting at 6th level, you can use the elemental energy stored in your gem token against your foes. When you damage a target with a spell or attack, you can spend stored points to deal additional damage up to your Charisma bonus (minimum of 1). You select the damage type: acid, cold, fire, lightning, or thunder. If you deal damage to multiple targets with a single source, the extra damage applies to a single target. However, you can spend additional stored points to damage targets beyond the first.</p>
+			<p class="indent">Additionally, you can now extend the protection of your gem to other creatures. When an ally within 30 feet that you can see takes damage as described in the “Genie Lord’s Favor” section, you can use your reaction to transfer some of the damage into your gem.</p>
+		</description>
+		<sheet>
+			<description>When you damage a target with a spell or attack, you can spend stored points to deal up to {{transfer elements:damage}} additional damage. You select the damage type: acid, cold, fire, lightning, or thunder. If you deal damage to multiple targets with a single source, the extra damage applies to a single target. However, you can spend additional stored points to damage targets beyond the first.</description>
+		</sheet>
+		<rules>
+			<stat name="transfer elements:damage" value="1" bonus="base" />
+			<stat name="transfer elements:damage" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Minor Wish" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_MINOR_WISH">
+		<description>
+			<p>Starting at 10th level, you can call upon your genie lord to twist fate in your favor. Immediately after you make an attack roll, saving throw, ability check, or damage roll, you can choose to reroll and take the better result. You can use this feature after learning the result of the first roll.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>Immediately after you make an attack roll, saving throw, ability check, or damage roll, you can choose to reroll and take the better result. You can use this feature after learning the result of the first roll.</description>
+		</sheet>
+	</element>
+	<element name="Herald’s Aspect" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_HERALDS_ASPECT">
+		<description>
+			<p>Starting at 14th level, you can channel the power of your patron into your flesh to magically transform into a herald of the genie lord. Your legs fade away into a twister of elemental energy, and your skin and features take on an appearance that resembles that of your patron. You can transform as a bonus action, and for 1 minute you gain the following benefits:</p>
+			<ul>
+				<li>You gain a flying speed of 60 feet.</li>
+				<li>You have advantage on saving throws against spells and other magical effects.</li>
+				<li>Choose one of the following damage types: acid, cold, fire, lighting, or thunder. You gain immunity to that damage type.</li>
+				<li>Once on your turn when you hit with an attack or spell, you can deal an extra 3d6 damage of one of the following types: acid, cold, fire, lightning, or thunder.</li>
+			</ul>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can transform and for 1 minute you gain the following benefits:
+			You gain a flying speed of 60 feet.
+			You have advantage on saving throws against spells and other magical effects.
+			You gain immunity to acid, cold, fire, lighting, or thunder damage type.
+			Once on your turn when you hit with an attack or spell, you can deal an extra 3d6 acid, cold, fire, lightning, or thunder damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Expanded Pact Boons" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_EXPANDED_PACT_BOONS">
+		<requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON</requirements>
+		<description>
+			<p>Warlocks of the Genie Lord gain access to the following expanded pact boons. At the GM’s discretion, warlocks of other patrons can discover the means to access these modified pact boons, perhaps by gaining an elemental feat or by performing a quest for a noble genie or another powerful elemental.</p>
+			<p class="indent"><strong><em>Pact of the Chain.</em></strong> When you conjure your familiar or change its form, you can choose the form of a mephit in addition to the usual form choices granted by the pact boon. When you use your action to command your mephit familiar to attack, it can use its breath or cast an innate spell instead.</p>
+			<p class="indent"><strong><em>Pact of the Blade.</em></strong> Your pact weapon takes on a sheen of elemental power. When you create or summon your pact weapon, you can decide to change its damage type to one of the following: acid, cold, fire, or lightning. You can change the damage type by repeating the ceremony.</p>
+			<p class="indent"><strong><em>Pact of the Tome.</em></strong> Your Book of Shadows is immune to damage or wear caused by the elements. This immunity includes something as simple as being immersed in water, as well as acid, fire, cold, lighting, or thunder damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Expanded Pact Boon, The Genie Lord" supports="Expanded Pact Boons" optional="true" />
+		</rules>
+	</element>	
+	<element name="Expanded Pact Boon (Pact of the Chain)" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_PACT_OF_THE_CHAIN">
+		<supports>Expanded Pact Boons</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_THE_GENIE_LORD,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+		<description>
+			<p>When you conjure your familiar or change its form, you can choose the form of a mephit in addition to the usual form choices granted by the pact boon. When you use your action to command your mephit familiar to attack, it can use its breath or cast an innate spell instead.</p>
+		</description>
+		<sheet>
+			<description>When you conjure your familiar or change its form, you can choose the form of a mephit in addition to the usual form choices granted by the pact boon. When you use your action to command your mephit familiar to attack, it can use its breath or cast an innate spell instead.</description>
+		</sheet>
+	</element>
+	<element name="Expanded Pact Boon (Pact of the Blade)" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_PACT_OF_THE_BLADE">
+		<supports>Expanded Pact Boons</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_THE_GENIE_LORD,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<description>
+			<p>Your pact weapon takes on a sheen of elemental power. When you create or summon your pact weapon, you can decide to change its damage type to one of the following: acid, cold, fire, or lightning. You can change the damage type by repeating the ceremony.</p>
+		</description>
+		<sheet>
+			<description>Your pact weapon takes on a sheen of elemental power. When you create or summon your pact weapon, you can decide to change its damage type to one of the following: acid, cold, fire, or lightning. You can change the damage type by repeating the ceremony.</description>
+		</sheet>
+	</element>
+	<element name="Expanded Pact Boon (Pact of the Tome)" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_GENIE_PACT_OF_THE_TOME">
+		<supports>Expanded Pact Boons</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_THE_GENIE_LORD,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<description>
+			<p>Your Book of Shadows is immune to damage or wear caused by the elements. This immunity includes something as simple as being immersed in water, as well as acid, fire, cold, lighting, or thunder damage.</p>
+		</description>
+		<sheet>
+			<description>Your Book of Shadows is immune to damage or wear caused by the elements. This immunity includes something as simple as being immersed in water, as well as acid, fire, cold, lighting, or thunder damage.</description>
+		</sheet>
+	</element>
+
+	<!-- todo: gen familiars -->
+
+	<element name="Will of the Master" type="Class Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_CLASS_FEATURE_GENIE_LORD_WILL_OF_THE_MASTER">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level</prerequisite>
+		<requirements>[level:9]</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level</em></p>
+			<p>You can cast <em>planar binding</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_PLANAR_BINDING" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast planar binding once using a warlock spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Elementalism" type="Archetype" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_ELEMENTALISM">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>You focus your arcane studies on the power inherent to one of the Elemental Planes. Sometimes mistaken for evokers, Elementalists believe in the superiority of their chosen element above all others, and they aren’t shy about making that fact known. Elementalists are often secluded researchers, or they sign on with groups who appreciate their singular talents.</p>
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_MASTERY" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_SUBSTITUTE_ELEMENTS" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ABSORB_ELEMENTS" />
+			<div element="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_IRRESISTIBLE_STRIKE" />
+		</description>
+		<sheet display="false">
+			<description>You focus your arcane studies on the power inherent to one of the Elemental Planes.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_MASTERY" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_SUBSTITUTE_ELEMENTS" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ABSORB_ELEMENTS" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_IRRESISTIBLE_STRIKE" level="14" />
+		</rules>
+	</element>
+	<element name="Elemental Savant" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT">
+		<description>
+			<p>Beginning when you select this tradition at 2nd level, choose one element from the Elemental Focus table. That element becomes the focus of your study. You can speak, read, and write the language associated with your focus, and the associated damage type is used by features you gain later.</p>
+			<p><strong>ELEMENTAL FOCUS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Element</td><td>Language</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Air</td><td>Auran</td><td>Lightning or Thunder (choose one)</td></tr>
+				<tr><td>Earth</td><td>Terran</td><td>Bludgeoning</td></tr>
+				<tr><td>Fire</td><td>Ignan</td><td>Fire</td></tr>
+				<tr><td>Water</td><td>Aquan</td><td>Cold</td></tr>
+			</table>
+			<p>Some spells resonate with your focus element. They might deal the associated damage type, manipulate the element in question, or otherwise embody an elemental theme. Work with your GM to determine whether a given spell resonates with your focus. The gold and time you must spend to copy a spell resonant with your chosen element into your spellbook is halved. When you gain a level, one of the two spells you learn for gaining a level can be an elemental magic spell even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be an elemental magic cantrip even if you’ve never encountered it.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a spell resonant with your chosen element into your spellbook is halved. When you gain a level, one of the two spells you learn for gaining a level can be an elemental magic spell even if you’ve never encountered the spell before. Similarly, when you learn a new cantrip, it can be an elemental magic cantrip even if you’ve never encountered it.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Elemental Focus" supports="Elemental Savant" />
+		</rules>
+	</element>
+	<element name="Elemental Mastery" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_MASTERY">
+		<description>
+			<p>Starting at 2nd level, you learn magical techniques, called masteries, to channel elemental magic into your being and spells.</p>
+			<p class="indent"><strong><em>Masteries.</em></strong> You learn two masteries of your choice, which are detailed in the “Masteries” section.</p>
+			<p class="indent">You learn one additional mastery of your choice at 6th, 10th, and 14th levels. Each time you learn a new mastery, you can also replace one mastery you know with a different one.</p>
+			<p class="indent"><strong><em>Saving Throws.</em></strong> Some of your masteries require your target to make saving throws to resist the mastery’s effects. When you use such an effect from this class, the DC equals your wizard spell save DC.</p>
+		</description>
+		<sheet>
+			<description>You learn magical techniques, called masteries, to channel elemental magic into your being and spells.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Elemental Mastery" supports="Elementalism Elemental Mastery" level="2" number="2" />
+			<select type="Archetype Feature" name="Elemental Mastery" supports="Elementalism Elemental Mastery" level="6" />
+			<select type="Archetype Feature" name="Elemental Mastery" supports="Elementalism Elemental Mastery" level="10" />
+			<select type="Archetype Feature" name="Elemental Mastery" supports="Elementalism Elemental Mastery" level="14" />
+		</rules>
+	</element>
+	<element name="Substitute Elements" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_SUBSTITUTE_ELEMENTS">
+		<description>
+			<p>Beginning at 6th level, you can draw elemental magic through your damage dealing spells and change the damage type to the one associated with your elemental focus.</p>
+		</description>
+		<sheet>
+			<description>You can draw elemental magic through your damage dealing spells and change the damage type to the one associated with your elemental focus.</description>
+		</sheet>
+	</element>
+	<element name="Absorb Elements" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ABSORB_ELEMENTS">
+		<description>
+			<p>Starting at 10th level, when you would take damage of the type associated with your elemental focus, you can use your reaction to take no damage, and you regain a number of hit points equal to half the damage that you would have taken.</p>
+			<p class="indent">You can use this ability before any resistance or immunity you have applies. You can use this ability a number of times equal to your Intelligence modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{absorb elements:usage}}/Long Rest">
+			<description>When you would take damage of the type associated with your elemental focus, you can use your reaction to take no damage, and you regain a number of hit points equal to half the damage that you would have taken.
+			You can use this ability before any resistance or immunity you have applies.</description>
+		</sheet>
+		<rules>
+			<stat name="absorb elements:usage" value="1" bonus="base" />
+			<stat name="absorb elements:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Irresistible Strike" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_IRRESISTIBLE_STRIKE">
+		<description>
+			<p>At 14th level, your elemental damage spells are unstoppable. When you cast a spell that deals damage of the type associated with your elemental focus, you can ignore immunity to that damage type.</p>
+			<p class="indent">You can use this ability a number of times equal to your Intelligence modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{irrestistable strike:usage}}/Long Rest">
+			<description>When you cast a spell that deals damage of the type associated with your elemental focus, you can ignore immunity to that damage type.</description>
+		</sheet>
+		<rules>
+			<stat name="irrestistable strike:usage" value="1" bonus="base" />
+			<stat name="irrestistable strike:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<!-- Elemental Savant -->
+	<element name="Elemental Focus, Air" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR">
+		<compendium display="false" />
+		<supports>Elemental Savant</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT</requirements>
+		<description>
+			<p>You can speak, read, and write Auran, and the lightning or thunder damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+			<select type="Archetype Feature" name="Air Damage Type" supports="Elemental Focus Air Damage Type" />
+		</rules>
+	</element>
+	<element name="Lightning" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR_LIGHTNING">
+		<compendium display="false" />
+		<supports>Elemental Focus Air Damage Type</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR</requirements>
+		<description>
+			<p>The lightning damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Thunder" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR_THUNDER">
+		<compendium display="false" />
+		<supports>Elemental Focus Air Damage Type</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR</requirements>
+		<description>
+			<p>The thunder damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Elemental Focus, Earth" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_EARTH">
+		<compendium display="false" />
+		<supports>Elemental Savant</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT</requirements>
+		<description>
+			<p>You can speak, read, and write Terran, and the bludgeoning damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_TERRAN" />
+		</rules>
+	</element>
+	<element name="Elemental Focus, Fire" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_FIRE">
+		<compendium display="false" />
+		<supports>Elemental Savant</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT</requirements>
+		<description>
+			<p>You can speak, read, and write Ignan, and the fire damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_IGNAN" />
+		</rules>
+	</element>
+	<element name="Elemental Focus, Water" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_WATER">
+		<compendium display="false" />
+		<supports>Elemental Savant</supports>
+		<requirements>ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_ELEMENTAL_SAVANT</requirements>
+		<description>
+			<p>You can speak, read, and write Aquan, and the cold damage type is used by features you gain later.</p>
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+		</rules>
+	</element>
+	<!-- /Elemental Savant -->
+
+	<element name="Elemental Adaptation" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_ELEMENTAL_ADAPTATION">
+		<supports>Elementalism Elemental Mastery</supports>
+		<prerequisite>14th level</prerequisite>
+		<requirements>[level:14]</requirements>
+		<description>
+			<p><em>Prerequisite: 14th level</em></p>
+			<p>You add plane shift to your spellbook if you don’t already have it, and you can cast it once with this mastery without expending a spell slot.</p>
+			<p class="indent">When you cast plane shift using this mastery, you can only travel to the elemental plane associated with your elemental focus or to the Material Plane. While on that elemental plane, you can survive there with no fear of the hostile natural environment. You don’t take damage from the normal conditions of the plane, you can breathe normally, and you can use your speed to move in a manner appropriate to the plane (flying for air, burrowing for earth, or swimming for water). You regain the ability to cast plane shift with this mastery when you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast plane shift once with without expending a spell slot. When you cast plane shift using this mastery, you can only travel to the elemental plane associated with your elemental focus or to the Material Plane. While on that elemental plane, you can survive there with no fear of the hostile natural environment. You don’t take damage from the normal conditions of the plane, you can breathe normally, and you can use your speed to move in a manner appropriate to the plane.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PLANE_SHIFT" spellcasting="Wizard" />
+		</rules>
+	</element>
+	<element name="Elemental Binding" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_ELEMENTAL_BINDING">
+		<supports>Elementalism Elemental Mastery</supports>
+		<prerequisite>10th level</prerequisite>
+		<requirements>[level:10]</requirements>
+		<description>
+			<p><em>Prerequisite: 10th level</em></p>
+			<p>You add planar binding to your spellbook if you don’t already have it, and you can cast it once with this mastery without expending a spell slot. When you cast the spell in this way, you must target an elemental creature associated with your elemental focus. If the elemental fails its saving throw, it gains temporary hit points equal to your wizard level. You regain the ability to cast planar binding with this mastery when you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast planar binding once with this mastery without expending a spell slot. When you cast the spell in this way, you must target an elemental creature associated with your elemental focus. If the elemental fails its saving throw, it gains {{level:wizard}} temporary hp.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PLANAR_BINDING" spellcasting="Wizard" />
+		</rules>
+	</element>
+	<element name="Elemental Bulwark" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_ELEMENTAL_BULWARK">
+		<supports>Elementalism Elemental Mastery</supports>
+		<prerequisite>6th level</prerequisite>
+		<requirements>[level:6]</requirements>
+		<description>
+			<p><em>Prerequisite: 6th level</em></p>
+			<p>You gain resistance to the damage type associated with your elemental focus, and you have advantage on Constitution saving throws made to maintain concentration on spells that resonate with your elemental focus.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Constitution saving throws made to maintain concentration on spells that resonate with your elemental focus.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR_LIGHTNING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_AIR_THUNDER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_EARTH" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTAL_SAVANT_WATER" />
+		</rules>
+	</element>
+	<element name="Elemental Command" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_ELEMENTAL_COMMAND">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>As an action, you can target an elemental creature that you can see within 30 feet. The elemental must succeed on a Wisdom saving throw or be charmed for up to one hour as long as you maintain concentration as if concentrating on a spell. If you or your companions damage the charmed elemental or take harmful actions against it, the charmed condition ends immediately. A creature that succeeds on its saving throw, or if this ability ends for it, is immune to being charmed by you for 24 hours.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can target an elemental creature that you can see within 30 feet. The elemental must succeed on a Wisdom saving throw or be charmed for up to one hour as long as you maintain concentration as if concentrating on a spell. If you or your companions damage the charmed elemental or take harmful actions against it, the charmed condition ends immediately. A creature that succeeds on its saving throw, or if this ability ends for it, is immune to being charmed by you for 24 hours.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Erosion" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_ELEMENTAL_EROSION">
+		<supports>Elementalism Elemental Mastery</supports>
+		<prerequisite>10th level</prerequisite>
+		<requirements>[level:10]</requirements>
+		<description>
+			<p><em>Prerequisite: 10th level</em></p>
+			<p>After you damage a target with a spell of 1st level or higher that deals the damage type associated with your elemental focus, the target becomes vulnerable to that damage type until the end of your next turn. You can use this ability twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet usage="2/Short Rest">
+			<description>After you damage a target with a spell of 1st level or higher that deals the damage type associated with your elemental focus, the target becomes vulnerable to that damage type until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Ignite" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_IGNITE">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>When you deal fire damage to a target with a spell of 1st level or higher, you can use a bonus action to cause the target to catch fire. Unless a creature takes an action to douse the flames, at the start of its next turn, the target takes half the damage it originally took from the spell and the flames go out. If you damage more than one target with the spell, choose a target to catch fire.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you deal fire damage to a target with a spell of 1st level or higher, you can use a bonus action to cause the target to catch fire. Unless a creature takes an action to douse the flames, at the start of its next turn, the target takes half the damage it originally took from the spell and the flames go out. If you damage more than one target with the spell, choose a target to catch fire.</description>
+		</sheet>
+	</element>
+	<element name="Intensified Element" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_INTENSIFIED_ELEMENT">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>When you damage a target with a spell that deals the damage type associated with your elemental focus, you ignore any resistance the target has to that damage type.</p>
+		</description>
+		<sheet>
+			<description>When you damage a target with a spell that deals the damage type associated with your elemental focus, you ignore any resistance the target has to that damage type.</description>
+		</sheet>
+	</element>
+	<element name="Overwhelming Onslaught" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_OVERWHELMING_ONSLAUGHT">
+		<supports>Elementalism Elemental Mastery</supports>
+		<prerequisite>14th level</prerequisite>
+		<requirements>[level:14]</requirements>
+		<description>
+			<p><em>Prerequisite: 14th level</em></p>
+			<p>When you damage a target with a spell of 1st level or higher that deals the damage type associated with your elemental focus, you can weave a lingering aura of elemental energy around it. At the start of its turn, the creature must make a Constitution saving throw. On a failed save, it takes 4d6 damage of the type dealt by the spell and is stunned until the start of its next turn, or half as much damage and the effect ends on a successful one.</p>
+			<p class="indent">You can use this ability twice. You regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet usage="2/Short Rest">
+			<description>When you damage a target with a spell of 1st level or higher that deals the damage type associated with your elemental focus, you can weave a lingering aura of elemental energy around it. At the start of its turn, the creature must make a Constitution saving throw. On a failed save, it takes 4d6 damage of the type dealt by the spell and is stunned until the start of its next turn, or half as much damage and the effect ends on a successful one.</description>
+		</sheet>
+	</element>
+	<element name="Stony Refuge" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_STONY_REFUGE">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>When you cast a spell of 1st level or higher, you can use a bonus action to create a slab of stone that interposes itself between you and one creature of your choice. Until the end of your next turn, the slab provides half cover against the chosen creature.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you cast a spell of 1st level or higher, you can use a bonus action to create a slab of stone that interposes itself between you and one creature of your choice. Until the end of your next turn, the slab provides half cover against the chosen creature.</description>
+		</sheet>
+	</element>
+	<element name="Sweeping Swell" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_SWEEPING_SWELL">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>When you cast a spell of 1st level or higher, you can use a bonus action to create a sweeping wave of water to push a target you can see within 20 feet. The creature must succeed on a Strength saving throw or be pushed 5 feet in the direction of your choice and knocked prone.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you cast a spell of 1st level or higher, you can use a bonus action to create a sweeping wave of water to push a target you can see within 20 feet. The creature must succeed on a Strength saving throw or be pushed 5 feet in the direction of your choice and knocked prone.</description>
+		</sheet>
+	</element>
+	<element name="Wind Blast" type="Archetype Feature" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_ARCHETYPE_FEATURE_ELEMENTALISM_MASTERY_WIND_BLAST">
+		<supports>Elementalism Elemental Mastery</supports>
+		<description>
+			<p>When you cast a spell of 1st level or higher, you can use a bonus action to create a line of wind that is 20-foot long and 5-foot wide. Each creature in the line must make a Strength saving throw or take 1d6 slashing damage and be pushed 10 feet away from you in the direction of the line.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you cast a spell of 1st level or higher, you can use a bonus action to create a line of wind that is 20-foot long and 5-foot wide. Each creature in the line must make a Strength saving throw or take 1d6 slashing damage and be pushed 10 feet away from you in the direction of the line.</description>
+		</sheet>
+	</element>
+
+	<element name="Acid Rain" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_ACID_RAIN">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You unleash a storm of swirling acid in a cylinder 20-foot wide and 30-foot high centered on a point you can see. The area is heavily obscured by driving rainfall. A creature that starts its turn in or enters the area for the first time must make a Dexterity saving throw. On a failed save, the creature takes 6d6 acid damage, or half as much damage on a successful one. When a creature leaves the area, it takes 3d6 acid damage at the start of its next turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 7th level or higher, the initial damage increases by 2d6, and the secondary damage increases by 1d6 for every two slot levels above 5th.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">150 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a drop of acid</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Blizzard" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_BLIZZARD">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A howling storm of thick snow and ice crystals appears in a 40-foot wide, 40-foot high cylinder. The area is heavily obscured by swirling snow. When the storm appears, each creature in the area must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one. A creature must also make this save when it enters the area for the first time or ends its turn there.</p>
+			<p class="indent">A creature who takes cold damage from this spell has disadvantage on Constitution saving throws made to maintain concentration until the start of its next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">100 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Caustic Torrent" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_CAUSTIC_TORRENT">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A swirling jet of acid sprays from you in a direction you choose. The acid fills a line that is 60-foot long and 5-foot wide. Each creature in the area must make a Dexterity saving throw. A creature takes 14d6 acid damage on a failed save, or half as much damage on a successful one. A creature reduced to 0 hit points by this spell is killed, and its body is liquefied. The line releases toxic fumes, and each creature other than you within 5 feet of the line is poisoned for 1 minute. A poisoned creature can make a Constitution saving throw at the end of its turn, ending the effect on itself on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (60-foot line)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a chip of bone pitted by acid</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Drown" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_DROWN">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>Water swirls up in a sphere around a creature you can see within range, forcing itself into the creature’s mouth and nose. The creature must make a Strength saving throw. On a failed save, it is stunned until the start of its next turn by the water entering its lungs. On a successful save, the creature isn’t affected.</p>
+			<p class="indent">An affected creature can’t speak and begins to suffocate. As an action, the creature can try to cough the water out of its lungs by repeating the saving throw. On a success, the spell ends. A creature that can breathe water isn’t affected by this spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">water from the lungs of a drowned creature</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Earthskimmer" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_EARTHSKIMMER">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You cause earth and stone to rise up beneath your feet, lifting you up to 5 feet. For the duration, you can use your movement to cause the slab to skim along the ground or another solid surface at a speed of 60 feet. This movement ignores difficult terrain. If you are pushed or moved against your will by any means other than teleporting, the slab moves with you.</p>
+			<p class="indent">When you take the Dash action, until the end of your turn you can enter the space of a creature up to one size larger than yourself, and the creature must make a Strength saving throw. A creature takes 4d6 bludgeoning damage on a failed save and is knocked prone, or half as much damage and isn’t knocked prone on a successful one.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Elemental">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of shale or slate</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Entomb" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_ENTOMB">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You cause slabs of rock to burst out of the ground or another stone surface to form a 10-foot cube within range. When the cube forms, a creature inside must succeed on a Dexterity saving throw or be trapped in the stone tomb. The tomb is airtight, with enough air for a single Medium or Small creature to breathe for 8 hours. Divide the time evenly between the number of creatures trapped within. A Large creature counts as four Medium creatures. If the creature is still trapped inside when the air runs out, it begins to suffocate.</p>
+			<p class="indent">The tomb has an AC 18 and 50 hit points. It is resistant to fire, cold, lightning, bludgeoning, and slashing damage, is immune to poison and psychic damage, and is vulnerable to thunder damage. When reduced to 0 hit points, the tomb crumbles into harmless powder.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="Elemental">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">8 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a chip of granite</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Flame Wave" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_FLAME_WAVE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A rushing burst of fire rips out from you in a rolling wave, filling a 40-foot cone. Each creature in the area must make a Dexterity saving throw. On a failed save, a creature takes 6d8 fire damage and is pushed 20 feet away from you, or takes half as much damage and isn’t pushed on a successful one.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (40-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a drop of tar, pitch, or oil</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Frostbite" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_FROSTBITE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You cause biting cold to settle around a creature you can see. The creature must succeed on a Constitution saving throw or take 4d8 cold damage, be reduced to half speed, and suffer disadvantage on attack rolls and ability checks. Creatures who are immune to cold damage are unaffected by this spell.</p>
+			<p class="indent">For the duration, the target must repeat the saving throw at the start of its turn. If the target passes three saving throws against the spell, the spell ends. If no targets are affected, the spell ends immediately.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, you can target two additional creatures for every slot level above 5th.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a strip of dried flesh that has been frozen at least once</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Frozen Razors" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_FROZEN_RAZORS">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>Razor sharp blades of ice erupt out of the ground or another surface in a 20-foot cube, centered on a point you can see within range. For the duration, the area is lightly obscured and difficult terrain. A creature that moves more than 5 feet on a turn within the area, or into the area, must make a Dexterity saving throw. On a failed save, the creature takes 2d6 slashing damage and 3d6 cold damage, or half as much damage on a successful one. A creature that takes cold damage from this spell is reduced to half speed until the start of its next turn.</p>
+			<p class="indent">When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">water from a melted icicle</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Pummelstone" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_PUMMELSTONE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You cause a fist-sized chunk of stone to appear and hurl itself into the target. Make a ranged spell attack. On a hit, the target takes 1d6 bludgeoning damage. During its next turn when it makes an attack roll or ability check, the target must roll a d4 and subtract the result from the check.</p>
+			<p class="indent">The spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pebble</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Pyroclasm" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_PYROCLASM">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You point toward an area of ground or similar surface within range. A geyser of lava erupts from the spot you choose, creating a 5-foot wide, 40-foot high cylinder of lava centered on a point you can see. When it erupts, any creature either in the area or that starts its turn there must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one.</p>
+			<p class="indent">At the start of your turn, the lava spreads in a pool centered at the base of the geyser. The first time it spreads, it creates a 10-foot radius of lava, and the radius increases by 10 feet each subsequent round to a maximum radius of 50 feet. Creatures who start their turn in the pool take 5d8 fire damage.</p>
+			<p class="indent">Lava clings to a creature when it leaves the area, and it hardens into stone. The creature is reduced to half speed and has disadvantage on Dexterity saving throws until a creature uses an action to break the hardened lava off. If you maintain your concentration for the full minute, the lava geyser and pool permanently harden into nonmagical stone. A creature in the hardened stone is restrained. The stone has an AC 17, 25 hit points, is resistant to all damage except thunder, and is immune to poison and psychic damage. A restrained creature can break free as an action with a successful DC 27 Strength (Athletics) check.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">9</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">500 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a shard of obsidian</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Riptide" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_RIPTIDE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>With a sweeping gesture, you cause a great swell of water to rise up in a 20-foot tall, 20-foot radius cylinder centered on a point on the ground that you can see. Each creature in the area must make a Strength saving throw. On a failed save, a creature is restrained and suspended in the cylinder or moves to the nearest edge of cylinder on a successful one. At the start of your next turn, you can direct the current of the swell as it dissipates. Choose one of the following options:</p>
+			<p class="indent"><strong><em>Riptide.</em></strong> The water in the cylinder flows in a direction you choose, sweeping each creature in the area to the edge of the cylinder. A creature takes 3d8 bludgeoning damage and is pushed up to 40 feet in the chosen direction, or to the edge of the cylinder, landing prone.</p>
+			<p class="indent"><strong><em>Undertow.</em></strong> The water rushes downward, pulling each creature in the area into an unoccupied space at the center. The creatures are knocked prone and must make a Constitution saving throw. On a failed save a creature is stunned until the start of your next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">1 round</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Rolling Thunder" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_ROLLING_THUNDER">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A tremendous bell note explodes from your outstretched hand and rolls forward in a line 30- foot long and 5-foot wide. Each creature in the line must succeed on a Constitution saving throw or be deafened for 1 minute. A creature made of inorganic material, such as stone, crystal, or metal, has disadvantage on saving throws against this spell. While a creature is deafened in this way, it is wreathed in thundering energy. It takes 2d8 thunder damage at the start of its turn, and its speed is halved. A deafened creature can repeat the saving throw at the end of its turn, ending the effect on itself on a success.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increase by 1d8 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot line)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a sliver of metal from a gong</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Spire of Stone" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_SPIRE_OF_STONE">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You cause a spire of rock to burst out of the ground, floor, or another surface beneath your feet. The spire is as wide as your space, and lifting you, it can rise up to 20 feet in height. When the spire appears, a creature within 5 feet of you must succeed on a Dexterity saving throw or fall prone.</p>
+			<p class="indent">As a bonus action on your turn, you can cause the spire to rise or descend up to 20 feet to a maximum height of 40 feet. If you move off of the spire, it immediately collapses back into the ground. When the spire disappears, it leaves the surface from which it sprang unharmed. You can create a new spire as a bonus action for the duration of the spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="Elemental">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a small basalt cylinder</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Tidal Barrier" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_TIDAL_BARRIER">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>A swirling wave of seawater surrounds you, crashing and rolling in a 10-foot radius around your space. The area is difficult terrain, and a creature that starts its turn in or enters the area must make a Strength saving throw. On a failed save, the creature is pushed 10 feet away from you, and its speed is reduced to 0 until the start of its next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Elemental">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (10-foot radius)</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of driftwood</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Wind Lash" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_WIND_LASH">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>Your swift gesture creates a solid lash of howling wind. Make a melee spell attack against the target. On a hit, the target takes 1d8 slashing damage from the shearing winds and is pushed 5 feet away from you.</p>
+			<p class="indent">The spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">0</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">20 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Wind Tunnel" type="Spell" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_SPELL_WIND_TUNNEL">
+		<supports>Sorcerer,Warlock,Wizard</supports>
+		<description>
+			<p>You create a swirling tunnel of strong wind extending from yourself in a direction you choose. The tunnel is a line 60-foot long and 10-foot wide. The wind blows from you toward the end of the line, which is stationary once created. A creature in the line moving with the wind adds 10 feet to its speed, and ranged weapon attacks fired with the wind don’t suffer disadvantage due to long range. Creatures in the line moving against the wind spend 2 feet of movement for every 1 foot they move, and ranged weapon attacks fired through the line against the wind are made with disadvantage.</p>
+			<p class="indent">The wind tunnel disperses gases and vapors, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance of extinguishing them.</p>
+		</description>
+		<setters>
+			<set name="keywords">elemental magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="Elemental">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (60-foot line)</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a hollow reed or paper tube</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Magma Mantle" type="Magic Item" source="Deep Magic: Elemental Magic" id="ID_KBP_DMEM_MAGIC_ITEM_MAGMA_MANTLE">
+		<description>
+			<p>This cracked black leather cloak is warm to the touch and faint ruddy light glows through the cracks. While wearing this cloak, you have resistance to cold damage. By touching the brass clasp and speaking the command word, you can transform the cloak into a flowing mantle of lava for 1 minute. During this time, you are unharmed by the intense heat, but any hostile creature within 5 feet of you that touches you or strikes you with a melee attack takes 3d6 fire damage. Additionally, for the duration you suffer no damage from contact with lava, and you can burrow through lava at half your walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">misc</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+
+</elements>

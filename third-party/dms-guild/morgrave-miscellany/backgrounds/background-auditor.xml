@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Auditor</name>
+		<description>The Auditor Background from Morgrave Miscellany.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker &amp; Ruty Rutenberg</author>
+		<update version="0.0.2">
+			<file name="background-auditor.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/morgrave-miscellany/backgrounds/background-auditor.xml" />
+		</update>
+	</info>	
+	<element name="Auditor" type="Background" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_AUDITOR">
+		<description>
+			<p>You don’t work with taxes or accounts. Your job is testing security systems, finding the flaws in vaults, prisons, and other secure systems. Most auditors work for the Warding Guild of House Kundarak, testing locks, traps, and other Kundarak creations. You could also have worked for the Warning Guild of House Medani, helping to spot threats before they occur. In those days, locks and wards were something you studied for your job; now you’re putting your skills to practical use as an adventurer.</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Insight, Investigation</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves’ Tools, Tinker’s Tools</li>
+				<li><strong>Equipment:</strong> Thieves’ Tools, a set of common clothes, an Auditor’s badge, a pouch with 5 gp</li>
+			</ul>
+			<div element="ID_DMSG_MGMS_BACKGROUND_FEATURE_AUDITOR_KEEPER_OF_VAULTS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You have a critical eye, and you’re always looking for weaknesses and trying to find ways that things can be improved.</p>
+		</description>			
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			<grant type="Background Feature" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_AUDITOR_KEEPER_OF_VAULTS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I’m always pointing out peoples’ flaws, for their own good.</item>
+				<item id="2">I always have a suggestion as to how something could be improved.</item>
+				<item id="3">I try to get to know everyone; it makes finding weaknesses easier.</item>
+				<item id="4">I question every decision. It’s the only way to find the best answer.</item>
+				<item id="5">I want to test every limit, looking for patterns, sequences, and cyphers when I’m bored.</item>
+				<item id="6">I hate to waste time. Get to work.</item>
+				<item id="7">I’m always speculating about possible threats.</item>
+				<item id="8">I’m suspicious of everyone and everything.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Perfection. A perfect world is one in which everything is foolproof, and nothing can be broken. (Lawful)</item>
+				<item id="2">Security. The world is a dangerous place, and everyone should be able to feel safe. Do what you can to help give innocent people a sense of security. (Good)</item>
+				<item id="3">Freedom. Nothing should be hidden. No door should be barred. Those who wish should have access to every path and every secret. (Chaotic)</item>
+				<item id="4">Neighborly. Helping people establish strong defenses is a way to maintain one’s relationships and financial securities. (Neutral)</item>
+				<item id="5">Domination. The perfect system is one that I control. (Evil)</item>
+				<item id="6">Efficiency. Anything can be improved, and I’m always looking for ways to do it. (Any)</item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">I have a loved one that I would do anything form as long as they are safe.</item>
+				<item id="2">I want to help friends achieve peak efficiency.</item>
+				<item id="3">I’m going to pull off the heist of the century, but I need a team I can trust.</item>
+				<item id="4">A criminal mastermind used me to commit a crime. I’m on the run, trying to clear my name.</item>
+				<item id="5">My mentor was locked away behind impenetrable defenses. I aim to crack them.</item>
+				<item id="6">I uncovered a secret I wasn’t meant to know and now it haunts my dreams.</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m always looking for weaknesses in the people and things around me.</item>
+				<item id="2">I’m never satisfied; there’s always a way to improve things.</item>
+				<item id="3">I’m paranoid, always imagining threats I have to defend against.</item>
+				<item id="4">I push everything and everyone to find their breaking point. Nothing is true until tested.</item>
+				<item id="5">I’m always hungry for new challenges.</item>
+				<item id="6">My instincts seem more trustworthy to me than my allies.</item>
+				</select>
+		</rules>			
+	</element>	
+	<element name="Feature: Keeper of Vaults" type="Background Feature" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_AUDITOR_KEEPER_OF_VAULTS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You have an excellent memory for traps and security structures and can always recall the general construction of such apparatus, including their triggers. You can also find blueprints of a specific trap in order to learn the details of its application. Such blueprints might provide knowledge of points of weakness, possible advancements, and magic or mechanisms that might trigger them. Your access to such information isn’t unlimited. If obtaining or using the information gets you in trouble with the law, your affiliation can’t shield you from the repercussions.</p>
+		</description>
+		<sheet alt="Keeper of Vaults" />
+	</element>
+</elements>

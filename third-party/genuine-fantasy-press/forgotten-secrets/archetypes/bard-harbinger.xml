@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Harbingers</name>
+		<description>College of Harbingers from The Compendium of Forgotten Secrets</description>
+	    <author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
+    	<update version="0.0.1">
+      		<file name="bard-harbinger.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/compendium-of-forgotten-secrets/archetypes/bard-harbinger.xml" />
+		</update>
+	</info>
+	
+	<element name="College of Harbingers" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_COLLEGE_OF_HARBINGERS">
+		<supports>Bard College</supports>
+		<description>
+			<p>Bards of the College of Harbingers are disciples of the Storm Lord, an otherworldly entity that sails between the skies of countless worlds, consuming the souls of fallen heroes. To enter the ranks of these champions, it is typical for an applicant to anchor themselves to a high place during a storm and then throw themselves from the edge. Struck and battered against the mountain or tower, the winds and rain crash and cut at their skin for three days and nights, until finally the Lord shows its favor, strengthening body and soul. Studying the stories of the fallen champions this great beast claims, you learn to call upon the Lord’s power to strike down your enemies and to free you from mortal concerns. The skies will tremble before your performance and your prowess shall become legend. </p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_RITE_OF_PASSAGE" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_BLACK_SKY_SONG" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THUNDERSTRUCK" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THE_UNFALLEN_KINGDOM" />
+		</description>
+		<sheet display="false">
+			<description>Bards of the College of Harbingers are disciples of the Storm Lord.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_RITE_OF_PASSAGE" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_BLACK_SKY_SONG" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THUNDERSTRUCK" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THE_UNFALLEN_KINGDOM" level="14" />
+		</rules>
+	</element>	
+	<element name="Rite of Passage" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_RITE_OF_PASSAGE">
+		<description>
+			<p>At 3rd level, you perform the harrowing spiritual journey required to gain the Storm Lord’s favor, allowing the souls of ancient heroes to instruct you in combat and lore. You gain proficiency in martial weapons and in the History skill.</p>
+		</description>
+		<sheet>
+			<description>You gain proficiency in martial weapons and in the History skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+		</rules>
+	</element>	
+	<element name="Black Sky Song" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_BLACK_SKY_SONG">
+		<description>
+			<p>Also at 3rd level, you learn the hymn that calls a fraction of the attention of your Lord to your plane. As a bonus action, you can expend a use of your Bardic Inspiration to sing a grim song of pain and triumph. Hostile creatures within 10 feet of you must make a Charisma saving throw against your bard spell save DC. If they fail, they are afflicted with a feeling of horrible insignificance. The first time they are hit by an attack before the start of your next turn, they are knocked prone and take lightning damage equal to the number rolled on your Bardic Inspiration die.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can expend a use of your Bardic Inspiration to sing a grim song of pain and triumph. Hostile creatures within 10 feet of you must make a Charisma saving throw against your bard spell save DC. If they fail, the first time they are hit by an attack before the start of your next turn, they are knocked prone and take lightning damage equal to the number rolled on your Bardic Inspiration die.</description>
+		</sheet>
+	</element>	
+	<element name="Thunderstruck" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THUNDERSTRUCK">
+		<description>
+			<p>Starting at 6th level, you are wreathed in graceful winds that accentuate your movements and strike down your enemies. You gain resistance to thunder and lightning damage. You are permanently under the effects of the feather fall spell, and your jumping height increases by a number of feet equal to twice your bard level. During your turn, you can choose to make a single jump that does not provoke opportunity attacks if the destination is within 10 feet of a hostile creature. Whenever you descend more than 10 feet during your turn, the first weapon attack you make before the end of your turn deals an extra 1d10 thunder damage and pushes the target 5 feet away from you. </p>
+		</description>
+		<sheet>
+			<description>You gain resistance to thunder and lightning damage. You are permanently under the effects of the feather fall spell, and your jumping height increases by {{thunderstruck:jump}} ft. During your turn, you can choose to make a single jump that does not provoke opportunity attacks if the destination is within 10 feet of a hostile creature. Whenever you descend more than 10 feet during your turn, the first weapon attack you make before the end of your turn deals an extra 1d10 thunder damage and pushes the target 5 feet away from you.</description>
+		</sheet>
+		<rules>
+			<stat name="thunderstruck:jump" value="level:bard" />
+			<stat name="thunderstruck:jump" value="level:bard" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+	<element name="The Unfallen Kingdom" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_HARBINGERS_THE_UNFALLEN_KINGDOM">
+		<description>
+			<p>At 14th level, your soul has ascended to touch the paradise that lies within the eye of the Storm Lord. You gain immunity to the frightened condition. When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead and gain advantage on all attack rolls, ability checks, and saving throws until the end of your next turn. At the start of your next turn, allied creatures within 30 feet of you can use their reaction to join you with a defiant war cry. If they do, they also gain these advantages until the end of their next turn.</p>
+			<p class="indent">You can’t use this feature again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You gain immunity to the frightened condition. When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead and gain advantage on all attack rolls, ability checks, and saving throws until the end of your next turn. At the start of your next turn, allied creatures within 30 feet of you can use their reaction to join you with a defiant war cry. If they do, they also gain these advantages until the end of their next turn.</description>
+		</sheet>
+	</element>
+	
+	
+</elements>

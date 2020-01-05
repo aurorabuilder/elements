@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	
+	<info>
+		<name>Blackthorn Grove Patron</name>
+		<description>Blackthorn Grove Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.2">
+			<file name="warlock-blackthorn-grove.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-blackthorn-grove.xml" />
+		</update>
+	</info>
+	
+	<element name="The Blackthorn Grove" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_BLACKTHORN_GROVE">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You’ve torn out your heart as an offering to the Blackthorn Grove after braving the Maze of Blood and resisting the temptations of the Fields of Acedia. In place of your heart, a pulsing, beating, writhing mass of thorns has grown and made you whole. The lifeblood of the world itself runs through your veins, granting you power and passion alike to fulfill your purpose, whatever that may be. The trials and suffering of your past beckon you to make amends or take your revenge, but the feeling of grass under your feet and the sunlight upon your face is enough to help you understand the worth of life. Wander alone no longer, for even in death the Grove shall grant you a home.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_BLACKTHORNHEART"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_APATHYISDEATH"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_ARBOREALGUARDIAN"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_SEEDSOFDESTRUCTION"/>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_BLACKTHORNHEART" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_APATHYISDEATH" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_ARBOREALGUARDIAN" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_SEEDSOFDESTRUCTION" level="14" />
+		</rules>
+	</element>
+	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Blackthorn Grove lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>BLACKTHORN GROVE EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>entangle, hunter's pace</em></td></tr>
+				<tr><td>2nd</td><td><em>heartripper, replenish</em></td></tr>
+				<tr><td>3rd</td><td><em>skewering vines, plant growth</em></td></tr>
+				<tr><td>4th</td><td><em>bloodthorn, cage of briars</em></td></tr>
+				<tr><td>5th</td><td><em>tree stride, overwhelming emotion</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Blackthorn Grove lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_GFP_COFSA_SPELL_HUNTERS_PACE</extend>
+			<extend>ID_PHB_SPELL_ENTANGLE</extend>
+			<extend>ID_GFP_COFSA_SPELL_HEARTRIPPER</extend>
+			<extend>ID_GFP_COFSA_SPELL_REPLENISH</extend>
+			<extend>ID_GFP_COFSA_SPELL_SKEWERING_VINES</extend>
+			<extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+			<extend>ID_GFP_COFSA_SPELL_BLOODTHORN</extend>
+			<extend>ID_GFP_COFSA_SPELL_CAGE_OF_BRIARS</extend>
+			<extend>ID_PHB_SPELL_TREE_STRIDE</extend>
+			<extend>ID_GFP_COFSA_SPELL_OVERWHELMING_EMOTION</extend>
+		</spellcasting>
+	</element>
+	
+	<element name="Blackthorn Heart" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_BLACKTHORNHEART">
+		<description>
+			<p>At 1st level, you have torn out your heart and replaced it with something otherworldly, granting you the will to survive. You ignore nonmagical difficult terrain. Whenever you fail a death saving throw, your Blackthorn heart bursts from your chest and lashes out with life-stealing briars toward the nearest hostile creature. Make a melee spell attack against an enemy within 15 feet of you. On a hit, the creature takes magical piercing damage equal to your warlock level, and you regain hit points equal to the damage dealt.</p>
+			<p class="indent">After you recover hit points using this feature, you cannot make this attack again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you fail a death saving throw, your Blackthorn heart bursts from your chest and lashes out with life-stealing briars toward the nearest hostile creature. Make a melee spell attack against an enemy within 15 feet of you. On a hit, the creature takes {{blackthorn heart:dmg}} magical piercing damage, and you regain hit points equal to the damage dealt.</description>
+		</sheet>
+		<rules>
+			<stat name="blackthorn heart:dmg" value="level:warlock" />
+		</rules>
+	</element>
+	
+	<element name="Apathy is Death" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_APATHYISDEATH">
+		<description>
+			<p>At 6th level, you can use your reaction to surge with purpose and haste whenever you make an Intelligence, Wisdom, or Charisma saving throw. You gain advantage on the saving throw, can move up to half your speed, and can make a single weapon attack before the result of the roll is revealed. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>
+				You can use your reaction to surge with purpose and haste whenever you make an Intelligence, Wisdom, or Charisma saving throw. You gain advantage on the saving throw, can move up to half your speed, and can make a single weapon attack before the result of the roll is revealed. Once you use this feature, you can’t do so again until you finish a short or long rest.
+			</description>
+		</sheet>
+	</element>
+	
+	<element name="Arboreal Guardian" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_ARBOREALGUARDIAN">
+		<description>
+			<p>At 10th level, your purpose is not merely to exist, but to safeguard life. Whenever a creature within 5 feet of you would take damage, you can choose to redirect half of the damage to you by shielding them with vines from your Blackthorn heart. Only the original target suffers any additional effects of the damage. If this damage reduces you to 0 hit points, you gain advantage on the first attack made by your Blackthorn Heart feature.</p>
+		</description>
+		<sheet>
+			<description>Whenever a creature within 5 feet of you would take damage, you can choose to redirect half of the damage to you by shielding them with vines from your Blackthorn heart. Only the original target suffers any additional effects of the damage. If this damage reduces you to 0 hit points, you gain advantage on the first attack made by your Blackthorn Heart feature.</description>
+		</sheet>
+	</element>
+	
+	<element name="Seeds of Destruction" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_BLACKTHORN_GROVE_SEEDSOFDESTRUCTION">
+		<description>
+			<p>At 14th level, you realize the reason you have been blessed with this power and purpose: to spread the Blackthorn Grove. As an action, or whenever you are reduced to 0 hit points and you fail to recover hit points using your Blackthorn Heart feature, you can choose to have the beginnings of a new Maze of Blood appear around you. The area within a 30-foot radius of you becomes difficult terrain as blood-hungry vines emerge from the assembled briars to drink their fill. A creature within the radius at the start of its turn must make a Constitution saving throw against your warlock spell save DC. A target takes 4d6 magical slashing damage on a failed save, or half as much damage on a successful one. Allies make this saving throw with advantage. If summoned as an action, it lasts until the start of your next turn. If summoned when you are at 0 hit points, it lasts until you recover 1 hit point, or becomes permanent if you die. The Maze can be summoned once as an action, and this use recovers whenever you finish a long rest. The Maze can also be summoned once when you are at 0 hit points, and this use recovers whenever you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>As an action, or whenever you are reduced to 0 hit points and you fail to recover hit points using your Blackthorn Heart feature, you can choose to have the beginnings of a new Maze of Blood appear around you. The area within a 30-foot radius of you becomes difficult terrain as blood-hungry vines emerge from the assembled briars to drink their fill. A creature within the radius at the start of its turn must make a Constitution saving throw against your warlock spell save DC. A target takes 4d6 magical slashing damage on a failed save, or half as much damage on a successful one. Allies make this saving throw with advantage. If summoned as an action, it lasts until the start of your next turn. If summoned when you are at 0 hit points, it lasts until you recover 1 hit point, or becomes permanent if you die. The Maze can be summoned once as an action, and this use recovers whenever you finish a long rest. The Maze can also be summoned once when you are at 0 hit points, and this use recovers whenever you finish a long rest.</description>
+		</sheet>
+	</element>
+	
+</elements>

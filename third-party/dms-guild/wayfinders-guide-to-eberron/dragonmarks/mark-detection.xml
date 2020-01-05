@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mark of Detection</name>
+		<description>Mark of Detection from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="mark-detection.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-detection.xml" />
+		</update>
+	</info>
+	<element name="The Mark of Detection" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION">
+		<supports>Half-Elf Variant</supports>
+		<description>
+			<p>The Mark of Detection is an inquisitive’s dream. It sharpens powers of observation and intuition, allowing the bearer to draw connections and interpret clues others might miss. By actively drawing on its powers, the bearer can detect poisons and study the energies of magic.</p>
+			<h4>HOUSE MEDANI</h4>
+			<p>The Warning Guild of House Medani brokers the services of bodyguards and inquisitives. Medani advisors specialize in risk assessment and management, protecting clients from both physical and social threats. While Medani overlaps with the inquisitives of House Tharashk and the bodyguards of House Deneith, the Warning Guild specializes in subtle threats and complex mysteries.</p>
+			<p class="indent">The members of House Medani are half-elves with deep roots in Breland. Medani has little interest in the power struggles that sometimes break out between the other dragonmarked houses. Many Medani heirs are more interested in helping their communities than in raw profit, and Medani heirs often work with local law enforcement or help those who can’t afford their services. </p>
+			<h4>MARK OF DETECTION TRAITS</h4>
+			<p>The Mark of Detection manifests exclusively on half-elves. If your character has the Mark of Detection, these traits replace the half-elf’s Ability Score Increase, Skill Versatility, and Languages given in the Player’s Handbook. </p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence and Charisma scores both increase by 1. In addition, one ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Deductive Intuition.</em></strong> When you make an Intelligence (Investigation) or Wisdom (Insight) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Sense Threats.</em></strong> You can cast the detect magic and detect poison and disease spells, but only as rituals. Intelligence is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Elvish.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Half-Elf (Mark of Detection)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="charisma" value="1" />
+			<stat name="intelligence" value="1" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Detection)" supports="Ability Score Increase,Mark of Detection" number="1"/>
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_DEDUCTIVE_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SENSE_THREATS" />
+		</rules>
+	</element>
+	<element name="Deductive Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DEDUCTIVE_INTUITION">
+		<description>
+			<p>When you make an Intelligence (Investigation) or Wisdom (Insight) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an Investigation or Insight check, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Sense Threats" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SENSE_THREATS">
+		<description>
+			<p>You can cast the detect magic and detect poison and disease spells, but only as rituals. Intelligence is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You can cast the detect magic and detect poison and disease spells, but only as rituals. Intelligence is your spellcasting ability for these spells.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" />
+		</rules>
+	</element>
+
+	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_STRENGTH">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Strength score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="strength" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_DEXTERITY">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Dexterity score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="dexterity" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Constitution score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="constitution" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Intelligence score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="intelligence" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_WISDOM">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Wisdom score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="wisdom" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DETECTION_CHARISMA">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Detection</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ELF_DETECTION</requirements>
+		<description>
+			<p>Your Charisma score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="charisma" value="1" alt="The Mark of Detection" />
+		</rules>
+	</element>
+</elements>
