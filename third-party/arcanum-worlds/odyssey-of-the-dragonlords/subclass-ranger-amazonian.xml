@@ -32,7 +32,7 @@
         </rules>
     </element>
 
-    <element name="Amzaonian Magic" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_MAGIC">
+    <element name="Amazonian Magic" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_MAGIC">
         <description>
             <p>Starting when you swear your oath at 3rd level, you gain Oath Spells at the listed levels and always have them prepared.</p>       
             <h5>Amazonian Spells</h5>
@@ -72,6 +72,64 @@
         </rules>
     </element>
 
+    <element name="Amazonian Battlecry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_BATTLECRY">
+        <description>
+            <p>At 3rd level, you gain the ability to enter the legendary frenzy of the Amazons by shouting your signature battlecry. On your turn, you can use a bonus action to shout your battlecry and enter a frenzy. Your frenzy lasts for 1 minute and grants you the following benefits. It ends after you take damage—or when you are knocked unconscious.</p>
+            <ul>
+                <li>You have advantage on attacks against creatures of your favored enemy type.</li>
+                <li>You have resistance to bludgeoning, piercing, and slashing damage.</li>
+                <li>You have advantage on saving throws against being frightened or paralyzed.</li>
+             </ul>
+            <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
+        </description>
+        <sheet>
+            <description action="Bonus Action" usage="{{wisdom:modifier}}/Long Rest">You enter a frenzy that lasts for 1 minute or until you take damage or are knocked unconscious. While in this frenzy, you have advantage on attacks against creatures of your favored enemy type, esistance to bludgeoning, piercing, and slashing damage and advantage on saving throws against being frightened or paralyzed.</description>
+        </sheet>
+    </element>
+
+    <element name="Bracer Reflection" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_BRACER_REFLECTION">
+        <description>
+            <p>Starting at 5th level, you've learned to reflect attacks with your bracers. Whenever you would be hit by an attack, you may use your reaction to shield yourself with your bracers. You gain a +5 bonus to AC against all attacks, including the attack that provoked this reaction, until the beginning of your next turn. You may use this feature a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description action="Reaction" usage="{{bracer reflection:uses}}/Short Rest">If you would be hit by an attack, shield yourself with your bracers. You gain a +5 bonus to AC against all attacks, including the attack that provoked this reaction, until the beginning of your next turn.</description>
+        </sheet>
+        <rules>
+            <stat name="bracer reflection:uses" value="1" bonus="base" />
+            <stat name="bracer reflection:uses" value="wisdom:modifier" bonus="base" />
+        </rules>
+    </element>
+
+    <element name="Chakram Technique" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_CHAKRAM_TECHNIQUE">
+        <description>
+            <p>Starting at 7th level, you’ve learned the famous Amazonian technique of ricocheting your chakram to hit multiple targets. You can also throw it at targets that are not in your line of sight, such as around corners.</p>
+            <p class="indent">You can use your action to make a ranged attack with your chakram against one target. If your attack hits, then any number of additional creatures of your choice within 10 feet of that target must make a Dexterity saving throw using your spell save DC. Each creature that fails the save takes the same amount of damage as your first target.</p>
+        </description>
+        <sheet>
+            <description>When you use your action to make a ranged attack with your chakram against one target and the attack hits, then any number of additional creatures of your choice within 10 feet of that target must make a Dexterity saving throw using your spell save DC. Each creature that fails the save takes the same amount of damage as your first target.</description>
+        </sheet>
+    </element>
+
+    <element name="Improved Falconry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_IMPROVED_FALCONRY">
+        <description>
+            <p>At 11th level, your stimfay matures. It gains a bonus to its AC equal to your proficiency bonus, and it now has hit points equal to 30 + your ranger level. The damage dice for its Talons, Pinion Storm, and Piercing Screech increase to 2d6, and its attacks are now magical.</p>
+            <p class="indent">Additionally, any time you would take damage from an attack or an effect that you can see, you may use your reaction to have your stimfay intercept the attack or effect and take the damage instead of you. Your stimfay must be functional and ready to assist you in order to use this ability, and it must be located within 60 feet of you.</p>
+        </description>
+        <sheet>
+            <description action="Reaction">If you would take damage from an attack or an effect that you can see, your stimfay takes the damage instead of you. Your stimfay must be functional and ready to assist you in order to use this ability, and it must be located within 60 feet of you.</description>
+        </sheet>
+    </element>
+
+    <element name="Pressure Points" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_PRESSURE_POINTS">
+        <description>
+            <p>Starting at 15th level, you know how to attack pressure points in your opponent’s body that will cut off the blood supply to their brain. On your turn, you may use a bonus action to make a special melee attack against one creature. If the attack hits, the creature must make a Constitution saving throw versus your spell save DC. On a failure, the creature is paralyzed for 1 minute or until you use a bonus action to touch them and reverse the effect. At the end of each of the creature’s turns, it repeats the saving throw and the effect ends if it succeeds. You may use this ability a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
+        </description>
+        <sheet>
+            <description action="Bonus Action" usage="{{wisdom:modifier}}/Short Rest">Make a melee attack against one creature (using any weapon). If the attack hits, the creature must make a Constitution saving throw versus your spell save DC. On a failure, the creature is paralyzed for 1 minute or until you use a bonus action to touch them and reverse the effect. At the end of each of the creature’s turns, it repeats the saving throw and the effect ends if it succeeds.</description>
+        </sheet>
+    </element>
+
+    <!-- Companion -->
     <element name="Stimfay" type="Companion" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_COMPANION_RANGER_AMAZONIAN_STIMFAY">
 		<supports>Stimfay Companion</supports>
 		<description>
@@ -195,63 +253,4 @@
             <stat name="stimfay:attackbonus" value="proficiency" />
         </rules>-->
 	</element>
-
-    <element name="Amazonian Battlecry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_BATTLECRY">
-        <description>
-            <p>At 3rd level, you gain the ability to enter the legendary frenzy of the Amazons by shouting your signature battlecry. On your turn, you can use a bonus action to shout your battlecry and enter a frenzy. Your frenzy lasts for 1 minute and grants you the following benefits. It ends after you take damage—or when you are knocked unconscious.</p>
-            <ul>
-                <li>You have advantage on attacks against creatures of your favored enemy type.</li>
-                <li>You have resistance to bludgeoning, piercing, and slashing damage.</li>
-                <li>You have advantage on saving throws against being frightened or paralyzed.</li>
-             </ul>
-            <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
-        </description>
-        <sheet>
-            <description action="Bonus Action" usage="{{wisdom:modifier}}/Long Rest">You enter a frenzy that lasts for 1 minute or until you take damage or are knocked unconscious. While in this frenzy, you have advantage on attacks against creatures of your favored enemy type, esistance to bludgeoning, piercing, and slashing damage and advantage on saving throws against being frightened or paralyzed.</description>
-        </sheet>
-    </element>
-
-    <element name="Bracer Reflection" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_BRACER_REFLECTION">
-        <description>
-            <p>Starting at 5th level, you've learned to reflect attacks with your bracers. Whenever you would be hit by an attack, you may use your reaction to shield yourself with your bracers. You gain a +5 bonus to AC against all attacks, including the attack that provoked this reaction, until the beginning of your next turn. You may use this feature a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a short or long rest.</p>
-        </description>
-        <sheet>
-            <description action="Reaction" usage="{{bracer reflection:uses}}/Short Rest">If you would be hit by an attack, shield yourself with your bracers. You gain a +5 bonus to AC against all attacks, including the attack that provoked this reaction, until the beginning of your next turn.</description>
-        </sheet>
-        <rules>
-            <stat name="bracer reflection:uses" value="1" bonus="base" />
-            <stat name="bracer reflection:uses" value="wisdom:modifier" bonus="base" />
-        </rules>
-    </element>
-
-    <element name="Chakram Technique" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_CHAKRAM_TECHNIQUE">
-        <description>
-            <p>Starting at 7th level, you’ve learned the famous Amazonian technique of ricocheting your chakram to hit multiple targets. You can also throw it at targets that are not in your line of sight, such as around corners.</p>
-            <p class="indent">You can use your action to make a ranged attack with your chakram against one target. If your attack hits, then any number of additional creatures of your choice within 10 feet of that target must make a Dexterity saving throw using your spell save DC. Each creature that fails the save takes the same amount of damage as your first target.</p>
-        </description>
-        <sheet>
-            <description>When you use your action to make a ranged attack with your chakram against one target and the attack hits, then any number of additional creatures of your choice within 10 feet of that target must make a Dexterity saving throw using your spell save DC. Each creature that fails the save takes the same amount of damage as your first target.</description>
-        </sheet>
-    </element>
-
-    <element name="Improved Falconry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_IMPROVED_FALCONRY">
-        <description>
-            <p>At 11th level, your stimfay matures. It gains a bonus to its AC equal to your proficiency bonus, and it now has hit points equal to 30 + your ranger level. The damage dice for its Talons, Pinion Storm, and Piercing Screech increase to 2d6, and its attacks are now magical.</p>
-            <p class="indent">Additionally, any time you would take damage from an attack or an effect that you can see, you may use your reaction to have your stimfay intercept the attack or effect and take the damage instead of you. Your stimfay must be functional and ready to assist you in order to use this ability, and it must be located within 60 feet of you.</p>
-        </description>
-        <sheet>
-            <description action="Reaction">If you would take damage from an attack or an effect that you can see, your stimfay takes the damage instead of you. Your stimfay must be functional and ready to assist you in order to use this ability, and it must be located within 60 feet of you.</description>
-        </sheet>
-        <rules />
-    </element>
-
-    <element name="Pressure Points" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_PRESSURE_POINTS">
-        <description>
-            <p>Starting at 15th level, you know how to attack pressure points in your opponent’s body that will cut off the blood supply to their brain. On your turn, you may use a bonus action to make a special melee attack against one creature. If the attack hits, the creature must make a Constitution saving throw versus your spell save DC. On a failure, the creature is paralyzed for 1 minute or until you use a bonus action to touch them and reverse the effect. At the end of each of the creature’s turns, it repeats the saving throw and the effect ends if it succeeds. You may use this ability a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
-        </description>
-        <sheet>
-            <description action="Bonus Action" usage="{{wisdom:modifier}}/Short Rest">Make a melee attack against one creature (using any weapon). If the attack hits, the creature must make a Constitution saving throw versus your spell save DC. On a failure, the creature is paralyzed for 1 minute or until you use a bonus action to touch them and reverse the effect. At the end of each of the creature’s turns, it repeats the saving throw and the effect ends if it succeeds.</description>
-        </sheet>
-        <rules />
-    </element>
 </elements>

@@ -40,18 +40,6 @@
     </rules>
   </element>
 
-  <element name="Immolation" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_IMMOLATION">
-    <description>
-      <p><i><b>Immolation.</b></i> Whenever you reduce a creature to 0 hit points, you may choose to immolate them as a sacrificial offering. As the creature is engulfed in fire, you and every ally within 60 feet of the immolated creature gain the effects of the <i>bless</i> spell for 1 minute (concentration is not required). You may use this feature a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
-    </description>
-    <sheet>
-      <description usage="{{immolation:uses}}/Short Rest">Whenever you reduce a creature to 0 hit points, you may choose to immolate them. If you do, you and every ally within 60 feet of the immolated creature gain the effects of the bless spell for 1 minute (concentration is not required).</description>
-    </sheet>
-    <rules>
-      <stat name="immolation:uses" value="wisdom:modifier" />
-    </rules>
-  </element>
-
   <element name="Ritual of Mistletoe" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_MISTLETOE">
     <description>
       <p>Starting at 6th level, you carry a pouch full of mistletoe that you’ve collected with your sickle. You have sprigs of mistletoe represented by a number of d4s equal to your druid level. On your turn, you may use a bonus action to expend one of the sprigs of mistletoe and perform one of the following effects:</p>
@@ -86,6 +74,31 @@
     </rules>
   </element>
 
+  <element name="Astrological Wisdom" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_ASTROLOGICAL_WISDOM">
+    <description>
+      <p>Starting at 14th level, you have studied the stars and memorized the pathways that connect the material plane to the astral plane. Your sprigs of mistletoe increase to d8s. Additionally, you gain access to the <i>teleportation circle</i> spell and always have it prepared.</p>
+      <p class="indent"><b><i>Stone Circle.</i></b> You know the ancient methods used to construct a circle of standing stones. You may spend 8 hours and 12,000 gp to construct a circle of twelve standing stones inscribed with druidic sigils, where each stone is 10 feet tall and weighs 1 ton. This stone circle may be used as a permanent anchor location for the <i>teleportation circle</i> spell.</p>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="14" spellcasting="Druid" prepared="true" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_STONE_CIRCLE" />
+    </rules>
+  </element>
+
+  <!-- subfeatures -->
+  <element name="Immolation" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_IMMOLATION">
+    <description>
+      <p><i><b>Immolation.</b></i> Whenever you reduce a creature to 0 hit points, you may choose to immolate them as a sacrificial offering. As the creature is engulfed in fire, you and every ally within 60 feet of the immolated creature gain the effects of the <i>bless</i> spell for 1 minute (concentration is not required). You may use this feature a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
+    </description>
+    <sheet>
+      <description usage="{{immolation:uses}}/Short Rest">Whenever you reduce a creature to 0 hit points, you may choose to immolate them. If you do, you and every ally within 60 feet of the immolated creature gain the effects of the bless spell for 1 minute (concentration is not required).</description>
+    </sheet>
+    <rules>
+      <stat name="immolation:uses" value="wisdom:modifier" />
+    </rules>
+  </element>
+
   <element name="Sacrificial Offering" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_OFFERING">
     <sheet>
       <description action="Bonus Action" level="10">Mark one creature you can see as a Sacrificial Offering for the next hour. Whenever any of your allies hit that creature with an attack, you may use a reaction to expend one of your sprigs of mistletoe to roll a d6 and add the result as fire damage. Additionally, whenever a Sacrificial Offering is reduced to 0 hit points, you may activate your Immolation feature on that creature.</description>
@@ -97,18 +110,6 @@
     <sheet>
       <description action="Action">Expend two sprigs of mistletoe to cast the lesser restoration spell.</description>
     </sheet>
-  </element>
-
-  <element name="Astrological Wisdom" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_ASTROLOGICAL_WISDOM">
-    <description>
-      <p>Starting at 14th level, you have studied the stars and memorized the pathways that connect the material plane to the astral plane. Your sprigs of mistletoe increase to d8s. Additionally, you gain access to the <i>teleportation circle</i> spell and always have it prepared.</p>
-      <p class="indent"><b><i>Stone Circle.</i></b> You know the ancient methods used to construct a circle of standing stones. You may spend 8 hours and 12,000 gp to construct a circle of twelve standing stones inscribed with druidic sigils, where each stone is 10 feet tall and weighs 1 ton. This stone circle may be used as a permanent anchor location for the <i>teleportation circle</i> spell.</p>
-    </description>
-    <sheet display="false" />
-    <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="14" spellcasting="Druid" prepared="true" />
-      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_STONE_CIRCLE" />
-    </rules>
   </element>
 
   <element name="Stone Circle" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_STONE_CIRCLE">
