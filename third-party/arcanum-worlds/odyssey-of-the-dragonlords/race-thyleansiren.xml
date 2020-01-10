@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <elements>
   <info>
-		<author url="https://www.arcanumworlds.com/">Arcanum Worlds</author>
 		<update version="0.0.1">
 			<file name="race-thyleansiren.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/race-thyleansiren.xml" />
 		</update>
@@ -54,7 +53,9 @@
     </description>
     <sheet display="false" />
     <setters>
-
+      <set name="names" type="male">Alovar, Celeus, Everean, Gaiar, Helean, Inareus, Leiro, Meiar, Nerean, Oren, Reilan, Taeren</set>
+      <set name="names" type="female">Alovarea, Celea, Everea, Gaia, Helena, Inarea, Leira, Meia, Nerea, Orena, Reilana, Taerena</set>
+      <set name="names-format">{{name}}</set>
     </setters>
     <rules>
       <stat name="dexterity" value="1"/>
@@ -92,9 +93,12 @@
     <description>
       <p>You have a flying speed of 30 feet. To use this speed, you can’t be wearing medium or heavy armor.</p>
     </description>
-    <sheet>
+    <sheet display="false">
       <description>You have a flying speed of 30 feet. To use this speed, you can’t be wearing medium or heavy armor.</description>
     </sheet>
+    <rules>
+      <stat name="innate speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+    </rules>
   </element>
 
   <element name="Songs of Sorrow" type="Racial Trait" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_RACIAL_TRAIT_THYLEAN_SIREN_SONGS_OF_SORROW">
