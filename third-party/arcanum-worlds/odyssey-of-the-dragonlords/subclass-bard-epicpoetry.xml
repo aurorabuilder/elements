@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+		<update version="0.0.1">
+			<file name="subclass-bard-epicpoetry.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-bard-epicpoetry.xml" />
+		</update>
+	</info>
+  <element name="College of Epic Poetry" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_BARD_COLLEGE_OF_EPIC_POETRY">
+    <supports>Bard College</supports>
+    <description>
+      <p>Bards who study the College of Epic Poetry are devoted to the creation of a singular masterpiece in the tradition of the epic poets. All the greatest stories in history were originally captured and recreated for audiences as masterful works of poetry. These stories were passed down for centuries in an oral tradition, and eventually, they were recorded on papyrus scrolls and stored in great libraries.</p>
+      <p class="indent">Those who wish to record their own epic poems spend their early years studying philosophy, aesthetics, and music, so that they have the necessary language to capture the splendor of great deeds. However, an epic poet cannot spend all their life in the Academy. Eventually, they must seek out great conflicts, for great conflicts produce great heroes, and great heroes produce great deeds.</p>
+      <p class="indent">As such, you have prepared yourself for a life of turmoil, chasing after warriors who brave impossible odds. You have learned to transcribe events faithfully, even in the chaos of battle. You know that if your quill slips at a pivotal moment, the beauty of that instant may be forever lost to history.</p>
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_EPIC_VERSES" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_INSPIRATIONAL_VERSES" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_ARMORED_POET" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_PROTECTIVE_EPITHETS" />
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_EPIC_VERSES" level="3" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_INSPIRATIONAL_VERSES" level="3" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_ARMORED_POET" level="6" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_PROTECTIVE_EPITHETS" level="14" />
+    </rules>
+  </element>
+  <element name="Epic Verses" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_EPIC_VERSES">
+    <description>
+      <p>Starting when you join the College of Epic Poetry at 3rd level, you begin composing your epic poem. When certain significant events occur during your travels or during combat, you may use your reaction to compose a new epic verse. Significant events are defined as any of the following things happening to you or one of your allies by chance (e.g. your party cannot deliberately force them to happen by repetition). You must be able to see or hear the event happen.</p>
+      <ul>
+        <li><b>Comedy:</b> Someone rolls a natural 1 on an attack or saving throw.</li>
+        <li><b>Hubris:</b> Someone rolls a natural 20 on an attack or saving throw.</li>
+        <li><b>Irony:</b> Someone fails a saving throw after adding a Bardic Inspiration die.</li>
+        <li><b>Tragedy:</b> Someone is reduced to zero hit points by an enemy.</li>
+      </ul>
+      <p>Additionally, any particularly exciting event that seems to warrant inclusion in your poem is eligible as long as the GM approves—but don’t push it.</p>
+      <p class="indent">Each time you compose a new epic verse, you must declare that you are doing so. If the GM approves, then you may add 1 verse to your poem. You may also want to write down what happened and why, so that you can enjoy reading it later, but this is not required. Your poem increases in rank as the number of verses grows.</p>
+    </description>
+    <sheet action="Reaction">
+      <description>When someone rolls a natural 1 or 20 on an attack or saving throw, fails a saving throw after adding a Bardic Inspiration die or is reduced to 0 hit points by an enemy, compose one verse. Additionally, any particularly exciting event that seems to warrant inclusion in your poem is eligible as long as the GM approves.</description>
+    </sheet>
+  </element>
+  <element name="Inspirational Verses" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_INSPIRATIONAL_VERSES">
+    <description>
+      <p>Starting at 3rd level, when you give someone Bardic Inspiration, you recite a portion of your epic poem, which improves the effect of the dice based upon the rank of your poem.</p>
+      <p class="indent"><b>Improved Rolls.</b> Your Bardic Inspiration dice have a minimum result value based on the number of verses that you’ve collected. Whenever someone rolls one of your Bardic Inspiration dice, if they roll less than the minimum value for your poem rank, then the result is equal to the minimum value as determined by your poem rank.</p>
+      <p class="indent"><b>Additional Effects.</b> Your Bardic Inspiration dice have additional effects based on the number of verses that you’ve collected. When you give someone Bardic Inspiration, choose one of the following effects that you have unlocked. They gain the benefit of this effect as long as they have your Bardic Inspiration die. The effect is lost when they roll the die.</p>
+      <p class="indent"><b>Epic Courage:</b> You gain advantage on saving throws against effects that would frighten you.</p>
+      <p class="indent"><b>Epic Determination:</b> You gain advantage on death saving throws.</p>
+      <p class="indent"><b>Epic Foresight:</b> You cannot be surprised, and your passive Perception increases by +5.</p>
+      <p class="indent"><b>Epic Reflexes:</b> You gain advantage on saving throws against spells that affect multiple targets.</p>
+      <p class="indent"><b>Epic Resistance:</b> You gain resistance to one damage type (Bard’s choice).</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet>
+      <description>Your poem rank is {{epic poetry:poem rank}} and your Bardic Inspiration dice have a minimum result of {{epic poetry:inspiration minimum value}}.
+      When you give someone Bardic Inspiration, they gain one benefit as long as they have your Bardic Inspiration die. The effect is lost when they roll the die.</description>
+    </sheet>
+    <rules>
+      <select type="Archetype Feature" name="Poem Rank" supports="Inspirational Verses Poem Rank" optional="true"/>      
+      <stat name="epic poetry:poem rank" value="0" />
+      <stat name="epic poetry:inspiration minimum value" value="1" bonus="base" />      
+    </rules>
+  </element>
+  <element name="Armored Poet" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_ARMORED_POET">
+    <description>
+      <p>Starting at 6th level, you gain proficiency with medium armor, so that you can get close to the fighting while composing your poem. Additionally, if you are within 5 feet of an ally when you compose an epic verse about them, then you regain one expended Bardic Inspiration die.</p>
+    </description>
+    <sheet>
+      <description>If you are within 5 feet of an ally when you compose an epic verse about them, then you regain one expended Bardic Inspiration die.</description>
+    </sheet>
+    <rules>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+    </rules>
+  </element>
+  <element name="Protective Epithets" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARD_EPIC_POETRY_PROTECTIVE_EPITHETS">
+    <description>
+      <p>Starting at 14th level, the lyrical epithets that you've selected for your allies take on magical properties, protecting them from death. Whenever a character with your Bardic Inspiration die would be reduced to 0 hit points, they may choose to roll their Bardic Inspiration die and be reduced to that number of hit points instead. The Bardic Inspiration die is then lost.</p>
+    </description>
+    <sheet>
+      <description>Whenever a character with your Bardic Inspiration die would be reduced to 0 hit points, they may choose to roll their Bardic Inspiration die and be reduced to that number of hit points instead. The Bardic Inspiration die is then lost.</description>
+    </sheet>
+  </element>
+
+  <element name="Poem Rank 1" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_1">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td class="col-20">Poem Rank</td><td class="col-20">Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="1" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="2" bonus="base" />
+    </rules>
+	</element>
+  <element name="Poem Rank 2" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_2">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="2" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="2" bonus="base" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+    </rules>
+	</element>
+  <element name="Poem Rank 3" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_3">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="3" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="3" bonus="base" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+    </rules>
+	</element>
+  <element name="Poem Rank 4" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_4">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="4" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="3" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+    </rules>
+	</element>
+  <element name="Poem Rank 5" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_5">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="5" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="4" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+    </rules>
+	</element>
+  <element name="Poem Rank 6" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_6">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="6" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="4" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION" />
+    </rules>
+	</element>
+  <element name="Poem Rank 7" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_7">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="7" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="5" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION" />
+    </rules>
+	</element>
+  <element name="Poem Rank 8" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_8">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="8" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="5" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_REFLEXES" />
+    </rules>
+	</element>
+  <element name="Poem Rank 9" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_9">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="9" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="6" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_REFLEXES" />
+    </rules>
+	</element>
+  <element name="Poem Rank 10" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_POEM_RANK_10">
+    <compendium display="false"/>
+		<supports>Inspirational Verses Poem Rank</supports>
+    <description>
+      <p>Your poem increases in rank as the number of verses grows.</p>
+      <h5 class="caption">EPIC POEM RANKS AND EFFECTS</h5>
+      <table class="class-features">
+        <thead>
+          <tr><td>Poem Rank</td><td>Required Verse Count</td><td>Bardic Inspiration Improvement</td></tr>
+        </thead>
+        <tr><td>1</td><td>6</td><td>Minimum Value = 2</td></tr>
+        <tr><td>2</td><td>12</td><td>Epic Courage</td></tr>
+        <tr><td>3</td><td>18</td><td>Minimum Value = 3</td></tr>
+        <tr><td>4</td><td>24</td><td>Epic Foresight</td></tr>
+        <tr><td>5</td><td>30</td><td>Minimum Value = 4</td></tr>
+        <tr><td>6</td><td>36</td><td>Epic Determination</td></tr>
+        <tr><td>7</td><td>42</td><td>Minimum Value = 5</td></tr>
+        <tr><td>8</td><td>48</td><td>Epic Reflexes</td></tr>
+        <tr><td>9</td><td>54</td><td>Minimum Value = 6</td></tr>
+        <tr><td>10</td><td>60</td><td>Epic Resistance</td></tr>
+      </table>      
+      <div class="sidebar">
+        <h5>VERSE COUNTS &amp; PARTY SIZE</h5>
+        <p>These verse counts are based on a party size of six. If you have less than six members in your party, then the required verse counts are reduced. Multiply your party size by the poem rank to determine the required verse count. For example, if you have 3 party members, then your required verse count for rank 6 is equal to 18 (3 x 6)</p>
+      </div>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <stat name="epic poetry:poem rank" value="10" bonus="base" />
+      <stat name="epic poetry:inspiration minimum value" value="6" bonus="base" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_REFLEXES" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_RESISTANCE" />
+    </rules>
+	</element>
+  
+  <element name="Epic Courage" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_COURAGE">
+    <compendium display="false"/>
+    <description>
+      <p>You gain advantage on saving throws against effects that would frighten you.</p>
+    </description>
+		<sheet>
+      <description usage="Inspirational Verses">While you have Bardic Inspiration, you gain advantage on saving throws against effects that would frighten you.</description>
+    </sheet>
+  </element>
+  <element name="Epic Foresight" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_FORESIGHT">
+    <compendium display="false"/>
+    <description>
+      <p>You cannot be surprised, and your passive Perception increases by +5.</p>
+    </description>
+		<sheet>
+      <description usage="Inspirational Verses">While you have Bardic Inspiration, you cannot be surprised, and your passive Perception increases by +5.</description>
+    </sheet>
+  </element>
+  <element name="Epic Determination" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_DETERMINATION">
+    <compendium display="false"/>
+    <description>
+      <p>You gain advantage on death saving throws.</p>
+    </description>
+		<sheet>
+      <description usage="Inspirational Verses">While you have Bardic Inspiration, you gain advantage on death saving throws.</description>
+    </sheet>
+  </element>
+  <element name="Epic Reflexes" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_REFLEXES">
+    <compendium display="false"/>
+    <description>
+      <p>You gain advantage on saving throws against spells that affect multiple targets.</p>
+    </description>
+		<sheet>
+      <description usage="Inspirational Verses">While you have Bardic Inspiration, you gain advantage on saving throws against spells that affect multiple targets.</description>
+    </sheet>
+  </element>
+  <element name="Epic Resistance" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_EPIC_POETRY_VERSES_EPIC_RESISTANCE">
+    <compendium display="false"/>
+    <description>
+      <p>You gain resistance to one damage type (Bard’s choice).</p>
+    </description>
+		<sheet>
+      <description usage="Inspirational Verses">While you have Bardic Inspiration, you gain resistance to one damage type (Bard’s choice).</description>
+    </sheet>
+  </element>
+
+  <!-- simple stackable item to help keep track of the number of verses you've composed -->
+  <element name="Epic Poem Verse" type="Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ITEM_POEM_VERSE">
+    <description>
+      <p>Starting when you join the College of Epic Poetry, you begin composing your epic poem. When certain significant events occur during your travels or during combat, you may compose a new epic verse.</p>
+    </description>
+    <setters>
+      <set name="keywords">epic poetry, bard college, inspirational verses</set>
+      <set name="category">Adventuring Gear</set>
+      <set name="cost" currency="gp">0</set>
+      <set name="weight" lb="0">0 lb.</set>
+      <set name="stackable">true</set>
+    </setters>
+  </element>
+</elements>

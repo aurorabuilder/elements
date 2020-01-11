@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+		<update version="0.0.1">
+			<file name="subclass-barbarian-herculean.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-barbarian-herculean.xml" />
+		</update>
+	</info>
+  <element name="Herculean Path" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_BARBARIAN_HERCULEAN_PATH">
+    <supports>Primal Path</supports>
+    <description>
+      <p>Some individuals are born with seemingly impossible strength, exhibiting rippling muscles even before they learn to speak or walk. Such men and women quickly learn that every good thing in this world may be obtained through the exercise of overwhelming might. Others may scorn them and call them “barbaric,” but what are words but useless noise to be choked out of the speaker’s windpipe?</p>
+      <p class="indent">As one such individual, you know that strength is what determines one’s worth in the world: strength to crush your enemies—and to impress your allies. You savor the opportunity to show off your great strength, whether it be in battle or in friendly competition. Your incredible strength allows you to accomplish Herculean feats that will leave your foes wailing in anguish.</p>
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_PRECOCIOUS_WRESTLER" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_MIGHTY_MARKSMAN" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_HERCULEAN_RAGE" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_EARTHSHAKER" />
+    </description>
+    <sheet display="false">
+      <description>Some individuals are born with seemingly impossible strength.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_PRECOCIOUS_WRESTLER" level="3" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_MIGHTY_MARKSMAN" level="6" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_HERCULEAN_RAGE" level="10" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_EARTHSHAKER" level="14" />
+    </rules>
+  </element>
+  <element name="Precocious Wrestler" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_PRECOCIOUS_WRESTLER">
+    <description>
+      <p>Starting at 3rd level, you have learned to take advantage of your innate strength to wrestle foes into submission. You are proficient in the Athletics skill, and you are capable of grappling and shoving creatures that are up to two sizes larger than you. On your turn, you may use a bonus action to attempt to grapple a creature. While you are grappling a creature with one hand, you may use your free hand to attack that creature with two-handed weapons as if you were using both hands.</p>
+    </description>
+    <sheet>
+      <description action="Bonus Action">Attempt to grapple a creature. While you are grappling a creature with one hand, you may use your free hand to attack that creature with two-handed weapons as if you were using both hands. You are capable of grappling and shoving creatures that are up to two sizes larger than you.</description>
+    </sheet>
+    <rules>
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+    </rules>
+  </element>
+  <element name="Mighty Marksman" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_MIGHTY_MARKSMAN">
+    <description>
+      <p>Starting at 6th level, you leverage your immense strength when using ranged weapons. You can use heavy weapons without incurring disadvantage due to your size. Additionally, you may choose to use your Strength modifier for attack and damage rolls with longbows. When you make ranged attacks with longbows or thrown weapons while raging, you may add your rage damage bonus to the damage rolls.</p>
+      <p class="indent"><strong><em>Thunderous Shot.</em></strong> When you make a ranged attack, you may choose to add the effect of <i>thunderwave</i> to the projectile, centered on the location that the projectile hits. The DC for this effect is 8 + your proficiency bonus + your Strength modifier. Once you have used this feature, you may not use it again until you complete a short or long rest.</p>
+    </description>
+    <sheet>
+      <description>
+        You can use heavy weapons without incurring disadvantage due to your size. Additionally, when using a longbow, you may choose to use your Strength modifier for attack rolls (ranged attack {{mighty marksman:attack}}) and damage rolls (+{{strength:modifier}}). When you make ranged attacks with longbows or thrown weapons while raging, you may add your rage bonus (base +{{barbarian rage:damage}}) to the damage rolls.
+      </description>
+    </sheet>
+    <rules>
+      <stat name="mighty marksman:attack" value="strength:modifier" />
+      <stat name="mighty marksman:attack" value="proficiency" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_THUNDEROUS_SHOT" />
+    </rules>
+  </element>
+  <element name="Thunderous Shot" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_THUNDEROUS_SHOT">
+    <compendium display="false" />
+    <sheet>
+      <description usage="1/Short Rest">When you make a ranged attack, you may choose to add the effect of <i>thunderwave</i> to the projectile, centered on the location that the projectile hits. The DC for this effect is {{mighty marksman:dc}}.</description>
+    </sheet>
+    <rules>
+      <stat name="mighty marksman:dc" value="8" />
+      <stat name="mighty marksman:dc" value="strength:modifier" />
+      <stat name="mighty marksman:dc" value="proficiency" />
+    </rules>
+  </element>
+  <element name="Herculean Rage" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_HERCULEAN_RAGE">
+    <description>
+      <p>Starting at 10th level, your rages take on legendary qualities and grow more powerful the longer they endure. At the beginning of each of your turns, if you are already raging, your rage damage bonus increases by +1, up to a maximum of your Strength modifier. Additionally, while raging, you are immune to poison damage and you cannot be frightened.</p>
+    </description>
+    <sheet>
+      <description>At the beginning of each of your turns, if you are already raging, your rage damage bonus increases by +1, up to a maximum of a +{{strength:modifier}} increase. Additionally, while raging, you are immune to poison damage and you cannot be frightened.</description>
+    </sheet>
+  </element>
+  <element name="Earthshaker" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_BARBARIAN_HERCULEAN_EARTHSHAKER">
+    <description>
+      <p>Starting at 14th level, your colossal strength causes the ground itself to tremble and quake. On your turn, you can use your action to strike the ground and create the effects of an earthquake with a 40 ft. radius, centered on your location. This area becomes difficult terrain.</p>
+      <p class="indent">Each creature on the ground in the affected area that is concentrating must make a Constitution saving throw with a DC of 8 + your proficiency bonus + your Strength modifier. On a failed save, the creature's concentration is broken. At the end of your turn, each creature on the ground in the area must make a Dexterity saving throw with the same DC as the previous one. On a failed save, the creature is knocked prone. You have advantage on this saving throw.</p>
+      <p class="indent">At the beginning of each of your subsequent turns, you may use your bonus action to stomp the ground and continue the effects of the earthquake until the beginning of your next turn, for a maximum duration of 1 minute. Once you have used this feature, you may not use it again until you complete a long rest.</p>
+    </description>
+    <sheet>
+      <description action="Action" usage="1/Long Rest">Create the effects of an earthquake with a 40 ft. radius, centered on your location. This area becomes difficult terrain.
+        Each creature on the ground in the affected area that is concentrating must make a Constitution saving throw with a DC of {{earthshaker:dc}}. On a failed save, the creature's concentration is broken. At the end of your turn, each creature on the ground in the area must make a Dexterity saving throw with the same DC as the previous one. On a failed save, the creature is knocked prone. You have advantage on this saving throw.
+        At the beginning of each of your subsequent turns, you may use your bonus action to continue the effects of the earthquake until the beginning of your next turn, for a maximum duration of 1 minute.</description>
+    </sheet>
+    <rules>
+      <stat name="earthshaker:dc" value="8" />
+      <stat name="earthshaker:dc" value="strength:modifier" />
+      <stat name="earthshaker:dc" value="proficiency" />
+    </rules>
+  </element>
+</elements>

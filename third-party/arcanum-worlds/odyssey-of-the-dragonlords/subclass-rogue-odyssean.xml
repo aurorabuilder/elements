@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<update version="0.0.1">
+			<file name="subclass-rogue-odyssean.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-rogue-odyssean.xml" />
+		</update>
+	</info>
+    <element name="Odyssean" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_ROGUE_ODYSSEAN">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Odysseans are legendary tricksters who at first glance seem like common soldiers. They carry spears and shields like any rank-and-file hoplite, but rather than moving in strict formations or honing their discipline, Odysseans hone their minds. When two armies smash together, shields bursting under the strain of a perfect phalanx, the Odyssean is the soldier who stands back and searches for weaknesses in the enemy’s defenses. Even when badly outnumbered, they may find a way to exploit conditions on the battlefield to turn the tide in the favor of their allies.</p>
+            <p class="indent">Soldiers who exhibit such a sharp mind quickly grow in notoriety and fame, but being famed for your cleverness is a double-edged sword. Odysseans are often drawn into conflicts that take them far from home, where monsters and other dangers are a constant threat. Such harrowing odysseys are the namesake of the Odyssean, who may be forced to survive several such journeys in their lifetime.</p>
+            <p class="indent">As an Odyssean rogue, you have a quick mind and you can intuit the strengths of your companions. You enjoy using your intelligence to trick your enemies and impress your friends. However, you know that you must never let your mind grow dull, for when the time comes that you are again flung into the wilderness, it will be your wits alone that save you from a gruesome death.</p>
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_VAGRANT_SOLDIER" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_CLEVER_AS_THE_GODS" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_NOTORIOUS_TRICKSTER" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_TENACIOUS_SURVIVOR" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_LEGENDARY_CUNNING" />
+        </description>
+        <sheet display="false">
+            <description>Odysseans are legendary tricksters who at first glance seem like common soldiers.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_VAGRANT_SOLDIER" level="3"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_CLEVER_AS_THE_GODS" level="3"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_NOTORIOUS_TRICKSTER" level="9"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_TENACIOUS_SURVIVOR" level="13"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_LEGENDARY_CUNNING" level="17"/>
+        </rules>
+    </element>
+    <element name="Vagrant Soldier" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_VAGRANT_SOLDIER">
+        <description>
+            <p>Despite your roguish demeanor, you have all the training of a common soldier. When you choose this archetype at 3rd level, you gain proficiency with shields. Additionally, spears and tridents count as finesse weapons for you.</p>
+        </description>
+        <sheet>
+            <description>Spears and tridents count as finesse weapons for you.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+        </rules>
+    </element>
+    <element name="Clever as the Gods" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_CLEVER_AS_THE_GODS">
+        <description>
+            <p>Starting at 3rd level, you are rarely outwitted on the field of battle. On your turn, you may use your bonus action to devise a clever plan to trick an enemy. Choose one creature that you can see. Make a Charisma (Deception) roll contested by that creature’s Wisdom (Insight). If you win the contest, you and your allies have advantage on attacks against that creature until the beginning of your next turn. This feature cannot be used on the same creature more than once per combat encounter.</p>
+        </description>
+        <sheet>
+            <description action="Bonus Action">Choose one creature that you can see. Make a Deception roll contested by that creature’s Insight. If you win the contest, you and your allies have advantage on attacks against that creature until the beginning of your next turn. This feature cannot be used on the same creature more than once per combat encounter.</description>
+        </sheet>
+    </element>
+    <element name="Notorious Trickster" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_NOTORIOUS_TRICKSTER">
+        <description>
+            <p>Starting at 9th level, you are famed for your cleverness, to the point where intelligent enemies are extremely wary of you. Creatures who are aware of your presence but cannot see you become too distracted to perform opportunity attacks until they can see you again. Additionally, when you hit a creature with a Sneak Attack, if that creature is concentrating on a spell, they have disadvantage on the roll to maintain concentration.</p>
+        </description>
+        <sheet>
+            <description>Creatures who are aware of your presence but cannot see you become too distracted to perform opportunity attacks until they can see you again. Additionally, when you hit a creature with a Sneak Attack, if that creature is concentrating on a spell, they have disadvantage on the roll to maintain concentration.</description>
+        </sheet>
+    </element>
+    <element name="Tenacious Survivor" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_TENACIOUS_SURVIVOR">
+        <description>
+            <p>At 13th level, you’ve survived through so many ordeals that you face each new challenge with grim determination. You can add your Charisma bonus to your initiative rolls. Also, at the beginning of your first turn in combat, you may use a bonus action to take a deep breath and regain hit points equal to your rogue level. You may use this feature a number of times equal to your Charisma modifier, and you regain any expended uses when you finish a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{charisma:modifier}}/Short Rest">
+            <description>At the beginning of your first turn in combat, you may take a deep breath and regain {{level:rogue}} hp.</description>
+        </sheet>
+		<rules>
+            <stat name="initiative:misc" value="charisma:modifier" />
+		</rules>
+    </element>    
+    <element name="Legendary Cunning" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_ODYSSEAN_LEGENDARY_CUNNING">
+        <description>
+            <p>Starting at 17th level, you are able to instantly assess every opportunity to seize the upper hand in combat. Whenever any of your allies makes an opportunity attack against a creature, you may choose to make a ranged attack against that same creature with advantage.</p>
+        </description>
+        <sheet>
+            <description>Whenever any of your allies makes an opportunity attack against a creature, you may choose to make a ranged attack against that same creature with advantage.</description>
+        </sheet>
+    </element>
+</elements>

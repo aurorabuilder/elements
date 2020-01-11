@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+		<update version="0.0.1">
+			<file name="subclass-druid-sacrifice.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-druid-sacrifice.xml" />
+		</update>
+	</info>
+  <element name="Circle of Sacrifice" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_DRUID_SACRIFICE">
+    <supports>Druid Circle</supports>
+    <description>
+      <p>Druids of the Circle of Sacrifice believe that nature connects one to the entire universe, including the stars and the astral void between planes. They know that immutable laws have been set down by the great powers of the universe and that sacrifices must be made to these powers in order to keep the balance. Such sacrifices take the form of great bonfires, wherein fallen creatures are immolated.</p>
+      <p class="indent">Druids who keep the Circle of Sacrifice are sometimes called the Keepers of the Old Ways, and they revere mistletoe as a sacred plant connected to the infinite power of the astral plane. Mistletoe must be harvested with extreme care, following rituals that ensure that the plant maintains its potency.</p>
+      <p class="indent">As one of the keepers of the Old Ways, you sometimes gather with others of your kind at sacred rings of standing stones. These standing stones connect the natural world to the heavens and the astral void.</p>
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_SACRIFICE" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_MISTLETOE" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_KEEPER_OF_THE_LAW" />
+      <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_ASTROLOGICAL_WISDOM" />
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_SACRIFICE" level="2" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_MISTLETOE" level="6" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_KEEPER_OF_THE_LAW" level="10" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_ASTROLOGICAL_WISDOM" level="14" />
+    </rules>
+  </element>
+  <element name="Ritual of Sacrifice" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_SACRIFICE">
+    <description>
+      <p>Starting at 2nd level, you learn how to perform a sacrificial ritual that pleases the gods. You know the <i>produce flame</i> cantrip. When you make an attack with <i>produce flame</i>, add your Wisdom modifier to the damage roll.</p>
+      <p class="indent"><strong><em>Immolation.</em></strong> Whenever you reduce a creature to 0 hit points, you may choose to immolate them as a sacrificial offering. As the creature is engulfed in fire, you and every ally within 60 feet of the immolated creature gain the effects of the bless spell for 1 minute (concentration is not required). You may use this feature a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
+    </description>
+    <sheet>
+      <description>When you make an attack with produce flame, add +{{ritual of sacrifice:bonus}} to the damage roll.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_PRODUCE_FLAME" />
+      <stat name="ritual of sacrifice:bonus" value="wisdom:modifier" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_IMMOLATION" />
+    </rules>
+  </element>
+  <element name="Immolation" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_IMMOLATION">
+    <compendium display="false" />
+    <description>
+      <p><i><b>Immolation.</b></i> Whenever you reduce a creature to 0 hit points, you may choose to immolate them as a sacrificial offering. As the creature is engulfed in fire, you and every ally within 60 feet of the immolated creature gain the effects of the <i>bless</i> spell for 1 minute (concentration is not required). You may use this feature a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
+    </description>
+    <sheet>
+      <description usage="{{wisdom:modifier}}/Short Rest">Whenever you reduce a creature to 0 hit points, you may choose to immolate them. If you do, you and every ally within 60 feet of the immolated creature gain the effects of the bless spell for 1 minute.</description>
+    </sheet>
+    <rules>
+      <stat name="immolation:uses" value="wisdom:modifier" />
+    </rules>
+  </element>
+  <element name="Ritual of Mistletoe" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RITUAL_OF_MISTLETOE">
+    <description>
+      <p>Starting at 6th level, you carry a pouch full of mistletoe that you’ve collected with your sickle. You have sprigs of mistletoe represented by a number of d4s equal to your druid level. On your turn, you may use a bonus action to expend one of the sprigs of mistletoe and perform one of the following effects:</p>
+      <ul>
+        <li><b>Divining Ritual:</b> You cast <i>detect magic</i> without using a spell slot.</li>
+        <li><b>Healing Ritual:</b> You cast <i>cure wounds</i> as a 1st-level spell without using a spell slot.</li>
+        <li><b>Purification Ritual:</b> You cast <i>purify food and drink</i> without using a spell slot.</li>
+        <li><b>Song of the Solstice:</b> You cast <i>heroism</i> as a 1st-level spell without using a spell slot.</li>
+      </ul>
+      <p class="indent">Additionally, any time you cast a spell that restores hit points, you may expend any number of sprigs of mistletoe to roll those dice and add them to the number of hit points restored. You regain all expended sprigs of mistletoe after completing a long rest.</p>
+    </description>
+    <sheet action="Bonus Action" usage="{{mistletoe:sprigs}} sprigs/Long Rest">
+      <description>You can expend a sprig of mistletoe to cast detect magic, cure wounds, purify food and drink or heroism at 1st level without expending a spell slot. Additionally, any time you cast a spell that restores hp, you may expend any number of sprigs to roll a d4 per sprig and add them to the number of hp restored.</description>
+      <description level="10">You can expend a sprig of mistletoe to cast detect magic, cure wounds, purify food and drink or heroism at 1st level without expending a spell slot. Additionally, any time you cast a spell that restores hp, you may expend any number of sprigs to roll a d6 per sprig and add them to the number of hp restored.</description>
+      <description level="14">You can expend a sprig of mistletoe to cast detect magic, cure wounds, purify food and drink or heroism at 1st level without expending a spell slot. Additionally, any time you cast a spell that restores hp, you may expend any number of sprigs to roll a d8 per sprig and add them to the number of hp restored.</description>
+    </sheet>
+    <rules>
+      <stat name="mistletoe:sprigs" value="level:druid" />
+    </rules>
+  </element>
+  <element name="Keeper of the Law" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_KEEPER_OF_THE_LAW">
+    <description>
+      <p>Starting at 10th level, you are initiated into an ancient order of druidic judges who keep and enforce the laws of the cosmos. Your sprigs of mistletoe increase to d6s.</p>
+      <p class="indent"><b><i>Sacrificial Offering.</i></b> On your turn, you may use a bonus action to choose one creature that you can see. That creature is marked as a Sacrificial Offering for the next hour. Whenever any of your allies hit that creature with an attack, you may use a reaction to expend one of your sprigs of mistletoe to roll the die and add the result as fire damage. Additionally, whenever a Sacrificial Offering is reduced to 0 hit points, you may activate your Immolation feature on that creature.</p>
+      <p class="indent"><b><i>Restoration Ritual.</i></b> On your turn, you may use an action to expend two sprigs of mistletoe to cast the lesser restoration spell.</p>
+    </description>
+    <sheet display="false" />
+    <rules>
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_OFFERING" />
+      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RESTORATION_RITUAL" />
+    </rules>
+  </element>
+  <element name="Sacrificial Offering" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_OFFERING">
+    <compendium display="false" />
+    <sheet action="Bonus Action">
+      <description>On your turn, mark one creature you can see as a Sacrificial Offering for the next hour. Whenever any of your allies hit that creature with an attack, you may use a reaction to expend one of your sprigs of mistletoe to roll a d6 and add the result as fire damage. Additionally, whenever a Sacrificial Offering is reduced to 0 hp, you may activate your Immolation feature on that creature.</description>
+      <description level="14">On your turn, mark one creature you can see as a Sacrificial Offering for the next hour. Whenever any of your allies hit that creature with an attack, you may use a reaction to expend one of your sprigs of mistletoe to roll a d8 and add the result as fire damage. Additionally, whenever a Sacrificial Offering is reduced to 0 hp, you may activate your Immolation feature on that creature.</description>
+    </sheet>
+  </element>
+  <element name="Restoration Ritual" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_RESTORATION_RITUAL">
+    <compendium display="false" />
+    <sheet>
+      <description action="Action">Expend two sprigs of mistletoe to cast the lesser restoration spell.</description>
+    </sheet>
+  </element>
+  <element name="Astrological Wisdom" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SACRIFICE_ASTROLOGICAL_WISDOM">
+    <description>
+      <p>Starting at 14th level, you have studied the stars and memorized the pathways that connect the material plane to the astral plane. Your sprigs of mistletoe increase to d8s. Additionally, you gain access to the <i>teleportation circle</i> spell and always have it prepared.</p>
+      <p class="indent"><b><i>Stone Circle.</i></b> You know the ancient methods used to construct a circle of standing stones. You may spend 8 hours and 12,000 gp to construct a circle of twelve standing stones inscribed with druidic sigils, where each stone is 10 feet tall and weighs 1 ton. This stone circle may be used as a permanent anchor location for the <i>teleportation circle</i> spell.</p>
+    </description>
+    <sheet>
+      <description>You may spend 8 hours and 12,000 gp to construct a stone circle that may be used as a permanent anchor location for the teleportation circle spell.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_TELEPORTATION_CIRCLE" spellcasting="Druid" prepared="true" />
+    </rules>
+  </element>
+</elements>

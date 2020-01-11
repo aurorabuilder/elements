@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="subclass-sorcerer-demigod.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-sorcerer-demigod.xml" />
+		</update>
+	</info>
+	<element name="Demigod" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_SORCERER_DEMIGOD">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your magic springs from the divine blood that flows through your veins. The gods have often been known to consort with mortals, and such unions sometimes produce half-divine offspring. These individuals are called demigods, and many of them are born with a powerful aptitude for magic.</p>
+			<p class="indent">Demigods exhibit powers that are related to the domain of their godly ancestor, but their magic is not constrained by this association. Rather, they may channel the power in their blood to improve the efficacy of any spell, regardless of its type. Additionally, the divine power that courses through their blood makes demigods impressive specimens of both physical fitness and beauty.</p>
+			<div element="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_GODLY_ANCESTOR" />
+			<div element="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_INHERITED_STRENGTH" />
+			<div element="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_EMPOWERED_MAGIC" />
+			<div element="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_DIVINE_RESISTANCE" />
+			<div element="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_ASCENDANT_SORCERY" />
+		</description>
+		<sheet display="false">
+			<description>Your magic springs from the divine blood that flows through your veins.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_GODLY_ANCESTOR" level="1" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_INHERITED_STRENGTH" level="1" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_EMPOWERED_MAGIC" level="6" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_DIVINE_RESISTANCE" level="14" />
+			<grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_ASCENDANT_SORCERY" level="18" />
+		</rules>
+	</element>
+	<element name="Godly Ancestor" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_GODLY_ANCESTOR">
+		<description>
+			<p>Starting at 1st level, choose the divine domain of your godly ancestor from the following list. You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<p class="indent">Additionally, whenever you make a Charisma check when interacting with gods or celestials, your proficiency bonus is doubled if it applies to the check.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description>Whenever you make a Charisma check when interacting with gods or celestials, your proficiency bonus is doubled if it applies to the check.</description>
+        </sheet>
+		<rules>
+			<select type="Archetype Feature" name="Divine Domain, Godly Ancestor" supports="Godly Ancestor Divine Domain" />
+		</rules>
+	</element>
+	<element name="Inherited Strength" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_INHERITED_STRENGTH">
+		<description>
+			<p>Starting at 1st level, your godly lineage bestows you with extraordinary strength for someone without martial training. You are proficient in Strength saving throws. Additionally, you may choose to add your Charisma modifier to melee attack and damage rolls instead of your Strength.</p>
+		</description>
+		<sheet>
+			<description>You may choose to add your Charisma modifier to melee attack and damage rolls instead of your Strength.</description>
+		</sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
+        </rules>
+	</element>
+	<element name="Empowered Magic" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_EMPOWERED_MAGIC">
+		<description>
+			<p>Starting at 6th level, echoes of divine power flow through your spells. When you cast a spell, you may spend 1 sorcery point to increase the spell's level by 1. You cannot use this feature to increase a spell’s level by more than 1. For example, if you use a 5th-level spell slot to cast <i>fireball</i> as a 5th-level spell, you may spend 1 sorcery point to cast the spell at 6th level instead.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell, you may spend 1 sorcery point to increase the spell's level by 1. You cannot use this feature to increase a spell’s level by more than 1.</description>
+		</sheet>
+	</element>
+	<element name="Divine Resistance" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_DIVINE_RESISTANCE">
+		<description>
+			<p>Starting at 14th level, your divine blood allows you to shrug off effects that would destroy mere mortals. When you fail a saving throw, you may choose to succeed instead. You may use this feature once, and you regain the ability to do so after completing a long rest.</p>
+		</description>
+		<sheet>
+			<description usage="1/Long Rest">When you fail a saving throw, you may choose to succeed instead.</description>
+		</sheet>
+	</element>
+	<element name="Ascendant Sorcery" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_ASCENDANT_SORCERY">
+		<description>
+			<p>Starting at 18th level, your power has begun to rival your divine ancestor’s. When you use the Empowered Magic feature, you may increase the spell’s level by more than 1. You must spend 1 sorcery point for each level that you add to the spell.</p>
+		</description>
+		<sheet>
+			<description>When you use the Empowered Magic feature, you may increase the spell’s level by more than 1. You must spend 1 sorcery point for each level that you add to the spell.</description>
+		</sheet>
+	</element>
+
+	<!-- Godly Ancestor options -->
+	<element name="Death Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_DEATH_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast bane or ray of sickness without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_BANE" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Knowledge Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_KNOWLEDGE_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast command or guiding bolt without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_COMMAND" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Life Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_LIFE_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast cure wounds or bless without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Nature Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_NATURE_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast entangle or healing word without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Light Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_LIGHT_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast burning hands or faerie fire without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Tempest Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_TEMPEST_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast fog cloud or thunderwave without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="Trickery Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_TRICKERY_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast charm person or hideous laughter without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_TASHAS_HIDEOUS_LAUGHTER" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    <element name="War Domain" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_DEMIGOD_WAR_DOMAIN">
+		<compendium display="false" />
+        <supports>Godly Ancestor Divine Domain</supports>
+        <description>
+			<p>You can cast each of the associated spells once without using any spell slots, and you regain the ability to do so after completing a short or long rest.</p>
+			<h5 class="caption">DEMIGOD DOMAINS AND SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Divine Domain</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Death</td><td><i>bane, ray of sickness</i></td></tr>
+				<tr><td>Knowledge</td><td><i>command, guiding bolt</i></td></tr>
+				<tr><td>Life</td><td><i>cure wounds, bless</i></td></tr>
+				<tr><td>Nature</td><td><i>entangle, healing word</i></td></tr>
+				<tr><td>Light</td><td><i>burning hands, faerie fire</i></td></tr>
+                <tr><td>Tempest</td><td><i>fog cloud, thunderwave</i></td></tr>
+                <tr><td>Trickery</td><td><i>charm person, hideous laughter</i></td></tr>
+                <tr><td>War</td><td><i>shield of faith, thunderous smite</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+            <description usage="1/Short Rest">You can cast shield of faith or thunderous smite without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SHIELD_OF_FAITH" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_THUNDEROUS_SMITE" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+</elements>
