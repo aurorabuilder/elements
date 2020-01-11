@@ -30,11 +30,10 @@
             <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_PRESSURE_POINTS" level="15" />
         </rules>
     </element>
-
     <element name="Amazonian Magic" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_MAGIC">
         <description>
-            <p>Starting when you swear your oath at 3rd level, you gain Oath Spells at the listed levels and always have them prepared.</p>       
-            <h5>Amazonian Spells</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Amazonian Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>       
+            <h5 class="caption">AMAZONIAN SPELLS</h5>
             <table>
                 <thead>
                     <tr><td>Ranger Level</td><td>Spells</td></tr>
@@ -55,7 +54,6 @@
             <grant type="Spell" id="ID_PHB_SPELL_MISLEAD" level="17" spellcasting="Ranger" />
         </rules>
     </element>
-
     <element name="Stimfay Companion" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_STIMFAY_COMPANION">
         <description>
             <p>At 3rd level, you construct a <b>stimfay</b> companion to accompany you on your travels. Stimfay are clockwork birds of prey that assist an Amazon with stalking her quarry. Choose from the following list of creatures for your stimfay’s appearance: eagle, harrier, hawk, kite, osprey, owl, or archaeopteryx. Your stimfay’s appearance does not affect its abilities, but it does influence its personality.</p>
@@ -67,10 +65,9 @@
             <description>In areas that are open to the sky, you can direct your stimfay to spend 10 minutes scouting the surrounding 1 mile radius and report back to you with anything it has seen. The stimfay obeys your commands to the best of its abilities, and it acts on your initiative in combat. If you are incapacitated, your stimfay acts on its own. Your stimfay adds your proficiency bonus to its attacks, damage, and ability save DCs. It regains any lost hit points during a long rest. If it is ever destroyed, you may spend 8 hours to fully repair it.</description>
         </sheet>
         <rules>
-            <select type="Companion" name="Stimfay" supports="Stimfay Companion" default="ID_AW_OOTD_COMPANION_RANGER_AMAZONIAN_STIMFAY" />
+            <select type="Companion" name="Stimfay Companion" supports="Stimfay Companion" default="ID_AW_OOTD_COMPANION_RANGER_AMAZONIAN_STIMFAY" />            
         </rules>
     </element>
-
     <element name="Amazonian Battlecry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_AMAZONIAN_BATTLECRY">
         <description>
             <p>At 3rd level, you gain the ability to enter the legendary frenzy of the Amazons by shouting your signature battlecry. On your turn, you can use a bonus action to shout your battlecry and enter a frenzy. Your frenzy lasts for 1 minute and grants you the following benefits. It ends after you take damage—or when you are knocked unconscious.</p>
@@ -82,10 +79,13 @@
             <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
         </description>
         <sheet>
-            <description action="Bonus Action" usage="{{wisdom:modifier}}/Long Rest">You enter a frenzy that lasts for 1 minute or until you take damage or are knocked unconscious. While in this frenzy, you have advantage on attacks against creatures of your favored enemy type, esistance to bludgeoning, piercing, and slashing damage and advantage on saving throws against being frightened or paralyzed.</description>
+            <description action="Bonus Action" usage="{{amazonian battlecry:usage}}/Long Rest">You enter a frenzy that lasts for 1 minute or until you take damage or are knocked unconscious. While in this frenzy, you have advantage on attacks against creatures of your favored enemy type, esistance to bludgeoning, piercing, and slashing damage and advantage on saving throws against being frightened or paralyzed.</description>
         </sheet>
+        <rules>
+            <stat name="amazonian battlecry:usage" value="1" bonus="base" />
+            <stat name="amazonian battlecry:usage" value="wisdom:modifier" bonus="base" />
+        </rules>
     </element>
-
     <element name="Bracer Reflection" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_BRACER_REFLECTION">
         <description>
             <p>Starting at 5th level, you've learned to reflect attacks with your bracers. Whenever you would be hit by an attack, you may use your reaction to shield yourself with your bracers. You gain a +5 bonus to AC against all attacks, including the attack that provoked this reaction, until the beginning of your next turn. You may use this feature a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a short or long rest.</p>
@@ -98,7 +98,6 @@
             <stat name="bracer reflection:uses" value="wisdom:modifier" bonus="base" />
         </rules>
     </element>
-
     <element name="Chakram Technique" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_CHAKRAM_TECHNIQUE">
         <description>
             <p>Starting at 7th level, you’ve learned the famous Amazonian technique of ricocheting your chakram to hit multiple targets. You can also throw it at targets that are not in your line of sight, such as around corners.</p>
@@ -108,7 +107,6 @@
             <description>When you use your action to make a ranged attack with your chakram against one target and the attack hits, then any number of additional creatures of your choice within 10 feet of that target must make a Dexterity saving throw using your spell save DC. Each creature that fails the save takes the same amount of damage as your first target.</description>
         </sheet>
     </element>
-
     <element name="Improved Falconry" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_IMPROVED_FALCONRY">
         <description>
             <p>At 11th level, your stimfay matures. It gains a bonus to its AC equal to your proficiency bonus, and it now has hit points equal to 30 + your ranger level. The damage dice for its Talons, Pinion Storm, and Piercing Screech increase to 2d6, and its attacks are now magical.</p>
@@ -118,7 +116,6 @@
             <description action="Reaction">If you would take damage from an attack or an effect that you can see, your stimfay takes the damage instead of you. Your stimfay must be functional and ready to assist you in order to use this ability, and it must be located within 60 feet of you.</description>
         </sheet>
     </element>
-
     <element name="Pressure Points" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_RANGER_AMAZONIAN_PRESSURE_POINTS">
         <description>
             <p>Starting at 15th level, you know how to attack pressure points in your opponent’s body that will cut off the blood supply to their brain. On your turn, you may use a bonus action to make a special melee attack against one creature. If the attack hits, the creature must make a Constitution saving throw versus your spell save DC. On a failure, the creature is paralyzed for 1 minute or until you use a bonus action to touch them and reverse the effect. At the end of each of the creature’s turns, it repeats the saving throw and the effect ends if it succeeds. You may use this ability a number of times equal to your Wisdom modifier, and you regain all expended uses after a short or long rest.</p>
@@ -146,7 +143,6 @@
 			<set name="speed">10 ft., fly 80 ft.</set>
 			<set name="immunities">fire, poison, psychic</set>
 			<set name="conditionImmunities">charmed, poisoned</set>
-			<set name="saves" />
 			<set name="skills">Perception +3</set>
 			<set name="senses">darkvision 60 ft., passive Perception 13</set>
 			<set name="languages">understands the languages you speak</set>
@@ -158,25 +154,19 @@
 			<set name="actions">ID_AW_OOTD_COMPANION_ACTION_STIMFAY_TALONS,ID_AW_OOTD_COMPANION_ACTION_STIMFAY_PINION_STORM,ID_AW_OOTD_COMPANION_ACTION_STIMFAY_PIERCING_SCREECH</set>
 			<set name="reactions" />
 		</setters>
-        <!--
 		<rules>
 			<stat name="companion:ac" value="13" />
             <stat name="companion:ac" value="proficiency" level="11" />
 			<stat name="companion:hp:max" value="15" />
             <stat name="companion:hp:max" value="15" level="11" />
 			<stat name="companion:hp:max" value="level:ranger" />
-            <stat name="companion:speed" value="10" />
+            <stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="80" bonus="base" />
             <stat name="companion:attack" value="proficiency" />
 			<stat name="companion:damage" value="proficiency" />
-            <stat name="companion:save" value="proficiency" />
-            <stat name="companion:intsave" value="-2" />
-            <stat name="companion:intsave" value="proficiency" />
-            <stat name="companion:wissave" value="-1" />
-            <stat name="companion:wissave" value="proficiency" />
-            <stat name="companion:chasave" value="-2" />
-            <stat name="companion:chasave" value="proficiency" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
 		</rules>
-        -->
 	</element>
 
     <element name="Keen Sight" type="Companion Trait" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_COMPANION_TRAIT_STIMFAY_KEEN_SIGHT">

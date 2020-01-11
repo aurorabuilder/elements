@@ -9,7 +9,7 @@
     <supports>Divine Domain</supports>
     <description>
       <p>The Prophecy domain focuses on foretelling danger and preventing harmful outcomes. Clerics of this domain are also known as “oracles.” Oracles pay special attention to dreams, intuitive thoughts, and hallucinatory visions. They are widely believed to be capable of predicting the future, though their visions are often misinterpreted. They live by the phrase, “know thyself.”</p>
-      <p>Oracles often carry special varieties of incense and holy water with them. The holy water may be boiled to produce vapors, which the oracle inhales in order to enter a trance-like state. During such a trance, the oracle thrashes and wails as they experience flashes of divine insight. They often employ scribes to write down their words, so that they may be recalled later.</p>
+      <p class="indent">Oracles often carry special varieties of incense and holy water with them. The holy water may be boiled to produce vapors, which the oracle inhales in order to enter a trance-like state. During such a trance, the oracle thrashes and wails as they experience flashes of divine insight. They often employ scribes to write down their words, so that they may be recalled later.</p>
       <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_DOMAIN_SPELLS" />
       <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_MINDFUL_SENSES" />
       <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_BLESSING_OF_FORESIGHT" />
@@ -31,11 +31,10 @@
       <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_PERFECT_FORESIGHT" level="17"/>
     </rules>
   </element>
-  
   <element name="Domain Spells" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_DOMAIN_SPELLS">
     <description>
       <p>You gain domain spells at the cleric levels listed in the Forge Domain Spells table. See the Divine Domain class feature for how domain spells work.</p>
-      <h5>Forge Domain Spells</h5>
+      <h5 class="caption">FORGE DOMAIN SPELLS</h5>
       <table>
         <thead>
           <tr><td>Cleric Level</td><td>Spells</td></tr>
@@ -47,9 +46,7 @@
         <tr><td>9th</td><td><em>dream, scrying</em></td></tr>
       </table>
     </description>
-    <sheet display="false">
-      <description></description>
-    </sheet>
+    <sheet display="false" />
     <rules>
       <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" level="1" spellcasting="Cleric" prepared="true" />
       <grant type="Spell" id="ID_PHB_SPELL_IDENTIFY" level="1" spellcasting="Cleric" prepared="true" />
@@ -63,7 +60,6 @@
       <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
     </rules>
   </element> 
-
   <element name="Mindful Senses" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_MINDFUL_SENSES">
     <description>
       <p>When you choose this domain at 1st level, you gain the message cantrip if you don’t already know it. Additionally, you gain proficiency in the Perception skill.</p>
@@ -76,20 +72,18 @@
       <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
     </rules>
   </element> 
-
   <element name="Blessing of Foresight" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_BLESSING_OF_FORESIGHT">
     <description>
       <p>Starting at 1st level, you use your divination spells to protect your allies from future events. Whenever you cast a divination spell of 1st level or higher, choose one creature you can see. That creature gains temporary hit points equal to your Wisdom modifier + your cleric level.</p>
     </description>
     <sheet>
-      <description>Whenever you cast a divination spell of 1st level or higher, choose one creature you can see. That creature gains temporary hit points equal to {{blessing of foresight:hp}}.</description>
+      <description>Whenever you cast a divination spell of 1st level or higher, choose one creature you can see. That creature gains {{blessing of foresight:hp}} temporary hp.</description>
     </sheet>
     <rules>
       <stat name="blessing of foresight:hp" value="wisdom:modifier" />
       <stat name="blessing of foresight:hp" value="level:cleric" />
     </rules>
-  </element> 
-
+  </element>
   <element name="Channel Divinity: Prophetic Trance" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_CD_PROPHETIC_TRANCE">
     <description>
       <p>Starting at 2nd level, you can use your Channel Divinity to enter a prophetic trance. As an action, you inhale hallucinatory vapors and enter a trance-like state for 10 minutes. Roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these prophecy rolls. You must choose to do so before the roll is made. Each prophecy roll can be used only once. You lose the prophecy rolls when your trance ends.</p>
@@ -97,8 +91,7 @@
     <sheet alt="Prophetic Trance" usage="Channel Divinity">
       <description>As an action, you inhale hallucinatory vapors and enter a trance-like state for 10 minutes. Roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these prophecy rolls. You must choose to do so before the roll is made. Each prophecy roll can be used only once. You lose the prophecy rolls when your trance ends.</description>
     </sheet>
-  </element> 
-
+  </element>
   <element name="Visions of Danger" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_VISIONS_OF_DANGER">
     <description>
       <p>Starting at 6th level, you experience flashes of foresight that reveal to you when your allies will be harmed, allowing you to react with uncanny speed. When you ready a spell that restores hit points, it does not require or break concentration. Additionally, when one of your allies takes damage or fails a saving throw, you may use your reaction to move up to your speed and cast a beneficial spell that only targets your imperiled ally. The casting time of the spell must be a reaction, action, or bonus action. You may use this feature twice, and you regain any expended uses when you finish a short or long rest.</p>
@@ -107,36 +100,25 @@
       <description usage="2/Short Rest" >When you ready a spell that restores hit points, it does not require or break concentration. Additionally, when one of your allies takes damage or fails a saving throw, you may use your reaction to move up to your speed and cast a beneficial spell that only targets your imperiled ally. The casting time of the spell must be a reaction, action, or bonus action.</description>
     </sheet>
   </element> 
-
   <element name="Healing Vapors" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_HEALING_VAPORS">
     <description>
       <p>Starting at 8th level, your healing spells are accompanied by a mist of restorative vapors. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to your Wisdom modifier.</p>
       <p class="indent">Additionally, when you cast a spell of 1st level or higher that restores hit points, you may choose to add the effect of <i>fog cloud</i> at the location of one of your targets. You must complete a long rest before you can create another fog cloud with this feature.</p>
     </description>
     <sheet>
-      <description>Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to {{healing vapors:hp}}.</description>
+      <description>Whenever you use a spell of 1st level or higher to restore hp to a creature, the creature regains {{healing vapors:hp}} additional hp.
+      Additionally, when you cast a spell of 1st level or higher that restores hp, you may choose to add the effect of fog cloud at the location of one of your targets. You must complete a long rest before you can create another fog cloud with this feature.</description>
     </sheet>
     <rules>
       <stat name="healing vapors:hp" value="wisdom:modifier" />
-      <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_HEALING_VAPORS_FOG" />
     </rules>
   </element>
-
   <element name="Perfect Foresight" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_PERFECT_FORESIGHT">
     <description>
       <p>Starting at 17th level, your prophetic powers are nearly infallible. When you enter a prophetic trance with Channel Divinity, you may choose to replace the result of either d20 prophecy roll with any number between 1 and 19 of your choice. Additionally, while you are in the trance, you gain darkvision out to a range of 60 feet, and you can see invisible creatures and objectives within 10 feet of you that are within line of sight.</p>
     </description>
     <sheet>
       <description>When you enter a prophetic trance with Channel Divinity, you may choose to replace the result of either d20 prophecy roll with any number between 1 and 19 of your choice. Additionally, while you are in the trance, you gain darkvision out to a range of 60 feet, and you can see invisible creatures and objectives within 10 feet of you that are within line of sight.</description>
-    </sheet>
-  </element> 
-
-  <!-- subfeatures -->
-  <element name="Healing Vapors: Fog Cloud" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_PROPHECY_DOMAIN_HEALING_VAPORS_FOG">
-    <sheet>
-      <description usage="1/Long Rest">
-        When you cast a spell of 1st level or higher that restores hit points, you may choose to add the effect of fog cloud at the location of one of your targets.
-      </description>
     </sheet>
   </element>
 </elements>

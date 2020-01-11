@@ -22,8 +22,7 @@
             <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHELL_DRAGON_TURTLE" level="11"/>
             <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_UNDAUNTED_SPIRIT" level="17"/>
         </rules>
-    </element>
-    
+    </element>    
     <element name="Aresian Technique" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_ARESIAN_TECHNIQUE">
         <description>
             <p>Starting when you choose this tradition at 3rd level, you gain proficiency with shields. Additionally, wielding a shield does not impede your Martial Arts, Unarmored Movement, or Unarmored Defense features. You may also use your shield as a “free hand” to catch and hold missile weapons with your Deflect Missiles feature.</p>
@@ -34,9 +33,15 @@
         </sheet>
         <rules>
             <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
-        </rules>
-    </element>
 
+            <stat name="ac:calculation" value="ac:unarmored defense monk" bonus="calculation" equipped="[armor:none]" alt="Unarmored Defense (Monk)" />
+			<stat name="innate speed:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:1]" />
+			<stat name="innate speed:climb:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:climb:1]" />
+			<stat name="innate speed:fly:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:fly:1]" />
+			<stat name="innate speed:swim:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:swim:1]" />
+			<stat name="innate speed:burrow:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:burrow:1]" />
+        </rules>
+    </element>    
     <element name="Shield Dancer" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHIELD_DANCER">
         <description>
             <p>Starting at 6th level, you have learned new techniques for using shields on the battlefield.</p>
@@ -49,37 +54,32 @@
             <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_COUNTERATTACK" />
         </rules>
     </element>
-
+    <element name="Vaulting Strike" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_VAULTING_STRIKE">
+		<compendium display="false" />
+        <sheet>
+            <description action="Bonus Action" usage="Ki">You may spend 1 ki point to vault yourself into the air, leaping up to 15 feet in any direction. If you are wielding a shield, then this leap does not provoke opportunity attacks. If you take an Attack action immediately after leaping, you have advantage on your first melee attack, and it crits on a 19 or 20.</description>
+        </sheet>
+    </element>
+    <element name="Counterattack" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_COUNTERATTACK">
+		<compendium display="false" />
+        <sheet>
+            <description action="Reaction">Whenever a creature makes an opportunity attack against you and misses, if you are using a shield, make a single melee weapon attack against that creature, without interrupting your movement.</description>
+        </sheet>
+    </element>
     <element name="Shell of the Dragon Turtle" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHELL_DRAGON_TURTLE">
         <description>
             <p>Starting at 11th level, you have learned to think of your shield as an extension of your body. As a reaction when you are attacked, you may spend 1 ki point to gain an additional +3 AC from your shield, including against the triggering attack, until the beginning of your next turn.</p>
         </description>
-        <sheet>
-            <description action="Reaction">When attacked, you may spend 1 ki point to gain an additional +3 AC from your shield, including against the triggering attack, until the beginning of your next turn.</description>
+        <sheet action="Reaction" usage="Ki">
+            <description>When attacked, you may spend 1 ki point to gain an additional +3 AC from your shield, including against the triggering attack, until the beginning of your next turn.</description>
         </sheet>
     </element>
-
     <element name="Undaunted Spirit" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_UNDAUNTED_SPIRIT">
         <description>
             <p>Beginning at 17th level, you are fearless when faced with overwhelming enemies. You have advantage on all attacks made against creatures that are Huge in size or larger. Additionally, you cannot be frightened or paralyzed by spells or abilities used by such creatures.</p>
         </description>
         <sheet>
             <description>You have advantage on all attacks made against creatures that are Huge in size or larger. Additionally, you cannot be frightened or paralyzed by spells or abilities used by such creatures.</description>
-        </sheet>
-    </element>
-
-    <!-- subfeatures -->
-    <element name="Vaulting Strike" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_VAULTING_STRIKE">
-        <description/>
-        <sheet>
-            <description action="Bonus Action">You may spend 1 ki point to vault yourself into the air, leaping up to 15 feet in any direction. If you are wielding a shield, then this leap does not provoke opportunity attacks. If you take an Attack action immediately after leaping, you have advantage on your first melee attack, and it crits on a 19 or 20.</description>
-        </sheet>
-    </element>
-
-    <element name="Counterattack" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_COUNTERATTACK">
-        <description/>
-        <sheet>
-            <description action="Reaction">Whenever a creature makes an opportunity attack against you and misses, if you are using a shield, make a single melee weapon attack against that creature, without interrupting your movement.</description>
         </sheet>
     </element>
 </elements>
