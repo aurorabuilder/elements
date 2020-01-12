@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="ranger-nentyar.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/ranger-nentyar.xml" />
+		</update>
+	</info>	
+	<element name="Nentyar Hunter" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_NENTYAR_HUNTER">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>The Nentyar archdruid of the Circle of Leth grants unique primal abilities to a special conclave of rangers in their employ. These rangers master a greater command of druidic and totemic powers. Using these gifts, the Nentyar Hunters, as they are called, root out evil that would threaten the forest and the natural order.</p>
+			<h5>In Other Settings</h5>
+			<p class="indent">Outside the Forgotten Realms, these rangers are referred to as Wildheart Striders, named for their greater connection to the natural world. In worlds such as Eberron, these rangers serve the druids in the Eldeen Reaches. In Ravnica, these rangers might be guardians of the Selesnya Conclave’s guildhall, Vitu- Ghazi, or gifted scouts of the Gruul Clans. However you might choose to use them, these rangers are often considered champions of the primeval.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NENTYAR_HUNTER_MAGIC" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_GRACE" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_FURY" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_AGILITY_OF_THE_WILD" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_MASTER_OF_THE_HUNT" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_UNTAMED_FEROCITY" />
+		</description>
+		<sheet display="false">
+			<description>You master a greater command of druidic and totemic powers.</description>
+		</sheet> 
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NENTYAR_HUNTER_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_GRACE" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_FURY" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_AGILITY_OF_THE_WILD" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_MASTER_OF_THE_HUNT" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_UNTAMED_FEROCITY" level="15" />
+		</rules>
+	</element>	
+	<element name="Nentyar Hunter Magic" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NENTYAR_HUNTER_MAGIC">
+		<description>
+			<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Nentyar Hunter Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+			<p class="caption">Nentyar Hunter Spells</p>
+			<table>
+				<thead>
+					<tr><td>Ranger Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td>3rd</td><td>entangle</td></tr>
+				<tr><td>5th</td><td>enhance ability</td></tr>
+				<tr><td>9th</td><td>dispel magic</td></tr>
+				<tr><td>13th</td><td>dominate beast</td></tr>
+				<tr><td>17th</td><td>hold monster</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" level="3" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENHANCE_ABILITY" level="5" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="9" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_PHB_SPELL_DOMINATE_BEAST" level="13" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" spellcasting="Ranger" />
+		</rules>
+	</element>
+	<element name="Nature’s Grace" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_GRACE">
+		<description>
+			<p>You can leap, bound, dive, and swim gracefully through any environment. At 3rd level, you gain proficiency in Acrobatics, if you aren’t already proficient, and as long as you are not wearing armor heavier than light armor, and have at least one hand free, you have a climb and swim speed equal to your movement speed.</p>
+		</description>
+		<sheet>
+			<description>As long as you are not wearing armor heavier than light armor, and have at least one hand free, you have a climb and swim speed of {{speed}} ft.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<stat name="speed:climb" value="speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+			<stat name="speed:swim" value="speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+	<element name="Nature’s Fury" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_NATURES_FURY">
+		<description>
+			<p>When you access the primal powers granted to you through your spells, it invigorates your inner hunter. Starting at 3rd level, while you concentrate on a ranger spell, your movement speed increases by 10 feet, and you gain a bonus to weapon damage rolls equal to your proficiency bonus. Additionally, once per long rest you may change a normal hit from a weapon attack into a critical hit.</p>
+		</description>
+		<sheet>
+			<description>While you concentrate on a ranger spell, your movement speed increases by 10 feet, and you gain a +{{proficiency}} bonus to weapon damage rolls. Additionally, once per long rest you may change a normal hit from a weapon attack into a critical hit.</description>
+		</sheet>
+	</element>
+	<element name="Agility of the Wild" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_AGILITY_OF_THE_WILD">
+		<description>
+			<p>Starting at 7th level, you have resistance to the damage dealt by opportunity attacks. Also, when you provoke an opportunity attack, you can use your reaction to cause the opportunity attack to miss you, but you must choose to do so before the attack roll is made against you.</p>
+			<p class="indent">You can use this reaction a number of times equal to your Dexterity modifier (minimum of 1). You regain all expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{agility of the wild:usage}}/Long Rest">
+			<description>You have resistance to the damage dealt by opportunity attacks. Also, when you provoke an opportunity attack, you can use your reaction to cause the opportunity attack to miss you, but you must choose to do so before the attack roll is made against you.</description>
+		</sheet>
+		<rules>
+			<stat name="agility of the wild:usage" value="1" bonus="base" />
+			<stat name="agility of the wild:usage" value="dexterity:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Master of the Hunt" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_MASTER_OF_THE_HUNT">
+		<description>
+			<p>You swiftly coordinate hunts to the utmost efficiency, ending them faster than they began. Beginning at 11th level, you have advantage on initiative rolls. Also, when you roll for initiative, every allied creature within 30 feet of you gains a bonus to their initiative rolls and weapon damage rolls during the first round of combat equal to your Wisdom modifier.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on initiative rolls. Also, when you roll for initiative, every allied creature within 30 feet of you gains a +{{wisdom:modifier}} bonus to their initiative rolls and weapon damage rolls during the first round of combat.</description>
+		</sheet>
+	</element>
+	<element name="Untamed Ferocity" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_NENTYAR_HUNTER_UNTAMED_FEROCITY">
+		<description>
+			<p>When challenged, you fearlessly strike back at all that would oppose you. Starting at 15th level, you can no longer be frightened.</p>
+			<p class="indent">Additionally, when a creature misses you with an attack, you can use your reaction to make an attack against the creature as long as it is within range of your weapon.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>You can no longer be frightened.
+			When a creature misses you with an attack, you can make an attack against the creature as long as it is within range of your weapon.</description>
+		</sheet>
+	</element>
+</elements>

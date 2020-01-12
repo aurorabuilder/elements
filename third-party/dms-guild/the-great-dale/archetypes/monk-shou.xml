@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="monk-shou.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/monk-shou.xml" />
+		</update>
+	</info>	
+	<element name="Shou Disciple" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_SHOU_DISCIPLE">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>The varied peoples of Kara-Tur have a long and storied history of using the study of martial arts to attain enlightenment. Monasteries exist where students spend their lives trying to achieve spiritual perfection.</p>
+			<p class="indent">But not all are so dedicated to enlightenment. Some seek to focus on the practical aspects of martial combat. This is particularly evident by those who have left monasteries or never fully dedicated themselves to a teacher or their ideas. Many of the Shou refugees who settled in Thesk after fleeing the Tuigan Horde fall into this category. These individuals care less about self-actualization and more about surviving the attacks of thugs from the Nine Golden Swords.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_INNER_STRENGTH" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_PRAGMATIC_COMBAT" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_WARDING_SENSES" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_COMBAT_DISCIPLINE" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_FOCUSED_FURY" />
+		</description>
+		<sheet display="false">
+			<description>You seek to focus on the practical aspects of martial combat.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_INNER_STRENGTH" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_PRAGMATIC_COMBAT" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_WARDING_SENSES" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_COMBAT_DISCIPLINE" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_FOCUSED_FURY" level="17" />
+		</rules>
+	</element>
+	<element name="Inner Strength" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_INNER_STRENGTH">
+		<description>
+			<p>Your training and discipline enable you to shrug off injuries in the midst of combat. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your monk level.</p>
+			<p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>On your turn, you can regain 1d8+{{level:monk}} hp.</description>
+		</sheet>
+	</element>
+	<element name="Pragmatic Combat" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_PRAGMATIC_COMBAT">
+		<description>
+			<p>Although you have studied the unarmored defense techniques of the fighting monks of Kara-Tur, you recognize the value of armor and weapons.</p>
+			<p class="indent">Starting at 3rd level, all finesse weapons are considered monk weapons for you. Additionally, you gain proficiency with all melee and ranged martial weapons, but unless specified otherwise these are not considered monk weapons for you.</p>
+			<p class="indent">You also gain proficiency with light armor. You may use your Martial Arts feature while wearing light armor. Although you cannot benefit from your Unarmored Defense or Unarmored Movement features while wearing armor, you are still faster than most and your speed increases by 5 feet while wearing light armor.</p>
+		</description>
+		<sheet>
+			<description>All finesse weapons are considered monk weapons for you. You gain proficiency with martial weapons, but unless specified otherwise these are not considered monk weapons for you.
+			You may use your Martial Arts feature while wearing light armor.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<stat name="pragmatic combat:speed" value="5" bonus="pragmatic combat" />
+			<stat name="innate speed:misc" value="pragmatic combat:speed" equipped="[armor:light]" requirements="[innate speed:1]" />
+			<stat name="innate speed:climb:misc" value="pragmatic combat:speed" equipped="[armor:light]" requirements="[innate speed:climb:1]" />
+			<stat name="innate speed:fly:misc" value="pragmatic combat:speed" equipped="[armor:light]" requirements="[innate speed:fly:1]" />
+			<stat name="innate speed:swim:misc" value="pragmatic combat:speed" equipped="[armor:light]" requirements="[innate speed:swim:1]" />
+			<stat name="innate speed:burrow:misc" value="pragmatic combat:speed" equipped="[armor:light]" requirements="[innate speed:burrow:1]" />
+		</rules>
+	</element>
+	<element name="Warding Senses" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_WARDING_SENSES">
+		<description>
+			<p>Starting at 6th level, your awareness of danger allows you to dodge away from dangerous attacks. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to spend 1 ki point to impose disadvantage on an attack roll that targets you before the outcome of that attack is determined.</p>
+		</description>
+		<sheet action="Reaction" usage="Ki">
+			<description>When you are attacked by a creature within 30 feet of you that you can see, you can spend 1 ki point to impose disadvantage on an attack roll that targets you before the outcome of that attack is determined.</description>
+		</sheet>
+	</element>
+	<element name="Combat Discipline" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_COMBAT_DISCIPLINE">
+		<description>
+			<p>Beginning at 11th level, the bonus to your speed while wearing light armor increases to 10 feet. You may now use any one-handed martial weapon as a monk weapon.</p>
+		</description>
+		<sheet>
+			<description>You may use any one-handed martial weapon as a monk weapon.</description>
+		</sheet>
+		<rules>
+			<stat name="pragmatic combat:speed" value="10" bonus="pragmatic combat" />			
+		</rules>
+	</element>
+	<element name="Focused Fury" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_SHOU_DISCIPLE_FOCUSED_FURY">
+		<description>
+			<p>Upon reaching 17th level, your martial skills are so formidable that any simple or martial weapon is considered a monk weapon for you.</p>
+			<p class="indent">Additionally, once per turn when you hit a target with a monk weapon, you may spend 4 ki points to turn a normal hit into a critical hit.</p>
+		</description>
+		<sheet usage="Ki">
+			<description>Any simple or martial weapon is considered a monk weapon for you.
+			Once per turn when you hit a target with a monk weapon, you may spend 4 ki points to turn a normal hit into a critical hit.</description>
+		</sheet>
+	</element>	
+</elements>

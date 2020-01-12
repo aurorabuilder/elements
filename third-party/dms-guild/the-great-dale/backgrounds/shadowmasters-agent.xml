@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="shadowmasters-agent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/backgrounds/shadowmasters-agent.xml" />
+		</update>
+	</info>
+	<element name="Shadowmaster’s Agent" type="Background" source="The Great Dale" id="ID_DMSG_TGD_BACKGROUND_SHADOWMASTERS_AGENT">
+		<description>
+			<p>You’re an agent of the Shadowmasters of Telflamm, a thieves’ guild that is strongly linked to the worship of Shar. The Shadowmasters rule Telflamm in secret through their web of spies and thieves, rivaling the influence and power of the local nobility and clergy. You are, or at least were, just one tendril of the sprawling shadow that the Shadowmasters cast over the city. You might have even briefly escaped the guild and its machinations, but, willingly or not, everywhere you go, you further the seedy agenda of the guild’s elite, the shadowlords.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Religion, and choose one from Deception, Sleight of Hand, or Stealth</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves’ Tools</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A crowbar, a set of dark common clothes including a hood, a holy symbol of Shar, black priestly robes, a Shadowmaster guild insignia and 10 gp in a belt pouch.</li>
+			</ul>
+			<div element="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_DARK_INTEL" />
+			<div element="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_SPELL_LIST" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Shadowmasters of Telflamm are, by definition, members of a crime syndicate. Their devotion to Shar, Mistress of Night, is a common trait, and tends to color their attitudes and practices. Shadowmasters tend to be cunning, ruthless, shrewd, and, most of all, deceitful. You can use the following traits to flesh out your shadowmaster character or to draw inspiration from to create your own.</p>
+		</description>
+		<setters>
+			<set name="short">Religion, Deception / Sleight of Hand / Stealth, Thieves’ Tools, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<select type="Proficiency" name="Skill Proficiency, Shadowmaster’s Agent" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<select type="Language" name="Language, Shadowmaster’s Agent" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_DARK_INTEL" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<grant type="Background Feature" id="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_SPELL_LIST" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">Why tell the truth when I can get by only telling half of it?</item>
+				<item id="2">I know more than people think, and I can’t resist hinting at it.</item>
+				<item id="3">Insults and intrigue are my specialty. Words can do just as much, if not more, damage than a knife.</item>
+				<item id="4">I enjoy basking in shadows and darkness; The closer to our Mistress I am, the better.</item>
+				<item id="5">I’m quick to start a fight, and quicker to end one.</item>
+				<item id="6">I am, what you might call, “a control freak.” I become nervous and irritated when things are out of my power.</item>
+				<item id="7">I always look for anything to get me ahead or leverage over my enemies.</item>
+				<item id="8">Fast-talk and doublespeak are my preferred styles of communication. If you can’t keep up, that’s not my problem.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Influence. By manipulating the world through the shadows, I can reshape it to my liking. (Evil)</item>
+				<item id="2">Anarchy. There are few rules we actually need, and if the rest of the world were to see that, we would be truly free. (Chaotic)</item>
+				<item id="3">Greed. The Shadowmasters are a means to an end, and that end sees me with all the gold. (Neutral)</item>
+				<item id="4">Devotion. The will of Shar brings many blessings, by walking through shadow, I will be blessed. (Any)</item>
+				<item id="5">Control. Through our schemes, we can control the masses. (Lawful)</item>
+				<item id="6">Punishment. Those that stand against us will be consumed by the darkness. (Evil)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">One of the shadowlords has taken a keen interest in me, and I would do anything to impress them.</item>
+				<item id="2">Shar has spoken to me directly, and I fear nothing more than losing her favor.</item>
+				<item id="3">My family knows nothing of my role in the Shadowmasters and I would prefer to keep it that way.</item>
+				<item id="4">I spared someone during a mission once. If the guild were to find out, it would be the end of me.</item>
+				<item id="5">I am in love with a member of one of our rival guilds.</item>
+				<item id="6">I will stop at nothing to achieve the rank of Shadowlord.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I am quick to betray if it means my own gain.</item>
+				<item id="2">I don’t have allies, only pawns and tools.</item>
+				<item id="3">Everywhere I go, I seem to make only enemies.</item>
+				<item id="4">I don’t trust anyone that says they want what is “good for everybody.”</item>
+				<item id="5">The first one to run is the last one to die, and I don’t plan on dying.</item>
+				<item id="6">My sharp tongue regularly creates trouble for me and my allies.</item>
+			</select>
+		</rules>
+	</element>	
+	<element name="Feature: Dark Intel" type="Background Feature" source="The Great Dale" id="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_DARK_INTEL">
+		<description>
+			<p>The Shadowmasters are adept at gathering information and have eyes and ears everywhere. In every town, city, or other settlement, you know of another Shadowmaster Agent who you can rely on to fill you in on basic information about the settlement’s main features, figures, locations, and organizations, as well as other underworld activity in that settlement.</p>
+		</description>
+		<sheet alt="Dark Intel" />
+	</element>	
+	<element name="Spell List" type="Background Feature" source="The Great Dale" id="ID_DMSG_TGD_BACKGROUND_FEATURE_SHADOWMASTER_SPELL_LIST">
+		<description>
+			<p>If you are a spellcaster, the spells on the Shadowmaster’s Agent Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5 class="caption">SHADOWMASTER’S AGENT SPELLS TABLE</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td>chill touch, minor illusion</td></tr>
+				<tr><td>1st</td><td>expeditious retreat, silent image, sleep</td></tr>
+				<tr><td>2nd</td><td>crown of madness, darkness, flaming sphere</td></tr>
+				<tr><td>3rd</td><td>haste, nondetection</td></tr>
+				<tr><td>4th</td><td>confusion, dimension door</td></tr>
+				<tr><td>5th</td><td>mislead</td></tr>
+			</table>
+			<p>Your spells might manifest in the form of shadows and whispers, creating blurry afterimages of your targets and even temporarily create dim ambient light as you cast them.</p>
+		</description>
+		<sheet display="false" />
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_CHILL_TOUCH</extend>
+			<extend>ID_PHB_SPELL_MINOR_ILLUSION</extend>
+			<extend>ID_PHB_SPELL_EXPEDITIOUS_RETREAT</extend>
+			<extend>ID_PHB_SPELL_SILENT_IMAGE</extend>
+			<extend>ID_PHB_SPELL_SLEEP</extend>
+			<extend>ID_PHB_SPELL_CROWN_OF_MADNESS</extend>
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+			<extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+			<extend>ID_PHB_SPELL_HASTE</extend>
+			<extend>ID_PHB_SPELL_NONDETECTION</extend>
+			<extend>ID_PHB_SPELL_CONFUSION</extend>
+			<extend>ID_PHB_SPELL_DIMENSION_DOOR</extend>
+			<extend>ID_PHB_SPELL_MISLEAD</extend>
+		</spellcasting>
+	</element>	
+</elements>

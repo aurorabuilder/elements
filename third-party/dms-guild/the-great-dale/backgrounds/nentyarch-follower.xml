@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="nentyarch-follower.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/backgrounds/nentyarch-follower.xml" />
+		</update>
+	</info>	
+	<element name="Nentyarch Follower" type="Background" source="The Great Dale" id="ID_DMSG_TGD_BACKGROUND_NENTYARCH_FOLLOWER">
+		<description>
+			<p>The Circle of Leth and their force of Nentyar Hunters have protected the Dalesfolk and the forests of the land for hundreds of years.</p>
+			<p class="indent">This group is overseen by the Nentyarch, an archdruid of remarkable power who oversees these groups from an old wood elf stronghold at Yeshelmaar in the Forest of Lethyr.</p>
+			<p class="indent">As a Nentyarch Follower you respect the Circle of Leth. You believe in the sanctity of the great forests surrounding the Dale and you hope to purge the land of the fiendish hosts that still infect it. Honest people of the Dale should be protected, but the spread of civilization shouldn’t call for the felling of further forest. Nature itself needs protection from the depredations of those who do not place enough value on its continued existence.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Nature, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> One artisan tool of your choice</li>
+				<li><strong>Languages:</strong> Sylvan</li>
+				<li><strong>Equipment:</strong> A hunting knife, a healer’s kit, a set of traveler’s clothes, a sprig of mistletoe, and a belt pouch containing 10 gp.</li>
+			</ul>
+			<div element="ID_DMSG_TGD_BACKGROUND_FEATURE_DALEFOLK_HOSPITALITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>As a Nentyarch Follower, you believe in protecting the people of the Great Dale and the sanctity of nature.</p>
+		</description>
+		<setters>
+			<set name="short">Nature, Survival, Artisans Tool, Sylvan</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Artisan's Tool, Nentyarch Follower" supports="Artisan tools" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Background Feature" id="ID_DMSG_TGD_BACKGROUND_FEATURE_DALEFOLK_HOSPITALITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">If the Dalesfolk are threatened, I will do whatever I can to help them.</item>
+				<item id="2">The comforts of civilization are nice, but the majesty of nature is a wonder to behold.</item>
+				<item id="3">I always explain my ideas by relating them to something in nature.</item>
+				<item id="4">Being polite is a waste of time.</item>
+				<item id="5">I believe in the interconnectedness of all life.</item>
+				<item id="6">I have trouble paying attention when there are lots of people around.</item>
+				<item id="7">I am incredibly patient.</item>
+				<item id="8">I believe actions speak louder than words.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Balance. Balance is important in all things. Excess in any direction leads to weakness. (Neutral)</item>
+				<item id="2">Power. In the wild, the weak are culled and the strong survive. (Evil)</item>
+				<item id="3">Independence. The peoples of the Great Dale should be free to live the life they choose. (Chaotic)</item>
+				<item id="4">Nature. The lands will outlast us all. They are more important than our fleeting creations. (Neutral)</item>
+				<item id="5">Integrity. My word is my bond. (Lawful)</item>
+				<item id="6">Charity. It is right to help those who are in distress. The greater the need, the greater the call to help. (Good) </item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">The Circle of Leth saved my village. I am forever indebted to them.</item>
+				<item id="2">My village was destroyed by demons. They will be avenged.</item>
+				<item id="3">I’ve lived in this place all my life. I will do everything I can to protect it.</item>
+				<item id="4">I protect those who cannot protect themselves.</item>
+				<item id="5">Although I am new to this land, I feel I need to do my part to make it a safer place.</item>
+				<item id="6">I’ve seen forests cleared to fill a noble’s pocket with coin. I intend to make sure that never happens again.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m a fraud. There’s no way I can live up to people’s expectations.</item>
+				<item id="2">I’d prefer to stay alone in the woods then to deal with people.</item>
+				<item id="3">I don’t understand the value of money.</item>
+				<item id="4">I believe that the ends justify the means.</item>
+				<item id="5">I cannot resist the temptations of civilization and overindulge in its pleasures.</item>
+				<item id="6">I don’t trust anyone, not even my closest friends.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Dalefolk Hospitality" type="Background Feature" source="The Great Dale" id="ID_DMSG_TGD_BACKGROUND_FEATURE_DALEFOLK_HOSPITALITY">
+		<description>
+			<p>The Nentyarch and the Circle of Leth have long looked after the people of the Great Dale. You can find a place to hide, rest, or recuperate within any of the many small villages or farmsteads that exists in the Great Dale and the Forest of Lethyr, provided you have not shown yourself to be a danger to them. They will shield you from anyone who might oppose the Nentyarch or anyone else searching for you, though they will not risk their lives for you.</p>
+		</description>
+		<sheet alt="Dalefolk Hospitality" />
+	</element>	
+</elements>

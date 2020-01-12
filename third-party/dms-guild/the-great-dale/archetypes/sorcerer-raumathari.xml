@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="sorcerer-raumathari.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/sorcerer-raumathari.xml" />
+		</update>
+	</info>
+	<element name="Raumathari Battlemage" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_RAUMATHARI_BATTLEMAGE">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>The Raumathari battlemages of old were an order of sorcerers who mastered an innate connection to the principles of war and the art of combat. The very heat of battle ran in their blood, and through intense focus and constant practice they managed to become some of the most fearsome warriors and spellcasters in all of Faerûn. Their bloodlines still linger today. Those that seek out the teachings of the Raumathari battlemages can revive their legacy once more, becoming the living embodiment of sword and spell.</p>
+			<h5>IN OTHER SETTINGS</h5>
+			<p>Outside of the Realms, this Sorcerous Origin is referred to as War Magic, and could be the result of a magical event such as the reincarnation of a legendary warrior with an intuitive and magical use of their weaponry. In a setting such as Eberron, it could be the result of a bloodline hailing from the plane of Shavarath.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SWORD_FOCUS" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SORCEROUS_COMBAT" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_EXTRA_ATTACK" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARRIORS_SOUL" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARDBREAKERS_STRIKE" />
+		</description>
+		<sheet display="false">
+			<description>You mastered an innate connection to the principles of war and the art of combat.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SWORD_FOCUS" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SORCEROUS_COMBAT" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARRIORS_SOUL" level="14" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARDBREAKERS_STRIKE" level="18" />
+		</rules>
+	</element>	
+	<element name="Sword Focus" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SWORD_FOCUS">
+		<description>
+			<p>Starting at 1st level, you can create a magical bond between yourself and one melee weapon allowing you to transform the weapon into an extension of yourself. During a long rest, you can spend 1 hour performing this ritual. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.</p>
+			<p class="indent">While bonded to this weapon, when you attack with that weapon, you are proficient with it and you can use it as a spellcasting focus. When you make an attack using this weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls, and the weapon counts as magical for the purpose of overcoming damage immunities and resistances.</p>
+			<p class="indent">You can only bond to one weapon at a time this way. If you attempt bond yourself to a new weapon, you must end your bond with the previous one.</p>
+		</description>
+		<sheet>
+			<description>You can create a magical bond between yourself and one melee weapon allowing you to transform the weapon into an extension of yourself. During a long rest, you can spend 1 hour performing this ritual. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.
+			While bonded to this weapon, when you attack with that weapon, you are proficient with it and you can use it as a spellcasting focus. When you make an attack using this weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls, and the weapon counts as magical for the purpose of overcoming damage immunities and resistances.
+			You can only bond to one weapon at a time this way. If you attempt bond yourself to a new weapon, you must end your bond with the previous one.</description>
+		</sheet>
+	</element>	
+	<element name="Sorcerous Combat" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_SORCEROUS_COMBAT">
+		<description>
+			<p>By channeling your magical abilities through your bonded weapon, you convert your innate magical prowess into martial mastery. Starting at 1st level, as long as you hold your bonded weapon, you gain a bonus to your AC equal to your Charisma modifier as long as you aren’t wearing armor.</p>
+			<p class="indent">Once you reach 3rd level, you can spend 2 sorcery points to envelop your bonded weapon in magical energy. Choose one damage type: acid, cold, fire, lightning, poison, or thunder. For the next minute, your bonded weapon deals an additional 1d6 damage of the chosen type to any target you hit with the weapon. As a bonus action, you can change the damage type, choosing from the options above.</p>
+		</description>
+		<sheet>
+			<description>As long as you hold your bonded weapon, you gain a +{{sorcerous combat:ac}} bonus to your AC equal to your Charisma modifier as long as you aren’t wearing armor.</description>
+			<description level="3">As long as you hold your bonded weapon, you gain a +{{sorcerous combat:ac}} bonus to your AC equal to your Charisma modifier as long as you aren’t wearing armor.
+			You can spend 2 sorcery points to envelop your bonded weapon in magical energy (acid, cold, fire, lightning, poison, or thunder). For the next minute, your bonded weapon deals an additional 1d6 damage of the chosen type to any target you hit with the weapon. As a bonus action, you can change the damage type.</description>
+		</sheet>
+		<rules>
+			<stat name="sorcerous combat:ac" value="charisma:modifier" />
+		</rules>
+	</element>	
+	<element name="Extra Attack" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_EXTRA_ATTACK">
+		<description>
+			<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" />
+		</rules>
+	</element>	
+	<element name="Warrior’s Soul" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARRIORS_SOUL">
+		<description>
+			<p>You have the heart of a warrior, and that dauntless spirit spurs you to overcome any trial.</p>
+			<p class="indent">Starting at 14th level, you can no longer be frightened. Additionally, when you roll a Strength, Dexterity, or Constitution saving throw, you can spend 3 sorcery points to give yourself advantage on the saving throw.</p>
+		</description>
+		<sheet>
+			<description>You can no longer be frightened. Additionally, when you roll a Strength, Dexterity, or Constitution saving throw, you can spend 3 sorcery points to give yourself advantage on the saving throw.</description>
+		</sheet>
+	</element>	
+	<element name="Wardbreaker’s Strike" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_RAUMATHARI_WARDBREAKERS_STRIKE">
+		<description>
+			<p>You can sever your foe’s strength with a simple swing of your weapon. Starting at 18th level, when you hit a creature with your bonded weapon, you can spend 6 sorcery points to weaken the creature’s resistance against your spells. If you do, the next time you damage that creature with a spell, the creature has vulnerability to all of that spell’s damage.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with your bonded weapon, you can spend 6 sorcery points to weaken the creature’s resistance against your spells. If you do, the next time you damage that creature with a spell, the creature has vulnerability to all of that spell’s damage.</description>
+		</sheet>
+	</element>	
+</elements>
