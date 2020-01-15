@@ -41,7 +41,7 @@
             <p>Shardminds tend to name themselves, often choosing names that match the auditory emanations of the psionic field that binds their individual form together. As they create themselves in the rough image of other living beings, shardminds can have any gender identity (or none at all), and yet do not have a biologica} sex. Regard­less, shardmind na mes do not fall along gen der lines. </p>
             <p><strong>Names:</strong> Aahoraa, Alarr, Bruaa, Crendx, Freen, Haum, Jjrin, Kylax, Lvivv, Mrrn, Olo, Qiin, Rrixx, Siliuss, Triniv, Urivuu, Viun, Xyll</p>
             <h4>Shardmind Traits</h4>
-            <p></p>
+            <p>Your shardmind character has the following racial traits.</p>
             <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence score increases by 2, and your choice of either your Wisdom or Charisma score increases by 1.</p>
             <p class="indent"><strong><em>Age.</em></strong> As a construct, you do not age in a traditional sense and can not die of old age.</p>
             <p class="indent"><strong><em>Alignment.</em></strong> Shardminds are typically born into the world as a moral blank slate, and trend strongly towards neutrality. However, the opposition of the form er Living Gate to the chaos of the Far Realms also causes many shardminds to lean towards being lawful.</p>
@@ -56,10 +56,14 @@
             <p class="indent"><strong><em>Luminescence.</em></strong> Your shards glow with a soft inner radiance, and you naturally cast dim light in a radius of 5 feet around you. You can intentionally stifle this light and turn it off, or turn it back on, by using a bonus action.</p>
             <p class="indent"><strong><em>Shard Swarm.</em></strong> On your turn, you can use a bonus action to break your body into its constituent crystals and then teleport to an unoccupied location you can see within 15 feet. Choose up to 3 creatures within 5 feet of your original location. The first attack made against each creature before the end of your next turn is made with advantage. Once you use this trait, you can't do so again until you finish a short or long rest.</p>
         </description>
+        <setters>
+            <set name="names" type="custom">Aahoraa, Alarr, Bruaa, Crendx, Freen, Haum, Jjrin, Kylax, Lvivv, Mrrn, Olo, Qiin, Rrixx, Siliuss, Triniv, Urivuu, Viun, Xyll</set>
+            <set name="names-format">{{custom}}</set>
+        </setters>
         <sheet display="false" />
         <rules>
             <stat name="intelligence" value="2" />
-            <select type="Ability Score Increase" name="Ability Score Increase, Shardmind" supports="Race,(Wisdom||Charisma)" />
+            <select type="Ability Score Improvement" name="Ability Score Increase, Shardmind" supports="Race,(Wisdom||Charisma)" />
             <grant type="Size" id="ID_SIZE_MEDIUM" />
             <stat name="innate speed" value="30" bonus="base" />
             <grant type="Racial Trait" id="ID_DMSG_WHSM_RACIAL_TRAIT_SHARDMIND_TELEPATHY" />
@@ -110,7 +114,7 @@
         <description>
             <p>Your crystalline form is naturally resistant to being damaged. Your AC cannot be less than 14, but armor, spells, and other effects can make it higher.</p>
         </description>
-        <sheet>
+        <sheet display="false">
             <description>Your AC cannot be less than {{ac:shardmind}}.</description>
         </sheet>
         <rules>
@@ -123,7 +127,7 @@
             <p>Your shards glow with a soft inner radiance, and you naturally cast dim light in a radius of 5 feet around you. You can intentionally stifle this light and turn it off, or turn it back on, by using a bonus action.</p>
         </description>
         <sheet>
-            <description>Your shards glow with a soft inner radiance, and you naturally cast dim light in a radius of 5 feet around you. You can intentionally stifle this light and turn it off, or turn it back on, by using a bonus action.</description>
+            <description>Your naturally cast dim light in a radius of 5 feet around you. You can intentionally stifle this light and turn it off, or turn it back on, by using a bonus action.</description>
         </sheet>
     </element>
     <element name="Shard Swarm" type="Racial Trait" source="Walrock Homebrew: Shardminds" id="ID_DMSG_WHSM_RACIAL_TRAIT_SHARDMIND_SHARD_SWARM">
@@ -134,10 +138,12 @@
             <description>On your turn, you can break your body into its constituent crystals and then teleport to an unoccupied location you can see within 15 feet. Choose up to 3 creatures within 5 feet of your original location. The first attack made against each creature before the end of your next turn is made with advantage.</description>
         </sheet>
     </element>
+
     <element name="Crystalline Arsenal" type="Feat" source="Walrock Homebrew: Shardminds" id="ID_DMSG_WHSM_FEAT_CRYSTALLINE_ARSENAL">
         <requirements>ID_DMSG_WHSM_RACE_SHARDMIND</requirements>
+        <prerequisite>Shardmind</prerequisite>
         <description>
-            <p><em>Prerequisite: prerequites</em></p>
+            <p><em>Prerequisite: Shardmind</em></p>
             <p>The substance of your body itself can be a weapon. As a bonus action, you can form the shards of your body to produce a weapon you have proficiency with, which appears in an unoccupied hand. After this weapon is out of your grasp for one round, or if you use another bonus action to dismiss it, the weapon deconstructs itself and re-integrates with the substance of your body.</p>
             <p class="indent">When you form a weapon you can choose to empower it, and begin concentrating as if on a spell. If you do, the weapon is affected by a casting of magic weapon at its lowest possible spell level, lasting for up to one minute, until you lose concentration, or until you dismiss the weapon.</p>
             <p class="indent">At 7th level, this becomes a 4th level casting of magic weapon. At 11th level, it becomes a 6th level casting. After you empower a weapon you form, you require a short or long rest before you can empower a weapon again.</p>
@@ -153,20 +159,19 @@
     </element>
     <element name="Shard Magic" type="Feat" source="Walrock Homebrew: Shardminds" id="ID_DMSG_WHSM_FEAT_SHARD_MAGIC">
         <requirements>ID_DMSG_WHSM_RACE_SHARDMIND</requirements>
+        <prerequisite>Shardmind</prerequisite>
         <description>
-            <p><em>Prerequisite: prerequites</em></p>
-            <p>Your psionic potential is greater than others of your kind, giving you enhanced magics and control over your form. You know the mage hand and magic stone cantrips. When you use mage hand, the spec­tral hand is invisible, and when you use magic stone, you can use fragments of your own body in place of the stones. You can also cast each of the following spells once with this ability: detect thoughts, magic missile, and suggestion.</p>
-            <p class="indent">When you first take this feat, choose from Charisma, Intelligence, or Wisdom as your spellcasting ability for these spells and cantrips. If a spell gained with this abil­ity has a spell level, it is cast at 2nd level, and you regain the ability to cast it when you finish a long rest.</p>
+            <p><em>Prerequisite: Shardmind</em></p>
+            <p>Your psionic potential is greater than others of your kind, giving you enhanced magics and control over your form. You know the mage hand and magic stone cantrips. When you use mage hand, the spectral hand is invisible, and when you use magic stone, you can use fragments of your own body in place of the stones. You can also cast each of the following spells once with this ability: detect thoughts, magic missile, and suggestion.</p>
+            <p class="indent">When you first take this feat, choose from Charisma, Intelligence, or Wisdom as your spellcasting ability for these spells and cantrips. If a spell gained with this ability has a spell level, it is cast at 2nd level, and you regain the ability to cast it when you finish a long rest.</p>
         </description>
-        <setters>
-            <set name="prerequites">Shardmind</set>
-        </setters>
         <sheet>
-            <description>You know the mage hand and magic stone cantrips. When you use mage hand, the spec­tral hand is invisible, and when you use magic stone, you can use fragments of your own body in place of the stones. You can also cast each of the following spells 2nd level once at per long rest with this ability: detect thoughts, magic missile, and suggestion.</description>
+            <description>You know the mage hand and magic stone cantrips. When you use mage hand, the spectral hand is invisible, and when you use magic stone, you can use fragments of your own body in place of the stones. You can also cast each of the following spells 2nd level once at per long rest with this ability: detect thoughts, magic missile, and suggestion. (Charisma, Intelligence, or Wisdom)
+            If a spell gained with this ability has a spell level, it is cast at 2nd level, and you regain the ability to cast it when you finish a long rest.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_CLASS_MAGE_HAND" />
-            <grant type="Spell" id="ID_XGTE_CLASS_MAGIC_STONE" />
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+            <grant type="Spell" id="ID_XGTE_SPELL_MAGIC_STONE" />
         </rules>
     </element>
 </elements>
