@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="druid-leth.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/druid-leth.xml" />
+		</update>
+	</info>
+	<element name="Circle of Leth" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_CIRCLE_OF_LETH">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>The Circle of Leth is an order of druids formed in the Year of the Last Hunt (722 DR). In that year, The Great Druid of Leth claimed the title of Nentyarch and grew a living fortress of trees atop the fiend-corrupted ruins of Dun-Tharos. This druid circle protected the Great Dale from all threats until the Year of the Unstrung Harp (1371 DR) when they were cast out of Dun-Tharos by the Rotting Man and his Blightlords. The Rotting Man’s reign in Dun-Tharos did not last long, for he and his Rotting Lords were destroyed by demons from below Dun-Tharos, who now overrun the wilds of Dunwood.</p>
+			<p class="indent">The Nentyarch and his followers found refuge to the south, in the ancient wood elf fortress of Yeshelmaar. From this bastion in the Forest of Lethyr, the Circle of Leth seeks to purge Dunwood of its evil fiendish taint while protecting the goodly folks of the Great Dale.</p>
+			<p class="indent">Druids of the Circle of Leth have a strong affinity for nature and the untamed plants and creatures that live therein. They call on nature’s divine essence to transform into plant creatures to help defend their forest homes.</p>
+			<h5>In Other Settings</h5>
+			<p>The druids of the Circle of Leth easily fit into any setting that already has a strong druidic tradition and wide regions of unspoiled vegetation.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_BONUS_CANTRIP" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PLANT_FORM" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PRIMAL_STRIKE" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_NATURES_PROTECTION" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_SILENT_PASSAGE" />
+		</description>
+		<sheet display="false">
+			<description>You call on nature’s divine essence to transform into plant creatures.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_BONUS_CANTRIP" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PLANT_FORM" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PRIMAL_STRIKE" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_NATURES_PROTECTION" level="10" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_SILENT_PASSAGE" level="14" />
+		</rules>
+	</element>
+	<element name="Bonus Cantrip" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_BONUS_CANTRIP">
+		<description>
+			<p>Starting at 2nd level when you choose this circle, you gain the shillelagh cantrip. If you already know this cantrip, you learn a different druid cantrip of your choice. This cantrip doesn’t count towards the number of cantrips you know.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain the shillelagh cantrip. If you already know this cantrip, you learn a different druid cantrip of your choice. This cantrip doesn’t count towards the number of cantrips you know.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Bonus Cantrip, Circle of Leth" supports="Druid,0" spellcasting="Druid" default="ID_PHB_SPELL_SHILLELAGH" />
+		</rules>
+	</element>
+	<element name="Plant Form" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PLANT_FORM">
+		<description>
+			<p>As a druid of the Circle of Leth, you can use your Wild Shape ability to assume dangerous plant forms. At 2nd level, you can use your Wild Shape to transform into a plant with a challenge rating of 1 or lower (you ignore the Max. CR column of the Beast Shapes table but must abide by other limitations there).</p>
+			<p class="indent">Starting at 6th level, you can transform into a plant with a challenge rating as high as your druid level divided by 3, rounded down.</p>
+			<p class="caption">EXAMPLE PLANT CREATURES</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">CR</td><td>Creature</td></tr>
+				</thead>
+				<tr><td>0</td><td>Awakened Shrub</td></tr>
+				<tr><td>0</td><td>Myconid Sprout</td></tr>
+				<tr><td>1/8</td><td>Twig Blight</td></tr>
+				<tr><td>1/4</td><td>Needle Blight</td></tr>
+				<tr><td>1/4</td><td>Vegepygmy <sup>VGtM</sup></td></tr>
+				<tr><td>1/2</td><td>Myconid Adult</td></tr>
+				<tr><td>1/2</td><td>Vine Blight</td></tr>
+				<tr><td>1</td><td>Thorny <sup>VGtM</sup></td></tr>
+				<tr><td>2</td><td>Awakened Tree</td></tr>
+				<tr><td>2</td><td>Myconid Sovereign</td></tr>
+				<tr><td>2</td><td>Vegepygmy Chief <sup>VGtM</sup></td></tr>
+				<tr><td>3</td><td>Assassin VineToA</td></tr>
+				<tr><td>4</td><td>WhipwoodNEW</td></tr>
+				<tr><td>5</td><td>Shambling Mound</td></tr>
+				<tr><td>5</td><td>Wood Woad <sup>VGtM</sup></td></tr>
+				<tr><td>6</td><td>DirewoodNEW</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You can use your Wild Shape to transform into a plant with a challenge rating of {{plant form:cr}} or lower.</description>
+		</sheet>
+		<rules>
+			<stat name="plant form:cr" value="1" />
+			<stat name="plant form:cr" value="2" level="6"/>
+			<stat name="plant form:cr" value="3" level="9"/>
+			<stat name="plant form:cr" value="4" level="12"/>
+			<stat name="plant form:cr" value="5" level="15"/>
+			<stat name="plant form:cr" value="6" level="18"/>
+		</rules>
+	</element>
+	<element name="Primal Strike" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_PRIMAL_STRIKE">
+		<description>
+			<p>Starting at 6th level, your attacks in beast or plant form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks.</p>
+		</description>
+		<sheet>
+			<description>Your attacks in beast or plant form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks.</description>
+		</sheet>
+	</element>
+	<element name="Nature’s Protection" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_NATURES_PROTECTION">
+		<description>
+			<p>Starting at 10th level, you can’t be charmed or frightened by fiends or plants, and you are immune to poison and disease.</p>
+		</description>
+		<sheet>
+			<description>You can’t be charmed or frightened by fiends or plants, and you are immune to poison and disease.</description>
+		</sheet>
+	</element>
+	<element name="Silent Passage" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_CIRCLE_OF_LETH_SILENT_PASSAGE">
+		<description>
+			<p>By 14th level, you can alter the environment around you in subtle ways to avoid detection. You can cast the pass without trace spell at will.</p>
+		</description>
+		<sheet>
+			<description>You can alter the environment around you in subtle ways to avoid detection. You can cast the pass without trace spell at will.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" spellcasting="Druid" />
+		</rules>
+	</element>	
+</elements>

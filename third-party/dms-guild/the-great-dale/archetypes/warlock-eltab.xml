@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="warlock-eltab.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/warlock-eltab.xml" />
+		</update>
+	</info>	
+	<element name="Eltab, Lord of the Hidden Layer" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_ELTAB_LORD_OF_THE_HIDDEN_LAYER">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>A powerful demon who has played a significant role in the eastern part of Faerûn, and likely will in the foreseeable future, is the Demon Lord Eltab, “Lord of the Hidden Layer”.</p>
+			<p class="indent">Eltab wishes nothing more than to enact revenge on those who wronged him and rule over eastern Faerûn again. Eltab’s list of enemies is long, including the Witches of Rashemen, the Red Wizards of Thay, and the god-kings of Uthmere. Any character who seeks to hurt these groups or wants to cause pain to an organization they once served are prime candidates to be servants of Eltab.</p>
+			<!-- <p class="indent">Warlocks who take the fiendish pact in the Great Dale could have Eltab as their patron. Consider making the following changes to such a warlock.</p> -->
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_EXPANDED_SPELL_LIST" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_SCALY_FLESH" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESOWNLUCK" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_FIENDISH_RESILIENCE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_HURL_THROUGH_HELL" />
+		</description>
+		<sheet display="false">
+			<description>You have made a pact with the Demon Lord Eltab.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_SCALY_FLESH" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_DARKONESOWNLUCK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_FIENDISH_RESILIENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_FIEND_HURL_THROUGH_HELL" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_EXPANDED_SPELL_LIST">
+		<description>
+			<p>Demon Lord Eltab lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>DEMON LORD ELTAB EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>command, wrathful smite</em></td></tr>
+				<tr><td>2nd</td><td><em>branding smite, flame blade</em></td></tr>
+				<tr><td>3rd</td><td><em>elemental weapon, fear</em></td></tr>
+				<tr><td>4th</td><td><em>fire shield, staggering smite</em></td></tr>
+				<tr><td>5th</td><td><em>destructive smite, flame strike</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>Demon Lord Eltab lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_COMMAND</extend>
+			<extend>ID_PHB_SPELL_WRATHFUL_SMITE</extend>
+			<extend>ID_PHB_SPELL_BRANDING_SMITE</extend>
+			<extend>ID_PHB_SPELL_FLAME_BLADE</extend>
+			<extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+			<extend>ID_PHB_SPELL_FEAR</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_PHB_SPELL_STAGGERING_SMITE</extend>
+			<extend>ID_PHB_SPELL_DESTRUCTIVE_SMITE</extend>
+			<extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+		</spellcasting>
+	</element>
+	<element name="Scaly Flesh" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_ELTAB_SCALY_FLESH">
+		<description>
+			<p>Starting at 1st level, your skin grows tough and scaled, making it more difficult to hurt you in combat. You gain a natural armor class of 13 + your Dexterity modifier.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain a natural armor class of {{ac:scaly flesh}}.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:scaly flesh" value="13" />
+			<stat name="ac:scaly flesh" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="ac:scaly flesh" bonus="calculation" alt="Natural Armor (Scaly Flesh)" />
+		</rules>
+	</element>
+	
+	<!-- todo: enhance with CountsAs once implemented -->
+	
+</elements>
