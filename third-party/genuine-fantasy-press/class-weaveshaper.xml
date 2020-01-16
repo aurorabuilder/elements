@@ -150,7 +150,7 @@
 			<p class="indent">Your threadblade is a unique weapon with an appearance of your own design, but it falls into one of several categories. When you gain this feature, choose one of the threadblade types listed in the following section. You can change your threadblade type whenever you gain a level in this class.</p>
 		</description>
 		<sheet>
-			<description>You learn to create a threadblade (+{{threadblade:attack:bonus}} vs AC) by instantly spinning it into existence. You can do this when you roll initiative or at the start of your turn.
+			<description>Create a threadblade (+{{threadblade:attack:bonus}} vs AC) by instantly spinning it into existence when you roll initiative or at the start of your turn.
 			You can’t wield another weapon or equip a shield while wielding your threadblade.</description>
 		</sheet>
 		<rules>
@@ -167,7 +167,7 @@
 			<p>At 1st level, you learn to clothe yourself in magic. While you are not using a shield, you can choose to have your AC equal 10 + your Dexterity modifier + your Intelligence modifier. Also, you can use your action to change the color, fit and style of your clothing or armor while wearing it. It reverts to its ordinary appearance if you stop wearing it.</p>
 		</description>
 		<sheet>
-			<description>While you are not using a shield, you can choose to have your AC equal 10 + your Dexterity modifier + your Intelligence modifier. Also, you can use your action to change the color, fit and style of your clothing or armor while wearing it. It reverts to its ordinary appearance if you stop wearing it.</description>
+			<description>While you are not using a shield, you can choose to have your {{ac:weaveshaper infusion}} AC. Also, you can use your action to change the color, fit and style of your clothing or armor while wearing it. It reverts to its ordinary appearance if you stop wearing it.</description>
 		</sheet>
 		<rules>
 			<stat name="ac:weaveshaper infusion" value="10" />
@@ -180,8 +180,8 @@
 		<description>
 			<p>Also at 1st level, your infusion allows you to move your weapons at the speed of thought. When you do not take the Attack action or cast a spell that deals damage during your turn, you can use your bonus action make a single attack with your threadblade or an accessory weapon granted by this class. This attack doesn’t add your ability score modifier to the damage roll.</p>
 		</description>
-		<sheet>
-			<description>When you do not take the Attack action or cast a spell that deals damage during your turn, you can use your bonus action make a single attack with your threadblade or an accessory weapon granted by this class. This attack doesn’t add your ability score modifier to the damage roll.</description>
+		<sheet action="Bonus Action">
+			<description>When you do not take the Attack action or cast a spell that deals damage during your turn, you can make a single attack with your threadblade or an accessory weapon. This attack doesn’t add your ability modifier to the damage roll.</description>
 		</sheet>
 	</element>
 	<element name="Weave Finishers" type="Class Feature" source="The Weaveshaper" id="ID_GFP_WS_CLASS_FEATURE_WEAVESHAPER_WEAVE_FINISHERS">
@@ -199,8 +199,8 @@
 			</center>
 		</description>
 		<sheet action="Bonus Action">
-			<description>Each time you make an attack with your threadblade or an accessory weapon, you spin a fraction of that attack’s power into an arcane string. Your collected arcane strings disappear after 1 minute and when you roll initiative.
-			You can perform a Weave Finisher by spending the listed number of arcane strings stated in each Finisher’s description when you take the Attack action during your turn. Your Weave Tier is {{weaveshaper:weave tier}}.</description>
+			<description>Each time you make an attack with your threadblade or an accessory weapon, you spin an arcane string. Your collected arcane strings disappear after 1 minute and when you roll initiative.
+			You can perform a Weave Finisher by spending arcane strings when you take the Attack action during your turn. Your Weave Tier is {{weaveshaper:weave tier}}.</description>
 		</sheet>
 		<spellcasting name="Weaveshaper" ability="Intelligence">
 			<list>GFP_Weaveshaper</list>
@@ -226,7 +226,7 @@
 			<p>Starting at 2nd level, during your first turn in combat after you roll initiative, if you take the Attack action and attack with your threadblade or an accessory weapon granted by this class and hit, you unleash a spiral of razor thread. Your target takes slashing damage equal to twice your Weave Tier and must make a Dexterity saving throw. If it fails, its movement speed is halved until the end of its next turn.</p>
 		</description>
 		<sheet>
-			<description>During your first turn in combat after you roll initiative, if you take the Attack action and attack with your threadblade or an accessory weapon granted by this class and hit, you unleash a spiral of razor thread. Your target takes {{ribbon cutter:damage}} slashing damage and must make a Dexterity save. If it fails, its movement speed is halved until the end of its next turn.</description>
+			<description>During your first turn in combat after you roll initiative, if you take the Attack action and attack with your threadblade or an accessory weapon and hit, your target takes {{ribbon cutter:damage}} slashing damage and must make a Dexterity save. If it fails, its movement speed is halved until the end of its next turn.</description>
 		</sheet>
 		<rules>
 			<stat name="ribbon cutter:damage" value="weaveshaper:weave tier" />
@@ -251,16 +251,17 @@
 			<p class="indent">Additionally, you gain proficiency in three sets of tools, and can you can create any tool sets you are proficient with using this feature.</p>
 			<p class="indent">At 7th level, you can create a bridge or stairway of arcane thread using this feature. The bridge or stairway can’t stretch farther than 30 feet, is large enough to be usable by Medium or smaller creatures with ease, has AC 10, and can hold up to 10,000 lbs at a time. If a bridge or stairway takes damage, you can choose to either take the damage in its place, or allow it to vanish.</p>
 		</description>
-		<sheet>
-			<description>You can use your action to call and shape your arcane thread into useful objects, tools, and other ordinary devices that weigh less than 10 lbs. and cost less than 10 gp. Some things may be beyond your talents, depending on their complexity, and all items created with this feature are visibly magical.
+		<sheet action="Action">
+			<description>You can call and shape your arcane thread into useful objects, tools, and other ordinary devices that weigh less than 10 lbs. and cost less than 10 gp. Some things may be beyond your talents, depending on their complexity, and all items created with this feature are visibly magical.
 			You can also weave arcane thread in the form of a 100-foot silk rope with grappling hook, a 10-foot ladder, a spyglass, or a table with chairs. These items fade if you summon one again or after one minute if you stop touching them.</description>
-			<description level="7">You can use your action to call and shape your arcane thread into useful objects, tools, and other ordinary devices that weigh less than 10 lbs. and cost less than 10 gp. Some things may be beyond your talents, depending on their complexity, and all items created with this feature are visibly magical.
+			<description level="7">You can call and shape your arcane thread into useful objects, tools, and other ordinary devices that weigh less than 10 lbs. and cost less than 10 gp. Some things may be beyond your talents, depending on their complexity, and all items created with this feature are visibly magical.
 			You can also weave arcane thread in the form of a 100-foot silk rope with grappling hook, a 10-foot ladder, a spyglass, or a table with chairs. These items fade if you summon one again or after one minute if you stop touching them.
-			You can create a bridge or stairway of arcane thread using this feature. The bridge or stairway can’t stretch farther than 30 feet, is large enough to be usable by Medium or smaller creatures with ease, has AC 10, and can hold up to 10,000 lbs at a time. If a bridge or stairway takes damage, you can choose to either take the damage in its place, or allow it to vanish.</description>
+			You can create a bridge or stairway of arcane thread using this feature. The bridge or stairway can’t stretch farther than {{renaissance regular:bridge distance}} feet, is large enough to be usable by Medium or smaller creatures with ease, has AC 10, and can hold up to 10,000 lbs at a time. If a bridge or stairway takes damage, you can choose to either take the damage in its place, or allow it to vanish.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_MENDING" spellcasting="Weaveshaper" />
 			<select type="Proficiency" name="Tool Proficiency, Renaissance Regular" supports="Tool" number="3" />
+			<stat name="renaissance regular:bridge distance" value="30" bonus="base" />
 		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="The Weaveshaper" id="ID_GFP_WS_CLASS_FEATURE_WEAVESHAPER_ABILITY_SCORE_IMPROVEMENT">
@@ -292,7 +293,7 @@
 			<p>At 7th level, your martial studies grant you speed and power. While you are wearing no armor, your walking speed increases by 10 feet, and moving through a space you’ve already traversed this turn costs only half as much movement.</p>
 		</description>
 		<sheet>
-			<description>While you are wearing no armor, your walking speed increases by 10 feet, and moving through a space you’ve already traversed this turn costs only half as much movement.</description>
+			<description>Moving through a space you’ve already traversed this turn costs only half as much movement.</description>
 		</sheet>
 		<rules>
 			<stat name="speed:misc" value="10" equipped="[armor:none]" />
@@ -361,7 +362,7 @@
 			<p class="indent">Once you use this feature, you can’t do so again until you finish a long rest.</p>
 		</description>
 		<sheet action="Action" usage="1/Long Rest">
-			<description>You can spin a fraction of your soul into arcane thread. For 1 minute, your attacks with your threadblade and tapestry accessory weapon can’t miss.</description>
+			<description>For 1 minute, your attacks with your threadblade and tapestry accessory weapon can’t miss.</description>
 		</sheet>
 	</element>
 
@@ -375,9 +376,7 @@
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_RISE_AS_ONE" />
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_FEARLESS_FLIGHT" />
 		</description>
-		<sheet display="false">
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_COUTURIER_ARTS" level="2" />
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_FRESH_BLOOD" level="2" />
@@ -401,8 +400,8 @@
 				<tr><td>13th</td><td><em>telepathic bond</em></td></tr>
 			</table>
 		</description>
-		<sheet>
-			<description>You can cast each of these spells once, and you regain the ability to cast them when you finish a long rest.</description>
+		<sheet usage="Long Rest">
+			<description>You can cast your each of these spells once.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" spellcasting="Weaveshaper" />
@@ -417,7 +416,7 @@
 			<p>At 3rd level, you create your tapestry and begin to feed it with your blood and power, demanding it to grow alongside you. You can use this accessory as a weapon to make melee spell attacks that deal slashing damage equal to 1d12 + your Intelligence modifier, causing blades, fangs, and razor edges to spring from your outfit and strike. If this attack hits and the target is grappling you, you can free yourself automatically. If you are grappling your target, this attack is made with advantage.</p>
 		</description>
 		<sheet>
-			<description>You can use this accessory as a weapon to make melee spell attacks that deal 1d12+{{intelligence:modifier}} slashing damage. If this attack hits and the target is grappling you, you can free yourself automatically. If you are grappling your target, this attack is made with advantage.</description>
+			<description>A weapon to make melee spell attacks that deal 1d12+{{intelligence:modifier}} slashing damage. If this attack hits and the target is grappling you, you can free yourself automatically. If you are grappling your target, this attack is made with advantage.</description>
 		</sheet>
 	</element>
 	<element name="Unstoppable Duo" type="Archetype Feature" source="The Weaveshaper" id="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_UNSTOPPABLE_DUO">
@@ -436,8 +435,11 @@
 			<p>At 10th level, your tapestry demands your body act, even when it has been broken. You can stand from prone without using movement at any time during your turn and you can use your Clothier’s Cleave attack even while you are unconscious. Additionally, your Renaissance Regular feature’s stairway or bridge can now reach up to 60 feet.</p>
 		</description>
 		<sheet>
-			<description>You can stand from prone without using movement at any time during your turn and you can use your Clothier’s Cleave attack even while you are unconscious. Additionally, your Renaissance Regular feature’s stairway or bridge can now reach up to 60 feet.</description>
+			<description>You can stand from prone without using movement at any time during your turn and you can use your Clothier’s Cleave attack even while you are unconscious.</description>
 		</sheet>
+		<rules>
+			<stat name="renaissance regular:bridge distance" value="60" bonus="base" />
+		</rules>
 	</element>
 	<element name="Fearless Flight" type="Archetype Feature" source="The Weaveshaper" id="ID_GFP_WS_ARCHETYPE_FEATURE_CRIMSON_FEARLESS_FLIGHT">
 		<description>
@@ -461,9 +463,7 @@
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_MORTAL_ILLUSORY_EVASION" />
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_MORTAL_GLORY_ETERNAL" />
 		</description>
-		<sheet display="false">
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_MORTAL_COUTURIER_ARTS" level="2" />
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_MORTAL_TOME_OF_BLADES" level="2" />
@@ -487,8 +487,8 @@
 				<tr><td>13th</td><td><em>teleportation circle</em></td></tr>
 			</table>
 		</description>
-		<sheet>
-			<description>You can cast each of these spells once, and you regain the ability to cast them when you finish a long rest.</description>
+		<sheet usage="Long Rest">
+			<description>You can cast your each of these spells once.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD" spellcasting="Weaveshaper" />
@@ -516,7 +516,7 @@
 			<p>At 6th level, your tapestry allows you to fragment your form into illusions. When you take the Dodge action, you create false figments of your form that move alongside you until the start of your next turn. The first time you are targeted by a creature’s attack during this time, it must first make an Intelligence saving throw. If it fails, the attack automatically misses.</p>
 		</description>
 		<sheet>
-			<description>When you take the Dodge action, you create false figments of your form that move alongside you until the start of your next turn. The first time you are targeted by a creature’s attack during this time, it must first make an Intelligence save. If it fails, the attack automatically misses.</description>
+			<description>When you take the Dodge action: until the start of your next turn, the first time you are targeted by a creature’s attack during this time, it must first make an Intelligence save. If it fails, the attack automatically misses.</description>
 		</sheet>
 	</element>
 	<element name="Illusory Evasion" type="Archetype Feature" source="The Weaveshaper" id="ID_GFP_WS_ARCHETYPE_FEATURE_MORTAL_ILLUSORY_EVASION">
@@ -550,9 +550,7 @@
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_STARSPIRAL_GALACTIC_BODY" />
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_STARSPIRAL_HEAVEN_PIERCER" />
 		</description>
-		<sheet display="false">
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_STARSPIRAL_COUTURIER_ARTS" level="2" />
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_STARSPIRAL_FACE_OF_WAR" level="2" />
@@ -576,8 +574,8 @@
 				<tr><td>13th</td><td><em>dream</em></td></tr>
 			</table>
 		</description>
-		<sheet>
-			<description>You can cast each of these spells once, and you regain the ability to cast them when you finish a long rest.</description>
+		<sheet usage="Long Rest">
+			<description>You can cast your each of these spells once.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_ALARM" spellcasting="Weaveshaper" />
@@ -592,7 +590,7 @@
 			<p>At 3rd level, your tapestry surrounds your infusion like armor and provides you with deadly ranged attacks to supplement your threadblade. You can use this accessory as a weapon to make ranged spell attacks at a range of 120 feet that deal force damage equal to 1d10 + your Intelligence modifier, launching explosive stabbing missiles from your arcane mechanisms. This attack isn’t made with disadvantage if your target is prone, and deals twice as much damage if your target is Huge or larger.</p>
 		</description>
 		<sheet>
-			<description>You can use this accessory as a weapon to make ranged spell attacks at a range of 120 feet that deal 1d10+{{intelligence:modifier}} force damage. This attack isn’t made with disadvantage if your target is prone, and deals twice as much damage if your target is Huge or larger.</description>
+			<description>A weapon to make ranged spell attacks at a range of 120 feet that deal 1d10+{{intelligence:modifier}} force damage. This attack isn’t made with disadvantage if your target is prone, and deals twice as much damage if your target is Huge or larger.</description>
 		</sheet>
 	</element>
 	<element name="Massive Machine" type="Archetype Feature" source="The Weaveshaper" id="ID_GFP_WS_ARCHETYPE_FEATURE_STARSPIRAL_MASSIVE_MACHINE">
@@ -639,9 +637,7 @@
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_SHADOWSILK_GRASPING_DARK" />
 			<div element="ID_GFP_WS_ARCHETYPE_FEATURE_SHADOWSILK_SHADOW_DANCE" />
 		</description>
-		<sheet display="false">
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_SHADOWSILK_COUTURIER_ARTS" level="2" />
 			<grant type="Archetype Feature" id="ID_GFP_WS_ARCHETYPE_FEATURE_SHADOWSILK_CLOAK_OF_BLADES" level="2" />
@@ -665,8 +661,8 @@
 				<tr><td>13th</td><td><em>seeming</em></td></tr>
 			</table>
 		</description>
-		<sheet>
-			<description>You can cast each of these spells once, and you regain the ability to cast them when you finish a long rest.</description>
+		<sheet usage="Long Rest">
+			<description>You can cast your each of these spells once.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Weaveshaper" />
@@ -681,7 +677,7 @@
 			<p>At 2nd level, your cloak moves to defend you and strike at your foes. You can use this accessory as a weapon to make melee spell attacks at a reach of 15 feet that deal slashing damage equal to 1d8 + your Intelligence modifier, causing cutting blades to lash from your cloak. If you hit a creature with this attack, you can choose to force it to make a Strength saving throw. If it fails, it is pulled to the nearest open space within 5 feet of you.</p>
 		</description>
 		<sheet>
-			<description>You can use this accessory as a weapon to make melee spell attacks at a reach of 15 feet that deal 1d8+{{intelligence:modifier}} slashing damage. If you hit a creature with this attack, you can choose to force it to make a Strength save. If it fails, it is pulled to the nearest open space within 5 feet of you.</description>
+			<description>A weapon to make melee spell attacks at a reach of 15 feet that deal 1d8+{{intelligence:modifier}} slashing damage. If you hit a creature with this attack, you can choose to force it to make a Strength save. If it fails, it is pulled to the nearest open space within 5 feet of you.</description>
 		</sheet>
 	</element>
 	<element name="Hidden Agenda" type="Archetype Feature" source="The Weaveshaper" id="ID_GFP_WS_ARCHETYPE_FEATURE_SHADOWSILK_HIDDEN_AGENDA">
@@ -767,7 +763,7 @@
 			<p>You repair and strengthen your infusion, granting you temporary hit points equal to your weaveshaper level + your Weave Tier, which last until you roll initiative.</p>
 		</description>
 		<sheet usage="1 string">
-			<description>You repair and strengthen your infusion, granting you {{restitch:hp}} temporary hp, which last until you roll initiative.</description>
+			<description>You gain {{restitch:hp}} temporary hp, which last until you roll initiative.</description>
 		</sheet>
 		<rules>
 			<stat name="restitch:hp" value="weaveshaper:weave tier" />
@@ -842,7 +838,7 @@
 			<p class="indent"><strong>Higher Tiers:</strong> The psychic damage increases by 1d10 per Weave Tier you possess above 1.</p>
 		</description>
 		<sheet usage="2 strings">
-			<description>You manifest pure, deadly intention towards a creature you can see within 60 feet of you. Each creature in a 5-foot line between you and your target must make a DC {{weaveshaper:spellcasting:dc}} Wisdom save. If a creature fails, it is shunted to the nearest open space of its choosing outside the line of effect. If no creatures remain between you and your target, your target takes {{weaveshaper:weave tier}}d10 psychic damage and must make a DC {{weaveshaper:spellcasting:dc}} Wisdom save. If it fails, it is frightened of you until the end of your next turn.</description>
+			<description>A creature you can see within 60 feet of you. Each creature in a 5-foot line between you and your target must make a DC {{weaveshaper:spellcasting:dc}} Wisdom save. If a creature fails, it is shunted to the nearest open space of its choosing outside the line of effect. If no creatures remain between you and your target, your target takes {{weaveshaper:weave tier}}d10 psychic damage and must make a DC {{weaveshaper:spellcasting:dc}} Wisdom save. If it fails, it is frightened of you until the end of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="Dueling Ascent" type="Class Feature" source="The Weaveshaper" id="ID_GFP_WS_CLASS_FEATURE_WEAVESHAPER_WEAVE_FINISHER_DUELING_ASCENT">
@@ -950,7 +946,7 @@
 			<p class="indent"><strong>Higher Tiers:</strong> The slashing damage increases by 1d10 per Weave Tier you possess above 2.</p>
 		</description>
 		<sheet usage="3 strings">
-			<description>Your threadblade bites down on a creature of your choosing within 10 feet of you. The target takes 1d8 piercing damage and is restrained and grappled by you until the start of your next turn. The target must make a DC {{weaveshaper:spellcasting:dc}} Constitution save as the maw begins to chew. If it fails, it takes {{dragons maw:dice}}d10 slashing damage, or half as much damage on a success.</description>
+			<description>A creature of your choosing within 10 feet of you. The target takes 1d8 piercing damage and is restrained and grappled by you until the start of your next turn. The target must make a DC {{weaveshaper:spellcasting:dc}} Constitution save. If it fails, it takes {{dragons maw:dice}}d10 slashing damage, or half as much damage on a success.</description>
 		</sheet>
 		<rules>
 			<stat name="dragons maw:dice" value="1" />
@@ -982,7 +978,7 @@
 			<p class="indent"><strong>Higher Tiers:</strong> The necrotic damage increases by 1d8 per Weave Tier you possess above 4.</p>
 		</description>
 		<sheet usage="3 strings">
-			<description>You make a melee weapon attack with your threadblade. If you hit, the target must make a DC {{weaveshaper:spellcasting:dc}} Charisma save. If it fails, you cut into its soul, dealing {{soul sever:dice}}d8 necrotic damage to the creature and causing it to become frightened of you until the end of your next turn.</description>
+			<description>A melee weapon attack with your threadblade. If you hit, the target must make a DC {{weaveshaper:spellcasting:dc}} Charisma save. If it fails, you cut into its soul, dealing {{soul sever:dice}}d8 necrotic damage to the creature and causing it to become frightened of you until the end of your next turn.</description>
 		</sheet>
 		<rules>
 			<stat name="soul sever:dice" value="1" />
@@ -1042,24 +1038,4 @@
 			<stat name="shadow assault:dice" value="weaveshaper:weave tier" />
 		</rules>
 	</element>
-
-	<!-- <element name="Loombreaker" type="Weapon" source="The Weaveshaper" id="ID_GFP_WS_WEAPON_Loombreaker">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</supports>
-		<description>
-			<p>Your threadblade manifests as a massive, impossible melee weapon that deals 1d12 slashing damage. While you are wielding this weapon, your attacks with it during your turn have a reach of 10 feet, and your melee attacks targeting prone creatures ignore all sources of disadvantage.</p>
-		</description>
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="damage" type="slashing">1d12</set>
-			<set name="proficiency">ID_GFP_WS_WEAPON_PROFICIENCY_THREADBLADE</set>
-		</setters>
-	</element>
-	<element name="Weapon Proficiency (Threadblade)" type="Proficiency" source="The Weaveshaper" id="ID_GFP_WS_WEAPON_PROFICIENCY_THREADBLADE">
-		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</supports>
-		<requirements>ID_GFP_WS_SOURCE_THE_WEAVESHAPER</requirements>
-	</element> -->
-
 </elements>
