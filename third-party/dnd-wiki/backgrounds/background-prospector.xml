@@ -1,96 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- 
-    author username: Fangster
-    date created: february 1, 2015
-    date editted: march 26, 2016
-    purpose: configures the prospector background and relevant features for use with dnd 5e character creator "aurora builder"
--->
 <elements>
-    <!-- info describing sources -->
     <info>
-       <name>Prospector</name>
-       <description>5e homebrew</description>
-       <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
-       <update version="0.0.2">
+       <update version="0.0.3">
            <file name="background-prospector.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-prospector.xml" />
        </update>
     </info>
 
-    <!-- Prospector Background information and grants -->
-    <element name="Prospector" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_PROSPECTOR">
-        <setters>
-            <set name="sourceUrl">http://www.dandwiki.com/wiki/Prospector_(5e_Background)</set>
-        </setters>
+	<!-- content moved: https://github.com/community-elements/elements-dndwiki -->
 
-        <description>
-            <p>You grew up searching for hidden veins of ore, gems, and mineral wealth. You have experienced the thrill of following the geologic clues hidden in bands of rock and soil to pockets of precious gold or gemstones. You have also cried tears of frustration when the vein of ore that could make you rich and famous petered out after only a few feet, yielding barely enough wealth to pay for repairing your tools before moving on to search another promising claim.</p>
-            <p>
-                <span class="emphasis">Skill Proficiencies:</span>Investigation, Survival<br />
-                <span class="emphasis">Tool Proficiencies:</span>Prospector's kit<br />
-                <span class="emphasis">Languages:</span>Dwarven<br />
-                <span class="emphasis">Equipment:</span>A prospector's kit, one set of travelers clothes, a whetstone, a wheelbarrow, and a beltpouch containing 10gp. You also have a map to a lost mine, although the specific location of the mine is detailed, the general location is ambiguous (Once you get there, you will know that you have finally found it).<br />
-            </p>
-            <div element="ID_WIKI_BACKGROUND_FEATURE_GEOLOGICAL_KNACK" /> <!-- pulls description of feature -->
-        </description>
-
-        <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PROSPECTORS_KIT" />
-            <grant type="Language" id="ID_LANGUAGE_DWARVISH" />
-            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_FEATURE_GEOLOGICAL_KNACK" />
-            
-            <select type="List" name="Personality Trait" number="2">
-                <item id="1">I am uncomfortable in crowds due to a life lived in almost seclusion.</item>
-                <item id="2">I am always looking for the next big break.</item>
-                <item id="3">Luck favors the prepared, so I tend to be as prepared as I can possibly be (overprepared?)</item>
-                <item id="4">When work needs doing, I do the work.</item>
-                <item id="5">I am regularly tasting bits of rock and soil in order to search for signs of precious metals.</item>
-                <item id="6">My conversation and social skills are a bit rusty – cursing at the rock and singing myself to sleep does not breed civilized habits.</item>
-            </select>
-            <select type="List" name="Ideal">
-                <item id="1">Change. Opportunity is hiding around the next corner.</item>
-                <item id="2">Respect. Everyone deserves a chance to improve their station in life: with hard work and/or some luck.</item>
-                <item id="3">Independence. I must prove that I can provide a good life for myself and my family.</item>
-                <item id="4">Simplicity. A simple way of life: If it ain’t broke don’t fix it.</item>
-                <item id="5">Ambition. A successful person makes their own opportunities.</item>
-                <item id="6">Wealth. With wealth comes power and happiness.</item>
-            </select>
-            <select type="List" name="Bond">
-                <item id="1">I am always willing to help out someone else who is down on their luck.</item>
-                <item id="2">I am looking for that someone special to spend the rest of my life with.</item>
-                <item id="3">I am out to stake my claim on a productive mine and make my fortune.</item>
-                <item id="4">I share an empathy with every race and creature that digs and mines.</item>
-                <item id="5">Love is fleeting, rock and minerals last forever.</item>
-                <item id="6">I count myself as one of the rich and powerful, even though I have not found my fortune yet. It is just a matter of time.</item>
-            </select>
-            <select type="List" name="Flaw">
-                <item id="1">Once I find a bit of precious mineral, I cannot abandon the search until I have found and mined (or collected) the cache of metal or gems.</item>
-                <item id="2">I constantly scan the ground and my surroundings for signs of precious metals.</item>
-                <item id="3">I am obsessed with a particular kind of precious gem or metal and will pass up other treasure in pursuit of this resource.</item>
-                <item id="4">I am boastful and tend to try to one-up others during conversations.</item>
-                <item id="5">I am eternally pessimistic due to what seems like rotten luck.</item>
-                <item id="6">I am eternally optimistic about striking it rich- more than a little too optimistic.</item>
-            </select>
-        </rules>
-    </element>
-
-    <!-- Prospector Feature information -->
-    <element name="Feature: Geological Knack" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_FEATURE_GEOLOGICAL_KNACK">
-		<supports>Background Feature</supports>
-        <setters>
-            <set name="sourceUrl">http://www.dandwiki.com/wiki/Prospector_(5e_Background)</set>
-        </setters>
-        <description>
-            <p>You have an uncanny knack for ascertaining the features of the underlying geology and bedrock based on surface soil and plant conditions. You understand which types of rock are likely to yield precious metals and minerals. Although this knack will not lead you directly to the mythical pot of gold, it may be able to point you in the right general direction. This geological knowledge might possibly also come in handy in predicting where lava and underground water might be found.</p>
-        </description>
-		<sheet alt="Geological Knack" />
-    </element>
-    
-    <element name="Tool Proficiency (Prospector's kit)" type="Proficiency" source="D&amp;D Wiki" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PROSPECTORS_KIT">
-        <supports>Tool, Kit</supports>
-        <description>
-            <p>A prospector's kit contains: Rockhammer, Shovel, Gold pan or betea, Small hand lens, Various small brushes and scraping tools. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to locate or analyse geological features such as mineral veins, precious metal veins or fossils.</p>
-        </description>
-    </element>
 </elements>

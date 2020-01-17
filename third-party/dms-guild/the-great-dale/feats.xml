@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/feats.xml" />
+		</update>
+	</info>		
+	<element name="Circle Magic" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_CIRCLE_MAGIC">
+		<description>
+			<p>You have received training in the Circle Magic Tradition enabling you to absorb the magical might of a group of spellcasters working together. You gain access to Circle Magic Casting.</p>
+			<div class="reference">
+				<div element="ID_DMSG_TGD_INFORMATION_CIRCLE_MAGIC_CASTING" />
+			</div>
+		</description>
+		<sheet>
+			<description>You gain access to Circle Magic Casting.</description>
+		</sheet>
+	</element>
+	<element name="Fiend Hunter" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_FIEND_HUNTER">
+		<description>
+			<p>You are exceptionally skilled at fighting fiends. You gain the following benefits:</p>
+			<ul>
+				<li>Increase one ability score of your choice by 1, to a maximum of 20.</li>
+				<li>You gain advantage on initiative checks when fighting fiends.</li>
+				<li>When making a weapon attack against a fiend, you deal an extra 1d4 damage of your weapon’s damage type.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You gain advantage on initiative checks when fighting fiends.
+			+1d4 damage of your weapon’s damage type against a fiend</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase, Fiend Hunter" supports="Feat" />
+		</rules>
+	</element>		
+	<element name="Long Reach" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_LONG_REACH">
+		<description>
+			<p>You know how to extend your reach to target opponents with spear-like weapons. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Strength score by 1, to a maximum of 20.</li>
+				<li>Your weapon attacks with a javelin, pike, spear, or trident score a critical hit on a roll of 19 or 20.</li>
+				<li>On your turn, when you attack with a javelin, pike, spear, or trident, your reach increases by 5 feet. The reach for your opportunity attacks with these weapons remains unchanged.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Your weapon attacks with a javelin, pike, spear, or trident score a critical hit on a roll of 19 or 20.
+			On your turn, when you attack with a javelin, pike, spear, or trident, your reach increases by 5 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="strength" value="1" />
+		</rules>
+	</element>		
+	<element name="Smooth Talker" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_SMOOTH_TALKER">
+		<description>
+			<p>You are accustomed to using words to get out of difficult situations and know just the right thing to say in most circumstances. You gain the following benefits:</p>
+			<ul>
+				<li>Increase your Charisma score by 1, to a maximum of 20.</li>
+				<li>You have advantage on Wisdom (Insight) and Charisma (Persuasion) checks with individuals you have never met before.</li>
+				<li>If you are in combat with a creature and are able to speak a language that creature understands, you may use your action to try to convince the creature to hold their attack.</li>
+				<li>The creature must make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier). On a failed saving throw the target does not attack you or your allies until the start of your next turn, or until another creature makes an attack against it.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have advantage on Insight and Persuasion checks with individuals you have never met before.
+			If you are in combat with a creature and are able to speak a language that creature understands, you may use your action to try to convince the creature to hold their attack.
+			The creature must make a DC {{smooth talker:dc}} Wisdom save. On a failed saving throw the target does not attack you or your allies until the start of your next turn, or until another creature makes an attack against it.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" />
+			<stat name="smooth talker:dc" value="8" />
+			<stat name="smooth talker:dc" value="proficiency" />
+			<stat name="smooth talker:dc" value="charisma:modifier" />
+		</rules>
+	</element>		
+	<element name="Transdimensional Spell" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_TRANSDIMENSIONAL_SPELL">
+		<description>
+			<p>You know how to cast your spells so they affect targets on coexistent planes, such as the Ethereal Plane or the Shadow Plane. You may choose to have your spells affect ethereal creatures, creatures under the effects of a blink spell, creatures within the extradimensional space of a rope trick spell, or portable hole, or other similar extra dimensional effects.</p>
+			<p class="indent">When you cast a spell, you may choose to cast it using a higher level spell slot in order for that spell to affect targets on coexistent planes. You do not receive the normal benefits gained from casting that spell using the higher level spell slot.</p>
+			<p class="indent">As an example, if you cast magic missile with four darts of magical force at an ethereal creature, you would have to use a 3rd-level spell slot—one spell slot level higher than would normally be required to create four darts of force.</p>
+			<p class="indent">In order to target a creature, you must still be able to see that creature. You do not have to see a creature if it is within the area of effect of a spell.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell, you may choose to cast it using a higher level spell slot in order for that spell to affect targets on coexistent planes. You do not receive the normal benefits gained from casting that spell using the higher level spell slot.
+			In order to target a creature, you must still be able to see that creature. You do not have to see a creature if it is within the area of effect of a spell.</description>
+		</sheet>
+	</element>		
+	<element name="Woodwise" type="Feat" source="The Great Dale" id="ID_DMSG_TGD_FEAT_WOODWISE">
+		<description>
+			<p>You are exceedingly dangerous when fighting in wooded areas, where you gain the following benefits:</p>
+			<ul>
+				<li>Increase your Dexterity or Wisdom score by 1, to a maximum of 20.</li>
+				<li>You have advantage on Wisdom (Perception) checks in wooded areas.</li>
+				<li>If your speed is not zero, then it increases by 5 feet, even when moving through difficult terrain in wooded areas.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have advantage on Perception checks in wooded areas.
+			If your speed is not zero, then it increases by 5 feet, even when moving through difficult terrain in wooded areas.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase, Woodwise" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_WISDOM" />
+			<stat name="speed:misc" value="5" />
+		</rules>
+	</element>
+	<element name="Circle Magic Casting" type="Information" source="The Great Dale" id="ID_DMSG_TGD_INFORMATION_CIRCLE_MAGIC_CASTING">
+		<description>
+			<p>The eastern reaches of Faerûn have a long history of using Circle Magic. Currently both the Red Wizards of Thay and the Wychlaren of Rashemen are known for using this technique to unleash incredible feats of magical power.</p>
+			<p class="indent">Using Circle Magic, spellcasters work together to augment a single circle member with power derived from all the individuals in the group. That recipient can then use the magical power they have been given to increase their own spellcasting until all the stored magical energies have been used.</p>
+			<p class="indent"><strong><em>Requirements.</em></strong> To cast a spell using Circle Magic, three or more spellcasters are required. One of these spellcasters must possess the Circle Magic feat. The leader of the circle, usually the most powerful or experienced caster, stands within a circle formed by the other casters, who are no more than 10 feet from each other. Up to five casters can aid the leader, though stories exist of powerful Red Wizards employing twice that number.</p>
+			<p class="indent"><strong><em>Storing Magical Energy.</em></strong> For 1 hour, each spellcaster in the circle concentrates on transferring their magical energies to the leader. At the start of this hour, each participant expends one spell slot of their choice. Spellcasters are subject to normal concentration checks during this hour. Should any caster be interrupted and fail their concentration check during this hour, that caster’s spell slot is lost. The leader of the circle receives a pool of magical energy at the end of this hour equal to the total level of spell slots expended by the circle.</p>
+			<p class="indent">For example, a circle consisting of one leader and three assistants spends 1 hour developing their pool. The assistants expend the following spell slots: 2 1stlevel spell slots, 1 2nd-level spell slot, and 1 3rd-level spell slot. The leader adds 1 1st-level spell slot. This results in the circle leader receiving a final pool of Circle Magic energy totaling (2) 1st, (1) 2nd and (1) 3rd level spell slot.</p>
+			<p class="indent"><strong><em>Spending Spell Pool Energy.</em></strong> The leader of the circle may use their pool of magical energy in the following ways:</p>
+			<p class="indent">Increased Spell Slot. The leader may spend any number of spell slots from the circle spell pool and add it to a spell being cast.</p>
+			<p class="indent">Apply a Meta Magic Feat. The leader may spend spell slots to apply meta-magic option as per a sorcerer to a spell they cast. The following meta magic options are available:</p>
+			<ul style="list-style-type:none">
+				<li><em>Increased Spell Slot.</em> The leader may spend any number of spell slots from the circle spell pool and add it to a spell being cast. <br/>Example. If the leader cast a 1st level spell using their they could augment it with any number of spell slots that are available in their spell pool. If they spent a 3rd level spell slot from their circle spell pool, the spell would be effectively cast as if by a 4th level spell slot (1st level personal slot + 3rd level circle pool slot).</li>
+				<li><em>Meta Magic.</em> Circle leaders may apply a selection of sorcerer meta magic options to a spell they cast as follows:</li>
+				<li>
+					<ul style="list-style-type:none">
+						<li>Empowered Spell: Costs 1 spell slot regardless of level.</li>
+						<li>Extended Spell: Costs 1 spell slot regardless of level.</li>
+						<li>Heightened Spell: 3 spell slots regardless of level.</li>
+					</ul>
+				</li>
+			</ul>
+			<p class="indent"><strong><em>Duration.</em></strong> The leader of the circle may hold the pool of magic energy received for up to 24 hours. Any unused magical energy in the pool dissipates after 24 hours and is forever lost.</p>
+		</description>
+	</element>	
+</elements>

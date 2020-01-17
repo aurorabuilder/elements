@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<update version="0.0.1">
+			<file name="subclass-monk-shield.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/subclass-monk-shield.xml" />
+		</update>
+	</info>
+    <element name="Way of the Shield" type="Archetype" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_WAY_OF_THE_SHIELD">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Some monasteries teach a specialized form of combat that is very different from traditional monk fighting techniques. This style is known as the Way of the Shield, and it emphasizes the shield as a living extension of the warrior. Monks of this tradition train to take advantage of shields and polearms, so that they can fight with or against large armies of hoplites in phalanx formations. Such monks commonly wear long red cloaks to disguise their intentions and add fluidity to their movements.</p>
+            <p class="indent">Temples that teach the Way of the Shield are often decorated with scrolls that exalt the feats of warriors who are fearless when faced with impossible odds. Massive armies may be surprised to encounter resistance from a proud band of shield monks with less than a tenth of their numbers. Grandmasters of this tradition have even been known to stand alone against creatures many times their size.</p>
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_ARESIAN_TECHNIQUE" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHIELD_DANCER" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHELL_DRAGON_TURTLE" />
+            <div element="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_UNDAUNTED_SPIRIT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_ARESIAN_TECHNIQUE" level="3"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHIELD_DANCER" level="6"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHELL_DRAGON_TURTLE" level="11"/>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_UNDAUNTED_SPIRIT" level="17"/>
+        </rules>
+    </element>    
+    <element name="Aresian Technique" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_ARESIAN_TECHNIQUE">
+        <description>
+            <p>Starting when you choose this tradition at 3rd level, you gain proficiency with shields. Additionally, wielding a shield does not impede your Martial Arts, Unarmored Movement, or Unarmored Defense features. You may also use your shield as a “free hand” to catch and hold missile weapons with your Deflect Missiles feature.</p>
+            <p class="indent">As long as you are wielding a shield, opportunity attacks against you are made with disadvantage.</p>
+        </description>
+        <sheet>
+            <description>Wielding a shield does not impede your Martial Arts, Unarmored Movement, or Unarmored Defense features. You may also use your shield as a “free hand” to catch and hold missile weapons with your Deflect Missiles feature. While you are wielding a shield, opportunity attacks against you are made with disadvantage.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+
+            <stat name="ac:calculation" value="ac:unarmored defense monk" bonus="calculation" equipped="[armor:none]" alt="Unarmored Defense (Monk)" />
+			<stat name="innate speed:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:1]" />
+			<stat name="innate speed:climb:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:climb:1]" />
+			<stat name="innate speed:fly:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:fly:1]" />
+			<stat name="innate speed:swim:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:swim:1]" />
+			<stat name="innate speed:burrow:misc" value="monk:unarmored movement" bonus="unarmored movement" equipped="[armor:none]" requirements="[innate speed:burrow:1]" />
+        </rules>
+    </element>    
+    <element name="Shield Dancer" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHIELD_DANCER">
+        <description>
+            <p>Starting at 6th level, you have learned new techniques for using shields on the battlefield.</p>
+            <p class="indent"><b><i>Vaulting Strike.</i></b> As a bonus action on your turn, you may spend 1 ki point to vault yourself into the air, leaping up to 15 feet in any direction. If you are wielding a shield, then this leap does not provoke opportunity attacks. If you take an Attack action immediately after leaping, then you have advantage on your first melee attack, and it scores a critical hit on a roll of 19 or 20.</p>
+            <p class="indent"><b><i>Counterattack.</i></b> Whenever a creature makes an opportunity attack against you and misses, if you are using a shield, you may use your reaction to spin around and make a single melee weapon attack against that creature, without interrupting your movement.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_VAULTING_STRIKE" />
+            <grant type="Archetype Feature" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_COUNTERATTACK" />
+        </rules>
+    </element>
+    <element name="Vaulting Strike" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_VAULTING_STRIKE">
+		<compendium display="false" />
+        <sheet>
+            <description action="Bonus Action" usage="Ki">You may spend 1 ki point to vault yourself into the air, leaping up to 15 feet in any direction. If you are wielding a shield, then this leap does not provoke opportunity attacks. If you take an Attack action immediately after leaping, you have advantage on your first melee attack, and it crits on a 19 or 20.</description>
+        </sheet>
+    </element>
+    <element name="Counterattack" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_COUNTERATTACK">
+		<compendium display="false" />
+        <sheet>
+            <description action="Reaction">Whenever a creature makes an opportunity attack against you and misses, if you are using a shield, make a single melee weapon attack against that creature, without interrupting your movement.</description>
+        </sheet>
+    </element>
+    <element name="Shell of the Dragon Turtle" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_SHELL_DRAGON_TURTLE">
+        <description>
+            <p>Starting at 11th level, you have learned to think of your shield as an extension of your body. As a reaction when you are attacked, you may spend 1 ki point to gain an additional +3 AC from your shield, including against the triggering attack, until the beginning of your next turn.</p>
+        </description>
+        <sheet action="Reaction" usage="Ki">
+            <description>When attacked, you may spend 1 ki point to gain an additional +3 AC from your shield, including against the triggering attack, until the beginning of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Undaunted Spirit" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_ARCHETYPE_FEATURE_SHIELD_UNDAUNTED_SPIRIT">
+        <description>
+            <p>Beginning at 17th level, you are fearless when faced with overwhelming enemies. You have advantage on all attacks made against creatures that are Huge in size or larger. Additionally, you cannot be frightened or paralyzed by spells or abilities used by such creatures.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on all attacks made against creatures that are Huge in size or larger. Additionally, you cannot be frightened or paralyzed by spells or abilities used by such creatures.</description>
+        </sheet>
+    </element>
+</elements>

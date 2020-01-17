@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="sorcerer-forestsoul.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/sorcerer-forestsoul.xml" />
+		</update>
+	</info>	
+	<element name="Forest Soul" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FOREST_SOUL">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>A few special mortals may claim to possess a forest soul. Perhaps in the distant past the blood of your ancestors mingled with peoples of the forest. Many with fey ancestry can lay claim to a lineage that includes enchanted creatures of the sylvan realms. Whatever the source, you are one with the trees.</p>
+			<p class="indent">You are comforted being around vibrant woodlands where healthy trees still spread their branches across the land. Conversely, your soul aches whenever living trees are cut down and when darkness, sickness, or rot infests the woods that you love.</p>
+			<p class="indent">Normally those with a strong connection to the land might seek the teachings of druidic circles, but you were not one of these. Instead, the natural powers of the woodlands feed you with arcane power and magical talent that few comprehend.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_NATURE_MAGIC" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FEY_FRIEND" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_LEAF_TONGUE" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FOREST_WALK" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_TREE_FORM" />
+		</description>
+		<sheet display="false">
+			<description>You are one with the trees.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_NATURE_MAGIC" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FEY_FRIEND" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_LEAF_TONGUE" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FOREST_WALK" level="14" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_TREE_FORM" level="18" />
+		</rules>
+	</element>	
+	<element name="Nature Magic" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_NATURE_MAGIC">
+		<description>
+			<p>Your link to the forest and its natural spirits allow you to learn spells from the druid class. When your Spellcasting feature lets you learn or replace a sorcerer cantrip or sorcerer spell of 1st level or higher, you can choose the new spell from the druid spell list or the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+			<p class="indent">In addition, you learn the entangle spell. It is a sorcerer spell for you, but it doesn’t count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a spell from the druid spell list.</p>
+			<p class="indent">Starting at 2nd level, you may use a bonus action to create a spell slot using half the number of sorcery points normally required, to cast a spell you know from the druid spell list. This spell must be cast during that same turn as your bonus action. This spell slot is lost if you do not cast the spell by the end of your turn.</p>
+			<p class="indent">Once you use this feature, you cannot use it again until you finish a short or a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>Create a spell slot using half the number of sorcery points normally required, to cast a spell you know from the druid spell list. This spell must be cast during that same turn as your bonus action. This spell slot is lost if you do not cast the spell by the end of your turn.</description>
+		</sheet>
+		<spellcasting name="Sorcerer" extend="true">
+			<extend>Druid</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Nature Magic" supports="Druid,$(spellcasting:slots)" default="ID_PHB_SPELL_ENTANGLE" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Fey Friend" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FEY_FRIEND">
+		<description>
+			<p>Fey creatures of the forest appreciate your attunement with nature and are hesitant to anger you. You gain advantage on any Charisma checks you make when interacting with non-evil fey creatures. Additionally, you can speak, read, and write Sylvan.</p>
+		</description>
+		<sheet>
+			<description>You gain advantage on any Charisma checks you make when interacting with non-evil fey creatures.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+		</rules>
+	</element>
+	<element name="Leaf Tongue" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_LEAF_TONGUE">
+		<description>
+			<p>At 6th level, you gain the ability to speak with plants. As an action, you may spend 3 sorcery points to cast the speak with plants spell.</p>
+		</description>
+		<sheet action="Action">
+			<description>You may spend 3 sorcery points to cast the speak with plants spell.</description>
+		</sheet>
+	</element>
+	<element name="Forest Walk" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_FOREST_WALK">
+		<description>
+			<p>At 14th level, you gain the ability to step from one tree to another. When you are within 5 feet of a tree that is taller than you, as a bonus action, you can magically teleport up to 120 feet to an unoccupied space you can see that is also within 5 feet of a different tree.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you are within 5 feet of a tree that is taller than you you can magically teleport up to 120 feet to an unoccupied space you can see that is also within 5 feet of a different tree.</description>
+		</sheet>
+	</element>
+	<element name="Tree Form" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_FOREST_SOUL_TREE_FORM">
+		<description>
+			<p>Starting at 18th level, you can spend 6 sorcery points as a bonus action to magically transform yourself into a Huge-sized animated tree similar to a treant. Any equipment you wear or hold molds into your new form.</p>
+			<p class="indent">You gain the following benefits when you take on this tree form:</p>
+			<ul style="list-style-type: none">
+				<li>You gain the following benefits when you take on this tree form:</li>
+				<li>You gain 138 temporary hit points</li>
+				<li>Your Strength score becomes 23 and your Dexterity score becomes 8. All other ability scores remain unchanged.</li>
+				<li>If you remain motionless, you are indistinguishable from a normal tree</li>
+				<li>You deal double damage to objects and structures with your weapon attacks.</li>
+				<li>You gain the following actions:</li>
+				<li>
+					<ul style="list-style-type: none">
+						<li><strong>Multiattack.</strong> You can make two slam attacks.</li>
+						<li><strong>Slam.</strong> Melee Weapon Attack: +10, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.</li>
+						<li><strong>Rock.</strong> Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can spend 6 sorcery points to magically transform yourself into a Huge-sized animated tree similar to a treant. Any equipment you wear or hold molds into your new form.
+			You gain the following benefits when you take on this tree form:
+			You gain 138 temporary hit points
+			Your Strength score becomes 23 and your Dexterity score becomes 8. All other ability scores remain unchanged.
+			If you remain motionless, you are indistinguishable from a normal tree
+			You deal double damage to objects and structures with your weapon attacks.
+			You gain the following actions:
+			Multiattack. You can make two slam attacks.
+			Slam. Melee Weapon Attack: +10, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.
+			Rock. Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.
+			You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.</description>
+		</sheet>
+	</element>	
+</elements>

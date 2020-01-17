@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="rogue-thug.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/the-great-dale/archetypes/rogue-thug.xml" />
+		</update>
+	</info>	
+	<element name="Thug" type="Archetype" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_THUG">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>Where many rogues focus on deception and guile, you are not one of them. You reinforce verbal threats with acts of violence. You excel at inciting fear in those who oppose you. You know the best way to strike with a club and mace and you have discovered that the application of pain is an effective motivator when dealing with uncooperative individuals.</p>
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BRUTAL_BLUDGEONING" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_INCITE_FEAR" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_PUNISH_THE_FEARFUL" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BEAT_DOWN" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_WAVE_OF_FEAR" />
+			<div element="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_STUNNING_STRIKE" />
+		</description>
+		<sheet display="false">
+			<description>You reinforce verbal threats with acts of violence.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BRUTAL_BLUDGEONING" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_INCITE_FEAR" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_PUNISH_THE_FEARFUL" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BEAT_DOWN" level="9" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_WAVE_OF_FEAR" level="13" />
+			<grant type="Archetype Feature" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_STUNNING_STRIKE" level="17" />
+		</rules>
+	</element>	
+	<element name="Brutal Bludgeoning" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BRUTAL_BLUDGEONING">
+		<description>
+			<p>In addition to finesse and ranged weapons, you may also use a club or a mace to deal Sneak Attack damage.</p>
+		</description>
+		<sheet>
+			<description>You may also use a club or a mace to deal Sneak Attack damage.</description>
+		</sheet>
+	</element>
+	<element name="Incite Fear" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_INCITE_FEAR">
+		<description>
+			<p>While you choose this archetype at 3rd level, you become skilled at inciting fear in your opponents. You gain the ability to use a bonus action to use a threat of violence to attempt to frighten one creature within 30 feet of you that can see or hear you. The target of this ability must make a Wisdom saving throw (DC 8 + your Charisma modifier + your proficiency bonus). On a failed save, the creature is frightened of you until the end of your next turn.</p>
+			<p class="indent">You also gain proficiency and have Expertise in the Intimidate skill if you don’t already have it.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You frighten one creature within 30 feet of you that can see or hear you. The target of this ability must make a DC{{incite fear:dc}} Wisdom save. On a failed save, the creature is frightened of you until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="incite fear:dc" value="8" />
+			<stat name="incite fear:dc" value="proficiency" />
+			<stat name="incite fear:dc" value="charisma:modifier" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_EXPERTISE_SKILL_INTIMIDATION" />
+		</rules>
+	</element>
+	<element name="Punish the Fearful" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_PUNISH_THE_FEARFUL">
+		<description>
+			<p>At 3rd level, you gain an additional way to use your Sneak Attack: you don’t need advantage on the attack roll to use your Sneak Attack against a creature if you are within 5 feet of the target and the target is frightened of you, provided you do not have disadvantage on the attack.</p>
+		</description>
+		<sheet>
+			<description>You don’t need advantage on the attack roll to use your Sneak Attack against a creature if you are within 5 feet of the target and the target is frightened of you, provided you do not have disadvantage on the attack.</description>
+		</sheet>
+	</element>
+	<element name="Beat Down" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_BEAT_DOWN">
+		<description>
+			<p>Beginning at 9th level, when you deal bludgeoning damage with a weapon attack, the target of the attack must make a Constitution saving throw (DC 8 + your Strength modifier + your proficiency bonus). On a failed save, the creature falls prone and its movement speed is reduced to half of its normal speed until the end of your next turn. If the creature is frightened of you, its saving throw is at disadvantage against this feature.</p>
+		</description>
+		<sheet>
+			<description>When you deal bludgeoning damage with a weapon attack, the target of the attack must make a DC{{beat down:dc}} Constitution save. On a failed save, the creature falls prone and its movement speed is reduced to half of its normal speed until the end of your next turn. If the creature is frightened of you, its saving throw is at disadvantage against this feature.</description>
+		</sheet>
+		<rules>
+			<stat name="beat down:dc" value="8" />
+			<stat name="beat down:dc" value="proficiency" />
+			<stat name="beat down:dc" value="strength:modifier" />
+		</rules>
+	</element>
+	<element name="Wave of Fear" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_WAVE_OF_FEAR">
+		<description>
+			<p>Starting at 13th level, your skill at intimidating others is so effective that you can now frighten crowds. You may use a bonus action to attempt to frighten groups of creatures with threats of violence. Using a bonus action, you may force all creatures within a 30-foot cone who can see or hear you to make a Wisdom saving throw (DC 8 + your Charisma modifier + your proficiency bonus). On a failed save, creatures are frightened of you for up to 1 minute.</p>
+			<p class="indent">If a creature ends its turn in a location where it doesn’t have line of sight to you, that creature can make a Wisdom saving throw to end this effect and they are immune to your Wave of Fear and Incite Fear features for the next 24 hours. If you targeted a creature with a melee attack while it is affected by your Wave of Fear ability, that creature’s saving throws to end this effect are at disadvantage.</p>
+		</description>
+		<sheet>
+			<description>You may use a bonus action to attempt to frighten groups of creatures with threats of violence. Using a bonus action, you may force all creatures within a 30-foot cone who can see or hear you to make a DC{{wave of fear:dc}} Wisdom save. On a failed save, creatures are frightened of you for up to 1 minute.
+			If a creature ends its turn in a location where it doesn’t have line of sight to you, that creature can make a Wisdom save to end this effect and they are immune to your Wave of Fear and Incite Fear features for the next 24 hours. If you targeted a creature with a melee attack while it is affected by your Wave of Fear ability, that creature’s saving throws to end this effect are at disadvantage.</description>
+		</sheet>
+		<rules>
+			<stat name="wave of fear:dc" value="8" />
+			<stat name="wave of fear:dc" value="proficiency" />
+			<stat name="wave of fear:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Stunning Strike" type="Archetype Feature" source="The Great Dale" id="ID_DMSG_TGD_ARCHETYPE_FEATURE_THUG_STUNNING_STRIKE">
+		<description>
+			<p>At 17th level, you can daze creatures with your powerful strikes. If you use a club or a mace to deliver Sneak Attack damage, the target must make a Constitution saving throw (DC 8 + your Charisma modifier + your proficiency bonus) or become stunned until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>If you use a club or a mace to deliver Sneak Attack damage, the target must make a DC{{thug stunning strike:dc}} Constitution save or become stunned until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="thug stunning strike:dc" value="8" />
+			<stat name="thug stunning strike:dc" value="proficiency" />
+			<stat name="thug stunning strike:dc" value="constitution:modifier" />
+		</rules>
+	</element>	
+</elements>
