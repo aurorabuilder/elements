@@ -28,10 +28,10 @@
 			<p class="indent flavor">A dwarf looks down from the mountain peak she calls home and sees the rampant destruction of the woods she has sworn to protect. As she approaches the hunting encampment responsible for the fire, she calls her woodland allies to her side and her skin hardens to resemble bark.</p>
 			<p class="indent flavor">Looking over ancient hieroglyphs, a saurian frantically searches for details of a ritual that will fortify the mystic seal that protects his ancestral home. The impossibly heavy doors swing open behind him and he turns to face the temple’s guardians as his sword erupts with flames.</p>
 			<p class="indent">Magi are mystical warriors who blend martial prowess with esoteric knowledge and spellcasting. Magi balance the pursuit of personal goals and relationships with their obligations to pursue the goals and ideals of the eldritch societies they belong to. Although their backgrounds may sometimes set them at odds against one another, magi are united by their commitment to a cause greater than themselves and a drive to master their magical abilities.</p>
-			<h4>Martial Magicians</h4>
+			<h4>MARTIAL MAGICIANS</h4>
 			<p>Every magus is a warrior. Magi train with arms and armor to protect what they hold dear, fight for what they believe in, and get themselves into or out of trouble. For magi, though violence may not be their preferred solution to a given problem, it is always a valid backup plan.</p>
 			<p class="indent">Every magus is a magician. Magi use their hardearned spellcasting abilities to explore the multiverse, empower their companions, and decimate their enemies. For a magus, magic is a tool that expands their horizons and their options.</p>
-			<h4>Warriors with a Purpose</h4>
+			<h4>WARRIORS WITH A PURPOSE</h4>
 			<p>All magi learn their abilities in order to fulfill their obligations to their eldritch society. On a mystical level, every magus’ spellcasting style is shaped by their eldritch society. On a personal level, every magus must deal with the demands and ideology of their eldritch society in their own way. Regardless of whether a magus embraces their eldritch society’s traditions and politics, no magus can deny the influence it has on their magic and outlook.</p>
 			<p class="indent">Eldritch societies are not monolithic entities, but they do have beliefs and goals that the majority of the magi within them believe in and fight for. Magi in the Arcane Order observe a tradition of honoring the requests and wisdom of their mentors and, subsequently, striving to train an apprentice to become an even greater magus then they are. Members of the Primordial Seal believe that the material planes are constantly under threat of incursion from the elemental planes and they must remain on guard to ensure the world’s safety. Magi in the Sylvan Circle seek to protect the wilderness of the world from destruction and defilement, although what exactly that entails varies from magus to magus.</p>
 			<h4>CREATING A MAGUS</h4>
@@ -133,7 +133,7 @@
 		</rules>
 		<multiclass id="ID_DMSG_HMGS_MULTICLASS_MAGUS">
 			<prerequisite>Constitution 13 and Intelligence 13 (Arcane Order, Shadow Court), Wisdom 13 (Sylvan Circle) or Charisma 13 (Knights Stygian, Primordial Seal)</prerequisite>
-			<requirements>[con:13],(([int:13],(ID_X||ID_Y))||([wis:13],ID_X))||([cha:13],(ID_X||ID_Y)))</requirements>
+			<requirements>[con:13],(([int:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_ARCANE_ORDER||ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SHADOW_COURT)||([wis:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SYLVAN_CIRCLE)||([cha:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_KNIGHTS_STYGIAN||ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_PRIMORDIAL_SEAL))</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons</set>
 			</setters>
@@ -148,6 +148,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<stat name="magus:spellcasting:modifier" value="0" />
 			<select type="Archetype" name="Eldritch Society" supports="Magus Eldritch Society" />
 		</rules>
 	</element>
@@ -156,18 +157,24 @@
 			<p>At 1st level, you can detect the arcane abilities of others. As an action, your eyes visibly flash with magic as your senses wake to the mystical energies of the multiverse. Until the end of your next turn, you know if each creature you can see within 60 feet of you has the Spellcasting or Innate Spellcasting feature or trait. Additionally, you learn each of those creatures’ spellcasting ability, if they have one.</p>
 			<p class="indent">You can use this feature a number of times equal to 1 + your magus spellcasting modifier. You regain all expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="{{esoteric eye:usage}}/Long Rest">
+			<description>Until the end of your next turn, you know if each creature you can see within 60 feet of you has the Spellcasting or Innate Spellcasting feature or trait. Additionally, you learn each of those creatures’ spellcasting ability, if they have one.</description>
 		</sheet>
+		<rules>
+			<stat name="esoteric eye:usage" value="1" />
+			<stat name="esoteric eye:usage" value="magus:spellcasting:modifier" />
+		</rules>
 	</element>
 	<element name="Mystic Mark" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_MYSTIC_MARK">
 		<description>
 			<p>Starting at 2nd level, you learn to place a mystic mark. You can use this mark to enspell a weapon or to grant a creature an aegis. You can use your mystic mark a number of times equal to your magus spellcasting ability modifier. You regain all expended uses when you finish a long rest.</p>
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS" />
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_ENSPELL" />
+			<p class="indent"><strong><em>Aegis.</em></strong> As a bonus action you can project your mystic mark onto a creature you can see within 30 feet of you. For the next minute the target is under the protection of your aegis and receives a bonus to its armor class. This bonus increases their AC by +1. If the target is wearing armor that grants a magical bonus to AC, use whichever bonus is higher. The aegis ends if you or your target end a turn more than 120 feet away from one another. A creature can only benefit from one aegis at a time.</p>
+			<p class="indent">This bonus to AC increases to +2 when you reach 9th level and increases to +3 when you reach 13th level.</p>
+			<p class="indent"><strong><em>Enspell.</em></strong> As a bonus action, you surround a weapon you’re holding with your mystic mark. This weapon is enspelled and counts as a spellcasting focus for you for the next minute. While enspelled, the weapon is considered magical and adds a +1 bonus to attack rolls and damage rolls. If the weapon already grants a magical bonus to attack and damage, use whichever bonus is higher. The enspell ends if you lose possession of the weapon. A weapon can only benefit from one enspell at a time.</p>
+			<p class="indent">These bonuses to hit and damage increase to +2 when you reach 9th level and +3 when you reach 13th.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="{{magus:spellcasting:modifier}}/Long Rest">
+			<description>You can use this mark to enspell a weapon or to grant a creature an aegis.</description>
 		</sheet>
 		<rules>
 			<grant type="Class Feature" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS" />
@@ -177,22 +184,53 @@
 	<element name="Spellcasting" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELLCASTING">
 		<description>
 			<p>Starting at 2nd level, you gain the ability to cast spells of 1st level and higher. See chapter 10 of the Player’s Handbook for the general rules of spellcasting.</p>
-			<h5>Spell Slots</h5>
+			<h5>SPELL SLOTS</h5>
 			<p>The Magus table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
 			<p class="indent">For example, if you know the 1st-level spell find familiar and have a 1st-level and a 2nd-level spell slot available, you can cast find familiar using either slot.</p>
-			<h5>Spells Known of 1st-Level and Higher</h5>
+			<h5>SPELLS KNOWN OF 1ST-LEVEL AND HIGHER</h5>
 			<p>You know three 1st-level magus spells of your choice from your eldritch society’s spell list. You learn additional spells chosen from your eldritch society’s spell list as indicated in the Spells Known column of the Magus table.</p>
 			<p class="indent">Additionally, when you gain a level in this class, you can choose one of the magus spells you know and replace it with another spell from your eldritch society’s spell list, which also must be of a level for which you have spell slots.</p>
-			<h5>Spellcasting Ability</h5>
+			<h5>SPELLCASTING ABILITY</h5>
 			<p>Your spellcasting ability is determined by your eldritch society. See the Initiate feature of your eldritch society for your spellcasting ability.</p>
-			<h5>Ritual Casting</h5>
+			<h5>RITUAL CASTING</h5>
 			<p>You can cast a magus spell as a ritual if that spell has the ritual tag and you know the spell.</p>
-			<h5>Spellcasting Focus</h5>
+			<h5>SPELLCASTING FOCUS</h5>
 			<p>Your spellcasting focus, if any, is determined by your eldritch society. See the Initiate feature of your eldritch society to see what, if any, spellcasting focus you may use for your magus spells.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
+			<stat name="magus:spellcasting:slots:1" value="2" level="2" />
+			<stat name="magus:spellcasting:slots:1" value="1" level="3" />
+			<stat name="magus:spellcasting:slots:1" value="1" level="5" />
+			<stat name="magus:spellcasting:slots:2" value="2" level="5" />
+			<stat name="magus:spellcasting:slots:2" value="1" level="7" />
+			<stat name="magus:spellcasting:slots:3" value="2" level="9" />
+			<stat name="magus:spellcasting:slots:3" value="1" level="11" />
+			<stat name="magus:spellcasting:slots:4" value="1" level="13" />
+			<stat name="magus:spellcasting:slots:4" value="1" level="15" />
+			<stat name="magus:spellcasting:slots:4" value="1" level="17" />
+			<stat name="magus:spellcasting:slots:5" value="1" level="17" />
+			<stat name="magus:spellcasting:slots:5" value="1" level="19" />
+
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" number="3" level="2" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="5" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="7" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="8" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="9" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="11" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="12" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="13" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="15" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="16" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="17" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="19" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="20" />
+		</rules>
 	</element>
 	<element name="Eldritch Armament" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ELDRITCH_ARMAMENT">
 		<description>
@@ -202,9 +240,9 @@
 			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SORCEROUS_SENTINEL" />
 			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SPELL_SWORD" />
 		</description>
-		<sheet display="false" />
+		<sheet />
 		<rules>
-			<select type="Class Fetaure" name="Eldritch Armament" supports="Magus Eldritch Armament" />
+			<select type="Class Feature" name="Eldritch Armament" supports="Magus Eldritch Armament" />
 		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ABILITY_SCORE_IMPROVEMENT">
@@ -227,16 +265,16 @@
 		<description>
 			<p>Starting at 6th level, when you take a short rest you can choose to recover all expended uses of your Mystic Mark. You must complete a long rest before you can use this feature again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>When you take a short rest you can choose to recover all expended uses of your Mystic Mark.</description>
 		</sheet>
 	</element>
 	<element name="War Magic" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_WAR_MAGIC">
 		<description>
 			<p>Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>When you use your action to cast a cantrip, you can make one weapon attack.</description>
 		</sheet>
 	</element>
 	<element name="Spell Surge" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELL_SURGE">
@@ -244,16 +282,17 @@
 			<p>Starting at 10th level, you can cast any magus spell you know without expending a spell slot. The spell is cast as if you had used a spell slot equal to the highest spell slot you have.</p>
 			<p class="indent">Once you use this feature, you must finish a long rest before you can use it again. You can use this feature twice between long rests starting at 20th level.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast any magus spell you know without expending a spell slot. The spell is cast as if you had used a spell slot equal to the highest spell slot you have.</description>
+			<description usage="2/Long Rest">You can cast any magus spell you know without expending a spell slot. The spell is cast as if you had used a spell slot equal to the highest spell slot you have.</description>
 		</sheet>
 	</element>
 	<element name="Improved War Magic" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_IMPROVED_WAR_MAGIC">
 		<description>
 			<p>Starting at 11th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>When you use your action to cast a spell, you can make one weapon attack as a bonus action.</description>
 		</sheet>
 	</element>
 	<element name="Spell Ward" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELL_WARD">
@@ -261,7 +300,7 @@
 			<p>Starting at 15th level, the magical attacks of your enemies unravel around you. You and friendly creatures within 15 feet of you have advantage on saving throws against spells.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You and friendly creatures within 15 feet of you have advantage on saving throws against spells.</description>
 		</sheet>
 	</element>
 	<element name="Greater Spell Surge" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_GREATER_SPELL_SURGE">
@@ -269,29 +308,52 @@
 			<p>At 18th level, choose one 6th-level spell from your eldritch society’s spell list. You can cast this spell once without expending a spell slot.</p>
 			<p class="indent">Once you use this feature, you must finish a long rest before you can use it again. You can use this feature twice between long rests starting at 20th level.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the chosen 6th-level spell without expending a spell slot.</description>
+			<description usage="2/Long Rest">You can cast the chosen 6th-level spell without expending a spell slot.</description>
 		</sheet>
+		<rules>
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,$(spellcasting:list)" spellcasting="Magus" />
+
+			<!-- <select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Arcane Order" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_ARCANE_ORDER" />
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Knights Stygian" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_KNIGHTS_STYGIAN" />
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Primordial Seal" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_PRIMORDIAL_SEAL" />
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Shadow Court" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SHADOW_COURT" />
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Sidereal Cabal" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SIDEREAL_CABAL" />
+			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Sylvan Circle" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SYLVAN_CIRCLE" /> -->
+		</rules>
 	</element>
 
 	<!-- mystic marks -->
 	<element name="Aegis" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS">
+		<compendium display="false" />
 		<description>
 			<p>As a bonus action you can project your mystic mark onto a creature you can see within 30 feet of you. For the next minute the target is under the protection of your aegis and receives a bonus to its armor class. This bonus increases their AC by +1. If the target is wearing armor that grants a magical bonus to AC, use whichever bonus is higher. The aegis ends if you or your target end a turn more than 120 feet away from one another. A creature can only benefit from one aegis at a time.</p>
 			<p class="indent">This bonus to AC increases to +2 when you reach 9th level and increases to +3 when you reach 13th level.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You can project your mystic mark onto a creature you can see within 30 feet of you. For the next minute the target is under the protection of your aegis and receives a +{{mystic mark:aegis:ac}} bonus to AC. If the target is wearing armor that grants a magical bonus to AC, use whichever bonus is higher. The aegis ends if you or your target end a turn more than 120 feet away from one another. A creature can only benefit from one aegis at a time.</description>
 		</sheet>
+		<rules>
+			<stat name="mystic mark:aegis:ac" value="1" bonus="base" />
+			<stat name="mystic mark:aegis:ac" value="2" bonus="base" level="9" />
+			<stat name="mystic mark:aegis:ac" value="3" bonus="base" level="13" />
+		</rules>
 	</element>
 	<element name="Enspell" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_ENSPELL">
+		<compendium display="false" />
 		<description>
 			<p>As a bonus action, you surround a weapon you’re holding with your mystic mark. This weapon is enspelled and counts as a spellcasting focus for you for the next minute. While enspelled, the weapon is considered magical and adds a +1 bonus to attack rolls and damage rolls. If the weapon already grants a magical bonus to attack and damage, use whichever bonus is higher. The enspell ends if you lose possession of the weapon. A weapon can only benefit from one enspell at a time.</p>
 			<p class="indent">These bonuses to hit and damage increase to +2 when you reach 9th level and +3 when you reach 13th.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You surround a weapon you’re holding with your mystic mark. This weapon is enspelled and counts as a spellcasting focus for you for the next minute. While enspelled, the weapon is considered magical and adds a +{{mystic mark:enspell:bonus}} bonus to attack rolls and damage rolls. If the weapon already grants a magical bonus to attack and damage, use whichever bonus is higher. The enspell ends if you lose possession of the weapon. A weapon can only benefit from one enspell at a time.</description>
 		</sheet>
+		<rules>
+			<stat name="mystic mark:enspell:bonus" value="1" bonus="base" />
+			<stat name="mystic mark:enspell:bonus" value="2" bonus="base" level="9" />
+			<stat name="mystic mark:enspell:bonus" value="3" bonus="base" level="13" />
+		</rules>
 	</element>
 
 	<!-- eldritch armament -->
@@ -301,7 +363,7 @@
 			<p>When you hit a creature with a ranged weapon under the effect of your Enspell feature you can cause the ammunition to explode with mystical energy, dealing the same damage type the attack would normally cause to all creatures within 10 feet of the target. When you do so, expend a spell slot and the creature and each other creature within 10 feet must succeed on a Dexterity saving throw or take 2d4 + 1d4 damage for each spell level higher than 1st, to a maximum of 6d4. On a success, they take half damage.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with a ranged weapon under the effect of your Enspell feature you can cause the ammunition to explode with mystical energy, dealing the same damage type the attack would normally cause to all creatures within 10 feet of the target. When you do so, expend a spell slot and the creature and each other creature within 10 feet must succeed on a Dexterity save or take 2d4 + 1d4 damage for each spell level higher than 1st, to a maximum of 6d4. On a success, they take half damage.</description>
 		</sheet>
 	</element>
 	<element name="Mystic Marauder" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_MYSTIC_MARAUDER">
@@ -310,7 +372,7 @@
 			<p>When you hit a creature with a melee weapon attack with a weapon you are wielding with two hands that is under the effect of your Enspell feature, you can expend a spell slot to deal additional damage to the target. The extra damage is 2d6 for a 1st-level spell slot. The damage increases by 1d6 for each slot level above 1st, to a maximum of 6d6. The weapon must have the twohanded or versatile property for you to use this feature.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with a melee weapon attack with a weapon you are wielding with two hands that is under the effect of your Enspell feature, you can expend a spell slot to deal additional damage to the target. The extra damage is 2d6 for a 1st-level spell slot. The damage increases by 1d6 for each slot level above 1st, to a maximum of 6d6. The weapon must have the twohanded or versatile property for you to use this feature.</description>
 		</sheet>
 	</element>
 	<element name="Sorcerous Sentinel" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SORCEROUS_SENTINEL">
@@ -318,8 +380,8 @@
 		<description>
 			<p>While you are wielding a shield, when a creature under the effect of your Aegis feature is attacked you can use your reaction to expend a spell slot and strengthen the target’s defenses. The target gains a bonus to AC equivalent to the spell slot expended. This bonus is only applied against the triggering attack. Additionally, the target gains temporary hit points equal to your spellcasting modifier + twice the level of the spell slot expended.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>While you are wielding a shield, when a creature under the effect of your Aegis feature is attacked you can expend a spell slot and strengthen the target’s defenses. The target gains a bonus to AC equivalent to the spell slot expended. This bonus is only applied against the triggering attack. Additionally, the target gains temporary hp equal to {{magus:spellcasting:modifier}} + twice the level of the spell slot expended.</description>
 		</sheet>
 	</element>
 	<element name="Spell Sword" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SPELL_SWORD">
@@ -328,12 +390,12 @@
 			<p>When you hit a creature with a one-handed melee weapon under the effect of your Enspell feature you may expend a spell slot to deal additional damage and render the creature vulnerable to magical attacks. The extra damage is 1d4 for a 1st-level spell slot. The damage increases by 1d4 for each slot level above 1st, to a maximum of 5d4. Additionally, the creature has disadvantage on saving throws against spells you cast until the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>When you hit a creature with a one-handed melee weapon under the effect of your Enspell feature you may expend a spell slot to deal additional damage and render the creature vulnerable to magical attacks. The extra damage is 1d4 for a 1st-level spell slot. The damage increases by 1d4 for each slot level above 1st, to a maximum of 5d4. Additionally, the creature has disadvantage on saving throws against spells you cast until the end of your next turn.</description>
 		</sheet>
 	</element>
 	
 	<!-- archetypes -->
-	<element name="The Arcane Order" type="Archetype" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_MAGUS_The_Arcane_Order">
+	<element name="The Arcane Order" type="Archetype" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_ARCANE_ORDER">
 		<supports>Magus Eldritch Society</supports>
 		<description>
 			<p>The Arcane Order is an eldritch society built on mentorstudent relationships. While the Order is unified in name, each member tends to operate alone or with only their mentor or apprentice—though in times of extreme circumstance, members will come together to face grave, large scale threats. Each magus of the Arcane Order takes a unique philosophical approach to their teachings, often adopting or adapting the ideals of their mentor. All scholars of the Arcane Order, however, emphasize exceptional technique and approach magic as an art to be mastered.</p>
@@ -363,17 +425,30 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Intelligence">
+			<list>Magus Arcane Order</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="intelligence:modifier" />
+			<select type="Spell" name="Cantrip, Arcane Order" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Arcane Order" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Arcane Order" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency with the Arcana skill and one set of artisan’s tools of your choice.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency with the Arcana skill and one set of artisan’s tools of your choice.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<select type="Proficiency" name="Tool Proficiency, The Arcane Order" supports="Artisan tools" />
+		</rules>
 	</element>
 	<element name="Amethyst Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK">
 		<description>
@@ -382,24 +457,52 @@
 			<p class="indent">When you deal damage to a creature with your enspelled weapon, you can choose to remove your enspell from the weapon to unleash a wave of magical energy. When you do so, the target must succeed on a Strength saving throw against your spell save DC or be pushed up to 15 feet away and knocked prone.</p>
 			<p class="indent"><strong><em>Arcane Aegis.</em></strong> When a target protected by your aegis takes damage from a creature you can use your reaction to remove the aegis from that ally. When you do, you may teleport up to 30 feet and make a weapon attack against the attacking creature.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>Your mystic marks are enhanced by your greater understanding of the Arcane Order’s esoteric knowledge.</description>
 		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK_ARCANE_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK_ARCANE_AEGIS" />
+		</rules>
 	</element>
 	<element name="Occult Savant" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_OCCULT_SAVANT">
 		<description>
 			<p>By 7th level, through diplomacy, espionage, or occult experimentation you have gleaned how to use spells normally used by other eldritch societies. Alternatively, you’ve spent time further deciphering the obscure teachings of the Arcane Order. You learn two spells of your choice from any eldritch society’s spell list. These spells must be of a level you can cast, as shown on the Magus table, or cantrips. The chosen spells count as Arcane Order magus spells for you and do not count towards the Spells Known column of the Magus table.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You learn two spells of your choice from any eldritch society’s spell list. These spells must be of a level you can cast, as shown on the Magus table, or cantrips. The chosen spells count as Arcane Order magus spells for you and do not count towards the Spells Known column of the Magus table.</description>
 		</sheet>
+		<rules>
+			<select type="Spell" name="Spell, Occult Savant" supports="(0||$(spellcasting:slots)),HUFF_Magus" number="2" level="7" spellcasting="Magus" />
+		</rules>		
 	</element>
 	<element name="Arcane Recovery" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_ARCANE_RECOVERY">
 		<description>
 			<p>Starting at 14th level, you have learned to regain some of your magical energy by reflecting on esoteric truths and formulae. Once per day when you finish a short rest, you can choose to recover some of your expended spell slots. The spell slots can have a combined level that is equal to or less than half your magus level (rounded up), and none of the slots can be 6th level or higher.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Once per day when you finish a short rest, you can choose to recover some of your expended spell slots. The spell slots can have a combined level that is equal to or less than {{level:magus:half:up}}, and none of the slots can be 6th level or higher.</description>
+		</sheet>
+	</element>
+
+	<element name="Arcane Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK_ARCANE_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>When you deal damage with your enspelled weapon, you can choose to deal force damage instead of its normal damage type.</p>
+			<p class="indent">When you deal damage to a creature with your enspelled weapon, you can choose to remove your enspell from the weapon to unleash a wave of magical energy. When you do so, the target must succeed on a Strength saving throw against your spell save DC or be pushed up to 15 feet away and knocked prone.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When you deal damage with your enspelled weapon, you can choose to deal force damage instead of its normal damage type.
+			When you deal damage to a creature with your enspelled weapon, you can choose to remove your enspell from the weapon to unleash a wave of magical energy. When you do so, the target must succeed on a Strength saving throw against your spell save DC or be pushed up to 15 feet away and knocked prone.</description>
+		</sheet>
+	</element>	
+	<element name="Arcane Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK_ARCANE_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When a target protected by your aegis takes damage from a creature you can use your reaction to remove the aegis from that ally. When you do, you may teleport up to 30 feet and make a weapon attack against the attacking creature.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When a target protected by your aegis takes damage from a creature you can use your reaction to remove the aegis from that ally. When you do, you may teleport up to 30 feet and make a weapon attack against the attacking creature.</description>
 		</sheet>
 	</element>
 
@@ -434,17 +537,30 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Charisma modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Charisma">
+			<list>Magus Knights Stygian</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="charisma:modifier" />
+			<select type="Spell" name="Cantrip, Knights Stygian" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Knights Stygian" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Knights Stygian" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency with the Intimidation skill and embalmer’s tools.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency with the Intimidation skill and embalmer’s tools.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_DMSG_HMGS_PROFICIENCY_TOOL_EMBALMERS_TOOLS" />
+		</rules>
 	</element>
 	<element name="Obsidian Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_OBSIDIAN_SEAL">
 		<description>
@@ -453,16 +569,18 @@
 			<p class="indent">When you hit with an attack with an enspelled weapon you can choose to remove the enspell, unleashing an unholy wave of pure terror. When you do, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened by you until the end of their next turn.</p>
 			<p class="indent"><strong><em>Stygian Aegis.</em></strong> When a creature protected by your aegis takes damage from an attack you can use your reaction to remove the aegis from that creature, releasing necrotic energy upon the attacker. When you do, the attacker must succeed on a Constitution saving throw against your spell save DC or take necrotic damage equal to the damage dealt by the triggering attack.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_STYGIAN_ORDER_OBSIDIAN_SEAL_STYGIAN_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_STYGIAN_ORDER_OBSIDIAN_SEAL_STYGIAN_AEGIS" />
+		</rules>
 	</element>
 	<element name="Face of Fear" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_FACE_OF_FEAR">
 		<description>
 			<p>Starting at 7th level, you have advantage on saving throws against being frightened. When a creature within 30 feet of you makes a saving throw against being frightened, you can use your reaction to give that roll disadvantage.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>You have advantage on saving throws against being frightened. When a creature within 30 feet of you makes a saving throw against being frightened, you can give that roll disadvantage.</description>
 		</sheet>
 	</element>
 	<element name="Necromantic Surge" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_NECROMANTIC_SURGE">
@@ -474,11 +592,34 @@
 				<li>The creature adds your proficiency bonus to its weapon damage rolls.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the spell animate dead without expending a spell slot as if you had used a spell slot equal to the highest spell slot available to you.
+			Whenever you create an undead creature using a necromancy spell, it has additional benefits:
+			The creature’s hit points maximum is increased by {{level:magus}}
+			The creature adds {{proficiency}} to its weapon damage rolls.</description>
 		</sheet>
 	</element>
 
+	<element name="Stygian Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_STYGIAN_ORDER_OBSIDIAN_SEAL_STYGIAN_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>When you deal damage with your enspelled weapon you can choose to deal necrotic damage instead of its normal damage type.</p>
+			<p class="indent">When you hit with an attack with an enspelled weapon you can choose to remove the enspell, unleashing an unholy wave of pure terror. When you do, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened by you until the end of their next turn.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When you deal damage with your enspelled weapon you can choose to deal necrotic damage instead of its normal damage type.
+			When you hit with an attack with an enspelled weapon you can choose to remove the enspell, unleashing an unholy wave of pure terror. When you do, the target must succeed on a Wisdom save or be frightened by you until the end of their next turn.</description>
+		</sheet>
+	</element>	
+	<element name="Stygian Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_STYGIAN_ORDER_OBSIDIAN_SEAL_STYGIAN_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When a creature protected by your aegis takes damage from an attack you can use your reaction to remove the aegis from that creature, releasing necrotic energy upon the attacker. When you do, the attacker must succeed on a Constitution saving throw against your spell save DC or take necrotic damage equal to the damage dealt by the triggering attack.</p>
+		</description>
+		<sheet action="Reaction" usage="Mystic Mark">
+			<description>When a creature protected by your aegis takes damage from an attack you can remove the aegis from that creature, releasing necrotic energy upon the attacker. When you do, the attacker must succeed on a Constitution save or take necrotic damage equal to the damage dealt by the triggering attack.</description>
+		</sheet>
+	</element>
 
 	<element name="The Primordial Seal" type="Archetype" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_PRIMORDIAL_SEAL">
 		<supports>Magus Eldritch Society</supports>
@@ -510,17 +651,30 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Charisma modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Charisma">
+			<list>Magus Primordial Seal</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="charisma:modifier" />
+			<select type="Spell" name="Cantrip, Primordial Seal" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Primordial Seal" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Primordial Seal" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiency &amp; Language" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency in the Survival skill. Additionally, you can speak, read, and write Primordial.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency in the Survival skill. Additionally, you can speak, read, and write Primordial.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+		</rules>
 	</element>
 	<element name="Tourmaline Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_TOURMALINE_MARK">
 		<description>
@@ -529,9 +683,11 @@
 			<p class="indent">When you hit with an attack with this weapon you can choose to remove the enspell from the weapon, unleashing a surge of elemental energy. When you do, the target must succeed on a Constitution saving throw against your spell save DC or it loses any resistance or immunity it had to the damage type you had chosen. This effect persists until the end of your next turn.</p>
 			<p class="indent"><strong><em>Primordial Aegis.</em></strong> When a creature protected by your aegis takes damage you can use your reaction to remove the aegis, fortifying the creature’s body with primeval power. When you do, choose acid, cold, fire, lightning, or thunder. That ally has resistance to that damage type for the next minute.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_ORDER_TOURMALINE_MARK_PRIMORDIAL_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_ORDER_TOURMALINE_MARK_PRIMORDIAL_AEGIS" />
+		</rules>
 	</element>
 	<element name="Elemental Alignment" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT">
 		<description>
@@ -541,9 +697,12 @@
 			<p class="indent"><strong><em>Fire.</em></strong> You gain darkvision out to a distance of 120 feet and proficiency in Dexterity saving throws.</p>
 			<p class="indent"><strong><em>Water.</em></strong> You gain the ability to breathe underwater and have a swim speed equivalent to your walking speed. Additionally, you have advantage on saving throws against being restrained or grappled and ability checks made to resist or escape a grapple.</p>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Elemental Alignment" supports="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_AIR|ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_EARTH|ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_FIRE|ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_WATER" />
+		</rules>
 	</element>
 	<element name="Elemental Attunement" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT">
 		<description>
@@ -553,8 +712,153 @@
 			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
 			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
 		</description>
+		<sheet display="false">
+			<description>You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_AIR" requirements="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_AIR" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_EARTH" requirements="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_EARTH" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_FIRE" requirements="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_FIRE" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_WATER" requirements="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_WATER" />
+		</rules>
+	</element>
+
+	<element name="Elemental Alignment, Air" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_AIR">
+		<compendium display="false" />
+		<description>
+			<p>Your base movement speed increases by 10 ft. and you have advantage on initiative rolls.</p>
+			<div class="reference">
+				<div element="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT" />
+			</div>
+		</description>
 		<sheet>
-			<description></description>
+			<description>You have advantage on initiative rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:misc" value="10" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+	</element>
+	<element name="Elemental Alignment, Earth" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_EARTH">
+		<compendium display="false" />
+		<description>
+			<p>You gain 2 additional hit points per magus level. Each time you gain a level in this class you gain an additional 2 hit points.</p>
+			<div class="reference">
+				<div element="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>You gain 2 additional hp per magus level. Each time you gain a level in this class you gain an additional 2 hp.</description>
+		</sheet>
+		<rules>
+			<stat name="hp" value="level:magus" />
+			<stat name="hp" value="level:magus" />
+		</rules>
+	</element>
+	<element name="Elemental Alignment, Fire" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>You gain darkvision out to a distance of 120 feet and proficiency in Dexterity saving throws.</p>
+			<div class="reference">
+				<div element="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT" />
+			</div>
+		</description>
+		<sheet display="false">
+			<description>You gain darkvision out to a distance of 120 feet and proficiency in Dexterity saving throws.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
+		</rules>
+	</element>
+	<element name="Elemental Alignment, Water" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT_WATER">
+		<compendium display="false" />
+		<description>
+			<p>You gain the ability to breathe underwater and have a swim speed equivalent to your walking speed. Additionally, you have advantage on saving throws against being restrained or grappled and ability checks made to resist or escape a grapple.</p>
+			<div class="reference">
+				<div element="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT" />
+			</div>
+		</description>
+		<sheet>
+			<description>You gain the ability to breathe underwater. You have advantage on saving throws against being restrained or grappled and ability checks made to resist or escape a grapple.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:swim" value="speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Elemental Attunement, Air" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_AIR">
+		<compendium display="false" />
+		<description>
+			<p>At 14th level, you learn to harmonize with the element you chose when you took the Elemental Alignment feature. You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage. You must complete a long rest before you can use this feature again.</p>
+			<p class="indent"><strong><em>Air.</em></strong> Investiture of Wind</p>
+			<p class="indent"><strong><em>Earth.</em></strong> Investiture of Stone</p>
+			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
+			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Investiture of Wind associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Attunement, Earth" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_EARTH">
+		<compendium display="false" />
+		<description>
+			<p>At 14th level, you learn to harmonize with the element you chose when you took the Elemental Alignment feature. You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage. You must complete a long rest before you can use this feature again.</p>
+			<p class="indent"><strong><em>Air.</em></strong> Investiture of Wind</p>
+			<p class="indent"><strong><em>Earth.</em></strong> Investiture of Stone</p>
+			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
+			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Investiture of Stone associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Attunement, Fire" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>At 14th level, you learn to harmonize with the element you chose when you took the Elemental Alignment feature. You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage. You must complete a long rest before you can use this feature again.</p>
+			<p class="indent"><strong><em>Air.</em></strong> Investiture of Wind</p>
+			<p class="indent"><strong><em>Earth.</em></strong> Investiture of Stone</p>
+			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
+			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Investiture of Flame associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Attunement, Water" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT_WATER">
+		<compendium display="false" />
+		<description>
+			<p>At 14th level, you learn to harmonize with the element you chose when you took the Elemental Alignment feature. You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage. You must complete a long rest before you can use this feature again.</p>
+			<p class="indent"><strong><em>Air.</em></strong> Investiture of Wind</p>
+			<p class="indent"><strong><em>Earth.</em></strong> Investiture of Stone</p>
+			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
+			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Investiture of Ice associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage.</description>
+		</sheet>
+	</element>
+	
+	<element name="Primordial Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_ORDER_TOURMALINE_MARK_PRIMORDIAL_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>When you enspell your weapon it roars with primordial strength and you may choose one of the following damage types: acid, cold, fire, lightning, or thunder. While your weapon remains enspelled it deals that damage type instead of its normal damage type.</p>
+			<p class="indent">When you hit with an attack with this weapon you can choose to remove the enspell from the weapon, unleashing a surge of elemental energy. When you do, the target must succeed on a Constitution saving throw against your spell save DC or it loses any resistance or immunity it had to the damage type you had chosen. This effect persists until the end of your next turn.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When you enspell your weapon it roars with primordial strength: acid, cold, fire, lightning, or thunder. While your weapon remains enspelled it deals that damage type instead of its normal damage type.
+			When you hit with an attack with this weapon you can choose to remove the enspell from the weapon, unleashing a surge of elemental energy. When you do, the target must succeed on a Constitution save or it loses any resistance or immunity it had to the damage type you had chosen. This effect persists until the end of your next turn.</description>
+		</sheet>
+	</element>	
+	<element name="Primordial Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_ORDER_TOURMALINE_MARK_PRIMORDIAL_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When a creature protected by your aegis takes damage you can use your reaction to remove the aegis, fortifying the creature’s body with primeval power. When you do, choose acid, cold, fire, lightning, or thunder. That ally has resistance to that damage type for the next minute.</p>
+		</description>
+		<sheet action="Reaction" usage="Mystic Mark">
+			<description>When a creature protected by your aegis takes damage you can remove the aegis, fortifying the creature’s body with primeval power. That ally has resistance to acid, cold, fire, lightning, or thunder damage for the next minute.</description>
 		</sheet>
 	</element>
 	
@@ -589,17 +893,30 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Intelligence">
+			<list>Magus Shadow Court</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="intelligence:modifier" />
+			<select type="Spell" name="Cantrip, Shadow Court" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Shadow Court" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Shadow Court" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency in the Deception and Stealth skills.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency in the Deception and Stealth skills.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+		</rules>
 	</element>
 	<element name="Jade Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_JADE_SEAL">
 		<description>
@@ -608,24 +925,47 @@
 			<p class="indent">When you hit with an attack with an enspelled weapon or unarmed strike you can choose to remove the enspell, unleashing an intense flash of light. When you do, the target must succeed on a Constitution saving throw against your spell save DC or be blinded until the start of their next turn.</p>
 			<p class="indent"><strong><em>Shadow Aegis.</em></strong> When a creature protected by your aegis takes damage from an attack, you can use your reaction to remove the aegis from that creature, engulfing it in illusory magics. When you do, the target becomes invisible until the end of its next turn or when it casts a spell or makes an attack, whichever happens first.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_ORDER_JADE_SEAL_MARK_SHADOW_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_ORDER_JADE_SEAL_MARK_SHADOW_AEGIS" />
+		</rules>
 	</element>
 	<element name="Broken Mirror Jutsu" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_BROKEN_MIRROR_JUTSU">
 		<description>
 			<p>Starting at 7th level, you can take a special action on your turn to summon duplicates of yourself. When you do, you expend a spell slot and choose a number of unoccupied spaces within 60 feet equal to the level of the spell slot expended. A duplicate of yourself appears in each chosen space. You and each duplicate then make a melee spell attack against a creature within 5 feet, dealing 1d10 + your Intelligence modifier in force damage on a hit. If you and all your duplicates attack the same creature, and at least one of you deals damage to the creature, it must succeed on a Constitution saving throw or be stunned until the end of your next turn.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You can take a special action on your turn to summon duplicates of yourself. When you do, you expend a spell slot and choose a number of unoccupied spaces within 60 feet equal to the level of the spell slot expended. A duplicate of yourself appears in each chosen space. You and each duplicate then make a melee spell attack against a creature within 5 feet, dealing 1d10 + {{intelligence:modifier}} force damage on a hit. If you and all your duplicates attack the same creature, and at least one of you deals damage to the creature, it must succeed on a Constitution save or be stunned until the end of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="False Body Jutsu" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_FALSE_BODY_JUTSU">
 		<description>
 			<p>At 14th level, you gain the ability to replace yourself with an unlikely body double in the instant before you take a blow. When you are hit by an attack, you can use your reaction to reduce the damage from that attack to 1. When you do, you become invisible for 1 minute and teleport to an unoccupied space of your choice within 300 feet. You leave a block of wood or another harmless, mundane object in the space you teleported away from. You must complete a long rest before you can use this feature again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description>When you are hit by an attack, you can reduce the damage from that attack to 1. When you do, you become invisible for 1 minute and teleport to an unoccupied space of your choice within 300 feet. You leave a block of wood or another harmless, mundane object in the space you teleported away from.</description>
+		</sheet>
+	</element>
+	
+	<element name="Shadow Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_ORDER_JADE_SEAL_MARK_SHADOW_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>In addition to weapons, you can also empower your unarmed strikes with your enspell. While your unarmed strikes are enspelled, you can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes, and you can roll 1d6 instead of the normal damage of your unarmed strike.</p>
+			<p class="indent">When you hit with an attack with an enspelled weapon or unarmed strike you can choose to remove the enspell, unleashing an intense flash of light. When you do, the target must succeed on a Constitution saving throw against your spell save DC or be blinded until the start of their next turn.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>In addition to weapons, you can also empower your unarmed strikes with your enspell. While your unarmed strikes are enspelled, you can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes, and you can roll 1d6 instead of the normal damage of your unarmed strike.
+			When you hit with an attack with an enspelled weapon or unarmed strike you can choose to remove the enspell, unleashing an intense flash of light. When you do, the target must succeed on a Constitution save or be blinded until the start of their next turn.</description>
+		</sheet>
+	</element>	
+	<element name="Shadow Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_ORDER_JADE_SEAL_MARK_SHADOW_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When a creature protected by your aegis takes damage from an attack, you can use your reaction to remove the aegis from that creature, engulfing it in illusory magics. When you do, the target becomes invisible until the end of its next turn or when it casts a spell or makes an attack, whichever happens first.</p>
+		</description>
+		<sheet action="Reaction" usage="Mystic Mark">
+			<description>When a creature protected by your aegis takes damage from an attack, you can remove the aegis from that creature, engulfing it in illusory magics. When you do, the target becomes invisible until the end of its next turn or when it casts a spell or makes an attack, whichever happens first.</description>
 		</sheet>
 	</element>
 	
@@ -660,17 +1000,31 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Intelligence">
+			<list>Magus Sidereal Cabal</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="intelligence:modifier" />
+			<select type="Spell" name="Cantrip, Sidereal Cabal" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Sidereal Cabal" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Sidereal Cabal" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency with the Perception skill, navigator’s tools, and water vehicles.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency with the Perception skill, navigator’s tools, and water vehicles.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+		</rules>
 	</element>
 	<element name="Selenite Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_SELENITE_SEAL">
 		<description>
@@ -679,24 +1033,47 @@
 			<p class="indent">When you miss with an attack with this weapon you can choose to remove the enspell from the weapon, twisting fate in your favor. When you do, you can reroll the attack with advantage.</p>
 			<p class="indent"><strong><em>Sidereal Aegis.</em></strong> When an attack hits a creature protected by aegis you can use your reaction to remove the aegis, turning fortune against your foe. When you do, the attacker must reroll the attack with disadvantage.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_ORDER_SELENITE_MARK_SIDEREAL_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_ORDER_SELENITE_MARK_SIDEREAL_AEGIS" />
+		</rules>
 	</element>
 	<element name="Celestial Clockwork Control" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_CELESTIAL_CLOCKWORK_CONTROL">
 		<description>
 			<p>At 7th level, your extensive study of the stars has taught you to twist the heavenly mechanics of fate in your favor. When a creature you can see within 60 feet makes an ability check, attack roll, or saving throw you can use your reaction and expend a spell slot to modify the result of the roll. When you do, you can choose to either increase or decrease the result of the roll by the level of the spell slot expended. This change modifies the die result directly, not the total of the roll, which means it can turn a roll into a natural 1 or 20.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>When a creature you can see within 60 feet makes an ability check, attack roll, or saving throw you can expend a spell slot to modify the result of the roll. When you do, you can choose to either increase or decrease the result of the roll by the level of the spell slot expended. This change modifies the die result directly, not the total of the roll, which means it can turn a roll into a natural 1 or 20.</description>
 		</sheet>
 	</element>
 	<element name="Seal Fate" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_SEAL_FATE">
 		<description>
 			<p>At 14th level, when a creature that you can see within 60 feet makes a roll with advantage or disadvantage, you can use your reaction to seal their fate. The creature rolls three d20s, rather than two, using the highest result if it had advantage or the lowest result if it had disadvantage.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>When a creature that you can see within 60 feet makes a roll with advantage or disadvantage, you can seal their fate. The creature rolls three d20s, rather than two, using the highest result if it had advantage or the lowest result if it had disadvantage.</description>
+		</sheet>
+	</element>
+
+	<element name="Sidereal Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_ORDER_SELENITE_MARK_SIDEREAL_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>When you deal damage with your enspelled weapon you can choose to deal force damage instead of its normal damage type.</p>
+			<p class="indent">When you miss with an attack with this weapon you can choose to remove the enspell from the weapon, twisting fate in your favor. When you do, you can reroll the attack with advantage.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When you deal damage with your enspelled weapon you can choose to deal force damage instead of its normal damage type.
+			When you miss with an attack with this weapon you can choose to remove the enspell from the weapon, twisting fate in your favor. When you do, you can reroll the attack with advantage.</description>
+		</sheet>
+	</element>	
+	<element name="Sidereal Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_ORDER_SELENITE_MARK_SIDEREAL_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When an attack hits a creature protected by aegis you can use your reaction to remove the aegis, turning fortune against your foe. When you do, the attacker must reroll the attack with disadvantage.</p>
+		</description>
+		<sheet action="Reaction" usage="Mystic Mark">
+			<description>When an attack hits a creature protected by aegis you can remove the aegis, turning fortune against your foe. When you do, the attacker must reroll the attack with disadvantage.</description>
 		</sheet>
 	</element>
 	
@@ -731,17 +1108,30 @@
 				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Wisdom modifier</p>
 			</center>
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description></description>
 		</sheet>
+		<spellcasting name="Magus" ability="Wisdom">
+			<list>Magus Sylvan Circle</list>
+		</spellcasting>
+		<rules>
+			<stat name="magus:spellcasting:modifier" value="wisdom:modifier" />
+			<select type="Spell" name="Cantrip, Sylvan Circle" supports="0,$(spellcasting:list)" spellcasting="Magus" number="2" />
+			<select type="Spell" name="Cantrip, Sylvan Circle" supports="0,$(spellcasting:list)" spellcasting="Magus" level="4" />
+			<select type="Spell" name="Cantrip, Sylvan Circle" supports="0,$(spellcasting:list)" spellcasting="Magus" level="10" />
+		</rules>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_BONUS_PROFICIENCIES">
 		<description>
 			<p>At 1st level, you gain proficiency with the Nature skill and your choice of either herbalism kits or poisoner’s kits.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You gain proficiency with the Nature skill and your choice of either herbalism kits or poisoner’s kits.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<select type="Proficiency" name="Tool Proficiency, Sylvan Circle" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+		</rules>
 	</element>
 	<element name="Emerald Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_EMERALD_MARK">
 		<description>
@@ -750,27 +1140,49 @@
 			<p class="indent">When you deal damage to a creature using a weapon you’ve enspelled you can choose to remove your enspell from that weapon, causing the earth to join your assault. When you do, roots spring from the ground and attempt to tether the target to the earth. The target must succeed on a Strength saving throw against your spell save DC or it is restrained until the end of its next turn.</p>
 			<p class="indent"><strong><em>Sylvan Aegis.</em></strong> When a creature protected by your aegis fails a saving throw you can use your reaction to remove your aegis from that creature. When you do the aegis transmutes into vital energy and washes over the target. The target may reroll its saving throw with advantage.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_ORDER_EMERALD_MARK_SYLVAN_ENSPELL" />
+			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_ORDER_EMERALD_MARK_SYLVAN_AEGIS" />
+		</rules>
 	</element>
 	<element name="Nature’s Mask" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_NATURES_MASK">
 		<description>
 			<p>At 7th level, you can cast the spell polymorph on yourself without expending a spell slot. You must complete a long rest before you can use this feature again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the spell polymorph on yourself without expending a spell slot.</description>
 		</sheet>
 	</element>
 	<element name="Font of Life" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_FONT_OF_LIFE">
 		<description>
 			<p>Starting at 14th level, you can use a bonus action to expend a spell slot and create a font of life. When you do, you regain your magus level + 1d12 hit points per level of the expended spell slot and creatures of your choice within 30 feet of you regain half that amount. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can expend a spell slot and create a font of life. When you do, you regain 1d12+{{level:magus}} hp per level of the expended spell slot and creatures of your choice within 30 feet of you regain half that amount.</description>
 		</sheet>
 	</element>
-	
+
+	<element name="Sylvan Enspell" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_ORDER_EMERALD_MARK_SYLVAN_ENSPELL">
+		<compendium display="false" />
+		<description>
+			<p>When you deal damage with your enspelled weapon you can choose to deal poison damage instead of its normal damage type.</p>
+			<p class="indent">When you deal damage to a creature using a weapon you’ve enspelled you can choose to remove your enspell from that weapon, causing the earth to join your assault. When you do, roots spring from the ground and attempt to tether the target to the earth. The target must succeed on a Strength saving throw against your spell save DC or it is restrained until the end of its next turn.</p>
+		</description>
+		<sheet usage="Mystic Mark">
+			<description>When you deal damage with your enspelled weapon you can choose to deal poison damage instead of its normal damage type.
+			When you deal damage to a creature using a weapon you’ve enspelled you can choose to remove your enspell from that weapon, causing the earth to join your assault. When you do, roots spring from the ground and attempt to tether the target to the earth. The target must succeed on a Strength save or it is restrained until the end of its next turn.</description>
+		</sheet>
+	</element>	
+	<element name="Sylvan Aegis" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_ORDER_EMERALD_MARK_SYLVAN_AEGIS">
+		<compendium display="false" />
+		<description>
+			<p>When a creature protected by your aegis fails a saving throw you can use your reaction to remove your aegis from that creature. When you do the aegis transmutes into vital energy and washes over the target. The target may reroll its saving throw with advantage.</p>
+		</description>
+		<sheet action="Reaction" usage="Mystic Mark">
+			<description>When a creature protected by your aegis fails a saving throw you can remove your aegis from that creature. When you do the aegis transmutes into vital energy and washes over the target. The target may reroll its saving throw with advantage.</description>
+		</sheet>
+	</element>
 
 	<!-- spells -->
 	<element name="Arcing Arrow" type="Spell" source="The Magus" id="ID_DMSG_HMGS_SPELL_ARCING_ARROW">
@@ -1172,7 +1584,1439 @@
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
+	
+	<!-- items -->
+	<element name="Embalmer’s Tools" type="Item" source="The Magus" id="ID_DMSG_HMGS_ITEM_TOOL_EMBALMERS_TOOLS">
+		<description>
+			<p>Embalmer’s tools include all the instruments, chemicals, and perfumes necessary to embalm the dead. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to embalm or preserve a body.</p>
+		</description>
+		<setters>
+			<set name="category">Tools</set>
+			<set name="cost" currency="gp">10</set>
+			<set name="weight" lb="4">4 lbs.</set>
+			<set name="type">Tool</set>
+			<set name="proficiency">ID_DMSG_HMGS_PROFICIENCY_TOOL_EMBALMERS_TOOLS</set>
+		</setters>
+	</element>
+	<element name="Tool Proficiency (Embalmer’s Tools)" type="Proficiency" source="The Magus" id="ID_DMSG_HMGS_PROFICIENCY_TOOL_EMBALMERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p>Embalmer’s tools include all the instruments, chemicals, and perfumes necessary to embalm the dead. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to embalm or preserve a body.</p>
+			<div class="reference">
+				<div element="ID_DMSG_HMGS_ITEM_TOOL_EMBALMERS_TOOLS" />
+			</div>
+		</description>
+	</element>
 
-	<!-- todo: items -->
+	<!-- todo: magic items -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Arcane Order -->
+	<append id="ID_DMSG_HMGS_SPELL_ARCING_ARROW">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLADE_WARD">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DANCING_LIGHTS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_SCAG_SPELL_GREEN_FLAME_BLADE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGE_HAND">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MESSAGE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MINOR_ILLUSION">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PRESTIDIGITATION">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_SPELL_SHATTERING_STRIKE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_SCAG_SPELL_SWORD_BURST">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_STRIKE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_VORTEX_DART">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ALARM">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COLOR_SPRAY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COMPREHEND_LANGUAGES">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_MAGIC">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FALSE_LIFE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_FAMILIAR">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREASE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_IDENTIFY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_MISSILE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHIELD">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEEP">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TENSERS_FLOATING_DISK">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLUR">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLOUD_OF_DAGGERS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CROWN_OF_MADNESS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKNESS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ENLARGE_REDUCE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_PERSON">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEVITATE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MISTY_STEP">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PHANTASMAL_FORCE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ROPE_TRICK">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SEE_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLINK">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLAIRVOYANCE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COUNTERSPELL">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIREBALL">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FLY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HASTE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HYPNOTIC_PATTERN">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_CIRCLE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLOW">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_TINY_SERVANT">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TONGUES">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARCANE_EYE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BANISHMENT">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONFUSION">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DIMENSION_DOOR">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FABRICATE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_CREATURE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ANIMATE_OBJECTS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BIGBYS_HAND">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONTACT_OTHER_PLANE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CREATION">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FAR_STEP">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_MONSTER">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PASSWALL">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SCRYING">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TELEPORTATION_CIRCLE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARCANE_GATE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONTINGENCY">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CREATE_HOMUNCULUS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISINTEGRATE">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DRAWMIJS_INSTANT_SUMMONS">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_JAR">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SCATTER">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_SEEING">
+		<supports>HUFF_Magus,Magus Arcane Order</supports>
+	</append>
+
+	<!-- Knights Stygian -->
+	<append id="ID_PHB_SPELL_BLADE_WARD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_BLOODLETTING_BITE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CHILL_TOUCH">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_DEATH_SHROUD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MENDING">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RESISTANCE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPARE_THE_DYING">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_THAUMATURGY">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_STRIKE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARMS_OF_HADAR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_ASPIR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BANE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CAUSE_FEAR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_CORPSE_MASK">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISSONANT_WHISPERS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_DRAIN">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FALSE_LIFE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HEX">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INFLICT_WOUNDS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RAY_OF_SICKNESS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEEP">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TASHAS_HIDEOUS_LAUGHTER">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLINDNESS_DEAFNESS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKNESS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CROWN_OF_MADNESS">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GENTLE_REPOSE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PHANTASMAL_FORCE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SEE_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHATTER">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SILENCE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPIDER_CLIMB">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WEB">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ANIMATE_DEAD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BESTOW_CURSE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEAR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEIGN_DEATH">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GASEOUS_FORM">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HUNGER_OF_HADAR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PHANTOM_STEED">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_REVIVIFY">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLOW">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPEAK_WITH_DEAD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BANISHMENT">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLIGHT">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DEATH_WARD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DOMINATE_BEAST">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PHANTASMAL_KILLER">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLOUDKILL">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONTAGION">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_DANSE_MACABRE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ENERVATION">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HALLOW">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INSECT_PLAGUE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PASSWALL">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RAISE_DEAD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CIRCLE_OF_DEATH">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CREATE_UNDEAD">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISINTEGRATE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EYEBITE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HARM">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_JAR">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SOUL_CAGE">
+		<supports>HUFF_Magus,Magus Knights Stygian</supports>
+	</append>
+
+	<!-- Primordial Sea -->
+	<append id="ID_PHB_SPELL_ACID_SPLASH">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_ARCING_ARROW">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_SCAG_SPELL_BOOMING_BLADE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CREATE_BONFIRE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CONTROL_FLAMES">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_SCAG_SPELL_GREEN_FLAME_BLADE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_GUST">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MOLD_EARTH">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_RIME_STRIKE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SHAPE_WATER">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ALARM">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BURNING_HANDS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CATAPULT">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CHROMATIC_ORB">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_MAGIC">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_EARTH_TREMOR">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ICE_KNIFE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_STORM_STEP">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_THUNDERWAVE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WITCHBOLT">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_AGANAZZARS_SCORCHER">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARCANE_LOCK">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_DUST_DEVIL">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_EARTHBIND">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FLAMING_SPHERE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GUST_OF_WIND">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_KNOCK">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MAXIMILIANS_EARTHEN_GRASP">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MELFS_ACID_ARROW">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PYROTECHNICS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SCORCHING_RAY">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHATTER">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SNILLOCS_SNOWBALL_SWARM">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WARDING_WIND">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CALL_LIGHTNING">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ERUPTING_EARTH">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIREBALL">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FLAME_ARROWS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GASEOUS_FORM">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LIGHTNING_BOLT">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MELD_INTO_STONE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEET_STORM">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_TIDAL_WAVE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_SAND">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_WATER">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WATER_WALK">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WIND_WALL">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONJURE_MINOR">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ELEMENTALS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONTROL_WATER">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ELEMENTAL_BANE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIRE_SHIELD">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ICE_STORM">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_STONE_SHAPE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_STORM_SPHERE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WATERY_SPHERE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_FIRE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONE_OF_COLD">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONJURE_ELEMENTAL">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CONTROL_WINDS">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_IMMOLATION">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_TRANSMUTE_ROCK">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_STONE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CHAIN_LIGHTNING">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FLESH_TO_STONE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_INVESTITURE_OF_FLAME">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_INVESTITURE_OF_ICE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_INVESTITURE_OF_STONE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_INVESTITURE_OF_WIND">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MOVE_EARTH">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_OTILUKES_FREEZING_SPHERE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_PRIMORDIAL_WARD">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_ICE">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WIND_WALK">
+		<supports>HUFF_Magus,Magus Primordial Seal</supports>
+	</append>
+
+
+
+	<!-- Shadow Court -->
+	<append id="ID_DMSG_HMGS_SPELL_CORRUPTED_KI_KATA">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DANCING_LIGHTS">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_DEATH_SHROUD">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGE_HAND">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MESSAGE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MINOR_ILLUSION">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_NERVE_PINCHING_KATA">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_TEN_THOUSAND_MASKS">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ALARM">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISGUISE_SELF">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FOG_CLOUD">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREASE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ILLUSORY_SCRIPT">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_JUMP">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LONGSTRIDER">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SILENT_IMAGE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEEP">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SNARE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_UNSEEN_SERVANT">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLUR">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKNESS">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_TRAPS">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_PERSON">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_KNOCK">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_OBJECT">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MIRROR_IMAGE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MISTY_STEP">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PASS_WITHOUT_TRACE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ROPE_TRICK">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SEE_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SILENCE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLINK">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLAIRVOYANCE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ENEMIES_ABOUND">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEAR">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEIGN_DEATH">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GASEOUS_FORM">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAJOR_IMAGE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_NONDETECTION">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SENDING">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WATER_BREATHING">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONFUSION">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DIMENSION_DOOR">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREATER_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_CREATURE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PHANTASMAL_KILLER">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_POLYMORPH">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DOMINATE_PERSON">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DREAM">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_MONSTER">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MENTAL_PRISON">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MISLEAD">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MODIFY_MEMORY">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PASSWALL">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SCRYING">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SEEMING">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EYEBITE">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_THE_PATH">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GUARDS_AND_WARDS">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROGRAMMED_ILLUSION">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_SEEING">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WIND_WALK">
+		<supports>HUFF_Magus,Magus Shadow Court</supports>
+	</append>
+
+	<!-- Sidereal Cabal -->
+	<append id="ID_PHB_SPELL_BLADE_WARD">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DANCING_LIGHTS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GUIDANCE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGE_HAND">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MESSAGE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MINOR_ILLUSION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_MISFORTUNES_MARK">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHILLELAGH">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_STRIKE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_VORTEX_DART">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BANE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLESS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CHARM_PERSON">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COMMAND">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COMPREHEND_LANGUAGES">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_MAGIC">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FAERIE_FIRE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GUIDING_BOLT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_IDENTIFY">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ILLUSORY_SCRIPT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_JUMP">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LONGSTRIDER">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_MISSILE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SANCTUARY">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SILENT_IMAGE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEEP">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_AUGURY">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLUR">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CALM_EMOTIONS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKNESS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_THOUGHTS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_TRAPS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_PERSON">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEVITATE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LESSER_RESTORATION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_OBJECT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MIND_SPIKE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MISTY_STEP">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MOONBEAM">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SEE_INVISIBILITY">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BESTOW_CURSE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLINDING_SMITE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_CATNAP">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLAIRVOYANCE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COUNTERSPELL">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DAYLIGHT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ENEMIES_ABOUND">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_FIND_VESSEL">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FLY">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HASTE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MELFS_MINUTE_METEORS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_NONDETECTION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_REMOVE_CURSE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLOW">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARCANE_EYE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BANISHMENT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DIMENSION_DOOR">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DIVINATION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_CREATURE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_DAWN">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DREAM">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FAR_STEP">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GEAS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREATER_RESTORATION">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_MONSTER">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEGEND_LORE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SCRYING">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SKILL_EMPOWERMENT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SYNAPTIC_STATIC">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TELEKINESIS">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WALL_OF_LIGHT">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ARCANE_GATE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_THE_PATH">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FORBIDDANCE">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SCATTER">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SUNBEAM">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRUE_SEEING">
+		<supports>HUFF_Magus,Magus Sidereal Cabal</supports>
+	</append>
+
+	<!-- Sylvan Circle -->
+	<append id="ID_SCAG_SPELL_BOOMING_BLADE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DRUIDCRAFT">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_FUNGAL_BLOOM">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_GIVE_LIFE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LIGHT">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_MAGIC_STONE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RESISTANCE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_RIME_STRIKE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPARE_THE_DYING">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_THORNWHIP">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_WARDENS_REBUKE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_BEAST_BOND">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CURE_WOUNDS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_POISON_AND">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISEASE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ENSNARING_STRIKE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ENTANGLE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FOG_CLOUD">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GOODBERRY">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HAIL_OF_THORNS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_JUMP">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LONGSTRIDER">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_DMSG_HMGS_SPELL_SPORE_CLOUD">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ALTER_SELF">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ANIMAL_MESSENGER">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BARKSKIN">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BEAST_SENSE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ENHANCE_ABILITY">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GUST_OF_WIND">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LESSER_RESTORATION">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MOONBEAM">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PASS_WITHOUT_TRACE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SKYWRITE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPIKE_GROWTH">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WARDING_WIND">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONJURE_ANIMALS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DAYLIGHT">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MELD_INTO_STONE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PLANT_GROWTH">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_REVIVIFY">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPEAK_WITH_PLANTS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_STINKING_CLOUD">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WATER_BREATHING">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WATER_WALK">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLIGHT">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONJURE_WOODLAND_BEINGS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DEATH_WARD">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DOMINATE_BEAST">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GIANT_INSECT">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GRASPING_VINE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_GUARDIAN_OF_NATURE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_CREATURE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_POLYMORPH">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_STONE_SHAPE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_AWAKEN">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COMMUNE_WITH_NATURE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONTAGION">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREATER_RESTORATION">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INSECT_PLAGUE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_REINCARNATE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TREE_STRIDE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_WRATH_OF_NATURE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_DRUID_GROVE">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIND_THE_PATH">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HEAL">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HEROES_FEAST">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SUNBEAM">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TRANSPORT_VIA_PLANTS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_THORNS">
+		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
+	</append>
 </elements>
