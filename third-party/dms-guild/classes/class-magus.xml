@@ -118,18 +118,17 @@
 	</element>	
 	<element name="Eldritch Society" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ELDRITCH_SOCIETY">
 		<description>
-			<p></p>
+			<p>At 1st level, you choose an eldritch society that trained you in the ways of the magus: the Arcane Order, the Knights Stygian, the Primordial Seal, the Shadow Court, Sidereal Cabal, or the Sylvan Circle. Your choice grants you features at 1st level and again at 3rd, 7th, and 14th level. Your choice also determines your spell list.</p>
 		</description>
-		<sheet display="false">
-			<description></description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<select type="Archetype" name="Eldritch Society" supports="Magus Eldritch Society" />
 		</rules>
 	</element>
 	<element name="Esoteric Eye" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ESOTERIC_EYE">
 		<description>
-			<p></p>
+			<p>At 1st level, you can detect the arcane abilities of others. As an action, your eyes visibly flash with magic as your senses wake to the mystical energies of the multiverse. Until the end of your next turn, you know if each creature you can see within 60 feet of you has the Spellcasting or Innate Spellcasting feature or trait. Additionally, you learn each of those creatures’ spellcasting ability, if they have one.</p>
+			<p class="indent">You can use this feature a number of times equal to 1 + your magus spellcasting modifier. You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -137,15 +136,33 @@
 	</element>
 	<element name="Mystic Mark" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_MYSTIC_MARK">
 		<description>
-			<p></p>
+			<p>Starting at 2nd level, you learn to place a mystic mark. You can use this mark to enspell a weapon or to grant a creature an aegis. You can use your mystic mark a number of times equal to your magus spellcasting ability modifier. You regain all expended uses when you finish a long rest.</p>
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS" />
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_ENSPELL" />
 		</description>
 		<sheet>
 			<description></description>
 		</sheet>
+		<rules>
+			<grant type="Class Feature" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS" />
+			<grant type="Class Feature" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_ENSPELL" />
+		</rules>
 	</element>
 	<element name="Spellcasting" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELLCASTING">
 		<description>
-			<p></p>
+			<p>Starting at 2nd level, you gain the ability to cast spells of 1st level and higher. See chapter 10 of the Player’s Handbook for the general rules of spellcasting.</p>
+			<h5>Spell Slots</h5>
+			<p>The Magus table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+			<p class="indent">For example, if you know the 1st-level spell find familiar and have a 1st-level and a 2nd-level spell slot available, you can cast find familiar using either slot.</p>
+			<h5>Spells Known of 1st-Level and Higher</h5>
+			<p>You know three 1st-level magus spells of your choice from your eldritch society’s spell list. You learn additional spells chosen from your eldritch society’s spell list as indicated in the Spells Known column of the Magus table.</p>
+			<p class="indent">Additionally, when you gain a level in this class, you can choose one of the magus spells you know and replace it with another spell from your eldritch society’s spell list, which also must be of a level for which you have spell slots.</p>
+			<h5>Spellcasting Ability</h5>
+			<p>Your spellcasting ability is determined by your eldritch society. See the Initiate feature of your eldritch society for your spellcasting ability.</p>
+			<h5>Ritual Casting</h5>
+			<p>You can cast a magus spell as a ritual if that spell has the ritual tag and you know the spell.</p>
+			<h5>Spellcasting Focus</h5>
+			<p>Your spellcasting focus, if any, is determined by your eldritch society. See the Initiate feature of your eldritch society to see what, if any, spellcasting focus you may use for your magus spells.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -153,23 +170,36 @@
 	</element>
 	<element name="Eldritch Armament" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ELDRITCH_ARMAMENT">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, you learn to infuse your preferred weapon or shield with magical power. Choose one of the following options.</p>
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_ELDRITCH_ARCHER" />
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_MYSTIC_MARAUDER" />
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SORCEROUS_SENTINEL" />
+			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SPELL_SWORD" />
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet display="false" />
+		<rules>
+			<select type="Class Fetaure" name="Eldritch Armament" supports="Magus Eldritch Armament" />
+		</rules>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ABILITY_SCORE_IMPROVEMENT">
+		<compendium display="false" />
 		<description>
-			<p></p>
+			<p>When you reach 4th, 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>When you reach 4th, 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</description>
 		</sheet>
+		<rules>
+			<select type="Class Feature" name="Ability Score Improvement" supports="Improvement Option, Magus, 4" level="4" />
+			<select type="Class Feature" name="Ability Score Improvement" supports="Improvement Option, Magus, 8" level="8" />
+			<select type="Class Feature" name="Ability Score Improvement" supports="Improvement Option, Magus, 12" level="12" />
+			<select type="Class Feature" name="Ability Score Improvement" supports="Improvement Option, Magus, 16" level="16" />
+			<select type="Class Feature" name="Ability Score Improvement" supports="Improvement Option, Magus, 19" level="19" />
+		</rules>
 	</element>
 	<element name="Mystic Meditation" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_MYSTIC_MEDITATION">
 		<description>
-			<p></p>
+			<p>Starting at 6th level, when you take a short rest you can choose to recover all expended uses of your Mystic Mark. You must complete a long rest before you can use this feature again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -177,7 +207,7 @@
 	</element>
 	<element name="War Magic" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_WAR_MAGIC">
 		<description>
-			<p></p>
+			<p>Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -185,7 +215,8 @@
 	</element>
 	<element name="Spell Surge" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELL_SURGE">
 		<description>
-			<p></p>
+			<p>Starting at 10th level, you can cast any magus spell you know without expending a spell slot. The spell is cast as if you had used a spell slot equal to the highest spell slot you have.</p>
+			<p class="indent">Once you use this feature, you must finish a long rest before you can use it again. You can use this feature twice between long rests starting at 20th level.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -193,7 +224,7 @@
 	</element>
 	<element name="Improved War Magic" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_IMPROVED_WAR_MAGIC">
 		<description>
-			<p></p>
+			<p>Starting at 11th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -201,7 +232,7 @@
 	</element>
 	<element name="Spell Ward" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELL_WARD">
 		<description>
-			<p></p>
+			<p>Starting at 15th level, the magical attacks of your enemies unravel around you. You and friendly creatures within 15 feet of you have advantage on saving throws against spells.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -209,31 +240,73 @@
 	</element>
 	<element name="Greater Spell Surge" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_GREATER_SPELL_SURGE">
 		<description>
-			<p></p>
+			<p>At 18th level, choose one 6th-level spell from your eldritch society’s spell list. You can cast this spell once without expending a spell slot.</p>
+			<p class="indent">Once you use this feature, you must finish a long rest before you can use it again. You can use this feature twice between long rests starting at 20th level.</p>
 		</description>
 		<sheet>
 			<description></description>
 		</sheet>
 	</element>
 
-
-	
-
-
-	<!-- <element name="name" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_Magus_name">
+	<!-- mystic marks -->
+	<element name="Aegis" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_AEGIS">
 		<description>
-			<p></p>
+			<p>As a bonus action you can project your mystic mark onto a creature you can see within 30 feet of you. For the next minute the target is under the protection of your aegis and receives a bonus to its armor class. This bonus increases their AC by +1. If the target is wearing armor that grants a magical bonus to AC, use whichever bonus is higher. The aegis ends if you or your target end a turn more than 120 feet away from one another. A creature can only benefit from one aegis at a time.</p>
+			<p class="indent">This bonus to AC increases to +2 when you reach 9th level and increases to +3 when you reach 13th level.</p>
 		</description>
 		<sheet>
 			<description></description>
 		</sheet>
-	</element> -->
+	</element>
+	<element name="Enspell" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MYSTIC_MARK_MAGUS_ENSPELL">
+		<description>
+			<p>As a bonus action, you surround a weapon you’re holding with your mystic mark. This weapon is enspelled and counts as a spellcasting focus for you for the next minute. While enspelled, the weapon is considered magical and adds a +1 bonus to attack rolls and damage rolls. If the weapon already grants a magical bonus to attack and damage, use whichever bonus is higher. The enspell ends if you lose possession of the weapon. A weapon can only benefit from one enspell at a time.</p>
+			<p class="indent">These bonuses to hit and damage increase to +2 when you reach 9th level and +3 when you reach 13th.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
 
-
-
-
-
-
+	<!-- eldritch armament -->
+	<element name="Eldritch Archer" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_ELDRITCH_ARCHER">
+		<supports>Magus Eldritch Armament</supports>
+		<description>
+			<p>When you hit a creature with a ranged weapon under the effect of your Enspell feature you can cause the ammunition to explode with mystical energy, dealing the same damage type the attack would normally cause to all creatures within 10 feet of the target. When you do so, expend a spell slot and the creature and each other creature within 10 feet must succeed on a Dexterity saving throw or take 2d4 + 1d4 damage for each spell level higher than 1st, to a maximum of 6d4. On a success, they take half damage.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	<element name="Mystic Marauder" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_MYSTIC_MARAUDER">
+		<supports>Magus Eldritch Armament</supports>
+		<description>
+			<p>When you hit a creature with a melee weapon attack with a weapon you are wielding with two hands that is under the effect of your Enspell feature, you can expend a spell slot to deal additional damage to the target. The extra damage is 2d6 for a 1st-level spell slot. The damage increases by 1d6 for each slot level above 1st, to a maximum of 6d6. The weapon must have the twohanded or versatile property for you to use this feature.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	<element name="Sorcerous Sentinel" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SORCEROUS_SENTINEL">
+		<supports>Magus Eldritch Armament</supports>
+		<description>
+			<p>While you are wielding a shield, when a creature under the effect of your Aegis feature is attacked you can use your reaction to expend a spell slot and strengthen the target’s defenses. The target gains a bonus to AC equivalent to the spell slot expended. This bonus is only applied against the triggering attack. Additionally, the target gains temporary hit points equal to your spellcasting modifier + twice the level of the spell slot expended.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	<element name="Spell Sword" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SPELL_SWORD">
+		<supports>Magus Eldritch Armament</supports>
+		<description>
+			<p>When you hit a creature with a one-handed melee weapon under the effect of your Enspell feature you may expend a spell slot to deal additional damage and render the creature vulnerable to magical attacks. The extra damage is 1d4 for a 1st-level spell slot. The damage increases by 1d4 for each slot level above 1st, to a maximum of 5d4. Additionally, the creature has disadvantage on saving throws against spells you cast until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	
+	<!-- archetypes -->
 	<element name="The Arcane Order" type="Archetype" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_MAGUS_The_Arcane_Order">
 		<supports>Magus Eldritch Society</supports>
 		<description>
@@ -270,7 +343,7 @@
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency with the Arcana skill and one set of artisan’s tools of your choice.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -278,7 +351,10 @@
 	</element>
 	<element name="Amethyst Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by your greater understanding of the Arcane Order’s esoteric knowledge. When you place your mystic mark on an object or creature, a faint purple, crystalline aura surrounds it.</p>
+			<p class="indent"><strong><em>Arcane Enspell.</em></strong> When you deal damage with your enspelled weapon, you can choose to deal force damage instead of its normal damage type.</p>
+			<p class="indent">When you deal damage to a creature with your enspelled weapon, you can choose to remove your enspell from the weapon to unleash a wave of magical energy. When you do so, the target must succeed on a Strength saving throw against your spell save DC or be pushed up to 15 feet away and knocked prone.</p>
+			<p class="indent"><strong><em>Arcane Aegis.</em></strong> When a target protected by your aegis takes damage from a creature you can use your reaction to remove the aegis from that ally. When you do, you may teleport up to 30 feet and make a weapon attack against the attacking creature.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -286,7 +362,7 @@
 	</element>
 	<element name="Occult Savant" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_OCCULT_SAVANT">
 		<description>
-			<p></p>
+			<p>By 7th level, through diplomacy, espionage, or occult experimentation you have gleaned how to use spells normally used by other eldritch societies. Alternatively, you’ve spent time further deciphering the obscure teachings of the Arcane Order. You learn two spells of your choice from any eldritch society’s spell list. These spells must be of a level you can cast, as shown on the Magus table, or cantrips. The chosen spells count as Arcane Order magus spells for you and do not count towards the Spells Known column of the Magus table.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -294,7 +370,7 @@
 	</element>
 	<element name="Arcane Recovery" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_ARCANE_RECOVERY">
 		<description>
-			<p></p>
+			<p>Starting at 14th level, you have learned to regain some of your magical energy by reflecting on esoteric truths and formulae. Once per day when you finish a short rest, you can choose to recover some of your expended spell slots. The spell slots can have a combined level that is equal to or less than half your magus level (rounded up), and none of the slots can be 6th level or higher.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -338,7 +414,7 @@
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency with the Intimidation skill and embalmer’s tools.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -346,7 +422,10 @@
 	</element>
 	<element name="Obsidian Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_OBSIDIAN_SEAL">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by the fell magic of the Knights Stygian. When you place your mystic mark on an object or creature, it is surrounded by an aura that emits drifting motes of black ash and the acrid smell of decay.</p>
+			<p class="indent"><strong><em>Stygian Enspell.</em></strong> When you deal damage with your enspelled weapon you can choose to deal necrotic damage instead of its normal damage type.</p>
+			<p class="indent">When you hit with an attack with an enspelled weapon you can choose to remove the enspell, unleashing an unholy wave of pure terror. When you do, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened by you until the end of their next turn.</p>
+			<p class="indent"><strong><em>Stygian Aegis.</em></strong> When a creature protected by your aegis takes damage from an attack you can use your reaction to remove the aegis from that creature, releasing necrotic energy upon the attacker. When you do, the attacker must succeed on a Constitution saving throw against your spell save DC or take necrotic damage equal to the damage dealt by the triggering attack.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -354,7 +433,7 @@
 	</element>
 	<element name="Face of Fear" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_FACE_OF_FEAR">
 		<description>
-			<p></p>
+			<p>Starting at 7th level, you have advantage on saving throws against being frightened. When a creature within 30 feet of you makes a saving throw against being frightened, you can use your reaction to give that roll disadvantage.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -362,7 +441,12 @@
 	</element>
 	<element name="Necromantic Surge" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_NECROMANTIC_SURGE">
 		<description>
-			<p></p>
+			<p>At 14th level, you can cast the spell animate dead without expending a spell slot as if you had used a spell slot equal to the highest spell slot available to you. Once you cast animate dead in this way, you can’t do so again until you finish a long rest.</p>
+			<p class="indent">Whenever you create an undead creature using a necromancy spell, it has additional benefits:</p>
+			<ul>
+				<li>The creature’s hit points maximum is increased by an amount equal to your magus level.</li>
+				<li>The creature adds your proficiency bonus to its weapon damage rolls.</li>
+			</ul>
 		</description>
 		<sheet>
 			<description></description>
@@ -406,7 +490,7 @@
 	</element>
 	<element name="Bonus Proficiency &amp; Language" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency in the Survival skill. Additionally, you can speak, read, and write Primordial.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -414,7 +498,10 @@
 	</element>
 	<element name="Tourmaline Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_TOURMALINE_MARK">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by the Primordial Seal’s elemental power. When you place your mystic mark on an object or creature, an intense aura of vacillating colors surrounds it.</p>
+			<p class="indent"><strong><em>Primordial Enspell.</em></strong> When you enspell your weapon it roars with primordial strength and you may choose one of the following damage types: acid, cold, fire, lightning, or thunder. While your weapon remains enspelled it deals that damage type instead of its normal damage type.</p>
+			<p class="indent">When you hit with an attack with this weapon you can choose to remove the enspell from the weapon, unleashing a surge of elemental energy. When you do, the target must succeed on a Constitution saving throw against your spell save DC or it loses any resistance or immunity it had to the damage type you had chosen. This effect persists until the end of your next turn.</p>
+			<p class="indent"><strong><em>Primordial Aegis.</em></strong> When a creature protected by your aegis takes damage you can use your reaction to remove the aegis, fortifying the creature’s body with primeval power. When you do, choose acid, cold, fire, lightning, or thunder. That ally has resistance to that damage type for the next minute.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -422,7 +509,11 @@
 	</element>
 	<element name="Elemental Alignment" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ALIGNMENT">
 		<description>
-			<p></p>
+			<p>At 7th level, your intimate knowledge of elemental magic has imbued you with abilities related to your element of choice. You gain your choice of one of the following features:</p>
+			<p class="indent"><strong><em>Air.</em></strong> Your base movement speed increases by 10 ft. and you have advantage on initiative rolls.</p>
+			<p class="indent"><strong><em>Earth.</em></strong> You gain 2 additional hit points per magus level. Each time you gain a level in this class you gain an additional 2 hit points.</p>
+			<p class="indent"><strong><em>Fire.</em></strong> You gain darkvision out to a distance of 120 feet and proficiency in Dexterity saving throws.</p>
+			<p class="indent"><strong><em>Water.</em></strong> You gain the ability to breathe underwater and have a swim speed equivalent to your walking speed. Additionally, you have advantage on saving throws against being restrained or grappled and ability checks made to resist or escape a grapple.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -430,7 +521,11 @@
 	</element>
 	<element name="Elemental Attunement" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_ELEMENTAL_ATTUNEMENT">
 		<description>
-			<p></p>
+			<p>At 14th level, you learn to harmonize with the element you chose when you took the Elemental Alignment feature. You can cast a spell associated with your chosen element, listed below, without expending a spell slot. You cannot lose concentration on the spell by taking damage. You must complete a long rest before you can use this feature again.</p>
+			<p class="indent"><strong><em>Air.</em></strong> Investiture of Wind</p>
+			<p class="indent"><strong><em>Earth.</em></strong> Investiture of Stone</p>
+			<p class="indent"><strong><em>Fire.</em></strong> Investiture of Flame</p>
+			<p class="indent"><strong><em>Water.</em></strong> Investiture of Ice</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -474,7 +569,7 @@
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency in the Deception and Stealth skills.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -482,7 +577,10 @@
 	</element>
 	<element name="Jade Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_JADE_SEAL">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by the Shadow Court’s deadly techniques. When you place your mystic mark on an object or creature, it is engulfed in an aura of faint smoke.</p>
+			<p class="indent"><strong><em>Shadow Enspell.</em></strong> In addition to weapons, you can also empower your unarmed strikes with your enspell. While your unarmed strikes are enspelled, you can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes, and you can roll 1d6 instead of the normal damage of your unarmed strike.</p>
+			<p class="indent">When you hit with an attack with an enspelled weapon or unarmed strike you can choose to remove the enspell, unleashing an intense flash of light. When you do, the target must succeed on a Constitution saving throw against your spell save DC or be blinded until the start of their next turn.</p>
+			<p class="indent"><strong><em>Shadow Aegis.</em></strong> When a creature protected by your aegis takes damage from an attack, you can use your reaction to remove the aegis from that creature, engulfing it in illusory magics. When you do, the target becomes invisible until the end of its next turn or when it casts a spell or makes an attack, whichever happens first.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -490,7 +588,7 @@
 	</element>
 	<element name="Broken Mirror Jutsu" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_BROKEN_MIRROR_JUTSU">
 		<description>
-			<p></p>
+			<p>Starting at 7th level, you can take a special action on your turn to summon duplicates of yourself. When you do, you expend a spell slot and choose a number of unoccupied spaces within 60 feet equal to the level of the spell slot expended. A duplicate of yourself appears in each chosen space. You and each duplicate then make a melee spell attack against a creature within 5 feet, dealing 1d10 + your Intelligence modifier in force damage on a hit. If you and all your duplicates attack the same creature, and at least one of you deals damage to the creature, it must succeed on a Constitution saving throw or be stunned until the end of your next turn.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -498,7 +596,7 @@
 	</element>
 	<element name="False Body Jutsu" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_FALSE_BODY_JUTSU">
 		<description>
-			<p></p>
+			<p>At 14th level, you gain the ability to replace yourself with an unlikely body double in the instant before you take a blow. When you are hit by an attack, you can use your reaction to reduce the damage from that attack to 1. When you do, you become invisible for 1 minute and teleport to an unoccupied space of your choice within 300 feet. You leave a block of wood or another harmless, mundane object in the space you teleported away from. You must complete a long rest before you can use this feature again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -542,7 +640,7 @@
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency with the Perception skill, navigator’s tools, and water vehicles.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -550,7 +648,10 @@
 	</element>
 	<element name="Selenite Seal" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_SELENITE_SEAL">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by the Sidereal Cabal’s celestial radiance. When you place your mystic mark on an object or creature, it gives off a soft, indistinct light and hums with unseen energy.</p>
+			<p class="indent"><strong><em>Sidereal Enspell.</em></strong> When you deal damage with your enspelled weapon you can choose to deal force damage instead of its normal damage type.</p>
+			<p class="indent">When you miss with an attack with this weapon you can choose to remove the enspell from the weapon, twisting fate in your favor. When you do, you can reroll the attack with advantage.</p>
+			<p class="indent"><strong><em>Sidereal Aegis.</em></strong> When an attack hits a creature protected by aegis you can use your reaction to remove the aegis, turning fortune against your foe. When you do, the attacker must reroll the attack with disadvantage.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -558,7 +659,7 @@
 	</element>
 	<element name="Celestial Clockwork Control" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_CELESTIAL_CLOCKWORK_CONTROL">
 		<description>
-			<p></p>
+			<p>At 7th level, your extensive study of the stars has taught you to twist the heavenly mechanics of fate in your favor. When a creature you can see within 60 feet makes an ability check, attack roll, or saving throw you can use your reaction and expend a spell slot to modify the result of the roll. When you do, you can choose to either increase or decrease the result of the roll by the level of the spell slot expended. This change modifies the die result directly, not the total of the roll, which means it can turn a roll into a natural 1 or 20.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -566,7 +667,7 @@
 	</element>
 	<element name="Seal Fate" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_SEAL_FATE">
 		<description>
-			<p></p>
+			<p>At 14th level, when a creature that you can see within 60 feet makes a roll with advantage or disadvantage, you can use your reaction to seal their fate. The creature rolls three d20s, rather than two, using the highest result if it had advantage or the lowest result if it had disadvantage.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -610,7 +711,7 @@
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency with the Nature skill and your choice of either herbalism kits or poisoner’s kits.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -618,7 +719,10 @@
 	</element>
 	<element name="Emerald Mark" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_EMERALD_MARK">
 		<description>
-			<p></p>
+			<p>Starting at 3rd level, the effects of your mystic marks are enhanced by the Sylvan Circle’s esoteric practices. When you place your mystic mark on an object or creature, a verdant green aura surrounds it.</p>
+			<p class="indent"><strong><em>Sylvan Enspell.</em></strong> When you deal damage with your enspelled weapon you can choose to deal poison damage instead of its normal damage type.</p>
+			<p class="indent">When you deal damage to a creature using a weapon you’ve enspelled you can choose to remove your enspell from that weapon, causing the earth to join your assault. When you do, roots spring from the ground and attempt to tether the target to the earth. The target must succeed on a Strength saving throw against your spell save DC or it is restrained until the end of its next turn.</p>
+			<p class="indent"><strong><em>Sylvan Aegis.</em></strong> When a creature protected by your aegis fails a saving throw you can use your reaction to remove your aegis from that creature. When you do the aegis transmutes into vital energy and washes over the target. The target may reroll its saving throw with advantage.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -626,7 +730,7 @@
 	</element>
 	<element name="Nature’s Mask" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_NATURES_MASK">
 		<description>
-			<p></p>
+			<p>At 7th level, you can cast the spell polymorph on yourself without expending a spell slot. You must complete a long rest before you can use this feature again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -634,7 +738,7 @@
 	</element>
 	<element name="Font of Life" type="Archetype Feature" source="The Magus" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_FONT_OF_LIFE">
 		<description>
-			<p></p>
+			<p>Starting at 14th level, you can use a bonus action to expend a spell slot and create a font of life. When you do, you regain your magus level + 1d12 hit points per level of the expended spell slot and creatures of your choice within 30 feet of you regain half that amount. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
