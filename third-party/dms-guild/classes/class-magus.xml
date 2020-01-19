@@ -132,8 +132,8 @@
 			<grant type="Class Feature" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_GREATER_SPELL_SURGE" level="18" />
 		</rules>
 		<multiclass id="ID_DMSG_HMGS_MULTICLASS_MAGUS">
-			<prerequisite>Constitution 13 and Intelligence 13 (Arcane Order, Shadow Court), Wisdom 13 (Sylvan Circle) or Charisma 13 (Knights Stygian, Primordial Seal)</prerequisite>
-			<requirements>[con:13],(([int:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_ARCANE_ORDER||ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SHADOW_COURT)||([wis:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SYLVAN_CIRCLE)||([cha:13],ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_KNIGHTS_STYGIAN||ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_PRIMORDIAL_SEAL))</requirements>
+			<prerequisite>Constitution 13 and Intelligence 13 (Arcane Order, Shadow Court, Sidereal Cabal), Wisdom 13 (Sylvan Circle) or Charisma 13 (Knights Stygian, Primordial Seal)</prerequisite>
+			<requirements>[con:13],(([int:13],ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_INT)||([wis:13],ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_WIS)||([cha:13],ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_CHA))</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons</set>
 			</setters>
@@ -184,25 +184,24 @@
 	<element name="Spellcasting" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_SPELLCASTING">
 		<description>
 			<p>Starting at 2nd level, you gain the ability to cast spells of 1st level and higher. See chapter 10 of the Player’s Handbook for the general rules of spellcasting.</p>
-			<h5>SPELL SLOTS</h5>
+			<h5 class="caption">SPELL SLOTS</h5>
 			<p>The Magus table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
 			<p class="indent">For example, if you know the 1st-level spell find familiar and have a 1st-level and a 2nd-level spell slot available, you can cast find familiar using either slot.</p>
-			<h5>SPELLS KNOWN OF 1ST-LEVEL AND HIGHER</h5>
+			<h5 class="caption">SPELLS KNOWN OF 1ST-LEVEL AND HIGHER</h5>
 			<p>You know three 1st-level magus spells of your choice from your eldritch society’s spell list. You learn additional spells chosen from your eldritch society’s spell list as indicated in the Spells Known column of the Magus table.</p>
 			<p class="indent">Additionally, when you gain a level in this class, you can choose one of the magus spells you know and replace it with another spell from your eldritch society’s spell list, which also must be of a level for which you have spell slots.</p>
-			<h5>SPELLCASTING ABILITY</h5>
+			<h5 class="caption">SPELLCASTING ABILITY</h5>
 			<p>Your spellcasting ability is determined by your eldritch society. See the Initiate feature of your eldritch society for your spellcasting ability.</p>
-			<h5>RITUAL CASTING</h5>
+			<h5 class="caption">RITUAL CASTING</h5>
 			<p>You can cast a magus spell as a ritual if that spell has the ritual tag and you know the spell.</p>
-			<h5>SPELLCASTING FOCUS</h5>
+			<h5 class="caption">SPELLCASTING FOCUS</h5>
 			<p>Your spellcasting focus, if any, is determined by your eldritch society. See the Initiate feature of your eldritch society to see what, if any, spellcasting focus you may use for your magus spells.</p>
 		</description>
 		<sheet display="false">
 			<description></description>
 		</sheet>
 		<rules>
-			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
-
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>			
 			<stat name="magus:spellcasting:slots:1" value="2" level="2" />
 			<stat name="magus:spellcasting:slots:1" value="1" level="3" />
 			<stat name="magus:spellcasting:slots:1" value="1" level="5" />
@@ -215,8 +214,7 @@
 			<stat name="magus:spellcasting:slots:4" value="1" level="17" />
 			<stat name="magus:spellcasting:slots:5" value="1" level="17" />
 			<stat name="magus:spellcasting:slots:5" value="1" level="19" />
-
-			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" number="3" level="2" />
+			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="2" number="3" />
 			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="4" />
 			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="5" />
 			<select type="Spell" name="Spell, Magus" supports="$(spellcasting:list),$(spellcasting:slots)" spellcasting="Magus" level="7" />
@@ -235,10 +233,14 @@
 	<element name="Eldritch Armament" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ELDRITCH_ARMAMENT">
 		<description>
 			<p>Starting at 3rd level, you learn to infuse your preferred weapon or shield with magical power. Choose one of the following options.</p>
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_ELDRITCH_ARCHER" />
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_MYSTIC_MARAUDER" />
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SORCEROUS_SENTINEL" />
-			<div element="ID_DMSG_HMGS_CLASS_FEATURE_ELDRITCH_ARMAMENT_SPELL_SWORD" />
+			<h5 class="caption">ELDRITCH ARCHER</h5>
+			<p>When you hit a creature with a ranged weapon under the effect of your Enspell feature you can cause the ammunition to explode with mystical energy, dealing the same damage type the attack would normally cause to all creatures within 10 feet of the target. When you do so, expend a spell slot and the creature and each other creature within 10 feet must succeed on a Dexterity saving throw or take 2d4 + 1d4 damage for each spell level higher than 1st, to a maximum of 6d4. On a success, they take half damage.</p>
+			<h5 class="caption">MYSTIC MARAUDER</h5>
+			<p>When you hit a creature with a melee weapon attack with a weapon you are wielding with two hands that is under the effect of your Enspell feature, you can expend a spell slot to deal additional damage to the target. The extra damage is 2d6 for a 1st-level spell slot. The damage increases by 1d6 for each slot level above 1st, to a maximum of 6d6. The weapon must have the twohanded or versatile property for you to use this feature.</p>
+			<h5 class="caption">SORCEROUS SENTINEL</h5>
+			<p>While you are wielding a shield, when a creature under the effect of your Aegis feature is attacked you can use your reaction to expend a spell slot and strengthen the target’s defenses. The target gains a bonus to AC equivalent to the spell slot expended. This bonus is only applied against the triggering attack. Additionally, the target gains temporary hit points equal to your spellcasting modifier + twice the level of the spell slot expended.</p>
+			<h5 class="caption">SPELL SWORD</h5>
+			<p>When you hit a creature with a one-handed melee weapon under the effect of your Enspell feature you may expend a spell slot to deal additional damage and render the creature vulnerable to magical attacks. The extra damage is 1d4 for a 1st-level spell slot. The damage increases by 1d4 for each slot level above 1st, to a maximum of 5d4. Additionally, the creature has disadvantage on saving throws against spells you cast until the end of your next turn.</p>
 		</description>
 		<sheet />
 		<rules>
@@ -314,13 +316,6 @@
 		</sheet>
 		<rules>
 			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,$(spellcasting:list)" spellcasting="Magus" />
-
-			<!-- <select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Arcane Order" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_ARCANE_ORDER" />
-			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Knights Stygian" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_KNIGHTS_STYGIAN" />
-			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Primordial Seal" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_PRIMORDIAL_SEAL" />
-			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Shadow Court" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SHADOW_COURT" />
-			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Sidereal Cabal" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SIDEREAL_CABAL" />
-			<select type="Spell" name="6th-level Spell, Greater Spell Surge" supports="6,Magus Sylvan Circle" spellcasting="Magus" requirements="ID_DMSG_HMGS_ARCHETYPE_MAGUS_THE_SYLVAN_CIRCLE" /> -->
 		</rules>
 	</element>
 
@@ -407,6 +402,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_INT" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_ARCANE_ORDER_AMETHYST_MARK" level="3" />
@@ -428,7 +424,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Intelligence">
+		<spellcasting name="Magus" ability="Intelligence" allowReplace="true">
 			<list>Magus Arcane Order</list>
 		</spellcasting>
 		<rules>
@@ -519,6 +515,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_CHA" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_KNIGHTS_STYGIAN_OBSIDIAN_SEAL" level="3" />
@@ -540,7 +537,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Charisma">
+		<spellcasting name="Magus" ability="Charisma" allowReplace="true">
 			<list>Magus Knights Stygian</list>
 		</spellcasting>
 		<rules>
@@ -633,6 +630,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_CHA" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_PRIMORDIAL_SEAL_TOURMALINE_MARK" level="3" />
@@ -654,7 +652,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Charisma">
+		<spellcasting name="Magus" ability="Charisma" allowReplace="true">
 			<list>Magus Primordial Seal</list>
 		</spellcasting>
 		<rules>
@@ -875,6 +873,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_INT" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SHADOW_COURT_JADE_SEAL" level="3" />
@@ -896,7 +895,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Intelligence">
+		<spellcasting name="Magus" ability="Intelligence" allowReplace="true">
 			<list>Magus Shadow Court</list>
 		</spellcasting>
 		<rules>
@@ -982,6 +981,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_INT" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SIDEREAL_CABAL_SELENITE_SEAL" level="3" />
@@ -1003,7 +1003,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Intelligence">
+		<spellcasting name="Magus" ability="Intelligence" allowReplace="true">
 			<list>Magus Sidereal Cabal</list>
 		</spellcasting>
 		<rules>
@@ -1090,6 +1090,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_WIS" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_INITIATE" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_BONUS_PROFICIENCIES" level="1" />
 			<grant type="Archetype Feature" id="ID_DMSG_HMGS_ARCHETYPE_FEATURE_SYLVAN_CIRCLE_EMERALD_MARK" level="3" />
@@ -1111,7 +1112,7 @@
 		<sheet display="false">
 			<description></description>
 		</sheet>
-		<spellcasting name="Magus" ability="Wisdom">
+		<spellcasting name="Magus" ability="Wisdom" allowReplace="true">
 			<list>Magus Sylvan Circle</list>
 		</spellcasting>
 		<rules>
@@ -2078,6 +2079,11 @@
 		</rules>
 	</element>
 
+	<!-- grant in archetypes for multiclass requirements -->
+	<element name="Mutliclass Requirement (Intelligence)" type="Grants" source="The Magus" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_INT" />
+	<element name="Mutliclass Requirement (Wisdom)" type="Grants" source="The Magus" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_WIS" />
+	<element name="Mutliclass Requirement (Charisma)" type="Grants" source="The Magus" id="ID_DMSG_HMGS_GRANTS_MUTLICLASS_REQUIREMENT_CHA" />
+
 	<!-- Arcane Order -->
 	<append id="ID_DMSG_HMGS_SPELL_ARCING_ARROW">
 		<supports>HUFF_Magus,Magus Arcane Order</supports>
@@ -2587,7 +2593,7 @@
 	<append id="ID_PHB_SPELL_THUNDERWAVE">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
-	<append id="ID_PHB_SPELL_WITCHBOLT">
+	<append id="ID_PHB_SPELL_WITCH_BOLT">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
 	<append id="ID_XGTE_SPELL_AGANAZZARS_SCORCHER">
@@ -2617,7 +2623,7 @@
 	<append id="ID_PHB_SPELL_MELFS_ACID_ARROW">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
-	<append id="ID_PHB_SPELL_PYROTECHNICS">
+	<append id="ID_XGTE_SPELL_PYROTECHNICS">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
 	<append id="ID_PHB_SPELL_SCORCHING_RAY">
@@ -2671,10 +2677,7 @@
 	<append id="ID_PHB_SPELL_WIND_WALL">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
-	<append id="ID_PHB_SPELL_CONJURE_MINOR">
-		<supports>HUFF_Magus,Magus Primordial Seal</supports>
-	</append>
-	<append id="ID_PHB_SPELL_ELEMENTALS">
+	<append id="ID_PHB_SPELL_CONJURE_MINOR_ELEMENTALS">
 		<supports>HUFF_Magus,Magus Primordial Seal</supports>
 	</append>
 	<append id="ID_PHB_SPELL_CONTROL_WATER">
@@ -3252,7 +3255,7 @@
 	<append id="ID_PHB_SPELL_SPARE_THE_DYING">
 		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
 	</append>
-	<append id="ID_PHB_SPELL_THORNWHIP">
+	<append id="ID_PHB_SPELL_THORN_WHIP">
 		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
 	</append>
 	<append id="ID_DMSG_HMGS_SPELL_WARDENS_REBUKE">
@@ -3270,10 +3273,7 @@
 	<append id="ID_PHB_SPELL_CURE_WOUNDS">
 		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
 	</append>
-	<append id="ID_PHB_SPELL_DETECT_POISON_AND">
-		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
-	</append>
-	<append id="ID_PHB_SPELL_DISEASE">
+	<append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
 		<supports>HUFF_Magus,Magus Sylvan Circle</supports>
 	</append>
 	<append id="ID_PHB_SPELL_ENSNARING_STRIKE">
