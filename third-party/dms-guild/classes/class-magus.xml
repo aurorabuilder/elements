@@ -141,7 +141,7 @@
 				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
 			</rules>
 		</multiclass>
-	</element>	
+	</element>
 	<element name="Eldritch Society" type="Class Feature" source="The Magus" id="ID_DMSG_HMGS_CLASS_FEATURE_MAGUS_ELDRITCH_SOCIETY">
 		<description>
 			<p>At 1st level, you choose an eldritch society that trained you in the ways of the magus: the Arcane Order, the Knights Stygian, the Primordial Seal, the Shadow Court, Sidereal Cabal, or the Sylvan Circle. Your choice grants you features at 1st level and again at 3rd, 7th, and 14th level. Your choice also determines your spell list.</p>
@@ -1609,34 +1609,474 @@
 	</element>
 
 	<!-- todo: magic items -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<element name="Adamovich’s Flying Dagger" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ADAMOVICHS_FLYING_DAGGER">
+		<description>
+			<p>This dagger’s normal and long thrown ranges are tripled. You have advantage on all ranged attack rolls against inanimate objects and disadvantage on all ranged attack rolls against creatures with this weapon.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="dagger">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">Dagger</set>
+		</setters>
+	</element>
+	<element name="Armor of Arcane Absorption" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ARMOR_OF_ARCANE_ABSORPTION">
+		<description>
+			<p>When you take damage from a spell while wearing this armor, you gain a number of temporary hit points equal to 1d8 + the level of the spell.</p>
+			<p class="indent">As an action on your turn, you spend all temporary hit points gained from this armor to create a shockwave that pushes enemies away from you. When you do, each creature within 10 feet of you must succeed on a Strength saving throw (DC 14) or be pushed 10 feet and take force damage equal to the temporary hit points spent.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Arcane Absorption</set>
+		</setters>
+	</element>
+	<element name="Armor of Elemental Aura, Air" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ARMOR_OF_ELEMENTAL_AURA_AIR">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor.</p>
+			<p class="indent">In addition, you can use a bonus action on your turn to activate this armor’s elemental aura for 1 minute. While the elemental aura is active, you gain its benefits. Once you activate the elemental aura, it can’t be used again until the next dawn.</p>
+			<p class="indent"><strong><em>Elemental Aura.</em></strong> Your movement speed increases by 15 feet, your jump distances are tripled, and ranged attack rolls against you have disadvantage.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Elemental Air Aura, +1</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Armor of Elemental Aura, Earth" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ARMOR_OF_ELEMENTAL_AURA_EARTH">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor.</p>
+			<p class="indent">In addition, you can use a bonus action on your turn to activate this armor’s elemental aura for 1 minute. While the elemental aura is active, you gain its benefits. Once you activate the elemental aura, it can’t be used again until the next dawn.</p>
+			<p class="indent"><strong><em>Elemental Aura.</em></strong> You gain resistance to all damage.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Elemental Earth Aura, +1</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Armor of Elemental Aura, Fire" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ARMOR_OF_ELEMENTAL_AURA_FIRE">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor.</p>
+			<p class="indent">In addition, you can use a bonus action on your turn to activate this armor’s elemental aura for 1 minute. While the elemental aura is active, you gain its benefits. Once you activate the elemental aura, it can’t be used again until the next dawn.</p>
+			<p class="indent"><strong><em>Elemental Aura.</em></strong> Creature who start their turn within 15 feet of you must succeed on a Dexterity saving throw or take 1d10 fire damage. Creatures within 5 feet have disadvantage on the saving throw.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Elemental Fire Aura, +1</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Armor of Elemental Aura, Water" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ARMOR_OF_ELEMENTAL_AURA_WATER">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor.</p>
+			<p class="indent">In addition, you can use a bonus action on your turn to activate this armor’s elemental aura for 1 minute. While the elemental aura is active, you gain its benefits. Once you activate the elemental aura, it can’t be used again until the next dawn.</p>
+			<p class="indent"><strong><em>Elemental Aura.</em></strong> When you take the Dash, Disengage, or Dodge action you gain the benefit of all three. You gain a swim speed equal to your base walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Elemental Water Aura, +1</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Bethra’s Book of Sound Strategies" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_BETHRAS_BOOK_OF_SOUND_STRATEGIES">
+		<description>
+			<p>This book is full of notes written in Common authored by the famous grimalkin tactician, Bethra de Baltimore. To attune to this book you must read it, which takes a total of 48 hours. While attuned to this book, you can use a bonus action on each of your turns to shout relevant tactical advice at a creature who can hear you within 60 feet. That creature has advantage on the next attack roll it makes before the start of your next turn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Bone of the World-Builder" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_BONE_OF_THE_WORLD_BUILDER">
+		<description>
+			<p>This magical weapon is the finger bone of an ancient and long deceased god. You gain a +3 bonus to attack and damage rolls made with this greatclub. In addition, when you deal damage with this weapon you deal an additional 1d8 necrotic damage.</p>
+			<p class="indent">While you are attuned to this magic weapon and you cast a necromancy spell, it counts as if you had used a spell slot of 2 levels higher than the spell slot you expended, to a maximum of 10th level.</p>
+		</description>
+		<setters>
+			<set name="keywords">greatclub</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greatclub">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">Greatclub</set>
+			<set name="attunement">true</set>
+			<set name="name-format">Bone of the World-Builder, +3</set>
+		</setters>
+	</element>
+	<element name="Bottle of Ship-Keeping" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_BOTTLE_OF_SHIP_KEEPING">
+		<description>
+			<p>This large glass bottle contains an intricately detailed sailing vessel. When the bottle is tilted such that the mouth is pointed down, the ship lists inside the bottle. Over the course of one hour the ship squeezes out of the mouth of the bottle, growing into a full-sized ship as it does so.</p>
+			<p class="indent">Once empty, the bottle can be used to store any sailing vessel by placing the mouth against the ship. Over the course of one hour, the ship will shrink and squeeze into the mouth of the bottle until it fits entirely inside the bottle. Living creatures will be ejected from the ship, taking 2d10 force damage as they move to the nearest unoccupied space by the bottle. Inanimate objects aboard the ship shrink along with the vessel.</p>
+			<p class="indent">If the bottle is broken while a ship is inside, the ship immediately grows to full size.</p>
+			<p class="indent">When this bottle is first found, the DM chooses what type of vessel is in the bottle or determines it randomly from the options below.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Ship</td></tr>
+				</thead>
+				<tr><td>1</td><td>Rowboat</td></tr>
+				<tr><td>2</td><td>Longship</td></tr>
+				<tr><td>3</td><td>Sailing ship</td></tr>
+				<tr><td>4</td><td>Warship</td></tr>
+				<tr><td>5</td><td>Galley</td></tr>
+				<tr><td>6</td><td>Airship</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Chell’s Crossbow" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_MAGIC_ITEM_CHELLS_CROSSBOW">
+		<description>
+			<p>This magical heavy crossbow comes equipped with a pair of vials containing effervescent liquids, one orange and the other blue. Though a crossbow, this magical item cannot be used as a weapon.</p>
+			<p class="indent">Instead, when you fire the crossbow you can choose a space you can see within 400 feet and choose to use the orange vial or the blue vial. An aperture appears in the space you selected, as if you had cast the teleportation circle spell and created a permanent portal. Entering a portal created by the orange vial causes you to exit via the portal created by the blue vial and vice versa. If you have not created a portal with both vials, the portal does not teleport you anywhere. A portal created with this magical item remains until you use the same vial to create a different portal.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="18">18 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Earthen Bell" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_EARTHEN_BELL">
+		<description>
+			<p>This wondrous item appears as a weathered stone handbell. When rung, the bell wakens the slumbering magics of the land. The earthen bell has 12 charges. While holding it, you can use an action to ring the bell and expend 1, 3, or 5 charges to cast a spell. The spell cast is determined by the number of charges expended and the terrain you currently occupy (arctic, coast, desert, forest, grassland, mountain, settlement, swamp, or the Underdark). If you are not in a location that matches any of the terrain types, or you are in a location that could match multiple terrain types, your DM will decide which terrain your location counts as. Constitution is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Arctic.</em></strong> Ice knife (1 charge), sleet storm (3 charges), cone of cold (5 charges).</p>
+			<p class="indent"><strong><em>Coast.</em></strong> Purify food and drink (1 charge), water breathing (3 charges), maelstrom (5 charges).</p>
+			<p class="indent"><strong><em>Desert.</em></strong> Create or destroy water (1 charge), wall of sand (3 charges), insect plague (5 charges).</p>
+			<p class="indent"><strong><em>Forest.</em></strong> Goodberry (1 charge), plant growth (3 charges), tree stride (5 charges).</p>
+			<p class="indent"><strong><em>Grasslands.</em></strong> Beast bond (1 charge), speak with plants (3 charges), wrath of nature (5 charges).</p>
+			<p class="indent"><strong><em>Mountain.</em></strong> Thunderwave (1 charge), meld into stone (3 charges), wall of stone (5 charges).</p>
+			<p class="indent"><strong><em>Settlement.</em></strong> Charm person (1 charge), sending (3 charges), animate objects (5 charges).</p>
+			<p class="indent"><strong><em>Swamp.</em></strong> Entangle (1 charge), stinking cloud (3 charges), contagion (5 charges).</p>
+			<p class="indent"><strong><em>The Underdark.</em></strong> Dissonant whispers (1 charge), enemies abound (3 charges), cloudkill (5 charges).</p>
+			<p class="indent">The earthen bell regains 2d6 charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the bell cracks into many pieces and its magic is lost.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Ectoplasmic Armor" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_ECTOPLASMIC_ARMOR">
+		<description>
+			<p>When placed upon a living creature’s head, this sunbleached elk skull coats the creature’s body in a thick layer of ectoplasm. You have resistance to nonmagical bludgeoning, piercing, and slashing damage while wearing this armor.</p>
+			<p class="indent">You can use a bonus action to turn intangible until the end of your turn. While intangible you can move through creatures and solid objects. If you end the turn inside a creature or object, you move to the nearest unoccupied space and take 1d10 force damage for every 5 feet you are forced to move.</p>
+			<p class="indent">While wearing this armor, undead creatures with an Intelligence score of 3 or lower treat you as an undead creature of their same type and will not attack you unless you attack them first.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM</set>
+			<set name="name-format">Ectoplasmic {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Ensorcelled Weapon" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ENSORCELLED_WEAPON">
+		<description>
+			<p>When you make an attack with this magic weapon, you can choose to use your spellcasting ability modifier instead of your Strength or Dexterity modifier for your attack and damage rolls. You must use the same modifier for both rolls. Additionally, you can use this weapon as a spellcasting focus.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Ensorcelled {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Hour" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_HOUR">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls with this weapon and add your proficiency bonus to initiative rolls.</p>
+			<p class="indent">In addition, you gain limited control over the flow of time. On your turn, you can choose to take an extra action. When you do so, you can’t take this extra action again until 1 hour has passed.</p>
+			<p class="indent"><strong><em>Hands of Time.</em></strong> While you are attuned to this weapon and <em>Minute</em>, the bonus to attack and damage rolls with this weapon increases to +2.</p>
+			<p class="indent">Additionally, you can use an action on your turn to gain all the benefits of completing a short rest. Once you use this ability, you cannot use it again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">rapier</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="rapier">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Rapier</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<stat name="initiative:misc" value="proficiency" />
+			<!-- todo: linked bonus -->
+		</rules>
+	</element>
+	<element name="Love’s Bow" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_LOVES_BOW">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">As an action, you can fire a physical manifestation of love from this bow targeting a creature you can see within the bow’s long range. When you do, that creature must make a Wisdom saving throw (DC = 8 + your proficiency bonus + your Dexterity modifier) or be charmed by a creature of your choice that they can see within 120 feet. This condition lasts for 24 hours, ending early if the charmed creature takes damage from the creature it is charmed by or one of that creature’s allies. While charmed, the charmed creature considers the creature it is charmed by a close personal friend or a love interest (as determined by the player of the charmed creature or the DM for NPCs).</p>
+			<p class="indent">Once you have used this bow to fire a charmed arrow, you cannot do so again until the next dawn. One day a year, during a holiday celebrating a god or goddess of love, this ability can be used an unlimited number of times that day.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any bow">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_BOWS</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Mindkiller" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_Mindkiller">
+		<description>
+			<p>This menacing greataxe is made of a dark metal that reflects no light. When held up to a source of bright light it appears to flicker in and out of sight. You gain a +3 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">When you deal damage with this weapon, you can choose to deal psychic damage instead of slashing damage as normal. If you do, the creature has disadvantage on Intelligence, Wisdom, and Charisma saving throws until the start of your next turn. If you reduce a creature to 0 hit points with psychic damage caused by this weapon, that creature goes unconscious as normal but stabilizes and forgets their identity. This amnesia can only be reversed by a remove curse or wish spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">greataxe</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greataxe">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="weapon">Greataxe</set>
+			<set name="enhancement">3</set>
+			<set name="name-format">Mindkiller, +{{enhancement}}</set>
+		</setters>
+	</element>
+	<element name="Minute" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_MINUTE">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls with this weapon and have advantage on initiative rolls.</p>
+			<p class="indent">In addition, you gain limited control over the flow of time. On your turn, you can choose to take an extra bonus action. When you do so, you use this ability again until 1 minute has passed.</p>
+			<p class="indent"><strong><em>Hands of Time.</em></strong> While you are attuned to this weapon and Hour, the bonus to attack and damage rolls with this weapon increases to +2.</p>
+			<p class="indent">Additionally, you can use your reaction at the end of any turn to take an action. Once you use this ability, you cannot use it again until you finish a short rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">dagger</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="dagger">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Dagger</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<stat name="initiative:misc" value="proficiency" />
+			<!-- todo: linked bonus -->
+		</rules>
+	</element>
+	<element name="Net of Far-Flinging" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_NET_OF_FAR_FLINGING">
+		<description>
+			<p>You gain a +2 bonus to attack rolls made with this net. In addition, its normal and long thrown ranges are multiplied by 5.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="net">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">Net</set>
+		</setters>
+	</element>
+	<element name="Oaken Armor" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_OAKEN_ARMOR">
+		<description>
+			<p>This armor is made from strips of magically treated wood bound together with leather. You have a +2 bonus to AC while wearing this armor.</p>
+			<p class="indent">In addition, you can use an action on your turn to transform into a treant, using the statistics found in the Monster Manual. This transformation lasts for 1 hour or until you use an action to turn back to your normal form. Once this special action is used, it can’t be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="medium, or heavy">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="enhancement">2</set>
+			<set name="name-format">Oaken {{parent}}, +{{enhancement}}</set>
+		</setters>
+	</element>
+	<element name="Shinobi Suit" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_SHINOBI_SUIT">
+		<description>
+			<p>You gain a +1 bonus to AC while wearing this armor. In addition, your movements make no sound and shadows darken around you. You have advantage on Dexterity (Stealth) ability checks.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Shinobi Suit, +1</set>
+		</setters>
+	</element>
+	<element name="Shinobi Suit, Koi Clan" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_SHINOBI_SUIT_KOI_CLAN">
+		<description>
+			<p>You gain a +1 bonus to AC while wearing this armor. In addition, your movements make no sound and shadows darken around you. You have advantage on Dexterity (Stealth) ability checks.</p>
+			<p class="indent"><strong><em>Koi Clan.</em></strong> You can breathe underwater and have a swim speed of 30 feet. While swimming, you can use a bonus action to take the Dash, Disengage, or Dodge actions.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Koi Clan Shinobi Suit, +1</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="speed" bonus="base" />
+		</rules>
+	</element>
+	<element name="Shinobi Suit, Raven Clan" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_SHINOBI_SUIT_RAVEN_CLAN">
+		<description>
+			<p>You gain a +1 bonus to AC while wearing this armor. In addition, your movements make no sound and shadows darken around you. You have advantage on Dexterity (Stealth) ability checks.</p>
+			<p class="indent"><strong><em>Raven Clan.</em></strong> You do not take damage from falling. You can cast the fly spell on yourself. Once you do so, you cannot cast the spell with this magic item again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FLY" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Raven Clan Shinobi Suit, +1</set>
+		</setters>
+	</element>
+	<element name="Shinobi Suit, Spider Clan" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_ARMOR_SHINOBI_SUIT_SPIDER_CLAN">
+		<description>
+			<p>You gain a +1 bonus to AC while wearing this armor. In addition, your movements make no sound and shadows darken around you. You have advantage on Dexterity (Stealth) ability checks.</p>
+			<p class="indent"><strong><em>Spider Clan.</em></strong> You have a climb speed of 30 feet. You can create 30 feet of silk rope as an action on your turn. This rope disintegrates after 24 hours.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT</set>
+			<set name="enhancement">1</set>
+			<set name="name-format">Spider Clan Shinobi Suit, +1</set>
+		</setters>
+		<rules>
+			<stat name="speed:climb" value="speed" bonus="base" />
+		</rules>
+	</element>
+	<element name="Spell Mirror Shield" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_SHIELD_Spell_Mirror_Shield">
+		<description>
+			<p>The surface of this magical shield is a golden mirror. When a creature targets you with a spell that requires a spell attack roll, or magic missile, you can use your reaction to cause the creature to target itself instead.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Legendary</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Tempus Fugit" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_TEMPUS_FUGIT_U">
+		<description>
+			<p>While you are attuned to this magic item, you can cast the fly and haste spells at will. Each time you do, roll a d20. On a 1, you are thrown forward in time by 2d12 hours.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FLY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HASTE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Tempus Fugit" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_TEMPUS_FUGIT_R">
+		<description>
+			<p>While you are attuned to this magic item, you can cast the fly and haste spells at will. Each time you do, roll a d20. On a 1, you are thrown forward in time by 3d12 days.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FLY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HASTE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Tempus Fugit" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_TEMPUS_FUGIT_VR">
+		<description>
+			<p>While you are attuned to this magic item, you can cast the fly and haste spells at will. Each time you do, roll a d20. On a 1, you are thrown forward in time by 4d12 weeks.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FLY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HASTE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Weavesaber" type="Magic Item" source="The Magus" id="ID_DMSG_HMGS_MAGIC_ITEM_WEAVESABER">
+		<description>
+			<p>While holding this wand, you gain a +1 bonus to spell attack rolls. In addition, you can use a bonus action to cause a column of prismatic magical energy to extend approximately 4 feet from this wand, allowing it to be used as a melee weapon. This weapon deals 1d8 force damage on a hit and has the finesse, light, and versatile (1d10) properties. The column dissipates when you take a bonus action to cause it to or when you lose your hold on the weapon.</p>
+		</description>
+		<setters>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="spellcasting:attack" value="1" />
+		</rules>
+	</element>
 
 	<!-- Arcane Order -->
 	<append id="ID_DMSG_HMGS_SPELL_ARCING_ARROW">
