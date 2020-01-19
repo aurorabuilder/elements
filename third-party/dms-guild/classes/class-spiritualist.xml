@@ -72,38 +72,78 @@
 				<li>Leather armor and a simple weapon of your choice</li>
 			</ul>
 			<!-- class table here -->
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
-			<div element="ID____" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_PACT_MAGIC" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_DEATHS_THRESHOLD" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_CHANNEL_SPIRIT" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASM" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SIXTH_SENSE" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_THANATOPHOBIA" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ABILITY_SCORE_INCREASE" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_LINGUA_MORTIS" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_STYGIAN_INHALATION" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_OCCULT_INSIGHT" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SPECTRAL_SHROUD" />
+			<div element="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASMIC_TRANSUBSTANTIATION" />
 		</description>
 		<setters>
 			<set name="hd">d8</set>
 		</setters>
 		<sheet display="false" />
 		<rules>
-			
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
-			<grant type="Class Feature" id="ID____" level="level" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" requirements="!ID_DMSG_HSPRT_MULTICLASS_SPIRITUALIST" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_DMSG_HSPRT_MULTICLASS_SPIRITUALIST" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_DMSG_HSPRT_MULTICLASS_SPIRITUALIST" />
+			<select type="Proficiency" name="Skill Proficiency, Spiritualist" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_RELIGION" number="2" />			
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_PACT_MAGIC" level="1" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_DEATHS_THRESHOLD" level="1" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_CHANNEL_SPIRIT" level="2" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASM" level="2" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SIXTH_SENSE" level="3" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_THANATOPHOBIA" level="3" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ABILITY_SCORE_INCREASE" level="4" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_LINGUA_MORTIS" level="5" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_STYGIAN_INHALATION" level="10" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_OCCULT_INSIGHT" level="11" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SPECTRAL_SHROUD" level="18" />
+			<grant type="Class Feature" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASMIC_TRANSUBSTANTIATION" level="20" />
 		</rules>
+		<multiclass id="ID_DMSG_HSPRT_MULTICLASS_SPIRITUALIST">
+			<prerequisite>Charisma 13</prerequisite>
+			<requirements>[cha:13]</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Light armor, simple weapons</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+			</rules>
+		</multiclass>
 	</element>
 	<element name="Pact Magic" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_PACT_MAGIC">
 		<description>
-			<p></p>
+			<p>Your ability to pierce the veil that separates the living from the dead grants you the ability to cast spells. See chapter 10 of the Player’s Handbook for the general rules of spellcasting and this document for the spiritualist spell list.</p>
+			<h5 class="caption">Cantrips</h5>
+			<p>You know two cantrips of your choice from the spiritualist spell list. You learn additional spiritualist cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Spiritualist table.</p>
+			<h5 class="caption">Preparing and Casting Spells</h5>
+			<p>The Spiritualist table shows how many spell slots you have. The table also shows what the level of those slots is; all of your spell slots are the same level. To cast one of your spiritualist spells of 1st level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.</p>
+			<p class="indent">You prepare the list of spiritualist spells that are available for you to cast, choosing from the spiritualist spell list. When you do so, choose a number of spiritualist spells equal to your Charisma modifier + half your spiritualist level, rounded down (minimum of one spell). The spell must be of a level for which you have spell slots.</p>
+			<p class="indent">For example, when you are 5th level, you have two 3rd-level spell slots. To cast the 1st-level spell forsaken chains, you must spend one of those slots, and you cast it as a 3rd-level spell. Casting the spell doesn’t remove it from your list of prepared spells.</p>
+			<p class="indent">You can change your list of prepared spells when you finish a long rest. Preparing a new list of spiritualist spells required time spent in meditation and communion with the spirits of the departed: at least 1 minute per spell level for each spell on your list.</p>
+			<h5 class="caption">Spellcasting Ability</h5>
+			<p>Charisma is your spellcasting ability for spiritualist spells. Your ability to call out to the unquiet dead and reach into the minds of the living comes from a powerful sense of self. You use your Charisma whenever a spiritualist spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a spiritualist spell you cast and when making an attack roll with one.</p>
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Charisma modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Charisma modifier</p>
+			</center>
+			<h5 class="caption">Ritual Casting</h5>
+			<p>You can cast a spiritualist spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
+			<h5 class="caption">Spellcasting Focus</h5>
+			<p>You can use a crystal, reliquary, spirit board, or totem (see chapter 5, “Equipment”, of the Player’s Handbook) as a spellcasting focus for your spiritualist spells.</p>
+			<div class="sidebar">
+				<h5>SPIRIT BOARDS</h5>
+				<p>A spirit board consists of a planchette and small board or tablet, often made from paper and laminated to wood, that is decorated with letters and numbers. People use spirit boards to attempt to communicate with the dead by asking a question outloud and touching the planchette lightly, believing that unquiet spirits will use the planchette to spell out answers to the petitioner’s questions. Spiritualists can use spirit boards as a spellcasting focus. Spirits boards costs 3 sp and weigh 1 lb.</p>
+			</div>
 		</description>
 		<sheet>
 			<description></description>
@@ -111,7 +151,7 @@
 	</element>
 	<element name="Death’s Threshold" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_DEATHS_THRESHOLD">
 		<description>
-			<p></p>
+			<p>At 1st level, your psychic abilities stem from the cause of your near death experience, called a threshold: beast &amp; briar, bloody blade, or plague &amp; poison, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, and 14th level.</p>
 		</description>
 		<sheet display="false">
 			<description></description>
@@ -122,7 +162,9 @@
 	</element>
 	<element name="Channel Spirit" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_CHANNEL_SPIRIT">
 		<description>
-			<p></p>
+			<p>Your connection to death allows you to channel the restless spirits of the dead. While channeling these spirits you remain in control of your behavior and actions. In exchange for the vicarious experience of living once more, the spirit lends you a portion of its mystical power.</p>
+			<p class="indent">At 2nd level, you know one spirit. You can perform a 10 minute ritual to channel a spirit you know. The spirit remains channeled until you go unconscious, use an action to dismiss it, or perform this ritual again. When you gain certain spiritualist levels, you come to know additional spirits of your choice, as shown in the Spirits Known column of the Spiritualist table.</p>
+			<p class="indent">Additionally, when you gain a level in this class, you can choose one of the spirits you know and replace it with another spirit.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -130,7 +172,20 @@
 	</element>
 	<element name="Ectoplasm" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASM">
 		<description>
-			<p></p>
+			<p>Starting at 2nd level, you learn to manipulate the invisible and ethereal energy of death, ectoplasm. Your access to this substance is represented by a number of ectoplasm points. Your spiritualist level determines the number of points you have, as shown in the Ectoplasm Points column of the Spiritualist table.</p>
+			<p class="indent">You can spend these points to activate certain spiritualist features, most of which are dependent on the spirit you have channeled. Additionally, you can use a bonus action on your turn to convert your ectoplasm points into additional Spell Slots. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots up to the level than you can cast with your Pact Magic. You lose unused spell slots created in this way when you take a long rest.</p>
+			<p class="indent">When you spend an ectoplasm point, it is unavailable until you finish a long rest, at the end of which you regain all of your expended ectoplasm.</p>
+			<h5 class="caption">CREATING SPELL SLOTS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Slot Level</td><td>Ectoplasm</td></tr>
+				</thead>
+				<tr><td>1st</td><td>2</td></tr>
+				<tr><td>2nd</td><td>3</td></tr>
+				<tr><td>3rd</td><td>5</td></tr>
+				<tr><td>4th</td><td>6</td></tr>
+				<tr><td>5th</td><td>7</td></tr>
+			</table>
 		</description>
 		<sheet>
 			<description></description>
@@ -138,7 +193,7 @@
 	</element>
 	<element name="Sixth Sense" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SIXTH_SENSE">
 		<description>
-			<p></p>
+			<p>At 3rd level, you can use an action and spend 1 ectoplasm point to open your senses to the invisible world for 1 hour. During this time, you see invisible creatures and objects as if they were visible, and you can see and hear into the Ethereal Plane.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -146,7 +201,7 @@
 	</element>
 	<element name="Thanatophobia" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_THANATOPHOBIA">
 		<description>
-			<p></p>
+			<p>At 3rd level, you are proficient in death saving throws.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -170,7 +225,7 @@
 	</element>
 	<element name="Lingua Mortis" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_LINGUA_MORTIS">
 		<description>
-			<p></p>
+			<p>Starting at 5th level, you can use an action and spend 1 ectoplasm point to cast the speak with dead spell. When you do, you and the corpse perfectly understand each other, even if you don’t share a language.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -178,7 +233,7 @@
 	</element>
 	<element name="Stygian Inhalation" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_STYGIAN_INHALATION">
 		<description>
-			<p></p>
+			<p>At 10th level, you can inhale the deathly vapors let off by living creatures as they pass. When a living creature within 30 feet of you dies, you can use your reaction to gain temporary hit points equal to twice your level in this class. While you have temporary hit points granted by this feature, wisps of black smoke escape your mouth when you speak and you have resistance to nonmagical damage. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -186,7 +241,8 @@
 	</element>
 	<element name="Occult Insight" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_OCCULT_INSIGHT">
 		<description>
-			<p></p>
+			<p>At 11th level, your spiritual power evolves, giving you the ability to cast higher level spells. Each time you finish a long rest, you can choose one 6th level spiritualist spell. You can cast that spell without expending a spell slot and must finish a long rest before you can do so again.</p>
+			<p class="indent">At higher levels, you gain the ability to cast additional spiritualist spells in the same way: at 13th level you can choose one 7th-level spell, at 15th level you can choose one 8th-level spell, and at 17th level you can choose one 9th-level spell. You regain the ability to cast a spell of each of these levels with this feature when you finish a long rest.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -194,7 +250,7 @@
 	</element>
 	<element name="Spectral Shroud" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_SPECTRAL_SHROUD">
 		<description>
-			<p></p>
+			<p>At 18th level, you are so shrouded in spectral energy that death has difficulty finding you. You cannot die of old age and when you roll a 1 on the d20 when making a death saving throw, it only counts as one failure, rather than two as normal.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -202,27 +258,25 @@
 	</element>
 	<element name="Ectoplasmic Transubstantiation" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_ECTOPLASMIC_TRANSUBSTANTIATION">
 		<description>
-			<p></p>
+			<p>At 20th level, you have discovered the ability to transform your flesh into the substance of spirits. When you take an action to do so, you gain half your maximum ectoplasm points and the following benefits for 1 minute:</p>
+			<ul>
+				<li>You gain a fly speed of 60.</li>
+				<li>You are immune to nonmagical damage.</li>
+				<li>You can move through, but not end your movement in, creatures and objects.</li>
+				<li>You have truesight out to a range of 300 feet.</li>
+				<li>As a bonus action on each of your turns, you can step from the material plane into the Border Ethereal or from the Border Ethereal into the material plane.</li>
+			</ul>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
 		</sheet>
 	</element>
 	
-	<!-- <element name="name" type="Class Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_CLASS_FEATURE_SPIRITUALIST_name">
-		<description>
-			<p></p>
-		</description>
-		<sheet>
-			<description></description>
-		</sheet>
-	</element> -->
-
 	<element name="Beast &amp; Briar" type="Archetype" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_SPIRITUALIST_BEAST_BRIAR">
 		<supports>Spiritualist Deaths Thresholds</supports>
 		<description>
-			<p></p>
-			<p class="indent"></p>
+			<p>A violent encounter with a wild beast or the sting of poisonous nettles nearly laid you low. When you survived, you discovered your experience had changed you. Not only were you aware of the inconstant boundary between life and death, you also found you had a connection to the natural world.</p>
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_EXPANDED_SPELL_LIST" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_GREY_GARDENER" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_POSSESS_BEAST" />
@@ -246,30 +300,31 @@
 				<thead>
 					<tr><td>Spell Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>1st</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>2nd</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>3rd</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>4th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>1st</td><td><em>animal friendship, entangle</em></td></tr>
+				<tr><td>2nd</td><td><em>animal messenger, spike growth</em></td></tr>
+				<tr><td>3rd</td><td><em>conjure animals, plant growth</em></td></tr>
+				<tr><td>4th</td><td><em>grasping vine, polymorph</em></td></tr>
+				<tr><td>5th</td><td><em>commune with nature, tree stride</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false" />
 		<spellcasting name="Spiritualist" extend="true">
-			<extend>ID_PHB_SPELL_xxxxx1</extend>
-			<extend>ID_PHB_SPELL_xxxxx2</extend>
-			<extend>ID_PHB_SPELL_xxxxx3</extend>
-			<extend>ID_PHB_SPELL_xxxxx4</extend>
-			<extend>ID_PHB_SPELL_xxxxx5</extend>
-			<extend>ID_PHB_SPELL_xxxxx6</extend>
-			<extend>ID_PHB_SPELL_xxxxx7</extend>
-			<extend>ID_PHB_SPELL_xxxxx8</extend>
-			<extend>ID_PHB_SPELL_xxxxx9</extend>
-			<extend>ID_PHB_SPELL_xxxxx0</extend>
+			<extend>ID_PHB_SPELL_ANIMAL_FRIENDSHIP</extend>
+			<extend>ID_PHB_SPELL_ENTANGLE</extend>
+			<extend>ID_PHB_SPELL_ANIMAL_MESSENGER</extend>
+			<extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+			<extend>ID_PHB_SPELL_CONJURE_ANIMALS</extend>
+			<extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+			<extend>ID_PHB_SPELL_GRASPING_VINE</extend>
+			<extend>ID_PHB_SPELL_POLYMORPH</extend>
+			<extend>ID_PHB_SPELL_COMMUNE_WITH_NATURE</extend>
+			<extend>ID_PHB_SPELL_TREE_STRIDE</extend>
 		</spellcasting>
 	</element>
 	<element name="Grey Gardener" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_GREY_GARDENER">
 		<description>
-			<p></p>
+			<p>Starting when you choose this threshold at 1st level, you gain the druidcraft cantrip, which is considered a spiritualist cantrip for you. This cantrip does not count against the number of spiritualists cantrip you know.</p>
+			<p class="indent">Additionally, moving through nonmagical difficult terrain costs no extra movement and you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such as those created by the entangle spell.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -277,7 +332,9 @@
 	</element>
 	<element name="Possess Beast" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_POSSESS_BEAST">
 		<description>
-			<p></p>
+			<p>At 6th level, you can use an action to try to possess a beast you can see within 120 feet. When you do, choose a beast within range and spend any number of ectoplasm points. Roll 5d8 + an additional 1d8 for every ectoplasm point you spent. If the total number equals or exceeds the current hit points of the beast and the beast has an Intelligence of 3 or lower, you possess it. This possession ends after a number of hours equal to your level in this class, when you use an action to end it, or when the possessed creature is reduced to 0 hit points.</p>
+			<p class="indent">While you possess the creature, you experience things from the beast’s perspective through its senses and have complete control of its actions. During this time, you cannot cast spells or take actions that would require your own body to move to be successful and you are blind and deaf in regards to your own senses.</p>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -285,7 +342,10 @@
 	</element>
 	<element name="Green Graveyard" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BEAST_BRIAR_GREEN_GRAVEYARD">
 		<description>
-			<p></p>
+			<p>At 14th level, you can use an action to cause spectral flora and fauna to manifest around you for 1 minute. When you do, the area within 60 feet of you is considered difficult terrain to creatures of your choice. In addition, you can use a bonus action on each of your turns to take one of the following effects.</p>
+			<p class="indent"><strong><em>Spectral Vines.</em></strong> Choose a creature you can see within 60 feet. That creature must make a Dexterity saving throw as spectral vines clutch at it. On a failure, the creature takes 2d6 piercing damage and its movement speed is halved until the end of its next turn. On a success, it takes half damage and its speed is not reduced.</p>
+			<p class="indent"><strong><em>Ectoplasmic Animals.</em></strong> Choose a creature you can see within 60 feet. That creature must make a Wisdom saving throw as ectoplasmic beasts attack it. On a failure, the creature takes 1d8 psychic damage and is frightened of you until the end of its next turn.</p>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -296,8 +356,7 @@
 	<element name="Bloody Blade" type="Archetype" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_SPIRITUALIST_BLOODY_BLADE">
 		<supports>Spiritualist Deaths Thresholds</supports>
 		<description>
-			<p></p>
-			<p class="indent"></p>
+			<p>You were nearly done in by an attack at the hands of another humanoid. Whether it was a trusted friend, a stranger, or a hired assassin, the experience branded you with a interest in and capacity to inflict physical violence upon others. Spiritualists of this threshold sometimes see themselves as angels of death, saddled with the responsibility of judging who lives and who dies.</p>
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_EXPANDED_SPELL_LIST" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_BONUS_PROFICIENCIES" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_BAD_BLOOD" />
@@ -318,35 +377,35 @@
 	<element name="Expanded Spell List" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_EXPANDED_SPELL_LIST">
 		<description>
 			<p>The nature of your near death experience expands the magic available to you. The following spells are added to the spiritualist spell list for you.</p>
-			<h5>Bloody Blade EXPANDED SPELLS</h5>
+			<h5 class="caption">BLOODY BLADE EXPANDED SPELLS</h5>
 			<table>
 				<thead>
 					<tr><td>Spell Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>1st</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>2nd</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>3rd</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>4th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>1st</td><td><em>hunter’s mark, wrathful smite</em></td></tr>
+				<tr><td>2nd</td><td><em>branding smite, magic weapon</em></td></tr>
+				<tr><td>3rd</td><td><em>haste, vampiric touch</em></td></tr>
+				<tr><td>4th</td><td><em>freedom of movement, mordenkainen’s faithful hound</em></td></tr>
+				<tr><td>5th</td><td><em>passwall, steel wind strike</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false" />
 		<spellcasting name="Spiritualist" extend="true">
-			<extend>ID_PHB_SPELL_xxxxx1</extend>
-			<extend>ID_PHB_SPELL_xxxxx2</extend>
-			<extend>ID_PHB_SPELL_xxxxx3</extend>
-			<extend>ID_PHB_SPELL_xxxxx4</extend>
-			<extend>ID_PHB_SPELL_xxxxx5</extend>
-			<extend>ID_PHB_SPELL_xxxxx6</extend>
-			<extend>ID_PHB_SPELL_xxxxx7</extend>
-			<extend>ID_PHB_SPELL_xxxxx8</extend>
-			<extend>ID_PHB_SPELL_xxxxx9</extend>
-			<extend>ID_PHB_SPELL_xxxxx0</extend>
+			<extend>ID_PHB_SPELL_HUNTERS_MARK</extend>
+			<extend>ID_PHB_SPELL_WRATHFUL_SMITE</extend>
+			<extend>ID_PHB_SPELL_BRANDING_SMITE</extend>
+			<extend>ID_PHB_SPELL_MAGIC_WEAPON</extend>
+			<extend>ID_PHB_SPELL_HASTE</extend>
+			<extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
+			<extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+			<extend>ID_PHB_SPELL_MORDENKAINENS_FAITHFUL_HOUND</extend>
+			<extend>ID_PHB_SPELL_PASSWALL</extend>
+			<extend>ID_XGTE_SPELL_STEEL_WIND_STRIKE</extend>
 		</spellcasting>
 	</element>
 	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_BONUS_PROFICIENCIES">
 		<description>
-			<p></p>
+			<p>At 1st level, you gain proficiency with medium armor and martial weapons.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -354,7 +413,7 @@
 	</element>
 	<element name="Bad Blood" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_BAD_BLOOD">
 		<description>
-			<p></p>
+			<p>Also at 1st level, your hit point maximum increases by 1. It increases by 1 again each time you gain a level in this class.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -362,7 +421,7 @@
 	</element>
 	<element name="Extra Attack" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_EXTRA_ATTACK">
 		<description>
-			<p></p>
+			<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -370,7 +429,8 @@
 	</element>
 	<element name="Killing Field" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_BLOODY_BLADE_KILLING_FIELD">
 		<description>
-			<p></p>
+			<p>At 14th level, you can use an action to suffuse the area around you with violent energy. When you do, on each of your turns for the next minute you can use a bonus action to cause harm to a creature you can see within 60 feet. If the creature’s current hit points equal its hit point maximum, it takes 1d6 necrotic damage. If the creature’s current hit points equal more than half its hit point maximum, it takes 2d6 necrotic damage. If the creature’s current hit points are equal to or less than its hit point maximum, it takes 3d6 necrotic damage.</p>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -381,8 +441,7 @@
 	<element name="Plague &amp; Poison" type="Archetype" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_SPIRITUALIST_PLAGUE_POISON">
 		<supports>Spiritualist Deaths Thresholds</supports>
 		<description>
-			<p></p>
-			<p class="indent"></p>
+			<p>Just when a disease or toxin brought you to the brink of death, your fever broke and you survived. The foreign element that nearly killed you left a stain on your soul, giving you an unnatural affinity for plagues and poisons. Some spiritualists of this threshold appear perpetually ill or afflicted by the toxin that nearly killed them.</p>
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_EXPANDED_SPELL_LIST" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_INURED_TO_TOXINS" />
 			<div element="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_DEVITALIZING_TOUCH" />
@@ -406,30 +465,30 @@
 				<thead>
 					<tr><td>Spell Level</td><td>Spells</td></tr>
 				</thead>
-				<tr><td>1st</td><td><em>xxxxx1, xxxxx2</em></td></tr>
-				<tr><td>2nd</td><td><em>xxxxx3, xxxxx4</em></td></tr>
-				<tr><td>3rd</td><td><em>xxxxx5, xxxxx6</em></td></tr>
-				<tr><td>4th</td><td><em>xxxxx7, xxxxx8</em></td></tr>
-				<tr><td>5th</td><td><em>xxxxx9, xxxxx0</em></td></tr>
+				<tr><td>1st</td><td><em>detect poison and disease, purify food and drink</em></td></tr>
+				<tr><td>2nd</td><td><em>lesser restoration, protection from poison</em></td></tr>
+				<tr><td>3rd</td><td><em>gaseous form, vampiric touch</em></td></tr>
+				<tr><td>4th</td><td><em>blight, sickening radiance</em></td></tr>
+				<tr><td>5th</td><td><em>contagion, enervation</em></td></tr>
 			</table>
 		</description>
 		<sheet display="false" />
 		<spellcasting name="Spiritualist" extend="true">
-			<extend>ID_PHB_SPELL_xxxxx1</extend>
-			<extend>ID_PHB_SPELL_xxxxx2</extend>
-			<extend>ID_PHB_SPELL_xxxxx3</extend>
-			<extend>ID_PHB_SPELL_xxxxx4</extend>
-			<extend>ID_PHB_SPELL_xxxxx5</extend>
-			<extend>ID_PHB_SPELL_xxxxx6</extend>
-			<extend>ID_PHB_SPELL_xxxxx7</extend>
-			<extend>ID_PHB_SPELL_xxxxx8</extend>
-			<extend>ID_PHB_SPELL_xxxxx9</extend>
-			<extend>ID_PHB_SPELL_xxxxx0</extend>
+			<extend>ID_PHB_SPELL_DETECT_POISON_AND_DISEASE</extend>
+			<extend>ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK</extend>
+			<extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_POISON</extend>
+			<extend>ID_PHB_SPELL_GASEOUS_FORM</extend>
+			<extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
+			<extend>ID_PHB_SPELL_BLIGHT</extend>
+			<extend>ID_XGTE_SPELL_SICKENING_RADIANCE</extend>
+			<extend>ID_PHB_SPELL_CONTAGION</extend>
+			<extend>ID_XGTE_SPELL_ENERVATION</extend>
 		</spellcasting>
 	</element>
 	<element name="Inured to Toxins" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_INURED_TO_TOXINS">
 		<description>
-			<p></p>
+			<p>Starting when you take this threshold at 1st level, you have resistance to poison damage. In addition, you have advantage on saving throws against disease and being poisoned.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -437,7 +496,8 @@
 	</element>
 	<element name="Devitalizing Touch" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_DEVITALIZING_TOUCH">
 		<description>
-			<p></p>
+			<p>At 6th level, when you use an action to touch a creature, you can unleash a devastating ailment into their system. When you do, you may expend any number of ectoplasm points. The creature loses 1d6 hit points + an additional 1d6 for every ectoplasm point you spent. The creature must succeed on a Constitution saving throw or have its maximum hit points reduced by the same amount. This reduction in maximum hit points ends when the creature finishes a long rest.</p>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -445,7 +505,8 @@
 	</element>
 	<element name="Scarlet Fever" type="Archetype Feature" source="The Spiritualist" id="ID_DMSG_HSPRT_ARCHETYPE_FEATURE_PLAGUE_POISON_SCARLET_FEVER">
 		<description>
-			<p></p>
+			<p>At 14th level, you can use an action to emit a fast acting airborne disease to each creature of your choice within 60 feet. Chosen creatures must succeed on a Constitution saving throw or take 3d6 necrotic damage. For the next minute, you can use a bonus action on each of your turns to make a creature who failed this saving throw repeat the saving throw, taking the damage again on a failure.</p>
+			<p class="indent">After you use this feature, you must finish a long rest before you can use it again.</p>
 		</description>
 		<sheet>
 			<description></description>
@@ -463,39 +524,42 @@
 	<element name="Corpse Mask" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_CORPSE_MASK">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>Touching the corpse of a humanoid you transform your physical appearance - including your clothing, armor, weapons, and other belongings on your person - to look like the corpse did in life minutes before its death. You retain all of your own ability scores, features, traits, and other abilities.</p>
+			<p class="indent">While disguised as the dead you also instinctively mimic its mannerisms. Creatures familiar with the deceased humanoid can attempt to ascertain if you are in fact the deceased by using its action to make an Intelligence (Investigation) check against your spell save DC.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the duration increases to 8 hours. When you cast this spell using a spell slot of 5th level or higher, the duration increases to 24 hours.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">1</set>
+			<set name="school">transmutation</set>
 			<set name="time">1 action</set>
 			<set name="range">Self</set>
 			<set name="duration">Instantaneous</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
 			<set name="isConcentration">false</set>
-			<set name="isRitual">false</set>
+			<set name="isRitual">true</set>
 		</setters>
 	</element>
 	<element name="Drain" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_DRAIN">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>Stretching out your hand and pointing your finger at a creature within range, a flash of negative energy briefly connects the two of you. The targeted creature must succeed on a Constitution saving throw or take 3d4 necrotic damage. If the creature fails its saving throw, you gain a number of temporary hit points equivalent to the damage the creature takes. You lose any temporary hit points granted by this spell after one minute.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, each level beyond the first adds 2d4 to the damage dealt by this spell.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">1</set>
+			<set name="school">necromancy</set>
 			<set name="time">1 action</set>
-			<set name="range">Self</set>
+			<set name="range">30 feet</set>
 			<set name="duration">Instantaneous</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
+			<set name="materialComponent">a red ribbon</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -503,19 +567,20 @@
 	<element name="Exorcise" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_EXORCISE">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>You make a sign of protection in the air between you and one creature you can see within range. If the target is undead or is not native to the Material Plane, it must succeed on a Charisma saving throw or take 1d8 force damage and cannot willingly move closer to you until the end of its next turn.</p>
+			<p class="indent">The spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">1</set>
+			<set name="school">Abjuration</set>
 			<set name="time">1 action</set>
-			<set name="range">Self</set>
+			<set name="range">30 feet</set>
 			<set name="duration">Instantaneous</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
+			<set name="materialComponent">a prayer book</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -523,59 +588,60 @@
 	<element name="Forsaken Chains" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_FORSAKEN_CHAINS">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>You gesture at a creature within range and three ghostly manacles and chains spring from the ground, latching onto the creature. Each time the creature moves 5 feet, one of the chains breaks and the creature takes 1d12 necrotic damage.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, two additional chains latch onto the creature per spell slot above 1st level.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
+			<set name="level">1</set>
 			<set name="school">Evocation</set>
 			<set name="time">1 action</set>
-			<set name="range">Self</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">120 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
-			<set name="isConcentration">false</set>
+			<set name="materialComponent">a length of chain</set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
 	<element name="Inquisitor’s Eye" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_INQUISITORS_EYE">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>You open your mind to details that might otherwise escape your notice. Whenever you make an Insight, Intimidation, Investigation, or Perception ability check before the end of this spell you can roll a 1d4 and add it to the result. After making an ability check with one of those skills you can end this spell early to change the result of the d20 roll to 20.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">1</set>
+			<set name="school">divination</set>
 			<set name="time">1 action</set>
 			<set name="range">Self</set>
-			<set name="duration">Instantaneous</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
-			<set name="isConcentration">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
 	<element name="Stolen Life" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_STOLEN_LIFE">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>Running your fingers across a creature, their body is wracked with the pain of stolen life as years that were theirs become yours. Make a melee spell attack against a creature within reach. On a hit, deal 8d8 necrotic damage. If that creature is a humanoid it must succeed on a Constitution saving throw or age 1d12 years. You add the years that creature aged to your maximum natural life span.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">5</set>
+			<set name="school">necromancy</set>
 			<set name="time">1 action</set>
-			<set name="range">Self</set>
+			<set name="range">Touch</set>
 			<set name="duration">Instantaneous</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
+			<set name="materialComponent">a calendar or timepiece older than you are worth 1 sp or more</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -583,20 +649,22 @@
 	<element name="Summon Ghost" type="Spell" source="The Spiritualist" id="ID_DMSG_HSPRT_SPELL_SUMMON_GHOST">
 		<supports>supports</supports>
 		<description>
-			<p></p>
+			<p>You call out to the restless dead to enter your presence, summoning one ghost. The ghost appears in an unoccupied space you can see within range, and the ghost disappears when it drops to 0 hit points or when the spell ends.</p>
+			<p class="indent">Roll initiative for the ghost, which has its own turns. One each of its turns, you can issue a verbal command (requiring no action on your part), telling it what it must do on its next turn. If you issue no command, it spends it turn attacking any creature within reach that has attacked it.</p>
+			<p class="indent">When this spell ends, the ghost makes a Charisma saving throw. The ghost has disadvantage on this saving throw if you know its name and how it died. On a failed save, the spell ends and the ghost disappears. On a successful save, your control over the ghost ends and it is free to return to where it came from or remain where it is.</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
-			<set name="level">level</set>
-			<set name="school">Evocation</set>
+			<set name="level">5</set>
+			<set name="school">conjuration</set>
 			<set name="time">1 action</set>
-			<set name="range">Self</set>
-			<set name="duration">Instantaneous</set>
+			<set name="range">90 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">component</set>
-			<set name="isConcentration">false</set>
+			<set name="materialComponent">a bed sheet</set>
+			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
