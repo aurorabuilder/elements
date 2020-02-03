@@ -33,6 +33,8 @@ Provide a link to the website where the content is presented and more informatio
 
 When making a request make sure it's in the [project scope](#scope). Out of scope requests will be closed.
 
+Disclaimer: _Making a request does not guarantee it will be included._
+
 <br>
 
 <a name="pull-requests"></a>
