@@ -85,12 +85,16 @@
 		<description>
 			<p><em>14th-level College of Creation feature</em></p>
 			<p>Your mastery over the Song of Creation allows you to bring items to life. When you create a nonmagical item using your Performance of Creation feature, you can instill life into it. The dancing item is under your control until the item vanishes or until it is reduced to 0 hit points.</p>
+			<p class="indent">In combat, the animated item shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action. When you use your Bardic Inspiration, you can command which action your animated item takes as part of the same bonus action.</p>
 		</description>
 		<sheet>
-			<description>When you create a nonmagical item using your Performance of Creation feature, you can instill life into it. The dancing item is under your control until the item vanishes or until it is reduced to 0 hp.</description>
+			<description>When you create a nonmagical item using your Performance of Creation feature, you can instill life into it. The dancing item is under your control until the item vanishes or until it is reduced to 0 hp.
+			In combat, the animated item shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action. When you use your Bardic Inspiration, you can command which action your animated item takes as part of the same bonus action.</description>
 		</sheet>
+		<rules>
+			<select type="Companion" name="Dancing Item" supports="UA20200204 Dancing Item" default="ID_WOTC_UA20200204_COMPANION_BARD_DANCING_ITEM" optional="true" />
+		</rules>
 	</element>
-
 	<element name="Note of Destruction" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_ARCHETYPE_FEATURE_CREATION_NOTE_OF_DESTRUCTION">
 		<compendium display="false" />
 		<description>
@@ -119,6 +123,191 @@
 		</sheet>
 	</element>
 	
+	<element name="Dancing Item (Large)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_BARD_DANCING_ITEM">
+		<supports>UA20200204 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200204_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="saves">Str +9, Con +8</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Large</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_SAVING_THROWS,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200204_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Medium)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_BARD_DANCING_ITEM_MEDIUM">
+		<supports>UA20200204 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200204_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="saves">Str +9, Con +8</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_SAVING_THROWS,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200204_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Small)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_BARD_DANCING_ITEM_SMALL">
+		<supports>UA20200204 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200204_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="saves">Str +9, Con +8</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Small</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_SAVING_THROWS,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200204_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Tiny)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_BARD_DANCING_ITEM_TINY">
+		<supports>UA20200204 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200204_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="saves">Str +9, Con +8</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_SAVING_THROWS,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200204_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Saving Throws" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_SAVING_THROWS">
+		<description>
+			<p>The dancing item has proficiency with Strength and Constitution saving throws.</p>
+		</description>
+		<sheet>
+			<description>The dancing item has proficiency with Strength (+9) and Constitution (+8) saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Endless Waltz" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ">
+		<description>
+			<p>Immediately after the item makes a slam attack, it can take the Dodge action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>Immediately after the item makes a slam attack, it can take the Dodge action as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Immutable Form" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM">
+		<description>
+			<p>The item is immune to any spell or effect that would alter its form.</p>
+		</description>
+		<sheet>
+			<description>The item is immune to any spell or effect that would alter its form.</description>
+		</sheet>
+	</element>
+	<element name="Force-Empowered Slam" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM">
+		<description>
+			<p>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 2d8 + your Charisma modifier force damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 2d8 + your Charisma modifier force damage.</description>
+		</sheet>
+	</element>
+
 	<element name="Love Domain" type="Archetype" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200204_ARCHETYPE_CLERIC_LOVE_DOMAIN">
 		<supports>Divine Domain</supports>
 		<description>
