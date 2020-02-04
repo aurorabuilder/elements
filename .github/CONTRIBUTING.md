@@ -40,7 +40,7 @@ Disclaimer: _Making a request does not guarantee it will be included._
 <a name="pull-requests"></a>
 ## Pull Requests
 
-Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instread create a new branch for it.
+Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instead create a new branch for it.
 
 Please ask first before embarking on any significant pull request (e.g. adding significant content, refactoring files), otherwise you risk spending a lot of time working on something that the project's developer might not want to merge into the repository.
 
@@ -49,7 +49,7 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 * Give your commits a meaningful name instead of just _updated file1.xml_
 * When making changes to an existing file, increment the version (e.g. from 0.1.2 to 0.1.3)
 * Indent (tabs) the files properly to make them readable
-* Make sure the IDs of new elements only contain alphanumeric characters and underscores (`[A-Z]`, `[0-1]`, `_`) and no spaces or other special characters.
+* Make sure the IDs of new elements only contain alphanumeric characters and underscores (`[A-Z]`, `[0-9]`, `_`) and no spaces or other special characters.
 * Make sure to check and test your files - for example: when making a class make sure you've tested it with all archetype combinations for levels 1-20
 * Ensure the contribution is complete and ready to checked and merged. If you're working on something large, you can create an issue with a todo list to communicate your progress.
 
@@ -58,7 +58,6 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 <a name="scope"></a>
 ## Project Scope
 
-<a name="scope-out"></a>
 ### In the Project Scope
 
 * Official Core Rulebooks and Supplements
@@ -66,12 +65,12 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 * Third-Party <sup>2</sup>
 
 <sup>1</sup> some playtest material might require features that are not implemented, in which case they are not included in the repository<br>
-<sup>2</sup> following one of more of these guidelines:
+<sup>2</sup> following one or more of these guidelines:
 
 * content published under the OGL license
 * material that has been playtested (but not playtest material)
-* published as hardcover/softcover / available in print
 * documented changes and not prone to frequent changes (maintainablility)
+* published as hardcover / softcover / available in print
 * popular, highly rated, and well designed documents show care and are a plus 
 * quality over quantity
 
@@ -85,6 +84,6 @@ This will help keep things maintainable. You can host content that falls out of 
 * content from other franchises converted to 5e (e.g. lord of the rings, pokemon, final fantasy, etc)
 * content that has features not supported by the character builder or 5e rules in general
 
-<sup>1</sup> There is a community repository for content for reddit [here](https://github.com/community-elements/elements-reddit).<br>
-<sup>2</sup> There is a community repository for content for dnd wiki [here](https://github.com/community-elements/elements-dndwiki).
+<sup>1</sup> There is a community repository for content from reddit [here](https://github.com/community-elements/elements-reddit).<br>
+<sup>2</sup> There is a community repository for content from dnd wiki [here](https://github.com/community-elements/elements-dndwiki).
 
