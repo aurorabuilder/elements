@@ -4,7 +4,7 @@
 		<name>Grimlore’s Grimoire</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/250265/Grimlores-Grimoire">Grim Press, Trevor Armstrong</author>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="grimlores-grimoire.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/grimlores-grimoire.xml" />
 		</update>
 	</info>
@@ -741,8 +741,8 @@
 	<element name="Spare the Living" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_SPARE_THE_LIVING">
 		<supports>Pale Master, Warlock, Wizard</supports>
 		<description>
-			<p>You feed off fragments of life-force from the dying. Select a humanoid that has 0 Hit Points and is not stable that you can see within range. The target must succeed a Death saving throw. On a failure, the creature inches closer to death and you gain a number of temporary Hit Points equal to one of the creature’s Hit Dice. Alternatively, you can target a humanoid corpse that has died within the last minute to gain this benefit. You cannot use the same corpse more than once.</p>
-			<p class="indent">You gain one additional Hit Dice worth of temporary Hit Dice at 5th level (2 HD), 11th level (3 HD), and 17th level (4 HD). </p>
+			<p>You feed off the lingering fragments of life-force from the dying. Select a humanoid that has 0 hit points and is not stable that you can see within range. The target must succeed on a Death saving throw. On a failure, the creature inches closer to death and you gain 1d4 temporary hit points. Alternatively, you can target a humanoid corpse that has died within the last minute to gain this benefit. You cannot use the same corpse more than once.</p>
+			<p class="indent">You gain one additional 1d4 temporary hit points at 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
 		</description>
 		<setters>
 			<set name="keywords"></set>
@@ -1152,6 +1152,28 @@
 		</setters>
 	</element>
 
+	<element name="Dark Pact" type="Spell" source="source" id="ID_DMSG_GRGR_SPELL_Dark Pact">
+		<supports>Pale Master</supports>
+		<description>
+			<p>An undead creature of your choice that you can see within range regains 2d4 hit points and has advantage on the next attack roll it makes before the end of its next turn. </p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st. </p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a vial of vampire's blood</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
 	<element name="Death’s Grasp" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_DEATHS_GRASP">
 		<supports>Pale Master, Warlock, Wizard</supports>
 		<description>
@@ -1216,7 +1238,7 @@
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">a non-magical weapon</set>
+			<set name="materialComponent">a nonmagical weapon</set>
 			<set name="isConcentration">true</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -1556,7 +1578,7 @@
 	<element name="Rot" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_ROT">
 		<supports>Druid, Pale Master, Warlock, Wizard</supports>
 		<description>
-			<p>You extend your hand toward a creature you can see within range and infect the target with a horrible disease, causing their flesh to form pustules and smell of decay. The creature must succeed on a Constitution saving throw or take 2d12 necrotic damage.</p>
+			<p>You extend your hand toward a humanoid creature you can see within range and infect the target with a horrible disease, causing their flesh to form pustules and smell of decay. The creature must succeed on a Constitution saving throw or take 2d12 necrotic damage.</p>
 			<p class="indent"><i><b>At Higher Levels.</b></i> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d12 for each slot level above 1st. </p>
 		</description>
 		<setters>
@@ -2767,7 +2789,7 @@
 	<element name="Mummify" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_MUMMIFY">
 		<supports>Cleric, Pale Master, Warlock, Wizard</supports>
 		<description>
-			<p>You touch a creature and utter an ancient curse. The target must succeed on a Strength saving throw or take 2d8 necrotic damage and become restrained as spectral wrappings begin to tighten around its body. Until the spell ends, as an action on each of your turns, you can cause the target to take an additional 2d8 necrotic damage every round after the spell was initially cast. The target can use its action to make a Strength saving throw, breaking the spectral wrappings and ending the spell.</p>
+			<p>You touch a humanoid creature and utter an ancient curse. The target must succeed on a Strength saving throw or take 2d8 necrotic damage and become restrained as spectral wrappings begin to tighten around its body. Until the spell ends, as an action on each of your turns, you can cause the target to take an additional 2d8 necrotic damage every round after the spell was initially cast. The target can use its action to make a Strength saving throw, breaking the spectral wrappings and ending the spell. </p>
 			<p class="indent">A creature that dies while under the effect of this spell becomes a mummy that is friendly to you and your companions for the remaining duration. Roll initiative for the mummy, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don’t issue any commands to the mummy, it defends itself from hostile creatures but otherwise takes no actions. Once the duration is reached, the mummy dies and turns to ash.</p>
 			<p class="indent">If your concentration is broken, the mummy doesn’t die. Instead, you lose control of the mummy, it becomes hostile toward you and your companions, and will attack. An uncontrolled mummy can’t be dismissed by you, and it turns to ash 10 minutes after the spell was initially cast. The DM has the mummy’s statistics. </p>
 		</description>
@@ -3387,7 +3409,7 @@
 	<element name="Plague" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_PLAGUE">
 		<supports>Pale Master, Warlock</supports>
 		<description>
-			<p>You point at a creature within range, causing a dark green glow to pass over their body. The creature must make a Constitution saving throw or take 4d10 poison damage and become diseased; suffering disadvantage on all attack and skill checks for the duration as their skin begins to pustules all over their body.</p>
+			<p>You point at a creature within range, causing a dark green glow to pass over their body. The creature must make a Constitution saving throw or take 4d10 poison damage and become diseased; suffering disadvantage on all attack and skill checks for the duration as their skin begins to pustules all over their body. This spell has no effect on undead or constructs. </p>
 			<p class="indent">If the disease is not removed within 1 hour, the creature must make another Constitution saving throw or die. If a creature dies as the result of this spell, every creature within 10 feet must make a Constitution saving throw or become affected by this spell, as if it was initially cast on them. Constructs and undead are immune to the spell.</p>
 		</description>
 		<setters>
@@ -3626,7 +3648,7 @@
 	<element name="Banshee’s Grievance" type="Spell" source="Grimlore’s Grimoire" id="ID_DMSG_GRGR_SPELL_BANSHEES_GRIEVANCE">
 		<supports>Bard, Pale Master</supports>
 		<description>
-			<p>You unleash a mournful wail, harming creatures of your choosing that are within range and can hear you. A target must succeed on a Constitution saving throw or take 6d8 psychic damage and become deafened for 1 minute. At the end of each of its turns, a deafened creature can make another Constitution saving throw. On a success, the spell ends on the creature. This spell has no effect on constructs and undead.</p>
+			<p>You unleash a mournful wail, harming creatures of your choosing that are within range and can hear you. A target must succeed on a Constitution saving throw or take 10d8 psychic damage and become deafened for 1 minute. At the end of each of its turns, a deafened creature can make another Constitution saving throw. On a success, the spell ends on the creature. This spell has no effect on undead or constructs.</p>
 			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th. </p>
 		</description>
 		<setters>
@@ -4077,7 +4099,7 @@
 			<set name="keywords"></set>
 			<set name="level">5</set>
 			<set name="school">Abjuration</set>
-			<set name="time">1 action</set>
+			<set name="time">1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell </set>
 			<set name="duration">1 round</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
