@@ -3,7 +3,7 @@
 	<info>
 		<name>Bloodhunter</name>
 		<description>2020 Version</description>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="class-bloodhunter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/classes/class-bloodhunter.xml" />
 		</update>
 	</info>
@@ -21,7 +21,7 @@
 			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=Matthew%20Mercer">Matthew Mercer</set>
 			<set name="third-party">true</set>
 			<set name="release">20200127</set>
-			<!-- <set name="updated">20200128</set> -->
+			<!-- <set name="updated">20200211</set> -->
 		</setters>
 	</element>
 
@@ -146,10 +146,11 @@
 			<prerequisite>Strength 13 or Dexterity 13, and Intelligence 13</prerequisite>
 			<requirements>([str:13]||[dex:13]),[int:13],!ID_CRIT_CLASS_BLOOD_HUNTER,!ID_CRIT_MULTICLASS_BLOOD_HUNTER</requirements>
 			<setters>
-				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, alchemical supplies</set>
+				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list, alchemical supplies</set>
 			</setters>
 			<rules>
 				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<select type="Proficiency" name="Skill Proficiency, Blood Hunter" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_SURVIVAL" />	
 			</rules>
 		</multiclass>
 	</element>
@@ -1373,20 +1374,20 @@
 	<element name="Predatory Strikes" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_HYBRID_TRANSFORMATION_PREDATORY_STRIKES">
 		<compendium display="false" />
 		<description>
-			<p>Your can apply your Crimson Rite feature to your unarmed strikes. You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes. When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.</p>
+			<p>You can apply your Crimson Rite feature to your unarmed strikes as single weapon. You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes. When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action</p>
 			<p class="indent">Your unarmed strikes deal 1d6 slashing damage. The damage increases to 1d8 at 11th level.</p>
 		</description>
 		<sheet usage="Hybrid Transformation">
-			<description>Your can apply your Crimson Rite feature to your unarmed strikes (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
+			<description>Your can apply your Crimson Rite feature to your unarmed strikes as single weapon (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
 			Your unarmed strikes deal 1d6 slashing damage.</description>
-			<description level="11">Your can apply your Crimson Rite feature to your unarmed strikes (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
+			<description level="11">Your can apply your Crimson Rite feature to your unarmed strikes as single weapon (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
 			Your unarmed strikes deal 1d8 slashing damage.</description>
 		</sheet>
 	</element>
 	<element name="Bloodlust" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_HYBRID_TRANSFORMATION_BLOODLUST">
 		<compendium display="false" />
 		<description>
-			<p>If you begin your turn with no more than half of your maximum hit points, you must succeed on a Wisdom saving throw (DC is equal to 8 + 1/3 of your blood hunter level) or move directly towards the nearest creature to you and use the Attack action against that creature. You can choose whether or not to use your Extra Attack feature for this frenzied attack. If there is more than one possible target, roll to randomly determine the target. You then regain control for the remainder of your turn.</p>
+			<p>If you begin your turn with no more than half of your maximum hit points, you must succeed on a DC 8 Wisdom saving throw or move directly towards the nearest creature to you and use the Attack action against that creature. You can choose whether or not to use your Extra Attack feature for this frenzied attack. If there is more than one possible target, roll to randomly determine the target. You then regain control for the remainder of your turn.</p>
 			<p class="indent">If you are under an effect that prevents you from concentrating (like the barbarian’s Rage feature), you automatically fail this saving throw.</p>
 		</description>
 		<sheet usage="Hybrid Transformation">
@@ -1395,13 +1396,6 @@
 		</sheet>
 		<rules>
 			<stat name="lycan bloodlust:dc" value="8" />
-			<stat name="lycan bloodlust:dc" value="1" bonus="level" level="3" />
-			<stat name="lycan bloodlust:dc" value="2" bonus="level" level="6" />
-			<stat name="lycan bloodlust:dc" value="3" bonus="level" level="9" />
-			<stat name="lycan bloodlust:dc" value="4" bonus="level" level="12" />
-			<stat name="lycan bloodlust:dc" value="5" bonus="level" level="15" />
-			<stat name="lycan bloodlust:dc" value="6" bonus="level" level="18" />
-			<!-- rounded up/down? -->
 		</rules>
 	</element>
 	<element name="Improved Predatory Strikes" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_STALKERS_PROWESS_IMPROVED_PREDATORY_STRIKES">
@@ -1433,11 +1427,11 @@
 		<supports>Blood Hunter Blood Curse v2</supports>
 		<description>
 			<p>As a bonus action, you magnify the adrenaline in the body of a creature within 30 feet of you, making them susceptible to forceful influence. Until the end of your next turn, all creatures have advantage on Charisma (Intimidation) checks directed at the target creature.</p>
-			<p class="indent"><strong><em>Amplify.</em></strong> The next Wisdom saving throw the target has to make before this curse ends has disadvantage.</p>
+			<p class="indent"><strong><em>Amplify.</em></strong> The next Wisdom saving throw the target has to make before this curse ends has disadvantage. Once you’ve amplified this blood curse, you must finish a long rest before you can amplify it again.</p>
 		</description>
-		<sheet action="Bonus Action">
+		<sheet action="Bonus Action" usage="1 Amplify/Long Rest">
 			<description>You target a creature within 30 feet of you. Until the end of your next turn, all creatures have advantage on Intimidation checks directed at the target creature.
-			Amplify: The next Wisdom saving throw the target has to make before this curse ends has disadvantage.</description>
+			Amplify: The next Wisdom save the target has to make before this curse ends has disadvantage. Once you’ve amplified this blood curse, you must finish a long rest before you can amplify it again.</description>
 		</sheet>
 	</element>
 	<element name="Blood Curse of Binding" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_BINDING">
@@ -1488,6 +1482,17 @@
 		<sheet action="Bonus Action">
 			<description>You can choose one creature you can see within 30 feet of you that is charmed, frightened, or possessed. The target creature is no longer charmed, frightened, or possessed.
 			Amplify: The creature that charmed, frightened, or possessed the target of your curse suffers 3d6 psychic damage and must make a Wisdom save or be stunned until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Blood Curse of the Exposure" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_EXPOSURE">
+		<supports>Blood Hunter Blood Curse v2</supports>
+		<description>
+			<p>When a creature you can see within 30 feet is hit with an attack or spell, you can use your reaction to temporarily weaken their resilience against it. Until the end of the turn, the target loses their resistance to the damage types of the triggering attack or spell.</p>
+			<p class="indent"><strong><em>Amplify.</em></strong> The target instead loses invulnerability to the damage types of the triggering attack or spell, having resistance to them until the end of the turn.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see within 30 feet is hit with an attack or spell, you can temporarily weaken their resilience against it. Until the end of the turn, the target loses their resistance to the damage types of the triggering attack or spell.
+			Amplify: The target instead loses invulnerability to the damage types of the triggering attack or spell, having resistance to them until the end of the turn.</description>
 		</sheet>
 	</element>
 	<element name="Blood Curse of the Eyeless" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_EYELESS">
