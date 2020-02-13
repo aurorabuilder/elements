@@ -5,7 +5,138 @@
 			<file name="gnoll.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/midgard-heroes-handbook/races/gnoll.xml" />
 		</update>
 	</info>
+
+	<element name="Gnoll" type="Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACE_GNOLL">
+		<description>
+			<p>The average gnoll views the virtues of work and self‑sufficiency with distaste. Gnolls with leadership skills or who tire of sharing the fruits of their labors frequently break off from the pack alone or in small groups to fend for themselves. Sometimes a male gnoll foolishly announces that he believes males are more fit to lead, and necessarily sets out on his own until he can find a new pack or the controversy is forgotten.</p>
+			<p class="indent">Gnolls who possess the will to face danger make excellent adventurers.</p>
+			<h4>GNOLL NAMES</h4>
+			<p>Gnoll names are heavily influenced by their demonic origins. There’s no difference between the names of males and females.</p>
+			<p class="indent"><strong><em>>Gnoll Names.</em></strong> Anagilkin, Khuyoag, Nothchon, Shashog, Shudnarothic, Tsoggul, Thagtharric, Yithig, Zatur</p>
+			<h4>GNOLL TRAITS</h4>
+			<p>Your gnoll character has several special traits, the result of a wild nature and growing in a harsh environment.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 2.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Gnolls reach adulthood at age 12, and they live short and brutal lives. The rare examples that die of old age experience only around 70 summers.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> As a product of a culture that values laziness, selfishness, and dominance, most gnolls are evil. On top of that, an unpredictable existence, where every day could be the last, usually leads to a chaotic view of the world. With that said, there are always exceptions to every norm.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Gnoll females are taller and more powerfully built than their male counterparts. The former range from 7 to 8 feet and usually weigh more than 250 pounds, while the latter average 6 inches and 30 pounds less. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Scent.</em></strong> You have advantage on Wisdom (Perception) checks that rely on smell.</p>
+			<p class="indent"><strong><em>Bully.</em></strong> Although gnolls are cowardly at heart, they like to disguise their fears by abusing others. You have disadvantage on saving throws against being frightened. On the other hand, whenever you make a Charisma (Intimidation) check for dealing with obviously smaller or weaker targets, you are considered proficient in the Intimidation skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
+			<p class="indent"><strong><em>Live to Fight Another Day.</em></strong> When you take the Disengage action, your base walking speed is increased by 10 feet.</p>
+			<p class="indent"><strong><em>Gnoll Weapon Training.</em></strong> You have proficiency with the spear, shortbow, longbow, light crossbow, and heavy crossbow.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Southern and Gnollish. Gnollish words sound almost like growls for the uninitiated, and gnolls tend to use scents and small gestures to convey subtle meanings. Two gnolls speaking can almost seem like dogs barking at each other to a casual observer.</p>
+			<p class="indent"><strong><em>Subraces.</em></strong> Although not, strictly speaking, different races, gnolls from the civilized lands live in an environment so different from their savage brethren that they are considered separate subraces. Choose one of them.</p>
+		</description>
+		<setters>
+			<set name="names" type="custom">Anagilkin, Khuyoag, Nothchon, Shashog, Shudnarothic, Tsoggul, Thagtharric, Yithig, Zatur</set>
+			<set name="names-format">{{custom}}</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="2" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />			
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_SCENT" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_BULLY" />		
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_LIVE_TO_FIGHT_ANOTHER_DAY" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_GNOLL_WEAPON_TRAINING" />
+			<grant type="Language" id="ID_KBP_MWB_LANGUAGE_NURIAN" requirements="ID_KBP_MHH_OPTION_MIDGARD_CAMPAIGN" />
+			<grant type="Language" id="ID_MM_LANGUAGE_GNOLL" requirements="!ID_KBP_MHH_OPTION_MIDGARD_CAMPAIGN" />
+			<grant type="Language" id="ID_KBP_MWB_LANGUAGE_GNOLLISH" requirements="ID_KBP_MHH_OPTION_MIDGARD_CAMPAIGN" />
+			<select type="Sub Race" name="Gnoll Subrace" supports="MHH Gnoll Subrace" />
+		</rules>
+	</element>
+	<element name="Scent" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_SCENT">
+		<description>
+			<p>You have advantage on Wisdom (Perception) checks that rely on smell.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Perception checks that rely on smell.</description>
+		</sheet>
+	</element>
+	<element name="Bully" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_BULLY">
+		<description>
+			<p>Although gnolls are cowardly at heart, they like to disguise their fears by abusing others. You have disadvantage on saving throws against being frightened. On the other hand, whenever you make a Charisma (Intimidation) check for dealing with obviously smaller or weaker targets, you are considered proficient in the Intimidation skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>You have disadvantage on saving throws against being frightened. On the other hand, whenever you make a Intimidation check for dealing with obviously smaller or weaker targets, you are considered proficient in the Intimidation skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</description>
+		</sheet>
+	</element>
+	<element name="Live to Fight Another Day" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_LIVE_TO_FIGHT_ANOTHER_DAY">
+		<description>
+			<p>When you take the Disengage action, your base walking speed is increased by 10 feet.</p>
+		</description>
+		<sheet>
+			<description>When you take the Disengage action, your base walking speed is increased by 10 feet.</description>
+		</sheet>
+	</element>
+	<element name="Gnoll Weapon Training" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_GNOLL_WEAPON_TRAINING">
+		<description>
+			<p>You have proficiency with the spear, shortbow, longbow, light crossbow, and heavy crossbow.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency with the spear, shortbow, longbow, light crossbow, and heavy crossbow.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY" />
+		</rules>
+	</element>
+
+	<element name="Civilized Gnoll" type="Sub Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SUB_RACE_GNOLL_CIVILIZED_GNOLL">
+		<supports>MHH Gnoll Subrace</supports>
+		<description>
+			<p>As a civilized gnoll, you are well-fed and enjoy the comforts that your primitive cousins can only dream of. You were valued as a mercenary, a temple guard, or simply a thug due to both your inherent toughness and your desire to please those that are in charge.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 1.</p>
+			<p class="indent"><strong><em>Obsequious.</em></strong> Whenever you make a Charisma (Persuasion) check for dealing with obviously bigger or more powerful targets, you are considered proficient in the Persuasion skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_CIVILIZED_OBSEQUIOUS" />
+		</rules>
+	</element>
+	<element name="Obsequious" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_CIVILIZED_OBSEQUIOUS">
+		<description>
+			<p>Whenever you make a Charisma (Persuasion) check for dealing with obviously bigger or more powerful targets, you are considered proficient in the Persuasion skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>Whenever you make a Persuasion check for dealing with obviously bigger or more powerful targets, you are considered proficient in the Persuasion skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</description>
+		</sheet>
+	</element>
+
+	<element name="Savage Gnoll" type="Sub Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SUB_RACE_GNOLL_SAVAGE_GNOLL">
+		<supports>MHH Gnoll Subrace</supports>
+		<description>
+			<p>As a savage gnoll, you are in touch with your animal side and understand the ways of nature. Your tribe has been raiding the desert or the plains for generations, and you know the land in which you live like the back of your hand.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1.</p>
+			<p class="indent"><strong><em>Scavenge.</em></strong> Whenever you make a Wisdom (Survival) check for gathering food or locating water, you are considered proficient in the Survival skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_SAVAGE_SCAVENGE" />
+		</rules>
+	</element>
+	<element name="Scavenge" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GNOLL_SAVAGE_SCAVENGE">
+		<description>
+			<p>Whenever you make a Wisdom (Survival) check for gathering food or locating water, you are considered proficient in the Survival skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus</p>
+		</description>
+		<sheet>
+			<description>Whenever you make a Survival check for gathering food or locating water, you are considered proficient in the Survival skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus</description>
+		</sheet>
+	</element>	
 	
-	
+	<element name="Gnollish" type="Language" source="Midgard Heroes Handbook" id="ID_KBP_MWB_LANGUAGE_GNOLLISH">
+		<supports>Midgard,Monster</supports>
+		<description>
+			<p>Gnollish words sound almost like growls for the uninitiated, and gnolls tend to use scents and small gestures to convey subtle meanings. Two gnolls speaking can almost seem like dogs barking at each other to a casual observer.</p>
+		</description>
+	</element>
 	
 </elements>
