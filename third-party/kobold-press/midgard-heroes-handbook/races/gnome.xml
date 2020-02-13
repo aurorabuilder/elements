@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="gnome.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/midgard-heroes-handbook/races/gnome.xml" />
+		</update>
+	</info>
+
+	<element name="Niemheim Gnome" type="Sub Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SUB_RACE_NIEMHEIM_GNOME">
+		<supports>Gnome</supports>
+		<description>
+			<p>As a gnome of the Niemheims, you bear the mark of a bargain made long before your birth. You hail from the nine Great Cities, which aspire to greatness among the trees of the Wormwood. Surely that faint whiff of brimstone that haunts your steps is not your fault! You have stayed safe in your forest, shrouded from the gaze of Baba Yaga and her daughters. You’ve learned the limits of your sanctuary and have heeded the warnings never to stray beyond the treeline. In your youth, you saw bloody sacrifices made to devils; sometimes unwary travelers and sometimes kin, but all offered to the eleven hells at the point of a blade.</p>
+			<p class="indent">You yearn to see the world beyond the trees. It calls to you, and it terrifies you. How can you walk freely on the roads of Midgard when Grandmother wishes to eat your feet? What have you made from the mushrooms and rooty soil of the forest that will aid you? A hat, made of redcaps and small growing plants is your safety. If you leave and risk the ancient ire of Baba Yaga, remember—never remove your living headpiece and never let the plants woven into its brim go thirsty.</p>
+			<h4>GNOME NAMES</h4>
+			<p>Gnomish naming conventions are mainly cultural and indicate clearly the gnomes’ origins from the nine Great Cities.</p>
+			<ul class="unstyled">
+				<li><strong>Male Names.</strong> Cellus, Hausler, Jaskul, Minsik, Thorsten, Torov, Wiebaur, Yakalin, Yustin, Zezick</li>
+				<li><strong>Female Names.</strong> Domila, Domini, Dragrafena, Lyudla, Namagda, Pintek, Strava, Talici, Tiana, Viazo</li>
+				<li><strong>Family Names.</strong> Bernhardan, Hofmed, Immanul, Khazmus, Kolman, Mertens, Thralmodan, Tolkigrim, Vinzen, Volker</li>
+			</ul>
+			<h4>GNOME TRAITS</h4>
+			<p>Niemheim gnomes are clever, paranoid, and dangerous. They are drawn to arcane magic and make excellent sorcerers and warlocks. In addition to standard gnomish traits, their dealings with devils and their confinement to the Wormwood give them two additional traits.</p>
+			<p class="indent"><strong><em>Bewildering Bargainers.</em></strong> You know how to lie, deceive, and intimidate with great aplomb. Your Charisma score increases by 1 and you have advantage on Persuasion checks.</p>
+			<p class="indent"><strong><em>Known in Hell.</em></strong> You speak the infernal tongue and are proficient in the Arcana skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_NIEMHEIM_BEWILDERING_BARGAINERS" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_NIEMHEIM_KNOWN_IN_HELL" />
+		</rules>
+	</element>
+	<element name="Bewildering Bargainers" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_NIEMHEIM_BEWILDERING_BARGAINERS">
+		<description>
+			<p>You know how to lie, deceive, and intimidate with great aplomb. Your Charisma score increases by 1 and you have advantage on Persuasion checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Persuasion checks.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" />			
+		</rules>
+	</element>
+	<element name="Known in Hell" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_NIEMHEIM_KNOWN_IN_HELL">
+		<description>
+			<p>You speak the infernal tongue and are proficient in the Arcana skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You speak the infernal tongue and are proficient in the Arcana skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" requirements="!ID_KBP_MHH_OPTION_MIDGARD_CAMPAIGN" />
+			<grant type="Language" id="ID_KBP_MWB_LANGUAGE_INFERNAL" requirements="ID_KBP_MHH_OPTION_MIDGARD_CAMPAIGN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+		</rules>
+	</element>
+
+	<element name="Redcap" type="Item" source="Midgard Heroes Handbook" id="ID_KBP_MHH_ITEM_REDCAP">
+		<description>
+			<p>To stay hidden from the eyes of Baba Yaga, the gnomes of Niemheim made a bargain with a powerful devil. So long as they stay inside the Wormwood, the witch can’t find them. A few hopeful gnomes posit that as long as the Wormwood remains above them, they remain safe. With that in mind, they craft calfskin caps with living vestiges of the forest growing from the brim. Mushrooms, small plants, a bird's nest, and other elements of the Wormwood sprout from the cap, and continue to grow so long as they are tended to. A Niemheim Gnome may graft the miniature forest onto the surface of any helm or hat (including magical ones). Should the hat be destroyed, the gnome has one week to return to the Wormwood before Baba Yaga begins her pursuit...</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="slot">head</set>
+		</setters>
+	</element>
+
+</elements>
