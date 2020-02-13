@@ -115,7 +115,7 @@
 		</description>
 	</element>
 	
-	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_VARIANT_GEARFORGED_STRENGTH">
+	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_STRENGTH">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -127,7 +127,7 @@
 			<stat name="strength" value="1" alt="Gearforged" />
 		</rules>
 	</element>
-	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_GEARFORGED_DEXTERITY">
+	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_DEXTERITY">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -139,7 +139,7 @@
 			<stat name="dexterity" value="1" alt="Gearforged" />
 		</rules>
 	</element>
-	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_GEARFORGED_CONSTITUTION">
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_CONSTITUTION">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -151,7 +151,7 @@
 			<stat name="constitution" value="1" alt="Gearforged" />
 		</rules>
 	</element>
-	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_GEARFORGED_INTELLIGENCE">
+	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_INTELLIGENCE">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -163,7 +163,7 @@
 			<stat name="intelligence" value="1" alt="Gearforged" />
 		</rules>
 	</element>
-	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_GEARFORGED_WISDOM">
+	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_WISDOM">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -175,7 +175,7 @@
 			<stat name="wisdom" value="1" alt="Gearforged" />
 		</rules>
 	</element>
-	<element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Player’s Handbook" id="ID_RACE_VARIANT_GEARFORGED_CHARISMA">
+	<element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_GEARFORGED_ASI_CHARISMA">
 		<compendium display="false" />
 		<requirements>ID_KBP_MHH_RACE_GEARFORGED</requirements>
 		<supports>MHH Gearforged</supports>
@@ -187,4 +187,29 @@
 			<stat name="charisma" value="1" alt="Gearforged" />
 		</rules>
 	</element>
+
+	<element name="Soulforging" type="Spell" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SPELL_SOULFORGING">
+		<supports>Wizard,Cleric</supports>
+		<description>
+			<p>You and a willing humanoid subject must chant an incantation in unison during the entire casting time. At the end of this period the subject’s soul and consciousness leave its body. The subject must make a DC 14 Charisma saving throw. If it fails, you take 2d10 psychic damage and 2d10 radiant damage from waves of uncontrolled energy ripping out from the disembodied spirit. You can maintain the spell, allowing the subject to repeat the saving throw at the end of each of your turns, with the same consequence to you for each failure. If you choose not to maintain the spell or are unable to do so, the subject’s soul is traumatically drawn back to its body; the subject immediately drops to 0 hit points and is dying.</p>
+			<p class="indent">If the save succeeds, the subject’s soul is transferred into the waiting soul gem and immediately animates the constructed body. The subject is now a gearforged. It loses all of its previous racial traits and gains gearfoged traits. The subject’s original body dies and cannot be returned to life by any means unless its soul is freed from the soul gem.</p>
+			<p class="indent">If the spellcaster dies during a soulforging, the subject also dies and its soul becomes a wraith.</p>
+			<p class="indent">Up to four other spellcasters of at least 5th level can assist you in casting soulforging. Each assistant reduces the DC of the subject’s Charisma saving throw by 1. In the event of a failed saving throw, the spellcaster and each assistant take damage. An assistant who drops out of the casting can’t rejoin.</p>
+		</description>
+		<setters>
+			<set name="keywords">Gearforged</set>
+			<set name="level">5</set>
+			<set name="school">necromancy</set>
+			<set name="time">1 hour (see below)</set>
+			<set name="range">Touch</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a complete mechanical body worth 10,000 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
 </elements>
