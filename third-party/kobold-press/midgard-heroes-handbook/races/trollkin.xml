@@ -4,8 +4,122 @@
 		<update version="0.0.1">
 			<file name="trollkin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/midgard-heroes-handbook/races/trollkin.xml" />
 		</update>
-	</info>
-	
-	
-	
+	</info>	
+	<element name="Trollkin" type="Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACE_TROLLKIN">
+		<description>
+			<p>In ancient times, ogres, trolls, and fey sometimes took human mates. Their descendants are the trollkin. Tall and lanky with a brutish appearance, trollkin are seldom welcome among the civilized races of the north, even when the full extent of their inhuman ancestry is difficult to determine. As a result, most trollkin live in isolated tribal settlements and subsist on hunting and raiding.</p>
+			<h4>SKIN DEEP</h4>
+			<p>With a thick hide of green or brown, trollkin are superficially similar to orcs or hobgoblins. While many trollkin share a rough and unkempt appearance, their inhuman lineage can show itself in a wide variety of forms. Some trollkin could even be considered beautiful by human standards, except for some subtle marker of their monstrosity, such as stone–gray skin or talon-tipped fingers.</p>
+			<p class="indent">Many trollkin wear tattoos to show tribal loyalty or to venerate their ancestor spirits. The bravest among them brand their flesh to show mastery over their own fear, since only acid and fire leave long-lasting scars on their skin.</p>
+			<h4>A PLACE IN THE WORLD</h4>
+			<p>While the majority of trollkin live in remote communities, some thrive in civilization. But even within cities, trollkin tend to stick together in their own neighborhoods that eventually begin to resemble urban tribes. Most urban trollkin find work that exploits their nature. Mercenary work is the most common, but they sometimes join city guard forces. Thieves’ guilds and other disreputable elements love to employ trollkin as arm-breakers and debt-collectors. Smiths and artisans sometimes take on a trollkin partner or apprentice to add an exotic or savage flair to their offerings.</p>
+			<h4>TROLLKIN NAMES</h4>
+			<p>Trollkin don’t attach much importance to names. They carry names more as a convenience to the races that rely on them than for their own purposes. Among themselves, trollkin refer to each other by identifying marks, well-known deeds, or recognizable characteristics (Bent-nose, Long-claws, Fears-lightning). These labels change depending on what the trollkin has done recently and who’s doing the talking. As long as other trollkin recognize who is being referred to, that’s all that matters. It’s common to string several labels together to get an identifying label (Long-claws-fears-lightning). When they take a “human” name (meaning, for the benefit of humans), it tends to follow the same pattern. Somewhat confusingly, these names also tend to change every time a trollkin introduces itself, since many won’t be bothered to remember what other people called them last week, or yesterday.</p>
+			<p><strong>Names:</strong> Broken-fang, Six-fingers, Eye-wart, Hates-birds, Burned-her-cousin, Always-angry, Kicks-children, Sniffs-a-lot, Bites-ears</p>
+			<h4>Trollkin Traits</h4>
+			<p>Your trollkin character has certain characteristics in common with all other trollkin.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 2.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Trollkin reach maturity by the age of 15, and live 50 to 60 years.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Trollkin tend toward neutrality of one kind or another.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Trollkin stand over 6 feet tall and are more solidly built than humans, weighing around 200 pounds. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Trollkin have a base speed of 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Natural Weapons.</em></strong> You have large fangs and sharp claws instead of fingernails and toenails. You can use your claws or fangs to make unarmed strikes. If you hit with them, claws deal 1d4 + Strength modifier slashing damage, and fangs deal 1d4 + Strength modifier piercing damage.</p>
+			<p class="indent"><strong><em>Inhuman Vigor.</em></strong> You concentrate regenerative power in your blood to swiftly recover from wounds. As a bonus action, you can expend one hit die to regain hit points as if you finished a short rest. The number of hit dice you can expend increases by one when you reach 6th level (2 hit dice), 12th level (3 hit dice), and 18th level (4 hit dice). You must complete a long rest before using this ability again. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Legacy of Fear.</em></strong> You have proficiency in the Intimidation skill.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Northern Tongue.</p>
+			<p class="indent"><strong><em>Subrace.</em></strong> Trollkin bear different traits depending on the type of creatures in their lineage. The two most common types of trollkin are night whispers and stonehides. Choose one of these subraces.</p>
+		</description>
+		<setters>
+			<set name="names" type="custom">Broken-fang, Six-fingers, Eye-wart, Hates-birds, Burned-her-cousin, Always-angry, Kicks-children, Sniffs-a-lot, Bites-ears</set>
+			<set name="names-format">{{custom}}</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_NATURAL_WEAPONS" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_INHUMAN_VIGOR" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_LEGACY_OF_FEAR" />
+			<grant type="Language" id="ID_KBP_MWB_LANGUAGE_NORTHERN_TONGUE" />
+			<select type="Sub Race" name="Trollkin Subrace" supports="KBP Trollkin" />
+		</rules>
+	</element>
+	<element name="Natural Weapons" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_NATURAL_WEAPONS">
+		<description>
+			<p>You have large fangs and sharp claws instead of fingernails and toenails. You can use your claws or fangs to make unarmed strikes. If you hit with them, claws deal 1d4 + Strength modifier slashing damage, and fangs deal 1d4 + Strength modifier piercing damage.</p>
+		</description>
+		<sheet>
+			<description>You can use your claws or fangs to make unarmed strikes. If you hit with them, claws deal 1d4+{{strength:modifier}} slashing damage, and fangs deal 1d4+{{strength:modifier}}  piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Inhuman Vigor" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_INHUMAN_VIGOR">
+		<description>
+			<p>You concentrate regenerative power in your blood to swiftly recover from wounds. As a bonus action, you can expend one hit die to regain hit points as if you finished a short rest. The number of hit dice you can expend increases by one when you reach 6th level (2 hit dice), 12th level (3 hit dice), and 18th level (4 hit dice). You must complete a long rest before using this ability again. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can expend one hit die to regain hp as if you finished a short rest. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</description>
+			<description level="6">You can expend 2 hit dice to regain hp as if you finished a short rest. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</description>
+			<description level="12">You can expend 3 hit dice to regain hp as if you finished a short rest. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</description>
+			<description level="18">You can expend 4 hit dice to regain hp as if you finished a short rest. If you take acid or fire damage, you lose access to this ability until you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Legacy of Fear" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_LEGACY_OF_FEAR">
+		<description>
+			<p>You have proficiency in the Intimidation skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Intimidation skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element>	
+	<element name="Night Whisper Trollkin" type="Sub Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SUB_RACE_TROLLKIN_NIGHT_WHISPER">
+		<supports>KBP Trollkin</supports>
+		<description>
+			<p>Night whisper trollkin trace their ancestry to enigmatic fey creatures from the Shadow Realm. Because of their natural connection to the realm of spirits, many night whisper trollkin become shamans, seers, and priests. Night whispers tend to have darker skin tones and slighter builds than their cousins.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1.</p>
+			<p class="indent"><strong><em>Spirit Whispers.</em></strong> The spirits of your tribe’s ancestors whisper secrets from beyond the veil of death. Before making an ability check or saving throw, you can heed the wisdom of the spirits to gain advantage on the roll. You cannot use this feature again until you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_SPIRIT_WHISPERS" />
+		</rules>
+	</element>
+	<element name="Spirit Whispers" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_SPIRIT_WHISPERS">
+		<description>
+			<p>The spirits of your tribe’s ancestors whisper secrets from beyond the veil of death. Before making an ability check or saving throw, you can heed the wisdom of the spirits to gain advantage on the roll. You cannot use this feature again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>Before making an ability check or saving throw, you can heed the wisdom of the spirits to gain advantage on the roll.</description>
+		</sheet>
+	</element>	
+	<element name="Stonehide Trollkin" type="Sub Race" source="Midgard Heroes Handbook" id="ID_KBP_MHH_SUB_RACE_TROLLKIN_STONEHIDE">
+		<supports>KBP Trollkin</supports>
+		<description>
+			<p>Some trollkin are the result of unions between humans and monstrous brutes, such as ogres, trolls, or even stranger fey creatures of bloody disposition. Stonehides have larger frames and more muscle than other trollkin. Their skin is brighter in color but also has a rough, stonelike texture.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 1.</p>
+			<p class="indent"><strong><em>Thick Hide.</em></strong> Your skin is knobby, thick, and tough, granting you a +1 bonus to Armor Class.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" />
+			<grant type="Racial Trait" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_THICK_HIDE" />
+		</rules>
+	</element>
+	<element name="Thick Hide" type="Racial Trait" source="Midgard Heroes Handbook" id="ID_KBP_MHH_RACIAL_TRAIT_TROLLKIN_THICK_HIDE">
+		<description>
+			<p>Your skin is knobby, thick, and tough, granting you a +1 bonus to Armor Class.</p>
+		</description>
+		<sheet>
+			<description>Your skin is knobby, thick, and tough, granting you a +1 bonus to AC.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>	
 </elements>
