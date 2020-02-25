@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Subclasses, Part 3</name>
+		<update version="0.0.1">
+			<file name="20200224.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2020/20200224.xml" />
+		</update>
+	</info>	
+	<element name="Unearthed Arcana: Subclasses, Part 3" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20200224">
+		<description>
+			<p>Continuing our series of new D&amp;D subclasses in 2020, Unearthed Arcana presents three more for you to playtest: the Armorer for the artificer, the Circle of the Stars for the druid, and the Fey Wanderer for the ranger. Today’s article also includes some new infusions for the artificer.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20200224</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/subclasses_part3</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20200224</set>
+		</setters>
+	</element>
+	
+	<element name="Armorer" type="Archetype" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_ARTIFICER_ARMORER">
+		<supports>Artificer Specialist</supports>
+		<description>
+			<p>An artificer who specializes as an Armorer modifies armor to function almost like a second skin. The armor is enhanced to hone the artificer’s magic, unleash potent attacks, and generate a formidable defense. The artificer bonds with this armor, becoming one with it even as they experiment with it and refine its magical capabilities.</p>
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMORER_SPELLS" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_POWER_ARMOR" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_EXTRA_ATTACK" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODIFICATIONS" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_PERFECTED_ARMOR" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMORER_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_POWER_ARMOR" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_EXTRA_ATTACK" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODIFICATIONS" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_PERFECTED_ARMOR" level="15" />
+		</rules>
+	</element>
+	<element name="Tools of the Trade" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_TOOLS_OF_THE_TRADE">
+		<description>
+			<p><em>3rd-level Armorer feature</em></p>
+			<p>You gain proficiency with heavy armor. You also gain proficiency with smith’s tools. If you already have this tool proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with heavy armor. You also gain proficiency with smith’s tools. If you already have this tool proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+			<select type="Proficiency" name="Tool Proficiency, Tools of the Trade" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Armorer Spells" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMORER_SPELLS">
+		<description>
+			<p><em>3rd-level Armorer feature</em></p>
+			<p>You always have certain spells prepared after you reach particular levels in this class, as shown in the Armorer Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+			<h5 class="caption">ARMORER SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>magic missile, shield</em></td></tr>
+				<tr><td>5th</td><td><em>mirror image, shatter</em></td></tr>
+				<tr><td>9th</td><td><em>hypnotic pattern, lightning bolt</em></td></tr>
+				<tr><td>13th</td><td><em>fire shield, greater invisibility</em></td></tr>
+				<tr><td>17th</td><td><em>passwall, wall of force</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Armorer Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MAGIC_MISSILE" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MIRROR_IMAGE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SHATTER" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_BOLT" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASSWALL" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Power Armor" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_POWER_ARMOR">
+		<description>
+			<p><em>3rd-level Armorer feature</em></p>
+			<p>Your metallurgical pursuits have led to you making armor a conduit for your artificer magic. As an action, you can turn a suit of heavy armor you are wearing into power armor, provided you have smith’s tools in hand.</p>
+			<p class="indent">You gain the following benefits while wearing the power armor:</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>
+			<p>The armor continues to be power armor until you doff it, you don another suit of armor, or you die.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can turn a suit of heavy armor you are wearing into power armor, provided you have smith’s tools in hand. You gain the following benefits while wearing the power armor:
+			It lacks the strength requirement for you.
+			You can use it as a spellcasting focus for your artificer spells.
+			It attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</description>
+		</sheet>
+	</element>
+	<element name="Armor Model" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL">
+		<description>
+			<p><em>3rd-level Armorer feature</em></p>
+			<p>You can customize your power armor. When you do so, choose one of the following armor models: guardian or infiltrator. The model you choose gives you special benefits while you wear it.</p>
+			<p class="indent">Each model includes a special weapon. When you attack with that weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.</p>
+			<p class="indent"><strong><em>Guardian.</em></strong> You design your armor to be in the frontline of conflict. It has the following features:</p>
+			<ul class="unstyled mb">
+				<li><strong>Thunder Gauntlets.</strong> Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</li>
+				<li><strong>Defensive Field.</strong> You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor.</li>
+			</ul>
+			<p class="indent"><strong><em>Infiltrator.</em></strong> You customize your armor for subtle undertakings. It has the following features:</p>
+			<ul class="unstyled mb">
+				<li><strong>Lightning Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</li>
+				<li><strong>Powered Steps.</strong> Your walking speed increases by 5 feet.</li>
+				<li><strong>Second Skin.</strong> The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>The model includes a special weapon. When you attack with that weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Power Armor Model, Armorer" supports="UA Armorer Armor Model" optional="true" />
+		</rules>
+	</element>
+	<element name="Extra Attack" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_EXTRA_ATTACK">
+		<description>
+			<p><em>5th-level Armorer feature</em></p>
+			<p>You can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>You can attack twice whenever you take the Attack action on your turn.</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" />
+		</rules>
+	</element>
+	<element name="Armor Modifications" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODIFICATIONS">
+		<description>
+			<p><em>9th-level Armorer feature</em></p>
+			<p>You learn how to use your artificer infusions to specially modify the armor enhanced by your Power Armor feature. That armor now counts as separate items for the purposes of your Infuse Items feature: armor (the chest piece), boots, bracers, and a weapon. Each of those items can bear one of your infusions. In addition, the maximum number of items you can infuse at once increases by 2, but those extra items must be part of your power armor.</p>
+		</description>
+		<sheet>
+			<description>Your Power Armor now counts as separate items for the purposes of your Infuse Items feature: armor, boots, bracers, and a weapon. Each of those items can bear one of your infusions. Two of the items you can infuse must be part of your power armor.</description>
+		</sheet>
+		<rules>		
+			<stat name="item infusions:max" value="2" />
+		</rules>
+	</element>
+	<element name="Perfected Armor" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_PERFECTED_ARMOR">
+		<description>
+			<p><em>15th-level Armorer feature</em></p>
+			<p>Your power armor gains additional benefits based on its model, as shown below.</p>
+			<p class="indent"><strong><em>Guardian.</em></strong> Tinkering with your armor's energy system leads you to discover a powerful pulling force. When a creature you can see ends its turn within 30 feet of you, you can use your reaction to force the creature to succeed on a Strength saving throw against your spell save DC or be pulled up to 30 feet toward you to an unoccupied space. If you pull the target to space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.</p>
+			<p class="indent">You can use this reaction a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p>
+			<p class="indent"><strong><em>Infiltrator.</em></strong> Any creature that takes lightning damage from your Lightning Launcher glimmers with light until the start of your next turn. The glimmering creature sheds dim light in a 5 foot radius, and the next attack roll against it by a creature other than you has advantage. If that attack hits, it deals an extra 1d6 lightning damage.</p>
+		</description>
+		<sheet display="false">
+			<description>Your power armor gains additional benefits based on its model.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_PERFECTED" requirements="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL_GUARDIAN" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_PERFECTED" requirements="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL_INFILTRATOR" />
+		</rules>
+	</element>
+	
+	<element name="Guardian" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL_GUARDIAN">
+		<supports>UA Armorer Armor Model</supports>
+		<description>
+			<p>You design your armor to be in the frontline of conflict. It has the following features:</p>
+			<ul class="unstyled mb">
+				<li><strong>Thunder Gauntlets.</strong> Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</li>
+				<li><strong>Defensive Field.</strong> You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor.</li>
+			</ul>
+			<div class="sidebar">
+				<h5>Guardian Power Armor</h5>
+				<p>The selection you can make here is optional to display the features of your power armor in your features description area. A suit of power armor, guardian power armor, and perfected power armor is also available as equippable armor from the “Magic Armor” equipment section. Only when you have equipped the armor will you gain any benefits that are calculable.</p>
+			</div>
+		</description>
+		<sheet>
+			<description>You design your armor to be in the frontline of conflict.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_THUNDER_GAUNTLETS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_DEFENSIVE_FIELD" />			
+		</rules>
+	</element>
+	<element name="Infiltrator" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_ARMOR_MODEL_INFILTRATOR">
+		<supports>UA Armorer Armor Model</supports>
+		<description>		
+			<p>You customize your armor for subtle undertakings. It has the following features:</p>
+			<ul class="unstyled mb">
+				<li><strong>Lightning Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</li>
+				<li><strong>Powered Steps.</strong> Your walking speed increases by 5 feet.</li>
+				<li><strong>Second Skin.</strong> The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</li>
+			</ul>
+			<div class="sidebar">
+				<h5>Guardian Power Armor</h5>
+				<p>The selection you can make here is optional to display the features of your power armor in your features description area. A suit of power armor, guardian power armor, and perfected power armor is also available as equippable armor from the “Magic Armor” equipment section. Only when you have equipped the armor will you gain any benefits that are calculable.</p>
+			</div>
+		</description>
+		<sheet>
+			<description>You customize your armor for subtle undertakings.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_LIGHTNING_LAUNCHER" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_POWERED_STEPS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_SECOND_SKIN" />
+		</rules>
+	</element>
+
+	<element name="Thunder Gauntlets" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_THUNDER_GAUNTLETS">
+		<compendium display="false" />
+		<description>
+			<p>Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+		</description>
+		<sheet>
+			<description>Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</description>
+		</sheet>
+	</element>
+	<element name="Defensive Field" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_DEFENSIVE_FIELD">
+		<compendium display="false" />
+		<description>
+			<p>You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You gain {{level:artificer}} temporary hp, replacing any temporary hp you already have. You lose these temporary hp if you doff the armor.</description>
+		</sheet>
+	</element>
+	
+	<element name="Lightning Launcher" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_LIGHTNING_LAUNCHER">
+		<compendium display="false" />
+		<description>
+			<p>A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+		</description>
+		<sheet>
+			<description>A gemlike node appears on one of your armored fists or on the chest. It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</description>
+		</sheet>
+	</element>
+	<element name="Powered Steps" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_POWERED_STEPS">
+		<compendium display="false" />
+		<description>
+			<p>Your walking speed increases by 5 feet.</p>
+		</description>
+		<sheet>
+			<description>Your walking speed increases by 5 feet.</description>
+		</sheet>
+	</element>
+	<element name="Second Skin" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_SECOND_SKIN">
+		<compendium display="false" />
+		<description>
+			<p>The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</p>
+		</description>
+		<sheet>
+			<description>The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</description>
+		</sheet>
+	</element>
+
+	<element name="Perfected Guardian Armor" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_GUARDIAN_PERFECTED">
+		<compendium display="false" />
+		<description>
+			<p>Tinkering with your armor's energy system leads you to discover a powerful pulling force. When a creature you can see ends its turn within 30 feet of you, you can use your reaction to force the creature to succeed on a Strength saving throw against your spell save DC or be pulled up to 30 feet toward you to an unoccupied space. If you pull the target to space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.</p>
+			<p class="indent">You can use this reaction a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{ua:perfected guardian armor:usage}}/Long Rest">
+			<description>When a creature you can see ends its turn within 30 feet of you, you can force the creature to succeed on a Strength save or be pulled up to 30 feet toward you to an unoccupied space. If you pull the target to space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:perfected guardian armor:usage" value="1" bonus="base" />
+			<stat name="ua:perfected guardian armor:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Perfected Infiltrator Armor" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_MODEL_INFILTRATOR_PERFECTED">
+		<compendium display="false" />
+		<description>
+			<p>Any creature that takes lightning damage from your Lightning Launcher glimmers with light until the start of your next turn. The glimmering creature sheds dim light in a 5 foot radius, and the next attack roll against it by a creature other than you has advantage. If that attack hits, it deals an extra 1d6 lightning damage.</p>
+		</description>
+		<sheet>
+			<description>Any creature that takes lightning damage from your Lightning Launcher glimmers with light until the start of your next turn. The glimmering creature sheds dim light in a 5 foot radius, and the next attack roll against it by a creature other than you has advantage. If that attack hits, it deals an extra 1d6 lightning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Armor of Magical Strength" type="Class Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_INFUSTION_ARMOR_OF_MAGICAL_STRENGTH">
+		<supports>Artificer Infusion</supports>
+		<prerequisite>10th-level artificer</prerequisite>
+		<requirements>[level:10]</requirements>
+		<description>
+			<p><em>Prerequisite: 10th-level artificer</em></p>
+			<p><em>Item: A suit of armor (requires attunement)</em></p>
+			<p>While wearing this armor, a creature can use its Intelligence modifier in place of its Strength modifier when making Strength checks and Strength saving throws.</p>
+			<p class="indent">The armor has 4 charges. As a reaction when it would be knocked prone, the wearer can expend 1 charge to not be knocked prone. The armor regains 1d4 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_ARMOR_OF_MAGICAL_STRENGTH" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a suit of armor into Armor of Magical Strength.</description>
+		</sheet>
+	</element>
+	<element name="Armor of Tools" type="Class Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_INFUSTION_ARMOR_OF_TOOLS">
+		<supports>Artificer Infusion</supports>
+		<description>
+			<p><em>Item: A suit of armor</em></p>
+			<p>As an action, a creature wearing this infused armor can integrate into it artisan’s tools or thieves’ tools. The tools remain integrated in the armor for 8 hours or until the wearer removes the tools as an action. The armor can have only one tool integrated at a time.</p>
+			<p class="indent">The wearer can add its Intelligence modifier to any ability checks it makes with the integrated tool. The wearer must have a hand free to use the tool.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_ARMOR_OF_TOOLS" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a suit of armor into Armor of Tools.</description>
+		</sheet>
+	</element>
+	<element name="Helm of Awareness" type="Class Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_INFUSTION_HELM_OF_AWARENESS">
+		<supports>Artificer Infusion</supports>
+		<prerequisite>10th-level artificer</prerequisite>
+		<requirements>[level:10]</requirements>
+		<description>
+			<p><em>Prerequisite: 10th-level artificer</em></p>
+			<p><em>Item: A helmet (requires attunement)</em></p>
+			<p>While wearing this helmet, a creature has advantage on initiative rolls. In addition, the wearer can’t be surprised, provided it isn’t incapacitated.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_MAGIC_ITEM_HELM_OF_AWARENESS" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a helmet into a Helm of Awareness.</description>
+		</sheet>
+	</element>
+	<element name="Mind Sharpener" type="Class Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_INFUSTION_MIND_SHARPENER">
+		<supports>Artificer Infusion</supports>
+		<description>
+			<p><em>Item: A suit of armor or robes</em></p>
+			<p>The infused item can send a jolt to the wearer to refocus their mind. While wearing this infused item, whenever the creature fails a Constitution saving throw to maintain concentration on a spell, it can use its reaction to succeed instead.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_MIND_SHARPENER" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a suit of armor or robes into a Mind Sharpener.</description>
+		</sheet>
+	</element>
+	<element name="Spell-Refueling Ring" type="Class Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_INFUSTION_SPELL_REFUELING_RING">
+		<supports>Artificer Infusion</supports>
+		<prerequisite>6th-level artificer</prerequisite>
+		<requirements>[level:6]</requirements>
+		<description>
+			<p><em>Prerequisite: 6th-level artificer</em></p>
+			<p><em>Item: A ring (requires attunement)</em></p>
+			<p>While wearing this ring, the creature can recover one expended spell slot as an action. The maximum level of the recovered slot is equal to the number of magic items the wearer is currently attuned to. Once used, the ring can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_MAGIC_ITEM_SPELL_REFUELING_RING" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a ring into a Spell-Refueling Ring.</description>
+		</sheet>
+	</element>
+
+	<element name="Circle of the Stars" type="Archetype" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_DRUID_CIRCLE_OF_THE_STARS">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>An ancient lineage, the Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of the Stars seeks to harness the powers of the cosmos.</p>
+			<p class="indent">Many druids of this circle keep detailed records of the stars and their effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples—any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.</p>			
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_COSMIC_OMEN" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_FULL_OF_STARS" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_FLARE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_COSMIC_OMEN" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_FULL_OF_STARS" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_FLARE" level="14" />
+		</rules>
+	</element>
+	<element name="Star Map" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP">
+		<description>
+			<p><em>2nd-level Circle of the Stars feature</em></p>
+			<p>You've created a star map as part of your study of the heavens. The map is a Tiny object and can serve as a spellcasting focus for your druid spells. You decide what form the object takes, or you can determine what it is by rolling on the Star Map table.</p>
+			<h5 class="caption">STAR MAP</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Map Form</td></tr>
+				</thead>
+				<tr><td>1</td><td>A scroll of living wood that aligns with heavenly bodies</td></tr>
+				<tr><td>2</td><td>A stone tablet with fine holes drilled through it</td></tr>
+				<tr><td>3</td><td>A speckled owlbear hide, tooled with raised marks</td></tr>
+				<tr><td>4</td><td>A collection of maps bound in an ebony cover</td></tr>
+				<tr><td>5</td><td>A crystal that projects starry patterns when placed before a light</td></tr>
+				<tr><td>6</td><td>Tempered glass disks that align to depict constellations</td></tr>
+			</table>
+			<p class="indent">If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+			<p class="indent">You can cast the augury and guiding bolt spells without expending a spell slot and without preparing the spell, provided you use the star map as the spellcasting focus. You can cast a spell from the map in this way a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You've created a tiny star map as part of your study of the heavens that can serve as a spellcasting focus for your druid spells.
+			If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.
+			You can cast the augury and guiding bolt spells without expending a spell slot and without preparing the spell ({{ua-star-map:usage}}/Long Rest), provided you use the star map as the spellcasting focus.</description>
+		</sheet>
+		<rules>
+			<stat name="ua-star-map:usage" value="1" bonus="base" />
+			<stat name="ua-star-map:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Starry Form" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM">
+		<description>
+			<p><em>2nd-level Circle of the Stars feature</em></p>
+			<p>You gain the ability to harness constellations’ power to alter your form. As an action, you can expend a use of your Wild Shape feature to take on a starry form rather than transforming into a beast.</p>
+			<p class="indent">While in your starry form, you retain your game statistics, but your body takes on a luminous, starlike quality; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10- foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you’re incapacitated.</p>
+			<p class="indent">Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p>
+			<ul class="unstyled">
+				<li><strong>Chalice.</strong> A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + half your level in this class.</li>
+				<li><strong>Archer.</strong> A constellation of an archer appears on you. You gain a bonus action that you can use to make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</li>
+				<li><strong>Dragon.</strong> A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</li>
+			</ul>
+		</description>
+		<sheet action="Action">
+			<description>You can expend a use of your Wild Shape feature to take on a starry form rather than transforming into a beast.
+			This form sheds bright light in a 10- foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you’re incapacitated.
+			Whenever you assume your starry form, choose which of the constellations glimmers on your body.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_CHALICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_ARCHER" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_DRAGON" />
+		</rules>
+	</element>
+	<element name="Chalice" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_CHALICE">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + half your level in this class.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>Whenever you cast a spell using a spell slot that restores hp to a creature, you or another creature within 30 feet of you can regain 1d8+{{level:druid:half}} hp.</description>
+		</sheet>
+	</element>
+	<element name="Archer" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_ARCHER">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of an archer appears on you. You gain a bonus action that you can use to make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Starry Form">
+			<description>You can make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals 1d8+{{wisdom:modifier}} radiant damage.</description>
+		</sheet>
+	</element>
+	<element name="Dragon" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_DRAGON">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>When you make an Intelligence or a Wisdom check or a Constitution save to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</description>
+		</sheet>
+	</element>
+	<element name="Cosmic Omen" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_COSMIC_OMEN">
+		<description>
+			<p><em>6th-level Circle of the Stars feature</em></p>
+			<p>You learn to use your star map to divine the will of the cosmos. Whenever you finish a long rest, you can consult your star map for omens. When you do so, roll a d6. You gain one of the following possible omens based on whether you rolled an even number or an odd number on the d6:</p>
+			<ul class="unstyled mb">
+				<li><strong>Weal (even).</strong> Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and add the number rolled to the total.</li>
+				<li><strong>Woe (odd).</strong> Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and subtract the number rolled from the total.</li>
+			</ul>
+			<p class="indent">You can use this reaction a number of times equal to your Wisdom modifier, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{wisdom:modifier}}/Long Rest">
+			<description>Whenever you finish a long rest, you can consult your star map for omens. When you do so, roll a d6. You gain one of the following possible omens based on whether you rolled an even number or an odd number on the d6:
+			Weal (even). Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use roll a d6 and add the number rolled to the total.
+			Woe (odd). Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use roll a d6 and subtract the number rolled from the total.</description>
+		</sheet>
+	</element>
+	<element name="Full of Stars" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_FULL_OF_STARS">
+		<description>
+			<p><em>10th-level Circle of the Stars feature</em></p>
+			<p>While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</p>
+		</description>
+		<sheet>
+			<description>While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Star Flare" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_FLARE">
+		<description>
+			<p><em>14th-level Circle of the Stars feature</em></p>
+			<p>Your connection to the cosmos allows you to conjure brilliant starlight. As an action, you conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution saving throw against your spell save DC or take 4d10 radiant damage and be blinded until the end of your next turn.</p>
+			<p class="indent">Once you have used this action, you can’t use it again until you finish a long rest or until you expend a spell slot of 5th level or higher to use it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution save or take 4d10 radiant damage and be blinded until the end of your next turn.
+			You can expend a spell slot of 5th level or higher to use it again.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Wanderer" type="Archetype" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_RANGER_FEY_WANDERER">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>As a Fey Wanderer, you guard the border between the Feywild and the Material Plane, guiding the lost out of the Feywild and preventing dangerous fey from damaging the Material Plane. Your experience with both domains makes you an exceptional negotiator between inhabitants of these worlds, as you understand both humanoid mindsets and the wiles of the fey courts.</p>
+			<p class="indent">Fey Wanderers possess a preternatural blessing from a fey ally or a place of fey power. Choose your blessing from the Feywild Gifts table or determine it randomly.</p>
+			<h5 class="caption">FEYWILD GIFTS</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Gift</td></tr>
+				</thead>
+				<tr><td>1</td><td>Illusory butterflies flutter around you while you take a short or long rest.</td></tr>
+				<tr><td>2</td><td>Fresh, seasonal flowers sprout from your hair each dawn.</td></tr>
+				<tr><td>3</td><td>You faintly smell of cinnamon, lavender, nutmeg, or another comforting herb or spice.</td></tr>
+				<tr><td>4</td><td>Your shadow dances while no one is looking directly at it.</td></tr>
+				<tr><td>5</td><td>Delicate horns or antlers sprout from your head.</td></tr>
+				<tr><td>6</td><td>Your skin and hair change color to match the season at each dawn.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_FEY_WANDERER_MAGIC" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_CUNNING_WILL" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_DREADFUL_STRIKES" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BLESSINGS_OF_THE_COURTS" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BEGUILING_TWIST" />
+			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_MISTY_PRESENCE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_FEY_WANDERER_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_CUNNING_WILL" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_DREADFUL_STRIKES" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BLESSINGS_OF_THE_COURTS" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BEGUILING_TWIST" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_MISTY_PRESENCE" level="15" />
+		</rules>
+	</element>
+	<element name="Fey Wanderer Magic" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_FEY_WANDERER_MAGIC">
+		<description>
+			<p><em>3rd-level Fey Wanderer feature</em></p>
+			<p>You learn an additional spell when you reach certain levels in this class, as shown in the Fey Wanderer Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+			<h5 class="caption">FEY WANDERER SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>charm person</em></td></tr>
+                <tr><td>5th</td><td><em>misty step</em></td></tr>
+                <tr><td>9th</td><td><em>dispel magic</em></td></tr>
+                <tr><td>13th</td><td><em>banishment</em></td></tr>
+                <tr><td>17th</td><td><em>mislead</em></td></tr>
+            </table>
+		</description>
+		<sheet display="false">
+			<description>You learn an additional spell when you reach certain levels in this class.</description>
+		</sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Ranger" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Ranger" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Ranger" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Ranger" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISLEAD" spellcasting="Ranger" level="17" />
+        </rules>
+	</element>
+	<element name="Cunning Will" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_CUNNING_WILL">
+		<description>
+			<p><em>3rd-level Fey Wanderer feature</em></p>
+			<p>Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being charmed or frightened.</p>
+			<p class="indent">In addition, you gain proficiency in one of the following skills of your choice: Deception, Performance, or Persuasion.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being charmed or frightened.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Cunning Will" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+	<element name="Dreadful Strikes" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_DREADFUL_STRIKES">
+		<description>
+			<p><em>3rd-level Fey Wanderer feature</em></p>
+			<p>You augment your attacks with mind-scarring magic, drawn from the gloomy hollows of the unseelie fey. You gain a bonus action that you can use to imbue the weapon, or weapons, you’re currently holding with magic. Until the end of the turn, the weapons are magical, and they deal an extra 1d6 psychic damage on a hit. A creature can take this extra damage only once per turn.</p>
+			<p class="indent">When you engage in two-weapon fighting, you can imbue your weapons as part of the same bonus action you use to make the attack.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can imbue the weapon, or weapons, you’re currently holding with magic. Until the end of the turn, the weapons are magical, and they deal an extra 1d6 psychic damage on a hit. A creature can take this extra damage only once per turn.
+			When you engage in two-weapon fighting, you can imbue your weapons as part of the same bonus action you use to make the attack.</description>
+		</sheet>
+	</element>
+	<element name="Blessings of the Courts" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BLESSINGS_OF_THE_COURTS">
+		<description>
+			<p><em>7th-level Fey Wanderer feature</em></p>
+			<p>You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is 3d6 psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be frightened of you until the end of your next turn.</p>
+			<p class="indent">In addition, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier.</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal 3d6 extra psychic damage. The creature must succeed on a Wisdom save or be frightened of you until the end of your next turn.
+			In addition, whenever you make a Charisma check, you gain a +{{wisdom:modifier}} bonus to the check.</description>
+		</sheet>
+		<rules>
+			<stat name="deception:misc" value="wisdom:modifier" />
+			<stat name="intimidation:misc" value="wisdom:modifier" />
+			<stat name="performance:misc" value="wisdom:modifier" />
+			<stat name="persuasion:misc" value="wisdom:modifier" />
+		</rules>
+	</element>
+	<element name="Beguiling Twist" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BEGUILING_TWIST">
+		<description>
+			<p><em>11th-level Fey Wanderer feature</em></p>
+			<p>You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being charmed or frightened, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:</p>
+			<ul>
+				<li>The creature is charmed or frightened by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.</li>
+				<li>The creature takes 3d10 psychic damage.</li>
+			</ul>
+		</description>
+		<sheet action="Reaction">
+			<description>Whenever a creature you can see within 120 feet of you succeeds on a save against being charmed or frightened, you can force a different creature you can see within 120 feet of you to succeed on a Wisdom save against your spell save DC or suffer your choice of one of the following effects:
+			The creature is charmed or frightened by you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.
+			The creature takes 3d10 psychic damage.</description>
+		</sheet>
+	</element>
+	<element name="Misty Presence" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_MISTY_PRESENCE">
+		<description>
+			<p><em>15th-level Fey Wanderer feature</em></p>
+			<p>You can magically remove yourself from one creature’s perception: you gain a bonus action that you can use to force a creature you can see within 30 feet of you to make a Wisdom saving throw against your spell save DC. On a failed save, the target can’t see or hear you for 24 hours. The target can repeat the saving throw at the end of any turn during which you hit it with an attack roll, forced it to make a saving throw, or dealt damage to it. The effect ends early if you use this bonus action again. On a successful save, the target is immune to this feature for 7 days.</p>
+			<p class="indent">Once you’ve used this bonus action, you can’t use it again until you finish a long rest or until you expend a spell slot of 4th level or higher to use it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can use to force a creature you can see within 30 feet of you to make a Wisdom save. On a failed save, the target can’t see or hear you for 24 hours. The target can repeat the save at the end of any turn during which you hit it with an attack roll, forced it to make a save, or dealt damage to it. The effect ends early if you use this bonus action again. On a successful save, the target is immune to this feature for 7 days.
+			You can expend a spell slot of 4th level or higher to use it again.</description>
+		</sheet>
+	</element>	
+	
+	<element name="Armor of Magical Strength" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_ARMOR_OF_MAGICAL_STRENGTH">
+		<description>
+			<p>While wearing this armor, a creature can use its Intelligence modifier in place of its Strength modifier when making Strength checks and Strength saving throws.</p>
+			<p class="indent">The armor has 4 charges. As a reaction when it would be knocked prone, the wearer can expend 1 charge to not be knocked prone. The armor regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Common</set>
+			<set name="charges">4</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Magical Strength</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Armor of Tools" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_ARMOR_OF_TOOLS">
+		<description>
+			<p>As an action, a creature wearing this infused armor can integrate into it artisan’s tools or thieves’ tools. The tools remain integrated in the armor for 8 hours or until the wearer removes the tools as an action. The armor can have only one tool integrated at a time.</p>
+			<p class="indent">The wearer can add its Intelligence modifier to any ability checks it makes with the integrated tool. The wearer must have a hand free to use the tool.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer infusion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Tools</set>
+		</setters>
+	</element>
+	<element name="Helm of Awareness" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_HELM_OF_AWARENESS">
+		<description>
+			<p>While wearing this helmet, a creature has advantage on initiative rolls. In addition, the wearer can’t be surprised, provided it isn’t incapacitated.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer infusion</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="artificer infusion">Wondrous Item</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Mind Sharpener" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_ARMOR_MIND_SHARPENER">
+		<description>
+			<p>The infused item can send a jolt to the wearer to refocus their mind. While wearing this infused item, whenever the creature fails a Constitution saving throw to maintain concentration on a spell, it can use its reaction to succeed instead.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer infusion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Mind Sharpener {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Mind Sharpener Robe" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_MIND_SHARPENER">
+		<description>
+			<p>The infused robe can send a jolt to the wearer to refocus their mind. While wearing this infused item, whenever the creature fails a Constitution saving throw to maintain concentration on a spell, it can use its reaction to succeed instead.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="artificer infusion">Wondrous Item</set>
+		</setters>
+	</element>
+	<element name="Spell-Refueling Ring" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_SPELL_REFUELING_RING">
+		<description>
+			<p>While wearing this ring, the creature can recover one expended spell slot as an action. The maximum level of the recovered slot is equal to the number of magic items the wearer is currently attuned to. Once used, the ring can’t be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer infusion</set>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type" addition="artificer infusion">Ring</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>	
+	<element name="Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_POWER_ARMOR">
+		<description>
+			<p>A conduit for your artificer magic.</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Power {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Guardian Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_GUARDIAN_POWER_ARMOR">
+		<description>
+			<p>A conduit for your artificer magic designed to be in the frontline of conflict.</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>			
+			<p class="indent"><strong><em>Thunder Gauntlets.</em></strong> Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+			<p class="indent"><strong><em>Defensive Field.</em></strong> You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Guardian Power {{parent}}</set>
+		</setters>
+	</element>	
+	<element name="Infiltrator Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_INFILTRATOR_POWER_ARMOR">
+		<description>
+			<p>A conduit for your artificer magic designed for subtle undertakings.</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>
+			<p class="indent"><strong><em>Lightning Launcher.</em></strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+			<p class="indent"><strong><em>Powered Steps.</em></strong> Your walking speed increases by 5 feet.</p>
+			<p class="indent"><strong><em>Second Skin.</em></strong> The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">body</set>
+			<set name="type" addition="heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Infiltrator Power {{parent}}</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_IGNORE_STEALTH_DISADVANTAGE" />
+			<stat name="speed:misc" value="5" />
+		</rules>
+	</element>
+	<element name="Perfected Guardian Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_GUARDIAN_PERFECTED_POWER_ARMOR">
+		<description>
+			<p>A conduit for your artificer magic designed to be in the frontline of conflict.</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>			
+			<p class="indent"><strong><em>Thunder Gauntlets.</em></strong> Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+			<p class="indent"><strong><em>Defensive Field.</em></strong> You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor.</p>
+			<p class="indent"><strong><em>Perfected Feature.</em></strong> Tinkering with your armor's energy system leads you to discover a powerful pulling force. When a creature you can see ends its turn within 30 feet of you, you can use your reaction to force the creature to succeed on a Strength saving throw against your spell save DC or be pulled up to 30 feet toward you to an unoccupied space. If you pull the target to space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.</p>
+			<p class="indent">You can use this reaction a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Perfected Guardian Power {{parent}}</set>
+		</setters>
+	</element>	
+	<element name="Perfected Infiltrator Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_PERFECTED_INFILTRATOR_POWER_ARMOR">
+		<description>
+			<p>A conduit for your artificer magic designed for subtle undertakings.</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the power armor lacks this requirement for you.</li>
+				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
+				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
+			</ul>
+			<p class="indent"><strong><em>Lightning Launcher.</em></strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+			<p class="indent"><strong><em>Powered Steps.</em></strong> Your walking speed increases by 5 feet.</p>
+			<p class="indent"><strong><em>Second Skin.</em></strong> The armor’s weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity (Stealth) checks, the power armor doesn’t.</p>
+			<p class="indent"><strong><em>Perfected Feature.</em></strong> Any creature that takes lightning damage from your Lightning Launcher glimmers with light until the start of your next turn. The glimmering creature sheds dim light in a 5 foot radius, and the next attack roll against it by a creature other than you has advantage. If that attack hits, it deals an extra 1d6 lightning damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, heavy</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">body</set>
+			<set name="type" addition="heavy">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Perfected Infiltrator Power {{parent}}</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_IGNORE_STEALTH_DISADVANTAGE" />
+			<stat name="speed:misc" value="5" />
+		</rules>
+	</element>
+	<element name="Star Map" type="Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ITEM_STAR_MAP">
+		<description>
+			<p>The map is a Tiny object and can serve as a spellcasting focus for your druid spells.</p>
+			<p class="indent">If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+		</description>
+		<setters>
+			<set name="category">Spellcasting Focus</set>
+		</setters>
+	</element>
+
+	<!-- 
+	<element name="Thunder Gauntlet" type="Weapon" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_WEAPON_THUNDER_GAUNTLET">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE</supports>
+		<description>
+			<p>Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="thunder">1d8</set>
+		</setters>
+	</element>
+	<element name="Lightning Launcher" type="Weapon" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_WEAPON_LIGHTNING_LAUNCHER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED</supports>
+		<description>
+			<p>A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">25</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">90/300</set>
+			<set name="damage" type="lightning">1d6</set>
+		</setters>
+	</element>
+	-->
+	
+</elements>
