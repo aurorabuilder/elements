@@ -239,6 +239,18 @@
 		<description>
 			<p>As a Fey Wanderer, you guard the border between the Feywild and the Material Plane, guiding the lost out of the Feywild and preventing dangerous fey from damaging the Material Plane. Your experience with both domains makes you an exceptional negotiator between inhabitants of these worlds, as you understand both humanoid mindsets and the wiles of the fey courts.</p>
 			<p class="indent">Fey Wanderers possess a preternatural blessing from a fey ally or a place of fey power. Choose your blessing from the Feywild Gifts table or determine it randomly.</p>
+			<h5 class="caption">Feywild Gifts</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Gift</td></tr>
+				</thead>
+				<tr><td>1</td><td>Illusory butterflies flutter around you while you take a short or long rest.</td></tr>
+				<tr><td>2</td><td>Fresh, seasonal flowers sprout from your hair each dawn.</td></tr>
+				<tr><td>3</td><td>You faintly smell of cinnamon, lavender, nutmeg, or another comforting herb or spice.</td></tr>
+				<tr><td>4</td><td>Your shadow dances while no one is looking directly at it.</td></tr>
+				<tr><td>5</td><td>Delicate horns or antlers sprout from your head.</td></tr>
+				<tr><td>6</td><td>Your skin and hair change color to match the season at each dawn.</td></tr>
+			</table>
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_FEY_WANDERER_MAGIC" />
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_CUNNING_WILL" />
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_DREADFUL_STRIKES" />
@@ -259,55 +271,95 @@
 	<element name="Fey Wanderer Magic" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_FEY_WANDERER_MAGIC">
 		<description>
 			<p><em>3rd-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>You learn an additional spell when you reach certain levels in this class, as shown in the Fey Wanderer Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+			<h5 class="caption">Fey Wanderer Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>charm person</em></td></tr>
+                <tr><td>5th</td><td><em>misty step</em></td></tr>
+                <tr><td>9th</td><td><em>dispel magic</em></td></tr>
+                <tr><td>13th</td><td><em>banishment</em></td></tr>
+                <tr><td>17th</td><td><em>mislead</em></td></tr>
+            </table>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet display="false">
+			<description>You learn an additional spell when you reach certain levels in this class.</description>
 		</sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Ranger" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Ranger" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Ranger" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Ranger" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISLEAD" spellcasting="Ranger" level="17" />
+        </rules>
 	</element>
 	<element name="Cunning Will" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_CUNNING_WILL">
 		<description>
 			<p><em>3rd-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being charmed or frightened.</p>
+			<p class="indent">In addition, you gain proficiency in one of the following skills of your choice: Deception, Performance, or Persuasion.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You have advantage on saving throws against being charmed or frightened.</description>
 		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Cunning Will" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
 	</element>
 	<element name="Dreadful Strikes" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_DREADFUL_STRIKES">
 		<description>
 			<p><em>3rd-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>You augment your attacks with mind-scarring magic, drawn from the gloomy hollows of the unseelie fey. You gain a bonus action that you can use to imbue the weapon, or weapons, you’re currently holding with magic. Until the end of the turn, the weapons are magical, and they deal an extra 1d6 psychic damage on a hit. A creature can take this extra damage only once per turn.</p>
+			<p class="indent">When you engage in two-weapon fighting, you can imbue your weapons as part of the same bonus action you use to make the attack.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>You can imbue the weapon, or weapons, you’re currently holding with magic. Until the end of the turn, the weapons are magical, and they deal an extra 1d6 psychic damage on a hit. A creature can take this extra damage only once per turn.
+			When you engage in two-weapon fighting, you can imbue your weapons as part of the same bonus action you use to make the attack.</description>
 		</sheet>
 	</element>
 	<element name="Blessings of the Courts" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BLESSINGS_OF_THE_COURTS">
 		<description>
 			<p><em>7th-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is 3d6 psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be frightened of you until the end of your next turn.</p>
+			<p class="indent">In addition, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal 3d6 extra psychic damage. The creature must succeed on a Wisdom save or be frightened of you until the end of your next turn.
+			In addition, whenever you make a Charisma check, you gain a +{{wisdom:modifier}} bonus to the check.</description>
 		</sheet>
+		<rules>
+			<stat name="deception:misc" value="wisdom:modifier" />
+			<stat name="intimidation:misc" value="wisdom:modifier" />
+			<stat name="performance:misc" value="wisdom:modifier" />
+			<stat name="persuasion:misc" value="wisdom:modifier" />
+		</rules>
 	</element>
 	<element name="Beguiling Twist" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_BEGUILING_TWIST">
 		<description>
 			<p><em>11th-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being charmed or frightened, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:</p>
+			<ul>
+				<li>The creature is charmed or frightened by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.</li>
+				<li>The creature takes 3d10 psychic damage.</li>
+			</ul>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction">
+			<description>Whenever a creature you can see within 120 feet of you succeeds on a save against being charmed or frightened, you can force a different creature you can see within 120 feet of you to succeed on a Wisdom save against your spell save DC or suffer your choice of one of the following effects:
+			The creature is charmed or frightened by you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.
+			The creature takes 3d10 psychic damage.</description>
 		</sheet>
 	</element>
 	<element name="Misty Presence" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_FEY_WANDERER_MISTY_PRESENCE">
 		<description>
 			<p><em>15th-level Fey Wanderer feature</em></p>
-			<p></p>
+			<p>You can magically remove yourself from one creature’s perception: you gain a bonus action that you can use to force a creature you can see within 30 feet of you to make a Wisdom saving throw against your spell save DC. On a failed save, the target can’t see or hear you for 24 hours. The target can repeat the saving throw at the end of any turn during which you hit it with an attack roll, forced it to make a saving throw, or dealt damage to it. The effect ends early if you use this bonus action again. On a successful save, the target is immune to this feature for 7 days.</p>
+			<p class="indent">Once you’ve used this bonus action, you can’t use it again until you finish a long rest or until you expend a spell slot of 4th level or higher to use it again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can use to force a creature you can see within 30 feet of you to make a Wisdom save. On a failed save, the target can’t see or hear you for 24 hours. The target can repeat the save at the end of any turn during which you hit it with an attack roll, forced it to make a save, or dealt damage to it. The effect ends early if you use this bonus action again. On a successful save, the target is immune to this feature for 7 days.
+			You can expend a spell slot of 4th level or higher to use it again.</description>
 		</sheet>
 	</element>	
 </elements>
