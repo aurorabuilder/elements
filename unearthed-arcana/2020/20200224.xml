@@ -149,10 +149,10 @@
 			<p>You learn how to use your artificer infusions to specially modify the armor enhanced by your Power Armor feature. That armor now counts as separate items for the purposes of your Infuse Items feature: armor (the chest piece), boots, bracers, and a weapon. Each of those items can bear one of your infusions. In addition, the maximum number of items you can infuse at once increases by 2, but those extra items must be part of your power armor.</p>
 		</description>
 		<sheet>
-			<description>Your Power Armor now counts as separate items for the purposes of your Infuse Items feature: armor (the chest piece), boots, bracers, and a weapon. Each of those items can bear one of your infusions. Two of the items you can infuse must be part of your power armor.</description>
+			<description>Your Power Armor now counts as separate items for the purposes of your Infuse Items feature: armor, boots, bracers, and a weapon. Each of those items can bear one of your infusions. Two of the items you can infuse must be part of your power armor.</description>
 		</sheet>
 		<rules>		
-			<stat name="item infusions:max" value="2" bonus="armor modifications" />
+			<stat name="item infusions:max" value="2" />
 		</rules>
 	</element>
 	<element name="Perfected Armor" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_PERFECTED_ARMOR">
@@ -717,9 +717,6 @@
 				<li>You can use the power armor as a spellcasting focus for your artificer spells.</li>
 				<li>The power armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, and it replaces any missing limbs, functioning identically to a body part it is replacing.</li>
 			</ul>
-			<div class="reference">
-				<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_ARMORER_POWER_ARMOR" />
-			</div>
 		</description>
 		<setters>
 			<set name="keywords">artificer, armorer, heavy</set>
@@ -727,7 +724,6 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="slot">body</set>
 			<set name="type" addition="heavy">Armor</set>
-			<!-- <set name="rarity">Unique</set> -->
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Power {{parent}}</set>
 		</setters>
@@ -749,7 +745,6 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="slot">body</set>
 			<set name="type" addition="heavy">Armor</set>
-			<!-- <set name="rarity">Unique</set> -->
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Guardian Power {{parent}}</set>
 		</setters>
@@ -770,14 +765,15 @@
 			<set name="keywords">artificer, armorer, heavy</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
 			<set name="slot">body</set>
 			<set name="type" addition="heavy">Armor</set>
-			<!-- <set name="rarity">Unique</set> -->
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Infiltrator Power {{parent}}</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_IGNORE_STEALTH_DISADVANTAGE" />
+			<stat name="speed:misc" value="5" />
 		</rules>
 	</element>
 	<element name="Perfected Guardian Power Armor" type="Magic Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_MAGIC_ITEM_GUARDIAN_PERFECTED_POWER_ARMOR">
@@ -799,7 +795,6 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="slot">body</set>
 			<set name="type" addition="heavy">Armor</set>
-			<!-- <set name="rarity">Unique</set> -->
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Perfected Guardian Power {{parent}}</set>
 		</setters>
@@ -824,7 +819,6 @@
 			<set name="weight" lb="0">—</set>
 			<set name="slot">body</set>
 			<set name="type" addition="heavy">Armor</set>
-			<!-- <set name="rarity">Unique</set> -->
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Perfected Infiltrator Power {{parent}}</set>
 		</setters>
@@ -842,4 +836,35 @@
 			<set name="category">Spellcasting Focus</set>
 		</setters>
 	</element>
+
+	<!-- 
+	<element name="Thunder Gauntlet" type="Weapon" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_WEAPON_THUNDER_GAUNTLET">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE</supports>
+		<description>
+			<p>Your armored fists each count as a simple melee weapon, and each deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="thunder">1d8</set>
+		</setters>
+	</element>
+	<element name="Lightning Launcher" type="Weapon" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_WEAPON_LIGHTNING_LAUNCHER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED</supports>
+		<description>
+			<p>A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">25</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">90/300</set>
+			<set name="damage" type="lightning">1d6</set>
+		</setters>
+	</element>
+	-->
+	
 </elements>
