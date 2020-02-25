@@ -166,12 +166,11 @@
 		</sheet>
 	</element>
 
-
 	<element name="Circle of the Stars" type="Archetype" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_DRUID_CIRCLE_OF_THE_STARS">
 		<supports>Druid Circle</supports>
 		<description>
 			<p>An ancient lineage, the Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of the Stars seeks to harness the powers of the cosmos.</p>
-			<p class="indent">Many druids of this circle keep detailed records of the stars and their effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples—any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.</p>
+			<p class="indent">Many druids of this circle keep detailed records of the stars and their effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples—any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.</p>			
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP" />
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM" />
 			<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_COSMIC_OMEN" />
@@ -190,49 +189,118 @@
 	<element name="Star Map" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP">
 		<description>
 			<p><em>2nd-level Circle of the Stars feature</em></p>
-			<p></p>
+			<p>You've created a star map as part of your study of the heavens. The map is a Tiny object and can serve as a spellcasting focus for your druid spells. You decide what form the object takes, or you can determine what it is by rolling on the Star Map table.</p>
+			<h5 class="caption">Star Map</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Map Form</td></tr>
+				</thead>
+				<tr><td>1</td><td>A scroll of living wood that aligns with heavenly bodies</td></tr>
+				<tr><td>2</td><td>A stone tablet with fine holes drilled through it</td></tr>
+				<tr><td>3</td><td>A speckled owlbear hide, tooled with raised marks</td></tr>
+				<tr><td>4</td><td>A collection of maps bound in an ebony cover</td></tr>
+				<tr><td>5</td><td>A crystal that projects starry patterns when placed before a light</td></tr>
+				<tr><td>6</td><td>Tempered glass disks that align to depict constellations</td></tr>
+			</table>
+			<p class="indent">If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+			<p class="indent">You can cast the augury and guiding bolt spells without expending a spell slot and without preparing the spell, provided you use the star map as the spellcasting focus. You can cast a spell from the map in this way a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You've created a tiny star map as part of your study of the heavens that can serve as a spellcasting focus for your druid spells.
+			If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.
+			You can cast the augury and guiding bolt spells without expending a spell slot and without preparing the spell ({{ua-star-map:usage}}/Long Rest), provided you use the star map as the spellcasting focus.</description>
 		</sheet>
+		<rules>
+			<stat name="ua-star-map:usage" value="1" bonus="base" />
+			<stat name="ua-star-map:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
 	</element>
 	<element name="Starry Form" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM">
 		<description>
 			<p><em>2nd-level Circle of the Stars feature</em></p>
-			<p></p>
+			<p>You gain the ability to harness constellations’ power to alter your form. As an action, you can expend a use of your Wild Shape feature to take on a starry form rather than transforming into a beast.</p>
+			<p class="indent">While in your starry form, you retain your game statistics, but your body takes on a luminous, starlike quality; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10- foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you’re incapacitated.</p>
+			<p class="indent">Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p>
+			<ul class="unstyled">
+				<li><strong>Chalice.</strong> A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + half your level in this class.</li>
+				<li><strong>Archer.</strong> A constellation of an archer appears on you. You gain a bonus action that you can use to make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</li>
+				<li><strong>Dragon.</strong> A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</li>
+			</ul>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action">
+			<description>You can expend a use of your Wild Shape feature to take on a starry form rather than transforming into a beast.
+			This form sheds bright light in a 10- foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you’re incapacitated.
+			Whenever you assume your starry form, choose which of the constellations glimmers on your body.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_CHALICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_ARCHER" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_DRAGON" />
+		</rules>
+	</element>
+	<element name="Chalice" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_CHALICE">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + half your level in this class.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>Whenever you cast a spell using a spell slot that restores hp to a creature, you or another creature within 30 feet of you can regain 1d8+{{level:druid:half}} hp.</description>
+		</sheet>
+	</element>
+	<element name="Archer" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_ARCHER">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of an archer appears on you. You gain a bonus action that you can use to make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Starry Form">
+			<description>You can make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals 1d8+{{wisdom:modifier}} radiant damage.</description>
+		</sheet>
+	</element>
+	<element name="Dragon" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STARRY_FORM_DRAGON">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>When you make an Intelligence or a Wisdom check or a Constitution save to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</description>
 		</sheet>
 	</element>
 	<element name="Cosmic Omen" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_COSMIC_OMEN">
 		<description>
 			<p><em>6th-level Circle of the Stars feature</em></p>
-			<p></p>
+			<p>You learn to use your star map to divine the will of the cosmos. Whenever you finish a long rest, you can consult your star map for omens. When you do so, roll a d6. You gain one of the following possible omens based on whether you rolled an even number or an odd number on the d6:</p>
+			<ul class="unstyled">
+				<li><strong>Weal (even).</strong> Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and add the number rolled to the total.</li>
+				<li><strong>Woe (odd).</strong> Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and subtract the number rolled from the total.</li>
+			</ul>
+			<p class="indent">You can use this reaction a number of times equal to your Wisdom modifier, and you regain all expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Reaction" usage="{{wisdom:modifier}}/Long Rest">
+			<description>Whenever you finish a long rest, you can consult your star map for omens. When you do so, roll a d6. You gain one of the following possible omens based on whether you rolled an even number or an odd number on the d6:
+			Weal (even). Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use roll a d6 and add the number rolled to the total.
+			Woe (odd). Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use roll a d6 and subtract the number rolled from the total.</description>
 		</sheet>
 	</element>
 	<element name="Full of Stars" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_FULL_OF_STARS">
 		<description>
 			<p><em>10th-level Circle of the Stars feature</em></p>
-			<p></p>
+			<p>While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</description>
 		</sheet>
 	</element>
 	<element name="Star Flare" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_FLARE">
 		<description>
 			<p><em>14th-level Circle of the Stars feature</em></p>
-			<p></p>
+			<p>Your connection to the cosmos allows you to conjure brilliant starlight. As an action, you conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution saving throw against your spell save DC or take 4d10 radiant damage and be blinded until the end of your next turn.</p>
+			<p class="indent">Once you have used this action, you can’t use it again until you finish a long rest or until you expend a spell slot of 5th level or higher to use it again.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution save or take 4d10 radiant damage and be blinded until the end of your next turn.
+			You can expend a spell slot of 5th level or higher to use it again.</description>
 		</sheet>
 	</element>
-
 
 	<element name="Fey Wanderer" type="Archetype" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ARCHETYPE_RANGER_FEY_WANDERER">
 		<supports>Ranger Archetype</supports>
@@ -362,4 +430,18 @@
 			You can expend a spell slot of 4th level or higher to use it again.</description>
 		</sheet>
 	</element>	
+	
+	<element name="Star Map" type="Item" source="Unearthed Arcana: Subclasses, Part 3" id="ID_WOTC_UA20200224_ITEM_STAR_MAP">
+		<description>
+			<p>The map is a Tiny object and can serve as a spellcasting focus for your druid spells.</p>
+			<p class="indent">If you lose your map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20200224_ARCHETYPE_FEATURE_STARS_STAR_MAP" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Spellcasting Focus</set>
+		</setters>
+	</element>
+
 </elements>
