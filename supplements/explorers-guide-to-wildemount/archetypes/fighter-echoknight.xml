@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="fighter-echoknight.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/explorers-guide-to-wildemount/archetypes/fighter-echoknight.xml" />
+		</update>
+	</info>
+	<element name="Echo Knight" type="Archetype" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FIGHTER_ECHO_KNIGHT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>A mysterious and feared frontline warrior of the Kryn Dynasty, the Echo Knight has mastered the art of using dunamis to summon the fading shades of unrealized timelines to aid them in battle. Surrounded by echoes of their own might, they charge into the fray as a cycling swarm of shadows and strikes.</p>
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_MANIFEST_ECHO" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_UNLEASH_INCARNATION" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_ECHO_AVATAR" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_SHADOW_MARTYR" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_RECLAIM_POTENTIAL" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_LEGION_OF_ONE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_MANIFEST_ECHO" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_UNLEASH_INCARNATION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_ECHO_AVATAR" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_SHADOW_MARTYR" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_RECLAIM_POTENTIAL" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_LEGION_OF_ONE" level="18" />
+		</rules>
+	</element>
+	<element name="Manifest Echo" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_MANIFEST_ECHO">
+		<description>
+			<p><em>3rd-level Echo Knight feature</em></p>
+			<p>You can use a bonus action to magically manifest an echo of yourself in an unoccupied space you can see within 15 feet of you. This echo is a magical, translucent, gray image of you that lasts until it is destroyed, until you dismiss it as a bonus action, until you manifest another echo, or until you’re incapacitated.</p>
+			<p class="indent">Your echo has AC 14 + your proficiency bonus, 1 hit point, and immunity to all conditions. If it has to make a saving throw, it uses your saving throw bonus for the roll. It is the same size as you, and it occupies its space. On your turn, you can metally command the echo to move up to 30 feet in any direction (no action required). If your echo is ever more than 30 feet away from you at the end of your turn, it is destroyed.</p>
+			<p class="indent">You can use the echo in the following ways:</p>
+			<ul>
+				<li>As a bonus action, you can teleport, magically swapping places with your echo at a cost of 15 feet of your movement, regardess of the distance between the two of you.</li>
+				<li>When you take the attack action on your turn, any attack you make with that action can originate from your space or the echo’s space. You make this choice for each attack.</li>
+				<li>When a creature that you can see within 5 feet of your echo moves at least 5 feet away from it, you can use your reaction to make an opportunity attack against that creature as if you were in the echo’s space.</li>
+			</ul>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can magically manifest an echo of yourself in an unoccupied space you can see within 15 feet of you. This echo is a magical, translucent, gray image of you that lasts until it is destroyed, until you dismiss it as a bonus action, until you manifest another echo, or until you’re incapacitated.
+			Your echo has {{manifest echo:ac}} AC, 1 hit point, and immunity to all conditions. If it has to make a saving throw, it uses your saving throw bonus for the roll. It is the same size as you, and it occupies its space. On your turn, you can metally command the echo to move up to 30 feet in any direction. If your echo is ever more than 30 feet away from you at the end of your turn, it is destroyed.
+			As a bonus action, you can teleport, magically swapping places with your echo at a cost of 15 feet of your movement, regardess of the distance between the two of you.
+			When you take the attack action on your turn, any attack you make with that action can originate from your space or the echo’s space. You make this choice for each attack.
+			When a creature that you can see within 5 feet of your echo moves at least 5 feet away from it, you can use your reaction to make an opportunity attack against that creature as if you were in the echo’s space.</description>
+		</sheet>
+		<rules>
+			<stat name="manifest echo:ac" value="14" />
+			<stat name="manifest echo:ac" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Unleash Incarnation" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_UNLEASH_INCARNATION">
+		<description>
+			<p><em>3rd-level Echo Knight feature</em></p>
+			<p>You can heighten your echo’s fury. Whenever you take the Attack action, you can make one additional melee attack from the echo’s position.</p>
+			<p class="indent">You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{unleash incarnation:usage}}/Long Rest">
+			<description>Whenever you take the Attack action, you can make one additional melee attack from the echo’s position.</description>
+		</sheet>
+		<rules>
+			<stat name="unleash incarnation:usage" value="1" bonus="base" />
+			<stat name="unleash incarnation:usage" value="constitution:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Echo Avatar" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_ECHO_AVATAR">
+		<description>
+			<p><em>7th-level Echo Knight feature</em></p>
+			<p>You can temporary transfer your consciousness to your echo. As an action, you can see through your echo's eyes and hear trough its ears. During this time, you are deafened and blinded. You can sustain this effect for up to 10 minutes, and you can end it at any time (requires no action). While your each is being used in this way, it can be up to 1,000 feet away from you without being destroyed.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can see through your echo's eyes and hear trough its ears. During this time, you are deafened and blinded. You can sustain this effect for up to 10 minutes, and you can end it at any time. While your each is being used in this way, it can be up to 1,000 feet away from you without being destroyed.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Martyr" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_SHADOW_MARTYR">
+		<description>
+			<p><em>10th-level Echo Knight feature</em></p>
+			<p>You can make your echo throw itself in front of an attack directed at another creature that you can see. Before the attack roll is made, you can use your reaction to teleport the echo to an unoccupied space withing 5 feet of the targeted creature. The attack roll that triggered the reaction is instead made against your echo.</p>
+			<p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>You can make your echo throw itself in front of an attack directed at another creature that you can see. Before the attack roll is made, you can teleport the echo to an unoccupied space withing 5 feet of the targeted creature. The attack roll that triggered the reaction is instead made against your echo.</description>
+		</sheet>
+	</element>
+	<element name="Reclaim Potential" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_RECLAIM_POTENTIAL">
+		<description>
+			<p><em>15th-level Echo Knight feature</em></p>
+			<p>You've learned to absord the fleeting magic of your echo. When an echo of yours is destroyed by taking damage, you can gain a number of temporary hit points equal to 2d6 + your Constitution modifier, provided you don't already have temporary hit points.</p>
+			<p class="indent">You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{reclaim potential:usage}}/Long Rest">
+			<description>When an echo of yours is destroyed by taking damage, you can gain 2d6+{{constitution:modifier}} temporary hp, provided you don't already have temporary hp.</description>
+		</sheet>
+		<rules>
+			<stat name="reclaim potential:usage" value="1" bonus="base" />
+			<stat name="reclaim potential:usage" value="constitution:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Legion of One" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_ECHO_KNIGHT_LEGION_OF_ONE">
+		<description>
+			<p><em>18th-level Echo Knight feature</em></p>
+			<p>You can use a bonus action to create two echoes with your Manifest Echo feature, and these echoes can coexist. If you try to create a third echo, the previous two echoes are destroyed. Anything you can do from one echo's position can be done from the other's instead.</p>
+			<p class="indent">In addition, when you roll initiative and have no uses of your Unleash Incarnation feature left, you regain one use of that feature.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can create two echoes with your Manifest Echo feature, and these echoes can coexist. If you try to create a third echo, the previous two echoes are destroyed. Anything you can do from one echo's position can be done from the other's instead.
+			When you roll initiative and have no uses of your Unleash Incarnation feature left, you regain one use of that feature.</description>
+		</sheet>
+	</element>	
+</elements>
