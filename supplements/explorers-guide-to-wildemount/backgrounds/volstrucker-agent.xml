@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="volstrucker-agent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/explorers-guide-to-wildemount/backgrounds/volstrucker-agent.xml" />
+		</update>
+	</info>
+	<element name="Volstrucker Agent" type="Background" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_BACKGROUND_VOLSTRUCKER_AGENT">
+		<description>
+			<p>The Volstrucker are a clandestine organization of arcane assassins and enforcers in the service of the Cerberus Assembly. Their operatives bear no official title, but are referred to in hushed tones as “scourgers” by residents of large Dwendalian cities such as Zadash and Rexxentrum.</p>
+			<p class="indent">You are a Volstrucker agent. Your duty is to silence dissidents who would undermine the will of King Dwendal—and more importantly, the will of the Assembly.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Stealth</li>
+				<li><strong>Tool Proficiencies:</strong> Poisoner’s kit</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A set of common clothes, a black cloak with a hood, a poisoner’s kit, and a pouch containing 10 gp</li>
+			</ul>
+			<h5>TRAGEDY</h5>
+			<p>Happy people aren’t selected to join the Volstrucker. The Cerberus Assembly preys upon talented individuals who have been broken by tragedy—in some cases, tragedy that the Volstrucker has arranged for. A slightly broken mind is more easily reshaped and reeducated. Choose the tragedy that set you on this path, or roll on the Tragedies table.</p>
+			<h5 class="caption">Tragedies</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Tragedy</td></tr>
+				</thead>
+				<tr><td>1</td><td>Familicide. Through deceit or manipulation, the Volstrucker convinced you to slaughter your own family.</td></tr>
+				<tr><td>2</td><td>Amnesia. You were forced to study magic so potent that it strained your mind beyond mortal limits, stealing away the memories of your past.</td></tr>
+				<tr><td>3</td><td>Capture. You were captured and tortured by agents of the Kryn Dynasty, and barely escaped.</td></tr>
+				<tr><td>4</td><td>Starvation. A terrible blight afflicted your rural village, and many of your friends and family members starved to death. You survived, but only barely.</td></tr>
+				<tr><td>5</td><td>Disfigurement. One of your arcane experiments went wrong and scarred or dismembered you so gravely that others now shun you. Only the Volstrucker showed you kindness after that day.</td></tr>
+				<tr><td>6</td><td>Vicissitude. You were once the scion of a wealthy family who lost their entire fortune in the blink of an eye.</td></tr>
+			</table>
+			<div element="ID_WOTC_EGTW_BACKGROUND_FEATURE_SHADOW_NETWORK" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Agents of the Volstrucker are groomed to follow orders without question and to kill without mercy. The trauma that brings one into the order can fester even more strongly against the darkness of a Volstrucker agent’s assignments. Officially, no one ever leaves the order—but those desperate enough do whatever it takes to gain some measure of freedom.</p>
+		</description>
+		<setters>
+			<set name="short">Deception, Stealth, Poisoner’s Kit, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+			<select type="Language" name="Language, Volstrucker Agent" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_EGTW_BACKGROUND_FEATURE_SHADOW_NETWORK" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I prefer to keep my thoughts to myself.</item>
+				<item id="2">I indulge vice in excess to quiet my conscience.</item>
+				<item id="3">I’ve left emotion behind me. I’m now perfectly placid.</item>
+				<item id="4">Some event from the past keeps worming its way into my mind, making me restless.</item>
+				<item id="5">I always keep my word-except when I’m commanded to break it.</item>
+				<item id="6">I laugh off insults and never take them personally.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Order. The will of the crown is absolute. (Law)</item>
+				<item id="2">True Loyalty. The Cerberus Assembly is greater than any power, even the crown. (Law)</item>
+				<item id="3">Death. The penalty for disloyalty is death. (Evil)</item>
+				<item id="4">Determination. I cannot fall. Not ever. (Neutral)</item>
+				<item id="5">Fear. People should not respect power. They should fear it. (Evil)</item>
+				<item id="6">Escape. The Volstrucker are pure evil! I can’t atone for what I’ve done for them, but I can escape with my life. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">The job is all that matters. I will see it through.</item>
+				<item id="2">My orders are important, but my comrades are worth more than anything. I would die for them.</item>
+				<item id="3">Everything I’ve done, I’ve done to protect someone close to me.</item>
+				<item id="4">If the empire falls, all of civilization falls with it. I will hold back chaos and barbarism at any cost.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I drink to dull the pain in the back of my head.</item>
+				<item id="2">I go a bit mad when I see blood.</item>
+				<item id="3">I can hear the voices of everyone I’ve killed. I see their faces. I can’t be free of these ghosts.</item>
+				<item id="4">Fear is a powerful motivator. I will do whatever it takes to prevent those who know what I am from seeing me fail, and from those I care about from knowing what I am.</item>
+			</select>
+		</rules>
+	</element>	
+	<element name="Feature: Shadow Network" type="Background Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_BACKGROUND_FEATURE_SHADOW_NETWORK">
+		<description>
+			<p>You have access to the Volstrucker shadow network, which allows you to communicate with other members of the order over long distances. If you write a letter in a special arcane ink, address it to a member of the Volstrucker, and cast it into a fire, the letter with burn to cinders and materialize whole again on the person of the agent you addressed it to.</p>
+			<p class="indent">The ink used to send a letter across the shadow network is the same as that used by a wizard to scribe spells in a spellbook. Writing a letter in this ink costs 10 gp per page.</p>
+		</description>
+		<sheet alt="Shadow Network" />
+	</element>
+</elements>
