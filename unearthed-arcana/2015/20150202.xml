@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Eberron</name>
         <description>The Eberron campaign setting was created by Keith Baker and first published for D&amp;D in 2004. It combines pulp adventure and intrigue in a world where magic-driven technology has produced airships, trains, and similar advancements comparable to early 20th-century Europe. The continent of Khorvaire, the center of Eberron’s focus, has recently emerged from the Last War, a terrible conflict that saw the kingdom of Cyre transformed into a lifeless gray wasteland called the Mournland. That catastrophe shocked the remaining kingdoms into an uneasy peace that has held so far.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/unearthed-arcana-eberron">Wizards of the Coast</author>
-        <update version="0.2.3">
+        <update version="0.2.5">
             <file name="20150202.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2015/20150202.xml" />
         </update>
     </info>
@@ -42,17 +42,17 @@
             <!-- custom names from online generator -->
             <set name="names" type="male">Bin, Dox, Fie, Hars, Jin, Lam, Nit, Ot, Paik, Ruz, Sim, Toox, Yog</set>
             <set name="names" type="female">Bin, Dox, Fie, Hars, Jin, Lam, Nit, Ot, Paik, Ruz, Sim, Toox, Yog</set>
-            <set name="names-format" type="male">$(name)</set>
+            <set name="names-format" type="male">{{name}}</set>
         </setters>
         <rules>
-            <stat name="Dexterity" value="+1" />
-            <stat name="Charisma" value="+1" />
-            <stat name="Speed" value="30" bonus="base" />
-            <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <select type="Language" name="Language (Changeling)" number="2" />
+            <stat name="dexterity" value="1" />
+            <stat name="charisma" value="1" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Changeling)" supports="Standard||Exotic" number="2" />
         </rules>
     </element>
     <element name="Duplicity" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_DUPLICITY">
@@ -63,7 +63,7 @@
             <description>You gain proficiency in the Deception skill.</description>
         </sheet>
         <rules>
-            <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_DECEPTION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
         </rules>
     </element>
     <element name="Shapechanger" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHAPECHANGER">
@@ -73,7 +73,6 @@
         <sheet>
             <description>As an action, you can polymorph into any humanoid of your size that you have seen, or back into your true form. However, your equipment does not change with you. If you die, you revert to your natural appearance.</description>
         </sheet>
-        <rules />
     </element>
 
 
@@ -104,17 +103,17 @@
             <!-- custom names from online generator -->
             <set name="names" type="male">Silver, Void, Vermin, Vapor, Marsh, Surge, Kindle, Badger, Void, Gust, Steam, Cliff, Magma, Magma, Frostbite, Fury, Bog, Spine, Thistle, Ash</set>
             <set name="names" type="female">Coral, Marigold, Nutmeg, Floret, Evening, Saffron, Cloud, Fern, Twilight, Opal, Shade, Violet, Scarlet, Ember, Willow, Fern, Twig, Wind, Tiger, Stardust</set>
-            <set name="names-format" type="male">$(name)</set>
+            <set name="names-format" type="male">{{name}}</set>
         </setters>
         <rules>            
-            <stat name="Dexterity" value="+1" />
-            <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <stat name="Speed" value="30" bonus="base" />
-            <grant type="Vision" name="ID_VISION_DARKVISION" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <grant type="Language" name="ID_LANGUAGE_SYLVAN" />
+            <stat name="dexterity" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
         </rules>
     </element>
     <element name="Shifting" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTING">
@@ -124,12 +123,12 @@
             <p class="indent">You must finish a short or long rest before you can shift again.</p>
         </description>
         <sheet>
-            <description>On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action. While shifting, you gain $(shifting:hp:temp) temporary hit points. You must finish a short or long rest before you can shift again.</description>
+            <description>On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action. While shifting, you gain {{shifting:hp:temp}} temporary hit points. You must finish a short or long rest before you can shift again.</description>
         </sheet>
         <rules>
             <stat name="shifting:hp:temp" value="Level" />
-            <stat name="shifting:hp:temp" value="+1" bonus="min" />
-            <stat name="shifting:hp:temp" value="Constitution Modifier" bonus="min" />
+            <stat name="shifting:hp:temp" value="1" bonus="min" />
+            <stat name="shifting:hp:temp" value="constitution:modifier" bonus="min" />
         </rules>
     </element>
     <element name="Shifter Subrace" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SHIFTER_SUBRACE">
@@ -154,7 +153,7 @@
             <description>While shifting, you gain a +1 bonus to AC.</description>
         </sheet>
         <rules>
-            <stat name="Constitution" value="+1" />
+            <stat name="constitution" value="1" />
         </rules>
     </element>
     <element name="Cliffwalk Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Cliffwalk">
@@ -170,7 +169,7 @@
             <description>While shifting, you gain a climb speed of 30 feet.</description>
         </sheet>
         <rules>
-            <stat name="Dexterity" value="+1" />
+            <stat name="dexterity" value="1" />
         </rules>
     </element>
     <element name="Longstride Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Longstride">
@@ -186,7 +185,7 @@
             <description>While shifting, you can use the Dash action as a bonus action.</description>
         </sheet>
         <rules>
-            <stat name="Dexterity" value="+1" />
+            <stat name="dexterity" value="1" />
         </rules>
     </element>
     <element name="Longtooth Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Longtooth">
@@ -202,7 +201,7 @@
             <description>While shifting, you can make a bite attack as an action. This is a melee weapon attack that uses Strength for its attack roll and damage bonus and deals 1d6 piercing damage. If this attack hits a target that is your size or smaller, the target is also grappled.</description>
         </sheet>
         <rules>
-            <stat name="Strength" value="+1" />
+            <stat name="strength" value="1" />
         </rules>
     </element>
     <element name="Razorclaw Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Razorclaw">
@@ -218,7 +217,7 @@
             <description>While shifting, you can make an unarmed strike as a bonus action. You can use your Dexterity for its attack roll and damage bonus, and this attack deals slashing damage.</description>
         </sheet>
         <rules>
-            <stat name="Dexterity" value="+1" />
+            <stat name="dexterity" value="1" />
         </rules>
     </element>
     <element name="Wildhunt Shifter" type="Sub Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_SUBRACE_Wildhunt">
@@ -234,7 +233,7 @@
             <description>While shifting, you gain advantage on all Wisdom-based checks and saving throws.</description>
         </sheet>
         <rules>
-            <stat name="Wisdom" value="+1" />
+            <stat name="wisdom" value="1" />
         </rules>
     </element>
 
@@ -258,17 +257,17 @@
         <setters>
             <!-- custom names from online generator -->
             <set name="names" type="custom">Ogler, Warden, Masker, Sunderer, Director, Slasher, Familiar, Abider, Beauty, Cannon, Menace, Ravager, Destroyer, Walker, Tester, Shredder, Bender, Handler</set>
-            <set name="names-format" type="custom">$(custom)</set>
+            <set name="names-format" type="custom">{{custom}}</set>
         </setters>
         <rules>        
-            <stat name="Strength" value="+1" />
-            <stat name="Constitution" value="+1" />
-            <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <stat name="Speed" value="30" bonus="base" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating" />
-            <grant type="Racial Trait" name="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <select type="Language" name="Language (Warforged)" />
+            <stat name="strength" value="1" />
+            <stat name="constitution" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating" />
+            <grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Warforged)" supports="Standard||Exotic" />
         </rules>
     </element>
     <element name="Composite Plating" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_Composite_Plating">
@@ -279,7 +278,7 @@
             <description>Your construction incorporates wood and metal, granting you a +1 bonus to AC.</description>
         </sheet>
         <rules>        
-            <stat name="AC" value="+1" />
+            <stat name="ac:misc" value="1" />
         </rules>
     </element>
     <element name="Living Construct" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_Living_Construct">
@@ -290,7 +289,6 @@
         <sheet>
             <description>You are immune to disease. You do not need to eat or breathe, but you can ingest food and drink if you wish.</description>
         </sheet>
-        <rules />
     </element>
 
 
@@ -330,7 +328,7 @@
             </table>
         </description>
         <sheet>
-            <description>You have a magical mark that indicates you are a member of the '$(dragonmark:name)' dragonmarked house. $(dragonmark:ability) is your spellcasting ability for these spells.</description>
+            <description>You have a magical mark that indicates you are a member of the '{{dragonmark:name}}' dragonmarked house. {{dragonmark:ability}} is your spellcasting ability for these spells.</description>
         </sheet>
         <rules>
             <select type="Feat Feature" name="Dragonmark" supports="UA_Dragonmark" />
@@ -346,10 +344,10 @@
         <rules>
             <stat name="dragonmark:name" value="Detection" />
             <stat name="dragonmark:ability" value="Wisdom" />
-            <grant type="Spell" name="ID_PHB_SPELL_DETECT_MAGIC" level="1" />
-            <grant type="Spell" name="ID_PHB_SPELL_MAGE_HAND" level="1" />
-            <grant type="Spell" name="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" />
-            <grant type="Spell" name="ID_PHB_SPELL_CLAIRVOYANCE" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_CLAIRVOYANCE" level="9" />
         </rules>
     </element> -->
 

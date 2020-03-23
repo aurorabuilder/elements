@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Magic: Elven High Magic</name>
+		<update version="0.0.1">
+			<file name="11-elven-high-magic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/11-elven-high-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Magic: Elven High Magic" type="Source" source="Core" id="ID_KBP_DMEHM_SOURCE_DEEP_MAGIC_ELVEN_HIGH_MAGIC">
+		<description>
+			<p><strong>Powerful Magic of a Bygone Age!</strong></p>
+			<p>Legends say that the elves of ancient times could enchant entire cities, change fate, and even reshape worlds, with a power that nearly infringed upon the authority of the gods. These feats are unheard of today, and most non-elves believe elven high magic has died out. But this power still exists, as a closely guarded secret practiced only by the elves and their shadow fey relatives.</p>
+			<p>Deep Magic: Elven High Magic brings the secrets of high elven magic into your 5e campaign, featuring:</p>
+			<ul>
+				<li>An Elven High Magic school of wizard magic, with new abilities including Ritual Focus, Bound Magic, Ritual Mastery, and High Magic</li>
+				<li>17 new spells, including black swan storm, song of the forest, afflict line, cosmic alignment, and more</li>
+			</ul>
+			<p>Let the dwarves bluster, and the humans swagger in their ignorance. You will reveal your true power when the moment is right—for with sufficient time, an elf who has mastered the secrets of high magic can accomplish almost anything...</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DMEHM</set>
+			<set name="url">https://koboldpress.com/kpstore/product/deep-magic-elven-high-magic-pdf-5th-edition/</set>
+			<set name="image">https://koboldpress.com/kpstore/wp-content/uploads/DM-11-Elven-High-Magic.png</set>
+			<set name="author" abbreviation="KBP" url="https://koboldpress.com/">Kobold Press</set>
+			<set name="third-party">true</set>
+			<set name="release">20170503</set>
+		</setters>
+	</element>
+
+	<element name="School of Elven High Magic" type="Archetype" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_SCHOOL_OF_ELVEN_HIGH_MAGIC">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Elven high magic is very powerful and extremely rare. With high magic and sufficient time, an elven wizard can accomplish just about anything. It is a closely guarded secret, practiced only by the elves and their shadow fey relatives. Non-elves are never taught the ways of this school. That’s both a sign of the elves’ sense of superiority and an unfortunate practicality. High magic can take centuries to master, and humans and other short-lived races simply don’t live long enough to become skilled in this art.</p>
+			<div element="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_SAVANT" />
+			<div element="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_FOCUS" />
+			<div element="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_BOUND_MAGIC" />
+			<div element="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_MASTER" />
+			<div element="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_HIGH_MAGIC" />
+		</description>
+		<sheet display="false">
+			<description>With high magic and sufficient time, an elven wizard can accomplish just about anything.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_SAVANT" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_FOCUS" level="2" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_BOUND_MAGIC" level="6" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_MASTER" level="10" />
+			<grant type="Archetype Feature" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_HIGH_MAGIC" level="14" />
+		</rules>
+	</element>	
+	<element name="Ritual Savant" type="Archetype Feature" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_SAVANT">
+		<description>
+			<p>Beginning at 2nd level when you select this school, the gold and time you must spend to copy a high magic spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a high magic spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Ritual Focus" type="Archetype Feature" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_FOCUS">
+		<description>
+			<p>Starting at 2nd level, you can spend 10 minutes centering your mental energy and creating a ritual focus. When you choose to do so, you can expend your ritual focus to create one of the following effects when casting the ritual version of a spell.</p>
+			<ul>
+				<li>You can cast a ritual version of a spell without adding the additional 10 minutes to the casting time that’s normally required.</li>
+				<li>You can expend a spell slot one or more levels higher than the spell’s nominal level as you cast the ritual version of the spell, provided the spell allows that as an option. The ritual takes effect at the level of the expended spell slot instead of the minimum.</li>
+				<li>Some spells have additional, specific effects that you can invoke by expending your ritual focus.</li>
+			</ul>
+			<p>You can’t use your ritual focus again until after you complete a short or long rest.</p>
+		</description>
+		<sheet usage="{{ritual focus:usage}}/Short Rest">
+			<description>You can spend 10 minutes centering your mental energy and creating a ritual focus. When you choose to do so, you can expend your ritual focus to create one of the following effects when casting the ritual version of a spell.
+			You can cast a ritual version of a spell without adding the additional 10 minutes to the casting time that’s normally required.
+			You can expend a spell slot one or more levels higher than the spell’s nominal level as you cast the ritual version of the spell, provided the spell allows that as an option. The ritual takes effect at the level of the expended spell slot instead of the minimum.
+			Some spells have additional, specific effects that you can invoke by expending your ritual focus.</description>
+		</sheet>
+		<rules>
+			<stat name="ritual focus:usage" value="1" />
+		</rules>
+	</element>
+	<element name="Bound Magic" type="Archetype Feature" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_BOUND_MAGIC">
+		<description>
+			<p>At 6th level, you begin to master an understanding of elven high magic. You bind magic into the fabric of a place, making it last without any concentration. Choose a ritual spell you know that targets an area. Cast the ritual version of the spell and expend your ritual focus while burning expensive herbs worth 200 gp per level of the ritual. The spell’s duration in that location becomes a year and a day. If you cast the ritual every day for 30 consecutive days, the spell becomes permanent in that location until it’s dispelled or otherwise destroyed.</p>
+			<p class="indent">Additionally, you can expend your ritual focus twice between rests.</p>
+		</description>
+		<sheet>
+			<description>Choose a ritual spell you know that targets an area. Cast the ritual version of the spell and expend your ritual focus while burning expensive herbs worth 200 gp per level of the ritual. The spell’s duration in that location becomes a year and a day. If you cast the ritual every day for 30 consecutive days, the spell becomes permanent in that location until it’s dispelled or otherwise destroyed.</description>
+		</sheet>
+		<rules>
+			<stat name="ritual focus:usage" value="1" />
+		</rules>
+	</element>
+	<element name="Ritual Master" type="Archetype Feature" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_RITUAL_MASTER">
+		<description>
+			<p>Beginning at 10th level, you can copy any spells with the ritual tag, regardless of class, into your spellbook. Ritual spells that you copy into your spellbook using this ability must be no higher in level than half of your wizard level (rounded up). You can cast these spells only as rituals unless you also learn them by other means.</p>
+		</description>
+		<sheet>
+			<description>You can copy any spells with the ritual tag, regardless of class, into your spellbook. Ritual spells that you copy into your spellbook using this ability must be no higher in level than {{level:wizard:half:up}}. You can cast these spells only as rituals unless you also learn them by other means.</description>
+		</sheet>
+	</element>
+	<element name="High Magic" type="Archetype Feature" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_ARCHETYPE_FEATURE_ELVEN_HIGH_MAGIC_HIGH_MAGIC">
+		<description>
+			<p>Starting at 14th level, ritual versions of spells that you cast are treated as if they were cast using a spell slot one level higher than the slot you actually use. High magic can be combined with the increased spell level benefit of expending your ritual focus. This applies only to spells that can be cast at higher levels. Additionally, you can expend your ritual focus three times between rests.</p>
+		</description>
+		<sheet>
+			<description>Ritual versions of spells that you cast are treated as if they were cast using a spell slot one level higher than the slot you actually use. High magic can be combined with the increased spell level benefit of expending your ritual focus. This applies only to spells that can be cast at higher levels.</description>
+		</sheet>
+		<rules>
+			<stat name="ritual focus:usage" value="1" />
+		</rules>
+	</element>
+	
+	<element name="Afflict Line" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_AFFLICT_LINE">
+		<supports>Cleric, Warlock, Wizard</supports>
+		<description>
+			<p>You invoke the darkest curses upon your victim and his or her descendants. This spell does not require that you have a clear path to your target, only that your target is within range. Your target must make a successful Wisdom saving throw or be cursed until the magic is dispelled. The victim has disadvantage on ability checks and saving throws made with the ability score that you choose when you cast the spell. In addition, the target’s firstborn offspring is also targeted by the curse. The firstborn is allowed a saving throw of their own if they currently live, or they make one upon their birth if they’re not yet born when the spell is cast. If the target’s firstborn has already died, the curse passes to their next oldest offspring.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the curse becomes hereditary, passing from firstborn to firstborn for the entire length of the family’s lineage until one of them successfully saves against the curse and throws off your dark magic.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic, ritual focus</set>
+			<set name="level">9</set>
+			<set name="school" addition="High Elven">Necromancy</set>
+			<set name="time">1 hour</set>
+			<set name="range">1 mile</set>
+			<set name="duration">Permanent; one generation</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a statuette carved in the likeness of the victim worth 1,250 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Black Swan Storm" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_BLACK_SWAN_STORM">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You call forth a whirlwind of black feathers that fills a cube 5 feet on each side. The feathers deal 2d8 force damage to creatures inside the cube’s area and radiate darkness, causing the illumination level within 20 feet of the cube to drop by one step (from bright light to dim light, from dim light to darkness). Creatures that make a successful Dexterity saving throw suffer only half damage but are still affected by the change in light.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the feathers do an additional 1d8 force damage for each slot level above 2nd.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, then you can move the whirlwind up to 15 feet by using a bonus action on your turn. If the whirlwind moves more than 30 feet from you, the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="High Elven">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent">a feather from a black swan</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Bloom" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_BLOOM">
+		<supports>Cleric, Druid, Wizard</supports>
+		<description>
+			<p>You plant a silver acorn in solid ground and spend an hour chanting a litany of praises to the natural world, after which the land within 1 mile of the acorn becomes extremely fertile, regardless of its previous state. Any seeds planted in the area of effect grow at twice the natural rate. Food harvested regrows within a week. After one year, the land slowly reverts to its normal fertility, unable to stave off the march of nature. Choose one of the following effects, which appears and grows immediately:</p>
+			<ul>
+				<li>A field planted with vegetables of your choice, ready for harvest.</li>
+				<li>A thick forest of stout trees and ample undergrowth.</li>
+				<li>A grassland with wildflowers and extensive fodder for grazing.</li>
+				<li>An orchard of fruit trees of your choice, growing in orderly rows and ready for harvest.</li>
+			</ul>
+			<p>Living creatures that take a short rest within the area of a bloom receive the maximum hit points for hit dice expended. Bloom counters the effects of a desolation spell.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the duration becomes permanent.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="High Elven">Conjuration</set>
+			<set name="time">1 hour</set>
+			<set name="range">1 mile</set>
+			<set name="duration">1 year</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver acorn worth 500 gp, which is consumed in the casting</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Celebration" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_CELEBRATION">
+		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You create a 30-foot-radius area around a point that you choose within range. Intelligent creatures that enter the area or begin their turn there and fail a Wisdom saving throw engage in revelry: drinking, singing, laughing, and dancing. Affected creatures are reluctant to leave the area until the spell expires, preferring to enjoy the festivities. Affected creatures forsake appointments, cease caring about their woes, and generally behave in a cordial (if not hedonistic) manner. This preoccupation with merrymaking extends regardless of an affected creature’s agenda or alignment. Assassins procrastinate, servants join in the celebration rather than serve, guards abandon their posts. The effect ends on creatures that are attacked, that take damage, or that are forced to leave the area. Those whose saving throw succeeds can enter or leave the area without danger of being enchanted. A creature that failed the saving throw and is removed from the area must repeat the saving throw if they return to the area.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 8th level or higher, the spell lasts for an additional hour for each slot level above 7th.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, unaffected intelligent creatures must make a new saving throw every time they begin their turn in the area of effect, even if they’ve previously saved against the spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">7</set>
+			<set name="school" addition="High Elven">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a small party favor</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Clearing the Field" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_CLEARING_THE_FIELD">
+		<supports>Druid, Ranger, Wizard</supports>
+		<description>
+			<p>With a harsh word and a vicious chopping motion, every tree, shrub, and stump within 40 feet of you sinks into the ground, leaving the vacated area clear of plant life that might otherwise hamper movement or obscure sight. Overgrown areas that counted as difficult terrain become clear ground and no longer hamper movement. The original plant life rises from the ground instantly when the spell ends or is dispelled. Plant creatures are not affected by clearing the field.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the spell lasts for an additional hour for each slot level above 2nd.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, plant creatures within the area of effect must make a successful Constitution saving throw or be affected as though a by a reduce spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="High Elven">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="range">40 feet</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Cosmic Alignment" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_COSMIC_ALIGNMENT">
+		<supports>Wizard</supports>
+		<description>
+			<p>You arrange the forces of the cosmos to your benefit. Choose a cosmic event from the Comprehension of the Starry Sky ability that affects spellcasting (conjunction, eclipse, or nova; see Deep Magic 4: Illumination Magic for details). You cast spells as if under the effect of the cosmic event until the next sunrise or 24 hours have passed. When the ability requires you to expend your insight, you expend your ritual focus instead. This spell must be cast outdoors, and the casting of this spell is obvious to everyone within 100 miles of its casting when an appropriate symbol, such as a flaming comet, appears in the sky above your location while you are casting the spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic, illumination magic</set>
+			<set name="level">9</set>
+			<set name="school" addition="High Elven">Conjuration</set>
+			<set name="time">1 hour</set>
+			<set name="range">Self</set>
+			<set name="duration">24 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of quartz</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Desolation" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_DESOLATION">
+		<supports>Cleric, Druid, Wizard</supports>
+		<description>
+			<p>You plant an obsidian acorn in solid ground and spend an hour chanting a litany of curses to the natural world, after which the land within 1 mile of the acorn becomes unfertile, regardless of its previous state. Nothing will grow there, and all plant life in the area dies over the course of a day. Plant creatures are not affected. Spells that summon plants, such as entangle, require an ability check using the caster’s spellcasting ability against your spell save DC. If the check succeeds, the spell functions normally; if the check fails, the spell is countered by desolation.</p>
+			<p class="indent">After one year, the land slowly reverts to its normal fertility, unable to stave off the march of nature.</p>
+			<p class="indent">Living creatures that take a short rest within the area of a desolation halve the result of any hit dice they expend. Desolation counters the effects of a bloom spell.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the duration becomes permanent.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="High Elven">Necromancy</set>
+			<set name="time">1 hour</set>
+			<set name="range">1 mile</set>
+			<set name="duration">1 year</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an obsidian acorn worth 500 gp, which is consumed in the casting</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Encroaching Shadows" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_ENCROACHING_SHADOWS">
+		<supports>Cleric, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You cause menacing shadows to invade an area 200 feet on a side and 50 feet high. Illumination in the area drops one step (from bright light to dim, from dim light to darkness). Any spell that creates light in the area that’s cast using a lower-level spell slot than was used to cast encroaching shadows is dispelled, and spells that create light don’t function in the area if they are of a lower spell slot level. Nonmagical effects can’t increase the level of illumination in the affected area. Spells with “shadow” in their names and spells that create darkness or shadow take effect in the area as if a one-level-higher spell slot was used casting them.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 7th level or higher, the effect lasts for an additional 12 hours for each slot level above 6th.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the spell’s duration increases by 12 hours and it cannot be dispelled by spells that create light, even if they are cast with a higher-level spell slot.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic, illumination magic</set>
+			<set name="level">6</set>
+			<set name="school" addition="High Elven">Illusion</set>
+			<set name="time">1 hour</set>
+			<set name="range">150 feet</set>
+			<set name="duration">12 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a drop of blood smeared on a silver rod worth 100 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Extract Foyson" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_EXTRACT_FOYSON">
+		<supports>Bard, Druid, Warlock, Wizard</supports>
+		<description>
+			<p>You extract the goodness in food, pulling all the nutrition out of three days’ worth of meals and concentrating it into about a tablespoon of bland, flourlike powder. The flour can be mixed with liquid and drunk or baked into elven bread. Foyson used in this way still imparts all the nutritional value of the original food, for the amount consumed.</p>
+			<p class="indent">The original food appears unchanged and though it’s still filling, it has no nutritional value. Someone eating nothing but foyson-free food will eventually starve.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, an additional three meals’ worth of food can be extracted for each slot level above 1st.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, you can choose to have each day’s worth of foyson take the form of a slice of delicious elven bread.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="High Elven">Transmutation</set>
+			<set name="time">1 minute</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Permanent</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a wooden bowl</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Guest of Honor" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_GUEST_OF_HONOR">
+		<supports>Bard, Wizard</supports>
+		<description>
+			<p>You whisper words of encouragement, and a target that you touch gains confidence along with approval from strangers. For the spell’s duration, the subject puts their best foot forward and strangers associate the target with positive feelings. The target adds 1d4 to all Charisma (Persuasion) checks made to influence the attitudes of others and gains a +2 bonus to their status score (if used).</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the effect lasts for an additional 10 minutes for each slot level above 1st.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the effect lasts for 24 hours.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">1</set>
+			<set name="school" addition="High Elven">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">Touch</set>
+			<set name="duration">10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a signet ring worth 25 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Harsh Light of Summer’s Glare" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_HARSH_LIGHT_OF_SUMMERS_GLARE">
+		<supports>Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>Your visage radiates the wrath of the shadow fey, which bears down oppressively upon your targets in a burst of brilliant light. Only creatures that can see you are affected. Creatures with darkvision that fail a Constitution saving throw are blinded and stunned. Creatures without darkvision that fail a Constitution saving throw are blinded. This is not a gaze attack, and it cannot be avoided by averting one’s eyes or wearing a blindfold.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, affected creatures without darkvision are charmed instead of blinded.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">8</set>
+			<set name="school" addition="High Elven">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">90 feet</set>
+			<set name="duration">1 round</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Heartache" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_HEARTACHE">
+		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You force an enemy to experience pangs of unrequited love and emotional distress. These feelings manifest with such intensity that the creature suffers 5d6 psychic damage a failed Charisma saving, or half damage on with a successful saving throw.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you can target an additional enemy for each slot level above 2nd.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the target is also incapacitated for 1 round, if it fails the saving throw.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="High Elven">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver locket</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Shadows Brought to Light" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_SHADOWS_BROUGHT_TO_LIGHT">
+		<supports>Bard, Cleric, Paladin, Warlock, Wizard</supports>
+		<description>
+			<p>If the target fails a Charisma saving throw, you cause the target’s shadow to come to life and reveal one of the creature’s most scandalous secrets: some fact that the target would not want widely known (GM’s choice). When casting the spell, you choose whether everyone present will hear the secret, in which case the shadow speaks loudly in a twisted version of the target’s voice, or if the secret is only whispered to you. The shadow speaks Common, unless the target does not speak Common, in which case it speaks in the target’s native language.</p>
+			<p class="indent">If the target creature does not have a scandalous secret or does not have a spoken language, the spell fails as if the creature’s saving throw had succeeded.</p>
+			<p class="indent">If the secret was spoken aloud, the target takes a −2 penalty to Charisma checks with anyone who was present when it was revealed, for the remainder of the day, in addition to any information you obtain or any scandal it provokes.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the target has disadvantage on Charisma checks instead of the −2 penalty, and the target’s status score is reduced by 1 for the remainder of the day (see the <em>Midgard Campaign Setting</em> for status rules). At the end of the day, the target makes a Charisma saving throw against your spell save DC. If this saving throw fails, rumors of the target’s indiscretion become widespread and the loss of status is permanent.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic, illumination magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="High Elven">Divination</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Shadowy Retribution" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_SHADOWY_RETRIBUTION">
+		<supports>Cleric, Warlock, Sorcerer, Wizard</supports>
+		<description>
+			<p>You fill a silver cup with your own blood (taking 1d4 piercing damage) while chanting vile curses in the dark. Once the chant is completed, you consume the blood and swear an oath of vengeance against any who harm you.</p>
+			<p class="indent">If you are reduced to 0 hit points, your curse is invoked; blood pours from your mouth and steams away into a red mist that transforms into a shadow. The shadow attacks the creature that reduced you to 0 hit points, ignoring all other targets, until it or the target is slain, at which point the shadow dissipates into nothing.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, an additional shadow is conjured for each slot level above 4th.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the spell summons a banshee instead of a shadow. If you also use a higher-level spell slot, additional undead are still shadows.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">4</set>
+			<set name="school" addition="High Elven">Necromancy</set>
+			<set name="time">10 minutes</set>
+			<set name="range">Self</set>
+			<set name="duration">12 hours</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver goblet filled with the caster’s blood</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Song of the Forest" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_SONG_OF_THE_FOREST">
+		<supports>Druid, Ranger, Wizard</supports>
+		<description>
+			<p>You attune your senses to the natural world, so you detect every sound that occurs within 60 feet: wind blowing through branches, falling leaves, grazing deer, trickling streams, and more. You can clearly picture the cause of each sound in your mind. The effect gives you tremorsense with a range of 10 feet. In addition, you have advantage on Wisdom (Perception) checks that rely on sound. Creatures that make no noise or that are magically silent cannot be detected through this spell’s effect.</p>
+			<p class="indent"><em>Song of the forest</em> only functions in natural environments; it fails if cast underground, in a city, or in a building that isolates the caster from nature (GM’s discretion).</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the spell’s effect is equivalent to blindsight with a range of 30 feet.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">3</set>
+			<set name="school" addition="High Elven">Transmutation</set>
+			<set name="time">1 minute</set>
+			<set name="range">Self</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a dried leaf crumpled and released</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+	<element name="Tongue Tied" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_TONGUE_TIED">
+		<supports>Bard, Cleric, Warlock, Wizard</supports>
+		<description>
+			<p>You make a choking motion while pointing at a target, which must make a successful Wisdom saving throw or become unable to communicate verbally. The target’s speech becomes garbled and it has disadvantage on Charisma checks that require speech. The creature can cast a spell with a verbal component only by making a successful Constitution check against your spell save DC. If the Constitution check fails, the creature’s action is used but the spell slot isn’t expended.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the affected target also takes 2d6 psychic damage every time it tries to talk.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">5</set>
+			<set name="school" addition="High Elven">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent"></set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+	<element name="Vine Trestle" type="Spell" source="Deep Magic: Elven High Magic" id="ID_KBP_DMEHM_SPELL_VINE_TRESTLE">
+		<supports>Druid, Ranger, Wizard</supports>
+		<description>
+			<p>You cause a vine to sprout from the ground and crawl across a surface or rise into the air in a direction chosen by you. The vine must sprout from a solid surface (the ground, a wall), but it is strong enough to support 600 pounds of weight along its entire length. The vine collapses immediately if that 600-pound limit is exceeded. A vine that collapses from weight or damage instantly disintegrates into nothing.</p>
+			<p class="indent">The vine has many small shoots, so it can be climbed with a successful DC 5 Strength (Athletics) check. It has AC 8, (5 x your spellcasting level) hit points, and a damage threshold of 5.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the vine can support an additional 30 pounds and its damage threshold increases by 1 for each slot level above 2nd.</p>
+			<p class="indent"><strong><em>Ritual Focus.</em></strong> If you expend your ritual focus, the vine is permanent until destroyed or dispelled.</p>
+		</description>
+		<setters>
+			<set name="keywords">elven high magic</set>
+			<set name="level">2</set>
+			<set name="school" addition="High Elven">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a 1-inch piece of green vine that is consumed in the casting</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+</elements>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Aven</name>
+		<description>Aven Race from Plane Shift: Amonkhet</description>
+		<author url="https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf">Wizard of the Coast</author>
+		<update version="0.0.3">
+			<file name="race-aven.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/amonkhet/race-aven.xml" />
+		</update>
+	</info>
+
+	<element name="Aven" type="Race" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACE_AVEN">
+		<description>
+			<p>Aven have humanlike bodies, arms, and legs, along with birdlike wings and heads. Two distinct varieties of aven are found in Naktamun. One has the head of a hawk or similar bird of prey, with short wings allowing fast flight. The other variety has the head of an ibis atop a long neck, with wide, angular wings better suited to soaring. All aven have lean bodies with feathers extending from their heads down to their shoulders.</p>
+			<p class="indent">Aven delight in flying above their foes, using their superior mobility to confound and outpace their opponents. They love soaring through the sky as well, though the Hekma limits their altitude. Like all people of Naktamun, they are grateful for the Hekma’s protective magic, of course. But they keenly anticipate the hour when the God-Pharaoh will return and dissolve the veil, letting them fly without limit in the afterlife.</p>
+			<h4>AVEN TRAITS</h4>
+			<p>Your aven character has the following traits.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Dexterity score increases by 2.</p>
+			<p class="indent"><b><i>Age. </i></b>Like humans, aven reach adulthood in their late teens and can theoretically live into their 80s. Of course, most find a glorious (or inglorious) death long before that point. </p>
+			<p class="indent"><b><i>Alignment. </i></b>Most aven lean toward some form of neutrality. Ibis-headed aven, focused more on knowledge than any other virtue, are usually neutral. Hawk-headed aven are inclined toward lawful neutral.</p>
+			<p class="indent"><b><i>Size. </i></b>Aven stand from 5 to 6 feet tall, but their bodies are slender and their bones are partially hollow to facilitate their flight. Your size is Medium.</p>
+			<p class="indent"><b><i>Speed. </i></b>Your base walking speed is 25 feet. You have a flying speed of 30 feet. You can’t use your flying speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can’t use your flying speed if you are encumbered.)</p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Aven.</p>
+			<p class="indent"><b><i>Subrace. </i></b>Two varieties of aven inhabit Amonkhet: ibis-headed and hawk-headed. Choose one of these subraces.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="2" />
+			<stat name="innate speed" value="25" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_WOTC_PSA_LANGUAGE_AVEN" />
+			<stat name="innate speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+			<select type="Sub Race" name="Aven Subrace" supports="Aven Subrace" />
+		</rules>
+	</element>
+
+	<!-- Ibis-Headed Aven -->
+	<element name="Ibis-Headed Aven" type="Sub Race" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_AVEN_SUBRACE_IBIS">
+		<supports>Aven Subrace</supports>
+		<description>
+			<p>A majority of ibis-headed aven, drawn to the teachings of Kefnet, specialize in spellcasting. They take great pride in all the qualities they share with the god of knowledge—not just their avian heads, but their quick wit, self-confidence, cunning, and spellcasting prowess.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Intelligence score increases by 1.</p>
+			<p class="indent"><b><i>Kefnet’s Blessing. </i></b>You can add half your proficiency bonus, rounded down, to any Intelligence check you make that doesn’t already include your proficiency bonus.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_AVEN_KEFNETS_BLESSING" />
+		</rules>
+	</element>
+	<element name="Kefnet’s Blessing" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_AVEN_KEFNETS_BLESSING">
+		<description>
+			<p>You can add half your proficiency bonus, rounded down, to any Intelligence check you make that doesn’t already include your proficiency bonus.</p>
+		</description>
+		<sheet display="false">
+			<description>You can add half your proficiency bonus ({{proficiency:half}}), rounded down, to any Intelligence check you make that doesn’t already include your proficiency bonus.</description>
+		</sheet>
+		<rules>
+			<stat name="arcana:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ARCANA" />
+			<stat name="history:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_HISTORY" />
+			<stat name="investigation:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<stat name="nature:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_NATURE" />
+			<stat name="religion:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_RELIGION" />
+		</rules>
+	</element>
+
+	<!-- Hawk-Headed Aven -->
+	<element name="Hawk-Headed Aven" type="Sub Race" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_AVEN_SUBRACE_HAWK">
+		<supports>Aven Subrace</supports>
+		<description>
+			<p>Following the example of Oketra, hawkheaded aven often focus on the techniques of long-range combat. Most prefer javelins, but some are skilled with bows, spears, and throwing axes.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Wisdom score increases by 2.</p>
+			<p class="indent"><b><i>Hawkeyed. </i></b>You have proficiency in the Perception skill. In addition, attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_AVEN_HAWKEYED" />
+		</rules>
+	</element>
+	<element name="Hawkeyed" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_AVEN_HAWKEYED">
+		<description>
+			<p>You have proficiency in the Perception skill. In addition, attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</p>
+		</description>
+		<sheet>
+			<description>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+		</rules>
+	</element>
+
+	<!-- Languages -->
+	<element name="Aven" type="Language" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_LANGUAGE_AVEN">
+		<description>
+			<p>The language of the Aven.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Aven</set>
+			<set name="script">Aven</set>
+		</setters>
+	</element>
+</elements>

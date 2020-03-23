@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Graverobber</name>
+		<update version="0.0.1">
+			<file name="rogue-graverobber.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/rogue-graverobber.xml" />
+		</update>
+	</info>	
+	<element name="Graverobber" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_GRAVEROBBER">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>You’ve nearly died. Sometime recently, or earlier in your life, you’ve fallen to the brink of death and felt your heartbeat stop. In that moment, far from hope, your spirit wandered the border of life and death, where it entered the Forbidden Graveyard. Amidst the sepulchers and crypts of this haunted dimension, you bore witness to the secrets of life and death, speaking with the fallen whose gaze chilled your very soul. Somehow, you returned from that fallen plane, but it has stained you. Your spirit is filled with both the eerie power of darkness and the flowing force of life, granting you the ability to touch the souls of others directly. You might still be living, but your every step is one of a dead man walking.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SPIRIT_MENDING" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SOUL_THIEF" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_WHISPER_TO_THE_FALLEN" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_HANGMANS_DANCE" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_NO_REST_FOR_THE_WICKED" />
+		</description>
+		<sheet display="false">
+			<description>Your spirit is filled with both the eerie power of darkness and the flowing force of life, granting you the ability to touch the souls of others directly.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SPIRIT_MENDING" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SOUL_THIEF" level="3" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_WHISPER_TO_THE_FALLEN" level="9" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_HANGMANS_DANCE" level="13" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_NO_REST_FOR_THE_WICKED" level="17" />
+		</rules>
+	</element>
+	<element name="Spirit Mending" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SPIRIT_MENDING">
+		<description>
+			<p>Starting at 3rd level, your unnatural luck and affinity for the energies of life allow you to bring people back from the brink of death. When an ally within 5 feet of you is below half their hit point maximum, you can use your action to pour healing energy into them. The target recovers hit points equal to your rogue level + your Charisma modifier. If the target has been reduced to 0 hit points, they recover half as many hit points instead. Once a creature has been healed by this feature, it can’t be targeted again until it finishes a long rest.</p>
+		</description>
+		<sheet>
+			<description>When an ally within 5 feet of you is below half their hit point maximum, you can use your action to pour healing energy into them. The target recovers {{spirit mending:hp}} hit points. If the target has been reduced to 0 hit points, they recover half as many hit points instead. Once a creature has been healed by this feature, it can’t be targeted again until it finishes a long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="spirit mending:hp" value="level:rogue" />
+			<stat name="spirit mending:hp" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Soul Thief" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_SOUL_THIEF">
+		<description>
+			<p>At 3rd level, you learn to steal the life essence of your enemies, and your connection to the grave grants you incredible power. Whenever you or an undead you control kills a creature with an Intelligence score of 6 or greater, you can choose to harvest a fraction of your victim’s soul, binding it into a small object you keep about your person, such as a gemstone, doll, or weapon. Each object can contain only one such soul at a time.</p>
+			<p class="indent">As a bonus action, you can choose to unleash one of these enslaved spirits to do your bidding, freeing it from the item. If the spirit was bound to a weapon, you summon a ghostly version of the weapon and use it to make a melee weapon attack with a 15-foot reach. This attack deals force damage. After the attack is made, the ethereal weapon vanishes.</p>
+			<p class="indent">If the spirit was bound to any other item, its release opens a small, shadowy rift to the Graveyard through the Ethereal Plane. You can teleport to a location that you can see within 10 + 5 times your Charisma modifier (minimum 10) feet of you.</p>
+			<p class="indent">Whenever you finish a long rest, your powerful soul calls to the Graveyard, bringing forth a number of spirits for you to bind equal to your Charisma modifier (minimum 1). The maximum number of spirits you can have bound at once is equal to twice your Charisma modifier (minimum 2).</p>
+			<p class="indent">You can choose to release a spirit without effect at any time to make space for a new one.</p>
+		</description>
+		<sheet>
+			<description>Whenever you or an undead you control kills a creature with an Intelligence score of 6 or greater, you can choose to harvest a fraction of your victim’s soul, binding it into a small object you keep about your person, such as a gemstone, doll, or weapon. Each object can contain only one such soul at a time.
+			As a bonus action, you can choose to unleash one of these enslaved spirits to do your bidding, freeing it from the item. If the spirit was bound to a weapon, you summon a ghostly version of the weapon and use it to make a melee weapon attack with a 15-foot reach. This attack deals force damage. After the attack is made, the ethereal weapon vanishes.
+			If the spirit was bound to any other item, its release opens a small, shadowy rift to the Graveyard through the Ethereal Plane. You can teleport to a location that you can see within {{soul thief:teleport range}} feet of you.</description>
+		</sheet>
+		<rules>
+			<stat name="soul thief:teleport range" value="10" />
+			<stat name="soul thief:teleport range" value="soul thief:bonus" />			
+			<stat name="soul thief:bonus" value="10" bonus="base" />
+			<stat name="soul thief:bonus" value="soul thief:charisma multiplier" bonus="base" />
+			<stat name="soul thief:charisma multiplier" value="charisma:modifier" bonus="base" />
+			<stat name="soul thief:charisma multiplier" value="charisma:modifier" bonus="base" />
+			<stat name="soul thief:charisma multiplier" value="charisma:modifier" bonus="base" />
+			<stat name="soul thief:charisma multiplier" value="charisma:modifier" bonus="base" />
+			<stat name="soul thief:charisma multiplier" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Whisper to the Fallen" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_WHISPER_TO_THE_FALLEN">
+		<description>
+			<p>Starting at 9th level, your voice gains an unearthly quality, allowing you to commune with the departed. You can cast speak with dead at will without expending a spell slot, but you can only target a soul that you have bound to an item. You ignore the requirement that the corpse must still have a mouth when you cast the spell using this feature.</p>
+			<p class="indent">Spirits summoned from the Graveyard are mindless and rarely have anything interesting to say.</p>
+		</description>
+		<sheet>
+			<description>ou can cast speak with dead at will without expending a spell slot, but you can only target a soul that you have bound to an item. You ignore the requirement that the corpse must still have a mouth when you cast the spell using this feature.
+			Spirits summoned from the Graveyard are mindless and rarely have anything interesting to say.</description>
+		</sheet>
+	</element>
+	<element name="Hangman’s Dance" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_HANGMANS_DANCE">
+		<description>
+			<p>At 13th level, your control over the spirits of the dead enables you to bend them more fully to your whims. You gain the ability to cast animate dead without expending a spell slot by unleashing one of your bound souls instead.</p>
+			<p class="indent">You can use this feature twice in this way, and you regain all expended uses of it when you finish long rest.</p>
+			<p class="indent">Also, you can use your bonus action to cause all friendly undead within 60 feet of you to surge with otherworldly power. Each undead can use its reaction to move up to 30 feet without provoking opportunity attacks and ignoring difficult terrain.</p>
+		</description>
+		<sheet usage="2/Long Rest">
+			<description>You gain the ability to cast animate dead without expending a spell slot by unleashing one of your bound souls instead.
+			Also, you can use your bonus action to cause all friendly undead within 60 feet of you to surge with otherworldly power. Each undead can use its reaction to move up to 30 feet without provoking opportunity attacks and ignoring difficult terrain.</description>
+		</sheet>
+	</element>
+	<element name="No Rest for the Wicked" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_GRAVEROBBER_NO_REST_FOR_THE_WICKED">
+		<description>
+			<p>At 17th level, your darkly stained soul fully reconnects with your body, allowing you to bridge the gap between the Graveyard and the other planes with ease. Whenever you roll initiative, you can choose one hostile creature that you can see within 60 feet of you. That creature is marked by the Gate of Souls as a beacon for the energies of the fallen who lurk within the Graveyard. Once per turn when you deal damage to that creature, you can choose to bind a single soul from the Graveyard to an item in your possession. This mark lasts for one minute.</p>
+		</description>
+		<sheet>
+			<description>Whenever you roll initiative, you can choose one hostile creature that you can see within 60 feet of you. That creature is marked by the Gate of Souls as a beacon for the energies of the fallen who lurk within the Graveyard. Once per turn when you deal damage to that creature, you can choose to bind a single soul from the Graveyard to an item in your possession. This mark lasts for one minute.</description>
+		</sheet>
+	</element>	
+</elements>

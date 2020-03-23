@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="base.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/base.xml" />
+		</update>
+	</info>
+	
+	<element name="Wayfinder’s Guide to Eberron" type="Source" source="Core" id="ID_SOURCE_WAYFINDERS_GUIDE_TO_EBERRON">
+		<description>
+			<![CDATA[<p>Wayfinder's Guide to Eberron brings the eponymous campaign setting to the fifth edition of Dungeons &amp; Dragons. This 175 page book gives you everything you need to create an Eberron story or character, exploring the core themes of the setting and the rules to implement them in fifth edition. It includes an overview of Khorvaire and the fantastic city of Sharn, along with a host of background ideas and story hooks.</p><p>Playtest material includes the unique races of Eberron, the mystical dragonmarks (including greater dragonmarks and aberrant dragonmarks), and new magic items; this is a living document, and this content will evolve and be updated in response to feedback.</p>]]>
+		</description>
+		<setters>
+			<set name="abbreviation">WGTE</set>
+			<set name="url">https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e</set>
+			<set name="image">https://www.dmsguild.com/images/44/247882.jpg</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20180623</set>
+		</setters>
+	</element>
+	
+	<!-- generic element granted to indicate a character is dragonmarked, can be used as a requirement -->
+	<element name="Dragonmarked" type="Grants" source="Core" id="ID_WOTC_WGTE_GRANTS_DARKMARKED">
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</rules>
+	</element>	
+	<element name="Intuition Dice" type="Grants" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE">
+		<description>
+			<p>A dragonmark improves your ability to perform a specific type of task.</p>
+			<p class="indent">Each dragonmark has a trait that allows you to roll an Intuition die, a d4, when you perform an ability check with a particular skill or tool. You add the number rolled to the ability check. You don't have to be proficient with the skill or tool to gain this benefit.</p>
+			<p class="indent">Feats, magic items, and other features may improve your Intuition die. This increases the type of die you roll by one size (d6, d8, d10) to a maximum of a d10. You can only roll one Intuition die for a check; if you receive Intuition dice from multiple sources, increase one die by one type and roll that one.</p>
+		</description>
+		<rules>
+			<stat name="dragonmarked-intuition-dice:size" value="4" bonus="base" />
+		</rules>
+	</element>	
+</elements>

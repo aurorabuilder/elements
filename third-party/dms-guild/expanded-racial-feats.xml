@@ -2,12 +2,24 @@
 <elements>
 	<info>
 		<name>Expanded Racial Feats</name>
-		<description></description>
-		<author url="https://www.dmsguild.com/product/226194/Expanded-Racial-Feats">Adam Bradford</author>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="expanded-racial-feats.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/expanded-racial-feats.xml" />
 		</update>
 	</info>
+
+	<element name="Expanded Racial Feats" type="Source" source="Core" id="ID_HOMEBREW_SOURCE_EXPANDED_RACIAL_FEATS">
+		<description>
+			<![CDATA[<p>As featured on D&amp;D Beyond, this supplement introduces additional feats that allow you to explore your character’s race further. These feats are each associated with a race from sources outside the Player’s Handbook, as summarized in the Racial Feats table below.</p><p>As with the feats found in Xanathar’s Guide to Everything, using these racial feats means that your connection with your race’s culture has deepened or something more dramatic has happened, such as a physical transformation through age, powerful magic, or a spectacular event in your campaign.</p>]]>
+		</description>
+		<setters>
+			<set name="abbreviation">ERF</set>
+			<set name="url">https://www.dmsguild.com/product/226194/Expanded-Racial-Feats</set>
+			<set name="image">https://www.dmsguild.com/images/8957/226194.jpg</set>
+			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php/?author=Adam%20Bradford">Adam Bradford</set>
+			<set name="third-party">true</set>
+			<set name="release">20171110</set>
+		</setters>
+	</element>
 
 	<element name="Angelic Protection" type="Feat" source="Expanded Racial Feats" id="ID_DMSG_ERF_FEAT_ANGELIC_PROTECTION">
 		<prerequisite>Aasimar</prerequisite>
@@ -39,12 +51,9 @@
 		    <select type="Ability Score Improvement" name="Dao Heritage" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
 			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
 
-			<!-- ac formulas need rework -->
-			<stat name="ac:natural" value="3" bonus="natural" equipped="[armor:none]"/>
-			<stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]"/>
-			
-			<!-- <stat name="ac:natural:alt" value="3" bonus="natural" equipped="[armor:any]" />
-			<stat name="AC" value="ac:natural:alt" bonus="armor" equipped="[armor:any]" /> -->
+			<stat name="dao heritage:natural armor" value="13" />
+			<stat name="dao heritage:natural armor" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="dao heritage:natural armor" bonus="calculation" equipped="[armor:none]" alt="Natural Armor (Dao Heritage)" />
 		</rules>
 	</element>
 	<element name="Djinn Heritage" type="Feat" source="Expanded Racial Feats" id="ID_DMSG_ERF_FEAT_DJINN_HERITAGE">
@@ -109,7 +118,7 @@
 			You don’t take damage from falling 20 feet or less if you aren’t incapacitated.</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
+		    <stat name="dexterity" value="1" />
 		</rules>
 	</element>
 
@@ -141,11 +150,11 @@
 				<li>When a creature you can see targets you with an attack and another creature is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. Once you use this ability, you can’t do so again until you finish a short or long rest.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>When a creature you can see targets you with an attack and another creature is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>When a creature you can see targets you with an attack and another creature is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
+		    <stat name="dexterity" value="1" />
 		</rules>
 	</element>
 
@@ -183,8 +192,8 @@
 				<li>Whenever another creature you can see uses a skill or tool, you can use your reaction to gain proficiency in that skill or tool. Proficiencies gained in this way last for 1 hour, and you can only mimic one proficiency at a time. Once you use this ability, you can’t do so again until you finish a short or long rest.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>Whenever another creature you can see uses a skill or tool, you can use your reaction to gain proficiency in that skill or tool. Proficiencies gained in this way last for 1 hour, and you can only mimic one proficiency at a time. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>Whenever another creature you can see uses a skill or tool, you can use your reaction to gain proficiency in that skill or tool. Proficiencies gained in this way last for 1 hour, and you can only mimic one proficiency at a time.</description>
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Master of Mimicry" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_WISDOM" />
@@ -202,8 +211,8 @@
 				<li>When you use your Stone’s Endurance trait as a reaction to reduce damage, instead of rolling a d12 and adding your Constitution modifier, you can choose to gain resistance to the triggering attack’s damage type until the start of your next turn. If the triggering attack deals more than one type of damage, choose one. As normal, after you use this trait, you can’t use it again until you finish a short or long rest.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>When you use your Stone’s Endurance trait as a reaction to reduce damage, instead of rolling a d12 and adding your Constitution modifier, you can choose to gain resistance to the triggering attack’s damage type until the start of your next turn. If the triggering attack deals more than one type of damage, choose one. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>When you use your Stone’s Endurance trait as a reaction to reduce damage, instead of rolling a d12 and adding your Constitution modifier, you can choose to gain resistance to the triggering attack’s damage type until the start of your next turn. If the triggering attack deals more than one type of damage, choose one.</description>
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Mountain’s Endurance" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
@@ -224,7 +233,7 @@
 		</description>
 		<sheet>
 			<description>You can use an action to polymorph into a Medium snake or back into your true form. Your statistics are the same in each form. Any equipment you are wearing or carrying isn’t transformed. If you die, you stay in your current form.
-			While in snake form, you gain a bite attack as a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal 1d4+$(Strength Modifier) piercing damage. When you hit with a bite attack, you can choose to deal 2d6 additional poison damage to the target. Once you deal this poison damage, you can’t do so again until you finish a long rest.</description>
+			While in snake form, you gain a bite attack as a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal 1d4+{{strength:modifier}} piercing damage. When you hit with a bite attack, you can choose to deal 2d6 additional poison damage to the target. Once you deal this poison damage, you can’t do so again until you finish a long rest.</description>
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Serpent Form" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_CHARISMA" />
@@ -267,7 +276,7 @@
 		</description>
 		<sheet>
 			<description>You have resistance to fire and poison damage.
-			You gain a bite attack as a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal 1d6+$(Strength Modifier) piercing damage.</description>
+			You gain a bite attack as a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal 1d6+{{strength:modifier}} piercing damage.</description>
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Tanarukk Blood" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
@@ -288,12 +297,12 @@
 				<li>As a reaction when you are forced to make a Dexterity saving throw, choose any number of creatures within 5 feet of you. Each chosen creature is considered to have half-cover against any harmful attacks or effects while within 5 feet of you until the start of your next turn. Once you use this ability, you can’t do so again until you’ve finished a short or long rest.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>As a reaction when you are forced to make a Dexterity saving throw, choose any number of creatures within 5 feet of you. Each chosen creature is considered to have half-cover against any harmful attacks or effects while within 5 feet of you until the start of your next turn. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>As a reaction when you are forced to make a Dexterity saving throw, choose any number of creatures within 5 feet of you. Each chosen creature is considered to have half-cover against any harmful attacks or effects while within 5 feet of you until the start of your next turn.</description>
 		</sheet>
 		<rules>
 		    <select type="Ability Score Improvement" name="Tortle Protector" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_WISDOM" />
-			<stat name="ac:natural" value="8" bonus="natural" />
+			<stat name="tortle:natural armor" value="18" bonus="base" />
 		</rules>
 	</element>
 
@@ -372,8 +381,8 @@
 			<description>You gain a flying speed of 30 feet. To use this speed, you can't be wearing medium or heavy armor.</description>
 		</sheet>
 		<rules>
-		    <stat name="Dexterity" value="1" />
-		    <stat name="speed:fly" value="30" bonus="base" equipped="![armor:	],![armor:heavy]" />
+		    <stat name="dexterity" value="1" />
+		    <stat name="speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
 		</rules>
 	</element>
 

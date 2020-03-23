@@ -4,7 +4,7 @@
         <name>Vedalken</name>
         <description>Vedalken</description>
         <author url="https://media.wizards.com/2017/downloads/magic/Plane-Shift_Kaladesh.pdf">Wizards of the Coast</author>
-        <update version="0.0.1">
+        <update version="0.0.3">
             <file name="race-vedalken.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/kaladesh/race-vedalken.xml" />
         </update>
     </info>
@@ -31,20 +31,20 @@
         <setters>
             <set name="names" type="male">Aglar, Bellin, Dallid, Firellan, Kavin, Koplony, Lomar, Mathvan, Modar, Nebun, Nhillosh, Nitt, Otrovac, Ovlan, Pelener, Rill, Trivaz, Uldin, Yolov, Zataz</set>
             <set name="names" type="female">Azi, Barvisa, Brazia, Direll, Fainn, Griya, Hallia, Katrille, Kovel, Lilla, Mirela, Morai, Nedress, Ossya, Pierenn, Roya, Sestri, Triel, Uzana, Yaraghiya, Zlovol</set>
-            <set name="names-format">$(name)</set>
+            <set name="names-format">{{name}}</set>
             <set name="height" modifier="2d4">6'3"</set>
             <set name="weight" modifier="2d8">180 lb.</set>
         </setters>
         <sheet display="false" />
         <rules>
-            <stat name="Intelligence" value="2" />
-            <stat name="Wisdom" value="1" />
-            <stat name="Speed" value="30" bonus="base" />
-            <grant type="Size" name="ID_SIZE_MEDIUM" />
-            <grant type="Racial Trait" name="ID_WOTC_PSK_RACIAL_TRAIT_VEDALKEN_VEDALKEN_CUNNING" />
-            <grant type="Racial Trait" name="ID_WOTC_PSK_RACIAL_TRAIT_VEDALKEN_AETHER_LORE" />
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <grant type="Language" name="ID_WOTC_PSK_LANGUAGE_VEDALKEN" />
+            <stat name="intelligence" value="2" />
+            <stat name="wisdom" value="1" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Racial Trait" id="ID_WOTC_PSK_RACIAL_TRAIT_VEDALKEN_VEDALKEN_CUNNING" />
+            <grant type="Racial Trait" id="ID_WOTC_PSK_RACIAL_TRAIT_VEDALKEN_AETHER_LORE" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_WOTC_PSK_LANGUAGE_VEDALKEN" />
         </rules>
     </element>
     <element name="Vedalken Cunning" type="Racial Trait" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_RACIAL_TRAIT_VEDALKEN_VEDALKEN_CUNNING">
@@ -64,13 +64,12 @@
         </sheet>
     </element>
     <element name="Vedalken" type="Language" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_LANGUAGE_VEDALKEN">
-        <requirements />
         <description>
             <p>The Vedalken language is renowned for its technical treatises and its catalogs of knowledge about the natural world and the aether that pervades it.</p>
         </description>
         <setters>
-            <set name="Speakers">Vedalken</set>
+            <set name="exotic">true</set>
+            <set name="speakers">Vedalken</set>
         </setters>
-        <rules />
     </element>
 </elements>

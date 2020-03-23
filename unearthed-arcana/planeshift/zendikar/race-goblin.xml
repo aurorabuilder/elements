@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Goblin</name>
+		<description>Goblin Race from Plane Shift: Zendikar</description>
+		<author url="https://media.wizards.com/2016/downloads/magic/Plane%20Shift%20Zendikar.pdf">Planeshift: Zendikar</author>
+		<update version="0.0.1">
+			<file name="race-goblin.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/zendikar/race-goblin.xml" />
+		</update>
+	</info>
+
+	<element name="Goblin" type="Race" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACE_GOBLIN">
+		<description>
+			<p>Goblins are an inquisitive and adaptable race hampered by their small size, their natural cowardice, and a severe shortage of common sense. They eagerly explore areas that others hesitate to enter, and obsessively fiddle with magic that more sensible folk would take careful precautions with. They prize ancient artifacts not for their inherent value, but primarily as a mark of status—for a precious trophy proves that its owner survived a delve into a deep and dangerous ruin. </p>
+			<p class="indent">Goblins are associated with red mana. Their shamans are fond of spells that create or control fire and lightning to smite their foes, and they are quick to follow their impulses and passions into action without much forethought. Life to a goblin is an adventure full of new things to explore and experience.</p>
+			<h4>Long Arms and Stony Skin</h4>
+			<p>A typical goblin stands between three-and-a-half and five feet tall, with a slender, elongated build. Goblins’ arms are unusually long and spindly, making them adept at climbing cliffs and trees. Their skin has a stony texture, ranging in color from red-brown to moss green or gray. Their ears are large and swept back, their eyes are intensely red, and many sport heavy bone protrusions on their spines or elbows. Males have similar growths jutting from their chins, while females have heavier growths on their foreheads</p>
+			<p class="indent">This distinctive appearance is a direct result of the goblins’ unusual diet. Before the Eldrazi’s rise, goblins supplemented their normal diet with a kind of rock they pounded into bits and called “grit.” The presence of the Eldrazi in Zendikar has poisoned this rock, so the goblins have taken to eating powdered hedrons instead. Eating this magic-infused stone has given the goblins resistance to the maddening psychic emanations of the Eldrazi. As an added benefit, it toughens their skin, protecting them from the elements and from physical dangers.</p>
+			<h4>GOBLIN TRAITS</h4>
+			<p>Your goblin character has the following traits in common with all other goblins.</p>
+			<p class="indent"><b><i>Age. </i></b>Goblins mature faster than humans, reaching adulthood at around age 12. They also age noticeably faster than humans, and even the most cautious goblins rarely live longer than 50 years. </p>
+			<p class="indent"><b><i>Alignment. </i></b>Most goblins are wildly chaotic, though they have no particular inclination toward good or evil.</p>
+			<p class="indent"><b><i>Size. </i></b>Goblins average about 3 feet tall and weigh about 40 pounds. Your size is Small.</p>
+			<p class="indent"><b><i>Speed. </i></b>Your base walking speed is 25 feet.</p>
+			<p class="indent"><b><i>Darkvision. </i></b>Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray. </p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Goblin.</p>
+			<p class="indent"><b><i>Subrace. </i></b>Most goblins on Zendikar belong to one of three tribes. Goblins are also native to Ixalan and have their own set of traits.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="innate speed" value="25" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+			<select type="Sub Race" name="Goblin Subrace" supports="Plane Shift Goblin Subrace" />
+		</rules>
+	</element>
+
+	<!-- Grotag Tribe Goblin -->
+	<element name="Grotag Tribe Goblin" type="Sub Race" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_SUBRACE_GROTAG">
+		<supports>Plane Shift Goblin Subrace</supports>
+		<description>
+			<p>Smaller and weaker than their cousins, and with larger hands and feet, goblins of the Grotag tribe attempt to live by their wits—though seldom with much success. When a Grotag goblin has the bright idea of trying to tame fleshpiercer mites, at least a few others will be willing to follow that goblin into a nest—usually to predictably horrible results. But though the Grotag seem to have a never-ending supply of bad ideas, and a horrible ratio of bad ideas to good, the Grotag likewise seem to have a never-ending supply of Grotag. As such, by trial and error (and more error), these goblins have stumbled across a great deal of knowledge useful for surviving the deep places of Zendikar, and for dealing with the creatures that live there. The Grotag imagine themselves to have a sort of empathy with beasts, and they lose hundreds of goblins each year to ill-advised attempts at monster taming. But, every now and again, one of these efforts is successful. </p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Constitution score increases by 2.</p>
+			<p class="indent"><b><i>Grit. </i></b>You have resistance to fire damage and psychic damage. In addition, when you are wearing no armor, your AC is equal to 11 + your Dexterity modifier.</p>
+			<p class="indent"><b><i>Grotag Tamer. </i></b>You have proficiency in the Animal Handling skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GROTAG_TAMER" />
+		</rules>
+	</element>
+	<element name="Grotag Tamer" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GROTAG_TAMER">
+		<description>
+			<p>You have proficiency in the Animal Handling skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Animal Handling skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+		</rules>
+	</element>
+
+	<!-- Lavastep Tribe Goblin -->
+	<element name="Lavastep Tribe Goblin" type="Sub Race" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_SUBRACE_LAVASTEP">
+		<supports>Plane Shift Goblin Subrace</supports>
+		<description>
+			<p>The Lavastep tribe is the most industrious of the goblin tribes, and possesses much hard-won knowledge of the geothermal activity in Akoum. More so than members of the other tribes, the Lavastep goblins build surprisingly effective equipment out of the crystal shards and veins of strange metals that occasionally boil up to the surface. The most warlike of their kind, Lavastep goblins frequently harass the kor, elves, and humans of Akoum.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Constitution score increases by 2.</p>
+			<p class="indent"><b><i>Grit. </i></b>You have resistance to fire damage and psychic damage. In addition, when you are wearing no armor, your AC is equal to 11 + your Dexterity modifier.</p>
+			<p class="indent"><b><i>Lavastep Grit. </i></b>You have advantage on Dexterity (Stealth) checks made to hide in rocky or subterranean environments.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_LAVASTEP_GRIT" />
+		</rules>
+	</element>
+	<element name="Lavastep Grit" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_LAVASTEP_GRIT">
+		<description>
+			<p>You have advantage on Dexterity (Stealth) checks made to hide in rocky or subterranean environments.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Stealth checks made to hide in rocky or subterranean environments.</description>
+		</sheet>
+	</element>
+
+	<!-- Tuktuk Tribe Goblin -->
+	<element name="Tuktuk Tribe Goblin" type="Sub Race" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_SUBRACE_TUKTUK">
+		<supports>Plane Shift Goblin Subrace</supports>
+		<description>
+			<p>Among the goblins, the Tuktuk are most likely to hire themselves out as ruin guides to other races. Of course, their usual plan is to help find something of value, steal it, trigger a trap intentionally, and then run.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Constitution score increases by 2.</p>
+			<p class="indent"><b><i>Grit. </i></b>You have resistance to fire damage and psychic damage. In addition, when you are wearing no armor, your AC is equal to 11 + your Dexterity modifier.</p>
+			<p class="indent"><b><i>Tuktuk Cunning. </i></b>You have proficiency with thieves’ tools.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
+			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_TUKTUK_CUNNING" />
+		</rules>
+	</element>
+	<element name="Tuktuk Cunning" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_TUKTUK_CUNNING">
+		<description>
+			<p>You have proficiency with thieves’ tools.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency with thieves’ tools.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
+
+	<element name="Grit" type="Racial Trait" source="Plane Shift: Zendikar" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT">
+		<description>
+			<p>You have resistance to fire damage and psychic damage. In addition, when you are wearing no armor, your AC is equal to 11 + your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to fire damage and psychic damage. In addition, when you are wearing no armor, your AC is {{ac:goblin-grit}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+			<stat name="ac:goblin-grit" value="11" />
+			<stat name="ac:goblin-grit" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="ac:goblin-grit" bonus="calculation" equipped="[armor:none]" alt="Grit (Goblin)" />
+		</rules>
+	</element>
+
+	<!-- Ixalan Goblin -->
+	<element name="Ixalan Goblin" type="Sub Race" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_SUBRACE_IXALAN_GOBLIN">
+		<supports>Plane Shift Goblin Subrace</supports>
+		<description>
+			<p>Goblins are native to Ixalan, and their eager curiosity drew them to the ships of the Brazen Coalition when the pirates first made landfall on the Sun Empire’s shores. Though they still thrive in remote jungle colonies, goblins are most commonly seen swinging on the ropes of sleek pirate ships.</p>
+			<p class="indent">Goblins stand about three feet tall, though they rarely stand upright. They prefer a crouched posture that lets them scramble quickly on all fours, aided by their long prehensile tails. Their hearing and eyesight make them excellent lookouts, and their agility serves them well as crew members on pirate ships. They climb, swing, and jump easily among a ship’s ropes, and can get into tight spaces that humans can’t. For better or worse, many goblins are also incorrigible pranksters, and they often have a hard time determining when a prank is inappropriate, is poorly timed, or has gone too far. </p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Dexterity score increases by 2.</p>
+			<p class="indent"><b><i>Agile Climber. </i></b>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can’t use your climbing speed if you are encumbered.)</p>
+		</description>
+		<sheet alt="Goblin" display="false" />
+		<rules>
+			<stat name="dexterity" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_GOBLIN_AGILE_CLIMBER" />
+		</rules>
+	</element>
+	<element name="Agile Climber" type="Racial Trait" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_RACIAL_TRAIT_GOBLIN_AGILE_CLIMBER">
+		<description>
+			<p>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can’t use your climbing speed if you are encumbered.)</p>
+		</description>
+		<sheet>
+			<description>You have a climbing speed of 25 feet. You can’t use your climbing speed while you wear medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:climb" value="25" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+</elements>

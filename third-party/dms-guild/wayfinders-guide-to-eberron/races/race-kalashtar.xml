@@ -4,7 +4,7 @@
 		<name>Kalashtar</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.4">
 			<file name="race-kalashtar.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/races/race-kalashtar.xml" />
 		</update>
 	</info>
@@ -63,22 +63,22 @@
 		<setters>
 			<set name="names" type="male">Lanhareth, Valakhad, Halakosh, Coratash, Nevitash, Dalavash</set>
 			<set name="names" type="female">Dolishara, Khoratari, Koratana, Molavakri, Sorashana, Torashtai, Vishara</set>
-			<set name="names-format">$(name)</set>
+			<set name="names-format">{{name}}</set>
       	</setters>
       	<rules>
-			<stat name="Wisdom" value="1" />
-			<stat name="Charisma" value="1" />
+			<stat name="wisdom" value="1" />
+			<stat name="charisma" value="1" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement (Kalashtar)" supports="ID_INTERNAL_ASI_STRENGTH|ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_CONSTITUTION|ID_INTERNAL_ASI_INTELLIGENCE|ID_INTERNAL_ASI_WISDOM|ID_INTERNAL_ASI_CHARISMA"/>
-			<stat name="Speed" value="30" bonus="base" />
-			<grant type="Size" name="ID_SIZE_MEDIUM" />
-			<grant type="Language" name="ID_LANGUAGE_COMMON" />
-			<grant type="Language" name="ID_WOTC_WGTE_LANGUAGE_QUORI" />
-			<select type="Language" name="Language (Kalashtar)" supports="Starting" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_DUAL_MIND" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_MENTAL_DISCIPLINE" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_MIND_LINK" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR" />
-			<grant type="Racial Trait" name="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_SEVERED_FROM_DREAMS" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_WOTC_ERLW_LANGUAGE_QUORI" />
+			<select type="Language" name="Language (Kalashtar)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_DUAL_MIND" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_MENTAL_DISCIPLINE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_MIND_LINK" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_SEVERED_FROM_DREAMS" />
 		</rules>
 	</element>
 	<element name="Dual Mind" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_DUAL_MIND">
@@ -113,12 +113,46 @@
 		<description>
 			<p>Choose one of the following skills; Insight, Intimidation, Performance, or Persuasion. You have advantage on all ability checks you make with that skill.</p>
 		</description>
-		<sheet>
-			<description>You have advantage on all ability checks you make with the selected skill.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
-			<select type="Proficiency" name="Psychic Glamour" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Racial Trait" name="Psychic Glamour" supports="Kalashtar Psychic Glamour" />
 		</rules>
+	</element>
+	<element name="Psychic Glamour (Insight)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR_INSIGHT">
+		<supports>Kalashtar Psychic Glamour</supports>
+		<description>
+			<p>You have advantage on Insight checks.</p>
+		</description>
+		<sheet alt="Psychic Glamour">
+			<description>You have advantage on Insight checks.</description>
+		</sheet>
+	</element>
+	<element name="Psychic Glamour (Intimidation)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR_INTIMIDATION">
+		<supports>Kalashtar Psychic Glamour</supports>
+		<description>
+			<p>You have advantage on Intimidation checks.</p>
+		</description>
+		<sheet alt="Psychic Glamour">
+			<description>You have advantage on Intimidation checks.</description>
+		</sheet>
+	</element>
+	<element name="Psychic Glamour (Performance)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR_PERFORMANCE">
+		<supports>Kalashtar Psychic Glamour</supports>
+		<description>
+			<p>You have advantage on Performance checks.</p>
+		</description>
+		<sheet alt="Psychic Glamour">
+			<description>You have advantage on Performance checks.</description>
+		</sheet>
+	</element>
+	<element name="Psychic Glamour (Persuasion)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_PSYCHIC_GLAMOUR_PERSUASION">
+		<supports>Kalashtar Psychic Glamour</supports>
+		<description>
+			<p>You have advantage on Persuasion checks.</p>
+		</description>
+		<sheet alt="Psychic Glamour">
+			<description>You have advantage on Persuasion checks.</description>
+		</sheet>
 	</element>
 	<element name="Severed from Dreams" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_KALASHTAR_SEVERED_FROM_DREAMS">
 		<description>
@@ -130,8 +164,8 @@
 	</element>
 
 	<!-- language -->
-    <element name="Quori" type="Language" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_LANGUAGE_QUORI">
-		<supports>ID_INTERNAL_SUPPORT_LANGUAGE_EXOTIC, Exotic</supports>
+    <!-- <element name="Quori" type="Language" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_LANGUAGE_QUORI">
+		<supports>Exotic</supports>
 		<description>
 			<p>Quori is the language of the natives of the plane of Dal Quor. The most significant of these inhabitants is the Quori, have invaded Eberron multiple times in the past. The quori have brought their language to Eberron through their Inspired; psychic overlords who serve as vessels for the quori. Quori is one of the dominant languages of the continent of Sarlona, the continent of the inspired.</p>
 		</description>
@@ -140,5 +174,5 @@
 			<set name="Script">Quor</set>
 			<set name="Exotic">True</set>
 		</setters>
-	</element>
+	</element> -->
 </elements>

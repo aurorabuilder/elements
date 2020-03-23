@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Gnome Dragonmark</name>
+		<description></description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.4">
+			<file name="mark-scribing.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-scribing.xml" />
+		</update>
+	</info>
+
+	<element name="The Mark of Scribing" type="Sub Race" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_SCRIBING_DRAGONMARK">
+		<supports>Gnome</supports>
+		<description>
+			<p>The Mark of Scribing deals with communication—both the written and spoken word. A gnome who bears the mark can feel words as though they are living creatures, struggling to make their meaning known. The mark provides a range of gifts. It translates languages, but it also allows its bearer to communicate with others at a distance.</p>
+			<h4>HOUSE SIVIS</h4>
+			<p>The gnomes of House Sivis facilitate communication. This is seen most literally in speaking stones, magic items allowing a Sivis heir to send a short message to another speaking stone; House Sivis’s network of message stations is the backbone of long-distance communication. But Sivis also trains and licenses scribes, notaries, interpreters, cartographers, barristers, heralds, bookbinders and more. House Sivis has an especially close relationship with House Kundarak, as Kundarak letters of credit must be notarized with a Sivis arcane mark.</p>
+			<p class="indent">House Sivis has taken great pains to maintain the trust of its clients and takes a position of absolute neutrality in all disputes, whether between houses or nations. Gnomes have a natural love of intrigue, and the different families within the house often engage in subtle schemes and feuds, but these are never allowed to threaten the house as a whole. Sivis gnomes are typically friendly, curious, and engaging; but that kindly exterior may conceal a scheming mind. </p>
+			<h4>MARK OF SCRIBING TRAITS</h4>
+			<p>Characters with the Mark of Scribing gain the following traits</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Gifted Scribe.</em></strong> You are proficient with calligrapher’s supplies and forgery kits. When you make an ability check using either one of these tools, you can roll one Intuition die, a d4, and add the number rolled to the ability check. </p>
+			<p class="indent"><strong><em>Scribe’s Insight.</em></strong> You can cast comprehend languages once with this trait and you regain the ability to do so after a long rest. Intelligence is your spellcasting ability for it.</p>
+			<p class="indent"><strong><em>Whispering Wind</em></strong> You know the cantrip Message. Intelligence is your spellcasting ability when casting it.</p>
+			<p class="indent"><strong><em>Extra Language</em></strong> You can speak, read, and write one extra language of your choice.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Gnome (Mark of Scribing)" display="false" />
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_GIFTED_SCRIBE" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SCRIBES_INSIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_WHISPERING_WIND" />
+			<select type="Language" name="Language (Mark of Scribing)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Gifted Scribe" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_GIFTED_SCRIBE">
+		<description>
+			<p>You are proficient with calligrapher’s supplies and forgery kits. When you make an ability check using either one of these tools, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an ability check using either calligrapher’s supplies or forgery kits, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+		</rules>
+	</element>
+
+	<element name="Scribe’s Insight" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SCRIBES_INSIGHT">
+		<description>
+			<p>You can cast comprehend languages once with this trait and you regain the ability to do so after a long rest. Intelligence is your spellcasting ability for it.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast comprehend languages. (Spellcasting: Intelligence).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" />
+		</rules>
+	</element>
+
+	<element name="Whispering Wind" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_WHISPERING_WIND">
+		<description>
+			<p>You know the cantrip Message. Intelligence is your spellcasting ability when casting it.</p>
+		</description>
+		<sheet>
+			<description>You know the cantrip Message. (Spellcasting: Intelligence).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MESSAGE" />
+		</rules>
+	</element>
+
+</elements>

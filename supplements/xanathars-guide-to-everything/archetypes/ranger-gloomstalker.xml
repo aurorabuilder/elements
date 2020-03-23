@@ -4,7 +4,7 @@
         <name>Gloom Stalker</name>
         <description>The Gloom Stalker from Xanathar’s Guide to Everything</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="ranger-gloomstalker.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/ranger-gloomstalker.xml" />
         </update>
     </info>
@@ -48,11 +48,11 @@
         </description>
         <sheet display="false" />
         <rules>
-            <grant type="Spell" name="ID_PHB_SPELL_DISGUISE_SELF" level="3" spellcasting="Ranger"/>
-            <grant type="Spell" name="ID_PHB_SPELL_ROPE_TRICK" level="5" spellcasting="Ranger" />
-            <grant type="Spell" name="ID_PHB_SPELL_FEAR" level="9" spellcasting="Ranger" />
-            <grant type="Spell" name="ID_PHB_SPELL_GREATER_INVISIBILITY" level="13" spellcasting="Ranger" />
-            <grant type="Spell" name="ID_PHB_SPELL_SEEMING" level="17" spellcasting="Ranger" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="3" spellcasting="Ranger"/>
+            <grant type="Spell" id="ID_PHB_SPELL_ROPE_TRICK" level="5" spellcasting="Ranger" />
+            <grant type="Spell" id="ID_PHB_SPELL_FEAR" level="9" spellcasting="Ranger" />
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" level="13" spellcasting="Ranger" />
+            <grant type="Spell" id="ID_PHB_SPELL_SEEMING" level="17" spellcasting="Ranger" />
         </rules>
     </element>
     <element name="Dread Ambusher" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_DREAD_AMBUSHER">
@@ -64,7 +64,7 @@
             <description>At the start of your first turn, your walking speed increases by 10ft until the end of that turn. If you attack that turn, make one additional weapon attack. If it hits, the target takes an extra 1d8 damage.</description>
         </sheet>
         <rules>
-            <stat name="Initiative" value="Wisdom Modifier" />
+            <stat name="initiative" value="wisdom:modifier" />
         </rules>
     </element>
     <element name="Umbral Sight" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_UMBRAL_SIGHT">
@@ -95,15 +95,13 @@
         <sheet>
             <description>1/turn when you miss with a weapon attack, make another weapon attack as part of the same action.</description>
         </sheet>
-        <rules />
     </element>
     <element name="Shadowy Dodge" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_RANGER_GLOOM_SHADOWY_DODGE">
         <description>
             <p>Starting at 15th level, you can dodge in unforeseen ways, with wisps of supernatural shadow around you. Whenever a creature makes an attack roll against you and doesn’t have advantage on the roll, you can use your reaction to impose disadvantage on it. You must use this feature before you know the outcome of the attack roll.</p>
         </description>
-        <sheet>
-            <description>Reaction: When a creature makes an attack roll against you and doesn’t have advantage on the roll, impose disadvantage on it (before knowing the outcome of the attack roll).</description>
+        <sheet action="Reaction">
+            <description>When a creature makes an attack roll against you and doesn’t have advantage on the roll, impose disadvantage on it (before knowing the outcome of the attack roll).</description>
         </sheet>
-        <rules />
     </element>
 </elements>

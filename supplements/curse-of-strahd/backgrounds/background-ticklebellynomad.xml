@@ -4,11 +4,11 @@
         <name>Ticklebelly Nomad</name>
         <description>The Ticklebelly Nomad background from Curse of Strahd</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/curse-strahd">Wizards of the Coast</author>
-        <update version="0.0.3">
+        <update version="0.0.5">
             <file name="background-ticklebellynomad.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/curse-of-strahd/backgrounds/background-ticklebellynomad.xml" />
         </update>
     </info>
-    <element name="Ticklebelly Nomad" type="Background" source="Curse of Strahd" id="ID_WOTC_COS_BACKGROUND_TICKLEBELLY_NOMAD">
+    <element name="Ticklebelly Nomad" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_COS_BACKGROUND_TICKLEBELLY_NOMAD">
         <description>
             <p>You were born into a nomadic tribe that called the Ticklebelly Hills home. You migrated from location to location, living off the land with your tribe. The tribe would seasonally travel south into the Grass Sea and the Giant’s Cairn, north into the Dragonspine Mountains, and even occasionally east across the Stojanow River to the borders of the Quivering forest.</p>
             <p class="indent">In your migrations, your people have come to know the stone giant tribes that populate the Giant’s Cairn. The dragon cultists came to the hills one day—magic-users wearing purple and riding horrid beasts, black-clad warriors wearing wicked masks, and even soldiers from the nearby town of Phlan. Then the dragon called Vorgansharax arrived and laired in the hills, causing horrid thickets to grow and animals to act unusually. The cultists began raiding nomad camps for victims to offer to the wyrm. Eventually, the dragon moved on to attack Phlan, but life was never again the same for the nomads of the Ticklebelly Hills.</p>
@@ -22,11 +22,14 @@
             <h5>SUGGESTED CHARACTERISTICS</h5>
             <p>Ticklebelly nomads only venture into civilization when necessary. You are social within your tribe, with tribes of other nomads, and even with the stone giant tribes that populate the Giant’s Cairn. However, other communities tend to either put you on your guard or put you in a state of wonder. Was it this wonder that enticed you into a life of adventuring? On the other hand, you are fiercely protective of and dedicated to your tribe. Perhaps it was this dedication that led you to venture out; either of your own will or at the behest of your tribe’s leaders.</p>
         </description>
+        <setters>
+            <set name="short">Nature, Animal Handling, Herbalism Kit, Giant</set>
+        </setters>
         <rules>
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
-            <grant type="Proficiency" name="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
-            <grant type="Language" name="ID_LANGUAGE_GIANT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            <grant type="Language" id="ID_LANGUAGE_GIANT" />
             <grant type="Background Feature" id="ID_WOTC_COS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD" />
             <select name="Personality Trait" type="List" number="2">
                 <item id="1">I eagerly inject myself into the unknown.</item>
@@ -64,9 +67,11 @@
             </select>
         </rules>
     </element>
-    <element name="Feature: At Home in the Wild" type="Background Feature" source="Curse of Strahd" id="ID_WOTC_COS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD">
+    <element name="Feature: At Home in the Wild" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_COS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD">
+		<supports>Background Feature</supports>
         <description>
             <p>The wilderness is your home and you are comfortable dwelling in it. You can find a place to hide, rest, or recuperate when out in the wild. This place of rest is secure enough to conceal you from most natural threats. Threats that are supernatural, magical, or are actively seeking you out might do so with difficulty depending on the nature of the threat (as determined by the DM). However, this feature doesn’t shield or conceal you from scrying, mental probing, nor from threats that don’t necessarily require the five senses to find you.</p>
         </description>
+		<sheet alt="At Home in the Wild" />
     </element>
 </elements>

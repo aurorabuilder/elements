@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Siren</name>
+        <description>Siren Race from Planeshift: Ixalan</description>
+        <author url="https://media.wizards.com/2018/downloads/magic/plane-shift_ixalan.pdf">Wizards of the Coast</author>
+        <update version="0.0.3">
+            <file name="race-siren.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/ixalan/race-siren.xml" />
+        </update>
+    </info>
+    
+    <element name="Siren" type="Race" source="Plane Shift: Ixalan" id="ID_WOCT_PSI_RACE_SIREN">
+        <description>
+            <p> Sirens are at home along the waters of the Stormwreck Sea. They settle on rocky coasts and remote islands, and even on floating piles of kelp. Sirens are mercurial creatures who can turn in an instant from lonely to repulsed, from desirous to hateful, from welcoming to irritated, from loving to murderous—and then back again. They are fascinated with ships, and enjoy toying with them. One siren might call out to a passing crew for company, only to capriciously draw the ship into an entangling mass of kelp. Another might lure a vessel onto jagged rocks so as to study the wreckage and learn more about the strange contraption. But as the number of Brazen Coalition ships passing through siren-controlled waters has increased over the years, a growing number of sirens have decided to satisfy their curiosity by taking positions on ship crews—including, in at least one case, the position of captain.  </p>
+            <h4>LOVEBIRDS OF THE SKIES</h4>
+            <p>Sirens are humanoid creatures with birdlike features. Their long, slender arms extend into powerful wings that easily carry their light frames into the air. Their fingers bear sharp claws but are nimble enough to wield weapons and perform fine manipulation. Crests of feathery plumage start between their eyes and cover the backs of their heads.</p>
+            <h4>SIREN TRAITS</h4>
+            <p>Your siren character has the following traits.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b> Your Charisma score increases by 2.</p>
+            <p class="indent"><b><i>Age. </i></b> Sirens have relatively long lifespans. They become physically mature at 20 but can live up to 300 years naturally.</p>
+            <p class="indent"><b><i>Alignment. </i></b> Most sirens lean toward chaotic alignment, cherishing the freedom and independence that comes from joining a pirate crew</p>
+            <p class="indent"><b><i>Size. </i></b> Sirens stand about 5 to 6 feet tall, but their bodies are slender and their bones partially hollow to facilitate their flight. Your size is Medium.</p>
+            <p class="indent"><b><i>Speed. </i></b> Your base walking speed is 25 feet.</p>
+            <p class="indent"><b><i>Flight. </i></b> You have a flying speed of 30 feet. You can’t use your flying speed while you wear medium or heavy armor. </p>
+            <p class="indent"><b><i>Languages. </i></b> You can speak, read, and write Common and Siren.</p>
+            <p class="indent"><b><i>Siren’s Song. </i></b> You know the friends cantrip and can cast it without material components.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="charisma" value="2" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_WOTC_PSI_LANGUAGE_SIREN" />
+            <grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_SIRENS_SONG" />
+            <grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_FLIGHT" />
+        </rules>
+    </element>
+    <element name="Flight" type="Racial Trait" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_FLIGHT">
+		<description>
+			<p>You have a flying speed of 30 feet. To use this speed, you can’t be wearing medium or heavy armor.</p>
+		</description>
+		<sheet>
+			<description>You have a flying speed of 30 feet. To use this speed, you can’t be wearing medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+    <element name="Siren’s Song" type="Racial Trait" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_SIRENS_SONG">
+		<description>
+			<p>You know the friends cantrip and can cast it without material components.</p>
+		</description>
+		<sheet>
+			<description>You know the friends cantrip and can cast it without material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" name="ID_PHB_SPELL_FRIENDS" />
+		</rules>
+	</element>
+
+    <!-- Languages -->
+    <element name="Siren" type="Language" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_LANGUAGE_SIREN">
+        <description>
+            <p>The language of the Siren race from Ixalan.</p>
+        </description>
+        <setters>
+            <set name="exotic">true</set>
+            <set name="speakers">Siren</set>
+            <set name="script">Siren</set>
+        </setters>
+    </element>
+</elements>

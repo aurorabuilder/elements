@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Unearthed Arcana: Elf Subraces</name>
+        <description>When you choose the subrace of your elf character, you can choose one of the following options, in addition to those in the <i>Player’s Handbook</i>.</description>
+        <author url="http://dnd.wizards.com/articles/unearthed-arcana/elf-subraces">Wizards of the Coast</author>
+        <update version="0.0.4">
+            <file name="20171113.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20171113.xml" />
+        </update>
+    </info>
+
+	<element name="Unearthed Arcana: Elf Subraces" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20171113">
+		<description>
+			<p>When you choose the subrace of your elf character, you can choose one of the following options, in addition to those in the <i>Player’s Handbook</i>.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20171113</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/elf-subraces</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20171113</set>
+		</setters>
+	</element>
+
+    <element name="Avariel" type="Sub Race" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_SUB_RACE_AVARIEL">
+    	<supports>Elf</supports>
+    	<description>
+      		<p>The avariel are winged elves. These rare creatures were more common when the worlds of the multiverse were young, but frequent conflicts with dragons much reduced the winged elves’ number. Still, a few colonies persist here and there in the Material Plane and on the Plane of Air.</p>
+      		<p>
+        		<span class="feature">Flight.</span>You have a flying speed of 30 feet. To use this speed, you can't be wearing medium or heavy armor.<br />
+        		<span class="feature">Languages.</span>You can speak, read, and write Auran.<br />
+      		</p>
+    	</description>
+    	<sheet display="false" />
+    	<setters>
+      		<set name="height" modifier="2d10">4'8"</set>
+      		<set name="weight" modifier="1d4">90 lb.</set>
+    	</setters>
+    	<rules>
+			<stat name="innate speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+			<!-- todo: create flight element -->
+			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+    	</rules>
+  	</element>  
+    <element name="Grugach" type="Sub Race" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_SUB_RACE_GRUGACH">
+    	<supports>Elf</supports>
+    	<description>
+      		<p>The grugach of the world of Greyhawk shun contact with other folk, preferring the solace of the deepest forests and the companionship of wild animals. Even other elves draw their suspicion.</p>
+      		<p class="indent">The grugach tend toward chaos and neutrality. They feel no special duty to anyone beyond their own folk and the forest that is their home. Troubles beyond their borders are best kept there. At the same time, they harbor little ambition beyond a peaceful coexistence with nature.</p>
+      		<p class="indent">If anyone is fool enough to disturb a grugach realm, these elves take to arms and fight in earnest. Grugach master the basic weapons needed to hunt and forage in the wood. Every copse of trees becomes a sniper’s nest,and each forest meadow is an ambush point. The grugach set pits filled with stakes, snares that leave an intruder helpless to grugach arrows, and other snares designed to kill rather than capture. The grugach fight to the death to preserve their realms.</p>
+      		<p>
+        		<span class="feature">Ability Score Increase.</span>Your Strength score increases by 1.<br />
+        		<span class="feature">Grugach Weapon Training.</span>You have proficiency with the spear, shortbow, longbow and net.<br />
+        		<span class="feature">Cantrip.</span>You know one cantrip of your choice from the druid spell list. Wisdom is your spellcasting ability for it.<br />
+        		<span class="feature">Languages.</span>Unlike other elves, you don’t speak, read, or write Common. You instead speak, read, and write Sylvan.<br />
+      		</p>
+    	</description>
+    	<sheet display="false" />
+    	<setters>
+      		<set name="height" modifier="2d6">4'5"</set>
+      		<set name="weight" modifier="1d6">75 lb.</set>
+    	</setters>
+		<rules>
+			<stat name="strength" value="1" />
+			<grant name="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_WEAPON_TRAINING" type="Racial Trait" />
+			<select type="Spell" name="Cantrip (Grugach)" supports="Druid,0" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+		</rules>
+  	</element>
+    <element name="Grugach Weapon Training" type="Racial Trait" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_WEAPON_TRAINING">
+    	<description>
+      		<p>You have proficiency with the spear, shortbow, longbow and net.</p>
+    	</description>
+    	<sheet display="false" />
+    	<rules>
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+    	</rules>
+  	</element>
+</elements>

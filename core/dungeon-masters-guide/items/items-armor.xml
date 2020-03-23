@@ -4,7 +4,7 @@
 		<name>Armor</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.6">
 			<file name="items-armor.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/dungeon-masters-guide/items/items-armor.xml" />
 		</update>
 	</info>
@@ -14,19 +14,17 @@
 			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
 		</description>
 		<setters>
-			<set name="keywords" />
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="rarity">Rare</set>
 			<set name="enhancement">1</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Armor, +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_2">
@@ -34,19 +32,17 @@
 			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
 		</description>
 		<setters>
-			<set name="keywords" />
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="rarity">Very Rare</set>
 			<set name="enhancement">2</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="2" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="2" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Armor, +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_3">
@@ -54,10 +50,8 @@
 			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
 		</description>
 		<setters>
-			<set name="keywords" />
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="rarity">Legendary</set>
@@ -66,10 +60,10 @@
 			<set name="supports" />
 			<set name="enhancement">3</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="3" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="3" bonus="enhancement" />
 		</rules>
 	</element>	
 	<element name="Adamantine Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ADAMANTINE_ARMOR">
@@ -81,32 +75,28 @@
 			<set name="keywords">medium, heavy</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="medium or heavy, but not hide">Armor</set>
 			<set name="rarity">Uncommon</set>
 			<set name="armor">(ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY),!Hide</set>
-			<set name="name-format">Adamantine $(parent)</set>
+			<set name="name-format">Adamantine {{parent}}</set>
 		</setters>
-		<rules />
 	</element>
 	<element name="Mariner’s Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MARINERS_ARMOR">
 		<description>
 			<p>While wearing this armor, you have a swimming speed equal to your walking speed. In addition, whenever you start your turn underwater with 0 hit points, the armor causes you to rise 60 feet toward the surface. The armor is decorated with fish and shell motifs.</p>
 		</description>
 		<setters>
-			<set name="keywords" />
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="rarity">Uncommon</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT||ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">Mariner’s $(parent)</set>
+			<set name="name-format">Mariner’s {{parent}}</set>
 		</setters>
 		<rules>
-			<stat name="speed:swim" value="Speed" bonus="base" />
+			<stat name="speed:swim" value="speed" bonus="base" />
 		</rules>
 	</element>
 	<element name="Mithral Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_MITHRAL_ARMOR">
@@ -117,13 +107,14 @@
 			<set name="keywords">medium, heavy</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="medium or heavy, but not hide">Armor</set>
 			<set name="rarity">Uncommon</set>
 			<set name="armor">(ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY),!Hide</set>
 		</setters>
-		<rules />
+		<rules>
+			<!-- todo: no disadvantage or strength requirement -->
+		</rules>
 	</element>		
 	<element name="Armor of Resistance, Acid" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_RESISTANCE_ACID">
 		<description>
@@ -133,13 +124,12 @@
 			<set name="keywords">acid</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Acid Resistance</set>
+			<set name="name-format">{{parent}} of Acid Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
@@ -153,13 +143,12 @@
 			<set name="keywords">cold</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Cold Resistance</set>
+			<set name="name-format">{{parent}} of Cold Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
@@ -173,13 +162,12 @@
 			<set name="keywords">fire</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Fire Resistance</set>
+			<set name="name-format">{{parent}} of Fire Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
@@ -193,13 +181,12 @@
 			<set name="keywords">force</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Force Resistance</set>
+			<set name="name-format">{{parent}} of Force Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
@@ -213,13 +200,12 @@
 			<set name="keywords">lightning</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Lightning Resistance</set>
+			<set name="name-format">{{parent}} of Lightning Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
@@ -233,13 +219,12 @@
 			<set name="keywords">necrotic</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Necrotic Resistance</set>
+			<set name="name-format">{{parent}} of Necrotic Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
@@ -253,13 +238,12 @@
 			<set name="keywords">poison</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Poison Resistance</set>
+			<set name="name-format">{{parent}} of Poison Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
@@ -273,13 +257,12 @@
 			<set name="keywords">psychic</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Psychic Resistance</set>
+			<set name="name-format">{{parent}} of Psychic Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
@@ -293,13 +276,12 @@
 			<set name="keywords">radiant</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Radiant Resistance</set>
+			<set name="name-format">{{parent}} of Radiant Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
@@ -313,13 +295,12 @@
 			<set name="keywords">thunder</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">$(parent) of Thunder Resistance</set>
+			<set name="name-format">{{parent}} of Thunder Resistance</set>
 		</setters>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
@@ -334,7 +315,6 @@
 			<set name="keywords">plate, resistance</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="attunement">true</set>
@@ -342,7 +322,6 @@
 			<set name="cursed">true</set>
 			<set name="armor">Plate</set>
 		</setters>
-		<rules />
 	</element>
 	<element name="Elven Chain" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ELVEN_CHAIN">
 		<description>
@@ -352,16 +331,16 @@
 			<set name="keywords">chain, shirt</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="chain shirt">Armor</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">Chain Shirt</set>
 			<set name="enhancement">1</set>
-			<set name="name-format">Elven $(parent)</set>
+			<set name="name-format">Elven {{parent}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_SHIRT" />			
 		</rules>
 	</element>
 	<element name="Glamoured Studded Leather" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_GLAMOURED_STUDDED_LEATHER">
@@ -372,7 +351,6 @@
 			<set name="keywords">studded, leather</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="studded leather">Armor</set>
 			<set name="rarity">Rare</set>
@@ -380,7 +358,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Demon Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DEMON_ARMOR">
@@ -392,7 +370,6 @@
 			<set name="keywords">plate</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="attunement">true</set>
@@ -402,7 +379,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Dragon Scale Mail, Black" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DRAGON_SCALE_MAIL_BLACK">
@@ -415,7 +392,6 @@
 			<set name="keywords">scale, acid</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -424,7 +400,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
 		</rules>
 	</element>
@@ -434,7 +410,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -452,7 +428,6 @@
 			<set name="keywords">scale, lightning</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -461,7 +436,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
 		</rules>
 	</element>
@@ -471,7 +446,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -489,7 +464,6 @@
 			<set name="keywords">scale, fire</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -498,7 +472,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
 		</rules>
 	</element>
@@ -508,7 +482,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -526,7 +500,6 @@
 			<set name="keywords">scale, lightning</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -535,7 +508,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
 		</rules>
 	</element>
@@ -545,7 +518,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -563,7 +536,6 @@
 			<set name="keywords">scale, acid</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -572,7 +544,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
 		</rules>
 	</element>
@@ -582,7 +554,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -600,7 +572,6 @@
 			<set name="keywords">scale, fire</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -609,7 +580,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
 		</rules>
 	</element>
@@ -619,7 +590,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -637,7 +608,6 @@
 			<set name="keywords">scale, poison</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -646,7 +616,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
 		</rules>
 	</element>
@@ -656,7 +626,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -674,7 +644,6 @@
 			<set name="keywords">scale, fire</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -683,7 +652,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
 		</rules>
 	</element>
@@ -693,7 +662,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -711,7 +680,6 @@
 			<set name="keywords">scale, cold</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -720,7 +688,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
 		</rules>
 	</element>
@@ -730,7 +698,7 @@
 			<p>While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).</p>
 			<p>Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</p>
 			<table>
-				<thead><tr><th>Dragon</th><th>Resistance</th></tr></thead>
+				<thead><tr><td>Dragon</td><td>Resistance</td></tr></thead>
 				<tbody>
 					<tr><td>Black</td><td>Acid</td></tr>
 					<tr><td>Blue</td><td>Lightning</td></tr>
@@ -748,7 +716,6 @@
 			<set name="keywords">scale, cold</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="scale mail">Armor</set>
 			<set name="attunement">true</set>
@@ -757,7 +724,7 @@
 			<set name="enhancement">1</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
 		</rules>
 	</element>
@@ -769,14 +736,13 @@
 			<set name="keywords">plate</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="rarity">Very Rare</set>
 			<set name="armor">Plate</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="2" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="2" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Armor of Invulnerability" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_OF_INVULNERABILITY">
@@ -787,14 +753,17 @@
 			<set name="keywords">plate</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Legendary</set>
 			<set name="armor">Plate</set>
 		</setters>
-		<rules />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_SLASHING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PIERCING" />
+		</rules>
 	</element>
 	<element name="Efreeti Chain" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_EFREETI_CHAIN">
 		<description>
@@ -804,7 +773,6 @@
 			<set name="keywords">chain</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="chain mail">Armor</set>
 			<set name="attunement">true</set>
@@ -812,7 +780,8 @@
 			<set name="armor">Chain Mail</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="3" bonus="armor:enhancement" />
+			<stat name="ac:armored:enhancement" value="3" bonus="enhancement" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
 		</rules>
 	</element>
 	<element name="Plate Armor of Etherealness" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_PLATE_ARMOR_OF_ETHEREALNESS">
@@ -823,14 +792,12 @@
 			<set name="keywords">plate</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Legendary</set>
 			<set name="armor">Plate</set>
 		</setters>
-		<rules />
 	</element>
 
 	<!-- shields -->
@@ -842,15 +809,14 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="rarity">Uncommon</set>
 			<set name="enhancement">1</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="1" bonus="enhancement:shield" />
+			<stat name="ac:shield" value="1" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Shield, +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_2">
@@ -861,15 +827,14 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="rarity">Rare</set>
 			<set name="enhancement">2</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="2" bonus="enhancement:shield" />
+			<stat name="ac:shield" value="2" bonus="enhancement" />
 		</rules>
 	</element>
 	<element name="Shield, +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_3">
@@ -880,15 +845,14 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="rarity">Very Rare</set>
 			<set name="enhancement">3</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">$(parent) +$(enhancement)</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
 		</setters>
 		<rules>
-			<stat name="AC" value="3" bonus="enhancement:shield" />
+			<stat name="ac:shield" value="3" bonus="enhancement" />
 		</rules>
 	</element>
 	
@@ -900,7 +864,6 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="rarity">Uncommon</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
@@ -917,32 +880,27 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
 		</setters>
-		<rules />
 	</element>
 	<element name="Shield of Missile Attraction" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_OF_MISSILE_ATTRACTION">
 		<description>
 			<p>While holding this shield, you have resistance to damage from ranged weapon attacks.</p>
-			<p>
-				<strong>Curse.</strong> This shield is cursed. Attuning to it curses you until you are targeted by the <em>remove curse</em> spell or similar magic. Removing the shield fails to end the curse on you. Whenever a ranged weapon attack is made against a target within 10 feet of you, the curse causes you to become the target instead.</p>
+			<p><strong>Curse.</strong> This shield is cursed. Attuning to it curses you until you are targeted by the <em>remove curse</em> spell or similar magic. Removing the shield fails to end the curse on you. Whenever a ranged weapon attack is made against a target within 10 feet of you, the curse causes you to become the target instead.</p>
 		</description>
 		<setters>
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Rare</set>
 			<set name="cursed">true</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
 		</setters>
-		<rules />
 	</element>
 	<element name="Animated Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ANIMATED_SHIELD">
 		<description>
@@ -952,13 +910,11 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Very Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
 		</setters>
-		<rules />
 	</element>
 	<element name="Spellguard Shield" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SPELLGUARD_SHIELD">
 		<description>
@@ -968,12 +924,10 @@
 			<set name="keywords">shield</set>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
 			<set name="attunement">true</set>
 			<set name="rarity">Very Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
 		</setters>
-		<rules />
 	</element>
 </elements>

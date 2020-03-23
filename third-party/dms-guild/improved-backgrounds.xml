@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Improved Backgrounds</name>
+		<description></description>
+		<author url="https://www.dmsguild.com/product/208784/Improved-Backgrounds">Damion Meany</author>
+		<update version="0.0.3">
+			<file name="improved-backgrounds.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/improved-backgrounds.xml" />
+		</update>
+	</info>
+
+	<element name="Improved Backgrounds" type="Source" source="Core" id="ID_DMSG_SOURCE_IMPROVED_BACKGROUNDS">
+		<description>
+			<p>Modified Backgrounds for 5e Character Generation</p>
+		</description>
+		<setters>
+			<set name="abbreviation">IBG</set>
+			<set name="url">https://www.dmsguild.com/product/208784/Improved-Backgrounds</set>
+			<set name="image">https://www.dmsguild.com/images/8957/208784.jpg</set>
+			<set name="author" url="https://www.dmsguild.com/browse.php?author=Damion%20Meany">Damion Meany</set>
+			<set name="homebrew">true</set>
+			<set name="release">20170401</set>
+			<set name="incomplete">true</set>
+		</setters>
+	</element>
+
+    <!-- Pit Fighter -->
+    <element name="Pit Fighter" type="Background" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PIT_FIGHTER">
+        <description>
+            <p>You have been forced to fight, possibly for your life, since you were young. You may have been a slave, purchased to provide cheap thrills for your owner. You may have been introduced into a rough life by your family, or entered yourself willingly to earn money when times were hard.</p>
+            <p>
+                <span class="emphasis">Skill Proficiencies:</span>Athletics, plus your choice of one between Acrobatics, Animal Handling, Intimidation.
+                <br/>
+                <span class="emphasis">Tool Proficiencies:</span>one Gaming set, choose one from: one language (Speak/Read), one Gaming set, one Instrument, Land vehicles, Water vehicles.
+                <br/>
+                <span class="emphasis">Equipment:</span>gaming set, traveler's clothes, healing potion, hand wraps (bandages - one use medical kit), club, pouch containing 20 gp.
+            
+            </p>
+            <div element="ID_DMSG_IBG_BACKGROUND_FEATURE_PIT_FIGHTER_BLOOD_BROTHERS" />
+            <h4>Suggested Class: Fighter</h4>
+            <p>Any class can start as a pit fighter, but fighters are most common.</p>
+        </description>
+		<setters>
+			<set name="short">Athletics, Acrobatics / Animal Handling / Intimidation, Gaming Set, 1 Language / Instrument / Vehicles (Land) / Vehicles (Water)</set>
+		</setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+            <select type="Proficiency" name="Skill Proficiency (Pit Fighter)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            <select type="Proficiency" name="Gaming Set (Pit Fighter)" supports="Gaming Set" />
+            <grant type="Background Feature" id="ID_DMSG_IBG_BACKGROUND_FEATURE_PIT_FIGHTER_BLOOD_BROTHERS" />
+            <select type="Background Feature" name="Tool Proficiency (Pit Fighter)" supports="Pit Fighter BG Proficiency" />
+      <select name="Personality Trait" type="List" number="2">
+        <item id="1">I’m silent and menacing.</item>
+        <item id="2">I am always on alert and trust no one.</item>
+        <item id="3">I am quiet and focused.</item>
+        <item id="4">I am brash and outspoken.</item>
+        <item id="5">I constantly challenge and mock others who are physically powerful.</item>
+        <item id="6">I am unshakable and never back down.</item>
+      </select>
+      <select name="Ideal" type="List">
+        <item id="1"><b>Mercy.</b> I never kill (Good)</item>
+        <item id="2"><b>Vicious.</b> I never spare anyone who is stupid enough to fight me (Evil)</item>
+        <item id="3"><b>Honor.</b> I give 100% and respect anyone who gives their all (Lawful)</item>
+        <item id="4"><b>Dirty Fighter.</b> I never fight fair because I never know what my opponent will do (Chaotic)</item>
+        <item id="5"><b>Respect.</b> I respect the strong and the skilled; I don't care what they stand for (Neutral)</item>
+        <item id="6"><b>Uncaring.</b> I'm out for myself. (Any)</item>
+      </select>
+      <select name="Bond" type="List">
+        <item id="1">I fight for my family.</item>
+        <item id="2">I need glory and respect.</item>
+        <item id="3">I fight for my freedom, and need to be sure I'm never in another's power again.</item>
+        <item id="4">I was bought and thrown into the pit; I will see my former owner thrown into that same pit with me.</item>
+        <item id="5">I will help anyone who is poor and desperate.</item>
+        <item id="6">I will see those who make others suffer for their entertainment feel true pain.</item>
+      </select>
+      <select name="Flaw" type="List">
+        <item id="1">I hate all those with money and power.</item>
+        <item id="2">I am an addict; I use to forget.</item>
+        <item id="3">I cannot back down from a challenge.</item>
+        <item id="4">I never fight unless I have no other choice.</item>
+        <item id="5">I will never pass up the chance to expose a well-regarded person who hides a shameful secret.</item>
+        <item id="6">I think all authority figures who enforce laws (guards, military, etc.) are corrupt; I challenge and mock them.</item>
+      </select>
+        </rules>
+    </element>
+    <element name="Feature: Blood Brothers" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_FEATURE_PIT_FIGHTER_BLOOD_BROTHERS">
+		<supports>Background Feature</supports>
+        <description>
+            <p>You know how to find fighting houses in every big city, and can tell if one is present in a smaller settlement within a day of being there. You can earn a poor living for yourself fighting for others entertainment. In addition, you can spot who is a brutal fighter and who is scared. You can also tell who is running the show, and who the high rollers are in the crowd.</p>
+        </description>
+        <sheet alt="Blood Brothers" />
+    </element>
+    <element name="Standard Language (Speak/Read)" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PROFICIENCY_PIT_FIGHTER_LANGUAGE">
+        <supports>Pit Fighter BG Proficiency</supports>
+        <description />
+        <sheet />
+        <rules>
+            <select type="Language" name="Language (Pit Fighter)" supports="Standard||Exotic" />
+        </rules>
+    </element>
+    <element name="Gaming set" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PROFICIENCY_PIT_FIGHTER_GAMING_SET">
+        <supports>Pit Fighter BG Proficiency</supports>
+        <description />
+        <sheet />
+        <rules>
+            <select type="Proficiency" name="Gaming Set 2 (Pit Fighter)" supports="Gaming Set" />
+        </rules>
+    </element>
+    <element name="Musical Instrument" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PROFICIENCY_PIT_FIGHTER_INSTRUMENT">
+        <supports>Pit Fighter BG Proficiency</supports>
+        <description />
+        <sheet />
+        <rules>
+            <select type="Proficiency" name="Musical Instrument (Pit Fighter)" supports="ID_PROFICIENCY_MUSICAL_INSTRUMENT" />
+        </rules>
+    </element>
+    <element name="Land Vehicles" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PROFICIENCY_PIT_FIGHTER_LAND_VEHICLES">
+        <supports>Pit Fighter BG Proficiency</supports>
+        <description />
+        <sheet />
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+        </rules>
+    </element>
+    <element name="Water Vehicles" type="Background Feature" source="Improved Backgrounds" id="ID_DMSG_IBG_BACKGROUND_PROFICIENCY_PIT_FIGHTER_WATER_VEHICLES">
+        <supports>Pit Fighter BG Proficiency</supports>
+        <description />
+        <sheet />
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+        </rules>
+    </element>
+</elements>

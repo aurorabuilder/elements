@@ -4,7 +4,7 @@
     <name>Monstrous Adventurers</name>
     <description>The monstrous-adventurers from Volo’s Guide to Monsters.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/volos-guide-to-monsters">Wizards of the Coast</author>
-    <update version="0.0.7">
+    <update version="0.1.2">
       <file name="monstrous-adventurers.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/monstrous-adventurers.xml" />
     </update>
   </info>
@@ -30,22 +30,22 @@
     </description>
     <sheet display="false"/>
     <setters>
-      <!-- names taken from online generator to have at least a few names in here -->
+      <!-- todo names taken from online generator to have at least a few names in here -->
       <set name="names" type="custom">n/a</set>
-      <set name="names-format">$(custom)</set>
+      <set name="names-format">{{custom}}</set>
     </setters>
     <rules>
-      <stat name="Strength" value="+2" />
-      <stat name="Dexterity" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
+      <stat name="strength" value="2" />
+      <stat name="dexterity" value="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_GOBLIN" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_LONG_LIMBED" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_POWERFUL_BUILD" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SNEAKY" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SURPRISE_ATTACK" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_LONG_LIMBED" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_POWERFUL_BUILD" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SNEAKY" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SURPRISE_ATTACK" />
     </rules>
   </element>
 
@@ -56,7 +56,6 @@
     <sheet>
       <description>When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Powerful Build" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_POWERFUL_BUILD">
     <description>
@@ -65,7 +64,9 @@
     <sheet>
       <description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
     </sheet>
-    <rules />
+    <rules>
+      <grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+    </rules>
   </element>
   <element name="Sneaky" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SNEAKY">
     <description>
@@ -85,7 +86,6 @@
     <sheet>
       <description>If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6 damage to it. You can use this trait only once per combat.</description>
     </sheet>
-    <rules />
   </element>
 
   <element name="Goblin" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_GOBLIN">
@@ -109,18 +109,18 @@
     <setters>
       <!-- names taken from online generator to have at least a few names in here -->
       <set name="names" type="custom">n/a</set>
-      <set name="names-format">$(custom)</set>
+      <set name="names-format">{{custom}}</set>
     </setters>
     <rules>
-      <stat name="Dexterity" value="+2" />
-      <stat name="Constitution" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_SMALL" />
+      <stat name="dexterity" value="2" />
+      <stat name="constitution" value="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_SMALL" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_GOBLIN" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
     </rules>
   </element>  
   <element name="Fury of the Small" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL">
@@ -130,7 +130,6 @@
     <sheet>
       <description>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Nimble Escape" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE">
     <description>
@@ -139,7 +138,6 @@
     <sheet>
       <description>You can take the Disengage or Hide action as a bonus action on each of your turns.</description>
     </sheet>
-    <rules />
   </element>
   
   <element name="Hobgoblin" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_HOBGOBLIN">
@@ -162,18 +160,18 @@
     <sheet display="false"/>
     <setters>
       <set name="names" type="male">Hobgoblin Names</set>
-      <set name="names-format">$(name)</set>
+      <set name="names-format">{{name}}</set>
     </setters>
     <rules>
-      <stat name="Constitution" value="+2" />
-      <stat name="Intelligence" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
+      <stat name="constitution" value="2" />
+      <stat name="intelligence" value="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_GOBLIN" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_HOBGOBLIN_MARTIAL_TRAINING" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_HOBGOBLIN_SAVING_FACE" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_HOBGOBLIN_MARTIAL_TRAINING" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_HOBGOBLIN_SAVING_FACE" />
     </rules>
   </element>
   <element name="Martial Training" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_HOBGOBLIN_MARTIAL_TRAINING">
@@ -195,7 +193,6 @@
     <sheet>
       <description>If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest.</description>
     </sheet>
-    <rules />
   </element>
   
   <element name="Kobold" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_KOBOLD">
@@ -220,19 +217,19 @@
     <setters>
       <!-- names taken from online generator to have at least a few names in here -->
       <set name="names" type="custom">Ken, Tiv, Datt, Zeks, Kokri, Etla, Dudri, Ovno, Irpu, Dakbi, Sum, Kigs, Gir, Voss, Uble, Rurku, Zoglo, Agge, Snarpa, Miplu</set>
-      <set name="names-format">$(custom)</set>
+      <set name="names-format">{{custom}}</set>
     </setters>
     <rules>
-      <stat name="Dexterity" value="+2" />
-      <stat name="Strength" value="-2" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_SMALL" />
+      <stat name="dexterity" value="2" />
+      <stat name="strength" value="-2" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_SMALL" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_DRACONIC" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_GROVEL_COWER_AND_BEG" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_PAC_TACTICS" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_SUNLIGHT_SENSITIVITY" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_GROVEL_COWER_AND_BEG" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_PAC_TACTICS" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_SUNLIGHT_SENSITIVITY" />
     </rules>
   </element>  
   <element name="Grovel, Cower, and Beg" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_GROVEL_COWER_AND_BEG">
@@ -242,7 +239,6 @@
     <sheet>
       <description>As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10 feet of you that can see you. Once you use this trait, you can't use it again until you finish a short or long rest.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Pack Tactics" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_PAC_TACTICS">
     <description>
@@ -251,7 +247,6 @@
     <sheet>
       <description>You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Sunlight Sensitivity" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_KOBOLD_SUNLIGHT_SENSITIVITY">
     <description>
@@ -260,7 +255,6 @@
     <sheet>
       <description>You have disadvantage on attack rolls and on Perception checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</description>
     </sheet>
-    <rules />
   </element>
   
   <element name="Orc" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_ORC">
@@ -270,9 +264,9 @@
         <p>Your orc character has the following racial traits.</p>
         <p>
         <span class="feature">Ability Score Increase.</span>Your Strength score increases by 2, your Constitution score increases by 1, and your Intelligence score is reduced by 2.<br/>
-        <span class="feature">Age.</span>Ores reach adulthood at age 12 and live up to 50 years. <br/>
-        <span class="feature">Alignment.</span>Ores are vicious raiders, who believe that the world should be theirs. They also respect strength above all else and believe the strong must bully the weak to ensure that weakness does not spread like a disease. They are usually chaotic evil.<br/>
-        <span class="feature">Size.</span>Ores are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.<br/>
+        <span class="feature">Age.</span>Orcs reach adulthood at age 12 and live up to 50 years. <br/>
+        <span class="feature">Alignment.</span>Orcs are vicious raiders, who believe that the world should be theirs. They also respect strength above all else and believe the strong must bully the weak to ensure that weakness does not spread like a disease. They are usually chaotic evil.<br/>
+        <span class="feature">Size.</span>Orcs are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.<br/>
         <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
         <span class="feature">Darkvision.</span>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br/>
         <span class="feature">Aggressive.</span>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.<br/>
@@ -284,23 +278,23 @@
     <sheet display="false"/>
     <setters>
       <!-- names taken from online generator to have at least a few names in here -->
-      <set name="names" type="male">Zhok,Dhag,Dull,Nondakk,Grortud,Rhakrog,Lavran ,Loggug </set>
-      <set name="names" type="female">Huz ,Nim ,Div,Kuatam ,Idkiel ,Gaodki ,Saav </set>
+      <set name="names" type="male">Zhok, Dhag, Dull, Nondakk, Grortud, Rhakrog, Lavran, Loggug</set>
+      <set name="names" type="female">Huz, Nim, Div,Kuatam, Idkiel, Gaodki, Saav</set>
       <set name="names" type="title">The Silent, Doom Axe, Vermin Axe, The Cold, The Simple, The Brute, The Violent</set>
-      <set name="names-format">$(name) $(title)</set>
+      <set name="names-format">{{name}} {{title}}</set>
     </setters>
     <rules>
-      <stat name="Strength" value="+2" />
-      <stat name="Constitution" value="+1" />
-      <stat name="Intelligence" value="-2" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
+      <stat name="strength" value="2" />
+      <stat name="constitution" value="1" />
+      <stat name="intelligence" value="-2" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_ORC" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_ORC" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
     </rules>
   </element>
   <element name="Aggressive" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE">
@@ -310,7 +304,6 @@
     <sheet>
       <description>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Menacing" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING">
     <description>
@@ -330,9 +323,11 @@
     <sheet>
       <description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
     </sheet>
-    <rules />
+    <rules>
+      <grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+    </rules>
   </element>
-    
+  
   <element name="Yuan-Ti Pureblood" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_YUANTI_PUREBLOOD">
     <description>
         <p class="flavor">In some campaigns, humanoids normally regarded as sinister threats can emerge to adventure alongside humans and the other standard races. This section is aimed at those who wish to expand the race selections for their campaigns beyond the typical folk of D&amp;D.</p>
@@ -355,20 +350,20 @@
     <setters>
       <!-- names taken from online generator to have at least a few names in here -->
       <set name="names" type="custom">Mektla, Zsolshih, Netstlia, Simal, Zsazshi, Zsoamish, Zhaktlishu, Hozsehsass, Zukholli, Yilshashlu, Yala, Totsziss</set>
-      <set name="names-format">$(custom)</set>
+      <set name="names-format">{{custom}}</set>
     </setters>
     <rules>
-      <stat name="Charisma" value="+2" />
-      <stat name="Intelligence" value="+1" />
-      <stat name="Speed" value="+30" bonus="base" />
-      <grant type="Size" name="ID_SIZE_MEDIUM" />
+      <stat name="charisma" value="2" />
+      <stat name="intelligence" value="1" />
+      <stat name="innate speed" value="30" bonus="base" />
+      <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_ABYSSAL" />
-      <grant type="Language" name="ID_LANGUAGE_DRACONIC" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_INNATE_SPELLCASTING" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_MAGIC_RESISTANCE" />
-      <grant type="Racial Trait" name="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_POISON_IMMUNITY" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_ABYSSAL" />
+      <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_INNATE_SPELLCASTING" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_MAGIC_RESISTANCE" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_POISON_IMMUNITY" />
     </rules>
   </element>
    
@@ -393,7 +388,6 @@
     <sheet>
       <description>You have advantage on saving throws against spells and other magical effects.</description>
     </sheet>
-    <rules />
   </element>   
   <element name="Poison Immunity" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_POISON_IMMUNITY">
     <description>
@@ -402,6 +396,8 @@
     <sheet>
       <description>You are immune to poison damage and the poisoned condition.</description>
     </sheet>
-    <rules />
+    <rules>
+      <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+    </rules>
   </element>
 </elements>

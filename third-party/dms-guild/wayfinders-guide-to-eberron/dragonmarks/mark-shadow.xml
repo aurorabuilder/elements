@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Elf Dragonmark</name>
+		<description></description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="mark-shadow.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-shadow.xml" />
+		</update>
+	</info>
+
+	<element name="The Mark of Shadow" type="Sub Race" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_SHADOW_DRAGONMARK">
+		<supports>Elf</supports>
+		<description>
+			<p>The Mark of Shadows lets an elf weave illusions from shadows, crafting sounds and images to distract or delight. The mark also allows its bearer to draw on the shadows, making it an easy matter to avoid detection or even disappear while in plain sight. It is a valuable tool for an entertainer, a spy, or an assassin.</p>
+			<h4>THE HOUSE OF SHADOW</h4>
+			<p>The elves have carried the Mark of Shadow for thousands of years. The families that carry the mark left Aerenal after the conflict that wiped  out the Mark of Death and established House Phiarlan in Khorvaire. These elves are the finest entertainers in the land, giving them access to all manner of places and secrets. But the elves do more than entertain. There has always been an elite force of spies and assassins within the house. Common folk know nothing of this. Only special clients—powerful nobles, merchant lords, and the like—have access to these shadow-marked spies.</p>
+			<p class="indent">Toward the end of the Last War, a bitter feud broke out between the major families of the house. Known as the Shadow Schism, it resulted in a split withinin Phiarlan—and the foundation of House Thuranni. House Phiarlan continues to offer entertainment and espionage in the lands west of the Mournland, while Thuranni operates in Karrnath, the Lhazaar Principalities, and the eastern lands. As a rule, Phiarlan elves are the better spies and Thuranni agents are superior assassins. On the surface Thuranni and Phiarlan maintain a peaceful relationship, but rivalries run deep.</p>
+			<h4>MARK OF THE SHADOW TRAITS</h4>
+			<p>Characters with the Mark of The Shadow gain the following traits</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 1.</p>
+			<p class="indent"><strong><em>Natural Talent.</em></strong> You gain proficiency with one musical instrument or the Performance skill.  </p>
+			<p class="indent"><strong><em>Gift of the Shadow.</em></strong> When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.  </p>
+			<p class="indent"><strong><em>Shape Shadow.</em></strong> You know the minor illusion cantrip. Charisma is your spellcasting ability for this trait.</p>
+			<p class="indent"><strong><em>Slip Into Shadow.</em></strong> You can use the Hide action as a bonus action, even if you have no cover or if you’re under observation. Regardless of whether you succeed or fail, once you use this you cannot use it again until after a short or long rest.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Elf (Mark of Shadow)" display="false" />
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="charisma" value="1" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_GIFT_OF_THE_SHADOW" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SLIP_INTO_SHADOW" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SHAPE_SHADOW" />
+			<select type="Proficiency" name="Natural Talent (Mark of The Shadow)" supports="Mark of The Shadow Natural Talent||Musical Instrument" />
+		</rules>
+	</element>
+
+	<element name="Gift of The Shadow" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_GIFT_OF_THE_SHADOW">
+		<description>
+			<p>When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Performance or Stealth check, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+
+	<element name="Slip Into Shadow" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SLIP_INTO_SHADOW">
+		<description>
+			<p>You can use the Hide action as a bonus action, even if you have no cover or if you’re under observation. Regardless of whether you succeed or fail, once you use this you cannot use it again until after a short or long rest.</p>
+		</description>
+		<sheet usage="1/Rest">
+			<description>You can use the Hide action as a bonus action, even if you have no cover or if you’re under observation.</description>
+		</sheet>
+	</element>
+
+	<element name="Shape Shadow" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_SCRIBING_DRAGONMARK_SHAPE_SHADOW">
+		<description>
+			<p>You know the minor illusion cantrip. Charisma is your spellcasting ability for this trait.</p>
+		</description>
+		<sheet>
+			<description>You know the minor illusion cantrip. (Spellcasting: Charisma).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+		</rules>
+	</element>
+
+	<append id="ID_PROFICIENCY_SKILL_PERFORMANCE">
+		<supports>Mark of The Shadow Natural Talent</supports>
+	</append>
+</elements>

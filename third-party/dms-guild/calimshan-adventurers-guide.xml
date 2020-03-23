@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="calimshan-adventurers-guide.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/calimshan-adventurers-guide.xml" />
+		</update>
+	</info>
+
+	<element name="Calimshan Adventurer’s Guide" type="Source" source="Core" id="ID_DMSG_CAG_SOURCE_CALIMSHAN_ADVENTURERS_GUIDE">
+		<description>
+			<p><strong>Explore Calimshan in this campaign sourcebook for the world’s greatest roleplaying game</strong></p>
+			<p>Calimshan! Land of intrigue, empire of the sands, and home to a million marvels and mysteries. It is a place where greatness and glory can be achieved by merchant, adventurer, and scholar alike. Before the first stone was laid in Waterdeep, Calimshan was already ancient. A land of genies, primordial forests, sunken cities, and a magical desert, it is unlike any other place in Faerûn.</p>
+			<p>The Calimshan Adventurer’s Guide provides everything you need to create exciting adventures in this setting. Inside, you will find:</p>
+			<ul>
+				<li>A guide to character creation, including new subclass options</li>
+				<li>An introduction to the history, geography, and culture of the land</li>
+				<li>An overview of the major cities and towns including Calimport, City of Glory</li>
+				<li>A collection of adventure seeds which can be sewn together into a level 1-20 campaign called "The Tale of the Twisted Rune"</li>
+				<li>New magic items, monsters, and NPCs</li>
+				<li>And much, much, more!</li>
+			</ul>
+			<p>Calimshan! Are you ready for your next adventure?</p>
+		</description>
+		<setters>
+			<set name="abbreviation">CAG</set>
+			<set name="url">https://www.dmsguild.com/product/301438/Calimshan-Adventurers-Guide</set>
+			<set name="image">https://www.dmsguild.com/images/8957/301438.png</set>
+			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=M.T.%20Black">M.T. Black</set>
+			<set name="third-party">true</set>
+			<set name="release">20200124</set>
+		</setters>
+	</element>
+
+	<element name="Circle of Stone" type="Archetype" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_CIRCLE_OF_STONE">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids who are members of the Circle of Stone have a special connection with the very bones of the world and commune with the elemental spirits that inhabit mountains, hills, caves, and tunnels. These druids resist change and seek to preserve things as they are. They consider the ancient stone circles that can be found throughout the Realms to be sacred places.</p>
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPIDER" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_PRISON" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPIDER" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER" level="10" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_PRISON" level="14" />
+		</rules>
+	</element>
+	<element name="Circle Spells" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_CIRCLE_SPELLS">
+		<description>
+			<p>Once you gain access to one of these spells, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+			<h5 class="caption">CIRCLE OF STONE SPELLS</h5>
+			<table>
+				<thead><tr><td>Druid Level</td><td>Spells</td></tr></thead>
+				<tr><td>3rd</td><td><em>dust devil, spike growth</em></td></tr>
+				<tr><td>5th</td><td><em>erupting earth, meld into stone</em></td></tr>
+				<tr><td>7th</td><td><em>stone shape, stoneskin</em></td></tr>
+				<tr><td>9th</td><td><em>conjure elemental, wall of stone</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_DUST_DEVIL" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MELD_INTO_STONE" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_ELEMENTAL" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_STONE" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+	<element name="Stone Strength" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_STRENGTH">
+		<description>
+			<p><em>2nd-level Circle of Stone feature</em></p>
+			<p>You can summon elemental spirits to fill your body with stony strength and protect you from harm. You have a pool of such strength represented by a number of d8s equal to your druid level. When you take damage, you can use your reaction to spend a number of these dice and reduce the damage by the total. You regain all expended dice when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>You have a pool of {{level:druid}}d8s. When you take damage, you can spend a number of these dice and reduce the damage by the total. You regain all expended dice when you finish a long rest.</description>
+		</sheet>
+	</element>
+	<element name="Stone Spider" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPIDER">
+		<description>
+			<p><em>6th-level Circle of Stone feature</em></p>
+			<p>You can use an action to transform a pebble into a stone spider (see chapter 6). Add your proficiency bonus to the creature’s AC, attack rolls, and damage rolls. Its hit point maximum equals four times your druid level.</p>
+			<p class="indent">The stone spider reverts to a pebble when it drops to 0 hit points or when 1 hour has passed. It is friendly to you and your companions, and it obeys any verbal commands that you issue to it (no action is required by you).</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You transform a pebble into a stone spider ({{stone spider:hp maximum}} hp). Add a +{{proficiency}} bonus to the creature’s AC, attack rolls, and damage rolls.
+			The stone spider reverts to a pebble when it drops to 0 hit points or when 1 hour has passed. It is friendly to you and your companions, and it obeys any verbal commands that you issue to it.</description>
+		</sheet>
+		<rules>
+			<stat name="stone spider:hp maximum" value="level:druid" />
+			<stat name="stone spider:hp maximum" value="level:druid" />
+			<stat name="stone spider:hp maximum" value="level:druid" />
+			<stat name="stone spider:hp maximum" value="level:druid" />
+		</rules>
+	</element>
+	<element name="Stone Speaker" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_SPEAKER">
+		<description>
+			<p><em>10th-level Circle of Stone feature</em></p>
+			<p>You gain the ability to speak with a stone object or surface. The stone can tell you what events have occurred within 10 feet of it in the past 24 hours. Its perspective, perception, and knowledge may limit what details the stone can provide.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{stone speaker:usage}}/Long Rest">
+			<description>You gain the ability to speak with a stone object or surface. The stone can tell you what events have occurred within 10 feet of it in the past 24 hours. Its perspective, perception, and knowledge may limit what details the stone can provide.</description>
+		</sheet>
+		<rules>
+			<stat name="stone speaker:usage" value="1" bonus="base" />
+			<stat name="stone speaker:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Stone Prison" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_STONE_STONE_PRISON">
+		<description>
+			<p><em>14th-level Circle of Stone feature</em></p>
+			<p>As an action, you can cause raw stone to erupt from the ground, enclosing a creature you choose within 30 feet of you. The target must be Large or smaller and must be standing on the ground. The target must succeed on a Dexterity saving throw with disadvantage to avoid being trapped.</p>
+			<p class="indent">The prison is exactly large enough to hold the trapped creature. It is completely airtight with enough air to last 1 hour. While in this stone prison, the target has a speed of 0 but can otherwise take actions. The prison has AC 17, 50 hit points, is immune to poison and psychic damage, and has a damage threshold of 5.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can cause raw stone to erupt from the ground, enclosing a creature you choose within 30 feet of you. The target must be Large or smaller and must be standing on the ground. The target must succeed on a Dexterity save with disadvantage to avoid being trapped.
+			The prison is exactly large enough to hold the trapped creature. It is completely airtight with enough air to last 1 hour. While in this stone prison, the target has a speed of 0 but can otherwise take actions. The prison has AC 17, 50 hit points, is immune to poison and psychic damage, and has a damage threshold of 5.</description>
+		</sheet>
+	</element>
+
+	<element name="Way of the Desert Wind" type="Archetype" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_WAY_OF_THE_DESERT_WIND">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks who follow the Way of the Desert Wind draw their ki energy from the scorching winds of the most barren areas in Calimshan and other lands. Although you feel most at home in arid regions, you can summon this vast power wherever you are.</p>
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BLINDING_SANDS" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_REED_IN_THE_WIND" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BURNING_BRAND" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_RISING_PHOENIX" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BLINDING_SANDS" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_REED_IN_THE_WIND" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BURNING_BRAND" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_RISING_PHOENIX" level="17" />
+		</rules>
+	</element>
+	<element name="Blinding Sands" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BLINDING_SANDS">
+		<description>
+			<p><em>3rd-level Way of the Desert Wind feature</em></p>
+			<p>A rush of gritty desert wind accompanies your rapid strikes. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, the target must succeed on a Constitution saving throw or be blinded until the start of its next turn by swirling desert sand.</p>
+		</description>
+		<sheet>
+			<description>Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, the target must succeed on a Constitution save or be blinded until the start of its next turn by swirling desert sand.</description>
+		</sheet>
+	</element>
+	<element name="Reed in the Wind" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_REED_IN_THE_WIND">
+		<description>
+			<p><em>6th-level Way of the Desert Wind feature</em></p>
+			<p>You turn your enemy’s momentum to your benefit, rolling with their attacks and setting up a vicious counter. When a creature hits you with a melee attack, you can use your reaction to reduce the damage by half your monk level. You then have advantage on the next melee attack you make against that creature before the end of your next turn.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature hits you with a melee attack, you can reduce the damage by {{level:monk:half}}. You then have advantage on the next melee attack you make against that creature before the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Burning Brand" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_BURNING_BRAND">
+		<description>
+			<p><em>11th-level Way of the Desert Wind feature</em></p>
+			<p>Your strike leaves a fiery imprint that explodes the next time your enemy is struck. When you hit a creature with one of the attacks granted by your Flurry of Blows, you can spend 1 ki point to leave a burning brand on it. If the target is struck before the end of your next turn, the brand explodes, inflicting 2d6 fire damage on the target and all creatures within 5 feet of it.</p>
+			<p class="indent">You can increase the brand’s damage by spending extra ki points. Each point you spend, to a maximum of 3, increases the damage by 2d6.</p>
+		</description>
+		<sheet usage="Ki">
+			<description>When you hit a creature with one of the attacks granted by your Flurry of Blows, you can spend 1 ki point to leave a burning brand on it. If the target is struck before the end of your next turn, the brand explodes, inflicting 2d6 fire damage on the target and all creatures within 5 feet of it.
+			You can increase the brand’s damage by spending extra ki points. Each point you spend, to a maximum of 3, increases the damage by 2d6.</description>
+		</sheet>
+	</element>
+	<element name="Rising Phoenix" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_DESERT_WIND_RISING_PHOENIX">
+		<description>
+			<p><em>17th-level Way of the Desert Wind feature</em></p>
+			<p>You can use an action to summon searing winds to safely encase your body. While this feature is active, you gain the following abilities:</p>
+			<ul>
+				<li>You have resistance to fire damage.</li>
+				<li>You have a flying speed of 60 feet.</li>
+				<li>A creature takes 2d6 fire damage when it comes within 5 feet of you for the first time on a turn or starts its turn within 5 feet of you.</li>
+			</ul>
+			<p>You can use a bonus action to dismiss these encasing winds.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can summon searing winds to safely encase your body. While this feature is active, you gain the following abilities:
+			You have resistance to fire damage.
+			You have a flying speed of 60 feet.
+			A creature takes 2d6 fire damage when it comes within 5 feet of you for the first time on a turn or starts its turn within 5 feet of you.
+			You can use a bonus action to dismiss these encasing winds.</description>
+		</sheet>
+	</element>
+
+	<element name="Oath of the Janessar" type="Archetype" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_OATH_OF_THE_JANESSAR">
+		<supports>Sacred Oath</supports>
+		<description>
+			<p>The Oath of the Janessar commits a paladin to overthrowing tyranny and liberating the oppressed. This can involve tasks as diverse as freeing a slave, saving someone from a forced marriage, or ensuring workers receive a fair wage. Although most of the Janessar are based in Faeressar, their stronghold in the Marching Mountains, there are some who travel throughout Calimshan and the Realms, fighting oppression wherever they find it.</p>
+			<h5>TENETS OF THE JANESSAR</h5>
+			<p>A paladin who takes this oath swears before the High Janessar in Faeressar to uphold these tenets:</p>
+			<p class="indent"><strong><em>Liberate the Enslaved.</em></strong> You will bring freedom and justice to those in bondage.</p>
+			<p class="indent"><strong><em>Uplift the Downtrodden.</em></strong> You will bring hope and dignity to those who have had them stripped away.</p>
+			<p class="indent"><strong><em>Relieve the Oppressed.</em></strong> You will bring aid and comfort to those who suffer under the hand of tyrants.</p>
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_OATH_SPELLS" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CHANNEL_DIVINITY" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_AURA_OF_FREEDOM" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_ANGELIC_ESCAPE" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_GLORIOUS_LIBERATOR" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_OATH_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CHANNEL_DIVINITY" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_AURA_OF_FREEDOM" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_ANGELIC_ESCAPE" level="15" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_GLORIOUS_LIBERATOR" level="20" />
+		</rules>
+	</element>
+	<element name="Oath Spells" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_OATH_SPELLS">
+		<description>
+			<p>You gain oath spells at the paladin levels listed in the Oath of the Janessar Spells table. See the Sacred Oath class feature in chapter 3 of the Player’s Handbook for how oath spells work.</p>
+			<h5 class="caption">Oath of the Janessar Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Paladin Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>goodberry, sanctuary</em></td></tr>
+				<tr><td>5th</td><td><em>knock, lesser restoration</em></td></tr>
+				<tr><td>9th</td><td><em>beacon of hope, remove curse</em></td></tr>
+				<tr><td>13th</td><td><em>dimension door, freedom of movement</em></td></tr>
+				<tr><td>17th</td><td><em>circle of power, greater restoration</em></td></tr>
+			</table> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GOODBERRY" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_KNOCK" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_REMOVE_CURSE" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="17" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" level="17" spellcasting="Paladin" prepared="true" />
+		</rules>
+	</element>
+	<element name="Channel Divinity" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CHANNEL_DIVINITY">
+		<description>
+			<p><em>3rd-level Oath of the Janessar feature</em></p>
+			<p>You gain the following two Channel Divinity options. See the Sacred Oath class feature in chapter 3 of the Player’s Handbook for how Channel Divinity works.</p>
+			<p class="indent"><strong><em>Voice of Righteousness.</em></strong> You can use your Channel Divinity to augment your words with divine favor as you plead on behalf of the oppressed. As a bonus action, you gain advantage on all Charisma (Persuasion) and Charisma (Intimidation) checks for the next 10 minutes.</p>
+			<p class="indent"><strong><em>Denounce the Oppressor.</em></strong> You can use your Channel Divinity to call down a divine imprecation upon your enemies. As an action, choose one creature within 30 feet of you that you can see. That creature must make a Wisdom saving throw. On a failed save, the creature falls prone and is incapacitated until the start of your next turn.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CD_VOICE_OF_RIGHTEOUSNESS" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CD_DENOUNCE_THE_OPPRESSOR" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Voice of Righteousness" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CD_VOICE_OF_RIGHTEOUSNESS">
+		<description>
+			<p>You can use your Channel Divinity to augment your words with divine favor as you plead on behalf of the oppressed. As a bonus action, you gain advantage on all Charisma (Persuasion) and Charisma (Intimidation) checks for the next 10 minutes.</p>
+		</description>
+		<sheet alt="Voice of Righteousness" action="Bonus Action" usage="Channel Divinity">
+			<description>As a bonus action, you gain advantage on all Persuasion and Intimidation checks for the next 10 minutes.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Denounce the Oppressor" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_CD_DENOUNCE_THE_OPPRESSOR">
+		<description>
+			<p>You can use your Channel Divinity to call down a divine imprecation upon your enemies. As an action, choose one creature within 30 feet of you that you can see. That creature must make a Wisdom saving throw. On a failed save, the creature falls prone and is incapacitated until the start of your next turn.</p>
+		</description>
+		<sheet alt="Denounce the Oppressor" action="Action" usage="Channel Divinity">
+			<description>Choose one creature within 30 feet of you that you can see. That creature must make a Wisdom save. On a failed save, the creature falls prone and is incapacitated until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Aura of Freedom" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_AURA_OF_FREEDOM">
+		<description>
+			<p><em>7th-level Oath of the Janessar feature</em></p>
+			<p>You and friendly creatures within 10 feet of you can’t be restrained or have their speed reduced by spells and other magical effects while you are conscious. At 18th level, the range of this aura increases to 30 feet.</p>
+		</description>
+		<sheet>
+			<description>You and friendly creatures within 10 feet of you can’t be restrained or have their speed reduced by spells and other magical effects while you are conscious.</description>
+			<description level="18">You and friendly creatures within 30 feet of you can’t be restrained or have their speed reduced by spells and other magical effects while you are conscious.</description>
+		</sheet>
+	</element>
+	<element name="Angelic Escape" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_ANGELIC_ESCAPE">
+		<description>
+			<p><em>15th-level Oath of the Janessar feature</em></p>
+			<p>As a bonus action, you cause brilliant white wings to envelop you in a sparkling cocoon. The wings disappear and teleport to an unoccupied point you can see within 30 feet and then unfold, leaving you at the new location. Once you use this ability, you can’t use it again until you finish a short rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You cause brilliant white wings to envelop you in a sparkling cocoon. The wings disappear and teleport to an unoccupied point you can see within 30 feet and then unfold, leaving you at the new location.</description>
+		</sheet>
+	</element>
+	<element name="Glorious Liberator" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_JANESSAR_GLORIOUS_LIBERATOR">
+		<description>
+			<p><em>20th-level Oath of the Janessar feature</em></p>
+			<p>You can transform yourself into an avatar of liberty. As a bonus action, you gain the following benefits for 10 minutes:</p>
+			<ul>
+				<li>You are immune to the charmed, grappled, paralyzed, petrified, restrained, and stunned conditions.</li>
+				<li>You can cast the knock spell as a bonus action without expending a spell slot.</li>
+				<li>You can use your Denounce the Oppressor Channel Divinity option as a bonus action.</li>
+			</ul>
+			<p>Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can transform yourself into an avatar of liberty. As a bonus action, you gain the following benefits for 10 minutes:
+			You are immune to the charmed, grappled, paralyzed, petrified, restrained, and stunned conditions.
+			You can cast the knock spell as a bonus action without expending a spell slot.
+			You can use your Denounce the Oppressor Channel Divinity option as a bonus action.</description>
+		</sheet>
+	</element>
+
+	<element name="Wayfinder" type="Archetype" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_RANGER_WAYFINDER">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>A ranger who chooses the Wayfinder archetype is a master guide, safely leading others through dangerous wilderness regions. Wayfinders are more likely than other rangers to sell their services for coin, being especially prized by merchants seeking a secure path across hostile terrain, and by explorers wishing to investigate the unknown.</p>
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_WAYFINDER_MAGIC" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_PEERLESS_VIGILANCE" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_SUPREME_EXPLORER" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_HIDDEN_TRUTHS" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_TIMELY_WARNING" />
+			<div element="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_DISORIENTING_STRIKE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_WAYFINDER_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_PEERLESS_VIGILANCE" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_SUPREME_EXPLORER" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_HIDDEN_TRUTHS" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_TIMELY_WARNING" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_DISORIENTING_STRIKE" level="15" />
+		</rules>
+	</element>
+	<element name="Wayfinder Magic" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_WAYFINDER_MAGIC">
+		<description>
+			<p><em>3rd-level Wayfinder feature</em></p>
+			<p>You learn an additional spell when you reach certain levels in this class, as shown in the Wayfinder Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+			<h5 class="caption">WAYFINDER SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Ranger Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>sanctuary</em></td></tr>
+				<tr><td>5th</td><td><em>see invisibility</em></td></tr>
+				<tr><td>9th</td><td><em>protection from energy</em></td></tr>
+				<tr><td>13th</td><td><em>death ward</em></td></tr>
+				<tr><td>17th</td><td><em>dispel evil and good</em></td></tr>
+			</table> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SEE_INVISIBILITY" level="5" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="13" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD" level="17" spellcasting="Ranger" prepared="true" />
+		</rules>
+	</element>
+	<element name="Peerless Vigilance" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_PEERLESS_VIGILANCE">
+		<description>
+			<p><em>3rd-level Wayfinder feature</em></p>
+			<p>The years spent walking dangerous paths have sharpened your senses, enabling you to react quickly and effectively to danger. You cannot be surprised while conscious. In addition, you have advantage on the first weapon attack you make during the first round of combat, and, if you hit, it is automatically a critical hit.</p>
+		</description>
+		<sheet>
+			<description>You cannot be surprised while conscious. You have advantage on the first weapon attack you make during the first round of combat, and, if you hit, it is automatically a critical hit.</description>
+		</sheet>
+	</element>
+	<element name="Supreme Explorer" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_SUPREME_EXPLORER">
+		<description>
+			<p><em>3rd-level Wayfinder feature</em></p>
+			<p>You have travelled widely in a variety of lands and are an expert in many different environments. Choose two additional favored terrains.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Class Feature" name="Favored Terrain, Supreme Explorer" supports="Favored Terrain" number="2" level="3" />			
+		</rules>
+	</element>
+	<element name="Hidden Truths" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_HIDDEN_TRUTHS">
+		<description>
+			<p><em>7th-level Wayfinder feature</em></p>
+			<p>The wilds are full of secrets both mundane and magical, and you have developed a preternatural eye for finding the truth. You have advantage on ability checks made to locate secret doors and detect illusions, and advantage on saving throws against illusion magic.</p>
+			<p class="indent">In addition, while in your favored terrain you have blindsight out to a range of 10 feet. By 11th level, this increases to 30 feet.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on ability checks made to locate secret doors and detect illusions, and advantage on saving throws against illusion magic.
+			While in your favored terrain you have blindsight out to a range of 10 feet.</description>
+			<description>You have advantage on ability checks made to locate secret doors and detect illusions, and advantage on saving throws against illusion magic.
+			While in your favored terrain you have blindsight out to a range of 30 feet.</description>
+		</sheet>
+	</element>
+	<element name="Timely Warning" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_TIMELY_WARNING">
+		<description>
+			<p><em>11th-level Wayfinder feature</em></p>
+			<p>You are constantly on the watch for any harm that might come to your allies. If a creature you can see within 30 feet of you is hit with an attack, you can use your reaction to call out a warning and reduce the damage by half.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>If a creature you can see within 30 feet of you is hit with an attack, you can call out a warning and reduce the damage by half.</description>
+		</sheet>
+	</element>
+	<element name="Disorienting Strike" type="Archetype Feature" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ARCHETYPE_FEATURE_WAYFINDER_DISORIENTING_STRIKE">
+		<description>
+			<p><em>15th-level Wayfinder feature</em></p>
+			<p>Your mesmerizing attack causes the target to lose its sense of direction, becoming dizzy, confused, and vulnerable. The first time you hit a creature on your turn, the creature takes an extra 1d8 damage.</p>
+			<p class="indent">In addition, the target must make a successful Constitution saving throw against your spell save DC. Otherwise, when the target makes an attack roll or a saving throw before the start of your next turn, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.</p>
+		</description>
+		<sheet>
+			<description>The first time you hit a creature on your turn, the creature takes an extra 1d8 damage. The target must make a successful Constitution save. Otherwise, when the target makes an attack roll or a saving throw before the start of your next turn, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.</description>
+		</sheet>
+	</element>
+
+	<element name="Unarche" type="Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ITEM_TREASURE_UNARCHE">
+		<description>
+			<p>Calimshan is a highly cosmopolitan place, and so the currencies of all lands can be found and used there, alongside the coinage that Calishites themselves mint.</p>
+		</description>
+		<setters>
+			<set name="keywords">coins</set>
+			<set name="category">Treasure</set>
+			<set name="cost" currency="cp">1</set>
+			<set name="stackable">true</set>
+			<set name="valuable">true</set>
+		</setters>
+	</element>
+	<element name="Decarche" type="Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ITEM_TREASURE_DECARCHE">
+		<description>
+			<p>Calimshan is a highly cosmopolitan place, and so the currencies of all lands can be found and used there, alongside the coinage that Calishites themselves mint.</p>
+		</description>
+		<setters>
+			<set name="keywords">coins</set>
+			<set name="category">Treasure</set>
+			<set name="cost" currency="sp">1</set>
+			<set name="stackable">true</set>
+			<set name="valuable">true</set>
+		</setters>
+	</element>
+	<element name="Tazo" type="Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ITEM_TREASURE_TAZO">
+		<description>
+			<p>Calimshan is a highly cosmopolitan place, and so the currencies of all lands can be found and used there, alongside the coinage that Calishites themselves mint.</p>
+		</description>
+		<setters>
+			<set name="keywords">coins</set>
+			<set name="category">Treasure</set>
+			<set name="cost" currency="ep">1</set>
+			<set name="stackable">true</set>
+			<set name="valuable">true</set>
+		</setters>
+	</element>
+	<element name="Bicenta" type="Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ITEM_TREASURE_BICENTA">
+		<description>
+			<p>Calimshan is a highly cosmopolitan place, and so the currencies of all lands can be found and used there, alongside the coinage that Calishites themselves mint.</p>
+		</description>
+		<setters>
+			<set name="keywords">coins</set>
+			<set name="category">Treasure</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="stackable">true</set>
+			<set name="valuable">true</set>
+		</setters>
+	</element>
+	<element name="Kilarche" type="Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_ITEM_TREASURE_KILARCHE">
+		<description>
+			<p>Calimshan is a highly cosmopolitan place, and so the currencies of all lands can be found and used there, alongside the coinage that Calishites themselves mint.</p>
+		</description>
+		<setters>
+			<set name="keywords">coins</set>
+			<set name="category">Treasure</set>
+			<set name="cost" currency="pp">1</set>
+			<set name="stackable">true</set>
+			<set name="valuable">true</set>
+		</setters>
+	</element>
+
+	<element name="Mosaic of Regeneration" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_MOSAIC_OF_REGENERATION">
+		<description>
+			<p>While touching this mosaic, you regain 1d6 hit points every 10 minutes, provided that you have at least 1 hit point. If you lose a body part, the mosaic causes the missing part to regrow and return to full functionality after 1d6 + 1 days if you have at least 1 hit point the whole time.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Mosaic of Scrying" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_MOSAIC_OF_SCRYING">
+		<description>
+			<p>While touching this mosaic you can cast the scrying spell. Once the spell is cast, the mosaic image changes to show you the target, and sound from the target is emitted from the stonework.</p>
+			<p class="indent">Once you have used this power, it can’t be used again until the following dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SCRYING" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Mosaic of Telepathy" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_MOSAIC_OF_TELEPATHY">
+		<description>
+			<p>While touching this mosaic you create a telepathic link between yourself and a willing creature with which you are familiar. The creature can be anywhere on the same plane of existence as you. The link ends if you or the target are no longer on the same plane.</p>
+			<p class="indent">For one hour, you and the target can instantaneously share words, images, sounds, and other sensory messages with one another through the link, and the target recognizes you as the creature it is communicating with.</p>
+			<p class="indent">Once you have used this power, it can’t be used again until the following dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Mosaic of Teleportation" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_MOSAIC_OF_TELEPORTATION">
+		<description>
+			<p>Touching the mosaic enables you to cast the teleport spell. When the spell is cast, the image on the mosaic changes to show your target location. Once you have used this power, it can’t be used again until the following dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_TELEPORT" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Mosaic of Truth" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_MOSAIC_OF_TRUTH">
+		<description>
+			<p>This mosaic is usually laid on the floor. Anyone standing on the mosaic cannot tell a deliberate lie. They can, however, choose to not answer a question or to answer it evasively.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Battleblade Ring" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_BATTLEBLADE_RING">
+		<description>
+			<p>This ring is made of interwoven bands of silver, gold, and platinum. The ring has 4 charges and regains 1d4 charges daily at dawn. While wearing this ring, you can expend 1 charge as an action and cast blade barrier.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_BLADE_BARRIER" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="charges">4</set>
+		</setters>
+	</element>
+	<element name="Battlecloak of Vycaena" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_BATTLECLOAK_OF_VYCAENA">
+		<description>
+			<p>This voluminous cloak is made of emerald-green silk trimmed with lilac. Both clasps are made of gold, with one shaped like a small shield and the other like a small sword.</p>
+			<p class="indent">While wearing this cloak, your base AC becomes 15 + your Dexterity modifier provided you are wearing no armor and using no shield. You can use a bonus action to touch the clasps, and a longsword +1 and a shield +1 appear in your hands. Your AC then becomes 18 + your Dexterity modifier. Touching the clasps again causes the sword and shield to disappear.</p>
+			<p class="indent">If you use any other shield while wearing the cloak, the magic of the cloak does not function. If someone not attuned to the cloak uses the sword or shield, they behave like nonmagical items.</p>
+			<p class="indent"><em>Vycaena was a scion of House Asada who lived during the Seventh Age and designed this item to ensure he and his siblings were always armed during their long-running dispute with House Najjar.</em></p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">neck</set>
+		</setters>
+		<rules>
+			<stat name="ac:vycaena cloak" value="15" bonus="base" />
+			<stat name="ac:vycaena cloak" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="ac:vycaena cloak" bonus="calculation" equipped="[armor:none],[shield:none]" />
+			<stat name="ac:calculation" value="ac:vycaena cloak" bonus="calculation" requirements="ID_DMSG_CAG_MAGIC_ITEM_VYCAENA_LONGSWORD,ID_DMSG_CAG_MAGIC_ITEM_VYCAENA_SHIELD" />
+		</rules>
+	</element>
+	<element name="Longsword of Vycaena" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_VYCAENA_LONGSWORD">
+		<description>
+			<p>You have a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<div class="reference">
+				<div element="ID_DMSG_CAG_MAGIC_ITEM_BATTLECLOAK_OF_VYCAENA" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">Battlecloak of Vycaena</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="longsword">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Longsword</set>
+		</setters>
+	</element>
+	<element name="Shield of Vycaena" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_VYCAENA_SHIELD">
+		<description>
+			<p>While holding this shield, you have a +1 bonus to AC. This bonus is in addition to the shield’s normal bonus to AC.</p>
+			<div class="reference">
+				<div element="ID_DMSG_CAG_MAGIC_ITEM_BATTLECLOAK_OF_VYCAENA" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">Battlecloak of Vycaena</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules>
+			<stat name="ac:shield" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+	<element name="Codex Thealnakkar" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_CODEX_THEALNAKKAR">
+		<description>
+			<p>This 2-foot-square, brass-bound volume is more than a thousand years old. It was created by Thealnak of Memnon, one of the great scholars of that age. The codex contains the following spells:</p>
+			<ul>
+				<li>1st level: <em>color spray, detect magic, grease, identify, magic missile, shield, silent image, sleep</em>;</li>
+				<li>2nd level: <em>detect thoughts, flaming sphere, gust of wind, locate object, mirror image, shatter</em>;</li>
+				<li>3rd level: <em>dispel magic, fly, haste, major image, slow, vampiric touch</em>;</li>
+				<li>4th level: <em>confusion, dimension door, fabricate, greater invisibility, ice storm, locate creature, polymorph, wall of fire</em>;</li>
+				<li>5th level: <em>animate objects, Bigby's hand, cone of cold, conjure elemental, legend lore, passwall, seeming</em>;</li>
+				<li>6th level: <em>chain lightning, contingency, disintegrate, eyebite, programmed illusion</em>;</li>
+				<li>7th level: <em>delayed blast fireball, prismatic spray, symbol</em>;</li>
+				<li>8th level: <em>antipathy/sympathy, clone, incendiary cloud, telepathy</em>;</li>
+				<li>9th level: <em>astral projection, foresight, power word kill, shapechange</em>.</li>
+			</ul>
+			<p>The final fifteen pages of the codex contain detailed instructions for creating Calishite mosaics. If you wish to create a mosaic using these instructions, consult the “Crafting an Item” section in chapter 2 of Xanathar’s Guide to Everything.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="type">Spellbook</set>
+			<set name="rarity">Unique</set>
+		</setters>
+	</element>
+	<element name="Endless Bag of Saref Adnan" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_ENDLESS_BAG_OF_SAREF_ADNAN">
+		<description>
+			<p>This oxen-hide leather bag is held together with silver stitching and is roughly 2 feet in diameter at the mouth and 4-feet deep. The bag can hold up to 2,000 pounds, not exceeding a volume of 256 cubic feet. The bag weighs 15 pounds, regardless of its contents. Retrieving an item from the bag requires an action.</p>
+			<p class="indent">Each bag is associated with a secure location, usually a vault. Holding the bag while uttering the command word causes the contents of the bag to be teleported to the secure location. A wizard spending 5 downtime days and 1,000 gp can change the secure location associated with a bag.</p>
+			<p class="flavor">Saref Adnan was a collector of curios during the Shoon Imperium. He had the workshops of Almraiven create this bag for him, and the design was copied at least a few times by others.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight" lb="15">15 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Halasahr’s Slippers" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_HALASAHRS_SLIPPERS">
+		<description>
+			<p>These crimson silk slippers are trimmed with golden thread and have garnets stitched into the toes.</p>
+			<p class="indent">Anyone who dons these slippers and steps onto a carpet transforms it into a carpet of flying. The carpet must be no more than 6 feet by 9 feet in size. The transformation remains in place only so long as the slippers are touching the carpet. Once they are removed, the carpet reverts back to its original state.</p>
+			<p class="flavor">The archmage Halasahr lived during Calimshan’s Eighth Age and was pasha of the Guild Arcane.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+			<set name="slot">feet</set>
+		</setters>
+	</element>
+	<element name="Harness of Defense, Rare" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_HARNESS_OF_DEFENSE_RARE">
+		<description>
+			<p>These leather baldrics are unique to Calimshan and were devised to provide protection to elite warriors without the need for heavy armor in the heat. They are also popular with adventuring wizards.</p>
+			<p class="indent">While wearing one of these items, your AC can’t be less than a minimum number, regardless of what kind of armor you are wearing. The number depends on the rarity of the harness, as shown in the Harness of Defense table.</p>
+			<h5 class="caption">Harness of Defense</h5>
+			<table>
+				<thead>
+					<tr><td>Rarity</td><td>Minimum AC</td></tr>
+				</thead>
+				<tr><td>Rare</td><td>17</td></tr>
+				<tr><td>Very Rare</td><td>18</td></tr>
+				<tr><td>Legendary</td><td>19</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">misc</set>
+		</setters>
+		<rules>
+			<stat name="ac:harness of defense" value="17" bonus="base" />
+			<stat name="ac:calculation" value="ac:harness of defense" bonus="calculation" />
+		</rules>
+	</element>
+	<element name="Harness of Defense, Very Rare" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_HARNESS_OF_DEFENSE_VERY_RARE">
+		<description>
+			<p>These leather baldrics are unique to Calimshan and were devised to provide protection to elite warriors without the need for heavy armor in the heat. They are also popular with adventuring wizards.</p>
+			<p class="indent">While wearing one of these items, your AC can’t be less than a minimum number, regardless of what kind of armor you are wearing. The number depends on the rarity of the harness, as shown in the Harness of Defense table.</p>
+			<h5 class="caption">Harness of Defense</h5>
+			<table>
+				<thead>
+					<tr><td>Rarity</td><td>Minimum AC</td></tr>
+				</thead>
+				<tr><td>Rare</td><td>17</td></tr>
+				<tr><td>Very Rare</td><td>18</td></tr>
+				<tr><td>Legendary</td><td>19</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">misc</set>
+		</setters>
+		<rules>
+			<stat name="ac:harness of defense" value="18" bonus="base" />
+			<stat name="ac:calculation" value="ac:harness of defense" bonus="calculation" />
+		</rules>
+	</element>
+	<element name="Harness of Defense, Legendary" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_HARNESS_OF_DEFENSE_LEGENDARY">
+		<description>
+			<p>These leather baldrics are unique to Calimshan and were devised to provide protection to elite warriors without the need for heavy armor in the heat. They are also popular with adventuring wizards.</p>
+			<p class="indent">While wearing one of these items, your AC can’t be less than a minimum number, regardless of what kind of armor you are wearing. The number depends on the rarity of the harness, as shown in the Harness of Defense table.</p>
+			<h5 class="caption">Harness of Defense</h5>
+			<table>
+				<thead>
+					<tr><td>Rarity</td><td>Minimum AC</td></tr>
+				</thead>
+				<tr><td>Rare</td><td>17</td></tr>
+				<tr><td>Very Rare</td><td>18</td></tr>
+				<tr><td>Legendary</td><td>19</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
+		</setters>
+		<rules>
+			<stat name="ac:harness of defense" value="19" bonus="base" />
+			<stat name="ac:calculation" value="ac:harness of defense" bonus="calculation" />
+		</rules>
+	</element>
+	<element name="Janyra’s Ring of the Forest" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_JANYRAS_RING_OF_THE_FOREST">
+		<description>
+			<p>This ring is made of two entwined bands of silver and is set with an emerald. While wearing it, you can cast animal friendship at will.</p>
+			<p class="indent">The ring has 3 charges and regains all expended charges daily at dawn. While wearing this ring, you can expend 1 charge as an action and cast entangle.</p>
+			<p class="flavor">The archmage Janyra lived during the Shoon Imperium and crafted many marvelous magic rings.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ENTANGLE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="charges">3</set>
+		</setters>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" />
+		</rules>
+	</element>
+	<element name="Janyra’s Ring of the Night" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_JANYRAS_RING_OF_THE_NIGHT">
+		<description>
+			<p>This ring is made of white gold and is set with an onyx. While wearing it, you have advantage on any Dexterity (Stealth) checks made in dim light or darkness.</p>
+			<p class="indent">The ring has 3 charges and regains all expended charges daily at dawn. You can expend a charge to cast darkness.</p>
+			<p class="flavor">The archmage Janyra lived during the Shoon Imperium and crafted many marvelous magic rings.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DARKNESS" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Janyra’s Ring of the Sea" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_JANYRAS_RING_OF_THE_SEA">
+		<description>
+			<p>This ring is made of gold and is set with a sapphire. While wearing it, you can breathe underwater and gain a swimming speed equal to your walking speed. In addition, being underwater imposes no penalties on your attacks.</p>
+			<p class="indent">The ring has 3 charges and regains all expended charges daily at dawn. You can expend a charge to cast control water.</p>
+			<p class="flavor">The archmage Janyra lived during the Shoon Imperium and crafted many marvelous magic rings.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONTROL_WATER" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="charges">3</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="speed" bonus="base" />
+		</rules>
+	</element>
+	<element name="Najjar’s Cloak of Weaponry" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_NAJJARS_CLOAK_OF_WEAPONRY">
+		<description>
+			<p>This long cloak of red velvet is stitched with silver thread depicting various weapons. As an action, you can wrap a weapon in the folds of this cloak, and it disappears into an extradimensional space. This space can hold up to 25 pounds’ worth of weapons. As a bonus action, you can reach into the cloak and draw forth any weapon that has been stored there.</p>
+			<p class="flavor">Shyk Najjar was matriarch of House Asada during the Seventh Age. She designed this item to ensure her many grandchildren were always armed during their long-running feud with House Asada.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+	<element name="Ring of Perfect Secrets" type="Magic Item" source="Calimshan Adventurer’s Guide" id="ID_DMSG_CAG_MAGIC_ITEM_RING_OF_PERFECT_SECRETS">
+		<description>
+			<p>Created during the Shoon Imperium, this ring is a white gold band set with an emerald. While wearing this item, you are immune to psychic damage, any effect that would sense your emotions or read your thoughts, divination spells, and the charmed, frightened, and stunned conditions. The ring even foils wish spells and spells or effects of similar power used to affect your mind or to gain information about you.</p>
+		</description>
+		<setters>
+			<set name="keywords">psychic</set>
+			<set name="category">Rings</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_PSYCHIC" />
+		</rules>
+	</element>
+</elements>

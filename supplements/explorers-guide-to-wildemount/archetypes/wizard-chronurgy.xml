@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="wizard-chronurgy.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/explorers-guide-to-wildemount/archetypes/wizard-chronurgy.xml" />
+		</update>
+	</info>
+	<element name="Chronurgy Magic" type="Archetype" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_WIZARD_CHRONURGY_MAGIC">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Focusing on the manipulation of time, those who follow the Chronurgy tradition learn to alter the pace of reality to their liking. Using the ramping of anticipatory dunamis energy, these mages can bend the flow of time as adroitly as a skilled musician plays an instrument, lending themselves and their allies an advantage in the blink of an eye.</p>
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CHRONAL_SHIFT" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_TEMPORAL_AWARENESS" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_MOMENTARY_STASIS" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_ARCANE_ABEYANCE" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CONVERGENT_FUTURE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CHRONAL_SHIFT" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_TEMPORAL_AWARENESS" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_MOMENTARY_STASIS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_ARCANE_ABEYANCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CONVERGENT_FUTURE" level="14" />
+		</rules>
+	</element>	
+	<element name="Chronal Shift" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CHRONAL_SHIFT">
+		<description>
+			<p><em>2nd-level Chronurgy Magic feature</em></p>
+			<p>You can magically exert limited control over the flow of time around a creature. As a reaction, after you or a creature you can see withing 30 feet of you makes an attack roll, and ability check, or a saving throw, you can force the creature to reroll. You make this decision after you see whether the roll succeeds or fails. The target must use the result of the second roll.</p>
+			<p class="indent">You can use this ability twice, and you regain any expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="2/Long Rest">
+			<description>After you or a creature you can see withing 30 feet of you makes an attack roll, and ability check, or a save, you can force the creature to reroll. You make this decision after you see whether the roll succeeds or fails. The target must use the result of the second roll.</description>
+		</sheet>
+	</element>
+	<element name="Temporal Awareness" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_TEMPORAL_AWARENESS">
+		<description>
+			<p><em>2nd-level Chronurgy Magic feature</em></p>
+			<p>You can add your Intelligence modifier to your initiative rolls.</p>
+		</description>
+		<sheet display="false">
+			<description>You can add your Intelligence modifier to your initiative rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="initiative" value="intelligence:modifier" bonus="intelligence" />
+		</rules>
+	</element>
+	<element name="Momentary Stasis" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_MOMENTARY_STASIS">
+		<description>
+			<p><em>6th-level Chronurgy Magic feature</em></p>
+			<p>As an action, you can magically force a Large or smaller creature you can see within 60 feet of you to make a Constitution saving throw against your spell save DC. Unless the saving throw is a success, the creature is encased in a field of magical energy until the end of your next turn or until the creature takes any damage. While encased in this way, the creature is incapacitated and has a speed of 0.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{momentary stasis:usage}}/Long Rest">
+			<description>You can magically force a Large or smaller creature you can see within 60 feet of you to make a Constitution save. Unless the save is a success, the creature is encased in a field of magical energy until the end of your next turn or until the creature takes any damage. While encased in this way, the creature is incapacitated and has a speed of 0.</description>
+		</sheet>
+		<rules>
+			<stat name="momentary stasis:usage" value="1" bonus="base" />
+			<stat name="momentary stasis:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Arcane Abeyance" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_ARCANE_ABEYANCE">
+		<description>
+			<p><em>10th-level Chronurgy Magic feature</em></p>
+			<p>When you cast a spell using a spell slot of 4th level or lower, you can condense the spell’s magic into a mote. The spell is frozen in time at the moment of casting and held within a gray bead for 1 hour. This bead is a Tiny object with AC 15 and 1 hit point, and it is immune to poison and psychic damage. When the duration ends, or if the bead is destroyed, it vanishes in a flash of light, and the spell is lost.</p>
+			<p class="indent">A creature holding the bead can use its action to release the spell within, whereupon the bead disappears. The spell uses your spell attack bonus and save DC, and the spell treats the creature who released it as the caster for all other purposes.</p>
+			<p class="indent">Once you create a bead with this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>When you cast a spell using a spell slot of 4th level or lower, you can condense the spell’s magic into a mote. The spell is frozen in time at the moment of casting and held within a gray bead for 1 hour. This bead is a Tiny object with AC 15 and 1 hit point, and it is immune to poison and psychic damage. When the duration ends, or if the bead is destroyed, it vanishes in a flash of light, and the spell is lost.
+			A creature holding the bead can use its action to release the spell within, whereupon the bead disappears. The spell uses your spell attack bonus and save DC, and the spell treats the creature who released it as the caster for all other purposes.</description>
+		</sheet>
+	</element>
+	<element name="Convergent Future" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_CHRONURGY_CONVERGENT_FUTURE">
+		<description>
+			<p><em>14th-level Chronurgy Magic feature</em></p>
+			<p>You can peer through possible futures and magically pull one of them into events around you, ensuring a particular outcome. When you are a creature you can see within 60 feet of you makes an attack roll, an ability check, or a saving throw, you can use your reaction to ignore the die roll and decide whether the number rolled is the minimum needed to succeed or one less than that number (your choice).</p>
+			<p class="indent">When you use this feature, you gain one level of exhaustion. Only by finishing a long rest can you remove a level of exhaustion gained in this way.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you are a creature you can see within 60 feet of you makes an attack roll, an ability check, or a save, you can ignore the die roll and decide whether the number rolled is the minimum needed to succeed or one less than that number.
+			When you use this feature, you gain one level of exhaustion. Only by finishing a long rest can you remove a level of exhaustion gained in this way.</description>
+		</sheet>
+	</element>	
+</elements>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragonmarked Human variants</name>
+		<description>Dragonmarked Human variants from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="mark-handling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-handling.xml" />
+		</update>
+	</info>
+	
+	<element name="The Mark of Handling" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_VARIANT_HUMAN_HANDLING">
+		<supports>Human</supports>
+		<description>
+			<p>The Mark of Handling gives its bearer a primal connection to beasts and the natural world, granting the power to calm and coax. This extends beyond purely natural animals; the mark allows its bearer to guide a hippogriff as easily as a horse. </p>
+			<h4>HOUSE VADALIS</h4>
+			<p>House Vadalis plays an important role in daily life. Vadalis ranches produce meat, mounts, and more. Vadalis isn’t one of the most powerful houses, but its barons are generally content; they’re more interested in discovering new monstrosities than engaging in the politics of the dragonmarked houses. </p>
+			<p class="indent">House Vadalis breeds and trains beasts for a wide range of purposes. While they maintain vast cattle ranches and train horses and hounds, the Mark of Handling allows Vadalis to work with more exotic creatures as well. Griffons, hippogriffs, and even bullettes can be bred and trained. Vadalis also works with more intelligent beasts, such as giant owls, displacers beasts, and pegasi. Even with the Mark of Handling, this is dangerous work; there’s a lot of turnover at the bullette ranch. But these exotic creatures aren’t enough to satisfy the most innovative members of the house, and this has led to the practice of magebreeding. Using the Mark of Handling and dragonshard focus items, Vadalis has found ways to create magical creatures. Typically, this results in a superior version of a mundane creature—an animal that is stronger, faster, and smarter. But rumors claim that Vadalis has crafted monsters of its own. Some rumors even insist that Vadalis has been trying to magebreed better humans... </p>
+			<h4>MARK OF HANDLING TRAITS</h4>
+			<p>The Mark of Handling only manifests on humans. If your character has the Mark of Handing, these traits replace the human’s Ability Score Increase trait given in the Player’s Handbook.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity and Wisdom scores both increase by 1. In addition, one ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Wild Intuition.</em></strong> When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Expert Handling.</em></strong> You can use the Help action to aid an ally animal companion or mount within 30 feet of you, rather than 5 feet of you.</p>
+			<p class="indent"><strong><em>Primal Connection.</em></strong> You can cast animal friendship once with this trait and regain the ability to do so when you finish a short or long rest. Wisdom is your spellcasting ability for this spell.</p>
+			<p class="indent"><strong><em>The Bigger They Are.</em></strong> When you cast a spell that affects only beasts, it also affects monstrosities with an Intelligence score of 3 or lower.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Human (Mark of Handling)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="dexterity" value="1" />
+			<stat name="wisdom" value="1" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Handling)" supports="Human Variant" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WILD_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_EXPERT_HANDLING" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_PRIMAL_CONNECTION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_THE_BIGGER_THEY_ARE" />
+		</rules>
+	</element>
+	<element name="Wild Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WILD_INTUITION">
+		<description>
+			<p>When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an Animal Handling or Nature check, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Expert Handling" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_EXPERT_HANDLING">
+		<description>
+			<p>You can use the Help action to aid an ally animal companion or mount within 30 feet of you, rather than 5 feet of you.</p>
+		</description>
+		<sheet>
+			<description>You can use the Help action to aid an ally animal companion or mount within 30 feet of you, rather than 5 feet of you.</description>
+		</sheet>
+	</element>
+	<element name="Primal Connection" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_PRIMAL_CONNECTION">
+		<description>
+			<p>You can cast animal friendship once with this trait and regain the ability to do so when you finish a short or long rest. Wisdom is your spellcasting ability for this spell.</p>
+		</description>
+		<sheet usage="1/Long or Short Rest">
+			<description>Animal Friendship (Spellcasting: Wisdom)</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" />
+		</rules>
+	</element>
+	<element name="The Bigger They Are" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_THE_BIGGER_THEY_ARE">
+		<description>
+			<p>When you cast a spell that affects only beasts, it also affects monstrosities with an Intelligence score of 3 or lower.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that affects only beasts, it also affects monstrosities with an Intelligence score of 3 or lower.</description>
+		</sheet>
+	</element>
+
+</elements>

@@ -4,7 +4,7 @@
 		<name>Changeling</name>
 		<description></description>
 		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.4">
 			<file name="race-changeling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/races/race-changeling.xml" />
 		</update>
 	</info>
@@ -44,15 +44,15 @@
 		<sheet display="false" />
 		<setters>
 			<set name="names" type="changeling">Bin, Cas, Dox, Fie, Hars, Jin, Lam, Mas, Nix, Ot, Paik, Ruz, Sim, Toox, Vil, Yug</set>
-			<set name="names-format">$(changeling)</set>
+			<set name="names-format">{{changeling}}</set>
 		</setters>
 		<rules>
-			<stat name="Charisma" value="2" />
+			<stat name="charisma" value="2" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement (Changeling)" supports="ID_INTERNAL_ASI_DEXTERITY|ID_INTERNAL_ASI_INTELLIGENCE" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<select type="Language" name="Language (Changeling)" supports="Starting" number="2" />
+			<select type="Language" name="Language (Changeling)" supports="Standard||Exotic" number="2" />
 			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_CHANGE_APPEARANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_CHANGELING_INSTINCTS" />
 			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_UNSETTLING_VISAGE" />
@@ -85,8 +85,8 @@
 			<p>When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this feature before knowing whether the attack hits or misses.</p>
 			<p class="indent">Using this trait reveals your shapeshifting nature to any creature within 30 feet that can see you. Once you use this trait, you can't use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. Using this trait reveals your shapeshifting nature to any creature within 30 feet that can see you. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. Using this trait reveals your shapeshifting nature to any creature within 30 feet that can see you.</description>
 		</sheet>
 	</element>
 	<element name="Divergent Persona" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_DIVERGENT_PERSONA">

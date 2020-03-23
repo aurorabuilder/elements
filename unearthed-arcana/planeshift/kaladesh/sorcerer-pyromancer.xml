@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Pyromancer</name>
+		<description>Pyromancer archetype from Planeshift: Kaladesh.</description>
+		<author url="https://media.wizards.com/2017/downloads/magic/Plane-Shift_Kaladesh.pdf">Wizards of the Coast</author>
+		<update version="0.0.4">
+			<file name="sorcerer-pyromancer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/sorcerer-pyromancer.xml" />
+		</update>
+	</info>
+
+	<element name="Pyromancer" type="Archetype" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ARCHETYPE_PYROMANCER">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your innate magic manifests in fire. You are your fire, and your fire is you.</p>
+			<div element="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_HEART_OF_FIRE" />
+			<div element="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIRE_IN_THE_VEINS" />
+			<div element="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_PYROMANCERS_FURY" />
+			<div element="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIERY_SOUL" />
+		</description>
+		<sheet>
+			<description>Your innate magic manifests in fire. You are your fire, and your fire is you.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_HEART_OF_FIRE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIRE_IN_THE_VEINS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_PYROMANCERS_FURY" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIERY_SOUL" level="18" />
+		</rules>
+	</element>
+	<element name="Heart of Fire" type="Archetype Feature" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_HEART_OF_FIRE">
+		<description>
+			<p>At 1st level, whenever you start casting a spell of 1st level or higher that deals fire damage, fiery magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take fire damage equal to half your sorcerer level (minimum of 1).</p>
+			<p class="indent"></p>
+		</description>
+		<sheet>
+			<description>Whenever you start casting a spell of 1st level or higher that deals fire damage, fiery magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take {{level:sorcerer:half}} fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Fire In The Veins" type="Archetype Feature" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIRE_IN_THE_VEINS">
+		<description>
+			<p>At 6th level, you gain resistance to fire damage. In addition, spells you cast ignore resistance to fire damage.</p>
+		</description>
+		<sheet>
+			<description>You gain resistance to fire damage. In addition, spells you cast ignore resistance to fire damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Pyromancer’s Fury" type="Archetype Feature" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_PYROMANCERS_FURY">
+		<description>
+			<p>Starting at 14th level, when you are hit by a melee attack, you can use your reaction to deal fire damage to the attacker. The damage equals your sorcerer level, and ignores resistance to fire damage.</p>
+		</description>
+		<sheet>
+			<description>When you are hit by a melee attack, you can use your reaction to deal {{level:sorcerer}} fire damage to the attacker. This attack ignores resistance to fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Fiery Soul" type="Archetype Feature" source="Plane Shift: Kaladesh" id="ID_WOTC_PSK_ARCHETYPE_FEATURE_PYROMANCER_FIERY_SOUL">
+		<description>
+			<p>At 18th level, you gain immunity to fire damage. In addition, any spell or effect you create ignores resistance to fire damage and treats immunity to fire damage as resistance to fire damage.</p>
+		</description>
+		<sheet>
+			<description>You gain immunity to fire damage. In addition, any spell or effect you create ignores resistance to fire damage and treats immunity to fire damage as resistance to fire damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+		</rules>
+	</element>
+</elements>

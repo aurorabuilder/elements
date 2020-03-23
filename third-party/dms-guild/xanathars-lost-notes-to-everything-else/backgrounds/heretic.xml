@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Heretic Background</name>
+		<update version="0.0.3">
+			<file name="heretic.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/backgrounds/heretic.xml" />
+		</update>
+	</info>
+	
+	<element name="Heretic" type="Background" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_HERETIC">
+		<description>
+			<p>You believe in a doctrine outlawed by your faith, taught to you in secret by other heretics. Perhaps your superiors excommunicated you from your temple, or forbidden dogma provided answers to questions you never sought. Whatever your origin, you’re now shunned by the faithful, or worse, hunted.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Religion</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A holy symbol (subtly modified to represent your own heretical belief), a prayer book or prayer wheel, vestments, a bottle of invisible ink, a quill, a set of common clothes, and a pouch containing 10 gp.</li>
+			</ul>
+			<h5>HERETICAL BELIEF</h5>
+			<p>Hundreds of outlawed sects exist throughout the Forgotten Realms and other settings. Choose a belief that defines you as a heretic, or roll on the table below.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Belief</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Dark Moon.</strong> A doctrine that ascribes Selûne and Shar as two aspects of the same deity.</td></tr>
+				<tr><td>2</td><td><strong>Fatemakers.</strong> Tymorans who believe mortals can influence and control luck.</td></tr>
+				<tr><td>3</td><td><strong>Threefold God.</strong> A belief that Tyr, Helm and Torm are all the same god.</td></tr>
+				<tr><td>4</td><td><strong>Forsaken One.</strong> A conspiracy that Savras and Leira conceived and abandoned a god child.</td></tr>
+				<tr><td>5</td><td><strong>Three-Faced Sun.</strong> The sun is a tripartite deity, with divine aspects of dawn, noon and dusk.</td></tr>
+				<tr><td>6</td><td><strong>Shared Suffering.</strong> Flagellant Ilmatari who say all mortals must share their god’s suffering.</td></tr>
+				<tr><td>7</td><td><strong>Entropy.</strong> Belief that dying gods sent a divine sphere of annihilation to Toril to kill wizards.</td></tr>
+				<tr><td>8</td><td><strong>Harlot’s Coin.</strong> Belief that Waukeen sold her divinity to Graz’zt and he receives her prayers.</td></tr>
+			</table>
+			<div element="ID_XLN_BACKGROUND_FEATURE_HERETICAL_CONTACTS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Heretics survive by living on the run, or by blending into the ranks of greater faiths. They tend to be suspicious folk with zealous ideals and unshakable convictions. This sometimes manifests as a sense of superiority over the “unenlightened”.</p>
+		</description>
+		<setters>
+			<set name="short">Deception, Religion, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<select type="Language" name="Language, Heretic" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_XLN_BACKGROUND_FEATURE_HERETICAL_CONTACTS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I think I’m right even when I’m wrong.</item>
+				<item id="2">I pity those who deny the heresy.</item>
+				<item id="3">I always scope out the closest exits and position myself near them.</item>
+				<item id="4">Those who refute my beliefs are damned and aren’t worth saving.</item>
+				<item id="5">I’m sure my god has chosen me for a greater destiny.</item>
+				<item id="6">I’m a natural orator, but once I start talking it’s difficult for me to stop.</item>
+				<item id="7">I’m always looking over my shoulder and the slightest things startle me.</item>
+				<item id="8">I believe the end of the world is nigh.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Guidance. I must teach others my forbidden doctrine. (Neutral)</item>
+				<item id="2">Caution. It’s always better to be safe than sorry. (Any)</item>
+				<item id="3">Knowledge. If this conspiracy is true, what else are we being lied to about? (Neutral)</item>
+				<item id="4">Insurrection. My old faith is corrupt and must be brought down by the new order. (Chaotic)</item>
+				<item id="5">Honesty. I’ve been lied to enough, so now I’m sworn to always tell the truth. (Lawful)</item>
+				<item id="6">Self-Knowledge. Those who seek the truth become wise beyond their years. (Good)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">The heretics who educated me were burned at the stake. I won’t let that happen to me.</item>
+				<item id="2">Belief in my old faith still nags at me. Have I chosen the right path?</item>
+				<item id="3">I used to be friends with the cleric who’s now hunting me.</item>
+				<item id="4">I carry a heretical treatise on my person. It mustn’t be found!</item>
+				<item id="5">I protect the faithless so they can know enlightenment.</item>
+				<item id="6">One of my underworld contacts reports my movements to the superiors of my old temple.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I’m suspicious of strangers, as they may be bounty hunters sent to arrest me.</item>
+				<item id="2">I sneer at those whom I deem unworthy of my time.</item>
+				<item id="3">I’m deeply superstitious, and have many rituals to avoid bad luck.</item>
+				<item id="4">I tend to misjudge the devotion of others.</item>
+				<item id="5">I’m obsessed with my studies, often to the detriment of other concerns.</item>
+				<item id="6">I’m deeply mistrustful of temple hierarchies.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Heretical Contacts" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_HERETICAL_CONTACTS">
+		<description>
+			<p>You know where to find heretics in settlements where your faith is represented. If no heretics are present, you can indoctrinate weak-willed souls if you spend a day preaching. Where heretics are present, you can always find a place to hide, rest and recuperate. If needed, they can help you escape the settlement on a cart or through a secret tunnel.</p>
+		</description>
+		<sheet alt="Heretical Contacts" />
+	</element>	
+</elements>

@@ -4,29 +4,35 @@
 		<name>Selesnya Initiate</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.3">
+		<update version="0.0.5">
 			<file name="selesnya-initiate.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/selesnya-initiate.xml" />
 		</update>
 	</info>
     
-	<element name="Selesnya Initiate" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_Selesnya Initiate">
+	<element name="Selesnya Initiate" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_SELESNYA_INITIATE">
 		<description>
-			<p>You are a member of a blessed community, built on the ideals of harmony. Here, nature and civilization coexist peacefully. living and growing in accordance with the will of the Worldsoul, Mat’Selesnya. As a member of the Selesnya Conclave, you are surrounded by people and other creatures who share your worldview and your longing for deeper spiritual communion with the world, and you have a fervent desire to share the joy you have experienced with Ravnica. Along with the rest of the conclave, you are committed to resisting the ambitions of the other guilds- with military force if necessary.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Nature, Persuasion</p>
-			<p class="indent"><strong>Tool Proficiencies:</strong> One type of artisan’s tools or one musical instrument</p>
-			<p class="indent"><strong>Languages:</strong> Choose one of Elvish, Loxodon, or Sylvan</p>
-			<p class="indent"><strong>Equipment:</strong> A Selesnya insignia, a healer’s kit, robes, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</p>
+			<p>You are a member of a blessed community, built on the ideals of harmony. Here, nature and civilization coexist peacefully. living and growing in accordance with the will of the Worldsoul, Mat’Selesnya. As a member of the Selesnya Conclave, you are surrounded by people and other creatures who share your worldview and your longing for deeper spiritual communion with the world, and you have a fervent desire to share the joy you have experienced with Ravnica. Along with the rest of the conclave, you are committed to resisting the ambitions of the other guilds- with military force if necessary.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Nature, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools or one musical instrument</li>
+				<li><strong>Languages:</strong> Choose one of Elvish, Loxodon, or Sylvan</li>
+				<li><strong>Equipment:</strong> A Selesnya insignia, a healer’s kit, robes, a set of common clothes, and a belt pouch containing 5 gp (Azorius 1-zino coins)</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_SELESNYA_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
 			<p>Most members of the Selesnya Conclave are true believers-the tight-knit community allows little room for the cynical or disillusioned. They are spiritual, empathetic. and generally peaceful-unless roused to action. Their flaws and bonds alike grow naturally from their close ties to the community.</p>
 		</description>
+		<setters>
+			<set name="short">Nature, persuasion, Artisan’s Tool or Instrument, Language</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
 			<select type="Proficiency" name="Tool Proficiency, Selesnya Initiate" supports="Artisan tools||Musical Instrument" />
 			<select type="Language" name="Language, Selesnya Initiate" supports="ID_LANGUAGE_ELVISH|ID_GGTR_LANGUAGE_LOXODON|ID_LANGUAGE_SYLVAN" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_SELESNYA_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">I never raise my voice or lose my temper.</item>
@@ -65,7 +71,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Conclave’s Shelter" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_SELESNYA_INITIATE_CONCLAVES_SHELTER">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>As a member of the Selesnya Conclave, you can count on your guild mates to provide shelter and aid. You and your companions can find a place to hide or rest in any Selesnya enclave in the city, unless you have proven to be a danger to them. The members of the enclave will shield you from the law or anyone else searching for you, though they will not risk their lives in this effort.</p>
 			<p class="indent">In addition, as a guild member you can receive free healing and care at a Selesnya enclave, though you must provide any material components needed for spells.</p>

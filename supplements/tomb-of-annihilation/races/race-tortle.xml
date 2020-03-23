@@ -4,12 +4,11 @@
         <name>Tortle</name>
         <description>The Tortle race from the Tortle Package, a Tomb of Annihilation Supplement</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tomb-annihilation">Wizards of the Coast</author>
-        <update version="0.1.1">
+        <update version="0.1.3">
             <file name="race-tortle.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/tomb-of-annihilation/races/race-tortle.xml" />
         </update>
     </info>
     <element name="Tortle" type="Race" source="The Tortle Package" id="ID_WOTC_TOA_RACE_TORTLE">
-        <requirements />
         <description>
             <p>What many tortles consider a simple life, others might call a life of adventure. Tortles are born near sandy coastlines, but as soon as they're able to walk on two legs, they become nomad survivalists eager to explore the wilderness, experience its many wonders, put their skills to the test, and make new acquaintances.</p>        
             <h4>LIFE OF A TORTLE</h4>
@@ -34,7 +33,7 @@
             <p class="indent"><b><i>Ability Score Increase. </i></b>Your Strength score increases by 2, and your Wisdom score increases by 1.</p>
             <p class="indent"><b><i>Age. </i></b>Young tortles crawl for a few weeks after birth before learning to walk on two legs. They reach adulthood by the age of 15 and live an average of 50 years.</p>
             <p class="indent"><b><i>Alignment. </i></b>Tortles tend to lead orderly, ritualistic lives. They develop customs and routines, becoming more set in their ways as they age. Most are lawful good. A few can be selfish and greedy, tending more toward evil, but it's unusual for a tortle to shuck off order in favor of chaos.</p>
-            <p class="indent"><b><i>Size. </i></b>Tortle adults stand 5 to 6 feet tall and average 450 pounds. THeir shells account for roughly one-third of their weight. Your size is Medium.</p>
+            <p class="indent"><b><i>Size. </i></b>Tortle adults stand 5 to 6 feet tall and average 450 pounds. Their shells account for roughly one-third of their weight. Your size is Medium.</p>
             <p class="indent"><b><i>Speed. </i></b>Your base walking speed is 30 feet.</p>
             <p class="indent"><b><i>Claws. </i></b>Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
             <p class="indent"><b><i>Hold Breath. </i></b>You can hold your breath for up to 1 hour at a time. Tortles aren't natural swimmers, but they can remain underwater for some time before needing to come up for air.</p>
@@ -45,22 +44,23 @@
         </description>        
         <setters>
             <set name="names" type="male">Baka, Damu, Gar, Gura, Ini, Jappa, Kinlek, Krull, Lim, Lop, Nortle, Nulka, Olo, Ploqwat, Quee, Queg, Quott, Sunny, Tibor, Ubo, Uhok, Wabu, Xelbuk, Xopa, Yog</set>
-            <set name="names-format">$(name)</set>
+            <set name="names-format">{{name}}</set>
             <set name="height" modifier="2d6">5'0"</set>
             <set name="weight" modifier="2d6">450 lb.</set>
         </setters>
         <sheet display="false"/>
         <rules>
-            <stat name="Strength" value="+2" />
-            <stat name="Wisdom" value="+1" />
-            <stat name="Speed" value="30" bonus="base"/>
-            <grant type="Language" name="ID_LANGUAGE_COMMON" />
-            <grant type="Language" name="ID_MM_LANGUAGE_AQUAN" />
-            <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_CLAWS" />
-            <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_HOLD_BREATH" />
-            <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR" />
-            <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE" />
-            <grant type="Racial Trait" name="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SURVIVAL_INSTINCT" />
+            <stat name="strength" value="2" />
+            <stat name="wisdom" value="1" />
+            <stat name="innate speed" value="30" bonus="base"/>
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+            <grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_CLAWS" />
+            <grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_HOLD_BREATH" />
+            <grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR" />
+            <grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE" />
+            <grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SURVIVAL_INSTINCT" />
         </rules>
     </element>
     <element name="Claws" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_CLAWS">
@@ -68,7 +68,7 @@
             <p>Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
         </description>
         <sheet>
-            <description>Your claws are natural weapons, which you can use to make unarmed strikes dealing 1d4 + $(Strength Modifier) slashing damage.</description>
+            <description>Your claws are natural weapons, which you can use to make unarmed strikes dealing 1d4+{{strength:modifier}} slashing damage.</description>
         </sheet>
     </element>
     <element name="Hold Breath" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_HOLD_BREATH">
@@ -78,7 +78,6 @@
         <sheet>
             <description>You can hold your breath for up to 1 hour at a time.</description>
         </sheet>
-        <rules></rules>
     </element>
     <element name="Natural Armor" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR">
         <description>
@@ -88,13 +87,8 @@
             <description>Due to your shell and the shape of your body, you are ill-suited to wearing armor. Your shell provides ample protection, however; it gives you a base AC of 17 (your Dexterity modifier doesn't affect this number). You gain no benefit from wearing armor, but if you are using a shield, you can apply the shield's bonus as normal.</description>
         </sheet>
         <rules>
-            <stat name="ac:natural" value="7" bonus="natural" />
-            <stat name="AC" value="ac:natural" equipped="[armor:none]" />					
-			<stat name="AC" value="ac:natural" bonus="armor" equipped="[armor:any]" />
-			
-            <!-- temp testing unusual rules, need something more streamlined to alter stats maybe -->
-            <!-- works from version 1.18.5XX and above, edge case - not finalized -->
-            <grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" />            
+			<stat name="tortle:natural armor" value="17" bonus="base" />
+            <stat name="ac:calculation" value="tortle:natural armor" bonus="calculation" alt="Natural Armor (Tortle)" />
         </rules>
     </element>
     <element name="Shell Defense" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE">
@@ -104,7 +98,6 @@
         <sheet>
             <description>You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</description>
         </sheet>
-        <rules></rules>
     </element>
     <element name="Survival Instinct" type="Racial Trait" source="The Tortle Package" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_SURVIVAL_INSTINCT">
         <description>

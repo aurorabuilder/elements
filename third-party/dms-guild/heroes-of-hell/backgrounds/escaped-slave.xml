@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="escaped-slave.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/escaped-slave.xml" />
+		</update>
+	</info>	
+	<element name="Escaped Slave" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_ESCAPED_SLAVE">
+		<description>
+			<p>You are a survivor of the slave blocks of Darkspine on Avernus, or Dis, the Iron City, having managed to escape your servitude as a slave. You know how to pick a lock, hide and scrounge, surviving on the barest minimum to get by in the blasted landscape of Hell and the back alleys of its hateful cities. You know how to spot a slaver, and have a finely tuned will to live.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Stealth, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves’ tools</li>
+				<li><strong>Languages:</strong> Infernal</li>
+				<li><strong>Equipment:</strong> A knife, a set of thieves’ tools, a set of manacles, a set of common clothes, and a pouch containing 5gp.</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_SCROUNGE" />
+		</description>
+		<setters>
+			<set name="short">Stealth, Survival, Thieves’ tools, Infernal</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_SCROUNGE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Scrounge" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_SCROUNGE">
+		<description>
+			<p>You are able to find enough food and water for yourself and up to 5 other people to survive whilst in Hell – though often is it unpleasant or unpalatable. You are also able to always find or cobble together a rudimentary set of tools for any trade from scraps, cast offs and detritus. These are poor tools, and any checks with them are made at disadvantage.</p>
+		</description>
+		<sheet alt="Scrounge">
+			<description>You are able to find enough food and water for yourself and up to 5 other people to survive whilst in Hell – though often is it unpleasant or unpalatable. You are also able to always find or cobble together a rudimentary set of tools for any trade from scraps, cast offs and detritus. These are poor tools, and any checks with them are made at disadvantage.</description>
+		</sheet>
+	</element>
+</elements>

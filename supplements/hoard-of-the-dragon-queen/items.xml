@@ -2,9 +2,8 @@
 <elements>
 	<info>
 		<name>Items</name>
-		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.6">
 			<file name="items.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/hoard-of-the-dragon-queen/items.xml" />
 		</update>
 	</info>
@@ -41,10 +40,10 @@
 			<set name="slot">head</set>
 		</setters>
 		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="!ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID"  />			
 			<!-- <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_ACID" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" /> -->
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<stat name="AC" value="Charisma Modifier" equipped="[armor:none]" />
+			<stat name="ac:misc" value="charisma:modifier" equipped="[armor:none]" />
 		</rules>
 	</element>
 	<element name="White Dragon Mask" type="Magic Item" source="Hoard of the Dragon Queen" id="ID_WOTC_HOTDQ_MAGIC_ITEM_WHITE_DRAGON_MASK">		
@@ -70,10 +69,10 @@
 			<set name="slot">head</set>
 		</setters>
 		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="!ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD"  />			
 			<!-- <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" /> -->
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<stat name="AC" value="Charisma Modifier" equipped="[armor:none]" />
+			<stat name="ac:misc" value="charisma:modifier" equipped="[armor:none]" />
 		</rules>
 	</element>
 	<element name="Red Dragon Mask" type="Magic Item" source="Hoard of the Dragon Queen" id="ID_WOTC_HOTDQ_MAGIC_ITEM_RED_DRAGON_MASK">		
@@ -99,10 +98,10 @@
 			<set name="slot">head</set>
 		</setters>
 		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="!ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE"  />			
 			<!-- <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" /> -->
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<stat name="AC" value="Charisma Modifier" equipped="[armor:none]" />
+			<stat name="ac:misc" value="charisma:modifier" equipped="[armor:none]" />
 		</rules>
 	</element>
 	<element name="Blue Dragon Mask" type="Magic Item" source="Hoard of the Dragon Queen" id="ID_WOTC_HOTDQ_MAGIC_ITEM_BLUE_DRAGON_MASK">		
@@ -128,10 +127,10 @@
 			<set name="slot">head</set>
 		</setters>
 		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="!ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING"  />			
 			<!-- <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_LIGHTNING" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" /> -->
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<stat name="AC" value="Charisma Modifier" equipped="[armor:none]" />
+			<stat name="ac:misc" value="charisma:modifier" equipped="[armor:none]" />
 		</rules>
 	</element>
 	<element name="Green Dragon Mask" type="Magic Item" source="Hoard of the Dragon Queen" id="ID_WOTC_HOTDQ_MAGIC_ITEM_GREEN_DRAGON_MASK">		
@@ -157,10 +156,10 @@
 			<set name="slot">head</set>
 		</setters>
 		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="!ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON"  />			
 			<!-- <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" requirements="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" /> -->
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<stat name="AC" value="Charisma Modifier" equipped="[armor:none]" />
+			<stat name="ac:misc" value="charisma:modifier" equipped="[armor:none]" />
 		</rules>
 	</element>
 	<element name="Hazirawn" type="Magic Item" source="Hoard of the Dragon Queen" id="ID_WOTC_HOTDQ_MAGIC_ITEM_HAZIRAWN">		
@@ -173,12 +172,12 @@
 		<setters>
 			<set name="category">Magic Weapons</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="greatsword">Weapon</set>
 			<set name="rarity">Legendary</set>
 			<set name="attunement">true</set>
 			<set name="weapon">Greatsword</set>
 			<set name="enhancement">2</set>
+			<set name="charges">4</set>
 		</setters>
 		<rules>
 			<!-- need rules to adjust stat based on attunement, current stats assume attunement -->
@@ -213,11 +212,12 @@
 		<setters>
 			<set name="category">Wands</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
+			<set name="weight" lb="1">1 lb.</set>
 			<set name="type">Wand</set>
 			<set name="rarity">Rare</set>
 			<set name="slot">onehand</set>
 			<set name="attunement">true</set>
+			<set name="charges">7</set>
 		</setters>
 	</element>
 </elements>

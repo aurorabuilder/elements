@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Keeper of the Depths Patron</name>
+		<description>Keeper of the Depths Patron</description>
+		<author url="https://www.genfantasypress.com/about-the-compendium">Genuine Fantasy Press</author>
+		<update version="0.0.1">
+			<file name="warlock-keeper-depths.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/archetypes/warlock-keeper-depths.xml" />
+		</update>
+	</info>
+	<element name="The Keeper of the Depths" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_OTHERWORLDLY_PATRON_KEEPER_DEPTHS">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You’ve made a pact with an ancient oceanic entity known as the Keeper of the Depths. As life teems within the seas, so do the secrets of the forgotten ages – sunken cities, ships lost at sea, and treasures unimaginable gone to the darkest currents that churn with horrible tentacles and creatures from nightmare. The Keeper watches over all this hidden knowledge, and harvests ever more in its endless pursuit of the unspoken secrets of the universe. In the deepest crevices where sunlight has never been seen, all oceans are one to the Keeper of the Depths, and its desire is insatiable.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_EXPANDED_SPELL_LIST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SECRETSOFTHELOST"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SAILORSNIGHTMARE"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_MADNESSOFTHEDEEP"/>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_HUNGERFORKNOWLEDGE"/>
+		</description>
+		<sheet display="false">
+			<description>You’ve made a pact with an ancient oceanic entity known as the Keeper of the Depths.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SECRETSOFTHELOST" level="1" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SAILORSNIGHTMARE" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_MADNESSOFTHEDEEP" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_HUNGERFORKNOWLEDGE" level="14" />
+		</rules>
+	</element>	
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Keeper of the Depths lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>THE KEEPER OF THE DEPTHS EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>identify, sleep</em></td></tr>
+				<tr><td>2nd</td><td><em>locate object, zone of truth</em></td></tr>
+				<tr><td>3rd</td><td><em>crushing tide, luring light</em></td></tr>
+				<tr><td>4th</td><td><em>control water, sleepwalking</em></td></tr>
+				<tr><td>5th</td><td><em>forgotten pain, legend lore</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Keeper of the Depths lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_IDENTIFY</extend>
+			<extend>ID_PHB_SPELL_SLEEP</extend>
+			<extend>ID_PHB_SPELL_LOCATE_OBJECT</extend>
+			<extend>ID_PHB_SPELL_ZONE_OF_TRUTH</extend>
+			<extend>ID_GFP_COFSA_SPELL_CRUSHING_TIDE</extend>
+			<extend>ID_GFP_COFSA_SPELL_LURING_LIGHT</extend>
+			<extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+			<extend>ID_GFP_COFSA_SPELL_SLEEPWALKING</extend>
+			<extend>ID_GFP_COFSA_SPELL_FORGOTTEN_PAIN</extend>
+			<extend>ID_PHB_SPELL_LEGEND_LORE</extend>
+		</spellcasting>
+	</element>	
+	<element name="Secrets of the Lost" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SECRETSOFTHELOST">
+		<description>
+			<p>Starting at 1st level, your patron visits you in your dreams, stealing fragments of your experiences in exchange for hidden knowledge. Whenever you finish a long rest, you gain proficiency in two skills, languages, or tools of your choice. You remain proficient in these until you finish another long rest, at which point you can choose new ones to replace them. Additionally, you gain a swimming speed equal to your walking speed.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you gain proficiency in two skills, languages, or tools of your choice. You remain proficient in these until you finish another long rest, at which point you can choose new ones to replace them.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Secrets of the Lost" supports="Skill||Tool" number="2" optional="true" />
+			<select type="Language" name="Language, Secrets of the Lost" number="2" optional="true" />
+			<stat name="speed:swim" value="speed" bonus="base" />
+		</rules>
+	</element>	
+	<element name="Sailor's Nightmare" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_SAILORSNIGHTMARE">
+		<description>
+			<p>At 6th level, you learn to curse your enemies, using the weight of ethereal water to drag them into the sea’s embrace. As a bonus action, you can curse a creature that you can see within 60 feet of you for 1 minute. While the creature is afflicted by this curse, it cannot jump or fly, and it treats all terrain as difficult terrain. If the creature is flying or swimming, it automatically descends 60 feet at the start of each of its turns. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action, you can curse a creature that you can see within 60 feet of you for 1 minute. While the creature is afflicted by this curse, it cannot jump or fly, and it treats all terrain as difficult terrain. If the creature is flying or swimming, it automatically descends 60 feet at the start of each of its turns. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+	</element>	
+	<element name="Madness of the Deep" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_MADNESSOFTHEDEEP">
+		<description>
+			<p>At 10th level, the Keeper’s gaze looms over you. Whenever you take damage, you can use your reaction to unleash a wave of black ink to cloud the air in a 10-foot radius of your current location for one minute, heavily obscuring the area. Hostile creatures that end their turn within the area must make a Wisdom saving throw against your warlock spell save DC. If they fail, they are frightened until the start of your next turn and must attempt to escape the cloud. Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you take damage, you can use your reaction to unleash a wave of black ink to cloud the air in a 10-foot radius of your current location for one minute, heavily obscuring the area. Hostile creatures that end their turn within the area must make a Wisdom saving throw against your warlock spell save DC. If they fail, they are frightened until the start of your next turn and must attempt to escape the cloud. Once you use this feature, you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+	</element>	
+	<element name="Hunger for Knowledge" type="Archetype Feature" source="Player’s Handbook" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_KEEPER_DEPTHS_HUNGERFORKNOWLEDGE">
+		<description>
+		<p>Starting at 14th level, you can summon the terrible maw of the Keeper to appear before you as an action. A massive beak surrounded by tentacles appears and attempts to grab a target of your choice within 30 feet. When a creature is targeted, it must make a Strength saving throw against your warlock spell save DC to shake off the grasp of the horror. If the target fails, it is dragged into the beak and bitten, taking 6d10 piercing damage and 6d10 psychic damage. If this is enough to reduce the target to 0 hit points, you can choose to have them be swallowed whole by the mouth, consuming them. Either way, the maw then immediately disappears.</p>
+		<p class="indent">Once you summon this maw, you can’t do so again until you finish a long rest.</p>
+		<p class="indent">If the maw consumes a creature using this feature, your patron visits you in your dreams during your next long rest and grants you a boon in return for the sacrifice. Choose any spell of 5th level or lower from the warlock or wizard spell lists. You can cast this spell twice using a warlock spell slot, after which it is lost. The spell is also lost if you sacrifice a new creature and select a new spell using this feature.</p>
+		</description>
+		<sheet>
+			<description>You can summon the terrible maw of the Keeper to appear before you as an action. A massive beak surrounded by tentacles appears and attempts to grab a target of your choice within 30 feet. When a creature is targeted, it must make a Strength saving throw against your warlock spell save DC to shake off the grasp of the horror. If the target fails, it is dragged into the beak and bitten, taking 6d10 piercing damage and 6d10 psychic damage. If this is enough to reduce the target to 0 hit points, you can choose to have them be swallowed whole by the mouth, consuming them. Either way, the maw then immediately disappears. Once you summon this maw, you can’t do so again until you finish a long rest. If the maw consumes a creature using this feature, your patron visits you in your dreams during your next long rest and grants you a boon in return for the sacrifice. Choose any spell of 5th level or lower from the warlock or wizard spell lists. You can cast this spell twice using a warlock spell slot, after which it is lost. The spell is also lost if you sacrifice a new creature and select a new spell using this feature.</description>
+		</sheet>
+	</element>	
+</elements>

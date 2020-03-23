@@ -4,29 +4,35 @@
 		<name>Golgari Agent</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.0.3">
+		<update version="0.0.5">
 			<file name="golgari-agent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/backgrounds/golgari-agent.xml" />
 		</update>
 	</info>
     
 	<element name="Golgari Agent" type="Background" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_GOLGARI_AGENT">
 		<description>
-			<p>You are a member of a teeming horde-one small part of a sprawling organism. Just as you are part of the swarm, the swarm is part of a larger ecosystem, a never-ending cycle of life, death, rot, and rebirth. You have spent your life in the slow churn of that ecosystem, in the dark places of the city where the messy parts of existence are on display. There is little squeamishness among the Golgari, no fear of death or taboo about the dead, just a fierce affirmation of the cycle.</p><br />
-			<p class="indent"><strong>Skill Proficiencies:</strong> Nature, Survival</p>
-			<p class="indent"><strong>Skill Proficiencies:</strong> Poisoner’s kit</p>
-			<p class="indent"><strong>Languages:</strong> Choose one of Elvish, Giant, or Kraul</p>
-			<p class="indent"><strong>Equipment:</strong> A Golgari insignia, a poisoner’s kit, a pet beetle or spider, a set of common clothes, and a belt pouch containing 10 gp worth of mixed coins</p>
+			<p>You are a member of a teeming horde-one small part of a sprawling organism. Just as you are part of the swarm, the swarm is part of a larger ecosystem, a never-ending cycle of life, death, rot, and rebirth. You have spent your life in the slow churn of that ecosystem, in the dark places of the city where the messy parts of existence are on display. There is little squeamishness among the Golgari, no fear of death or taboo about the dead, just a fierce affirmation of the cycle.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Nature, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Poisoner’s kit</li>
+				<li><strong>Languages:</strong> Choose one of Elvish, Giant, or Kraul</li>
+				<li><strong>Equipment:</strong> A Golgari insignia, a poisoner’s kit, a pet beetle or spider, a set of common clothes, and a belt pouch containing 10 gp worth of mixed coins</li>
+			</ul>
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS" />
 			<div element="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_GOLGARI_GUILD_SPELLS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
 			<p>Members of the Golgari Swarm are unmistakably products of the undercity, ill at ease amid the comforts of civilization. They bring about the same discomfort in others by reminding them of death’s inevitable approach.</p>
 		</description>
+		<setters>
+			<set name="short">Nature, Survival, Poisoner’s Kit, Language</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
 			<select type="Language" name="Language, Golgari Agent" supports="ID_LANGUAGE_ELVISH|ID_LANGUAGE_GIANT|ID_GGTR_LANGUAGE_KRAUL" />
-			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS" />
+			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<grant type="Background Feature" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_GOLGARI_GUILD_SPELLS" />
 			<select name="Personality Trait" type="List" number="2">
 				<item id="1">Remember, I could kill you in your sleep. Or put centipedes in your bedroll.</item>
@@ -65,7 +71,7 @@
 		</rules>
 	</element>
 	<element name="Feature: Undercity Paths" type="Background Feature" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_BACKGROUND_FEATURE_GOLGARI_AGENT_UNDERCITY_PATHS">
-		<supports>Feature</supports>
+		<supports>Background Feature, Primary</supports>
 		<description>
 			<p>You know hidden, underground pathways that you can use to bypass crowds, obstacles, and observation as you move through the city. When you aren’t in combat, you and companions you lead can travel between any two locations in the city twice as fast as your speed would normally allow. The paths of the undercity are haunted by dangers that rarely brave the light of the surface world, so your journey isn’t guaranteed to be safe.</p>
 		</description>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Inquisitor</name>
+		<description>Inquisitor Background</description>
+		<author url="https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="background-inquisitor.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/innistrad/background-inquisitor.xml" />
+		</update>
+	</info>
+
+	<element name="Inquisitor" type="Background" source="Plane Shift: Innistrad" id="ID_WOTC_PSI_BACKGROUND_INQUISITOR">
+		<description>
+			<p>Historically, inquisitors were cathar detectives who investigated crimes both mundane and supernatural. They were known for traveling to remote parishes plagued by unexplained murders, and for exposing werewolves living among normal humans. During Avacyn’s absence, when the archangel was trapped within the demonic prison known as the Helvault, the inquisitors led a series of brutal forays into Kessig and the Gavony Moorland. They executed suspected lycanthropes with little or no proof, and punished accused heretics in unsanctioned trials. With Avacyn’s madness, this savage form of inquisition has become the norm, and inquisitors who still pry into dark mysteries have become a minority.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Investigation, Religion</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves' Tools, one set of artisan tools of your choice</li>
+				<li><strong>Equipment:</strong> A holy symbol, a set of traveler’s clothes, and a belt pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_WOTC_PSI_BACKGROUND_FEATURE_LEGAL_AUTHORITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Inquisitors are often driven by zeal, plagued with suspicion, and haunted by self-doubt. They are all too susceptible to human failings, and their judgment is not always divinely inspired.</p>
+		</description>
+		<setters>
+			<set name="short">Investigation, Religion, Thieves' Tools, Artisan's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<select type="Proficiency" name="Artisan Tools (Inquisitor)" supports="Artisan tools" />
+			<grant type="Background Feature" id="ID_WOTC_PSI_BACKGROUND_FEATURE_LEGAL_AUTHORITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">It will all go smoothly if everyone just does as I say.</item>
+				<item id="2">Despair is an extravagance we can ill afford.</item>
+				<item id="3">I know the writings of Saint Raban backward and forward.</item>
+				<item id="4">I try to see the bright side in the very worst situations.</item>
+				<item id="5">It helps me feel better when others show sympathy or appreciation for the horrors I’ve endured.</item>
+				<item id="6">I prefer to face evil with a strong group of friends in front of me.</item>
+				<item id="7">I want to see the wicked burn for the evil they’ve brought on us.</item>
+				<item id="8">I feel the sin being purged from me as I help cleanse the world.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Honesty. The smallest deception paves the way to grievous sin. (Lawful)</item>
+				<item id="2">Piety. Devotion to the angels and the rites of the church is all that keeps the world from destruction. (Good)</item>
+				<item id="3">Order. The laws of Avacyn are meant to preserve the social order—everything in its proper place. (Lawful)</item>
+				<item id="4">Humanity. Human life is to be cherished and preserved against the horrors of the night. (Good)</item>
+				<item id="5">Knowledge. The path to holiness comes through understanding of the world. (Any)</item>
+				<item id="6">Punishment. It is better for the innocent to suffer than for the guilty to escape their due. (Evil)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">Thraben is the heart of the world. The cathedral must stand even if the hinterlands are lost.</item>
+				<item id="2">One day, I will claim vengeance against the monster that took my family from me.</item>
+				<item id="3">My weapon is all I have to remember my beloved mentor by.</item>
+				<item id="4">The geist of my beloved speaks to me sometimes.</item>
+				<item id="5">My dear sibling is now a werewolf. </item>
+				<item id="6">A small crossways chapel is my spiritual home.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I am troubled by the wild rage and bloodlust that lurks in my own heart.</item>
+				<item id="2">I have come to believe that I executed an innocent person.</item>
+				<item id="3">I enjoy the prestige of my position more than service to the angels.</item>
+				<item id="4">I drink to forget the horrors I’ve seen.</item>
+				<item id="5">I might have made a promise to a demon that I can’t keep.</item>
+				<item id="6">I’ll do whatever grim task must be done, for my soul is already lost.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Legal Authority" type="Background Feature" source="Plane Shift: Innistrad" id="ID_WOTC_PSI_BACKGROUND_FEATURE_LEGAL_AUTHORITY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>As an inquisitor of the church, you have the authority to arrest criminals. In the absence of other authorities, you are authorized to pass judgment and even carry out sentencing. If you abuse this power, however, your superiors in the church might strip it from you.</p>
+		</description>
+		<sheet alt="Legal Authority">
+			<description>As an inquisitor of the church, you have the authority to arrest criminals. In the absence of other authorities, you are authorized to pass judgment and even carry out sentencing. If you abuse this power, however, your superiors in the church might strip it from you.</description>
+		</sheet>
+	</element>
+</elements>

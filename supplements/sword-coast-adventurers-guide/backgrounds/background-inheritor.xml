@@ -3,88 +3,93 @@
 	<info>
 		<name>Inheritor</name>
 		<description>Inheritor Background</description>
-		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.2">
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
+		<update version="0.1.4">
 			<file name="background-inheritor.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/sword-coast-adventurers-guide/backgrounds/background-inheritor.xml" />
 		</update>
 	</info>
 
- <element name="Inheritor" type="Background" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_INHERITOR">
-    <description>
-      <p>You are the heir to something of great value- not mere coin or wealth, but an object that has been entrusted to you and you alone. Your inheritance might have come directly to you from a member of your family, by right of birth, or it could have been left to you by a friend, a mentor, a teacher, or someone else important in your life. The revelation of your inheritance changed your life, and might have set you on the path to adventure, but it could also come with many dangers, including those who covet your gift and want to take it from you- by force, if need be.</p>
-	  <p>
-	  	<span class="feature">Skill Proficiencies:</span>Survival, plus one from among Arcana, History, and Religion<br/>
-	  	<span class="feature">Tool Proficiencies:</span>Your choice of a gaming set or a musical instrument<br/>
-	  	<span class="feature">Languages:</span>Any one of your choice<br/>
-	  	<span class="feature">Equipment:</span>Your inheritance, a set of traveler's clothes, the tool you choose for this background’s tool proficiency, and a pouch containing 15 gp<br/>
-	  </p>
-	  <div element="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE" />
-	 <h5>INHERITANCE</h5>
-      <table>
-        <thead>
-          <tr>
-            <td>d8</td><td>Object or Item</td>
-          </tr>
-        </thead>
-        <tr><td>1</td><td>A document such as a map, a letter, or a journal</td></tr>
-        <tr><td>2-3</td><td>A trinket</td></tr>
-        <tr><td>4</td><td>An article of clothing</td></tr>
-        <tr><td>5</td><td>A piece of jewelry</td></tr>
-        <tr><td>6</td><td>An arcane book or formulary</td></tr>
-        <tr><td>7</td><td>A written story, song, poem, or secret</td></tr>
-        <tr><td>8</td><td>A tattoo or other body marking</td></tr>
-      </table>
+	<element name="Inheritor" type="Background" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_INHERITOR">
+		<description>
+			<p>You are the heir to something of great value- not mere coin or wealth, but an object that has been entrusted to you and you alone. Your inheritance might have come directly to you from a member of your family, by right of birth, or it could have been left to you by a friend, a mentor, a teacher, or someone else important in your life. The revelation of your inheritance changed your life, and might have set you on the path to adventure, but it could also come with many dangers, including those who covet your gift and want to take it from you- by force, if need be.</p>
+			<ul class="unstyled">
+				<li> <strong>Skill Proficiencies:</strong> Survival, plus one from among Arcana, History, and Religion</li>
+				<li> <strong>Tool Proficiencies:</strong> Your choice of a gaming set or a musical instrument</li>
+				<li> <strong>Languages:</strong> Any one of your choice</li>
+				<li> <strong>Equipment:</strong> Your inheritance, a set of traveler's clothes, the tool you choose for this background’s tool proficiency, and a pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE" />
+			<h5>INHERITANCE</h5>
+			<table>
+				<thead>
+					<tr> <td>d8</td> <td>Object or Item</td> </tr>
+				</thead>
+				<tr> <td>1</td> <td>A document such as a map, a letter, or a journal</td> </tr>
+				<tr> <td>2-3</td> <td>A trinket</td> </tr>
+				<tr> <td>4</td> <td>An article of clothing</td> </tr>
+				<tr> <td>5</td> <td>A piece of jewelry</td> </tr>
+				<tr> <td>6</td> <td>An arcane book or formulary</td> </tr>
+				<tr> <td>7</td> <td>A written story, song, poem, or secret</td> </tr>
+				<tr> <td>8</td> <td>A tattoo or other body marking</td> </tr>
+			</table>
 			<h5>SUGGESTED CHARACTERISTICS</h5>
 			<p>Use the tables for the folk hero background in the Player's Handbook as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as an inheritor.</p>
 			<p>Your bond might be directly related to your inheritance, or to the person from whom you received it. Your ideal might be influenced by what you know about your inheritance, or by what you intend to do with your gift once you realize what it is capable of.</p>
-    </description>
-    <rules>	
+		</description>
+		<setters>
+			<set name="short">Survival, Arcana / History / Religion, Gaming Set or Instrument, Language</set>
+		</setters>
+		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
-			<select type="Proficiency" name="Skill Proficiency (Inheritor)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_RELIGION"  />
-      <select type="Proficiency" name="Gaming Set or Mustical Instrument (Inheritor)" supports="Musical Instrument||Gaming Set" />
-			<select type="Language" name="Language (Inheritor)"  />
-			<grant type="Background Feature" id="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE" />
+			<select type="Proficiency" name="Skill Proficiency (Inheritor)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_RELIGION" />
+			<select type="Proficiency" name="Gaming Set or Mustical Instrument (Inheritor)" supports="Musical Instrument||Gaming Set" />
+			<select type="Language" name="Language (Inheritor)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Personality Trait" type="List" number="2">
-        <item id="1">I judge people by their actions, not their words.</item>
-        <item id="2">If someone is in trouble, I’m always ready to lend help.</item>
-        <item id="3">When I set my mind to something, I follow through no matter what gets in my way.</item>
-        <item id="4">I have a strong sense of fair play and always try to find the most equitable solution to arguments.</item>
-        <item id="5">I’m confident in my own abilities and do what I can to instill confidence in others.</item>
-        <item id="6">Thinking is for other people. I prefer action.</item>
-        <item id="7">I misuse long words in an attempt to sound smarter.</item>
-        <item id="8">I get bored easily. When am I going to get on with my destiny?</item>
-      </select>
-      <select name="Ideal" type="List">
-        <item id="1">Respect. People deserve to be treated with dignity and respect. (Good)</item>
-        <item id="2">Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)</item>
-        <item id="3">Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)</item>
-        <item id="4">Might. If I become strong, I can take what I want— what I deserve. (Evil)</item>
-        <item id="5">Sincerity. There’s no good in pretending to be something I’m not. (Neutral)</item>
-        <item id="6">Destiny. Nothing and no one can steer me away from my higher calling. (Any)</item>
-      </select>
-      <select name="Bond" type="List">
-        <item id="1">I have a family, but I have no idea where they are. One day, I hope to see them again.</item>
-        <item id="2">I worked the land, I love the land, and I will protect the land.</item>
-        <item id="3">A proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter.</item>
-        <item id="4">My tools are symbols of my past life, and I carry them so that I will never forget my roots.</item>
-        <item id="5">I protect those who cannot protect themselves.</item>
-        <item id="6">I wish my childhood sweetheart had come with me to pursue my destiny.</item>
-      </select>
-      <select name="Flaw" type="List">
-        <item id="1">The tyrant who rules my land will stop at nothing to see me killed.</item>
-        <item id="2">I’m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.</item>
-        <item id="3">The people who knew me when I was young know my shameful secret, so I can never go home again.</item>
-        <item id="4">I have a weakness for the vices of the city, especially hard drink.</item>
-        <item id="5">Secretly, I believe that things would be better if I were a tyrant lording over the land.</item>
-        <item id="6">I have trouble trusting in my allies.</item>
-      </select>
+				<item id="1">I judge people by their actions, not their words.</item>
+				<item id="2">If someone is in trouble, I’m always ready to lend help.</item>
+				<item id="3">When I set my mind to something, I follow through no matter what gets in my way.</item>
+				<item id="4">I have a strong sense of fair play and always try to find the most equitable solution to arguments.</item>
+				<item id="5">I’m confident in my own abilities and do what I can to instill confidence in others.</item>
+				<item id="6">Thinking is for other people. I prefer action.</item>
+				<item id="7">I misuse long words in an attempt to sound smarter.</item>
+				<item id="8">I get bored easily. When am I going to get on with my destiny?</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Respect. People deserve to be treated with dignity and respect. (Good)</item>
+				<item id="2">Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)</item>
+				<item id="3">Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)</item>
+				<item id="4">Might. If I become strong, I can take what I want— what I deserve. (Evil)</item>
+				<item id="5">Sincerity. There’s no good in pretending to be something I’m not. (Neutral)</item>
+				<item id="6">Destiny. Nothing and no one can steer me away from my higher calling. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I have a family, but I have no idea where they are. One day, I hope to see them again.</item>
+				<item id="2">I worked the land, I love the land, and I will protect the land.</item>
+				<item id="3">A proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter.</item>
+				<item id="4">My tools are symbols of my past life, and I carry them so that I will never forget my roots.</item>
+				<item id="5">I protect those who cannot protect themselves.</item>
+				<item id="6">I wish my childhood sweetheart had come with me to pursue my destiny.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">The tyrant who rules my land will stop at nothing to see me killed.</item>
+				<item id="2">I’m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.</item>
+				<item id="3">The people who knew me when I was young know my shameful secret, so I can never go home again.</item>
+				<item id="4">I have a weakness for the vices of the city, especially hard drink.</item>
+				<item id="5">Secretly, I believe that things would be better if I were a tyrant lording over the land.</item>
+				<item id="6">I have trouble trusting in my allies.</item>
+			</select>
 		</rules>
-  </element>  
-  <element name="Feature: Inheritance" type="Background Feature" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE">
+	</element>
+
+	<element name="Feature: Inheritance" type="Background Feature" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_BACKGROUND_FEATURE_INHERITOR_INHERITANCE">
+		<supports>Background Feature</supports>
 		<description>
 			<p>Choose or randomly determine your inheritance from among the possibilities in the table below. Work with your Dungeon Master to come up with details: Why is your inheritance so important, and what is its full story? You might prefer for the DM to invent these details as part of the game, allowing you to learn more about your inheritance as your character does.</p>
 			<p class="indent">The Dungeon Master is free to use your inheritance as a story hook, sending you on quests to learn more about its history or true nature, or confronting you with foes who want to claim it for themselves or prevent you from learning what you seek. The DM also determines the properties of your inheritance and how they figure into the item's history and importance. For instance, the object might be a minor magic item, or one that begins with a modest ability and increases in potency with the passage of time. Or, the true nature of your inheritance might not be apparent at first and is revealed only when certain conditions are met.</p>
 			<p class="indent">When you begin your adventuring career, you can decide whether to tell your companions about your in heritance right away. Rather than attracting attention to yourself, you might want to keep your inheritance a secret until you learn more about what it means to you and what it can do for you.</p>
 		</description>
+		<sheet name="Inheritance" />
 	</element>
 </elements>

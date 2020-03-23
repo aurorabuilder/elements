@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-making.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-making.xml" />
+		</update>
+	</info>
+	<element name="Mark of Making" type="Race Variant" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACE_VARIANT_MARK_OF_MAKING">
+		<supports>Human</supports>
+		<description>
+			<p>The Mark of Making guides its bearer through any act of creation. The bearer of the mark can mend broken things with a touch, and always has a minor magic item they’ve been working on. An artificer or a wizard will get the most out of the mark, but anyone can find a use for an enchanted blade.</p>
+			<p>If your human character has the Mark of Making, the following traits replace the human’s Ability Score Increase trait in the Player’s Handbook.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence score increases by 2, and one other ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Artisan’s Intuition.</em></strong> When you make an Arcana check or an ability check involving artisan’s tools, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Maker’s Gift.</em></strong> You gain proficiency with one type of artisan’s tools of your choice.</p>
+			<p class="indent"><strong><em>Spellsmith.</em></strong> You know the mending cantrip. You can also cast the magic weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn’t require concentration. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF MAKING SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>identify, Tenser’s floating disk</em></td></tr>
+				<tr><td>2nd</td><td><em>continual flame, magic weapon</em></td></tr>
+				<tr><td>3rd</td><td><em>conjure barrage, elemental weapon</em></td></tr>
+				<tr><td>4th</td><td><em>fabricate, stone shape</em></td></tr>
+				<tr><td>5th</td><td><em>creation</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Human (Mark of Making)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_MAKING" />
+			<stat name="intelligence" value="2" alt="Dragonmark" />
+			<select type="Racial Trait" name="Ability Score Increase, Mark of Detection" supports="Ability Score Increase,Dragonmark,!Intelligence" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_ARTISANS_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_MAKERS_GIFT" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_SPELLSMITH" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Artisan’s Intuition" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_ARTISANS_INTUITION">
+		<description>
+			<p>When you make an Arcana check or an ability check involving artisan’s tools, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an Arcana check or an ability check involving artisan’s tools, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Maker’s Gift" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_MAKERS_GIFT">
+		<description>
+			<p>You gain proficiency with one type of artisan’s tools of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with one type of artisan’s tools of your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Artisan’s Tool, Maker’s Gift" supports="Artisan tools" />
+		</rules>
+	</element>
+	<element name="Spellsmith" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_SPELLSMITH">
+		<description>
+			<p>You know the mending cantrip. You can also cast the magic weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn’t require concentration. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You know the mending cantrip. You can also cast the magic weapon spell with this trait using Intelligence as your spellcasting ability. When you do so, the spell lasts for 1 hour and doesn’t require concentration.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MENDING" />
+		</rules>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_MAKING_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Making Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>identify, Tenser’s floating disk</em></td></tr>
+				<tr><td>2nd</td><td><em>continual flame, magic weapon</em></td></tr>
+				<tr><td>3rd</td><td><em>conjure barrage, elemental weapon</em></td></tr>
+				<tr><td>4th</td><td><em>fabricate, stone shape</em></td></tr>
+				<tr><td>5th</td><td><em>creation</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_IDENTIFY</extend>
+			<extend>ID_PHB_SPELL_TENSERS_FLOATING_DISK</extend>
+			<extend>ID_PHB_SPELL_CONTINUAL_FLAME</extend>
+			<extend>ID_PHB_SPELL_MAGIC_WEAPON</extend>
+			<extend>ID_PHB_SPELL_CONJURE_BARRAGE</extend>
+			<extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+			<extend>ID_PHB_SPELL_FABRICATE</extend>
+			<extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+			<extend>ID_PHB_SPELL_CREATION</extend>
+		</spellcasting>
+	</element>
+</elements>

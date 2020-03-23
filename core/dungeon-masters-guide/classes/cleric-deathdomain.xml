@@ -1,131 +1,127 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-    <info>
-        <name>Death Domain</name>
-        <description>The Death Domain from the Dungeon Master’s Guide</description>
-        <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/dungeon-masters-guide">Wizards of the Coast</author>
-        <update version="0.1">
-            <file name="cleric-deathdomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/dungeon-masters-guide/classes/cleric-deathdomain.xml" />
-        </update>
-    </info>
-    <element name="Death Domain" type="Archetype" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_DEATHDOMAIN">
-        <supports>Divine Domain</supports>
-        <description>
-            <p>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures. Deities such as Chemosh, Myrkul, and WeeJas are patrons of necromancers, death knights, liches, mummy lords, and vampires. Gods of the Death domain also embody murder (Anubis, Bhaal, and Pyremius), pain (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), and the underworld (Hades and Hel).</p>
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE" />
-            <div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" />
-        </description>
-        <sheet>
-            <description>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures.</description>
-        </sheet>
-        <rules>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS" level="1"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY" level="1"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" level="1"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH" level="2"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" level="6"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE" level="8"/>
-            <grant type="Archetype Feature" name="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" level="17"/>
-        </rules>
-    </element>
-    <element name="Domain Spells" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS">
-        <description>
-            <p>You gain domain spells at the cleric levels listed in the Death Domain Spells table. See the Divine Domain class feature for how domain spells work.</p>
-            <h5>Death Domain Spells</h5>
-            <table>
-                <thead>
-                    <tr><td>Cleric Level</td><td>Spells</td></tr>
-                </thead>
-                    <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
-                    <tr><td>3rd</td><td><em>blindness/deafness, ray of enfeeblement</em></td></tr>
-                    <tr><td>5th</td><td><em>animate dead, vampiric touch</em></td></tr>
-                    <tr><td>7th</td><td><em>blight, death ward</em></td></tr>
-                    <tr><td>9th</td><td><em>antilife shell, cloudkill</em></td></tr>
-            </table>
-        </description>
-        <sheet display="false">
-            <description>You gain domain spells at the cleric levels listed in the Death Domain Spells table.</description>
-        </sheet>
-        <rules>
-            <grant type="Spell" name="ID_PHB_SPELL_FALSE_LIFE" level="1" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_RAY_OF_SICKNESS" level="1" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_BLINDNESS_DEAFNESS" level="3" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_ANIMATE_DEAD" level="5" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_VAMPIRIC_TOUCH" level="5" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_ANTILIFE_SHELL" level="9" spellcasting="Cleric" prepared="true" />
-            <grant type="Spell" name="ID_PHB_SPELL_CLOUDKILL" level="9" spellcasting="Cleric" prepared="true" />
-        </rules>
-    </element>
-    <element name="Bonus Proficiency" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY">
-        <description>
-            <p>When the cleric chooses this domain at 1st level, he or she gains proficiency with martial weapons.</p>
-        </description>
-        <sheet display="false">
-            <description>When the cleric chooses this domain at 1st level, he or she gains proficiency with martial weapons.</description>
-        </sheet>
-        <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS"/>
-        </rules>
-    </element>
-    <element name="Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER">
-        <description>
-            <p>At 1st level, the cleric learns one necromancy cantrip of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other.</p>
-        </description>
-        <sheet>
-            <description>When you cast a necromancy cantrip that targets one creature, you can target two creatures within range and within 5ft of each other instead.</description>
-        </sheet>
-        <rules>
-            <select type="Spell" name="Necromancy Cantrip (Death Domain)" supports="0,Necromancy" spellcasting="Cleric" />
-        </rules>
-    </element>
-    <element name="Channel Divinity: Touch of Death" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH">
-        <description>
-            <p>Starting at 2nd level, the cleric can use Channel Divinity to destroy another creature's life force by touch. When the cleric hits a creature with a melee attack, the cleric can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice his or her cleric level.</p>
-        </description>
-        <sheet>
-            <description>Use channel divinity when you hit a creature with a melee attack to deal %touch of death:necrotic damage% extra necrotic damage.</description>
-        </sheet>
-        <rules>
-            <stat name="touch of death:necrotic damage" value="5" />
-            <stat name="touch of death:necrotic damage" value="level:cleric" />
-            <stat name="touch of death:necrotic damage" value="level:cleric" />
-        </rules>
-    </element>
-    <element name="Inescapable Destruction" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION">
-        <description>
-            <p>Starting at 6th level, the cleric's ability to channel negative energy becomes more potent. Necrotic damage dealt by the character's cleric spells and Channel Divinity options ignores resistance to necrotic damage.</p>
-        </description>
-        <sheet>
-            <description>Your cleric spells and Channel Divinity options ignore resistance to necrotic damage.</description>
-        </sheet>
-        <rules />
-    </element>
-    <element name="Divine Strike" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE">
-        <description>
-            <p>At 8th level, the cleric gains the ability to infuse his or weapon strikes with necrotic energy. Once on each of the cleric's turns when he or she hits a creature with a weapon attack, the cleric can cause the attack to deal an extra 1d8 necrotic damage to the target. When the cleric reaches 14th level, the extra damage increases to 2d8.</p>
-        </description>
-        <sheet>
-            <description>Once per turn deal an extra 1d8 damage on a hit with a weapon.</description>
-            <description level="14">Once per turn deal an extra 2d8 damage on a hit with a weapon.</description>
-        </sheet>
-        <rules />
-    </element>
-    <element name="Improved Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER">
-        <description>
-            <p>Starting at 17th level, when the cleric casts a necromancy spell of 1st through 5th level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If
-      the spell consumes its material components, the cleric must provide them for each target.</p>
-        </description>
-        <sheet>
-            <description>When you cast a necromancy spell of 1st through 5th level, that targets one creature, you can target two creatures within range and within 5ft of each other instead. If the spell consumes its material components, you must provide them for each target.</description>
-        </sheet>
-        <rules />
-    </element>
+	<info>
+		<name>Death Domain</name>
+		<description>The Death Domain from the Dungeon Master’s Guide</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/dungeon-masters-guide">Wizards of the Coast</author>
+		<update version="0.1.2">
+			<file name="cleric-deathdomain.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/dungeon-masters-guide/classes/cleric-deathdomain.xml" />
+		</update>
+	</info>
+	<element name="Death Domain" type="Archetype" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_DEATHDOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures. Deities such as Chemosh, Myrkul, and WeeJas are patrons of necromancers, death knights, liches, mummy lords, and vampires. Gods of the Death domain also embody murder (Anubis, Bhaal, and Pyremius), pain (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), and the underworld (Hades and Hel).</p>
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE" />
+			<div element="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" />
+		</description>
+		<sheet display="false">
+			<description>The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE" level="8" />
+			<grant type="Archetype Feature" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric levels listed in the Death Domain Spells table. See the Divine Domain class feature for how domain spells work.</p>
+			<h6>Death Domain Spells</h6>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+				<tr><td>3rd</td><td><em>blindness/deafness, ray of enfeeblement</em></td></tr>
+				<tr><td>5th</td><td><em>animate dead, vampiric touch</em></td></tr>
+				<tr><td>7th</td><td><em>blight, death ward</em></td></tr>
+				<tr><td>9th</td><td><em>antilife shell, cloudkill</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>You gain domain spells at the cleric levels listed in the Death Domain Spells table.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLINDNESS_DEAFNESS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ANTILIFE_SHELL" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiency" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_BONUS_PROFICIENCY">
+		<description>
+			<p>When the cleric chooses this domain at 1st level, he or she gains proficiency with martial weapons.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with martial weapons.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+		</rules>
+	</element>
+	<element name="Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_REAPER">
+		<description>
+			<p>At 1st level, the cleric learns one necromancy cantrip of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other.</p>
+		</description>
+		<sheet>
+			<description>When you cast a necromancy cantrip that targets one creature, you can target two creatures within range and within 5ft of each other instead.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Necromancy Cantrip (Death Domain)" supports="0,Necromancy" spellcasting="Cleric" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Touch of Death" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_CHANNELDIVINITY_TOUCH_OF_DEATH">
+		<description>
+			<p>Starting at 2nd level, the cleric can use Channel Divinity to destroy another creature's life force by touch. When the cleric hits a creature with a melee attack, the cleric can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice his or her cleric level.</p>
+		</description>
+		<sheet alt="Touch of Death" usage="Channel Divinity">
+			<description>Use channel divinity when you hit a creature with a melee attack to deal {{ touch of death:necrotic damage }} extra necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="touch of death:necrotic damage" value="5" />
+			<stat name="touch of death:necrotic damage" value="level:cleric" />
+			<stat name="touch of death:necrotic damage" value="level:cleric" />
+		</rules>
+	</element>
+	<element name="Inescapable Destruction" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_INESCAPABLE_DESTRUCTION">
+		<description>
+			<p>Starting at 6th level, the cleric's ability to channel negative energy becomes more potent. Necrotic damage dealt by the character's cleric spells and Channel Divinity options ignores resistance to necrotic damage.</p>
+		</description>
+		<sheet>
+			<description>Your cleric spells and Channel Divinity options ignore resistance to necrotic damage.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_DIVINE_STRIKE">
+		<description>
+			<p>At 8th level, the cleric gains the ability to infuse his or weapon strikes with necrotic energy. Once on each of the cleric's turns when he or she hits a creature with a weapon attack, the cleric can cause the attack to deal an extra 1d8 necrotic damage to the target. When the cleric reaches 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>Deal an extra 1d8 damage on a hit with a weapon.</description>
+			<description level="14">Deal an extra 2d8 damage on a hit with a weapon.</description>
+		</sheet>
+	</element>
+	<element name="Improved Reaper" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ARCHETYPE_FEATURE_DEATH_DOMAIN_IMPROVED_REAPER">
+		<description>
+			<p>Starting at 17th level, when the cleric casts a necromancy spell of 1st through 5th level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components, the cleric must provide them for each target.</p>
+		</description>
+		<sheet>
+			<description>When you cast a necromancy spell of 1st through 5th level, that targets one creature, you can target two creatures within range and within 5ft of each other instead. If the spell consumes its material components, you must provide them for each target.</description>
+		</sheet>
+	</element>
 </elements>

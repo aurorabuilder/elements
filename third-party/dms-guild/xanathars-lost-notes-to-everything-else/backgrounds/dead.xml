@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dead Background</name>
+		<update version="0.0.4">
+			<file name="dead.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/backgrounds/dead.xml" />
+		</update>
+	</info>
+	
+	<element name="Dead" type="Background" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_DEAD">
+		<description>
+			<p>You died and came back. This experience changed you and defines who you are today. The specifics of your death are up to you, but the following questions and suggestions will help you determine your odd personal history. </p>
+			<p class="indent">How did you die? It probably wasn’t of old age. Spells like raise dead can bring back those who die before old age takes them, but after dying of old age there is almost no magic which can bring a person back to life. Was it combat? An accident? A disease? </p>
+			<p class="indent">How long were you dead? Spells like true resurrection allow a character to return from death after as many as 200 years. How has the world changed politically, technologically, and culturally since your death? What remains of your family, friends, and personal life? </p>
+			<p class="indent">What was your life after death like? Did you spend time in the glory of eternal battle is Ysgard? Were you enjoying the paradise of Elysium? Were you being tortured in the Nine Hells or Abyss? Do you remember nothing from that time? </p>
+			<p class="indent">Maybe you didn’t completely pass on, but lived life as an undead, such as a ghost or vampire. Why did you become such a being? What acts did you commit that you now regret? Who still thinks of you as a monster? </p>
+			<p class="indent">Finally someone brought you back. Who was it, and why? Maybe it was to face an old enemy. Maybe it was a loved one who searched for a long time and sacrificed much to revive you. Maybe you were brought back for a secret only you knew. How did this person bring you back? Was it straightforward magic? What about a spell like reincarnate, which could bring your spirit back in the body of a different humanoid race? Or maybe it was some other magic that has a more sinister secret.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Intimidation</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> 50 feet of rope, a bit of dirt from your grave in a sacred vial, a set of common clothes, two rare coins with which you were buried, and a belt pouch with 5 gp</li>
+			</ul>
+			<div element="ID_XLN_BACKGROUND_FEATURE_DEAD_SPIRIT_TALK" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You have experienced something few living people have yet to go through. You might be the type who embraces the second chance and loves life, relishing every opportunity and letting nothing stand in your way. Or you might be quiet and brooding, thinking of the revenge you seek for your death or missing the planar heaven you left behind. People who have died often live in one of these extremes, experiencing life to the fullest or becoming fixated on a single goal that gives their new life meaning.</p>
+		</description>
+		<setters>
+			<set name="short">History, Intimidation, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<select type="Language" name="Language, Dead" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_XLN_BACKGROUND_FEATURE_DEAD_SPIRIT_TALK" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">When faced with a new experience the word "no" isn’t in my vocabulary.</item>
+				<item id="2">I always have the loudest laugh in the room. </item>
+				<item id="3">When I want something, I’m direct and simple in my request.</item>
+				<item id="4">The story of my demise, like all my stories, is greatly exaggerated.</item>
+				<item id="5">Those who ask me about my death quickly learn to never ask again.</item>
+				<item id="6">I treat most people like they’re idiots. They don’t know what I know.</item>
+				<item id="7">If I don’t want to do something, I simply don’t do it.</item>
+				<item id="8">I don’t excite easily.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Freedom. Life is short so live how you want. (Chaotic)</item>
+				<item id="2">Despair. Nothing in life is worth celebrating and death is the destination we all deserve. (Evil)</item>
+				<item id="3">Vengeance. I will find and punish what killed me. (Neutral)</item>
+				<item id="4">Charity. I want to prevent others from dying before their time. (Good)</item>
+				<item id="5">Mercy. I was given a second chance and others should get the same opportunity. (Good)</item>
+				<item id="6">Labor. Life is short, and so I must keep working to make my mark. (Lawful)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I have a great fear of that which killed me.</item>
+				<item id="2">The scars of my death wound are still on my body.</item>
+				<item id="3">My vengeance is more important than any other task.</item>
+				<item id="4">I never wish to return to my gravesite.</item>
+				<item id="5">I wish to bring back another who died by my side.</item>
+				<item id="6">Any mention of my hometown reminds me of my first life.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">Death isn’t a big deal to me. I’ve died and come back. People should stop whining.</item>
+				<item id="2">I don’t listen to protests before I do something reckless.</item>
+				<item id="3">I’d rather be mad than solve a problem making me angry.</item>
+				<item id="4">I would rather cheat, lie, and steal than be honest because none of this matters.</item>
+				<item id="5">Everything was better when I was dead.</item>
+				<item id="6">I’m believe that I am better than everyone who hasn’t died and come back from the dead.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Spirit Talk" type="Background Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_BACKGROUND_FEATURE_DEAD_SPIRIT_TALK">
+		<description>
+			<p>You can connect with the souls of the dead thanks to the long time you spent dead. You may spend a day of downtime communicating with the souls to learn a piece of information by asking a question. The quality and specifics of the information you get is up to the DM.</p>
+		</description>
+		<sheet alt="Spirit Talk" />
+	</element>
+</elements>

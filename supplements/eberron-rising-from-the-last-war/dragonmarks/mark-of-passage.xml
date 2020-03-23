@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="mark-of-passage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-passage.xml" />
+		</update>
+	</info>
+	<element name="Mark of Passage" type="Race Variant" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACE_VARIANT_MARK_OF_PASSAGE">
+		<supports>Human</supports>
+		<description>
+			<p>The Mark of Passage governs motion, allowing its bearer to move with uncanny speed. The bearer of the mark can even slip through space in the blink of an eye.</p>
+			<p>If your human character has the Mark of Passage, the following traits replace the human’s Ability Score Increase trait in the Player’s Handbook.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 2, and one other ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Courier’s Speed.</em></strong> Your base walking speed increases to 35 feet.</p>
+			<p class="indent"><strong><em>Intuitive Motion.</em></strong> When you make a Dexterity (Acrobatics) check or any ability check to operate or maintain a land vehicle, you can roll a d4 and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Magical Passage.</em></strong> You can cast the misty step spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell.</p>
+			<p class="indent"><strong><em>Spells of the Mark.</em></strong> If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.</p>
+			<p><strong>MARK OF PASSAGE SPELLS</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>expeditious retreat, jump</em></td></tr>
+				<tr><td>2nd</td><td><em>misty step, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>blink, phantom steed</em></td></tr>
+				<tr><td>4th</td><td><em>dimension door, freedom of movement</em></td></tr>
+				<tr><td>5th</td><td><em>teleportation circle</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Human (Mark of Passage)" display="false" />
+		<rules>
+			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_PASSAGE" />
+			<stat name="dexterity" value="2" />
+			<select type="Racial Trait" name="Ability Score Increase, Mark of Detection" supports="Ability Score Increase,Dragonmark,!Dexterity" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_COURIERS_SPEED" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_INTUITIVE_MOTION" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_MAGICAL_PASSAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_SPELLS_OF_THE_MARK" />
+		</rules>
+	</element>
+	<element name="Courier’s Speed" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_COURIERS_SPEED">
+		<description>
+			<p>Your base walking speed increases to 35 feet.</p>
+		</description>
+		<sheet display="false">
+			<description>Your base walking speed increases to 35 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed" value="35" bonus="base" />
+		</rules>
+	</element>
+	<element name="Intuitive Motion" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_INTUITIVE_MOTION">
+		<description>
+			<p>When you make a Dexterity (Acrobatics) check or any ability check to operate or maintain a land vehicle, you can roll a d4 and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Acrobatics check or any ability check to operate or maintain a land vehicle, you can roll a d4 and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Magical Passage" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_MAGICAL_PASSAGE">
+		<description>
+			<p>You can cast the misty step spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the misty step spell once with this trait using Dexterity as your spellcasting ability.</description>
+		</sheet>
+	</element>
+	<element name="Spells of the Mark" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_PASSAGE_SPELLS_OF_THE_MARK">
+		<description>
+			<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.</p>
+			<h5>Mark of Passage Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>expeditious retreat, jump</em></td></tr>
+				<tr><td>2nd</td><td><em>misty step, pass without trace</em></td></tr>
+				<tr><td>3rd</td><td><em>blink, phantom steed</em></td></tr>
+				<tr><td>4th</td><td><em>dimension door, freedom of movement</em></td></tr>
+				<tr><td>5th</td><td><em>teleportation circle</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.</description>
+		</sheet>
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_EXPEDITIOUS_RETREAT</extend>
+			<extend>ID_PHB_SPELL_JUMP</extend>
+			<extend>ID_PHB_SPELL_MISTY_STEP</extend>
+			<extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+			<extend>ID_PHB_SPELL_BLINK</extend>
+			<extend>ID_PHB_SPELL_PHANTOM_STEED</extend>
+			<extend>ID_PHB_SPELL_DIMENSION_DOOR</extend>
+			<extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+			<extend>ID_PHB_SPELL_TELEPORTATION_CIRCLE</extend>
+		</spellcasting>
+	</element>	
+</elements>

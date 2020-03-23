@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Cleric, Druid, and Wizard</name>
+		<update version="0.0.2">
+			<file name="20191003.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2019/20191003.xml" />
+		</update>
+	</info>		
+	<element name="Unearthed Arcana: Cleric, Druid, and Wizard" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20191003">
+		<description>
+			<p>Three classes each receive a playtest option this week. The cleric receives a new Divine Domain option: the Twilight Domain. The druid gains a new Druid Circle option: the Circle of Wildfire. And the wizard gains a new Arcane Tradition feature: Onomancy, the magic of true names.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20191003</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/cleric-druid-wizard</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20191003</set>
+		</setters>
+	</element>
+	
+	<element name="Twilight Domain" type="Archetype" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_TWILIGHT_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>The Twilight Domain governs the transition and blending of light into darkness. It is a time of rest and comfort, but also the threshold between safety and the unknown. Deities of healing or respite (such as Boldrei, Hestia, Mishakal, or Pelor), bravery or protection (such as Dol Arrah, Hajama, Helm, or Ilmater), travel or transition (such as Fharlanghn, Hermes, the Raven Queen, or the Traveler), or the night and dreams (such as Celestian, Morpheus, Nut, or Selûne) might grant their clerics the Twilight Domain. Clerics who serve these deities tend to be brave, delving into the dark to hold its dangers at bay and to bring comfort to those lost far from the light.</p>
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_EYES_OF_NIGHT" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_VIGILANT_BLESSING" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_CD_TWILIGHT_SANCTUARY" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_STEPS_OF_THE_BRAVE" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DIVINE_STRIKE" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_MIDNIGHT_SHROUD" />
+		</description>
+		<sheet display="false">
+			<description>The Twilight Domain governs the transition and blending of light into darkness.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_BONUS_PROFICIENCIES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_EYES_OF_NIGHT" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_VIGILANT_BLESSING" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_CD_TWILIGHT_SANCTUARY" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_STEPS_OF_THE_BRAVE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DIVINE_STRIKE" level="8" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_MIDNIGHT_SHROUD" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric levels listed in the Twilight Domain Spells table. See the Divine Domain class feature for how domain spells work.</p>
+			<h5>Twilight Domain Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>faerie fire, sleep</em></td></tr>
+				<tr><td>3rd</td><td><em>darkness, invisibility</em></td></tr>
+				<tr><td>5th</td><td><em>aura of vitality, Leomund’s tiny hut</em></td></tr>
+				<tr><td>7th</td><td><em>aura of life, greater invisibility</em></td></tr>
+				<tr><td>9th</td><td><em>circle of power, dream</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>You gain domain spells at the cleric levels listed in the Twilight Domain Spells table.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DREAM" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_BONUS_PROFICIENCIES">
+		<description>
+			<p>You gain proficiency with martial weapons and heavy armor.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with martial weapons and heavy armor.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+		</rules>
+	</element>
+	<element name="Eyes of Night" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_EYES_OF_NIGHT">
+		<description>
+			<p>Your eyes are blessed, allowing you to see through the deepest gloom. You have darkvision with no maximum range; you can see in dim light as if it were bright light and in darkness as if it were dim light.</p>
+			<p class="indent">As an action, you can magically give the benefit of this feature to any number of creatures you can see within 10 feet of you. The shared benefit lasts for 10 minutes. You can extend this benefit a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{eyes of night:usage}}/Long Rest">
+			<description>You have darkvision with no maximum range; you can see in dim light as if it were bright light and in darkness as if it were dim light.
+			You can magically give the benefit of this feature to any number of creatures you can see within 10 feet of you. The shared benefit lasts for 10 minutes.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="eyes of night:usage" value="1" bonus="base" />
+			<stat name="eyes of night:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Vigilant Blessing" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_VIGILANT_BLESSING">
+		<description>
+			<p>The night has taught you to be vigilant. As an action, you give one creature you touch (including possibly yourself) advantage on the next initiative roll the creature makes. This benefit ends immediately after the roll or if you use this feature again.</p>
+		</description>
+		<sheet action="Action">
+			<description>You give one creature you touch advantage on the next initiative roll the creature makes. This benefit ends immediately after the roll or if you use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Twilight Sanctuary" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_CD_TWILIGHT_SANCTUARY">
+		<description>
+			<p>You can use your Channel Divinity to refresh your allies with soothing twilight.</p>
+			<p class="indent">As an action, you present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature (including you) ends its turn in the sphere, you can grant that creature one of these benefits:</p>
+			<ul>
+				<li>Give it 1d8 temporary hit points.</li>
+				<li>End one effect causing it to be charmed or frightened.</li>
+			</ul>
+		</description>
+		<sheet alt="Twilight Sanctuary" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits:
+			Give it 1d8 temporary hit points.
+			End one effect causing it to be charmed or frightened.</description>
+		</sheet>
+	</element>
+	<element name="Steps of the Brave" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_STEPS_OF_THE_BRAVE">
+		<description>
+			<p>You draw strength from your connection to twilight and find yourself at home within its dark embrace, gaining two benefits:</p>
+			<ul>
+				<li>You have advantage on saving throws against being frightened.</li>
+				<li>If you are in dim light or darkness, you can use a bonus action to magically give yourself a flying speed equal to your walking speed until the end of your next turn.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being frightened.
+			If you are in dim light or darkness, you can use a bonus action to magically give yourself a flying speed of {{speed}} feet until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_DIVINE_STRIKE">
+		<description>
+			<p>You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 psychic damage.</description>
+			<description level="14">Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 psychic damage.</description>
+		</sheet>
+	</element>
+	<element name="Midnight Shroud" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_MIDNIGHT_SHROUD">
+		<description>
+			<p>You can harness the shrouding power of night to protect your allies and stymie your foes. Whenever you cast the darkness spell using a spell slot, you can choose a number of creatures that you can see (including yourself) equal to your Wisdom modifier (minimum of one). The chosen creatures can see through the darkness.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast the darkness spell using a spell slot, you can choose {{midnight shroud:creatures}} creatures that you can see. The chosen creatures can see through the darkness.</description>
+		</sheet>
+		<rules>
+			<stat name="midnight shroud:creatures" value="1" bonus="base" />
+			<stat name="midnight shroud:creatures" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Circle of Wildfire" type="Archetype" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_CIRCLE_OF_WILDFIRE">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids who are members of the Circle of Wildfire understand the necessity of destruction, such as how a forest fire promotes growth. These druids bond with a primal spirit that harbors destructive tendencies, allowing the druids to use their power to create controlled flames that help flora and fauna reproduce and grow.</p>
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_CIRCLE_SPELLS" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_SUMMON_WILDFIRE" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_ENHANCED_BOND" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_FLAMES_OF_LIFE" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_BLAZING_ENDURANCE" />
+		</description>
+		<sheet display="false">
+			<description>Druids who are members of the Circle of Wildfire understand the necessity of destruction, such as how a forest fire promotes growth.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_CIRCLE_SPELLS" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_SUMMON_WILDFIRE" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_ENHANCED_BOND" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_FLAMES_OF_LIFE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_BLAZING_ENDURANCE" level="14" />
+		</rules>
+	</element>
+	<element name="Circle Spells" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_CIRCLE_SPELLS">
+		<description>
+			<p>You have formed a mystical bond with a wildfire spirit, a primal being of creation and destruction. Your link with this spirit grants you access to certain spells. At 2nd level, you learn the fire bolt cantrip.</p>
+			<p class="indent">When you reach certain levels in this class, you gain access to the spells listed for that level in the Circle of Wildfire Spells table. Once you gain access to one of these spells, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+			<h5>Circle of Wildfire Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Druid Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>locate animals or plants, scorching ray</em></td></tr>
+				<tr><td>5th</td><td><em>fireball, plant growth</em></td></tr>
+				<tr><td>7th</td><td><em>aura of life, fire shield</em></td></tr>
+				<tr><td>9th</td><td><em>flame strike, raise dead</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FIRE_BOLT" level="2" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIREBALL" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+	<element name="Summon Wildfire" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_SUMMON_WILDFIRE">
+		<description>
+			<p>You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.</p>
+			<p class="indent">The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d10 fire damage.</p>
+			<p class="indent">The wildfire spirit is friendly to you and your companions and obeys your commands. See this creature’s game statistics in the wildfire spirit stat block. You determine the spirit’s appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.</p>
+			<p class="indent">In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the Dash, Disengage, Help, or Hide action.</p>
+			<p class="indent">The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again.</p>
+			<h5>Wildfire Spirit</h5>
+			<p><em>Small elemental, any chaotic alignment</em></p>
+			<br/>
+			<p class="indent"><strong>Hit Points</strong> equal to the wildfire spirit’s Constitution modifier + your Wisdom modifier + five times your level in this class</p>
+			<p class="indent"><strong>Armor Class</strong> 13 (natural armor)</p>
+			<p class="indent"><strong>Speed.</strong> 20 ft., fly 30 ft. (hover)</p>
+			<table style="text-align:center">
+				<thead>
+					<tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr>
+				</thead>
+				<tr><td>10 (+0)</td><td>14 (+2)</td><td>14 (+2)</td><td>13 (+1)</td><td>15 (+2)</td><td>11 (+0)</td></tr>
+			</table>
+			<p class="indent"><strong>Saving Throws</strong> Dex +4, Con +4, Wis +4</p>
+			<p class="indent"><strong>Skills</strong> Nature +4</p>
+			<p class="indent"><strong>Damage Immunities</strong> fire</p>
+			<p class="indent"><strong>Condition Immunities</strong> charmed, frightened, grappled, prone, restrained</p>
+			<p class="indent"><strong>Senses</strong> darkvision 60 ft., passive Perception 12</p>
+			<p class="indent"><strong>Languages</strong> understands the languages you speak</p>			
+			<br/>
+			<p class="indent"><strong><em>Soul Bond.</em></strong> The following numbers increase by 1 when your proficiency bonus increases by 1: the spirit’s skill and saving throw bonuses above, the bonuses to hit and damage of its Flame Seed, and the bonus to damage of its Fiery Teleportation.</p>
+			<h5 style="text-decoration:underline">Actions (Requires Your Bonus Action)</h5>
+			<br/>
+			<p class="indent"><strong><em>Flame Seed.</em></strong> Ranged Weapon Attack: +4 to hit, range 30 ft., one target you can see. Hit: 1d6 + 2 fire damage.</p>
+			<p class="indent"><strong><em>Fiery Teleportation (Recharges after a Short or Long Rest).</em></strong> The spirit and each willing creature of your choice within 5 feet of it teleport up to 30 feet to unoccupied spaces you can see. Each creature within 10 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + 2 fire damage.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.
+			The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d10 fire damage.
+			In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the Dash, Disengage, Help, or Hide action.
+			The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again.</description>
+		</sheet>
+	</element>
+	<element name="Enhanced Bond" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_ENHANCED_BOND">
+		<description>
+			<p>The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled.</p>
+			<p class="indent">In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled.
+			In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</description>
+		</sheet>
+	</element>
+	<element name="Flames of Life" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_FLAMES_OF_LIFE">
+		<description>
+			<p>You gain the ability to turn death into flames of vitality. When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can use your reaction to cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage (your choice) equal to 2d10 + your Wisdom modifier. The flames vanish after a creature has touched them or after 1 minute.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{flames of life:usage}}/Long Rest">
+			<description>When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can use your reaction to cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage equal to 2d10+{{wisdom:modifier}}. The flames vanish after a creature has touched them or after 1 minute.</description>
+		</sheet>
+		<rules>
+			<stat name="flames of life:usage" value="1" bonus="base" />
+			<stat name="flames of life:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Blazing Endurance" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_BLAZING_ENDURANCE">
+		<description>
+			<p>The bond with your wildfire spirit is exceptionally strong, even fatal blows only fuel your defiance. If you drop to 0 hit points and don’t die outright, you drop to 1 hit point instead and gain temporary hit points equal to five times your druid level, and each creature of your choice within 30 feet of you that you can see takes fire damage equal to 2d10 + your druid level.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>If you drop to 0 hit points and don’t die outright, you drop to 1 hit point instead and gain {{blazing endurance:temporary hp}} temporary hit points, and each creature of your choice within 30 feet of you that you can see takes 2d10+{{level:druid}} fire damage.</description>
+		</sheet>
+		<rules>
+			<stat name="blazing endurance:temporary hp" value="level:druid" />
+			<stat name="blazing endurance:temporary hp" value="level:druid" />
+			<stat name="blazing endurance:temporary hp" value="level:druid" />
+			<stat name="blazing endurance:temporary hp" value="level:druid" />
+			<stat name="blazing endurance:temporary hp" value="level:druid" />
+		</rules>
+	</element>
+
+	<element name="Onomancy" type="Archetype" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_ONOMANCY">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Practitioners of magic well know the power of names, but wizards who follow the tradition of Onomancy use their magic to manipulate the words that encompass existence. Onomancers expand their study into language itself, searching for threads of magical significance that weave through names. Something that is named stands out in the multiverse, distinct from the tapestry of creation all around it.</p>
+			<p class="indent">That distinction creates power that onomancers seek to tap. By speaking a target’s true name, the wizard’s spells slip between the cracks of the target’s defenses, conforming to its essential nature through the power of its name. To protect themselves, wizards who follow this tradition often hide their true names, typically by adopting monikers and pseudonyms.</p>
+			<div class="sidebar">
+				<h5>True Names</h5>
+				<p>Onomancy, or naming magic, is a method of spellcasting that uses a creature’s true name to enhance a spell’s effects. A true name is the name by which a self-aware creature identifies itself. This name might be the name a person was given at birth, or one a person chose or earned later in life. Whatever a name’s origin, the simplest way for you to know your true name is to think truthfully about yourself and then think, “My name is …” Your true name is how you finish that sentence.</p>
+				<p class="indent">You can try to hide your true name by using a pseudonym, but you must be wary not to inhabit that false name too deeply. If a false name comes to be the best expression of who you are, it becomes your true name. Changing one’s true name is never a quick choice; it’s something that happens over time as a name becomes the creature’s truth.</p>
+				<p class="indent">As a quick guide, a creature has a true name if it understands at least one language or it has an alignment.</p>
+			</div>
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_EXTRACT_NAME" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_FATEFUL_NAMING" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_UTTERANCE" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_INEXORABLE_PRONOUNCEMENT" />
+			<div element="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RELENTLESS_NAMING" />
+		</description>
+		<sheet display="false">
+			<description>Practitioners of magic well know the power of names, but wizards who follow the tradition of Onomancy use their magic to manipulate the words that encompass existence.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_BONUS_PROFICIENCIES" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_EXTRACT_NAME" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_FATEFUL_NAMING" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_UTTERANCE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_INEXORABLE_PRONOUNCEMENT" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RELENTLESS_NAMING" level="14" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_BONUS_PROFICIENCIES">
+		<description>
+			<p>You learn one language of your choice and gain proficiency with calligrapher’s tools.</p>
+		</description>
+		<sheet display="false">
+			<description>You learn one language of your choice and gain proficiency with calligrapher’s tools.</description>
+		</sheet>
+		<rules>
+			<select type="Language" name="Language, Onomancy" supports="Standard||Exotic||Secret" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+		</rules>
+	</element>
+	<element name="Extract Name" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_EXTRACT_NAME">
+		<description>
+			<p>You can magically compel a creature to divulge its true name. As a bonus action, you target one creature you can see within 60 feet of you. The target must make a Wisdom saving throw against your spell save DC. On a successful save, you discern that this magic failed, and you can’t use this feature on the target again. On a failed save, the target is charmed by you until the end of your next turn, and you mentally learn the charmed target’s name or the fact that the target lacks a name.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{extract name:usage}}/Long Rest">
+			<description>You target one creature you can see within 60 feet of you. The target must make a Wisdom saving throw against your spell save DC. On a successful save, you discern that this magic failed, and you can’t use this feature on the target again. On a failed save, the target is charmed by you until the end of your next turn, and you mentally learn the charmed target’s name or the fact that the target lacks a name.</description>
+		</sheet>
+		<rules>
+			<stat name="extract name:usage" value="1" bonus="base" />
+			<stat name="extract name:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Fateful Naming" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_FATEFUL_NAMING">
+		<description>
+			<p>You can bend magic to assist or hinder creatures through the power of their true names, and even use those names as an anchor to affect others around them. The bane and bless spells are wizard spells for you, and you add them to your spellbook. You always have them prepared, yet they don’t count against the number of spells you can prepare.</p>
+			<p class="indent">You can cast either spell without expending a spell slot if you speak the true name of one target of the spell as part of casting it. You can cast the spells in this way a number of times equal to your Intelligence modifier (a minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{fateful naming:usage}}/Long Rest">
+			<description>The bane and bless spells are wizard spells for you, and you add them to your spellbook. You always have them prepared, yet they don’t count against the number of spells you can prepare.
+			You can cast either spell without expending a spell slot if you speak the true name of one target of the spell as part of casting it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BANE" spellcasting="Wizard" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Wizard" prepared="true" />
+			<stat name="fateful naming:usage" value="1" bonus="base" />
+			<stat name="fateful naming:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Resonant Utterance" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_UTTERANCE">
+		<description>
+			<p>You learn words of power called Resonants, which allow you to tailor your spells through the use of a target’s true name.</p>
+			<p class="indent"><strong><em>Resonants Known.</em></strong> When you gain this feature, you learn two Resonants of your choice, which are detailed in the “Resonant Options” section. Each time you gain a level in this class, you can replace one resonant you know with a different one.</p>
+			<p class="indent"><strong><em>Using a Resonant.</em></strong> You can use one Resonant when you cast a wizard spell with a spell slot and speak the true name of one creature targeted by the spell. Speaking the name is part of casting the spell.</p>
+			<p class="indent">You can use Resonants a number of times equal to half of your wizard level (round down), and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Resonant Options.</em></strong> Here are your options when choosing a Resonant:</p>
+			<ul class="unstyled">
+				<li><strong>Absorption.</strong> When you cast a spell that deals damage to the named target, you gain 3d6 temporary hit points. The number of temporary hit points you gain increases by 1d6 when you reach 10th level (4d6) and 14th level (5d6) in this class.</li>
+				<li><strong>Devastation.</strong> If the spell requires the named creature to make a saving throw, that creature has disadvantage on the first save it makes against the spell.</li>
+				<li><strong>Dissolution.</strong> The first time the named creature takes damage from the spell, that creature takes an extra 2d8 force damage. The extra force damage increases by 1d8 when you reach 10th level (3d8) and 14th level (4d8) in this class.</li>
+				<li><strong>Nullification.</strong> If the named target is affected by any other spells, you know what those spells are, and you can attempt to end one of your choice by succeeding on an Intelligence check with a DC equal to 10 + the level of the chosen spell.</li>
+				<li><strong>Puppetry.</strong> The first time the named creature takes damage from the spell, you can knock the creature prone or move it up to 10 feet, either directly toward you or away from you.</li>
+				<li><strong>Sympathy.</strong> If the named creature is within range of the spell, you can target the creature with the spell even if you can’t see the creature or it has total cover against the spell.</li>
+			</ul>
+		</description>
+		<sheet usage="{{resonant utterance:usage}}/Long Rest">
+			<description>You can use one Resonant when you cast a wizard spell with a spell slot and speak the true name of one creature targeted by the spell. Speaking the name is part of casting the spell.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Resonant, Onomancy" supports="UA Resonant Option" number="2" />
+			<stat name="resonant utterance:usage" value="level:wizard:half" />
+		</rules>
+	</element>
+	<element name="Inexorable Pronouncement" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_INEXORABLE_PRONOUNCEMENT">
+		<description>
+			<p>You learn two new Resonants of your choice from your Resonant Utterance feature.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Archetype Feature" name="Resonant, Inexorable Pronouncement" supports="UA Resonant Option" number="2" />			
+		</rules>
+	</element>
+	<element name="Relentless Naming" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RELENTLESS_NAMING">
+		<description>
+			<p>You have learned how to bypass a named creature’s defenses against certain types of damage. When you cast a spell that deals damage to a creature whose true name you speak as part of casting the spell, you can cause the spell to deal force or psychic damage to the creature, instead of the spell’s normal damage type.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals damage to a creature whose true name you speak as part of casting the spell, you can cause the spell to deal force or psychic damage to the creature, instead of the spell’s normal damage type.</description>
+		</sheet>
+	</element>
+
+	<element name="Absorption" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_ABSORPTION">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>When you cast a spell that deals damage to the named target, you gain 3d6 temporary hit points. The number of temporary hit points you gain increases by 1d6 when you reach 10th level (4d6) and 14th level (5d6) in this class.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals damage to the named target, you gain 3d6 temporary hit points.</description>
+			<description level="10">When you cast a spell that deals damage to the named target, you gain 4d6 temporary hit points.</description>
+			<description level="14">When you cast a spell that deals damage to the named target, you gain 5d6 temporary hit points.</description>
+		</sheet>
+	</element>
+	<element name="Devastation" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_DEVASTATION">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>If the spell requires the named creature to make a saving throw, that creature has disadvantage on the first save it makes against the spell.</p>
+		</description>
+		<sheet>
+			<description>If the spell requires the named creature to make a saving throw, that creature has disadvantage on the first save it makes against the spell.</description>
+		</sheet>
+	</element>
+	<element name="Dissolution" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_DISSOLUTION">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>The first time the named creature takes damage from the spell, that creature takes an extra 2d8 force damage. The extra force damage increases by 1d8 when you reach 10th level (3d8) and 14th level (4d8) in this class.</p>
+		</description>
+		<sheet>
+			<description>The first time the named creature takes damage from the spell, that creature takes an extra 2d8 force damage.</description>
+			<description level="10">The first time the named creature takes damage from the spell, that creature takes an extra 3d8 force damage.</description>
+			<description level="14">The first time the named creature takes damage from the spell, that creature takes an extra 4d8 force damage.</description>
+		</sheet>
+	</element>
+	<element name="Nullification" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_NULLIFICATION">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>If the named target is affected by any other spells, you know what those spells are, and you can attempt to end one of your choice by succeeding on an Intelligence check with a DC equal to 10 + the level of the chosen spell.</p>
+		</description>
+		<sheet>
+			<description>If the named target is affected by any other spells, you know what those spells are, and you can attempt to end one of your choice by succeeding on an Intelligence check with a DC equal to 10 + the level of the chosen spell.</description>
+		</sheet>
+	</element>
+	<element name="Puppetry" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_PUPPETRY">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>The first time the named creature takes damage from the spell, you can knock the creature prone or move it up to 10 feet, either directly toward you or away from you.</p>
+		</description>
+		<sheet>
+			<description>The first time the named creature takes damage from the spell, you can knock the creature prone or move it up to 10 feet, either directly toward you or away from you.</description>
+		</sheet>
+	</element>
+	<element name="Sympathy" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RESONANT_SYMPATHY">
+		<supports>UA Resonant Option</supports>
+		<description>
+			<p>If the named creature is within range of the spell, you can target the creature with the spell even if you can’t see the creature or it has total cover against the spell.</p>
+		</description>
+		<sheet>
+			<description>If the named creature is within range of the spell, you can target the creature with the spell even if you can’t see the creature or it has total cover against the spell.</description>
+		</sheet>
+	</element>
+</elements>

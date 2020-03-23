@@ -4,7 +4,7 @@
     <name>College of Whispers</name>
     <description>The College of Whispers from Xanathar’s Guide to Everything</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-    <update version="0.0.4">
+    <update version="0.0.6">
       <file name="bard-whispers.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/bard-whispers.xml" />
     </update>
   </info>
@@ -20,10 +20,10 @@
     </description>
     <sheet display="false" />
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES" level="3" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_WORDS_OF_TERROR" level="3" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS" level="6" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE" level="14" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_WORDS_OF_TERROR" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS" level="6" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE" level="14" />
     </rules>
   </element>
   <element name="Psychic Blades" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_PSYCHIC_BLADES">
@@ -33,7 +33,7 @@
       <p class="indent">The psychic damage increases when you reach certain levels in this class, increasing to 3d6 at 5th level, 5d6 at 10th level, and 8d6 at 15th level.</p>
     </description>
     <sheet>
-      <description>Expend one use of Bardic Inspiration to deal an extra %psychic-blades:dice%d6 psychic damage on a hit with a weapon attack.</description>
+      <description>Expend one use of Bardic Inspiration to deal an extra {{psychic-blades:dice}}d6 psychic damage on a hit with a weapon attack.</description>
     </sheet>
     <rules>
       <stat name="psychic-blades:dice" value="2" bonus="psychic blades" />
@@ -49,10 +49,9 @@
       <p class="indent">If the target succeeds on its saving throw, the target has no hint that you tried to frighten it.</p>
       <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>When speeking to a humanoid for 1 minute, you can try to frighten it. At the end of the minute, it makes a DC%spellcasting:dc:cha% Wisdom saving throw. On a fail, it is frightened of you, or another creaute of your choice, for 1 hour(or until it is attacked, damaged, or sees its allies being attacked or damaged.) On a succes, it has no idea you tried to frighten it.(1/rest)</description>
+    <sheet usage="1/Short Rest">
+      <description>When speeking to a humanoid for 1 minute, you can try to frighten it. At the end of the minute, it makes a DC{{spellcasting:dc:cha}} Wisdom saving throw. On a fail, it is frightened of you, or another creaute of your choice, for 1 hour(or until it is attacked, damaged, or sees its allies being attacked or damaged.) On a succes, it has no idea you tried to frighten it.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Mantle of Whispers" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_MANTLE_OF_WHISPERS">
     <description>
@@ -62,10 +61,9 @@
       <p class="indent">Another creature can see through this disguise by succeeding on a Wisdom (Insight) check contested by your Charisma (Deception) check. You gain a +5 bonus to your check.</p>
       <p class="indent">Once you capture a shadow with this feature, you can’t capture another one with it until you finish a short or long rest.</p>
     </description>
-    <sheet>
-      <description>Reaction: When a humanoid dies within 30ft of you, you can capture its shadow. You retain it until you use it, or finish a long rest. You can use this shadow as action, making you look like the dead person for 1 hour. You know all things it would freely share, in order to pass off as the person. A creature can try to look through the disguise with a Insight check vs your Deception+5. 1/rest </description>
+    <sheet action="Reaction" usage="1/Short Rest">
+      <description>When a humanoid dies within 30ft of you, you can capture its shadow. You retain it until you use it, or finish a long rest. You can use this shadow as action, making you look like the dead person for 1 hour. You know all things it would freely share, in order to pass off as the person. A creature can try to look through the disguise with a Insight check vs your Deception +5.</description>
     </sheet>
-    <rules></rules>
   </element>
   <element name="Shadow Lore" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_BARD_WHISPERS_SHADOW_LORE">
     <description>
@@ -76,8 +74,8 @@
       <p class="indent">When the effect ends, the creature has no understanding of why it held you in such fear.</p>
       <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
     </description>
-    <sheet>
-      <description>Action: Magically whisper that only 1 creature of your choice within 30ft can hear. It makes a DC%bard:spell:dc% Wisdom save(auto-succeeds if it doesn't share a language or cant hear you). On a fail, it is charmed for 8 hours(or until you or your allies attack, damage, or force it to make a saving throw). It hears the whisper as a description of its deepest secret and is convinced you know it. On a succes it hears only unintelligble mumbling.(1/long rest)</description>
+    <sheet action="Action" usage="1/Long Rest">
+      <description>Magically whisper that only 1 creature of your choice within 30ft can hear. It makes a DC{{spellcasting:dc:cha}} Wisdom save(auto-succeeds if it doesn't share a language or cant hear you). On a fail, it is charmed for 8 hours(or until you or your allies attack, damage, or force it to make a saving throw). It hears the whisper as a description of its deepest secret and is convinced you know it. On a succes it hears only unintelligble mumbling.</description>
     </sheet>
   </element>
 </elements>

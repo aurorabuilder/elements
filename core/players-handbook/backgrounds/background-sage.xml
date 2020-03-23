@@ -4,104 +4,99 @@
 		<name>Sage</name>
 		<description>Sage Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.3">
-			<file name="background-sage.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/backgrounds/background-sage.xml" />
+		<update version="0.0.5">
+			<file name="background-sage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/backgrounds/background-sage.xml" />
 		</update>
 	</info>
-
 	
-  <element name="Sage" type="Background" source="Player’s Handbook" id="ID_BACKGROUND_SAGE">
-    <supports />
-    <requirements />
-    <description>
-      <p>You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.</p>
-      <p>
-        <span class="emphasis">Skill Proficiencies:</span>Arcana, History<br/>
-        <span class="emphasis">Languages:</span>Two of your choice<br/>
-        <span class="emphasis">Equipment:</span>A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, and a belt pouch containing 10 gp<br/>
-      </p>
-      <h5>SPECIALTY</h5>
-      <p>To determine the nature of your scholarly training, roll a d8 or choose from the options in the table below.</p>
-      <table>
-        <thead>
-          <tr> <td>d8</td> <td>Specialty</td> </tr>
-        </thead>
-        <tr> <td>1</td> <td>Alchemist</td> </tr>
-        <tr> <td>2</td> <td>Astronomer</td> </tr>
-        <tr> <td>3</td> <td>Discredited Academic</td> </tr>
-        <tr> <td>4</td> <td>Librarian</td> </tr>
-        <tr> <td>5</td> <td>Professor</td> </tr>
-        <tr> <td>6</td> <td>Researcher</td> </tr>
-        <tr> <td>7</td> <td>Wizard’s Apprentice</td> </tr>
-        <tr> <td>8</td> <td>Scribe</td> </tr>
-      </table>
-      <h4>FEATURE: RESEARCHER</h4>
-      <p>When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.</p>
-      <h5>SUGGESTED CHARACTERISTICS</h5>
-      <p>Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly— sometimes in its own right, sometimes as a means toward other ideals.</p>
-    </description>
-    <rules>
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_ARCANA" />
-      <grant type="Proficiency" name="ID_PROFICIENCY_SKILL_HISTORY" />
-      <select type="Language" name="Language (Sage)" number="2" />
-      <grant type="Background Feature" name="ID_BACKGROUND_FEATURE_RESEARCHER" />
+	<element name="Sage" type="Background" source="Player’s Handbook" id="ID_BACKGROUND_SAGE">
+		<description>
+			<p>You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong>Arcana, History</li>
+				<li><strong>Languages:</strong>Two of your choice</li>
+				<li><strong>Equipment:</strong>A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<h5>SPECIALTY</h5>
+			<p>To determine the nature of your scholarly training, roll a d8 or choose from the options in the table below.</p>
+			<table>
+				<thead>
+					<tr><td class="col-20">d8</td><td>Specialty</td></tr>
+				</thead>
+				<tr><td>1</td><td>Alchemist</td></tr>
+				<tr><td>2</td><td>Astronomer</td></tr>
+				<tr><td>3</td><td>Discredited Academic</td></tr>
+				<tr><td>4</td><td>Librarian</td></tr>
+				<tr><td>5</td><td>Professor</td></tr>
+				<tr><td>6</td><td>Researcher</td></tr>
+				<tr><td>7</td><td>Wizard’s Apprentice</td></tr>
+				<tr><td>8</td><td>Scribe</td></tr>
+			</table>
+			<div element="ID_BACKGROUND_FEATURE_RESEARCHER" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly—sometimes in its own right, sometimes as a means toward other ideals.</p>
+		</description>
+		<setters>
+			<set name="short">Arcana, History, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<select type="Language" name="Language (Sage)" number="2" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_RESEARCHER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Specialty" type="List" optional="true">
+				<item id="1">Alchemist</item>
+				<item id="2">Astronomer</item>
+				<item id="3">Discredited Academic</item>
+				<item id="4">Librarian</item>
+				<item id="5">Professor</item>
+				<item id="6">Researcher</item>
+				<item id="7">Wizard’s Apprentice</item>
+				<item id="8">Scribe</item>
+			</select>
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I use polysyllabic words that convey the impression of great erudition.</item>
+				<item id="2">I’ve read every book in the world’s greatest libraries— or I like to boast that I have.</item>
+				<item id="3">I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.</item>
+				<item id="4">There’s nothing I like more than a good mystery.</item>
+				<item id="5">I’m willing to listen to every side of an argument before I make my own judgment.</item>
+				<item id="6">I ... speak ... slowly ... when talking ... to idiots, ... which ... almost ... everyone ... is .. compared ... to me.</item>
+				<item id="7">I am horribly, horribly awkward in social situations.</item>
+				<item id="8">I’m convinced that people are always trying to steal my secrets.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Knowledge. The path to power and self-improvement is through knowledge. (Neutral)</item>
+				<item id="2">Beauty. What is beautiful points us beyond itself toward what is true. (Good)</item>
+				<item id="3">Logic. Emotions must not cloud our logical thinking. (Lawful)</item>
+				<item id="4">No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)</item>
+				<item id="5">Power. Knowledge is the path to power and domination. (Evil)</item>
+				<item id="6">Self-Improvement. The goal of a life of study is the betterment of oneself. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">It is my duty to protect my students.</item>
+				<item id="2">I have an ancient text that holds terrible secrets that must not fall into the wrong hands.</item>
+				<item id="3">I work to preserve a library, university, scriptorium, or monastery.</item>
+				<item id="4">My life’s work is a series of tomes related to a specific field of lore.</item>
+				<item id="5">I've been searching my whole life for the answer to a certain question.</item>
+				<item id="6">I sold my soul for knowledge. I hope to do great deeds and win it back.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I am easily distracted by the promise of information.</item>
+				<item id="2">Most people scream and run when they see a demon. I stop and take notes on its anatomy.</item>
+				<item id="3">Unlocking an ancient mystery is worth the price of a civilization.</item>
+				<item id="4">I overlook obvious solutions in favor of complicated ones.</item>
+				<item id="5">I speak without really thinking through my words, invariably insulting others.</item>
+				<item id="6">I can’t keep a secret to save my life, or anyone else’s.</item>
+			</select>
+		</rules>
+	</element>
 
-      <!-- Equipment: A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, and a belt pouch containing 10 gp -->
-
-      <select name="Specialty" type="List" optional="true">
-        <item id="1">Alchemist</item>
-        <item id="2">Astronomer</item>
-        <item id="3">Discredited Academic</item>
-        <item id="4">Librarian</item>
-        <item id="5">Professor</item>
-        <item id="6">Researcher</item>
-        <item id="7">Wizard’s Apprentice</item>
-        <item id="8">Scribe</item>
-      </select>
-      <select name="Personality Trait" type="List" number="2">
-        <item id="1">I use polysyllabic words that convey the impression of great erudition.</item>
-        <item id="2">I’ve read every book in the world’s greatest libraries— or I like to boast that I have.</item>
-        <item id="3">I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.</item>
-        <item id="4">There’s nothing I like more than a good mystery.</item>
-        <item id="5">I’m willing to listen to every side of an argument before I make my own judgment.</item>
-        <item id="6">I ... speak ... slowly ... when talking ... to idiots, ... which ... almost ... everyone ... is .. compared ... to me.</item>
-        <item id="7">I am horribly, horribly awkward in social situations.</item>
-        <item id="8">I’m convinced that people are always trying to steal my secrets.</item>
-      </select>
-      <select name="Ideal" type="List">
-        <item id="1">Knowledge. The path to power and self-improvement is through knowledge. (Neutral)</item>
-        <item id="2">Beauty. What is beautiful points us beyond itself toward what is true. (Good)</item>
-        <item id="3">Logic. Emotions must not cloud our logical thinking. (Lawful)</item>
-        <item id="4">No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)</item>
-        <item id="5">Power. Knowledge is the path to power and domination. (Evil)</item>
-        <item id="6">Self-Improvement. The goal of a life of study is the betterment of oneself. (Any)</item>
-      </select>
-      <select name="Bond" type="List">
-        <item id="1">It is my duty to protect my students.</item>
-        <item id="2">I have an ancient text that holds terrible secrets that must not fall into the wrong hands.</item>
-        <item id="3">I work to preserve a library, university, scriptorium, or monastery.</item>
-        <item id="4">My life’s work is a series of tomes related to a specific field of lore.</item>
-        <item id="5">I've been searching my whole life for the answer to a certain question.</item>
-        <item id="6">I sold my soul for knowledge. I hope to do great deeds and win it back.</item>
-      </select>
-      <select name="Flaw" type="List">
-        <item id="1">I am easily distracted by the promise of information.</item>
-        <item id="2">Most people scream and run when they see a demon. I stop and take notes on its anatomy.</item>
-        <item id="3">Unlocking an ancient mystery is worth the price of a civilization.</item>
-        <item id="4">I overlook obvious solutions in favor of complicated ones.</item>
-        <item id="5">I speak without really thinking through my words, invariably insulting others.</item>
-        <item id="6">I can’t keep a secret to save my life, or anyone else’s.</item>
-      </select>
-    </rules>
-  </element>
-
-  <element name="Feature: Researcher" type="Background Feature" source="Player’s Handbook" id="ID_BACKGROUND_FEATURE_RESEARCHER">
-  <supports>Background Feature</supports>
-    <description>
-      <p>When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign</p>
-    </description>
-	<sheet alt="Researcher" />
-  </element>
-  
-
+	<element name="Feature: Researcher" type="Background Feature" source="Player’s Handbook" id="ID_BACKGROUND_FEATURE_RESEARCHER">
+		<supports>Background Feature</supports>
+		<description>
+			<p>When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign</p>
+		</description>
+		<sheet alt="Researcher" />
+	</element>
 </elements>

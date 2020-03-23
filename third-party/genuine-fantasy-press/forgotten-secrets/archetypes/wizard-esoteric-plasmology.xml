@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Esoteric Plasmology</name>
+		<description>Esoteric Plasmology from The Compendium of Forgotten Secrets</description>
+	    <author url="https://www.genfantasypress.com/about-the-compendium">Genuine Free Press</author>
+    	<update version="0.0.1">
+      		<file name="wizard-esoteric-plasmology.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/compendium-of-forgotten-secrets/archetypes/wizard-esoteric-plasmology.xml" />
+		</update>
+	</info>
+
+	<element name="Esoteric Plasmology" type="Archetype" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_ESOTERIC_PLASMOLOGY">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>It is common for one to ask a disciple of this tradition: “Are you a wizard that casts ooze-related spells, or an ooze that is a wizard?”</p>
+			<p class="indent">The truth is, both are correct. </p>
+			<p class="indent">Esoteric plasmology has long ties to the Gelatinous Convocation, which wanders between worlds spreading happy, cheerful slimes to all corners of the multiverse. Though direct interaction with the Convocation is uncommon for practitioners of this tradition, many are apprenticed to more powerful ooze wizards for a time as they learn to control their newfound power. While the slime core that awakens within a practitioner seems to grant a surprising amount of control over one’s form, careful study and research is required to coax the more powerful magics from this arcane phenomenon. As such, ooze wizards traditionally adventure in order to expand their knowledge of the physical world, enjoying a life of leisure and hardship alike in their quests for purpose and power.</p>
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_PRIMODIAL_FORM" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_SIMPLY_SLIPPERY" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_WEIRD_MAGIC" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_CAUSTIC_VISCOSITY" />
+			<div element="ID_GFP_COFSA_ARCHETYPE_FEATURE_CHEERFUL_RECOLLECTION" />
+		</description>
+		<sheet display="false">
+			<description></description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PRIMODIAL_FORM" level="2" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SIMPLY_SLIPPERY" level="2" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_WEIRD_MAGIC" level="6" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_CAUSTIC_VISCOSITY" level="10" />
+			<grant type="Archetype Feature" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_CHEERFUL_RECOLLECTION" level="14" />
+		</rules>
+	</element>
+	<element name="Primodial Form" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_PRIMODIAL_FORM">
+		<description>
+			<p>When you choose this tradition at 2nd level, a slime core develops within your body, allowing you to assume the primordial form of the first acolytes of the Convocation. As an action, you can enter a primordial form, filling yourself with the giddy glee of an ooze and changing your appearance to appear as a slime-like caricature of your normal form. You gain advantage on Charisma checks and gain resistance to acid damage, but you suffer disadvantage on Wisdom checks. You can exit this form as an action, though doing so requires a successful Wisdom saving throw against your spell save DC.</p>
+		</description>
+		<sheet>
+			<description>You can enter a primordial form gaining advantage on Charisma checks and gain resistance to acid damage, but you suffer disadvantage on Wisdom checks. You can exit this form as an action, though doing so requires a successful Wisdom saving throw (DC {{spellcasting:dc}})</description>
+		</sheet>
+	</element>
+	<element name="Simply Slippery" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_SIMPLY_SLIPPERY">
+		<description>
+			<p>Also at 2nd level, your newfound malleability and magical aptitude grants you several benefits. You can use an action to begin to emit bright light in a 10-foot radius, and dim light in a 20-foot radius.</p>
+			<p class="indent">Whenever you would suffer damage from falling, you can use your reaction to reduce the damage taken by four times your wizard level. </p>
+			<p class="indent">Finally, you can squeeze through spaces at least 5 inches wide, even if you would not normally fit.</p>
+		</description>
+		<sheet>
+			<description>As an actino you can emit bright light in a 10-foot radius, and dim light in a 20-foot radius. When you would take fall damage you can use your reaction to reduce it by {{slippery fall:damage}}. You can also squeeze through gaps at least 5 inches wide.</description>
+		</sheet>
+		<rules>
+			<stat name="slippery fall:damage" value="level:wizard" />
+			<stat name="slippery fall:damage" value="level:wizard" />
+			<stat name="slippery fall:damage" value="level:wizard" />
+			<stat name="slippery fall:damage" value="level:wizard" />
+		</rules>
+	</element>
+	<element name="Weird Magic" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_WEIRD_MAGIC">
+		<description>
+			<p>At 6th level, the mystical motions you perform when casting spells become fluid and warped, causing slime to drip from your fingertips with every gesture. Whenever you cast a spell, you can choose an unoccupied space within 10 feet of you. The coiling ooze from your hands assembles in this space, forming a 5-foot cube of colorful slime. This slime is immobile, provides half cover, has an AC of 6, and has hit points equal to your wizard level. The slime remains until you dismiss it (no action required) or it is destroyed.</p>
+			<p class="indent">As a bonus action, you can cause one of these slimes to extend a pseudopod to grab a creature within 5 feet of it. The target must make a Strength saving throw against your wizard spell save DC. If they fail, they are grappled by the cube. The DC to escape from the grapple is equal to your spell save DC.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell you can choose an unoccupied space within 10 ft of you to summon a slime ({{level:wizard}} HP, AC 6). As a bonus action you can command the slime to grapple a creature within 5 ft of it (DC {{spellcasting:dc}})</description>
+		</sheet>
+	</element>
+	<element name="Caustic Velocity" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_CAUSTIC_VISCOSITY">
+		<description>
+			<p>At 10th level, the magic you wield becomes further infused with ooze. Whenever you cast a spell with a duration of “Instantaneous” that affects an area, you can use a bonus action to summon a mass of slime in the area. The ground within the area becomes difficult terrain for one minute, or until another spell is cast targeting the area that inflicts fire, cold, or necrotic damage. Creatures that end their turn within the area suffer 1d6 acid damage. You ignore the effects of this slime.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell with a duration of “Instantaneous” that affects an area, you can use a bonus action to summon a mass of slime in the area. The ground within the area becomes difficult terrain for one minute, or until another spell is cast targeting the area that inflicts fire, cold, or necrotic damage. Creatures that end their turn within the area suffer 1d6 acid damage. You ignore the effects of this slime.</description>
+		</sheet>
+	</element>
+	<element name="Cheerful Recollection" type="Archetype Feature" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_ARCHETYPE_FEATURE_CHEERFUL_RECOLLECTION">
+		<description>
+			<p>At 14th level, your mastery of the arts of esoteric plasmology has granted you a connection with the Gelatinous Convocation, allowing you to tap into their understanding of the world through the creatures they have gracefully consumed. Whenever you are in your primordial form, you can add your proficiency bonus to any skill or ability check you make.</p>
+			<p class="indent">Additionally, you learn to cast speak with dead as a ritual.</p>
+		</description>
+		<sheet>
+			<description>Whenever you are in your primordial form, you can add your proficiency bonus to any skill or ability check you make. and you can ritual cast speak with dead.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+		</rules>
+	</element>
+</elements>

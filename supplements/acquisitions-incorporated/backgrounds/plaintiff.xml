@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+        <name>Plaintiff</name>
+		<update version="0.0.2">
+			<file name="plaintiff.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/acquisitions-incorporated/backgrounds/plaintiff.xml" />
+		</update>
+	</info>
+    <element name="Plaintiff" type="Background" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_PLAINTIFF">
+		<description>
+			<p>Sure, accidents happen. But they seem to happen an awful lot when Acquisitions Incorporated operatives are on the scene. Naturally, nothing ever happens when there are no witnesses left behind. But sometimes one casualty is left a little less than dead, just waiting to discover what a lucky break that accident actually was.</p>
+			<p class="indent">You were a victim of a legal incident that was ostensibly the fault of Acquisitions Incorporated. At least that’s what the local magistrate said. But before a final ruling could be handed down. Acquisitions Incorporated offered you a job! Don’t know how to swing a sword? They promised to teach you! Think you have what it takes to sling spells? They’ve got masters who’ll have you throwing fire in no time!</p>
+			<p class="indent">With the promise of untold treasures and realms of magic and mystery just a dungeon away, you left your old life behind. Now a world of adventure is yours. Just initial here and sign here and here. Absolve Acq Inc of all former claims, and acknowledge you understand past outcomes don’t guarantee future results.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Medicine, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
+				<li><strong>Languages:</strong> Any one of your choice</li>
+				<li><strong>Equipment:</strong> One set of artisan’s tools, fine clothes, 20 gp</li>
+			</ul>
+			<div element="ID_WOTC_ACQINC_BACKGROUND_FEATURE_LEGALESE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Plaintiffs come in many varieties. Some are innocent bystanders who want only fair compensation for their injuries. Others are professional courtroom operatives, going to extreme lengths to appear wronged in pursuit of a large payout.</p>
+		</description>
+		<setters>
+			<set name="short">Medicine, Persuasion, Artisan’s Tool, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Proficiency" name="Artisan’s Tool, Plaintiff" supports="Artisan tools" />
+			<select type="Language" name="Language, Plaintiff" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_LEGALESE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I can’t believe I have a chance to join Acquisitions Incorporated! The fun I’m going to have!</item>
+				<item id="2">I’ve been wronged my entire life, and the world owes me.</item>
+				<item id="3">I have always tried to make the best of a bad situation.</item>
+				<item id="4">The law doesn’t protect the honest and the hard working. I’m going to do whatever needs to be done to make things right.</item>
+				<item id="5">I’m always in the wrong place at the wrong time.</item>
+				<item id="6">My superiors are smarter and wiser than I am. I do what I’m told.</item>
+				<item id="7">Never pass up the opportunity to make an easy bit of coin. That’s my motto.</item>
+				<item id="8">I’m beginning to feel like the gods are not on my side.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Justice. Those who break the law need to answer for their crimes. (Lawful)</item>
+				<item id="2">Freedom. People must have the freedom to do what they want and pursue their dreams. (Chaotic)</item>
+				<item id="3">Greed. Everyone I see is getting theirs, so I’m surely going to get mine. (Evil)</item>
+				<item id="4">Chaos. You’re out of order! And you’re out of order! This whole realm is out of order! (Chaotic)</item>
+				<item id="5">Humility. I’m just a small part of a larger whole. So is everyone else. (Neutral)</item>
+				<item id="6">Responsibility. We all have our roles to play. I’ll hold up my end of the bargain. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">Others hurt in the same accident that hurt me are my new family. I’ll make sure they’re taken care of.</item>
+				<item id="2">The rulers of this place were kind to me, and they have my lifelong devotion.</item>
+				<item id="3">My parents worry about me, but I’ll make them proud.</item>
+				<item id="4">The only bond that matters is the one holding my money pouch to my belt.</item>
+				<item id="5">The other new hires at Acquisitions Incorporated are my allies. We have each other’s backs.</item>
+				<item id="6">My legal counsel is my best friend. I owe all my forthcoming opportunities to their hard work.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">The person who gains the most reward for the least effort wins.</item>
+				<item id="2">Three magic beans for just one cow? What a deal!</item>
+				<item id="3">I have only one vice, but it controls my life.</item>
+				<item id="4">Sleep is for the weak. We need to keep training more if we’re going to be ready for the challenges ahead.</item>
+				<item id="5">Until my songs are sung in every tavern in this realm, I won’t be satisfied.</item>
+				<item id="6">If people find me unpleasant, that’s their problem.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Legalese" type="Background Feature" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_LEGALESE">
+		<description>
+			<p>Your experience with your local legal system has given you a firm knowledge of the ins and outs of that system. Even when the law is not on your side, you can use complex terms like <em>ex injuria jus non oritur</em> and <em>cogitationis poenam nemo patitur</em> to frighten people into thinking you know what you’re talking about. With common folks who don’t know any better, you might be able to intimidate or deceive to get favors or special treatment.</p>
+		</description>
+		<sheet alt="Legalese" />
+	</element>
+</elements>

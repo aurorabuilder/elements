@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mark of Finding</name>
+		<description>Mark of Finding from Wayfinder’s Guide to Eberron</description>
+		<author url="https://www.dmsguild.com/product/247882/Wayfinders-Guide-to-Eberron-5e">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="mark-finding.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/wayfinders-guide-to-eberron/dragonmarks/mark-finding.xml" />
+		</update>
+	</info>
+	<element name="The Mark of Finding" type="Race Variant" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING">
+		<supports>Half-Orc Variant</supports>
+		<description>
+			<p>The Mark of Finding sharpens the senses, guiding the hunter to prey. Alone among the dragonmarks, the Mark of Finding is carried by two races: humans and half-orcs. It first appeared in the Shadow Marches, where clan hunters used it to find their prey. The mark helped unite humans and orcs in the Marches and brought House Tharashk to the Five Nations.</p>
+			<h4>HOUSE THARASHK</h4>
+			<p>House Tharashk traditionally licenses inquisitives and bounty hunters. Recently the Finder’s Guild has expanded into dragonshard prospecting. Dragonshards are the lifesblood of the magical economy. A talent for finding this resource has given the house new wealth and influence. </p>
+			<p class="indent">Tharashk is the youngest of the dragonmarked houses and hasn’t embraced all of the customs of the Twelve. Heirs often use family names instead of the house surname and many hold on to beliefs and traditions carried from the Shadow Marches—like the druidic faith of the Gatekeepers or secretive cults of the Dragon Below.</p>
+			<h4>MARK OF FINDING TRAITS</h4>
+			<p>The Mark of Finding only manifests on halforcs. If your character has the Mark of Finding, these traits replace the Ability Score Increase, Menacing, Relentless Endurance, and Savage Attacks given in the Player’s Handbook. Despite their orcish blood, heirs of the Mark of Finding often resemble their human parents in appearance and temperament. When you create your character, decide if the signs of your orcish ancestry are obvious or subtle.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength and Wisdom scores both increase by 1. In addition, one ability score of your choice increases by 1.</p>
+			<p class="indent"><strong><em>Hunter's Intuition.</em></strong> Your mark sharpens your senses and helps you find your prey. When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+			<p class="indent"><strong><em>Imprint Prey.</em></strong> As a bonus action, choose one creature you can see within 30 feet of you. The target is imprinted in your mind until it dies or you use this trait again. Alternatively, you can imprint a creature as your quarry whenever you succeed on a Wisdom (Survival) check to track it. When you are tracking your quarry, double the result of your Intuition die. When your quarry is within 60 feet of you, you have a general sense of its location. Your attacks against it ignore half cover. If you can’t see the target when you attack it, your inability to see it doesn’t impose disadvantage on the attack roll. Likewise, your quarry doesn’t doesn’t gain advantage on attack rolls against you due to being hidden or invisible. Once you use this trait, you cannot use it again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Nature's Voice.</em></strong> When you reach 3rd level you gain the ability to cast locate animals or plants, but only as a ritual.</p>
+			<div element="ID_WOTC_WGTE_GRANTS_DRAGONMARKED_INTUITION_DICE" />
+		</description>
+		<sheet alt="Half-Orc (Mark of Finding)" display="false">
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_WGTE_GRANTS_DARKMARKED" />
+			<stat name="strength" value="1" />
+			<stat name="wisdom" value="1" />
+			<select type="Racial Trait" name="Ability Score Increase (Mark of Finding)" supports="Ability Score Increase,Mark of Finding" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_HUNTERS_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_IMPRINT_PREY" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_NATURES_VOICE" level="3"/>
+		</rules>
+	</element>
+	<element name="Hunter's Intuition" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_HUNTERS_INTUITION">
+		<description>
+			<p>Your mark sharpens your senses and helps you find your prey. When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll one Intuition die, a d4, and add the number rolled to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Perception or Survival check, you can roll one Intuition die, a d{{dragonmarked-intuition-dice:size}}, and add the number rolled to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Imprint Prey" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_IMPRINT_PREY">
+		<description>
+			<p>As a bonus action, choose one creature you can see within 30 feet of you. The target is imprinted in your mind until it dies or you use this trait again. Alternatively, you can imprint a creature as your quarry whenever you succeed on a Wisdom (Survival) check to track it. When you are tracking your quarry, double the result of your Intuition die. When your quarry is within 60 feet of you, you have a general sense of its location. Your attacks against it ignore half cover. If you can’t see the target when you attack it, your inability to see it doesn’t impose disadvantage on the attack roll. Likewise, your quarry doesn’t doesn’t gain advantage on attack rolls against you due to being hidden or invisible. Once you use this trait, you cannot use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="Bonus Action">
+			<description>Choose one creature you can see within 30 feet of you. The target is imprinted in your mind until it dies or you use this trait again. Alternatively, you can imprint a creature as your quarry whenever you succeed on a Survival check to track it. When you are tracking your quarry, double the result of your Intuition die. When your quarry is within 60 feet of you, you have a general sense of its location. Your attacks against it ignore half cover. If you can’t see the target when you attack it, your inability to see it doesn’t impose disadvantage on the attack roll. Likewise, your quarry doesn’t doesn’t gain advantage on attack rolls against you due to being hidden or invisible.</description>
+		</sheet>
+	</element>
+	<element name="Nature's Voice" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_NATURES_VOICE">
+		<description>
+			<p>When you reach 3rd level you gain the ability to cast locate animals or plants, but only as a ritual.</p>
+		</description>
+		<sheet>
+			<description>You can cast locate animals or plants, but only as a ritual.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS" />
+		</rules>
+	</element>
+
+
+	<element name="Ability Score Increase (Strength)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_STRENGTH">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Strength score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="strength" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_DEXTERITY">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Dexterity score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="dexterity" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Constitution score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="constitution" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Intelligence score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="intelligence" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_WISDOM">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Wisdom score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="wisdom" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+	<element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Wayfinder’s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_FINDING_CHARISMA">
+		<compendium display="false" />
+		<supports>Ability Score Increase, Mark of Finding</supports>
+		<requirements>ID_WOTC_WGTE_RACE_VARIANT_HALF_ORC_FINDING</requirements>
+		<description>
+			<p>Your Charisma score increases by 1.</p>
+		</description>
+		<rules>
+			<stat name="charisma" value="1" alt="The Mark of Finding" />
+		</rules>
+	</element>
+</elements>

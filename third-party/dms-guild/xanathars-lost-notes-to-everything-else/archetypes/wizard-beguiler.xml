@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Beguiler</name>
+		<update version="0.0.2">
+			<file name="wizard-beguiler.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/xanathars-lost-notes-to-everything-else/archetypes/wizard-beguiler.xml" />
+		</update>
+	</info>
+	
+	<element name="Beguiler" type="Archetype" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_Beguiler">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Those who think charm and misdirection are the trades of the bard and warlock never heard of the arcane colleges specializing in Beguiling magic. The tradition blends enchantment and illusion magic, rather than specializing in either of those schools.</p>
+			<p class="indent">Followers of this tradition are known as beguilers and believe a brilliant mind beats a charming personality. They see magic as a way to persuade, deceive, entertain, and hide and believe fooling the mind is magic’s most potent use. Beguilers are suave and adept spies, equipped to infiltrate any organization or compound without detection or with minimal casualties.</p>
+			<div element="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_BONUS_PROFICIENCIES" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_ERUDITE_ELUCIDATION" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_SNEAK_SPELL" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MIND_AMBUSH" />
+			<div element="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MASTER_DECEIVER" />
+		</description>
+		<sheet display="false">
+			<description>The tradition blends enchantment and illusion magic, rather than specializing in either of those schools.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_BONUS_PROFICIENCIES" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_ERUDITE_ELUCIDATION" level="2" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_SNEAK_SPELL" level="6" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MIND_AMBUSH" level="10" />
+			<grant type="Archetype Feature" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MASTER_DECEIVER" level="14" />
+		</rules>
+	</element>
+
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_BONUS_PROFICIENCIES">
+		<description>
+			<p>Beginning when you select this school at 2nd level, you gain proficiency with light armor and your choice of the Deception, Persuasion, or Stealth skills. You also learn one language of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with light armor and your choice of the Deception, Persuasion, or Stealth skills. You also learn one language of your choice</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<select type="Proficiency" name="Skill Proficiency, Beguiler" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_STEALTH" />
+			<select type="Language" name="Language, Beguiler" supports="Standard||Exotic" />
+		</rules>
+	</element>
+	<element name="Erudite Elucidation" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_ERUDITE_ELUCIDATION">
+		<description>
+			<p>Beginning when you select this school at 2nd level, influencing and resisting others is just like solving any other puzzle to you. When you make a Charisma check or saving throw, you can add your Intelligence modifier to the result.</p>
+		</description>
+		<sheet>
+			<description>When you make a Charisma check or saving throw, you can add your Intelligence modifier ({{intelligence:modifier}}) to the result.</description>
+		</sheet>
+	</element>
+	<element name="Sneak Spell" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_SNEAK_SPELL">
+		<description>
+			<p>Starting at 6th level, you know how to strike subtly with a spell and exploit a foe’s distraction. Once per turn, you can deal extra damage equal to your Intelligence modifier (minimum of 1) to one creature you hit with a spell attack from a wizard cantrip if you have advantage on the attack roll.</p>
+			<p class="indent">You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll or your target has made a saving throw against one of your enchantment or illusion spells since the beginning of your last turn.</p>
+			<p class="indent">The amount of the extra damage increases when you reach certain levels in this class: to double your Intelligence modifier at 11th level, and triple your Intelligence modifier at 17th level.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, you can deal {{sneak spell:damage}} extra damage to one creature you hit with a spell attack from a wizard cantrip if you have advantage on the attack roll.
+			You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll or your target has made a saving throw against one of your enchantment or illusion spells since the beginning of your last turn.</description>
+		</sheet>
+		<rules>
+			<stat name="sneak spell:inteliigence" value="inteliigence:modifier" />
+			<stat name="sneak spell:inteliigence" value="inteliigence:modifier" level="11" />
+			<stat name="sneak spell:inteliigence" value="inteliigence:modifier" level="17" />
+
+			<stat name="sneak spell:damage" value="1" bonus="minimum" />
+			<stat name="sneak spell:damage" value="sneak spell:inteliigence" bonus="minimum" />
+		</rules>
+	</element>
+	<element name="Mind Ambush" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MIND_AMBUSH">
+		<description>
+			<p>Starting at 10th level, if you are hidden from a creature when you cast an enchantment or illusion spell that affects it, the creature has disadvantage on any saving throw it makes against the spell for its duration.</p>
+		</description>
+		<sheet>
+			<description>If you are hidden from a creature when you cast an enchantment or illusion spell that affects it, the creature has disadvantage on any saving throw it makes against the spell for its duration.</description>
+		</sheet>
+	</element>
+	<element name="Master Deceiver" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_XLN_ARCHETYPE_FEATURE_BEGUILER_MASTER_DECEIVER">
+		<description>
+			<p>Beginning at 14th level, you are immune to the charmed condition.</p>
+			<p class="indent">In addition, when you are concentrating on an enchantment or illusion spell that affects one creature and that creature dies or falls unconscious, you can use your reaction to target a new creature with the spell for the remainder of its duration, until you lose concentration, or become incapacitated by any means. If the spell requires the target to make saving throw, the new target attempts the saving throw before the spell’s conditions take effect.</p>
+		</description>
+		<sheet>
+			<description>You are immune to the charmed condition.
+			In addition, when you are concentrating on an enchantment or illusion spell that affects one creature and that creature dies or falls unconscious, you can use your reaction to target a new creature with the spell for the remainder of its duration, until you lose concentration, or become incapacitated by any means. If the spell requires the target to make saving throw, the new target attempts the saving throw before the spell’s conditions take effect.</description>
+		</sheet>
+	</element>	
+</elements>

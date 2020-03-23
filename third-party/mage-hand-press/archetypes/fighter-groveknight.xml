@@ -4,7 +4,7 @@
         <name>Grove Knight</name>
         <description>The Grove Knight archetype.</description>
         <author url="http://mfov.magehandpress.com/2018/03/grove-knight.html">Mage Hand Press</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="fighter-groveknight.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/mage-hand-press/archetypes/fighter-groveknight.xml" />
         </update>
     </info>
@@ -27,12 +27,12 @@
             <description>The grove knight is interested in protecting the woods at all costs.</description>
         </sheet>
         <rules>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_SPELLCASTING" level="3"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURES_FORCE" level="3"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_WILD_SLASH" level="7"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE" level="10"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK" level="15"/>
-            <grant type="Archetype Feature" name="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH" level="18"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_SPELLCASTING" level="3"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURES_FORCE" level="3"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_WILD_SLASH" level="7"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE" level="10"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK" level="15"/>
+            <grant type="Archetype Feature" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH" level="18"/>
             
             <!-- counts as 1/3 for multiclassing like the eldritch knight -->
             <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
@@ -58,7 +58,7 @@
         </spellcasting>
         <rules>
             <!-- prepare -->
-            <stat name="grove knight:spellcasting:prepare" value="Wisdom Modifier" />
+            <stat name="grove knight:spellcasting:prepare" value="wisdom:modifier" />
             <stat name="grove knight:spellcasting:prepare" value="level:fighter:half" />
 
             <!-- slots -->
@@ -97,18 +97,17 @@
         <sheet>
             <description>When you use your action to take the Attack action or to cast a cantrip, you can make an additional unarmed strike at a creature within reach as a bonus action. This unarmed strike deals 1d6 bludgeoning, piercing, or slashing damage (your choice) and is treated as magical for the purposes of overcoming resistance and immunity to non-magical attacks and damage.</description>
         </sheet>
-        <rules />
     </element>
     <element name="Natural Resilience" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURAL_RESILIENCE">
         <description>
             <p>Starting at 10th level, you can use a bonus action on your turn to regain a number of hit points equal to 5 + your Wisdom modifier. You cannot use this ability if you have more than half your maximum hit points remaining, or if you are unconscious.</p>
         </description>
         <sheet>
-            <description>You can use a bonus action on your turn to regain $(grove knight:natural resilience) hit points. You cannot use this ability if you have more than half your maximum hit points remaining, or if you are unconscious.</description>
+            <description>You can use a bonus action on your turn to regain {{grove knight:natural resilience}} hit points. You cannot use this ability if you have more than half your maximum hit points remaining, or if you are unconscious.</description>
         </sheet>
         <rules>
             <stat name="grove knight:natural resilience" value="5" />
-            <stat name="grove knight:natural resilience" value="Wisdom Modifier" />
+            <stat name="grove knight:natural resilience" value="wisdom:modifier" />
         </rules>
     </element>
     <element name="Nature Walk" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_NATURE_WALK">
@@ -116,11 +115,11 @@
             <p>Starting at 15th level, you gain a climb speed and a swim speed equal to your movement speed. Additionally, you can breathe underwater, and your movement is unaffected by difficult terrain.</p>
         </description>
         <sheet>
-            <description>You gain a climb speed and a swim speed equal to your movement speed ($(Speed)). Additionally, you can breathe underwater, and your movement is unaffected by difficult terrain.</description>
+            <description>You gain a climb speed and a swim speed equal to your movement speed ({{speed}}). Additionally, you can breathe underwater, and your movement is unaffected by difficult terrain.</description>
         </sheet>
         <rules>
-            <stat name="speed:climb" value="Speed" bonus="base" />
-            <stat name="speed:swim" value="Speed" bonus="base" />
+            <stat name="speed:climb" value="speed" bonus="base" />
+            <stat name="speed:swim" value="speed" bonus="base" />
         </rules>
     </element>
     <element name="Frenzy Slash" type="Archetype Feature" source="Mage Hand Press" id="ID_MHP_ARCHETYPE_FEATURE_GROVE_KNIGHT_FRENZY_SLASH">
@@ -130,7 +129,6 @@
         <sheet>
             <description>When you use your Wild Slash ability, you can make two unarmed strikes instead of one.</description>
         </sheet>
-        <rules />
     </element>
 
 </elements>

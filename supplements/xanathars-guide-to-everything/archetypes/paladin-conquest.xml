@@ -4,7 +4,7 @@
     <name>Oath of Conquest</name>
     <description>The Oath of Conquest from Xanathar’s Guide to Everything</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-    <update version="0.0.1">
+    <update version="0.0.4">
       <file name="paladin-conquest.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/paladin-conquest.xml" />
     </update>
   </info>
@@ -26,14 +26,14 @@
       <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_INVINCIBLE_CONQUEROR" />
     </description>
     <sheet>
-      <description>The Oath of Conquest sets a paladin on a difficult path, one that requires a holy warrior to use violence only as a last resort.</description>
+      <description>The Oath of Conquest calls to paladins who seek glory in battle and the subjugation of their enemies.</description>
     </sheet>
     <rules>
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_OATH_SPELLS" level="1" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY" level="3" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_AURA_OF_CONQUEST" level="7" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_SCORNFUL_REBUKE" level="15" />
-      <grant type="Archetype Feature" name="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_INVINCIBLE_CONQUEROR" level="20" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_OATH_SPELLS" level="1" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY" level="3" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_AURA_OF_CONQUEST" level="7" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_SCORNFUL_REBUKE" level="15" />
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_INVINCIBLE_CONQUEROR" level="20" />
     </rules>
   </element>
   <element name="Oath Spells" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_OATH_SPELLS">
@@ -73,10 +73,27 @@
       <p class="indent"><b><i>Conquering Presence. </i></b>You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes frightened of you for 1 minute. The frightened creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
       <p class="indent"><b><i>Guided Strike. </i></b>You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
     </description>
-    <sheet>
-      <description>Conquering Presence and Guided Strike</description>
+    <sheet display="false" />
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY_CONQUERING_PRESENCE" />
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY_GUIDED_STRIKE" />
+	</rules>
+  </element>
+  <element name="Channel Divinity: Conquering Presence" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY_CONQUERING_PRESENCE">
+    <description>
+      <p>You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes frightened of you for 1 minute. The frightened creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+    </description>
+    <sheet alt="Conquering Presence" action="Action" usage="Channel Divinity">
+      <description>You force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes frightened of you for 1 minute. The frightened creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success.</description>
     </sheet>
-    <rules />
+  </element>
+  <element name="Channel Divinity: Guided Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_CHANNEL_DIVINITY_GUIDED_STRIKE">
+    <description>
+      <p>You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
+    </description>
+    <sheet alt="Guided Strike" usage="Channel Divinity">
+      <description>When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll.</description>
+    </sheet>
   </element>
   <element name="Aura of Conquest" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_AURA_OF_CONQUEST">
     <description>
@@ -85,7 +102,7 @@
       <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
     </description>
     <sheet>
-      <description>When a creature within %aura of conquest:aura% feet is frightened of you, its speed is reduced to 0 while inside the aura, and takes $(aura of conquest:damage) psychic damage if it start its turn there.</description>
+      <description>When a creature within {{aura of conquest:aura}} feet is frightened of you, its speed is reduced to 0 while inside the aura, and takes {{aura of conquest:damage}} psychic damage if it start its turn there.</description>
     </sheet>
     <rules>
       <stat name="aura of conquest:aura" value="10" bonus="aura of the guardian" />
@@ -99,10 +116,10 @@
       <p class="indent"></p>
     </description>
     <sheet>
-      <description>Whenever a creature hits you with an attack, you deal $(scornful rebuke:damage) psychic damage if you’re not incapacitated.</description>
+      <description>Whenever a creature hits you with an attack, you deal {{scornful rebuke:damage}} psychic damage if you’re not incapacitated.</description>
     </sheet>
     <rules>
-      <stat name="scornful rebuke:damage" value="Charisma Modifier" />
+      <stat name="scornful rebuke:damage" value="charisma:modifier" />
     </rules>
   </element>
   <element name="Invincible Conqueror" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_CONQUEST_INVINCIBLE_CONQUEROR">
@@ -118,6 +135,5 @@
     <sheet>
       <description>You have resistance to all damage dealt by other creatures. You can make an additional attack when you take the attack action. Your melee weapon attacks score a critical hit on a 19 or a 20.</description>
     </sheet>
-    <rules />
   </element>
 </elements>

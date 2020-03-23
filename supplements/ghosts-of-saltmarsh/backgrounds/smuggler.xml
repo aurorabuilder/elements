@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Smuggler Background</name>
+		<update version="0.0.2">
+			<file name="smuggler.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/ghosts-of-saltmarsh/backgrounds/smuggler.xml" />
+		</update>
+	</info>
+	
+	<element name="Smuggler" type="Background" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_SMUGGLER">
+		<description>
+			<p>On a rickety barge, you carried a hundred longswords in fish barrels right past the dock master’s oblivious lackeys. You have paddled a riverboat filled with stolen elven wine under the gaze of the moon and sold it for twice its value in the morning. In your more charitable times, you have transported innocents out of war zones of helped guide herd animals to safety on the banks of a burning river.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Deception</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (water)</li>
+				<li><strong>Equipment:</strong> A fancy leather vest of a pair of leather boots, a set of common clothes, and a leather pouch with 15 gp</li>
+			</ul>
+			<div element="ID_WOTC_GOS_BACKGROUND_FEATURE_DOWN_LOW" />
+			<h5>CLAIM TO FAME</h5>
+			<p>Every smuggler has that one tale that sets them apart from common criminals. By wits, sailing skill, or a silver tongue, you lived to tell the story—and you tell it to others. You can roll on the following table to determine your claim or choose one that best fits your character.</p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Accomplishment</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Spirit of the Whale.</strong> You smuggled stolen dwarven spirits in the body of a dead whale being pulled behind a fishing boat. When you delivered the goods the corpse suddenly exploded, sending whale meat and whiskey bottles for half a mile.</td></tr>
+				<tr><td>2</td><td><strong>Cart and Sword.</strong> You drove a cart filled with stolen art through the middle of a battlefield while singing sea shanties to confuse the combatants.</td></tr>
+				<tr><td>3</td><td><strong>The Recruit.</strong> You enlisted in another nation’s navy for the purpose of smuggling stolen jewels to a distant port. You attained a minor rank before disappearing from the navy and making your way here.</td></tr>
+				<tr><td>4</td><td><strong>River of Shadows.</strong> Your riverboat accidentally slipped though the veil into the Shadowfell for several hours. While you were there, you sold some stolen dragonborn artifacts before returning to this plane and paddling home.</td></tr>
+				<tr><td>5</td><td><strong>Gold-hearted.</strong> You agreed to transport a family escaping a war. The baby began to cry at a checkpoint and you have the guards all your gold to let you pass. The family never found out about this gesture.</td></tr>
+				<tr><td>6</td><td><strong>Playing Both Sides.</strong> You once smuggled crates of crossbow bolts and bundles of arrows, each destined for an opposing side in a regional war, at the same time. The buyers arrived within moments of each other but did not discover your trickery.</td></tr>
+			</table>
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>In general, smugglers value survival and then profit, above other things. One could be a part of a larger organization, or might run a small smuggling vessel of their own. Smugglers live the lies they have told, and they have a natural ability to recall all the falsehoods and half-truths they have ever spouted.</p>
+		</description>
+		<setters>
+			<set name="short">Athletics, Deception, Vehicles (Water)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+			<grant type="Background Feature" id="ID_WOTC_GOS_BACKGROUND_FEATURE_DOWN_LOW" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I love being on the water but hate fishing.</item>
+				<item id="2">I think of everything in terms of monetary value.</item>
+				<item id="3">I never stop smiling.</item>
+				<item id="4">Nothing rattles me; I have a lie for every occasion.</item>
+				<item id="5">I love gold but won’t cheat a friend.</item>
+				<item id="6">I enjoy doing things others believe to be impossible.</item>
+				<item id="7">I become wistful when I see the sun rise over the ocean.</item>
+				<item id="8">I am no common criminal; I am a mastermind.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1"><strong>Wealth.</strong> Heaps of coins in a secure vault is all I dream of. (Any)</item>
+				<item id="2"><strong>Smuggler’s Code.</strong> I uphold the unwritten rules of the smugglers, who do no cheat one another or directly harm innocents. (Lawful)</item>
+				<item id="3"><strong>All for a Coin.</strong> I’ll do nearly anything if it means I turn a profit. (Lawful)</item>
+				<item id="4"><strong>Peace of Prosperity.</strong> I smuggle only to achieve a greater goal that benefits my community. (Good)</item>
+				<item id="5"><strong>People.</strong> For all my many lies, I place a high value on friendship. (Any)</item>
+				<item id="6"><strong>Daring.</strong> I am most happy when risking everything. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My vessel was stolen from me, and I burn with the desire to recover it.</item>
+				<item id="2">I intend to become the leader of the network of smugglers that i belong to.</item>
+				<item id="3">I owe a debt that cannot be repaid in gold.</item>
+				<item id="4">After one last job, I will retire from the business.</item>
+				<item id="5">I was tricked by a fellow smuggler who stole something precious from me. I will find that thief.</item>
+				<item id="6">I give most of my profits to a charitable cause, and I don’t like to brag about it.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">Lying is reflexive, and I sometimes engage in it without realizing.</item>
+				<item id="2">I tend to assess my relationships in terms of profit and loss.</item>
+				<item id="3">I believe everyone has a price and am cynical toward those who present themselves as virtuous.</item>
+				<item id="4">I struggle to trust the words of others.</item>
+				<item id="5">Few people know the real me.</item>
+				<item id="6">Though I act charming, I feel nothing for others and don’t know what friendship is.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Down Low" type="Background Feature" source="Ghosts of Saltmarsh" id="ID_WOTC_GOS_BACKGROUND_FEATURE_DOWN_LOW">
+		<description>
+			<p>You are acquainted with a network of smugglers who are willing to help you out of tight situations. While in a particular town, city, or other similarly sized community (DM’s discretion) you and your companions can stay for free in safe houses. Safe houses provide a poor lifestyle. While staying at a safe house, you can choose to keep your presence (and that of your companions) a secret.</p>
+		</description>
+		<sheet alt="Down Low" />
+	</element>
+</elements>

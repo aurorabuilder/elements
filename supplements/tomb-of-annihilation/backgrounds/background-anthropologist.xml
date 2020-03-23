@@ -4,7 +4,7 @@
 		<name>Anthropologist</name>
 		<description>Anthropologist Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tomb-annihilation">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.5">
 			<file name="background-anthropologist.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/tomb-of-annihilation/backgrounds/background-anthropologist.xml" />
 		</update>
 	</info>
@@ -12,11 +12,11 @@
 	<element name="Anthropologist" type="Background" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST">
 		<description>
 			<p>You have always been fascinated by other cultures, from the most ancient and primeval lost lands to the most modern civilizations. By studying other cultures' customs, philosophies, laws, rituals, religious beliefs, languages, and art, you have learned how tribes, empires, and all forms of society in between craft their own destinies and doom. This knowledge came to you not only through books and scrolls, but also through firsthand observation- by visiting far-flung settlements and exploring local histories and customs.</p>
-			<p>
-				<span class="emphasis">Skill Proficiencies:</span>Insight, Religion<br/>
-				<span class="emphasis">Languages:</span>Two of your choice<br/>
-				<span class="emphasis">Equipment:</span>A leather-bound diary, a bottle of ink, an ink pen, a set of traveler's clothes, one trinket of special significance, and a pouch containing 10 gp
-			</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Insight, Religion</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A leather-bound diary, a bottle of ink, an ink pen, a set of traveler's clothes, one trinket of special significance, and a pouch containing 10 gp</li>
+			</ul>
 			<h5>CULTURAL CHAMELEON</h5>
 			<p>Before becoming an adventurer, you spent much of your adult life away from your homeland, living among people different from your kin. You came to understand these foreign cultures and the ways of their people, who eventually treated you as one of their own. One culture had more of an influence on you than any other, shaping your beliefs and customs. Choose a race whose culture you've adopted, or roll on the Adopted Culture table.</p>
 			<table>
@@ -36,11 +36,15 @@
 			<h5>SUGGESTED CHARACTERISTICS</h5>
 			<p>Anthropologists leave behind the societies into which they were born to discover what life ls like in other parts of the world. They seek to see how other races and civilizations survive-or why they did not. Some anthropologists are driven by intellectual curiosity, while others want the fame and recognition that comes with being the first to discover a new people, a lost tribe, or the truth about an ancient empire's downfall.</p>
 		</description>
+		<setters>
+			<set name="short">Insight, Religion, 2 Languages</set>
+		</setters>
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
-			<select type="Language" name="Language (Anthropologist)" number="2" />
-			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST" />
+			<select type="Language" name="Language (Anthropologist)" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select name="Adopted Culture" type="List" optional="true">
 				<item id="1">Aarakocra</item>
 				<item id="2">Dwarf</item>
@@ -70,7 +74,7 @@
 			<select name="Bond" type="List">
 				<item id="1">My mentor gave me a journal filled with lore and wisdom. Losing it would devastate me.</item>
 				<item id="2">Having lived among the people of a primeval tribe or clan, I long to return and see how they are faring.</item>
-				<item id="3">Years ago, tragedy struck the members of an isolated society I befriended, and l will honor them.</item>
+				<item id="3">Years ago, tragedy struck the members of an isolated society I befriended, and I will honor them.</item>
 				<item id="4">I want to learn more about a particular humanoid culture that fascinates me.</item>
 				<item id="5">I seek to avenge a clan, tribe, kingdom, or empire that was wiped out.</item>
 				<item id="6">I have a trinket that I believe is the key to finding a long-lost society.</item>
@@ -86,11 +90,10 @@
 		</rules>
 	</element>
 	<element name="Feature: Adept Linguist" type="Background Feature" source="Tomb of Annihilation" id="ID_WOTC_TOA_BACKGROUND_ANTHROPOLOGIST_FEATURE_ADEPT_LINGUIST">
+		<supports>Background Feature</supports>
 		<description>
 			<p>You can communicate with humanoids who don't speak any language you know. You must observe the humanoids interacting with one another for at least 1 day, after which you learn a handful of important words, expressions, and gestures-enough to communicate on a rudimentary level.</p>
 		</description>
-		<sheet>
-			<description>You can communicate with humanoids who don't speak any language you know. You must observe the humanoids interacting with one another for at least 1 day, after which you learn a handful of important words, expressions, and gestures-enough to communicate on a rudimentary level.</description>
-		</sheet>
+		<sheet alt="Adept Linguist" />
 	</element>
 </elements>

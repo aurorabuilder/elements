@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Naga</name>
+		<description>Naga Race from Plane Shift: Amonkhet</description>
+		<author url="https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf">Wizard of the Coast</author>
+		<update version="0.0.2">
+			<file name="race-naga.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/planeshift/amonkhet/race-naga.xml" />
+		</update>
+	</info>
+
+	<element name="Naga" type="Race" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACE_NAGA">
+		<description>
+			<p>Naga resemble enormous snakes with shoulders, arms, and a torso that resembles a humanoid form. They typically hold their heads and torsos off the ground while moving, but they can increase their speed by lowering their bodies and using their hands for extra propulsion. They adorn their torsos with armor, jewelry, and a vague nod toward the clothing worn by other races. Male naga have broad hoods, wider than their shoulders, while females have narrower hoods and longer faces.</p>
+			<p class="indent">Naga believe in a principle called the Sweetest Harmony, which describes a perfect balance between the body and the mind. Finding that balance, as they understand it, is a sure path to glory in the trials, since a combination of physical and mental preparation will ensure success in every trial. For an example of this Sweetest Harmony, they point to the Luxa river and the land it nourishes, which exist in a delicate and life-giving balance. Either one without the other would be diminished and useless. Just so, mental strength supports physical capabilities, and physical fortitude feeds mental tenacity, so neither mind nor body can exist in isolation.</p>
+			<p class="indent">In the same way, the naga believe that Kefnet and Rhonas exist in interdependence, and that their trials are best conceived as two halves of a whole. But in practice, as much as they strive for balance and harmony, most naga identify more strongly with one god than the other. </p>
+			<h4>NAGA TRAITS</h4>
+			<p>All nagas share the following traits.</p>
+			<p class="indent"><b><i>Ability Score Increase. </i></b>Your Constitution score increases by 2, and your Intelligence score increases by 1.</p>
+			<p class="indent"><b><i>Age. </i></b> Like humans, naga reach adulthood in their late teens. They show no signs of aging beyond that point except for growing larger, so in theory, a naga could live well over a century. </p>
+			<p class="indent"><b><i>Alignment. </i></b>Most naga are either neutral or neutral evil in alignment.</p>
+			<p class="indent"><b><i>Size. </i></b>Naga stand about 5 feet tall when upright, but the total length of their bodies, head to tail, ranges from 10 to as much as 20 feet. Your size is Medium.</p>
+			<p class="indent"><b><i>Speed. </i></b>Your base walking speed is 30 feet.</p>
+			<p class="indent"><b><i>Natural Weapons. </i></b>Your fanged maw and constricting serpentine body are natural weapons, which you can use to make unarmed strikes. If you hit with your bite, you deal piercing damage equal to 1d4 + your Strength modifier, and your target must make a Constitution saving throw (DC 8 + your proficiency bonus + your Constitution modifier). On a failed save, the target takes 1d4 poison damage. If you hit with your constrict attack, you deal bludgeoning damage equal to 1d6 + your Strength modifier, and the target is grappled (escape DC 8 + your proficiency bonus + your Strength modifier). Until this grapple ends, the target is restrained, and you can’t constrict another target.</p>
+			<p class="indent"><b><i>Speed Burst. </i></b>By lowering your body to the ground and propelling yourself with your arms, you can move more quickly for a time. As a bonus action on your turn, if you have both hands free, you can increase your walking speed by 5 feet until the end of your turn.</p>
+			<p class="indent"><b><i>Poison Immunity. </i></b>You are immune to poison damage and can’t be poisoned.</p>
+			<p class="indent"><b><i>Poison Affinity. </i></b>You gain proficiency with the poisoner’s kit.</p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Naga.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" />
+			<stat name="intelligence" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_NATURAL_WEAPONS" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_SPEED_BURST" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_IMMUNITY" />
+			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_AFFINITY" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_WOTC_PSA_LANGUAGE_NAGA" />
+		</rules>
+	</element>
+	<element name="Natural Weapons" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_NATURAL_WEAPONS">
+		<description>
+			<p>Your fanged maw and constricting serpentine body are natural weapons, which you can use to make unarmed strikes. If you hit with your bite, you deal piercing damage equal to 1d4 + your Strength modifier, and your target must make a Constitution saving throw (DC 8 + your proficiency bonus + your Constitution modifier). On a failed save, the target takes 1d4 poison damage. If you hit with your constrict attack, you deal bludgeoning damage equal to 1d6 + your Strength modifier, and the target is grappled (escape DC 8 + your proficiency bonus + your Strength modifier). Until this grapple ends, the target is restrained, and you can’t constrict another target.</p>
+		</description>
+		<sheet>
+			<description>Your fanged maw and constricting serpentine body are natural weapons, which you can use to make unarmed strikes. If you hit with your bite, you deal piercing damage equal to 1d4 + {{strength:modifier}}, and your target must make a Constitution saving throw (DC {{naga-poison:dc}}). On a failed save, the target takes 1d4 poison damage. If you hit with your constrict attack, you deal bludgeoning damage equal to 1d6 + {{strength:modifier}}, and the target is grappled (escape DC {{naga-constrict:dc}}). Until this grapple ends, the target is restrained, and you can’t constrict another target.</description>
+		</sheet>
+		<rules>
+			<stat name="naga-poison:dc" value="8" />
+			<stat name="naga-poison:dc" value="proficiency" />
+			<stat name="naga-poison:dc" value="constitution:modifier" />
+			<stat name="naga-constrict:dc" value="8" />
+			<stat name="naga-constrict:dc" value="proficiency" />
+			<stat name="naga-constrict:dc" value="strength:modifier" />
+		</rules>
+	</element>
+	<element name="Poison Immunity" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_IMMUNITY">
+		<description>
+			<p>You are immune to poison damage and the poisoned condition.</p>
+		</description>
+		<sheet>
+			<description>You are immune to poison damage and the poisoned condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+		</rules>
+	</element>
+	<element name="Poison Affinity" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_AFFINITY">
+		<description>
+			<p>You gain proficiency with the poisoner’s kit.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with the poisoner’s kit.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+		</rules>
+	</element>
+	<element name="Speed Burst" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_SPEED_BURST">
+		<description>
+			<p>By lowering your body to the ground and propelling yourself with your arms, you can move more quickly for a time. As a bonus action on your turn, if you have both hands free, you can increase your walking speed by 5 feet until the end of your turn.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>On your turn, if you have both hands free, you can increase your walking speed by 5 feet until the end of your turn.</description>
+		</sheet>
+	</element>
+
+	<!-- Naga Language -->
+	<element name="Naga" type="Language" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_LANGUAGE_NAGA">
+		<description>
+			<p>Typically spoken by Nagas.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Nagas</set>
+			<set name="script">Naga</set>
+		</setters>
+	</element>
+</elements>

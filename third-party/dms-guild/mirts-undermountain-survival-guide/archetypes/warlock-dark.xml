@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="warlock-dark.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/mirts-undermountain-survival-guide/archetype/warlock-dark.xml" />
+		</update>
+	</info>
+	<element name="The Dark" type="Archetype" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_THE_DARK">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have bound yourself to a creature of the Endless Night that frequents the darkness surrounding the cities of the drow and other vile races. Your patron gifts you with powers of darkness, poison, tentacles, malice, and betrayal. Such patrons constantly try to entice you with more power, at the cost of harming your friends.</p>
+			<p class="indent">Dark patrons include: Bloqroth the Yochlol, Laveth the Daughter of Lolth, Ragnorra the Mother of Monsters, Rallaster, Scahrossar the Mistress of Exquisite Pain, The Patient One, and Sertrous.</p>
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_EXPANDED_SPELL_LIST" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKSPIRAL_AURA" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_YOUR_GLORIOUS_SACRIFICE" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKEST_MIRROR" />
+			<div element="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_PASSIONATE_BETRAYAL" />
+		</description>
+		<sheet>
+			<description>You have bound yourself to a creature of the Endless Night that frequents the darkness surrounding the cities of the drow and other vile races.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKSPIRAL_AURA" level="1" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_YOUR_GLORIOUS_SACRIFICE" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKEST_MIRROR" level="10" />
+			<grant type="Archetype Feature" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_PASSIONATE_BETRAYAL" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Dark lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>DARK EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>dissonant whispers, ray of sickness</em></td></tr>
+				<tr><td>2nd</td><td><em>darkvision, protection from poison</em></td></tr>
+				<tr><td>3rd</td><td><em>bestow curse, stinking cloud</em></td></tr>
+				<tr><td>4th</td><td><em>Evard’s black tentacles, phantasmal killer</em></td></tr>
+				<tr><td>5th</td><td><em>antilife shell, cloudkill</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Dark lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_DISSONANT_WHISPERS</extend>
+			<extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+			<extend>ID_PHB_SPELL_DARKVISION</extend>
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_POISON</extend>
+			<extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+			<extend>ID_PHB_SPELL_STINKING_CLOUD</extend>
+			<extend>ID_PHB_SPELL_EVARDS_BLACK_TENTACLES</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+			<extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+			<extend>ID_PHB_SPELL_CLOUDKILL</extend>
+		</spellcasting>
+	</element>
+	<element name="Darkspiral Aura" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKSPIRAL_AURA">
+		<description>
+			<p>When you choose this pact at 1st level, you drain the power of your fallen enemies to surround yourself with an aura of deadly darkness. When you reduce a hostile creature to 0 hit points, you encase yourself with swirling shadows that give you advantage on Dexterity (Stealth) checks. Your darkspiral aura ends when you take a short rest, long rest, or you choose to expend it.</p>
+			<p class="indent">When a hostile creature that you can see targets you with a melee or ranged attack, you can expend your darkspiral aura as a reaction to deal psychic damage equal to 1d6 + your Charisma bonus + your proficiency bonus. If you also choose to damage an ally in addition to a hostile target, you add your warlock level to the damage. The ally must take damage to gain this bonus.</p>
+		</description>
+		<sheet>
+			<description>When you reduce a hostile creature to 0 hit points, you encase yourself with swirling shadows that give you advantage on Stealth checks. Your darkspiral aura ends when you take a short rest, long rest, or you choose to expend it.
+			When a hostile creature that you can see targets you with a melee or ranged attack, you can expend your darkspiral aura as a reaction to deal 1d6+{{darkspiral aura:damage bonus}} psychic damage. If you also choose to damage an ally in addition to a hostile target, you add {{level:warlock}} to the damage. The ally must take damage to gain this bonus.</description>
+		</sheet>
+		<rules>
+			<stat name="darkspiral aura:damage bonus" value="charisma:modifier" />
+			<stat name="darkspiral aura:damage bonus" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Your Glorious Sacrifice" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_YOUR_GLORIOUS_SACRIFICE">
+		<description>
+			<p>Beginning at 6th level, you come to understand that true friends will appreciate the sacrifices they will need to make for you reach your full power. You have resistance to poison damage, and when you cast a spell that deals poison or psychic damage, you can add your Charisma modifier to the damage roll against one of its targets.</p>
+			<p class="indent">If you choose an ally as one of the targets of this spell, one targeted enemy also suffers damage of the same type equal to 1d6 plus your Charisma modifier every round at the beginning of their turn. At the end of each of its turns, the target can attempt a Constitution saving throw against your warlock spell save DC. On a success, the ongoing damage ends. You add an additional 1d6 to the ongoing damage at 11th and 17th level.</p>
+			<p class="indent">Your ally must take damage to gain this bonus. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals poison or psychic damage, you can add {{charisma:modifier}} to the damage roll against one of its targets.
+			If you choose an ally as one of the targets of this spell, one targeted enemy also suffers 1d6+{{charisma:modifier}} damage of the same type every round at the beginning of their turn. At the end of each of its turns, the target can attempt a DC{{spellcasting:dc:cha}} Constitution saving throw. On a success, the ongoing damage ends.</description>
+			<description level="11">When you cast a spell that deals poison or psychic damage, you can add {{charisma:modifier}} to the damage roll against one of its targets.
+			If you choose an ally as one of the targets of this spell, one targeted enemy also suffers 2d6+{{charisma:modifier}} damage of the same type every round at the beginning of their turn. At the end of each of its turns, the target can attempt a DC{{spellcasting:dc:cha}} Constitution saving throw. On a success, the ongoing damage ends.</description>
+			<description level="17">When you cast a spell that deals poison or psychic damage, you can add {{charisma:modifier}} to the damage roll against one of its targets.
+			If you choose an ally as one of the targets of this spell, one targeted enemy also suffers 3d6+{{charisma:modifier}} damage of the same type every round at the beginning of their turn. At the end of each of its turns, the target can attempt a DC{{spellcasting:dc:cha}} Constitution saving throw. On a success, the ongoing damage ends.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Darkest Mirror" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_DARKEST_MIRROR">
+		<description>
+			<p>Starting at 10th level, you can use a bonus action to close lids of the darkest night over your eyes, allowing you to see invisible creatures as well as into the Ethereal Plane. While using Darkest Mirror, you cannot see any other creatures, including your allies.</p>
+			<p class="indent">When activated, this feature lasts for rounds equal to 1 + your Charisma modifier. You can end this feature using a bonus action. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You can close lids of the darkest night over your eyes, allowing you to see invisible creatures as well as into the Ethereal Plane. While using Darkest Mirror, you cannot see any other creatures, including your allies.
+			When activated, this feature lasts for {{darkest mirror:rounds}} rounds. You can end this feature using a bonus action.</description>
+		</sheet>
+		<rules>
+			<stat name="darkest mirror:rounds" value="1" />
+			<stat name="darkest mirror:rounds" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Passionate Betrayal" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_ARCHETYPE_FEATURE_DARK_PASSIONATE_BETRAYAL">
+		<description>
+			<p>Starting at 14th level, as an action, you can whisper dark promises to an enemy within 60 feet, causing them to believe their enemies are friends and their friends are now enemies. The target must make a Wisdom saving throw against your warlock spell save DC. On a failed save, it is charmed for 1 minute or until your concentration is broken (as if you are concentrating on a spell). While charmed, the target regards allies as hated enemies until the spell ends and makes every effort to kill them in the most effective way available to it. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the effect ends.</p>
+			<p class="indent">When using this feature, you can curse an ally to make all of their attacks, saving throws, and ability checks with disadvantage for the duration, and the target can then make its first attack each round with advantage.</p>
+			<p class="indent">You must finish a short or long rest before you can use this feature again.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can whisper dark promises to an enemy within 60 feet, causing them to believe their enemies are friends and their friends are now enemies. The target must make a DC{{spellcasting:dc:cha}} Wisdom saving throw. On a failed save, it is charmed for 1 minute or until your concentration is broken (as if you are concentrating on a spell). While charmed, the target regards allies as hated enemies until the spell ends and makes every effort to kill them in the most effective way available to it. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the effect ends.
+			When using this feature, you can curse an ally to make all of their attacks, saving throws, and ability checks with disadvantage for the duration, and the target can then make its first attack each round with advantage.</description>
+		</sheet>
+	</element>
+</elements>

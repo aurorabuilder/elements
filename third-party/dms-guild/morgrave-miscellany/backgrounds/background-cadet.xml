@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Cadet</name>
+		<description>The Cadet Background from Morgrave Miscellany.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker &amp; Ruty Rutenberg</author>
+		<update version="0.0.2">
+			<file name="background-cadet.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/morgrave-miscellany/backgrounds/background-cadet.xml" />
+		</update>
+	</info>	
+	<element name="Cadet" type="Background" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_CADET">
+		<description>
+			<p>You were commissioned as an officer, but you never actually made it to the battlefield. Perhaps someone pulled strings on your behalf to save you from conflict, or perhaps the war ended before you had a chance to serve. Rather than being thrown into war, you were left to choose your own path. Are you angry that you never had an opportunity to prove yourself, or glad to have dodged the front lines?</p>
+			<p class="indent">When you choose this background, work with your DM to determine which military organization you trained to be a part of, and what lifestyle you have led up until you began adventuring. You might have immediately pursued the lifestyle of an adventurer, served as a military advisor, or even returned to civilian life.</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Athletics, History</li>
+				<li><strong>Tool Proficiencies:</strong> Navigator’s tools or vehicles (land).</li>
+				<li><strong>Languages:</strong> One language of your choice.</li>
+				<li><strong>Equipment:</strong> A cadet’s uniform, a set of common clothes, a diploma from a military school, a map, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_DMSG_MGMS_BACKGROUND_FEATURE_CADET_PUPIL_OF_CONFLICT" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Cadets have been taught to adopt the lifestyle of a soldier, but lack both the tempering of combat experience and the physical and emotional scarring of war. These individuals who seek to fight for what they believe are often idealists and desiring to leave their impact on the world through their service to their nation or sovereign. While not true soldiers, they often embody what they envision soldiers to be.</p>
+		</description>			
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<select type="Language" name="Language (Cadet)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Tool Proficiency, Cadet" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS | ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Background Feature" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_CADET_PUPIL_OF_CONFLICT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I speak plainly and directly. Not because it’s easier, but because it saves time and lives.</item>
+				<item id="2">I have a tendency to compare situations at hand to famous battles and notable heroes.</item>
+				<item id="3">I am easily bored; I long for action and excitement.</item>
+				<item id="4">I readily seek to outperform others in word and deed.</item>
+				<item id="5">If I give someone my word, I will keep it. Even if it kills me.</item>
+				<item id="6">I do my best to keep morale up, and if it is a low, I will figure out how to inspire it.</item>
+				<item id="7">To me, a new weapon is like a shiny new toy, full of possibilities.</item>
+				<item id="8">I am stoic and professional above all else.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Order. War’s main purpose is to exact justice and maintain peace. (Law)</item>
+				<item id="2">Honor. The might doesn’t reveal the value of might, but of character. (Any)</item>
+				<item id="3">Valor. Courage stokes the flame of hope, and inspires others to fight for what is good. (Good)</item>
+				<item id="4">Tyranny. Only through demonstrations of strength and superiority can any form of respect be earned. (Evil)</item>
+				<item id="5">Glory. Those destined for victory make history, and those who make history rule the world. (Any)</item>
+				<item id="6">Perseverance. War is never quick and always complicated, but those who fight for the right cause will outlast the most blusterous foes. (Neutral)</item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">The friends I made in training are closer to me than my real family.</item>
+				<item id="2">I come from a long line of soldiers, and I must continue their legacy.</item>
+				<item id="3">My mentor died in battle, and I will stop at nothing to avenge them.</item>
+				<item id="4">The conflict separated me from a person I love, and I’m still searching for them.</item>
+				<item id="5">My community sees me as a local hero, and I refuse to disappoint them.</item>
+				<item id="6">I am destined to be a hero, and I will be nothing less than that, or die trying.</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I fly into a fit of rage when others disrespect my lands, my king, or my people.</item>
+				<item id="2">I never wanted to be a soldier, and have no taste for fighting.</item>
+				<item id="3">I don’t take orders from anyone that isn’t in a position of authority</item>
+				<item id="4">Because I fear my lack of experience, I become paralyzed with indecision.</item>
+				<item id="5">I am overconfident in my martial skill, and pick fights I don’t know if I can win.</item>
+				<item id="6">I am meant to lead, not to be on the front lines; I’d rather have someone else fight my battles for me.</item>
+				</select>
+		</rules>			
+	</element>	
+	<element name="Feature: Pupil of Conflict" type="Background Feature" source="Morgrave Miscellany" id="ID_DMSG_MGMS_BACKGROUND_FEATURE_CADET_PUPIL_OF_CONFLICT">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Your military training allows you to easily recognize and distinguish weapons, uniforms, military strategies and important military figures, such as notable generals, both historical and modern.</p>
+		</description>
+		<sheet alt="Pupil of Conflict" />
+	</element>
+</elements>

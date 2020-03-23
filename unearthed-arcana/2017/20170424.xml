@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Feats for Races</name>
+		<description>Today we're offering another batch of feats to playtest. This time, the feats are associated with the races in the <i>Player’s Handbook</i>.</description>
+		<author url="http://dnd.wizards.com/articles/unearthed-arcana/feats-races">Wizards of the Coast</author>
+		<update version="0.0.4">
+			<file name="20170424.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2017/20170424.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Feats for Races" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20170424">
+		<description>
+			<p>Today we're offering another batch of feats to playtest. This time, the feats are associated with the races in the <i>Player’s Handbook</i>.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20170424</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/feats-races</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20170424</set>
+		</setters>
+	</element>
+
+	<element name="Barbed Hide" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_BARBED_HIDE">
+        <prerequisite>Tiefling</prerequisite>
+        <requirements>ID_RACE_TIEFLING</requirements>
+        <description>
+            <p><i>Prerequisite: Tiefling</i></p>
+            <p>One of your ancestors was a barbed devil or other spiky fiend. Barbs protrude from your head. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution or Charisma score by 1, to a maximum of 20.</li>
+                <li>As a bonus action, you can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal 1d6 piercing damage to any creature grappling you or any creature grappled by you.</li>
+                <li>You gain proficiency in the Intimidation skill. If you’re already proficient in it, your proficiency bonus is doubled for any check you make with it.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Bonus Action: You can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal 1d6 piercing damage to any creature grappling you or any creature grappled by you.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Barbed Hide" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_INTIMIDATION" />
+        </rules>
+    </element>
+	<element name="Critter Friend" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_CRITTER_FRIEND">
+        <prerequisite>Gnome (forest)</prerequisite>
+        <requirements>ID_SUB_RACE_FOREST_GNOME</requirements>
+        <description>
+            <p><i>Prerequisite: Gnome (forest)</i></p>
+            <p>Your friendship with animals mystically deepens. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency in the Animal Handling skill. If you’re already proficient in it, your proficiency bonus is doubled for any check you make with it.</li>
+                <li>You learn the <i>speak with animals</i> spell and can cast it at will, without expending a spell slot. You also learn the <i>animal friendship</i> spell, and you can cast it once with this feat, without expending a spell slot. You regain the ability to cast it in this way when you finish a long rest. Intelligence is your spellcasting ability for these spells.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You learn the <i>speak with animals</i> spell and can cast it at will, without expending a spell slot. You also learn the <i>animal friendship</i> spell, and you can cast it once with this feat, without expending a spell slot. You regain the ability to cast it in this way when you finish a long rest. Intelligence is your spellcasting ability for these spells.</description>
+        </sheet>
+        <rules>
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ANIMALHANDLING" />
+            <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
+            <grant type="Spell" name="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" />
+        </rules>
+    </element>
+	<element name="Dragon Wings" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_DRAGON_WINGS">
+        <prerequisite>Dragonborn</prerequisite>
+        <requirements>ID_RACE_DRAGONBORN</requirements>
+        <description>
+            <p><i>Prerequisite: Dragonborn</i></p>
+            <p>You sprout draconic wings. With your wings, you have a flying speed of 20 feet if you aren’t wearing heavy armor and aren’t exceeding your carrying capacity.</p>
+        </description>
+        <sheet>
+            <description>With your wings, you have a flying speed of 20 feet if you aren’t wearing heavy armor and aren’t exceeding your carrying capacity.</description>
+        </sheet>
+        <rules>
+			<stat name="speed:fly" value="20" bonus="base" equipped="![armor:heavy]" />
+        </rules>
+    </element>
+	<element name="Everybody's Friend" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_EVERYBODYS_FRIEND">
+        <prerequisite>Half-elf</prerequisite>
+        <requirements>ID_RACE_HALFELF</requirements>
+        <description>
+            <p><i>Prerequisite: Half-elf</i></p>
+            <p>You develop your magnetic personality to ease your way through the world. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Charisma score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in the Deception and Persuasion skills. If you’re already proficient in either skill, your proficiency bonus is doubled for any check you make with that skill.</li>
+            </ul>
+        </description>
+        <sheet display="false" />
+        <rules>
+			<stat name="charisma" value="1" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_DECEPTION" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_PERSUASION" />
+        </rules>
+    </element>
+	<element name="Grudge-Bearer" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER">
+        <prerequisite>Dwarf</prerequisite>
+        <requirements>ID_SRD_RACE_DWARF</requirements>
+        <description>
+            <p><i>Prerequisite: Dwarf</i></p>
+            <p>You have a deep hatred for a particular kind of creature. Choose your foes, a type of creature to bear the burden of your wrath: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can choose two races of humanoid (such as gnolls and orcs). You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Constitution, or Wisdom score by 1, to a maximum of 20.</li>
+                <li>During the first round of any combat against your chosen foes, your attack rolls against any of themhave advantage.</li>
+                <li>When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage.</li>
+                <li>Whenever you make an Intelligence (Arcana, History, Nature, or Religion) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you’re not normally proficient.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>During the first round of any combat against your chosen foes, your attack rolls against any of themhave advantage. When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage. And whenever you make an Intelligence (Arcana, History, Nature, or Religion) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you’re not normally proficient.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Grudge-Bearer" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_WISDOM" />
+            <select type="Feat Feature" name="Hated Foe" supports="Hated Foe" /> 
+        </rules>
+    </element>
+    <!-- Hated Foes-->
+    <element name="Aberrations" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_ABERRATIONS">
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Aberrations are utterly alien beings. Many of them have innate magical abilities drawn from the creature's alien mind rather than the mystical forces of the world. The quintessential aberrations are aboleths, beholders, mind fiayers, and slaadi.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Beasts" type="Feat Feature" source="Unearthed Arcana: Feats for Races"  id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_BEAST">
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Beasts are nonhumanoid creatures that are a natural part of the fantasy ecology. Some of them have magical powers, but most are unintelligent and lack any society or language. Beasts include all varieties of ordinary animals, dinosaurs, and giant versions of animals.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Celestials" type="Feat Feature" source="Unearthed Arcana: Feats for Races"  id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_CELESTIALS">
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Celestials are creatures native to the Upper Planes. Many of them are the servants of deities, employed as messengers or agents in the mortal realm and throughout the planes. Celestials are good by nature, so the exceptional celestial who strays from a good alignment is a horrifying rarity. Celestials include angels, couatls, and pegasi.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Constructs" type="Feat Feature" source="Unearthed Arcana: Feats for Races"  id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_CONSTRUCTS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Constructs are made, not born. Some are programmed by their creators to'follow a simple set of instructions, while others are imbued with sentience and capable of independent thought. Golems are the iconic constructs. Many creatures native to the outer plane of Mechanus, such as modrons, are constructs shaped from the raw material of the plane by the will of more powerful creatures.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Dragons" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_DRAGONS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Dragons are large reptilian creatures of ancient origin and tremendous power. True dragons, including the good metallic dragons and the evil chromatic dragons, are highly intelligent and have innate magic. Also in this category are creatures distantly related to true dragons, but less powerful, less intelligent, and less magical, such as wyverns and pseudodragons.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Elementals" type="Feat Feature" source="Unearthed Arcana: Feats for Races"  id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_ELEMENTALS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Elementals are creatures native to the elemental planes. Some creatures of this type are little more than animate masses of their respective elements, including the creatures simply called elementals. Others have biological forms infused with elemental energy. The races of genies, including djinn and efreet, form the most important civilizations on the elemental planes. Other elemental creatures include azers, invisible stalkers, and water weirds.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Fey" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_FEY">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Fey are magical creatures closely tied to the forces of nature. They dwell in twilight groves and misty forests. In some worlds, they are closely tied to the Feywild, also called the Plane of Faerie. Some are also found in the Outer Planes, particularly the planes of Arborea and the Beastlands. Fey include dryads, pixies, and satyrs.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Fiends" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_FIENDS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Fiends are creatures of wickedness that are native to the Lower Planes. A few are the servants of deities, but many more labor under the leadership of archdevils and demon princes. Evil priests and mages sometimes summon fiends to tne' material world to do their bidding. If an evil celestial is a rarity, a good fiend is almost inconceivable. Fiends include demons, devils, hell hounds, rakshasas, and yugoloths.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Giants" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_GIANTS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Giants tower over humans and their kind. They are humanlike in shape, though some have multiple heads (ettins) or deformities (fomorians). The six varieties of true giant are hill giants, stone giants, frost giants, fire giants, cloud giants, and storm giants. Besides these, creatures such as ogres and trolls are giants.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Monstrosities" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_BEAST_MONSTROSITIES">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Monstrosities are monsters in the strictest sensefrightening creatures that are not ordinary, not truly natural, and almost never benign. Some are the results of magical experimentation gone awry (such as owl bears), and others ,are the product-of terrible curses (including minotaurs and yuan-ti). They defy categorization, and in some sense serve as a catch-all category for creatures that don't fit into any other type.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Oozes" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_OOZES">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Oozes are gelatinous creatures that rarely have a fixed shape. They are mostly subterranean, dwelling in caves and dungeons and feeding on refuse, carrion, or creatures unlucky enough to get in their way. Black puddings and gelatinous cubes are among the most recognizable oozes.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Plants" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_PLANTS">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Plants in this context are vegetable creatures, not ordinary flora. Most of them are ambulatory, and some are carnivorous. The quintessential plants are the shambling mound and the treant. Fungal creatures such as the gas spore and the myconid also fall into this category.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Undead" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_UNDEAD">
+        <compendium display="false" />
+        <supports>Hated Foe</supports>
+        <description>
+            <p>Undead are once-living creatures brought to a horrifying state of undeath through the practice of necromantic magic or some unholy curse. Undead include walking corpses, such as vampires and zombies, as well as bodiless spirits, such as ghosts and specters.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <!-- Unused -->
+    <element name="Humanoids" type="Feat Feature" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER_HUMANOIDS">
+        <compendium display="false" />
+        <supports>Monster Type</supports>
+        <description>
+            <p>Humanoids are the main peoples of the D&amp;D world, both civilized and savage, including humans and a tremendous variety of other species. They have language and culture, few if any innate magical abilities (though most humanoids can learn spellcasting), and a bipedal form. The most common humanoid races are the ones most suitable as player characters: humans, dwarves, elves, and halflings. Almost as numerous but far more savage and brutal, and almost uniformly evil, are the races of goblinoids (golblins, hobgoblins, and bugbears), orcs, gnolls, lizardfolk, and kobolds. A variety of humanoids appear throughout this book, but the races detailed in the Player's Handbook- with the exception of drow-are dealt with in appendix B. That appendix gives you a number of stat blocks that you·can use to make various members of those races.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+	<element name="Human Determination" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_HUMAN_DETERMINATION">
+        <prerequisite>Human</prerequisite>
+        <requirements>ID_RACE_HUMAN</requirements>
+        <description>
+            <p><i>Prerequisite: Human</i></p>
+            <p>You are filled with a determination that can draw the unreachable within your reach. You gain the following benefits:</p>
+            <ul>
+                <li>Increase one ability score of your choice by 1, to a maximum of 20.</li>
+                <li>When you make an attack roll, an ability check, or a saving throw, you can do so with advantage. Once you use this ability, you can’t use it again until you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you make an attack roll, an ability check, or a saving throw, you can do so with advantage. Once you use this ability, you can’t use it again until you finish a short or long rest.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Human Determination" supports="Feat" />
+        </rules>
+    </element>
+	<element name="Orcish Aggression" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_ORCISH_AGGRESSION">
+        <prerequisite>Half-orc</prerequisite>
+        <requirements>ID_RACE_HALFORC</requirements>
+        <description>
+            <p><i>Prerequisite: Half-orc</i></p>
+            <p>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+        </description>
+        <sheet>
+            <description>Bonus Action: You can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
+        </sheet>
+    </element>
+	<element name="Wonder Maker" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_WONDER_MAKER">
+        <prerequisite>Gnome (rock)</prerequisite>
+        <requirements>ID_SUB_RACE_ROCK_GNOME</requirements>
+        <description>
+            <p><i>Prerequisite: Gnome (rock)</i></p>
+            <p>You master the tinker techniques of your people. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity or Intelligence score by 1, to a maximum of 20.</li>
+                <li>When you make a check using your proficiency with tinker’s tools, you add double your proficiency bonus to the check.</li>
+                <li>When you make a device with your Tinker trait, you have the following additional options for what you make:</li>
+            </ul>
+            <p style="margin-left:20px;">
+                <span style="font-style:italic;padding-right:5px;padding-left:-20px;">Alarm.</span>This device senses when a creature moves to within 15 feet of it without speaking aloud a password chosen when you create it. One round after a creature moves into range, the alarm makes a shrill ringing that lasts for 1 minute and can be heard from up to 300 feet away.<br />
+                <span style="font-style:italic;padding-right:5px;padding-left:-20px;">Calculator.</span>This device makes doing sums easy.<br />
+                <span style="font-style:italic;padding-right:5px;padding-left:-20px;">Lifter.</span>This device can be used as a block and tackle, allowing its user to hoist five times the weight the user can normally lift.<br />
+                <span style="font-style:italic;padding-right:5px;padding-left:-20px;">Timekeeper.</span>This pocket watch keeps accurate time.<br />
+                <span style="font-style:italic;padding-right:5px;padding-left:-20px;">Weather Sensor.</span>When used as an action, this device predicts weather conditions in a 1-mile radius over the next 4 hours, showing one symbol (clouds, sun/moon, rain, or snow) for each hour.<br />
+            </p>
+        </description>
+        <sheet>
+            <description>When you make a check using your proficiency with tinker’s tools, you add double your proficiency bonus to the check. When you make a device with your Tinker trait, you have the following additional options for what you make: Alarm, Calculator, Lifter, Timekeeper or Weather Sensor.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Wonder Maker" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_INTELLIGENCE" />
+        </rules>
+    </element>
+</elements>

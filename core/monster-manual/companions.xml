@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Companions</name>
+        <update version="0.0.2">
+            <file name="companions.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/companions.xml" />
+        </update>
+    </info>
+        
+	<element name="Imp" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_IMP">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Imps can be found in the service to mortal spellcasters, acting as advisors, spies, and familiars. An imp urges its master to acts of evil, knowing the mortal's soul is a prize the imp might ultimately claim. Imps display an unusual loyalty to their masters, and an imp can be quite dangerous if its master is threatened. Some such imps have the following trait.</p>
+			<p class="indent">An imp can assume animal form at will, but in its natural state it resembles a diminutive red-skinned humanoid with a barbed tail, small horns, and leathery wings. It strikes while invisible, attacking with its poison stinger.</p>
+        </description>
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">14</set>
+			<set name="ac">13</set>
+			<set name="hp">10 (3d4+3)</set>
+			<set name="speed">20 ft., fly 40 ft.</set>
+			<set name="languages">Infernal, Common</set>
+			<set name="skills">Deception +4, Insight +3, Persuasion +4, Stealth +5</set>
+			<set name="type">Fiend</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">lawful evil</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_IMP_SHAPECHANGER,ID_WOTC_MM_COMPANION_TRAIT_IMP_DEVILS_SIGHT,ID_WOTC_MM_COMPANION_TRAIT_IMP_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_IMP_STING,ID_WOTC_MM_COMPANION_ACTION_IMP_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:persuasion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Shapechanger" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_IMP_SHAPECHANGER">
+		<description>
+			<p>The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</p>
+		</description>
+		<sheet>
+			<description>The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</description>
+		</sheet>
+	</element>
+	<element name="Devil's Sight" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_IMP_DEVILS_SIGHT">
+		<description>
+			<p>Magical darkness doesn't impede the imp's darkvision.</p>
+		</description>
+		<sheet>
+			<description>Magical darkness doesn't impede the imp's darkvision.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_IMP_MAGIC_RESISTANCE">
+		<description>
+			<p>The imp has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The imp has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Sting (Bite in Beast Form)" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_IMP_STING">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_IMP_INVISIBILITY">
+		<description>
+			<p>The imp magically turns invisible until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.</p>
+		</description>
+		<sheet>
+			<description>The imp magically turns invisible until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.</description>
+		</sheet>
+	</element>
+
+	<element name="Pseudodragon" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_PSEUDODRAGON">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The pseudodragon can serve another creature as a familiar, forming a magic, telepathic bond with that willing companion. While the two are bonded, the companion can sense what the pseudodragon senses as long as they are within 1 mile of each other. While the pseudodragon is within 10 feet of its companion, the companion shares the pseudodragon's Magic Resistance trait. At any time and for any reason, the pseudodragon can end its service as a familiar, ending the telepathic bond.</p>
+        </description>
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">10</set>
+			<set name="ac">13</set>
+			<set name="hp">7 (2d4+2)</set>
+			<set name="speed">15 ft., fly 60 ft.</set>
+			<set name="languages">understands Common and Draconic but can't speak</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="senses">blindsight 10 ft., darkvision 60 ft., passive Perception 13</set>
+			<set name="type">Dragon</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral good</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_KEEN_SENSES,ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_LIMITED_TELEPATHY,ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_PSEUDODRAGON_BITE,ID_WOTC_MM_COMPANION_ACTION_PSEUDODRAGON_STING</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="7" bonus="base" />
+			<stat name="companion:speed" value="15" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Keen Senses" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_KEEN_SENSES">
+		<description>
+			<p>The pseudodragon has advantage on Wisdom (Perception) checks that rely on sight, hearing, or smell.</p>
+		</description>
+		<sheet>
+			<description>The pseudodragon has advantage on Wisdom (Perception) checks that rely on sight, hearing, or smell.</description>
+		</sheet>
+	</element>
+	<element name="Limited Telepathy" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_LIMITED_TELEPATHY">
+		<description>
+			<p>The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 feet of it that can understand a language.</p>
+		</description>
+		<sheet>
+			<description>The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 feet of it that can understand a language.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_PSEUDODRAGON_MAGIC_RESISTANCE">
+		<description>
+			<p>The pseudodragon has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The pseudodragon has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_PSEUDODRAGON_BITE">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Sting" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_PSEUDODRAGON_STING">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake.</description>
+		</sheet>
+	</element>
+
+	<element name="Quasit" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_QUASIT">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Quasits infest the Lower Planes. Physically weak, they keep to the shadows to plot mischief and wickedness. More powerful demons use quasits as spies and messengers when they aren't devouring them or pulling them apart to pass the time.</p>
+			<p class="indent">A quasit can assume animal forms, but in its true form it looks like a 2-foot-tall green humanoid with a barbed tail and horns. The quasit has clawed fingers and toes, and these claws can deliver an irritating poison. It prefers to be invisible when it attacks.</p>
+        </description>
+		<setters>
+			<set name="strength">5</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">7</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">10</set>
+			<set name="ac">13</set>
+			<set name="hp">7 (3d4)</set>
+			<set name="speed">40 ft.</set>
+			<set name="languages">Abyssal, Common</set>
+			<set name="skills">Stealth +5</set>
+			<set name="type">Fiend</set>
+			<set name="size">Tiny</set>
+			<set name="senses">darkvision 120 ft., passive Perception 10</set>
+			<set name="alignment">chaotic evil</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_QUASIT_MAGIC_RESISTANCE,ID_WOTC_MM_COMPANION_TRAIT_QUASIT_SHAPECHANGER</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_QUASIT_CLAW,ID_WOTC_MM_COMPANION_ACTION_QUASIT_SCARE,ID_WOTC_MM_COMPANION_ACTION_QUASIT_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="7" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_QUASIT_MAGIC_RESISTANCE">
+		<description>
+			<p>The quasit has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The quasit has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Shapechanger" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_QUASIT_SHAPECHANGER">
+		<description>
+			<p>The quasit can use its action to polymorph into a beast form that resembles a bat (speed 10 ft. fly 40 ft.), a centipede (40 ft., climb 40 ft.), or a toad (40 ft., swim 40 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</p>
+		</description>
+		<sheet>
+			<description>The quasit can use its action to polymorph into a beast form that resembles a bat (speed 10 ft. fly 40 ft.), a centipede (40 ft., climb 40 ft.), or a toad (40 ft., swim 40 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</description>
+		</sheet>
+	</element>
+	<element name="Claw" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_QUASIT_CLAW">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or take 5 (2d4) poison damage and become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+		</description>
+		<sheet alt="Claw (Bite in Beast Form)">
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or take 5 (2d4) poison damage and become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</description>
+		</sheet>
+	</element>
+	<element name="Scare" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_QUASIT_SCARE">
+		<description>
+			<p>One creature of the quasit's choice within 20 feet of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.</p>
+		</description>
+		<sheet usage="1/Day">
+			<description>One creature of the quasit's choice within 20 feet of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_QUASIT_INVISIBILITY">
+		<description>
+			<p>The quasit magically turns invisible until it attacks or uses Scare, or until its concentration ends (as if concentrating on a spell). Any equipment the quasit wears or carries is invisible with it.</p>
+		</description>
+		<sheet>
+			<description>The quasit magically turns invisible until it attacks or uses Scare, or until its concentration ends (as if concentrating on a spell). Any equipment the quasit wears or carries is invisible with it.</description>
+		</sheet>
+	</element>
+
+	<element name="Sprite" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_SPRITE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>In secret groves and shaded glens, tiny sprites with dragonfly wings flutter. For all their fey splendor, however, sprites lack warmth and compassion. They are aggressive and hardy warriors, taking severe measures to ward strangers away from their homes. Interlopers that come too close have their moral character judged, then are put to sleep or frightened off.</p>
+        </description>
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">18</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">13</set>
+			<set name="charisma">11</set>
+			<set name="ac">15 (leather armor)</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">10 ft., fly 40 ft.</set>
+			<set name="languages">Common, Elvish, Sylvan</set>
+			<set name="skills">Perception +3, Stealth +8</set>
+			<set name="senses">passive Perception 13</set>
+			<set name="type">fey</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral good</set>
+			<set name="challenge">1/4</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_SPRITE_LONGSWORD,ID_WOTC_MM_COMPANION_ACTION_SPRITE_SHORTBOW,ID_WOTC_MM_COMPANION_ACTION_SPRITE_HEART_SIGHT,ID_WOTC_MM_COMPANION_ACTION_SPRITE_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Longsword" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_SPRITE_LONGSWORD">
+		<description>
+			<p>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Shortbow" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_SPRITE_SHORTBOW">
+		<description>
+			<p>Ranged Weapon Attack: +6 to hit, range 40/160 ft., one target. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or become poisoned for 1 minute. If its saving throw result is 5 or lower, the poisoned target falls unconscious for the same duration, or until it takes damage or another creature takes an action to shake it awake.</p>
+		</description>
+		<sheet>
+			<description>Ranged Weapon Attack: +6 to hit, range 40/160 ft., one target. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or become poisoned for 1 minute. If its saving throw result is 5 or lower, the poisoned target falls unconscious for the same duration, or until it takes damage or another creature takes an action to shake it awake.</description>
+		</sheet>
+	</element>
+	<element name="Heart Sight" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_SPRITE_HEART_SIGHT">
+		<description>
+			<p>The sprite touches a creature and magically knows the creature's current emotional state. If the target fails a DC 10 Charisma saving throw, the sprite also knows the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw.</p>
+		</description>
+		<sheet>
+			<description>The sprite touches a creature and magically knows the creature's current emotional state. If the target fails a DC 10 Charisma saving throw, the sprite also knows the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw.</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_SPRITE_INVISIBILITY">
+		<description>
+			<p>The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it.</p>
+		</description>
+		<sheet>
+			<description>The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it.</description>
+		</sheet>
+	</element>
+    
+</elements>

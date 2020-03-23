@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+        <name>Rival Intern</name>
+		<update version="0.0.2">
+			<file name="rival-intern.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/acquisitions-incorporated/backgrounds/rival-intern.xml" />
+		</update>
+	</info>
+	<element name="Rival Intern" type="Background" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_RIVAL_INTERN">
+		<description>
+			<p>You were an intern at a rival of Acquisitions Incorporated, and you gained a healthy respect for not just the job and the franchising opportunities, but for the ruthless and efficient way Acquisitions Incorporated goes about its business. Why deal with the rest, when you can work for the best?</p>
+			<p class="indent">Perhaps the rival did not treat you as well as you were hoping, or you washed out of that organization. Maybe you hope to leverage the knowledge you gained there for an advantage at Acquisitions Incorporated. Either way, you’re now bringing your talents to the company, ready to put your skills to use.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Investigation</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
+				<li><strong>Languages:</strong> Any one of your choice</li>
+				<li><strong>Equipment:</strong> One set of artisan’s tools, a ledger from your previous employer containing a small piece of useful information, a set of fine clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_ACQINC_BACKGROUND_FEATURE_INSIDE_INFORMANT" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>If you were happy with your previous internship, the parting of ways might have been amicable. If not, it might have involved armed guards removing you from the premises. If you were passed over at your previous position, it might have left you a blend of seething rage, practiced nonchalance, and keen knowledge of where the bodies are buried (perhaps literally).</p>
+		</description>
+		<setters>
+			<set name="short">History, Investigation, Artisan’s Tool, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<select type="Proficiency" name="Artisan’s Tool, Rival Intern" supports="Artisan tools" />
+			<select type="Language" name="Language, Rival Intern" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_INSIDE_INFORMANT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">My previous employer didn’t respect me, and now I’ll do whatever I can to gain respect.</item>
+				<item id="2">The job is important, but the relationships I forge with my coworkers are even more so.</item>
+				<item id="3">The job is everything to me. Who needs relaxation, hobbies, and a social life?</item>
+				<item id="4">I know I’m not the best and brightest, but if I put my best self forward, I can overcome anything.</item>
+				<item id="5">My former boss was an idiot. So was my boss before that. And before that. I’m sure those were all coincidences.</item>
+				<item id="6">This company is so much better than my previous one. It will always be the best until they stop paying me.</item>
+				<item id="7">I know this dagger belongs to the company, but I’m sure they won’t miss it. Or this flask. Or this armor.</item>
+				<item id="8">It’s only a matter of time before I’ll be upper management. I just have to kiss up to my superiors and kick down those beneath me.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Advancement. Money and power can be gained more easily within an organization. I plan to gain as much as possible. (Evil)</item>
+				<item id="2">Structure. Life goes much more smoothly when you follow the rules and work within a system. (Lawful)</item>
+				<item id="3">Uncertainty. The more chaos that swirls around me, the more opportunities I can find to profit. (Chaotic)</item>
+				<item id="4">Justice. I can’t stand people being treated unjustly. I do whatever it takes to stop injustice and those who flout the law. (Lawful)</item>
+				<item id="5">Pleasure. What’s the use of working hard and making money if you can’t enjoy the finer things in life? (Any)</item>
+				<item id="6">Power. Money is fine, but real power means never having to say you’re sorry. (Evil)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">I have a family member in need. I consider them in everything I do.</item>
+				<item id="2">My peers keep me grounded.</item>
+				<item id="3">My past mistakes cost someone else dearly. I have to rectify that.</item>
+				<item id="4">A childhood mentor put me on my current path. If I succeed, I want to repay that mentor in some way.</item>
+				<item id="5">I value an oath of loyalty I took to a group of friends over everything else in my life.</item>
+				<item id="6">Although I don’t get along well with people, my pet means the world to me.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I know what’s best. Trust me.</item>
+				<item id="2">Flaw? I have no flaws. I’m perfect.</item>
+				<item id="3">My loyalties are ... fluid.</item>
+				<item id="4">If anything goes wrong, it must be someone else’s fault. Let me explain that in detail.</item>
+				<item id="5">There’s right and there’s wrong, and there’s no gray area in between.</item>
+				<item id="6">Our superiors might not like what you’re doing. I’m going to have to put that in my report.</item>
+			</select>
+		</rules>
+	</element>
+    <element name="Feature: Inside Informant" type="Background Feature" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_INSIDE_INFORMANT">
+		<description>
+			<p>You have connections to your previous employer or other groups you dealt with during your previous employment. You can communicate with your contacts. gaining information at the DM’s discretion.</p>
+		</description>
+		<sheet alt="Inside Informant" />
+	</element>
+</elements>

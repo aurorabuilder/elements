@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Way of the Iron Embrace</name>
+		<update version="0.0.2">
+			<file name="monk-iron-embrace.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/archetypes/monk-iron-embrace.xml" />
+		</update>
+	</info>	
+	<element name="Way of the Iron Embrace" type="Source" source="Core" id="ID_DMSG_WIE_SOURCE_WAY_OF_THE_IRON_EMBRACE">
+		<description>
+			<![CDATA[<p>Monks of the Way of the Iron Embrace are masters of grapples, throws, and pins. Fighting on the front line, they fearlessly lay hands on the most powerful enemies. Using balance, leverage, and their own internal power, these monks can control foes of almost any shape and size.</p>]]>
+		</description>
+		<setters>
+			<set name="abbreviation">WIE</set>
+			<set name="url">https://www.dmsguild.com/product/275382/Way-of-the-Iron-Embrace</set>
+			<set name="image">https://www.dmsguild.com/images/8957/275382.png</set>
+			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=M.T.%20Black">M.T. Black</set>
+			<set name="third-party">true</set>
+			<set name="release">20190510</set>
+			<!-- <set name="updated">20190510</set> -->
+			<set name="information">This source uses items found in Mordenkainen’s Tome of Marvelous Magic.</set>
+		</setters>
+	</element>    
+	<element name="Way of the Iron Embrace" type="Archetype" source="Way of the Iron Embrace" id="ID_DMSG_WIE_ARCHETYPE_WAY_OF_THE_IRON_EMBRACE">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks of the Way of the Iron Embrace are masters of grapples, throws, and pins. Fighting on the front line, they fearlessly lay hands on the most powerful enemies. Using balance, leverage, and their own internal power, these monks can control foes of almost any shape and size.</p>
+			<div element="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_SUPPLE_PALMS" />
+			<div element="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_CRASHING_WAVE" />
+			<div element="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_PYTHONS_COIL" />
+			<div element="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_GIANTS_GRASP" />
+		</description>
+		<sheet>
+			<description>Monks of the Way of the Iron Embrace are masters of grapples, throws, and pins.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_SUPPLE_PALMS" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_CRASHING_WAVE" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_PYTHONS_COIL" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_GIANTS_GRASP" level="17" />
+		</rules>
+	</element>
+	<element name="Supple Palms" type="Archetype Feature" source="Way of the Iron Embrace" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_SUPPLE_PALMS">
+		<description>
+			<p>Starting when you choose this tradition at 3rd level, you gain the following benefits:</p>
+			<ul>
+				<li>You may use Dexterity (Acrobatics) instead of Strength (Athletics) to make a grapple check or a shove check.</li>
+				<li>While you are grappling a creature, you can use a bonus action to shove that creature.</li>
+				<li>When you escape from a grapple, you can use a reaction to grapple the creature that held you.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You may use Acrobatics instead of Athletics to make a grapple check or a shove check.
+			While you are grappling a creature, you can use a bonus action to shove that creature.
+			When you escape from a grapple, you can use a reaction to grapple the creature that held you.</description>
+		</sheet>
+	</element>
+	<element name="Crashing Wave" type="Archetype Feature" source="Way of the Iron Embrace" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_CRASHING_WAVE">
+		<description>
+			<p>Starting at 6th level, you can use your ki energy to toss your foes about with ease. When you shove a creature, you can increase the distance you push the target by spending ki points. Each point you spend increases the distance you push the target by 10 feet. The maximum number of ki points that you can spend on a shove equals half your monk level.</p>
+			<p class="indent">The target takes 1d6 bludgeoning damage for every 20 feet it is pushed. The target lands prone unless it avoids taking damage from the shove.</p>
+		</description>
+		<sheet usage="Ki">
+			<description>When you shove a creature, you can increase the distance you push the target by spending up to {{level:monk:half}} ki points. Each point you spend increases the distance you push the target by 10 feet.
+			The target takes 1d6 bludgeoning damage for every 20 feet it is pushed. The target lands prone unless it avoids taking damage from the shove.</description>
+		</sheet>
+	</element>
+	<element name="Python’s Coil" type="Archetype Feature" source="Way of the Iron Embrace" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_PYTHONS_COIL">
+		<description>
+			<p>Starting at 11th level, you have learned to exploit certain mystic pressure points on the body. As an action, you can spend 4 ki points and target a creature you are grappling. That creature must make a Constitution saving throw. On a failed save, the creature falls unconscious for 1 minute.</p>
+			<p class="indent">The effect ends early if the target takes damage, or someone uses an action to slap the target awake. A creature is immune to this effect if it is undead or if it cannot be charmed.</p>
+		</description>
+		<sheet action="Action" usage="Ki">
+			<description>You can spend 4 ki points and target a creature you are grappling. That creature must make a DC{{ki:dc}} Constitution saving throw. On a failed save, the creature falls unconscious for 1 minute.
+			The effect ends early if the target takes damage, or someone uses an action to slap the target awake. A creature is immune to this effect if it is undead or if it cannot be charmed.</description>
+		</sheet>
+	</element>
+	<element name="Giant’s Grasp" type="Archetype Feature" source="Way of the Iron Embrace" id="ID_DMSG_WIE_ARCHETYPE_FEATURE_IRON_EMBRACE_GIANTS_GRASP">
+		<description>
+			<p>Starting at 17th level, you have developed extraordinary power in your hands, and you can grapple or shove a creature up to two sizes larger than you. In addition, when you successfully grapple a creature, you subject that creature to the restrained condition until the grapple ends.</p>
+		</description>
+		<sheet>
+			<description>You can grapple or shove a creature up to two sizes larger than you.
+			In addition, when you successfully grapple a creature, you subject that creature to the restrained condition until the grapple ends.</description>
+		</sheet>
+	</element>
+</elements>

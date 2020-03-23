@@ -4,7 +4,7 @@
 		<name>Loxodon</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/guildmasters-guide-ravnica">Guildmasters’ Guide to Ravnica</author>
-		<update version="0.1.2">
+		<update version="0.1.5">
 			<file name="loxodon.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/guildmasters-guide-to-ravnica/races/loxodon.xml" />
 		</update>
 	</info>
@@ -29,7 +29,7 @@
 			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 2, and your Wisdom score increase by 1.</p>
 			<p class="indent"><strong><em>Age.</em></strong> Loxodons physically mature at the same rate humans do, but they live about 450 years. They highly value the weight of wisdom and experience and are considered young until they reach the age of 60.</p>
 			<p class="indent"><strong><em>Alignment.</em></strong> Most loxodons are lawful, believing in the value of a peaceful, ordered life. They also tend toward good.</p>
-			<p class="indent"><strong><em>Size.</em></strong> Loxodons s tand between 7 and 8 feet tall. Their massive bodies weigh between 300 and 400 pounds. Your size is Medium.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Loxodons stand between 7 and 8 feet tall. Their massive bodies weigh between 300 and 400 pounds. Your size is Medium.</p>
 			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
 			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
 			<p class="indent"><strong><em>Loxodon Serenity.</em></strong> You have advantage on saving throws against being charmed or frightened.</p>
@@ -42,15 +42,15 @@
 		<setters>
 			<set name="names" type="male">Bayul, Berov, Brooj, Chedu mov, Dobrun, Droozh, Golomov, Heruj, llromov, Kel, Nikoom, Ondros, Radomov, Svetel, Tamuj, Throom, Vasool</set>
 			<set name="names" type="female">Ajj, Boja, Dancu, Dooja, Elyuja, Fanoor, Irij, jasoo, Katrun, Lyooda, Mayja, Radu, Shuja, Soofya, Totoor, Verij, Vesmova. Yoolna, Zarij, Zoorja</set>
-			<set name="names-format">$(name)</set>
+			<set name="names-format">{{name}}</set>
 			<set name="height" modifier="2d10">6'7"</set>
 			<set name="weight" modifier="2d4">295 lb.</set>
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="Constitution" value="2" />
-			<stat name="Wisdom" value="1" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="constitution" value="2" />
+			<stat name="wisdom" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
 			<grant type="Language" id="ID_GGTR_LANGUAGE_LOXODON" />
@@ -68,6 +68,9 @@
 		<sheet>
 			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
 		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
 	</element>
 	<element name="Loxodon Serenity" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_LOXODON_SERENITY">
 		<description>
@@ -82,24 +85,12 @@
 			<p>You have thick, leathery skin. When you aren’t wearing armor, your AC is 12 + your Constitution modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
 		</description>
 		<sheet>
-			<description>When you aren’t wearing armor, your AC is $(loxodon:natural armor:inline). You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</description>
+			<description>When you aren’t wearing armor, your AC is {{loxodon:natural armor}}. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</description>
 		</sheet>
 		<rules>
-			<!-- only for inline sheet description -->
-			<stat name="loxodon:natural armor:inline" value="12" />
-			<stat name="loxodon:natural armor:inline" value="Constitution Modifier" />
-
-			<!-- ac stacking rules need a full rework which requires significant changes in the code and all ac related elements, some ac statistics may not calculate correctly at the moment such as unarmored defense and natural armor -->
-			<!-- when in doubt, sheet description calculation is correct -->
-
-			<!-- no armor -->
-			<grant type="Ignore" id="ID_INTERNAL_IGNORE_AC_DEXTERITY_MODIFIER" equipped="[armor:none]" />
-			<stat name="ac:natural" value="2" bonus="base"/>
-			<stat name="ac:natural" value="Constitution Modifier" bonus="ability" />
-			
-			<!-- armor -->
-			<stat name="AC" value="ac:natural" bonus="natural" equipped="[armor:none]" />
-			<stat name="AC" value="ac:natural" bonus="armor" equipped="[armor:any]" />
+			<stat name="loxodon:natural armor" value="12" />
+			<stat name="loxodon:natural armor" value="constitution:modifier" />
+			<stat name="ac:calculation" value="loxodon:natural armor" bonus="calculation" alt="Natural Armor (Loxodon)" />
 		</rules>
 	</element>
 	<element name="Trunk" type="Racial Trait" source="Guildmasters’ Guide to Ravnica" id="ID_WOTC_GGTR_RACIAL_TRAIT_LOXODON_TRUNK">
@@ -108,7 +99,7 @@
 			<p class="indent">Your trunk can’t wield weapons or shields or do anything that requires manual precision, such as using tools or magic items or performing the somatic components of a spell.</p>
 		</description>
 		<sheet>
-			<description>You can grasp things with your trunk, and you can use it as a snorkel. It has a reach of 5 feet, and it can lift $(trunk:lift) pounds. You can use it to do the following simple tasks: lift, drop, hold, push, or pull an object or a creature; open or close a door or a container; grapple someone; or make an unarmed strike. Your DM might allow other simple tasks to be added to that list of options.
+			<description>You can grasp things with your trunk, and you can use it as a snorkel. It has a reach of 5 feet, and it can lift {{trunk:lift}} pounds. You can use it to do the following simple tasks: lift, drop, hold, push, or pull an object or a creature; open or close a door or a container; grapple someone; or make an unarmed strike. Your DM might allow other simple tasks to be added to that list of options.
 			Your trunk can’t wield weapons or shields or do anything that requires manual precision, such as using tools or magic items or performing the somatic components of a spell.</description>
 		</sheet>
 		<rules>

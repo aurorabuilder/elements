@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="half-ogre.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/mirts-undermountain-survival-guide/races/half-ogre.xml" />
+		</update>
+	</info>
+	<element name="Half-Ogre" type="Race" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_RACE_HALF_OGRE">
+		<description>
+			<p>Ogres occasionally mate with bugbears, hobgoblins, orcs, or humans. The resulting offspring is known as a half-ogre. Lazy, strong, and bad-tempered, half-ogres are avoided by all people of good sense. A half-ogre with a human parent can occasionally learn enough social graces to live amongst civilized people, but this is rare. More often than not, they either join with ogre gangs or live as isolated loners.</p>
+			<h4>IMPETUOUS TEMPER</h4>
+			<p>Half-ogres are notoriously bad tempered. Even minor frustrations can lead to sudden and violent outbursts. Half-ogres take great pleasure in smashing things when angry, whether it be a stubborn door, a locked chest, or some poor creature's unfortunate skull. A half-ogre will continue to lash out until its rage is exhausted.</p>
+			<h4>IMPENETRABLE STUPIDITY</h4>
+			<p>As a rule, half-ogres are exceptionally dense and foolish. Their language skills are rudimentary, and reading is almost unknown amongst them. Although they are great liars, it does not occur to them that others might also tell falsehoods, and so they tend to believe whatever they are told, no matter how fantastic the story. When a half-ogre becomes convinced of something, it is nearly impossible to change its mind.</p>
+			<h4>INSATIABLE GREED</h4>
+			<p>Half-ogres are legendary for their gluttony and avarice. They tend to take whatever they want, especially if it is in the possession of a weaker creature. They covet anything shiny but have a special lust for gold. They tend to hoard possessions, and their lairs are filled with piles of junk. Half-ogres who become adventurers are most often motivated by greed.</p>
+			<h4>HALF-OGRE NAMES</h4>
+			<p>Typical names include: Azrach, Drakurg, Drezig, Geerugh, Grruch, Haffa, Mekor, Okurk, Ragnor, Tazok, Truurk, Zuzug</p>		
+			<h4>HALF-OGRE TRAITS</h4>
+			<p>Half-ogre characters are assumed to have a human parent and an ogre parent. They have the following traits in common.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 2, your Constitution score increases by 1, and your Intelligence score decreases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Half-ogres usually live to about 50 years of age.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Half-ogres have a natural inclination toward chaos. They are usually motivated by self-interest and are rarely good.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Half-ogres stand between 7 and 8 feet tall and weigh between 350 and 450 pounds. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet as if it were bright light and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Menacing.</em></strong>  You gain proficiency in the Intimidation skill.</p>
+			<p class="indent"><strong><em>Furious Might.</em></strong> As a bonus action, you work yourself into a fury that grants you enormous physical power. Your Strength score becomes 20. The transformation lasts for 1 minute, and once you use this ability, you can’t use it again until you finish a short or long rest. This ability has no effect on you if your Strength is 20 or higher already.</p>
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak Common and Giant. You cannot read or write unless your class requires it.</p>
+		</description>
+		<setters>
+			<set name="names" type="custom">Azrach, Drakurg, Drezig, Geerugh, Grruch, Haffa, Mekor, Okurk, Ragnor, Tazok, Truurk, Zuzug</set>
+			<set name="names-format">{{custom}}</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="2" />
+			<stat name="constitution" value="1" />
+			<stat name="intelligence" value="1" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_MENACING" />
+			<grant type="Racial Trait" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_FURIOUS_MIGHT" />
+			<grant type="Racial Trait" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_POWERFUL_BUILD" />
+			<grant type="Racial Trait" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_LANGUAGES" />
+		</rules>
+	</element>
+	<element name="Menacing" type="Racial Trait" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_MENACING">
+		<description>
+			<p>You gain proficiency in the Intimidation skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in the Intimidation skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element>
+	<element name="Furious Might" type="Racial Trait" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_FURIOUS_MIGHT">
+		<description>
+			<p>As a bonus action, you work yourself into a fury that grants you enormous physical power. Your Strength score becomes 20. The transformation lasts for 1 minute, and once you use this ability, you can’t use it again until you finish a short or long rest. This ability has no effect on you if your Strength is 20 or higher already.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You work yourself into a fury that grants you enormous physical power. Your Strength score becomes 20. The transformation lasts for 1 minute, and once you use this ability, you can’t use it again until you finish a short or long rest. This ability has no effect on you if your Strength is 20 or higher already.</description>
+		</sheet>
+	</element>
+	<element name="Powerful Build" type="Racial Trait" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+	<element name="Languages" type="Racial Trait" source="Mirt’s Undermountain Survival Guide" id="ID_DMSG_MUSG_RACIAL_TRAIT_HALF_OGRE_LANGUAGES">
+		<description>
+			<p>You can speak Common and Giant. You cannot read or write unless your class requires it.</p>
+		</description>
+		<sheet>
+			<description>You cannot read or write unless your class requires it.</description>
+		</sheet>
+		<rules>			
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_GIANT" />
+		</rules>
+	</element>
+</elements>

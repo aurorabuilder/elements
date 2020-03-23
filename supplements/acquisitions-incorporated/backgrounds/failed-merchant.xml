@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+        <name>Failed Merchant</name>
+		<update version="0.0.2">
+			<file name="failed-merchant.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/acquisitions-incorporated/backgrounds/failed-merchant.xml" />
+		</update>
+	</info>
+    <element name="Failed Merchant" type="Background" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_FAILED_MERCHANT">
+		<description>
+			<p>Maybe you come from a long line of merchants. Perhaps you were an entrepreneur. Regardless, your ventures ended poorly. Whether it was because of outside influences, bad luck, or simply because your business acumen was weak, you lost everything.</p>
+			<p class="indent">With failure, however, comes experience. You’re free of that old life, having made some connections and learned your lessons. Prepared to pursue the life of an adventurer, your insight into the world of commerce brought you into the sphere of Acquisitions Incorporated—and a franchise just might be in your future.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Investigation, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
+				<li><strong>Languages:</strong> Any one of your choice</li>
+				<li><strong>Equipment:</strong> One set of artisan’s tools, merchant’s scale, a set of fine clothes, and a belt pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_ACQINC_BACKGROUND_FEATURE_SUPPLY_CHAIN" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Being a merchant involved having a head for numbers, a strong personality, the ability to make deals with hostile adversaries, a strong sword arm to fight off bandits, and the intuition for knowing what people want and need. The art of business is the art of finding the best path to profit, and that path might be different with each transaction. It takes a strong mind and a stronger stomach to succeed. So why did you fail?</p>
+		</description>
+		<setters>
+			<set name="short">Investigation, Persuasion, Artisan’s Tool, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Proficiency" name="Artisan’s Tool, Failed Merchant" supports="Artisan tools" />
+			<select type="Language" name="Language, Failed Merchant" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_SUPPLY_CHAIN" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I didn’t have the cutthroat attitude necessary to succeed. I won’t make that mistake again.</item>
+				<item id="2">Even my competitors said I was affable and talented. Those traits should serve me well.</item>
+				<item id="3">To prosper, you have to be in control.</item>
+				<item id="4">The customer is always right.</item>
+				<item id="5">I was cutting corners and breaking deals to maximize profit. That’s why I failed.</item>
+				<item id="6">When I get an idea, I am single-minded in its execution—even if it’s a terrible idea.</item>
+				<item id="7">If I can be everyone’s friend, I’ll always have support.</item>
+				<item id="8">My heart wasn’t in being a merchant, so I failed. I’m not all that keen on adventuring either, but I need the money.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Survival. Where there’s life, there’s hope. If I remain alive and flexible, I can succeed. (Any)</item>
+				<item id="2">Generosity. People helped me when I was down. Now that I’m back on my feet, I’ll pay it forward. (Good)</item>
+				<item id="3">Excitement. Caution got me nowhere in my previous business. I’m not going to let it hold me back now. (Chaotic)</item>
+				<item id="4">Wealth. With enough coin, I can buy comfort, power, knowledge, and even eternal life. Nothing will stand between me and money. (Evil)</item>
+				<item id="5">Stability. The mercantile trade was too chaotic for me. I need a nice stable profession, like adventuring. (Lawful)</item>
+				<item id="6">Redemption. Too many people consider me a failure. So I need to prove them wrong. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My family means everything to me. I failed them before, and I must not do so again.</item>
+				<item id="2">My church provides a connection to my god, so I must ensure that it is protected and funded.</item>
+				<item id="3">My former business partner fell ill, and then our business failed. Part of my new venture involves earning enough to take care of their family.</item>
+				<item id="4">If I take care of my possessions, they’ll take care of me. People come and go, but a weapon or a wand is something you can always rely on.</item>
+				<item id="5">Although my business failed, the people of my community were kind to me. I’ll do everything in my power to protect them.</item>
+				<item id="6">I owe a dangerous person a lot of money. As long as they’re happy, they let my debt rest unpaid.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">Why spend gold here when you can buy the same thing for copper in the next town?</item>
+				<item id="2">I must have the best of everything. Like, right now.</item>
+				<item id="3">You haven’t heard of me? I’m sure that’s because of your ignorance and low breeding.</item>
+				<item id="4">I failed, but I’m awesome. So when anyone else is successful, it must be because of nepotism, dishonesty, or dumb luck.</item>
+				<item id="5">I find that most people are trustworthy. Hey, where’s my belt pouch?</item>
+				<item id="6">Nothing gets between me and danger except my fellow adventurers. So I’ll be sure to put them there.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Supply Chain" type="Background Feature" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_BACKGROUND_FEATURE_SUPPLY_CHAIN">
+		<description>
+			<p>From your time as a merchant, you retain connections with wholesalers, suppliers, and other merchants and entrepreneurs. You can call upon these connections when looking for items or information.</p>
+		</description>
+		<sheet alt="Supply Chain" />
+	</element>
+</elements>

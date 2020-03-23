@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Subclasses, Part 2</name>
+		<update version="0.0.2">
+			<file name="20200204.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2020/20200204.xml" />
+		</update>
+	</info>
+	
+	<element name="Unearthed Arcana: Subclasses, Part 2" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20200206">
+		<description>
+			<p>Unearthed Arcana presents three new subclasses for you to playtest: the College of Creation for the bard, the Unity Domain for the cleric, and the Clockwork Soul for the sorcerer.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20200206</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/subclasses_part2</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20200206</set>
+		</setters>
+	</element>
+	
+	<element name="College of Creation" type="Archetype" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_BARD_COLLEGE_OF_CREATION">
+		<supports>Bard College</supports>
+		<description>
+			<p>Bards believe the multiverse was given existence through word and sound, esoteric harmonies that continue to resound through existence: the Song of Creation. The bards of this college draw on this ancient power through performances of dance, music, or song to bring into being what they need most.</p>
+			<p class="indent">Members of this college might have developed their powers during experiences on other worlds or planes of existence. Those who have seen the commonalities of multiple realities might have learned how to tap into truths most mortals glimpse only for a moment. Alternatively, the bard might find themselves out of step with their own home plane, reality, or time, their connections to elsewhere allowing them to manipulate the space around them. Regardless of where a bard draws their powers from, other performers might be drawn to them, either to learn their secrets or to put an end to their dangerous manipulation of the Song of Creation.</p>
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_POTENTIAL" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_ANIMATING_PERFORMANCE" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_PERFORMANCE_OF_CREATION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_POTENTIAL" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_ANIMATING_PERFORMANCE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_PERFORMANCE_OF_CREATION" level="14" />
+		</rules>
+	</element>
+	<element name="Note of Potential" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_POTENTIAL">
+		<description>
+			<p><em>3rd-level College of Creation feature</em></p>
+			<p>You can manipulate the Song of Creation to summon a floating musical note of possibility: Whenever you give a creature a Bardic Inspiration die, you can create a Note of Potential. The note orbits within 5 feet of the creature. The note is a Tiny object that is intangible and invulnerable, and it lasts until the creature rolls the Bardic Inspiration die. A creature with a note can use it in the following ways.</p>
+			<p class="indent"><strong><em>Note of Destruction.</em></strong> Immediately after the creature rolls the Bardic Inspiration die to add it to an attack roll, the creature can expend the note to create a burst of sound. Each other creature within 5 feet of it must succeed on a Constitution saving throw against your spell save DC or take thunder damage equal to the number rolled on the Bardic Inspiration die.</p>
+			<p class="indent"><strong><em>Note of Protection.</em></strong> Immediately after the creature rolls the Bardic Inspiration die and adds it to a saving throw, the creature can expend the note to gain temporary hit points equal to the number rolled on the Bardic Inspiration die + your Charisma modifier, provided the creature doesn't already have temporary hit points.</p>
+			<p class="indent"><strong><em>Note of Ingenuity.</em></strong> When the creature rolls the Bardic Inspiration die to add it to an ability check, the creature can expend the note to roll the Bardic Inspiration die again and choose which roll to use.</p>
+		</description>
+		<sheet>
+			<description>Whenever you give a creature a Bardic Inspiration die, you can create a Note of Potential. The note orbits within 5 feet of the creature. The note is a Tiny object that is intangible and invulnerable, and it lasts until the creature rolls the Bardic Inspiration die. A creature with a note can use it in the following ways.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_DESTRUCTION" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_PROTECTION" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_INGENUITY" />
+		</rules>
+	</element>
+	<element name="Animating Performance" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_ANIMATING_PERFORMANCE">
+		<description>
+			<p><em>6th-level College of Creation feature</em></p>
+			<p>Your mastery over the Song of Creation allows you to magically bring items to life. As an action, you can target a Large or smaller nonmagical item you can see within 30 feet of you and animate it. The animate item uses the Dancing Item stat block and is under your control for 1 hour or until it is reduced to 0 hit points.</p>
+			<p class="indent">In combat, the item shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action.</p>
+			<p class="indent">When you use your Bardic Inspiration feature, you can command which action your animated item takes as part of the same bonus action.</p>
+			<p class="indent">Once you animate an item with this feature, you can’t do so again until you finish a long rest or until you expend a spell slot of 3rd level or higher to use this feature. You can have only one item animated by this feature at a time; if you use this action and already have a dancing item from this feature, the first one immediately becomes inanimate.</p>			
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can target a Large or smaller nonmagical item you can see within 30 feet of you and animate it. It is under your control for 1 hour or until it is reduced to 0 hp.
+			In combat, the item shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action.
+			When you use your Bardic Inspiration feature, you can command which action your animated item takes as part of the same bonus action.
+			You regain the use of this feature when you expend a spell slot of 3rd level or higher to use this feature. You can have only one item animated by this feature at a time; if you use this action and already have a dancing item from this feature, the first one immediately becomes inanimate.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Dancing Item" supports="UA20200206 Dancing Item" optional="true" />
+		</rules>
+	</element>
+	<element name="Performance of Creation" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_PERFORMANCE_OF_CREATION">
+		<description>
+			<p><em>14th-level College of Creation feature</em></p>
+			<p>Your performance can manipulate the magic of creation, briefly transforming the world around you. As an action, you can create one nonmagical item of your choice in an unoccupied space within 10 feet of you. The item must appear on a surface or in a liquid that can support it. The gp value of the item can’t be more than 20 times your bard level and must be Large or smaller. Tiny glimmering, intangible notes float around it, and a creature can faintly hear music when touching it. For examples of items you can create, see the Armor, Weapons, Adventuring Gear, Tools, and Mounts and Vehicles tables in chapter 5, “Equipment,” of the Player’s Handbook.</p>
+			<p class="indent">The created item disappears at the end of your next turn, unless you use your action to maintain it. Each time you use your action in this way, the item’s duration is extended to the end of your next turn, up to a maximum of 1 minute. If you maintain the item for the full minute, it continues to exist for a number of hours equal to your bard level.</p>
+			<p class="indent">Once you create an item with this feature, you can’t do so again until you finish a long rest or until you expend a spell slot of 5th level or higher to use this feature. You can have only one item created by this feature at a time; if you use this action and already have an item from this feature, the first one immediately vanishes.</p>			
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can create one nonmagical item of your choice in an unoccupied space within 10 feet of you. The item must appear on a surface or in a liquid that can support it. The value of the item can’t be more than {{performance of creation:monetary value}}gp and must be Large or smaller.
+			The created item disappears at the end of your next turn, unless you use your action to maintain it. Each time you use your action in this way, the item’s duration is extended to the end of your next turn, up to a maximum of 1 minute. If you maintain the item for the full minute, it continues to exist for {{level:bard}} hours.
+			You regain the use of this feature when you expend a spell slot of 5th level or higher to use this feature. You can have only one item created by this feature at a time; if you use this action and already have an item from this feature, the first one immediately vanishes.</description>
+		</sheet>
+		<rules>
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+			<stat name="performance of creation:monetary value" value="level:bard" />
+		</rules>
+	</element>
+	<element name="Note of Destruction" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_DESTRUCTION">
+		<compendium display="false" />
+		<description>
+			<p>Immediately after the creature rolls the Bardic Inspiration die to add it to an attack roll, the creature can expend the note to create a burst of sound. Each other creature within 5 feet of it must succeed on a Constitution saving throw against your spell save DC or take thunder damage equal to the number rolled on the Bardic Inspiration die.</p>
+		</description>
+		<sheet>
+			<description>Immediately after the creature rolls the Bardic Inspiration die to add it to an attack roll, the creature can expend the note to create a burst of sound. Each other creature within 5 feet of it must succeed on a Constitution save or take thunder damage equal to the number rolled on the Bardic Inspiration die.</description>
+		</sheet>
+	</element>
+	<element name="Note of Protection" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_PROTECTION">
+		<compendium display="false" />
+		<description>
+			<p>Immediately after the creature rolls the Bardic Inspiration die and adds it to a saving throw, the creature can expend the note to gain temporary hit points equal to the number rolled on the Bardic Inspiration die + your Charisma modifier, provided the creature doesn't already have temporary hit points.</p>
+		</description>
+		<sheet>
+			<description>Immediately after the creature rolls the Bardic Inspiration die and adds it to a saving throw, the creature can expend the note to gain temporary hp equal to the number rolled on the Bardic Inspiration die + {{charisma:modifier}}, provided the creature doesn't already have temporary hp.</description>
+		</sheet>
+	</element>
+	<element name="Note of Ingenuity" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CREATION_NOTE_OF_INGENUITY">
+		<compendium display="false" />
+		<description>
+			<p>When the creature rolls the Bardic Inspiration die to add it to an ability check, the creature can expend the note to roll the Bardic Inspiration die again and choose which roll to use.</p>
+		</description>
+		<sheet>
+			<description>When the creature rolls the Bardic Inspiration die to add it to an ability check, the creature can expend the note to roll the Bardic Inspiration die again and choose which roll to use.</description>
+		</sheet>
+	</element>
+	
+	<element name="Dancing Item (Large)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_BARD_DANCING_ITEM">
+		<compendium display="false" />
+		<supports>UA20200206 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200206_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the dancing item’s Constitution modifier + your Charisma modifier + five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Large</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200206_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="companion:constitution:modifier" />
+			<stat name="companion:hp:max" value="charisma:modifier" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Medium)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_BARD_DANCING_ITEM_MEDIUM">
+		<supports>UA20200206 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200206_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the dancing item’s Constitution modifier + your Charisma modifier + five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200206_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="companion:constitution:modifier" />
+			<stat name="companion:hp:max" value="charisma:modifier" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Small)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_BARD_DANCING_ITEM_SMALL">
+		<compendium display="false" />
+		<supports>UA20200206 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200206_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the dancing item’s Constitution modifier + your Charisma modifier + five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Small</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200206_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="companion:constitution:modifier" />
+			<stat name="companion:hp:max" value="charisma:modifier" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dancing Item (Tiny)" type="Companion" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_BARD_DANCING_ITEM_TINY">
+		<compendium display="false" />
+		<supports>UA20200206 Dancing Item</supports>
+		<requirements>ID_WOTC_UA20200206_ARCHETYPE_BARD_COLLEGE_OF_CREATION</requirements>
+		<description>
+			<p>Your mastery over the Song of Creation allows you to bring items to life.</p>
+		</description>
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">equal the dancing item’s Constitution modifier + your Charisma modifier + five times your level in this class</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned, frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ,ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM</set>
+			<set name="actions">ID_WOTC_UA20200206_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="companion:constitution:modifier" />
+			<stat name="companion:hp:max" value="charisma:modifier" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:hp:max" value="level:bard" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Endless Waltz" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_ENDLESS_WALTZ">
+		<description>
+			<p>Immediately after the item makes a slam attack, it can take the Dodge action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>Immediately after the item makes a slam attack, it can take the Dodge action as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Immutable Form" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_TRAIT_DANCING_ITEM_IMMUTABLE_FORM">
+		<description>
+			<p>The item is immune to any spell or effect that would alter its form.</p>
+		</description>
+		<sheet>
+			<description>The item is immune to any spell or effect that would alter its form.</description>
+		</sheet>
+	</element>
+	<element name="Force-Empowered Slam" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_COMPANION_ACTION_DANCING_ITEM_FORCE_EMPOWERED_SLAM">
+		<description>
+			<p>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 1d10 + your Charisma modifier force damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 1d10 + your Charisma modifier force damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Unity Domain" type="Archetype" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_CLERIC_UNITY_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>A sense of oneness shines at the heart of healthy communities, whether bound together by friendship, blood, faith, or some other uniting force. The gods of unity deepen such bonds and delight in their strength.</p>
+			<p class="indent">Clerics of these gods preside over marriages and other familial bonding customs, but they also nurture the emotional bonds of friendship and camaraderie. Their divine blessings bolster and protect allies in battle through these deep bonds and turn aside malign influences.</p>
+			<h5 class="caption">Unity Deities</h5>
+			<table>
+				<thead>
+					<tr><td>Deity</td><td>Pantheon</td></tr>
+				</thead>
+				<tr><td>Angharradh</td><td>Elven</td></tr>
+				<tr><td>Athena</td><td>Greek</td></tr>
+				<tr><td>Berronar Truesilver</td><td>Dwarven</td></tr>
+				<tr><td>Boldrei</td><td>Eberron</td></tr>
+				<tr><td>Cyrrollalee</td><td>Halfling</td></tr>
+				<tr><td>Eldath</td><td>Forgotten Realms</td></tr>
+				<tr><td>Gaerdal Ironhand</td><td>Gnomish</td></tr>
+				<tr><td>Heimdall</td><td>Norse</td></tr>
+				<tr><td>Paladine</td><td>Dragonlance</td></tr>
+				<tr><td>Rao</td><td>Greyhawk</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_EMBOLDENING_BOND" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_CD_SHARED_BURDEN" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_PROTECTIVE_BOND" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_POTENT_SPELLCASTING" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_ENDURING_UNITY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_EMBOLDENING_BOND" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_CD_SHARED_BURDEN" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_PROTECTIVE_BOND" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_POTENT_SPELLCASTING" level="8" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_ENDURING_UNITY" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_DOMAIN_SPELLS">
+		<description>
+			<p>You gain domain spells at the cleric levels listed in the Unity Domain Spells table. See the Divine Domain class feature in the Player’s Handbook for how domain spells work.</p>
+			<h5 class="caption">UNITY DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>heroism, shield of faith</em></td></tr>
+				<tr><td>3rd</td><td><em>aid, warding bond</em></td></tr>
+				<tr><td>5th</td><td><em>beacon of hope, sending</em></td></tr>
+				<tr><td>7th</td><td><em>aura of purity, guardian of faith</em></td></tr>
+				<tr><td>9th</td><td><em>greater restoration, Rary’s telepathic bond</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_HEROISM" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SHIELD_OF_FAITH" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AID" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SENDING" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RARYS_TELEPATHIC_BOND" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Emboldening Bond" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_EMBOLDENING_BOND">
+		<description>
+			<p><em>1st-level Unity Domain feature</em></p>
+			<p>You can forge an empowering bond between allies. As an action, you can choose two willing creatures you can see within 30 feet of you (this can include yourself) and create a magical bond between them. While either bonded creature is within 30 feet of the other, the creature can roll a d4 and add the number rolled to an attack roll, an ability check, or a saving throw it makes. Each creature can add the d4 no more than once per turn. The bond lasts for 1 hour or until you use this feature again.</p>
+			<p class="indent">You can use this feature once, and you regain the ability to do so when you finish a long rest. You can also expend a spell slot to use the feature again.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can choose two willing creatures you can see within 30 feet of you and create a magical bond between them. While either bonded creature is within 30 feet of the other, the creature can roll a d4 and add the number rolled to an attack roll, an ability check, or a saving throw it makes. Each creature can add the d4 no more than once per turn. The bond lasts for 1 hour or until you use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Shared Burden" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_CD_SHARED_BURDEN">
+		<description>
+			<p><em>2nd-level Unity Domain feature</em></p>
+			<p>You can use your Channel Divinity to protect your allies through the strength of your shared bonds.</p>
+			<p class="indent">When a creature you can see within 30 feet of you takes damage, you can use your reaction to choose a number of other willing creatures you can see, up to a number of creatures equal to your Wisdom modifier (minimum of one creature). Distribute the damage taken between the original target and the chosen creatures. Each creature must take at least 1 damage. Apply any damage resistance or vulnerability of the creatures involved after you distribute the damage.</p>
+		</description>
+		<sheet alt="Shared Burden" action="Reaction" usage="Channel Divinity">
+			<description>When a creature you can see within 30 feet of you takes damage, you can choose up to {{shared burden:creatures}} other willing creatures you can see. Distribute the damage taken between the original target and the chosen creatures. Each creature must take at least 1 damage. Apply any damage resistance or vulnerability of the creatures involved after you distribute the damage.</description>
+		</sheet>
+		<rules>
+			<stat name="shared burden:creatures" value="1" bonus="base" />
+			<stat name="shared burden:creatures" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Protective Bond" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_PROTECTIVE_BOND">
+		<description>
+			<p><em>6th-level Unity Domain feature</em></p>
+			<p>The bond you forge between people shields them from harm. While either creature chosen for your Emboldening Bond feature is within 30 feet of the other, the creature can use its reaction to grant resistance to all damage to the other creature when that other creature takes damage. This resistance lasts until the end of the current turn.</p>
+		</description>
+		<sheet>
+			<description>While either creature chosen for your Emboldening Bond feature is within 30 feet of the other, the creature can use its reaction to grant resistance to all damage to the other creature when that other creature takes damage. This resistance lasts until the end of the current turn.</description>
+		</sheet>
+	</element>
+	<element name="Potent Spellcasting" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_POTENT_SPELLCASTING">
+		<description>
+			<p><em>8th-level Unity Domain feature</em></p>
+			<p>You add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+		</description>
+		<sheet>
+			<description>You add {{wisdom:modifier}} to the damage you deal with any cleric cantrip.</description>
+		</sheet>
+	</element>
+	<element name="Enduring Unity" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_UNITY_ENDURING_UNITY">
+		<description>
+			<p><em>17th-level Unity Domain feature</em></p>
+			<p>The bonds you create endure across vast distances. Creatures affected by your Emboldening Bond feature gain its benefits, as well as those of your Protective Bond feature, while they are on the same plane of existence as each other.</p>
+			<p class="indent">Additionally, when a creature chosen for your Emboldening Bond is reduced to 0 hit points, their bonded partner gains the following benefits for 1 minute, or until the creature regains at least 1 hit point:</p>
+			<ul>
+				<li>The creature has advantage on attack rolls, ability checks, and saving throws</li>
+				<li>The creature gains resistance to all damage</li>
+				<li>As an action, the creature can touch their bonded partner to expend and roll any number of Hit Dice. Their bonded partner regains a number of hit points equal to the total rolled.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Creatures affected by your Emboldening Bond feature gain its benefits, as well as those of your Protective Bond feature, while they are on the same plane of existence as each other.
+			When a creature chosen for your Emboldening Bond is reduced to 0 hp, their bonded partner gains the following benefits for 1 minute, or until the creature regains at least 1 hp:
+			The creature has advantage on attack rolls, ability checks, and saving throws
+			The creature gains resistance to all damage
+			As an action, the creature can touch their bonded partner to expend and roll any number of Hit Dice. Their bonded partner regains a number of hp equal to the total rolled.</description>
+		</sheet>
+	</element>
+	
+	<element name="Clockwork Soul" type="Archetype" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_SORCERER_CLOCKWORK_SOUL">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>A plane of utmost order, Mechanus is a realm overseen by a godlike entity called Primus, whose actions are inscrutable and calculations, vast. You, or someone from your lineage, might have become entangled in one of the machinations of the leader of the modrons. Perhaps you were exposed to an artifact created by Primus, or your ancestor took part in the Great Modron March in some way.</p>
+			<p class="indent">The power of Mechanus can seem strange and alien to others, but for you it is part of a vast and glorious system that others can’t comprehend. At your option, you can pick from or roll on the Manifestations of Mechanus table to create a way your connection to the plane manifests while you are casting a spell.</p>
+			<h5 class="caption">Manifestations of Mechanus</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Manifestation</td></tr>
+				</thead>
+				<tr><td>1</td><td>Large, spectral cogwheels appear hovering behind you.</td></tr>
+				<tr><td>2</td><td>The hands of a clock appear in your eyes.</td></tr>
+				<tr><td>3</td><td>Your skin glows with a golden, metallic sheen.</td></tr>
+				<tr><td>4</td><td>Your features become unnaturally angular, like geometric objects.</td></tr>
+				<tr><td>5</td><td>Your spellcasting focus takes the form of a miniature Spawning Stone or other creation of Primus.</td></tr>
+				<tr><td>6</td><td>The ringing of a clock can be heard by you and those affected by your magic.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_MAGIC" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_RESTORE_BALANCE" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_BULWARK_OF_LAW" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_TRANCE_OF_ORDER" />
+			<div element="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_CAVALCADE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_MAGIC" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_RESTORE_BALANCE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_BULWARK_OF_LAW" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_TRANCE_OF_ORDER" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_CAVALCADE" level="18" />
+		</rules>
+	</element>
+	<element name="Clockwork Magic" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_MAGIC">
+		<description>
+			<p><em>1st-level Clockwork Soul feature</em></p>
+			<p>You learn additional spells when you reach certain levels in this class, as shown on the Clockwork Spells table. Each spell counts as a sorcerer spell for you, but it doesn’t count against the number of sorcerer spells you know. These spells can’t be replaced when you gain a level in this class.</p>
+			<h5 class="caption">Clockwork Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Sorcerer Level</td><td>Spells</td></tr>
+				</thead>
+                <tr><td>1st</td><td><em>alarm, protection from evil and good</em></td></tr>
+                <tr><td>3rd</td><td><em>find traps, heat metal</em></td></tr>
+                <tr><td>5th</td><td><em>counterspell, glyph of warding</em></td></tr>
+                <tr><td>7th</td><td><em>arcane eye, Otiluke’s resilient sphere</em></td></tr>
+                <tr><td>9th</td><td><em>animate objects, wall of force</em></td></tr>
+			</table>
+		</description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ALARM" level="1" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" level="1" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_FIND_TRAPS" level="3" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_HEAT_METAL" level="3" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" level="5" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_GLYPH_OF_WARDING" level="5" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE" level="7" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_OBJECTS" level="9" spellcasting="Sorcerer" />
+            <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Restore Balance" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_RESTORE_BALANCE">
+		<description>
+			<p><em>1st-level Clockwork Soul feature</em></p>
+			<p>Your connection to the plane of absolute order allows you to equalize chaotic moments. When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can use your reaction to prevent the roll from being affected by advantage and disadvantage.</p>
+			<p class="indent">You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{clockwork soul:restore balance:usage}}/Long Rest">
+			<description>When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can prevent the roll from being affected by advantage and disadvantage.</description>
+		</sheet>
+		<rules>
+			<stat name="clockwork soul:restore balance:usage" value="1" bonus="base" />
+			<stat name="clockwork soul:restore balance:usage" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bulwark of Law" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_BULWARK_OF_LAW">
+		<description>
+			<p><em>6th-level Clockwork Soul feature</em></p>
+			<p>You can imbue a creature with a shimmering shield of order. As an action, you can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.</p>
+			<p class="indent">The ward is represented by a number of d8s equal to the number of sorcery points spent to create it. When the warded creature takes damage, it can use its reaction to spend a number of those dice, roll them, and reduce the damage taken by the total of the spent dice.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.
+			The ward is represented by a number of d8s equal to the number of sorcery points spent to create it. When the warded creature takes damage, it can use its reaction to spend a number of those dice, roll them, and reduce the damage taken by the total of the spent dice.</description>
+		</sheet>
+	</element>
+	<element name="Trance of Order" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_TRANCE_OF_ORDER">
+		<description>
+			<p><em>14th-level Clockwork Soul feature</em></p>
+			<p>You gain the ability to enter a state of clockwork consciousness as an action. For the next minute, attack rolls against you can’t benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a d20 roll of 9 or lower as a 10.</p>
+			<p class="indent">Once you use this action, you can’t use it again until you finish a long rest or until you expend 5 sorcery points to use it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>For the next minute, attack rolls against you can’t benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a d20 roll of 9 or lower as a 10.
+			You can expend 5 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Clockwork Cavalcade" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_WOTC_UA20200206_ARCHETYPE_FEATURE_CLOCKWORK_CLOCKWORK_CAVALCADE">
+		<description>
+			<p><em>18th-level Clockwork Soul feature</em></p>
+			<p>You summon spirits of order to restore balance around you. As an action, you summon the spirits in a 30-foot cube originating from you. The spirits look like modrons or other constructs of your choice. The spirits are intangible and invulnerable, work fast and efficiently, and create the following effects within the cube before vanishing:</p>
+			<ul>
+				<li>The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube.</li>
+				<li>Any damaged objects entirely in the cube are repaired.</li>
+				<li>Every spell of 6th level or lower ends on creatures and objects of your choice in the cube.</li>
+			</ul>
+			<p class="indent">Once you use this action, you can’t use it again until you finish a long rest or until you expend 7 sorcery points to use it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You summon the spirits in a 30-foot cube originating from you. The spirits look like modrons or other constructs of your choice. The spirits are intangible and invulnerable, work fast and efficiently, and create the following effects within the cube before vanishing:
+			The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube.
+			Any damaged objects entirely in the cube are repaired.
+			Every spell of 6th level or lower ends on creatures and objects of your choice in the cube.
+			You can expend 7 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>	
+</elements>

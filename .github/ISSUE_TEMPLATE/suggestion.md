@@ -1,8 +1,8 @@
 ---
-name: Suggestion
-about: Suggest an idea for the Aurora Builder software.
+name: Feedback / Suggestion
+about: Provide feedback or a suggestion for the Aurora character builder.
 title: ''
-labels: aurora builder, enhancement
+labels: aurora, feedback
 assignees: swdriessen
 
 ---

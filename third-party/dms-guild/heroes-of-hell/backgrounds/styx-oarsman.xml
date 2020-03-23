@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="styx-oarsman.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/heroes-of-hell/backgrounds/styx-oarsman.xml" />
+		</update>
+	</info>	
+	<element name="Styx Oarsman" type="Background" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_STYX_OARSMAN">
+		<description>
+			<p>You found yourself poling a small skiff on the black waters of the Styx. You have no idea how you came to be a barge pilot, and little else about your past save a few tattered, disjointed memories. You carry a trinket from your past, but it means nothing to you.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Perception</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (water)</li>
+				<li><strong>Languages:</strong> Infernal</li>
+				<li><strong>Equipment:</strong> A long oar, a random trinket (chapter 5 of the PHB) tied to your past, an infernal work permit (a flayed skin scroll), a set of ragged clothes, and a belt pouch with 10 gp.</li>
+			</ul>
+			<div element="ID_DMSG_HOH_BACKGROUND_FEATURE_STYX_RESILIENCE" />
+		</description>
+		<setters>
+			<set name="short">Athletics, Perception, Vehicles (Water), Infernal</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Background Feature" id="ID_DMSG_HOH_BACKGROUND_FEATURE_STYX_RESILIENCE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	<element name="Feature: Styx Resilience" type="Background Feature" source="Heroes of Hell" id="ID_DMSG_HOH_BACKGROUND_FEATURE_STYX_RESILIENCE">
+		<description>
+			<p>You have been exposed to the memory stealing properties of the waters of the Styx so many times you have actually developed a slight resistance to memory altering effects - not to mention there's very little left to alter. You have advantage on saving throws against spells or abilities that alter or affect your memory. This includes exposure to the waters of the river Styx.</p>
+		</description>
+		<sheet alt="Styx Resilience">
+			<description>You have been exposed to the memory stealing properties of the waters of the Styx so many times you have actually developed a slight resistance to memory altering effects - not to mention there's very little left to alter. You have advantage on saving throws against spells or abilities that alter or affect your memory. This includes exposure to the waters of the river Styx.</description>
+		</sheet>
+	</element>
+</elements>

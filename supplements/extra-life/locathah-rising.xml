@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Locathah</name>
+        <update version="0.0.2">
+            <file name="locathah-rising.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/extra-life/locathah-rising.xml" />
+        </update>
+    </info>
+    
+    <element name="Locathah Rising" type="Source" source="Core" id="ID_SOURCE_LOCATHAH_RISING">
+        <description>
+            <![CDATA[<p>A SUCCESSFUL adventure is REALLY more about the FRIENDS you make along the way, than it is the monsters you slay while you PLAY!</p><p>A fifth edition D&D adventure for 9th level locathah characters. Rules for creating locathah characters are contained herein.</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">LR</set>
+            <set name="url">https://www.dmsguild.com/product/289261/Locathah-Rising-5e</set>
+            <set name="image">https://www.dmsguild.com/images/44/289261.jpg</set>
+            <set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+            <set name="official">true</set>
+            <set name="supplement">true</set>
+            <set name="release">20190915</set>
+        </setters>
+    </element>
+
+    <element name="Locathah" type="Race" source="Locathah Rising" id="ID_WOTC_LR_RACE_LOCATHAH">
+        <description>
+            <p>Featured in Ghosts of Saltmarsh, these resilient and proud fish-folk have endured war, slavery, and mistreatment at the hands of other aquatic creatures. They dwell in submerged tribal communities along seacoasts, and hunt both above and below the water.</p>
+            <h4>LOCATHAH TRAITS</h4>
+            <p>Your locathah character has an assortment of inborn abilities, part and parcel of locathah nature.</p>
+            <p class="indent"><b><i>Ability Score Increase. </i></b>Your Strength score increases by 2 and your Dexterity score increases by 1.</p>
+            <p class="indent"><b><i>Age. </i></b>Locathah mature to adulthood by the age of 10 but have been known to live up to 80 years.</p>
+            <p class="indent"><b><i>Alignment. </i></b>Most locathah are true neutral or have some aspect of neutrality in their alignment. They tend toward good, coming from a culture where compassion for the downtrodden is a commonality.</p>
+            <p class="indent"><b><i>Size. </i></b>Locathah stand between 5 and 6 feet tall and average about 150 pounds. Your size is Medium.</p>
+            <p class="indent"><b><i>Speed. </i></b> Your base walking speed is 30 feet, and you have a swim speed of 30 feet.</p>
+            <p class="indent"><b><i>Natural Armor. </i></b>You have tough, scaly skin. When you aren’t wearing armor, your AC is 12 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
+            <p class="indent"><b><i>Observant &amp; Athletic. </i></b>You have proficiency in the Athletics and Perception skills.</p>
+            <p class="indent"><b><i>Leviathan Will. </i></b>You have advantage on saving throws against being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+            <p class="indent"><b><i>Limited Amphibiousness. </i></b>You can breathe air and water, but you need to be submerged at least once every 4 hours to avoid suffocating.</p>
+            <p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Aquan and Common.</p>
+        </description>
+        <setters>
+            <set name="names" type="locathah">Barnacle, Bubbles, Gl'ulp, Sandlot, Shanty, Undertow</set>
+            <set name="names-format">{{locathah}}</set>
+        </setters>
+        <sheet display="false"/>
+        <rules>
+            <stat name="strength" value="2" />
+            <stat name="dexterity" value="1" />
+            <stat name="innate speed" value="30" bonus="base"/>
+            <stat name="innate speed:swim" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+            <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_NATURAL_ARMOR" />
+            <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_OBSERVANT_AND_ATHLETIC" />
+            <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LEVIATHAN_WILL" />
+            <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LIMITED_AMPHIBIOUSNESS" />
+        </rules>
+    </element>
+    <element name="Natural Armor" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_NATURAL_ARMOR">
+        <description>
+            <p>You have tough, scaly skin. When you aren’t wearing armor, your AC is 12 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
+        </description>
+        <sheet>
+            <description>You have tough, scaly skin. When you aren’t wearing armor, your AC is {{locathah:natural armor}}. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</description>
+        </sheet>
+        <rules>
+            <stat name="locathah:natural armor" value="12" />
+            <stat name="locathah:natural armor" value="dexterity:modifier" />
+            <stat name="ac:calculation" value="locathah:natural armor" bonus="calculation" alt="Natural Armor (Locathah)" />
+        </rules>
+    </element>
+    <element name="Observant &amp; Athletic" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_OBSERVANT_AND_ATHLETIC">
+        <description>
+            <p>You have proficiency in the Athletics and Perception skills.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+        </rules>
+    </element>
+    <element name="Leviathan Will" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LEVIATHAN_WILL">
+        <description>
+            <p>You have advantage on saving throws against being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</description>
+        </sheet>
+    </element>
+    <element name="Limited Amphibiousness" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LIMITED_AMPHIBIOUSNESS">
+        <description>
+            <p>You can breathe air and water, but you need to be submerged at least once every 4 hours to avoid suffocating.</p>
+        </description>
+        <sheet>
+            <description>You can breathe air and water, but you need to be submerged at least once every 4 hours to avoid suffocating.</description>
+        </sheet>
+    </element>
+</elements>  

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Totem of The Duck</name>
+		<description>Inspired by the creative inquiries of actor Jon Heder in the development of the majestic Half-Ore Barbarian Lionel Gayheart, you too can now harness this unstoppable source of power. Quack quack, motherfucker.</description>
+		<author url="https://www.dmsguild.com/product/239392/Totem-of-the-Duck--Option-for-Totem-Warrior-Barbarians">Matthew Mercer</author>
+		<update version="0.0.4">
+			<file name="barbarian-totem-duck.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/classes/barbarian-totem-duck.xml" />
+		</update>
+	</info>
+
+	<element name="Totem Spirit (Duck)" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_PATH_OF_THE_TOTEM_WARRIOR_TOTEM_SPIRIT_DUCK">
+		<supports>Totem Spirit</supports>
+		<description>
+			<p>You must make or acquire a physical totem object- an amulet or similar adornment- that incorporates feathers, bones, iconography, or crude, cartoonish drawings of a duck. At your option, you also gain minor physical or mental attributes that are reminiscent of a duck. For example, you may develop feather in certain areas of your body that require consstent grooming, or subconsciously quack to yourself when confused or met with an unnerving sound.</p>
+			<p class="indent">While raging, when an attacker that you can see targets you with an attack, you can use your reaction to impose disadvantage on the attack roll, helping you to shrug off the blow. Like water off a duck's back.</p>
+		</description>
+		<sheet>
+			<description>While raging, when an attacker that you can see targets you with an attack, you can use your reaction to impose disadvantage on the attack roll.</description>
+		</sheet>
+	</element>
+	<element name="Aspect of the Beast (Duck)" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_PATH_OF_THE_TOTEM_WARRIOR_ASPECT_OF_THE_BEAST_DUCK">
+		<supports>Aspect of the Beast</supports>
+		<description>
+			<p>You don't have to chose the duck... But we all know you will.</p>
+			<p class="indent">You gain resistance to acid damage, as the liquid mostly slides off your strangely waxy exterior. In addition, you gain a swim speed equal to your walking speed.</p>
+		</description>
+		<sheet>
+			<description>You gain resistance to acid damage and gain swim speed equal to your walking speed.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:swim" value="speed" bonus="base" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Totemic Attunement (Duck)" type="Archetype Feature" source="Critical Role" id="ID_CRIT_ARCHETYPE_FEATURE_PATH_OF_THE_TOTEM_WARRIOR_TOTEMIC_ATTUNEMENT_DUCK">
+		<supports>Totemic Attunement</supports>
+		<description>
+			<p>You could chose another totem, but if you came this far, don't be a dick and chose the duck.</p>
+			<p class="indent">While raging, if you hit a creature with a melee attack on your turn, you can forgo one of your other attacks to flap your arms while honking and flailing at that same time. The creature must succeed on a Wisdom saving throw(DC = 8 + your proficiency modifier + your charisma modifier) or be frigthened of you until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>While raging, if you hit a creature with a melee attack on your turn, you can forgo one of your other attacks to attempt to frighten your target until the end of your next turn. The creature must succeed on a DC{{flapflap:dc}} Wisdom saving throw or be frightened of you until end of next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="flapflap:dc" value="8" />
+			<stat name="flapflap:dc" value="proficiency" />
+			<stat name="flapflap:dc" value="wisdom:modifier" />
+		</rules>
+	</element>
+</elements>

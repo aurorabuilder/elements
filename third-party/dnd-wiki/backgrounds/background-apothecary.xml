@@ -1,92 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- 
-    author username: challenger-of-games
-    date created: may 18, 2018
-    date editted: may 18, 2018
-    purpose: configures the apothecary background and relevant features for use with dnd 5e character creator "aurora builder"
--->
 <elements>
-    <!-- info describing sources -->
     <info>
-       <name>Apothecary</name>
-       <description>5e homebrew</description>
-       <author url="http://www.dandwiki.com/wiki/5e_Homebrew">D&amp;D Wiki</author>
-       <update version="0.0.1">
-           <file name="background-apothecary.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-apothecary.xml" />
+       <update version="0.0.4">
+           <file name="background-apothecary.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dnd-wiki/backgrounds/background-apothecary.xml" />
        </update>
     </info>
 
-    <!-- Apothecary Background information and grants -->
-    <element name="Apothecary" type="Background" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_APOTHECARY">
-        <setters>
-            <set name="sourceUrl">http://www.dandwiki.com/wiki/Apothecary_(5e_Background)</set>
-        </setters>
+	<!-- content moved: https://github.com/community-elements/elements-dndwiki -->
 
-        <description>
-            <p>You have studied the myriad illnesses and ailments of the mortal body as well as the treatments for each. You know which herbs can soothe a fever and which oils can help prevent the pox. Not all medicine is good for the body, though: you have also learned which toxins can stop the heart or drive a man to madness. You know how to manufacture and refine all of these things, and you make a living dispensing tonics and tinctures to those in need. In a pinch, you can even perform minor medical procedures, although these things are better left to a proper surgeon.</p>
-            <p>
-                <span class="emphasis">Skill Proficiencies:</span>Medicine, Insight<br />
-                <span class="emphasis">Tool Proficiencies:</span>Herbalism Kit<br />
-                <span class="emphasis">Languages:</span>One language of your choice.<br />
-                <span class="emphasis">Equipment:</span>Herbalism kit, a merchant’s scale, a set of common clothes, and a belt pouch containing 10 gp.<br />
-            </p>
-            <div element="ID_WIKI_BACKGROUND_FEATURE_MEDICAL_PROFESSION" /> <!-- pulls description of feature -->
-            <h5>SUGGESTED CHARACTERISTICS</h5>
-            <p>Apothecaries are defined by their attention to detail. Because so many of the illnesses they treat often have similar symptoms, they are careful about the things they say and the questions they ask, always looking to gather precise and accurate information. They tend towards cleanliness and organization, as they need to keep their tools sterile and their supplies ready at all times.</p>
-        </description>
-
-        <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
-            <grant type="Background Feature" id="ID_WIKI_BACKGROUND_FEATURE_MEDICAL_PROFESSION" />
-
-            <select type="Language" name="Language (Apothecary)" />
-            <select type="List" name="Personality Trait" number="2">
-                <item id="1">I distance myself from everyone, even those I care about.</item>
-                <item id="2">I keep all of my possessions meticulously clean and I hate any kind of filth.</item>
-                <item id="3">I am honest to a fault; knowing all of the information is the only way to make an accurate diagnosis.</item>
-                <item id="4">I make incredibly poor jokes in an attempt to put others at ease.</item>
-                <item id="5">I talk down to others when speaking on a field I believe myself to be knowledgeable in.</item>
-                <item id="6">I present everything I say as a guess or estimate so that I don’t look bad if it turns out to be wrong.</item>
-                <item id="7">It seems like I always try to strike up a conversation at the worst possible moment.</item>
-                <item id="8">I set very high standards for myself, and expect others to follow my example.</item>
-            </select>
-            <select type="List" name="Ideal">
-                <item id="1">Aid. Every sick or wounded person deserves my help, regardless of the life they lead. (Good)</item>
-                <item id="2">Control. By deciding who lives and who dies, I can shape the world to my liking. (Evil)</item>
-                <item id="3">Loyalty. It is my duty to treat those to whom I have sworn allegiance. (Lawful)</item>
-                <item id="4">Efficiency. I am not emotionally invested in those I aid; to act otherwise would compromise my work. (Neutral)</item>
-                <item id="5">Prevention. Stopping the spread of sickness is better than treating it. (Any)</item>
-                <item id="6">Research. In order to treat patients effectively, we must understand the maladies afflicting them. (Any)</item>
-            </select>
-            <select type="List" name="Bond">
-                <item id="1">I share my discoveries with my fellow apothecaries, to further the goals of our trade.</item>
-                <item id="2">I give my aid to those who protect my country and my ruler.</item>
-                <item id="3">Many medicinal reagents are rare or hard to find; those who secure them deserve respect.</item>
-                <item id="4">I seek a cure to a mysterious disease that afflicts one of my loved ones.</item>
-                <item id="5">I wish to prove that "mundane" healing is just as viable as magic.</item>
-                <item id="6">I work closely with a group that aims to eliminate a particular disease from existence.</item>
-            </select>
-            <select type="List" name="Flaw">
-                <item id="1">I use unproven treatments on my patients without their knowledge.</item>
-                <item id="2">I refuse to give aid to those of a certain species or nationality, no matter how desperately they need it.</item>
-                <item id="3">If a disease is particularly deadly, I refuse to treat it out of fear for my own health.</item>
-                <item id="4">Memories of a horrible plague that I failed to cure still haunt me to this day.</item>
-                <item id="5">The sight of blood makes me queasy, and I can only treat those who have no external wounds.</item>
-                <item id="6">I am only interested in the ailments my patients suffer from, not the people themselves.</item>
-            </select>
-        </rules>
-    </element>
-
-    <!-- Apothecary Feature information -->
-    <element name="Feature: Medical Profession" type="Background Feature" source="D&amp;D Wiki" id="ID_WIKI_BACKGROUND_FEATURE_MEDICAL_PROFESSION">
-        <setters>
-            <set name="sourceUrl">http://www.dandwiki.com/wiki/Apothecary_(5e_Background)</set>
-        </setters>
-
-        <description>
-            <p>You have a reputation as a healer of the sick, and are often called upon by those who are diseased or injured. You can usually gain an audience with anyone who needs treatment — even if protocol would normally prevent you from doing so — simply by agreeing to offer your assistance. By spending a few moments examining a chemical — a vial of liquid, a packet of ground powder, or the like — you can determine whether the substance is intended to harm or heal (or neither). This examination does not reveal any specific information about the substance(such as that a powder is actually an inhaled poison, or that it paralyzes its victim), only that it is either harmful or helpful to those that it is used on.</p>
-        </description>
-    </element>
 </elements>

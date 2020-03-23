@@ -4,20 +4,18 @@
 		<name>Halfling</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.2">
-			<file name="race-halfling.index" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-halfling.xml" />
+		<update version="0.1.6">
+			<file name="race-halfling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-halfling.xml" />
 		</update>
 	</info>
 
   <element name="Halfling" type="Race" source="Player’s Handbook" id="ID_RACE_HALFLING">
-    <supports />
     <description>
       <p class="flavor">The comforts of home are the goals of most halfling’s lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along an dirt road or a raft floating downriver.</p>
 
       <h4>SMALL AND PRACTICAL</h4>
-      <p></p>
       <p class="indent">The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense. Standing about 3 feet tall, they appear relatively harmless and so have managed to survive for centuries in the shadow of empires and on the edges of wars and political strife. They are inclined to be stout, weighing between 40 and 45 pounds.</p>
-      <p class="indent">Halflings’ skin ranges from tan to pale with a ruddy cast, and their hair is usually brown or sandy brown and wavy. They have brown or hazel eyes. Halfling men often sport long sideburns, but beards are rare among them and mustaches even more so. They like to w ear simple, comfortable, and practical clothes, favoring bright colors.</p>
+      <p class="indent">Halflings’ skin ranges from tan to pale with a ruddy cast, and their hair is usually brown or sandy brown and wavy. They have brown or hazel eyes. Halfling men often sport long sideburns, but beards are rare among them and mustaches even more so. They like to wear simple, comfortable, and practical clothes, favoring bright colors.</p>
       <p class="indent">Halfling practicality extends beyond their clothing. They’re concerned with basic needs and simple pleasures and have little use for ostentation. Even the wealthiest of halflings keep their treasures locked in a cellar rather than on display for all to see. They have a knack for finding the most straightforward solution to a problem, and have little patience for dithering.</p>
 
       <h4>KIND AND CURIOUS</h4>
@@ -30,7 +28,7 @@
 
       <h4>PASTORAL PLEASANTRIES</h4>
       <p>Most halflings live in small, peaceful communities with large farms and well-kept groves. They rarely build kingdoms of their own or even hold much land beyond their quiet shires. They typically don’t recognize any sort of halfling nobility or royalty, instead looking to family elders to guide them. Families preserve their traditional ways despite the rise and fall of empires.</p>
-      <p class="indent">Many halflings live among other races, where the halflings’ hard work and loyal outlook offer them abundant rewards and creature comforts. Some halfling communities travel as a way of life, driving w agons or guiding boats from place to place and maintaining no permanent home.</p>
+      <p class="indent">Many halflings live among other races, where the halflings’ hard work and loyal outlook offer them abundant rewards and creature comforts. Some halfling communities travel as a way of life, driving wagons or guiding boats from place to place and maintaining no permanent home.</p>
 
       <h4>EXPLORING OPPORTUNITIES</h4>
       <p>Halflings usually set out on the adventurer’s path to defend their communities, support their friends, or explore a wide and wonder-filled world. For them, adventuring is less a career than an opportunity or sometimes a necessity.</p>
@@ -52,7 +50,8 @@
         <span class="feature">Size.</span>Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.<br/>
         <span class="feature">Speed.</span>Your base walking speed is 25 feet.<br/>
         <span class="feature">Lucky.</span>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.<br/>
-        <span class="feature">Brave.</span>You have advantage on saving throws against being frightened. Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours.<br/>
+        <span class="feature">Brave.</span>You have advantage on saving throws against being frightened.<br/>
+        <span class="feature">Halfling Nimbleness.</span>You can move through the space of any creature that is of a size larger than yours.<br/>
         <span class="feature">Languages.</span>You can speak, read, and write Common and Halfling. The Halfling language isn’t secret, but halflings are loath to share it with others. They write very little, so they don’t have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.<br/>
         <span class="feature">Subrace.</span>The two main kinds of halfling, lightfoot and stout, are more like closely related families than true subraces. Choose one of these subraces.<br/>
       </p>
@@ -62,57 +61,48 @@
       <set name="names" type="male">Alton, Ander, Cade, Corrin, Eldon, Errich, Finnan, Garret, Lindal, Lyle, Merric, Milo, Osborn, Perrin, Reed, Roscoe, Wellby</set>
       <set name="names" type="female">Andry, Bree, Callie, Cora, Euphemia, Jillian, Kithri, Lavinia, Lidda, Merla, Nedda, Paela, Portia, Seraphina, Shaena, Trym, Vani, Verna</set>
       <set name="names" type="family">Brushgather, Goodbarrel, Greenbottle, High-hill, Hilltopple, Leagallow, Tealeaf, Thorngage, Tosscobble, Underbough</set>
-      <set name="names-format">$(name) $(family)</set>
+      <set name="names-format">{{name}} {{family}}</set>
       <set name="height" modifier="2d4">2'7"</set>
       <set name="weight" modifier="1d4">35 lb.</set>
     </setters>
     <rules>
-      <stat name="Dexterity" value="+2"/>
-      <stat name="Speed" value="+25" bonus="base"/>
-      <grant type="Size" name="ID_SIZE_SMALL" />
-      <grant type="Language" name="ID_LANGUAGE_COMMON" />
-      <grant type="Language" name="ID_LANGUAGE_HALFLING" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_LUCKY" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_BRAVE" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_HALFLING_NIMBLENESS" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_HALFLING_SUBRACE" />
+      <stat name="dexterity" value="2"/>
+      <stat name="innate speed" value="25" bonus="base"/>
+      <grant type="Size" id="ID_SIZE_SMALL" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+      <grant type="Language" id="ID_LANGUAGE_HALFLING" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_LUCKY" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_BRAVE" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFLING_NIMBLENESS" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFLING_SUBRACE" />
     </rules>
   </element>
 
   <element name="Lucky" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_LUCKY">
-    <supports />
     <description>
       <p>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>
     </description>
     <sheet>
       <description>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Brave" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_BRAVE">
-    <supports />
     <description>
       <p>You have advantage on saving throws against being frightened.</p>
     </description>
     <sheet>
       <description>You have advantage on saving throws against being frightened.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Halfling Nimbleness" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFLING_NIMBLENESS">
-    <supports />
-    <requirements />
     <description>
       <p>You can move through the space of any creature that is of a size larger than yours.</p>
     </description>
     <sheet>
       <description>You can move through the space of any creature that is of a size larger than yours.</description>
     </sheet>
-    <rules />
   </element>
   <element name="Halfling Subrace" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFLING_SUBRACE">
-    <supports />
-    <requirements />
     <description>
       <p>The two main kinds of halfling, lightfoot and stout, are more like closely related families than true subraces. Choose one of these subraces.</p>
     </description>
@@ -134,13 +124,12 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Charisma" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_NATURALLY_STEALTHY" />
+      <stat name="charisma" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_NATURALLY_STEALTHY" />
     </rules>
   </element>
   <element name="Stout Halfling" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_STOUT_HALFLING">
     <supports>Halfling</supports>
-    <requirements />
     <description>
       <p>As a stout halfling, you’re hardier than average and have some resistance to poison. Some say that stouts have dwarven blood. In the Forgotten Realms, these halflings are called stronghearts, and they’re most common in the south.</p>
       <p>
@@ -150,30 +139,29 @@
     </description>
     <sheet display="false" />
     <rules>
-      <stat name="Constitution" value="+1" />
-      <grant type="Racial Trait" name="ID_RACIAL_TRAIT_STOUT_RESILIENCE" />
+      <stat name="constitution" value="1" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_STOUT_RESILIENCE" />
     </rules>
   </element>
 
-  <element name="Naturally Stealthy" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_NATURALLY_STEALTHY">
-    <supports />
+  <element name="Naturally Stealthy" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_NATURALLY_STEALTHY">
     <description>
       <p>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>
     </description>
     <sheet>
       <description>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</description>
     </sheet>
-    <rules />
   </element>
-  <element name="Stout Resilience" type="Racial Trait" source="Player’s Handbook"  id="ID_RACIAL_TRAIT_STOUT_RESILIENCE">
-    <supports />
+  <element name="Stout Resilience" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_STOUT_RESILIENCE">
     <description>
       <p>You have advantage on saving throws against poison, and you have resistance against poison damage.</p>
     </description>
     <sheet>
       <description>You have advantage on saving throws against poison, and you have resistance against poison damage.</description>
     </sheet>
-    <rules />
+    <rules>
+	    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+    </rules>
   </element>
 
 </elements>

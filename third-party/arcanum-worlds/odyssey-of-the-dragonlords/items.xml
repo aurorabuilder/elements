@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="items.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/arcanum-worlds/odyssey-of-the-dragonlords/items.xml" />
+		</update>
+	</info>
+
+	<element name="Chakram" type="Weapon" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_WEAPON_CHAKRAM">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL_CHAKRAM</supports>
+		<description>
+			<p>This bladed circular disc is an unusual thrown weapon. It glides through the air, slicing through anything in its path. Warriors who specialize with the chakram can learn to throw it in such a way that it returns to them after cutting the enemy.</p>
+			<div element="ID_AW_OOTD_WEAPON_PROPERTY_SPECIAL_CHAKRAM" />
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">10</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">60/120</set>
+			<set name="damage" type="slashing">1d6</set>
+			<set name="proficiency">ID_AW_OOTD_WEAPON_PROFICIENCY_CHAKRAM</set>
+		</setters>
+	</element>
+	<element name="Special (Chakram)" type="Weapon Property" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_WEAPON_PROPERTY_SPECIAL_CHAKRAM">
+		<description>
+			<p>The chakram returns to you when thrown, unless you fumble the attack by rolling a natural 1.</p>
+		</description>
+	</element>
+	<element name="Weapon Proficiency (Chakram)" type="Proficiency" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_WEAPON_PROFICIENCY_CHAKRAM">
+		<supports>Weapon, Martial, Melee, Thrown, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL_CHAKRAM</supports>
+	</element>
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_AW_OOTD_WEAPON_PROFICIENCY_CHAKRAM" />
+		</rules>
+	</append>
+
+	<!-- Weapons -->
+	<element name="Axe of Xander" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_AXE_OF_XANDER">
+		<description>
+			<p>This is a sentient, lawful neutral +1 greataxe (Intelligence 14, Wisdom 10, Charisma 10). It has hearing and normal vision out to a range of 120 feet. It communicates empathically by transmitting emotion to the creature carrying or using it.</p>
+			<p class="indent">The axe’s primary purpose is to destroy giants and titans. When you hit one of those creatures with this weapon, it deals an extra 3d6 force damage. It also transmits a tremendous sense of satisfaction and wellbeing to its user when it kills a giant or titan. You may heal 1d6 Hit Points when this happens.</p>
+		</description>
+		<setters>
+			<set name="keywords">greataxe</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greataxe">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Greataxe</set>
+		</setters>
+	</element>
+	<element name="Greatclub of the Cyclopes" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_GREATCLUB_OF_THE_CYCLOPES">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls with this magic weapon. When you perform a critical hit with this weapon, your target must succeed on a DC 16 Strength saving throw or be knocked prone and become stunned until the end of its next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">greatclub</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greatclub">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Greatclub</set>
+		</setters>
+	</element>
+	<element name="Glaive of Sydon" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_GLAIVE_OF_SYDON">
+		<description>
+			<p>You gain a +2 bonus to attack and damage rolls with this magic weapon. Once per turn, when you hit a creature with this weapon, you may choose to inflict an additional 4d6 lightning damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">glaive</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="glaive">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">Glaive</set>
+		</setters>
+	</element>
+	<element name="Mithral Chakram +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_CHAKRAM">
+		<description>
+			<p>This mithral-forged, bladed circular disc is an unusual thrown weapon. It glides through the air, slicing through anything in its path before returning to the thrower.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. When you miss an attack with this weapon, you may try the same attack roll against another creature within 10 feet of the first target.</p>
+		</description>
+		<setters>
+			<set name="keywords">chakram</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="chakram">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Chakram</set>
+		</setters>
+	</element>
+	<element name="Mithral Dorata +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_DORATA">
+		<description>
+			<p>These mithral-forged spears are designed to be carried together, with one to be used for throwing and one to be used for close-quarters combat.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. You do not suffer disadvantage on ranged attacks due to enemies in close proximity when you are wielding this weapon.</p>
+		</description>
+		<setters>
+			<set name="keywords">spear</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="spear">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Spear</set>
+		</setters>
+	</element>
+	<element name="Mithral Honorblade +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_HONORBLADE">
+		<description>
+			<p>This oversized, mithral-forged makhaira was designed by ancient jancan smiths. Although it seems much too large for a human, the warrior monks of Aresia have been known to specialize in the use of honorblades.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. Whenever this magic weapon hits a creature wielding a non-magical shield, that shield is instantly destroyed.</p>
+		</description>
+		<setters>
+			<set name="keywords">greatsword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greatsword">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Greatsword</set>
+		</setters>
+	</element>
+	<element name="Mithral Kopis +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_KOPIS">
+		<description>
+			<p>This mithral-forged, forward-curving shortsword is heavier along the end of the blade. This gives it more cutting power than most shortswords.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. When you make an attack with this sword, you may choose to have it inflict piercing or slashing damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">shortsword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shortsword">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Shortsword</set>
+		</setters>
+	</element>
+	<element name="Mithral Makhaira +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_MAKHAIRA">
+		<description>
+			<p>This mithral-forged longsword has a single curved blade with a flat edge along the top. It is heavier than most longswords, making it more effective while mounted.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. When you attack with this blade while you are mounted, it does an additional d4 slashing damage on hit.</p>
+		</description>
+		<setters>
+			<set name="keywords">longsword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="longsword">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Longsword</set>
+		</setters>
+	</element>
+	<element name="Mithral Xiphos +1" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_MITHRAL_XIPHOS">
+		<description>
+			<p>This mithral-forged dagger has a straight, leaf-shaped blade, which is excellent for thrusting and piercing between shields in phalanx formations.</p>
+			<p class="indent">Attacks made with this weapon have a +1 bonus to attack and damage rolls. When you make an attack with this weapon, you ignore any AC that the enemy gains from wielding a shield.</p>
+		</description>
+		<setters>
+			<set name="keywords">dagger</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="dagger">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Dagger</set>
+		</setters>
+	</element>
+	<element name="Pythor's Hammer" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_PYTHORS_HAMMER">
+		<description>
+			<p>Attacks made with this weapon have a +1 bonus to attack and damage rolls. Once per day, you may instantly summon the hammer to your hand from any distance, and it teleports directly into your grasp. The hammer’s main purpose is to forge magical weapons and armor, and if used in such a fashion, the creation time is halved. Refer to the table below for crafting recipes.</p>
+			<table>
+				<thead>
+					<tr><td>Crafted Item</td><td>Days</td><td>Cost (gp)</td><td>Primary Ingredient</td><td>Secondary Ingredient</td></tr>
+				</thead>
+				<tr><td>Luck Blade</td><td>10</td><td>20,000</td><td>Any magical sword</td><td>orb of star metal</td></tr>
+				<tr><td>Rod of Lordly Might</td><td>10</td><td>20,000</td><td>Any magical mace</td><td>adamantine ingot</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">warhammer</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="warhammer">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Warhammer</set>
+		</setters>
+	</element>
+	<element name="Scythe of Lutheria" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_SCYTHE_OF_LUTHERIA">
+		<description>
+			<p>Attacks made with this weapon have a +1 bonus to attack and damage rolls. If critical hit is scored against a creature that has fewer than 100 hit points, it must make a DC15 Constitution saving throw or be slain instantly; constructs and the undead are immune to this effect. When a creature is slain in this manner, the user feels a surge of dark pleasure that entices them to become evil. On the second and subsequent slaying the user must make a DC15 Charisma saving throw or their alignment changes to evil. Affiliation to Law or Chaos is unchanged. Only a <i>wish</i> spell can undo this alignment change.</p>
+		</description>
+		<setters>
+			<set name="keywords">scythe</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="scythe">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Scythe</set>
+		</setters>
+	</element>
+	<element name="Shortbow of Cupidity" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_SHORTBOW_OF_CUPIDITY">
+		<description>
+			<p>Attacks made with this weapon have a +1 bonus to attack and damage rolls. Once per day, on a successful hit, you may force the target to make a DC 14 Wisdom saving throw. On a failure, the target is charmed by you for one hour.</p>
+		</description>
+		<setters>
+			<set name="keywords">shortbow</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shortbow">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Shortbow</set>
+		</setters>
+	</element>
+	<element name="The Promethean Fire" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_THE_PROMETHEAN_FIRE">
+		<description>
+			<p>This spear was crafted from the Great Tree of Thylea and set ablaze with the fires of creation. When attuning with this item, you may transform it into any martial or simple weapon of your choice. The new weapon has all the same magical properties.</p>
+			<p class="indent"><b>Attack Bonus.</b> Attacks made with this weapon have a +3 bonus to attack and damage rolls. Regardless of the form that this weapon takes, its damage type is fire.</p>
+			<p class="indent"><b>Radiant Light.</b> The weapon radiates a blazing light out to 60 feet. This light is sunlight.</p>
+			<p class="indent"><b>Transmutation Spells.</b> The weapon has 5 charges. It regains 1d4 + 1 expended charges daily at dawn. Spells cast from this weapon have a save DC of 17. You can use this weapon to cast the following spells: <i>awaken</i> (3 charges), <i>fabricate</i> (2 charges), <i>plant growth</i> (2 charges), <i>stone shape</i> (2 charges).</p>
+		</description>
+		<setters>
+			<set name="keywords">spear</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="spear">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">Spear</set>
+		</setters>
+	</element>
+	<element name="Titansbane, Blade of Talieus" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_TITANSBANE_BLADE_OF_TALIEUS">
+		<description>
+			<p>Attacks made with this weapon have a +2 bonus to attack and damage rolls. When a giant or celestial is hit by this weapon, the creature takes an extra 2d6 necrotic damage. Gygans and cyclopes are also affected.</p>
+			<p class="indent">Titansbane is sentient and wishes to be returned to its master. It was forged by Talieus, the ancient titan who pulls Lutheria’s barge. It was wielded against Sydon by Hergeron and then lost in the War of the Titans.</p>
+		</description>
+		<setters>
+			<set name="keywords">longsword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="longsword">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">Longsword</set>
+		</setters>
+	</element>
+	<element name="Xiphos of Slaughter" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_XIPHOS_OF_SLAUGHTER">
+		<description>
+			<p>Centuries ago, the Dragonlord Estor Arkelander defeated a gygan smith in single combat and forced the cyclops into his service. He demanded that the cyclops forge him a weapon that would drench all the shores of Thylea in blood. The gygan complied, crafting this bronze dagger. Estor anointed the weapon by slaughtering the smith and his family. The weapon is stained deep red.</p>
+			<p class="indent">You gain a +2 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent"><b>Cursed.</b> This dagger is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the dagger, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one.</p>
+			<p class="indent">At the beginning of your turn in combat, you must use your actions to attack the nearest creature at least once. If you have multiple possible targets, you attack one at random. At the end of your turn in combat, if you did not inflict damage on any creature this turn, you suffer 1d10 psychic damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">dagger</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="dagger">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">Dagger</set>
+		</setters>
+	</element>
+
+	<!-- Armor -->
+	<element name="Breastplate of Mytros" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_BREASTPLATE_OF_MYTROS">
+		<description>
+			<p>A character has a +1 bonus to AC and a +1 bonus to Charisma while wearing this armor. Giants and titans have disadvantage on their attacks against an opponent wearing the Breastplate.</p>
+		</description>
+		<setters>
+			<set name="keywords">breastplate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="breastplate">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="armor">Breastplate</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+			<stat name="charisma" value="1" />
+		</rules>
+	</element>
+	<element name="Golden Shield of Volkan" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_GOLDEN_SHIELD_OF_VOLKAN">
+		<description>
+			<p>This golden shield has a lion engraved on its front, and three times per day the user can use a bonus action to cast the spell <i>thunderwave</i>. The spell will be accompanied by the mighty roar of a lion and the lion carving will animate.</p>
+			<p class="indent">The severed head of any medium or smaller creature can be attached to the front of the shield by wedging it in the lion’s teeth. The user can spend an action to activate this head and will gain the benefit of one of the creature’s traits for five rounds. Spellcasting of any kind will not work. This ability can only be used once per day. Once used, the head disintegrates into ash.</p>
+			<p class="indent">While holding this shield, the user has advantage on initiative rolls and Wisdom (Perception) checks. In addition, while holding this shield the user can also understand and speak the Draconic tongue.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+		</rules>
+	</element>
+
+	<!-- Wondrous -->
+	<element name="Cloak of the Pseudodragon" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_CLOAK_OF_THE_PSEUDODRAGON">
+		<description>
+			<p>While wearing this cloak, you have advantage on Dexterity (Stealth) checks. In an area of dim light or darkness, you can grip the edges of the cloak with both hands and use it to fly at a speed of 40 feet. If you ever fail to grip the cloak's edges while flying in this way, or if you are no longer in dim light or darkness, you lose this flying speed.</p>
+			<p class="indent">While wearing the cloak in an area of dim light or darkness, you can use your action to cast <em>polymorph</em> on yourself, transforming into a pseudodragon.  While you are in the form of the pseudodragon, you retain your Intelligence, Wisdom, and Charisma scores. The cloak can't be used this way again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">stealth, fly</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">shoulders</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Ambrosia" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_AMBROSIA">
+		<description>
+			<p>This painted amphora contains ambrosia: the nectar of the gods. It resizes itself to fit the hands of the creature that holds it, and it contains enough ambrosia for six creatures to drink from it. The amphora refills itself at dawn of each day. Drinking ambrosia has the following temporary and permanent effects.</p>
+			<p class="indent"><b>Immortality.</b> Drinking ambrosia just once makes you effectively immortal. You no longer show the physical effects of aging, and you will never die of old age. However, if you are killed after exceeding the maximum age of your race, spells can no longer resurrect you.</p>
+			<p class="indent"><b>Fountain of Youth.</b> Each day that you drink ambrosia, your physical age is reduced by 1d10 years, to a minimum of 13 years. This effect is permanent.</p>
+			<p class="indent"><b>Voice of the Gods</b> Each day that you drink ambrosia, your Charisma score increases by 1, to a maximum of 20. If even a single day passes where you don't drink ambrosia, this effect wears off.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Amulet, Bulla Talisman" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_AMULET_BULLA_TALISMAN">
+		<description>
+			<p>This acorn-shaped golden amulet is engraved with a winged figure wielding a harp. While wearing this amulet, if your alignment is good, you have advantage on saving throws against spells and magical effects cast by fiends and fey creatures.</p>
+		</description>
+		<setters>
+			<set name="keywords">necklace</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">neck</set>
+			<set name="type">Wondrous Item</set>
+		</setters>
+	</element>
+	<element name="Amulet, Lunula Talisman" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_AMULET_LUNULA_TALISMAN">
+		<description>
+			<p>This crescent moon-shaped golden amulet is engraved with beautiful filigree. While wearing this amulet, if your alignment is good, you have advantage on saving throws against spells and magical effects cast by aberrations and monstrosities.</p>
+		</description>
+		<setters>
+			<set name="keywords">necklace</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">neck</set>
+			<set name="type">Wondrous Item</set>
+		</setters>
+	</element>
+	<element name="Antikythera Device" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_ANTIKYTHERA_DEVICE">
+		<description>
+			<p>The Antikythera is a complex construct that acts as a magical compass. It also has the power to mend damage to a ship: once per day it can magically repair 50 hit points of damage to a ship it is aboard.</p>
+			<p class="indent">It uses the constellations to guide its user to islands in the Cerulean Gulf or Forgotten Sea. Every island in these seas are associated with a specific constellation. The Antikythera must be used on dry land as the constant movement of waves makes it impossible to calibrate. When it is calibrated to the proper constellations, it will show a path that can be used to reach the island associated with a particular constellation.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Balm of Invulnerability" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_BALM_OF_INVULNERABILITY">
+		<description>
+			<p>This ointment is made from the magical herbs that only grow where titan blood has been spilled. A character may apply this balm to their entire body to gain resistance to non-magical damage for 1 day. This uses the entire jar of balm.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Blessed Olive Oil" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_BLESSED_OLIVE_OIL">
+		<description>
+			<p>This amphora of fragrant olive oil has been blessed by the Mother Goddess. Characters may bathe in this olive oil to be receive the same effects as a bless spell. Anyone using the oil must remove their armor and spend one minute bathing. The oil is consumed in the process.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Burnished Dragonlord Coin" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_BURNISHED_DRAGONLORD_COIN">
+		<description>
+			<p>This burnished golden coin carries the face of Xander Huorath on one side, and an engraving of the legendary ship Ultros on the reverse. The coin emits a faint golden light. Anyone who possesses a Dragonlord Coin can understand the Draconic language.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+	<element name="Caduceus" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_CADUCEUS">
+		<description>
+			<p>The Caduceus is a staff that features five dragons winding around it, with the top featuring two unfolded dragon wings. The staff was created by the wizard Damon over five centuries ago. Forged in the primordial waters of the Nether Sea, the Caduceus was a life-giving staff with the power to turn the tide against the Titans in the First War. Damon gave it to the dragonlord named Karpathos, also known as the Wolf Lord. Karpathos used the Caduceus to raise the Dragonlords from death during the First War. But he was seduced by Lutheria into believing the staff could elevate him to godhood. Karpathos betrayed his fellow dragonlords and swore an oath to Lutheria. He later broke the oath at the urging of his wife and Lutheria transformed him into Thylea’s first vampire as punishment.</p>
+			<p class="indent">The Caduceus is an item of powerful life giving. In the hands of a living being it gives the power to heal and bring back those who have died. However, in the hands of the fiendish or undead, the Caduceus works in an entirely different manner.</p>
+			<p class="indent">The Caduceus has 5 charges, which recharge daily at dawn. When used by a creature that is not a fiend or undead, they can be used in the following manner:</p>
+			<ul>
+        		<li>Cast the heal spell (1 charge)</li>
+        		<li>Cast the greater restoration spell (1 charge)</li>
+        		<li>Cast the resurrection spell (5 charges)</li>
+      		</ul>
+			<p class="indent">When used by a fiend or undead creature, the rod can be used in the following manner:</p>
+			<ul>
+        		<li>Cast the create undead spell as a 9th level spell (2 charges)</li>
+        		<li>Create a vampire spawn from a corpse that has been drained of blood (1 charge)</li>
+        		<li>Restore 100 hit points to an undead or fiend, even if they are at 0 hit points (2 charges)</li>
+      		</ul>
+			<p class="indent">The Caduceus is seemingly indestructible. However, it can be broken by an empyrean with a CR of 15 or higher. When the staff is destroyed, the life force of the titan contained within the Caduceus can be used to raise one empyrean from death, or it can be used to transform a creature with divine blood into a young empyrean.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Chariot of Dawn" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_CHARIOT_OF_DAWN">
+		<description>
+			<p>This chariot is a beautifully decorated artifact made from bronze. The chariot can only be activated while during the day in the open air and cannot be used underground or during night. When activated with its command word, a team of four golden horses spring into existence to pull the vehicle. The chariot shines with a painfully radiant light in a 60 ft. radius. Anyone within that radius other than the rider takes 4 (1d6) damage.</p>
+			<p class="indent">The chariot has a flying speed of 90 ft. Flying is a free action, but the horses are difficult to control, and every round, the chariot rider must use a bonus action to control the horses. This requires a successful DC 15 Wisdom (Animal Handling) check. Failure means that the control is lost and the horses will move their full movement to climb straight up into the sky.</p>
+		</description>
+		<setters>
+			<set name="keywords">fly</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Crown of Laurels" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_CROWN_OF_LAURELS">
+		<description>
+			<p>This crown of enchanted laurel leaves is customarily awarded to the winner of the Great Games. It was crafted by Vallus, the Queen of Mytros and the Goddess of Wisdom. When worn, the crown provides +2 to Wisdom saving throws.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">head</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+		<rules>
+			<stat name="wisdom:save:misc" value="2" />
+		</rules>
+	</element>
+	<element name="Crown of the Dragonlords" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_CROWN_OF_THE_DRAGONLORDS">
+		<description>
+			<p>If you are a spellcaster (bard, cleric, druid, paladin, ranger, sorcerer, warlock or wizard), this crown grants you the ability to prepare the following spells: <i>bond of the dragonlords</i> and <i>dirge of the dragonlords</i>. If you are not a spellcaster, then as long as you wear the crown, you can cast <i>bond of the dragonlords</i>. Once you cast it, you must finish a long rest before you can cast it again. The material components are still required for both spells.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">head</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<spellcasting all="true" extend="true">
+    		<extend>ID_AW_OOTD_SPELL_BOND_OF_THE_DRAGONLORDS</extend>
+    		<extend>ID_AW_OOTD_SPELL_DIRGE_OF_THE_DRAGONLORDS</extend>
+		</spellcasting>
+	</element>
+	<element name="Everburning Torch" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_EVERBURNING_TORCH">
+		<description>
+			<p>This bronze torch is enchanted with the <i>continual flame</i> spell. The pommel of the torch can be twisted to ignite or douse the flame.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONTINUAL_FLAME" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">torch</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Game of Twenty Squares" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_GAME_OF_TWENTY_SQUARES">
+		<description>
+			<p>The Game of Twenty Squares is more commonly known as "The Royal Game." The game is considered to be sacred, and it has been played by gods and mortals since the dawn of time. Kings sometimes use the game to resolve disputes that would otherwise result in war.</p>
+			<p class="indent">The game requires two players, and it is played by moving seven pieces across a board comprising twenty squares. Dice are rolled to determine how quickly the pieces can move, and the object of the game is to reach the end of the twenty-square course before your opponent. This requires a mix of strategy and luck. The game is protected against magical interference, which prevents cheating with spells such as <i>mage hand</i>.</p>
+			<p class="indent"><b>Magical Wagers.</b> Anything can be wagered on the outcome of the game—wealth, power, magic, or even the lives of the two players. Whenever gods play the game, this wager is enforced by magic woven into the fabric of the multiverse. Depending upon the nature of the wager, as many as six rematches may be allowed.</p>
+			<p class="indent"><b>Starting the Game.</b> Two players are required to play the game. They must agree to their wager beforehand, and it is customary to cut the thumb and make a 'blood handshake' before the game begins.</p>
+			<p class="indent"><b>Winning the Game.</b> The game is resolved by making a series of seven opposed skill checks, which represent the various strategies that can be used to win the game. Each opposed skill check to determines the outcome of a race between two game pieces. The winner of the game is the player who wins at least four rounds, which means that it is possible to win in just four rounds.</p>
+			<p class="indent"><b>The Seven Rounds.</b> The seven rounds proceed as a series of opposed skill checks. The skill checks are made in this order: Performance, Insight, History, Deception, Intimidation, Persuasion, Perception. Tied skill checks must be repeated until one player prevails.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Golden Apple" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_GOLDEN_APPLE">
+		<description>
+			<p>These apples are wrought from solid gold, and are so beautiful that they inspire immense greed in anyone who sees them.</p>
+			<p class="indent">On a turn, the owner of a golden apple may use an action to throw it. Everyone within a 30-foot radius of where the apple lands must make a DC 18 Wisdom saving throw. On a failure, they must use their next turn to move toward the apple and attempt to take it for themselves. This saving throw is repeated on each turn if no one has possession of the apple. No other activities are possible while wanting the golden apple. Once a creature has taken possession of the apple, they will spend the next day jealously guarding it. Weaker creatures, such as bandits or goatlings, may attempt to run away and hide it from others.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Hag's Loom" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_HAGS_LOOM">
+		<description>
+			<p>This magical loom weighs 1000 pounds and is used to divine the future. The loom can cast a <i>commune</i> spell once per day, but this takes an hour, as the answer must be woven into cloth made by the loom.</p>
+			<p class="indent">In addition to its divination powers, certain individuals can also use the loom to create magic items. There is, however, only a 1% chance for any individual to have this power. The loom can only be used to weave each of the magic items on the table below. The person weaving the magic items must have all of the appropriate components. The Doomed One also has the power to use this loom.</p>
+			<p class="indent">Once all three items have been woven the loom becomes non-magical.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">1000 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Helm of Darkness" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_HELM_OF_DARKNESS">
+		<description>
+			<p>Magical darkness spreads from the helmet when it is worn and fills a 15-foot-radius sphere; the darkness will even spread around corners. A creature with darkvision can’t see through the Helm’s darkness, and nonmagical light will not pierce it. The magical darkness is not dispelled by light from magical effects. The Helm’s wearer, on the other hand, has darkvision to a range of 60 feet. This darkvision is not affected by darkness from the helmet or another source.</p>
+			<p class="indent">Completely covering the helmet with something opaque blocks the darkness: think of the darkness as “negative light”.</p>
+		</description>
+		<setters>
+			<set name="keywords">helm</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">head</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Horn of Balmytria" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_HORN_OF_BALMYTRIA">
+		<description>
+			<p>This horn was fashioned from one of the horns of Balmytria. It has two command words: one produces delicious food, along with water and wine, in a sufficient quantity to keep six Medium-sized creatures well fed for a day. If wine is drunk from the horn it can sometimes (at your discretion) induce a deep sleep with dreams that will reveal possible futures.</p>
+			<p class="indent">The second command word produces a paralyzing, mercurial vapor. Once per day, you may use an action to create a cloud within 60 ft. of you. The cloud starts with a 5 ft. radius, which increases by 5 ft. each round to a maximum of 30 ft. Any creature that starts its turn in the mist must make a DC 14 Constitution saving throw or be paralyzed until the start of its next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Instruments of the Muse" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_INSTRUMENTS_OF_THE_MUSE">
+		<description>
+			<p>These instruments were crafted by the forge god Volkan for his daughter, Kyrah. Each instrument is simple but elegant, designed so as not to attract unwanted attention, because the goddess of music loves to travel in disguise as a common bard. However, when played, the instruments produce rapturous melodies, owing to the fact that they are crafted from the hair of nymphs.</p>
+			<p class="indent">The following table lists the spells common to all the instruments, as well as the spells that are specific to each instrument. You can use an action to play the instrument and cast one of its spells. Once the instrument has been used to cast a spell, it can't be used to cast that spell again until the next dawn. The spells use your spellcasting ability and spell save DC. When you use the instrument to cast a spell as a source or as a focus, your spell save DC is increased by 2.</p>
+			<table>
+				<thead>
+					<tr><td>Instrument</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>All</td><td>jump, invisibility, levitate</td></tr>
+				<tr><td>Boreal harp</td><td>control weather, conjure animals</td></tr>
+				<tr><td>Euros lyre</td><td>sleep (4th level) , counterspell (3rd level)</td></tr>
+				<tr><td>Notos kithara</td><td>zone of truth, magic circle</td></tr>
+				<tr><td>Zephir lute</td><td>hold person, conjure elemental</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">bard</set>
+			<set name="category">Musical Instruments</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">onehand</set>
+			<set name="attunement" addition="by a bard">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Palladium" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_PALLADIUM">
+		<description>
+			<p>This artifact bestows magical protection upon any city or ship that enshrines it. Enshrining the Palladium within a city or ship requires seven days of devoted prayer by a priest. Sacrifices are sometimes offered to expedite this process. Once the artifact is enshrined, it bestows its full protection. However, if the artifact is ever moved by more than an inch, the protective effects end.</p>
+			<p class="indent"><b>Protected Cities.</b> The city walls have resistance to all damage types. Siege weapons mounted on the city walls have advantage on all attacks.</p>
+			<p class="indent"><b>Protected Ships.</b> The ship's hull has resistance to all damage types. Siege weapons mounted on the deck of the ship have advantage on all attacks.</p>
+			<p class="indent"><b>Forbiddance.</b> The city is protected by the effects of the forbiddance spell, preventing teleportation into or out of the city, as defined by its walls.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Pegasus Bridle" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_PEGASUS_BRIDLE">
+		<description>
+			<p>This golden bridle may be used to tame a pegasus, so that the mythical creature may be used as a flying mount. Once the pegasus has been bridled, it may only be commanded by the character who is attuned to this item.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Toga Praetexta" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_TOGA_PRAETEXTA">
+		<description>
+			<p>This white, woolen cloth toga has broad purple stripes along its border, and it drapes fashionably across the body when worn. It has been purified by priests through ritual processions and sacrifices on the night of the new moon. While wearing the toga, you have proficiency in Charisma saving throws. Additionally, once per day, when you fail a Charisma check to influence a crowd of people, you may flourish your toga to impress the crowd and re-roll that check.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">shoulders</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Wheel of Fortune" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_WHEEL_OF_FORTUNE">
+		<description>
+			<p>This is a 6-foot-tall bronze wheel that has been set on a stand so that it can easily be spun. Along the wheel are inscriptions showing each of Thylea’s major constellations. At the top of the wheel is the symbol of the mother goddess, pointing down. When the wheel is spun, a magical effect occurs depending upon which of the inscriptions the mother goddess is pointing at. Any effect, magical or otherwise, that would make the spinning of the wheel not random removes all of the wheel’s magic until the dawn of the next day. A creature may only spin the wheel of fortune once per day (24-hour period). Refer to the table for the effects of the wheel.</p>
+			<table>
+				<thead>
+					<tr><td>d20</td><td>Constellation</td><td>Effect</td></tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>The Bear</td><td>Your Constitution and Intelligence scores increase by 4 for 8 hours.</td></tr>
+					<tr><td>2</td><td>The Gygan</td><td>A gygan hero has been sent to kill you. In every battle, there is a cumulative 10% chance that the gygan hero catches up with you and attacks. He attacks in the second round of the battle and focuses all of his attacks on you. When the gygan is defeated, this effect ends.</td></tr>
+					<tr><td>3</td><td>The Prisoner</td><td>You are banished to an extradimensional maze. At the end of each day you may make an Intelligence check at DC 15 to escape. In your place, a sacred beast appears beside the wheel. This beast will, to the best of its abilities, try to accomplish any goals you were working on. You may choose any beast of a CR equal to or less than your level. The beast has the celestial type. Your gamemaster can allow you to continue play as this beast until you free yourself from your maze. When you free yourself, the beast vanishes, and you appear in its place.</td></tr>
+					<tr><td>4</td><td>The Tree</td><td>You gain the ability to cast the spell polymorph one time in the next 8 hours. The spell is different in the following ways. The duration is concentration, up to 1 minute. The new form can only be a treant.</td></tr>
+					<tr><td>5</td><td>The Trickster</td><td>You become the center of a zone of wild magic. For the next 8 hours, any spell cast within 30 feet of you has a 25% chance of being replaced by a wild magic surge. The caster rolls on the Sorcerer’s wild magic chart when this happens.</td></tr>
+					<tr><td>6</td><td>The Bard</td><td>Everything you say becomes indescribably funny for the next 8 hours. As an action, you may cast the spell hideous laughter with no somatic or material components.</td></tr>
+					<tr><td>7</td><td>The Warrior</td><td>The Fates have decided that you need to be tested. In every battle, there is a cumulative 10% chance that all of the enemies focus their attacks upon you until you are rendered unconscious. This effect ends when the enemies in the battle are defeated.</td></tr>
+					<tr><td>8</td><td>The Centaur</td><td>A centaur hero has been sent to make your life miserable. The centaur hero can cast transport via plants twice per day and it does not have disadvantage when attacking at long range. In every battle, there is a 50% chance that the centaur hero will show up on the second round at the maximum range of its longbow and fire arrows at you. It will attack you for 5 rounds and try to stay at maximum range during that time. At the end of 5 rounds, the centaur will escape by using transport via plants. This effect ends when the centaur hero is killed.</td></tr>
+					<tr><td>9</td><td>The Queen</td><td>Your Charisma and Wisdom scores increase by 4 for 8 hours.</td></tr>
+					<tr><td>10</td><td>The Twins</td><td>In every battle, there is a cumulative 10% chance that the enemy creature with the lowest CR is polymorphed into a cyclops. The polymorph effect lasts for one hour.</td></tr>
+					<tr><td>11</td><td>The Ant</td><td>Your size becomes Tiny for the next 8 hours. Everything you are wearing shrinks with you. Your Strength and Constitution scores are reduced by 6 to a minimum of 3. Your movement score is halved, rounded down. All of your weapon attacks have a base damage of 1. All of your spell ranges are halved, rounded down. Creatures have advantage to save against any abilities or spells that you use. You have advantage on Dexterity (Stealth) checks.</td></tr>
+					<tr><td>12</td><td>The Dragon</td><td>You gain a metallic dragon companion for 24 hours. Choose between brass, bronze, copper, or silver. The dragon is a wyrmling. If you already have a wyrmling (i.e. as an Oath of the Dragonlord paladin), then your wyrmling becomes a young dragon for 24 hours. If you have a young dragon, then your young dragon become an adult dragon for 24 hours.</td></tr>
+					<tr><td>13</td><td>The Nymph</td><td>Any armor, boots, cloaks, clothes, gloves, helms, or robes (magical or otherwise) that you are wearing vanish, leaving you naked. These items are returned to you by a nymph 24 hours later.</td></tr>
+					<tr><td>14</td><td>The Spear</td><td>Your Strength and Dexterity scores increase by 4 for 8 hours.</td></tr>
+					<tr><td>15</td><td>The Chariot</td><td>For 8 hours, you gain the ability to use a bonus action to take the Dash action.</td></tr>
+					<tr><td>16</td><td>The Blacksmith</td><td>You gain a +2 bonus to your Armor Class for 8 hours.</td></tr>
+					<tr><td>17</td><td>The Titan</td><td>You gain the ability to cast the spell <i>polymorph</i> one time in the next 8 hours. The spell is different in the following ways. The duration is concentration, up to 1 minute. The new form can only be a storm giant.</td></tr>
+					<tr><td>18</td><td>The Dreamer</td><td>Your nightmares become reality. Whenever you take a long rest, there is a 10% cumulative chance that you have a nightmare halfway through the rest. When this happens, a creature materializes before you and fights to the death. The creature is determined by your level. 1-4: harpy, 5-8: gorgon, 9-12: hydra, 13+: Cerberus. This effect ends when the nightmare creature is defeated.</td></tr>
+					<tr><td>19</td><td>Empty</td><td>The wheel of fortune vanishes, reappearing somewhere else in the world.</td></tr>
+					<tr><td>20</td><td>The Swine</td><td>Spin twice for the day.</td></tr>
+				</tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<!-- Potions -->
+	<element name="Potion of Aging" type="Magic Item" source="Odyssey of the Dragonlords" id="ID_AW_OOTD_MAGIC_ITEM_POTION_OF_AGING">		
+		<description>
+			<p>This cloudy blue potion was brewed from the blood of a living god. For each droplet that a creature drinks from this potion, the creature physically ages by one year. Creatures with shorter lifespans, such as humans, should be cautious when drinking this potion.</p>
+			<p class="indent">Brewing the potion is a long process that requires one droplet of divine blood to be added each year for many years. Such potions are always designated with the number of years that it took to brew them. For example, a potion of aging (25 years) contains 25 droplets.</p>
+		</description>
+		<setters>
+			<set name="category">Potions</set>
+			<set name="weight" lb="0.5">½ lb.</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Legendary</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+</elements>

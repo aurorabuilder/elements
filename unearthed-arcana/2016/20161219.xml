@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Paladin: Sacred Oaths</name>
+		<description>Paladins have two new Sacred Oath options to ponder in today’s Unearthed Arcana: the Oath of Conquest and the Oath of Treachery. We invite you to read the options' descriptions, make characters with them, and see whether you like them. Next time we’ll provide a survey so that you can let us know what you think.</description>
+		<author url="http://dnd.wizards.com/articles/unearthed-arcana/paladin-sacred-oaths">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="20161219.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2016/20161219.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Paladin: Sacred Oaths" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20161219">
+		<description>
+			<p>Paladins have two new Sacred Oath options to ponder in today’s Unearthed Arcana: the Oath of Conquest and the Oath of Treachery. We invite you to read the options' descriptions, make characters with them, and see whether you like them. Next time we’ll provide a survey so that you can let us know what you think.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20161219</set>
+			<set name="url">http://dnd.wizards.com/articles/unearthed-arcana/paladin-sacred-oaths</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20161219</set>
+		</setters>
+	</element>
+
+    <element name="Oath of Treachery" type="Archetype" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY">
+        <supports>Sacred Oath</supports>
+        <description>
+            <p>The Oath of Treachery is the path followed by paladins who have forsworn other oaths or who care only for their own power and survival. Commonly known as blackguards, these profane warriors are faithful only to themselves. Anyone desperate enough to follow one of these paladins does so because, while deceitful, these paladins command great power. Those who follow them without falling prey to their treachery hope to indulge in want on violence and accumulate great treasure.</p>
+            <p class="indent">Many of these paladins pay homage to demon lords, especially Grazz’t and Orcus. Even the Lords of Hell are loath to ally with these champions of chaos, but sometimes Baalzebul and Glasya find a kindred spirit in a blackguard’s penchant for double dealing and treachery.</p>
+            <h5>TENETS OF TREACHERY</h5>
+            <p>A paladin who embraces the Oath of Treachery owes allegiance to no one. There are no tenets of this oath, for it lacks any substance. Those who are unfortunate enough to have close contact with blackguards have observed that a blackguard’s overwhelming concern is power and safety, especially if both can be obtained at the expense of others.</p>
+            <div element="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_OATH_SPELLS" />
+            <div element="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY" />
+            <div element="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_AURA_OF_TREACHERY" />
+            <div element="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_BLACKGUARDS_ESCAPE" />
+            <div element="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_ICON_OF_DECEIT" />
+        </description>
+        <sheet>
+            <description>The Oath of Treachery is the path followed by paladins who have forsworn other oaths or who care only for their own power and survival. Commonly known as blackguards, these profane warriors are faithful only to themselves.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" name="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_OATH_SPELLS" level="1" />
+            <grant type="Archetype Feature" name="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" name="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_AURA_OF_TREACHERY" level="7" />
+            <grant type="Archetype Feature" name="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_BLACKGUARDS_ESCAPE" level="15" />
+            <grant type="Archetype Feature" name="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_ICON_OF_DECEIT" level="20" />
+        </rules>
+    </element>
+    <element name="Oath Spells" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_OATH_SPELLS">
+        <description>
+        <p>You gain oath spells at the paladin levels listed in the Oath of Treachery Spells table. See the Sacred Oath class feature for how oath spells work.</p>
+        <h5>Oath of Treachery Spells</h5>
+        <table>
+            <thead>
+            <tr><td>Paladin Level</td><td>Spells</td></tr>
+            </thead>
+            <tr><td>3rd</td><td><em>charm person, expeditious retreat</em></td></tr>
+            <tr><td>5th</td><td><em>invisibility, mirror image</em></td></tr>
+            <tr><td>9th</td><td><em>gaseous form, haste</em></td></tr>
+            <tr><td>13th</td><td><em>confusion, greater invisibility</em></td></tr>
+            <tr><td>17th</td><td><em>dominate person, passwall</em></td></tr>
+        </table>      
+        </description>
+        <sheet display="false">
+            <description>You gain oath spells at the paladin levels listed in the Oath of Treachery Spells table.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" level="3" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT" level="3" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="5" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_MIRROR_IMAGE" level="5" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_GASEOUS_FORM" level="9" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_HASTE" level="9" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" level="13" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" level="13" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" level="17" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_PASSWALL" level="17" spellcasting="Paladin" prepared="true" />
+        </rules>
+    </element>
+    <element name="Channel Divinity" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY">
+        <description>
+            <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+            <p class="indent"><b><i>Conjure Duplicate. </i></b>As an action, you create a visual illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, and doesn’t occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you.</p>
+            <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is.</p>
+            <p class="indent"><b><i>Poison Strike. </i></b>You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals 2d10 + your paladin level, or 20 + your paladin level if you had advantage on the attack roll.</p>
+        </description>
+        <sheet>
+            <description>Conjure Duplicate and Poison Strike</description>
+            <!-- todo: remove sheet placeholders above -->
+        </sheet>
+    </element>
+    <element name="Aura of Treachery" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_AURA_OF_TREACHERY">
+        <description>
+            <p>Starting at 7th level, you emanate an aura of discord, which gives you the following benefits.</p>
+            <p class="indent"><b><i>Cull the Herd. </i></b>You have advantage on melee attack rolls against any creature that has one or more of its allies within 5 feet of it.</p>
+            <p class="indent"><b><i>Treacherous Strike. </i></b>If a creature within 5 feet of you misses you with a melee attack, you can use your reaction to force the attacker to reroll that attack against a creature of your choice that is also within 5 feet of the attacker. The ability fails and is wasted if the attacker is immune to being charmed.</p>
+            <p class="indent">You can use this ability three times. You regain expended uses of it when you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>Cull the Herd and Treacherous Strike</description>
+            <!-- todo: remove sheet placeholders above -->
+        </sheet>
+    </element>
+    <element name="Blackguard's Escape" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_BLACKGUARDS_ESCAPE">
+        <description>
+            <p>At 15th level, you have the ability to slip away from your foes. Immediately after you are hit by an attack, you can use your reaction to turn invisible and teleport up to 60 feet to a spot you can see. You remain invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>Immediately after you are hit by an attack, you can use your reaction to turn invisible and teleport up to 60 feet to a spot you can see. You remain invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw.</description>
+        </sheet>
+    </element>
+    <element name="Icon of Deceit" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_ICON_OF_DECEIT">
+        <description>
+            <p>At 20th level, you gain the ability to emanate feelings of treachery. As an action, you can magically become an avatar of deceit, gaining the following benefits for 1 minute:</p>
+            <ul>
+                <li>You are invisible.</li>
+                <li>If a creature damages you on its turn, it must succeed on a Wisdom saving throw (DC equal to your spell save DC) or you control its next action, provided that you aren’t incapacitated when it takes the action. A creature automatically succeeds on the save if the creature is immune to being charmed.</li>
+                <li>If you have advantage on an attack roll, you gain a bonus to its damage roll equal to your paladin level.</li>
+            </ul>
+            <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+        </description>
+        <sheet action="Action" usage="1/Long Rest">
+            <description>You can magically become an avatar of deceit, gaining the following benefits for 1 minute:
+			You are invisible.
+			If a creature damages you on its turn, it must succeed on a Wisdom saving throw DC{{spellcasting:dc:cha}} or you control its next action, provided that you aren’t incapacitated when it takes the action. A creature automatically succeeds on the save if the creature is immune to being charmed.
+			If you have advantage on an attack roll, you gain a bonus to its damage roll equal to +{{level:paladin}}.</description>
+        </sheet>
+    </element>
+</elements>

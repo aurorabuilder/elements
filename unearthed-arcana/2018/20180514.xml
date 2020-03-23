@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Centaurs and Minotaurs</name>
         <description>Centaurs gallop into Unearthed Arcana this month—a playtest option for when you choose your character’s race. Another type of character from Greek myth joins them: minotaurs. We first showed off minotaurs in a 2015 installment of Unearthed Arcana, and we present revised versions of their traits today.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/centaurs-and-minotaurs">Wizards of the Coast</author>
-        <update version="0.0.4">
+        <update version="0.0.6">
             <file name="20180514.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2018/20180514.xml" />
         </update>
     </info>
@@ -55,13 +55,13 @@
         <setters>
 			<set name="names" type="male">Vulor, Prifaenon, Zuzo, Purytion, Cibus, Cleban, Ulibor, Uedral,Nyzycarn, Alasotral</set>
 			<set name="names" type="female">Elubeus, Wyniton, Oacates, Blalius, Orotaestus, Blystral, Orilath, Aramorn, Trobobran, Kididor</set>
-			<set name="names-format">$(name)</set>
+			<set name="names-format">{{name}}</set>
         </setters>
         <sheet display="false" />
         <rules>
-			<stat name="Strength" value="2" />
-			<stat name="Wisdom" value="1" />
-			<stat name="Speed" value="40" bonus="base" />
+			<stat name="strength" value="2" />
+			<stat name="wisdom" value="1" />
+			<stat name="innate speed" value="40" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_CHARGE" />
 			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HOOVES"/>
@@ -76,19 +76,17 @@
 		<description>
 			<p>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together. Once you use this ability, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together. (1/SR)</description>
+		<sheet usage="1/Short Rest">
+			<description>If you move at least 20 feet straight toward a target and then hit it with a melee weapon attack on the same turn, roll the weapon’s damage dice twice and add them together.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Hooves" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HOOVES">
 		<description>
 			<p>Your hooves are natural melee weapons, with which you’re proficient. If you hit with a hoof, the target takes bludgeoning damage equal to 1d6 + your Strength modifier.</p>
 		</description>
 		<sheet>
-			<description>Your hooves are natural melee weapons, with which you’re proficient. 1d6+$(Strength Modifier) bludgeoning damage.</description>
+			<description>Your hooves are natural melee weapons, with which you’re proficient. 1d6+{{strength:modifier}} bludgeoning damage.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Equine Build" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_EQUINE_BUILD">
 		<description>
@@ -97,13 +95,13 @@
             <p class="indent">Finally, a Medium or smaller creature can ride on your equine back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</p>
 		</description>
 		<sheet>
-			<description>
-                <text>You count as one size larger when determining your carrying capacity and the weight you can push or drag. </text>
-                <text>When climbing, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot. </text>
-                <text>A Medium or smaller creature can ride on your back.</text>
-            </description>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push or drag.
+			When climbing, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot.
+			A Medium or smaller creature can ride on your back.</description>
 		</sheet>
-		<rules />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
 	</element>
 	<element name="Survivor" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_SURVIVOR">
 		<description>
@@ -113,7 +111,7 @@
 			<description>You have proficiency in the Survival skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
 		</rules>
 	</element>
 	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_CENTAUR_HYBRID_NATURE">
@@ -123,7 +121,6 @@
 		<sheet>
 			<description>You count as humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</description>
 		</sheet>
-		<rules />
 	</element>
 
 	<!-- Minotaur -->
@@ -166,12 +163,12 @@
 			<set name="names" type="male">Beliminorgath, Cinmac, Dastrun, Edder, Galdar, Ganthirogani, Hecariverani, Kyris, Tosher, Zurgas</set>
 			<set name="names" type="female">Ayasha, Calina, Fliara, Helati, Keeli, Kyri, Mogara, Sekra, Tariki, Telia</set>
 			<set name="names" type="clan">Athak, Bregan, Entragath, Kaziganthi, Lagrangli, Mascun, Orilg, Sumarr, Teskos, Zhakan</set>
-			<set name="names-format">$(name) of clan $(clan)</set>
+			<set name="names-format">{{name}} of clan {{clan}}</set>
 		</setters>
 		<rules>
-			<stat name="Strength" value="2" />
-			<stat name="Constitution" value="1" />
-			<stat name="Speed" value="30" bonus="base" />
+			<stat name="strength" value="2" />
+			<stat name="constitution" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HORNS" />
 			<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_GORING_RUSH"/>
@@ -187,9 +184,8 @@
 			<p>Your horns are natural melee weapons, with which you’re proficient. When you hit with them, the target takes piercing damage equal to 1d6 + your Strength modifier.</p>
 		</description>
 		<sheet>
-			<description>Your horns are natural melee weapons, with which you’re proficient. 1d6+$(Strength Modifier) piercing damage.</description>
+			<description>Your horns are natural melee weapons, with which you’re proficient. 1d6+{{strength:modifier}} piercing damage.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Goring Rush" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_GORING_RUSH">
 		<description>
@@ -198,19 +194,18 @@
 		<sheet>
 			<description>Immediately after you use the Dash action on your turn and move at least as far as your speed, you can make one melee attack with your horns as a bonus action.</description>
 		</sheet>
-		<rules />
 	</element>
 	<element name="Hammering Horns" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS">
 		<description>
 			<p>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier. If it fails, you push it up to 5 feet away from you.</p>
 		</description>
 		<sheet>
-			<description>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a DC$(hammering horns:dc) Strength saving throw. If it fails, you push it up to 5 feet away from you.</description>
+			<description>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can attempt to shove that creature with your horns using your reaction. The creature must be no more than one size larger than you and within 5 feet of you. It must make a DC{{hammering horns:dc}} Strength saving throw. If it fails, you push it up to 5 feet away from you.</description>
 		</sheet>
 		<rules>
             <stat name="hammering horns:dc" value="8" />
-            <stat name="hammering horns:dc" value="Proficiency" />
-            <stat name="hammering horns:dc" value="Strength Modifier" />
+            <stat name="hammering horns:dc" value="proficiency" />
+            <stat name="hammering horns:dc" value="strength:modifier" />
         </rules>
 	</element>
 	<element name="Menacing" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_MENACING">
@@ -221,7 +216,7 @@
 			<description>You have proficiency in the Intimidation skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
 		</rules>
 	</element>
 	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_RACIAL_TRAIT_MINOTAUR_HYBRID_NATURE">
@@ -231,19 +226,17 @@
 		<sheet>
 			<description>You count as humanoid and monstrosity. You can be affected by a game effect if it works on either of your creature types.</description>
 		</sheet>
-		<rules />
 	</element>
     
     <!-- Minotaur Language -->
     <element name="Minotaur" type="Language" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA_LANGUAGE_MINOTAUR">
-        <supports>ID_INTERNAL_SUPPORT_LANGUAGE_EXOTIC, Exotic</supports>
+        <supports>Exotic</supports>
         <description>
             <p>Typically spoken by minotaurs.</p>
         </description>
         <setters>
-            <set name="Speakers">Minotaurs</set>
-            <set name="Script"></set>
-            <set name="Exotic">true</set>
+            <set name="exotic">true</set>
+            <set name="speakers">Minotaurs</set>
         </setters>
     </element>
 </elements>

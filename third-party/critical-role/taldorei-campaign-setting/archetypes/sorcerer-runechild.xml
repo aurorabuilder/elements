@@ -2,13 +2,99 @@
 <elements>
     <info>
         <name>Runechild</name>
-        <description>The Runechild archetype from the Tal’Dorei Campaign Setting.</description>
+        <description>The Runechild Sorcerous Origin from the Tal’Dorei Campaign Setting.</description>
         <author url="https://geekandsundry.com/shows/critical-role/">Tal’Dorei Campaign Setting</author>
-        <update version="0.0.1">
+        <update version="0.0.3">
             <file name="sorcerer-runechild.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/critical-role/taldorei-campaign-setting/archetypes/sorcerer-runechild.xml" />
         </update>
     </info>
 
-    <!-- placeholder -->
+	<element name="Runechild" type="Archetype" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_RUNECHILD">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>The weave and flow of magic is mysterious and feared by many across Exandria. Many study the nature of the arcane in hopes of learning to harness it, while sorcerers carry innate talent to sculpt and wield the errant strands of power that shape the world. Some sorcerers occasionally find their body itself becomes a conduit for such energies, their flesh collecting and storing remnants of their magic in the form of natural runes. These anomalies are known in erudite circles as runechildren.</p>
+			<p class="indent">The talents of a runechild are rare indeed, and many are sought after for study by mages and scholars alike, driven by a prevalent belief that the secrets within their body can help understand many mysteries of the arcane. Others seek to enslave them, using their bodies as tortured spell batteries for their own diabolic pursuits. Their subjugation all throughout the Age of Arcanum has driven the few that exist this day into hiding their essence – a task that is not easy, given the revealing nature of their gifts.</p>
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ESSENCE_RUNES" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_GLYPHS_OF_AEGIS" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_SIGILIC_AUGMENTATION" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_MANIFEST_INSCRIPTIONS" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_RUNIC_TORRENT" />
+			<div element="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ARCANE_EXAMPLAR_FORM" />
+		</description>
+		<sheet>
+			<description>A runechild uses their bodies as tortured spell batteries for their own diabolic pursuits.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ESSENCE_RUNES" level="1" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_GLYPHS_OF_AEGIS" level="1" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_SIGILIC_AUGMENTATION" level="6" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_MANIFEST_INSCRIPTIONS" level="6" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_RUNIC_TORRENT" level="14" />
+			<grant type="Archetype Feature" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ARCANE_EXAMPLAR_FORM" level="18" />
+		</rules>
+	</element>
+	<element name="Essence Runes" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ESSENCE_RUNES">
+		<description>
+			<p>At 1st level, your body has begun to express your innate magical energies as natural runes that hide beneath your skin. You begin with 1 Essence Rune, and gain an additional rune whenever you gain a level in this class. Runes can manifest anywhere on your body, though the first usually manifests on the forehead. They remain invisible when inert.</p>
+			<p class="indent">At the end of a turn where you spent any number of sorcery points for any of your class features, an equal number of essence runes glow with stored energy, becoming charged runes. If you expend a charged rune to use one of your Runechild features, it returns to being an inert essence rune.</p>
+			<p class="indent">As a bonus action, you may spend any number of sorcery points to convert an equal number of essence runes into charged runes. If you have no sorcery points and no charged runes, you can convert a single essence rune into a charged rune as an action.</p>
+			If you have 5 or more charged runes, you emit bright light in a 5 foot radius and dim light for an additional 5 feet. Any charged runes revert to inert essence runes after you complete a long rest.<p class="indent"></p>
+		</description>
+		<sheet>
+			<description>You have {{essence runes:number}} essence runes. When you spend sorcery points you charge an equal number of runes. As a bonus action you can spend sorcery points to charge an equal number of runes or spend an action to charge a rune. If you have more than 5 charged runes you emit bright light in a 5 ft radius. Charged runes revert to inert after a long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="essence runes:number" value="level:sorcerer" />
+		</rules>
+	</element>
+	<element name="Glyphs of Aegis" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_GLYPHS_OF_AEGIS">
+		<description>
+			<p>Beginning at 1st level, you can release the stored arcane power within your runes to absorb or deflect threatening attacks against you. Whenever you take damage from an attack, hazard, or spell, you can use a reaction to expend any number of charged runes, rolling 1d6 per charged rune. You subtract the total rolled from the damage inflicted by the attack, hazard, or spell.</p>
+			<p class="indent">At 6th level, you can use an action to expend a charged rune, temporarily transferring a Glyph of Aegis to a creature you touch. A creature can only hold a single glyph, and it lasts for 1 hour, or until the creature is damaged by an attack, hazard, or spell. The next time that creature takes damage from any of those sources, roll 1d6 and subtract the number rolled from the damage roll. The glyph is then lost.</p>
+		</description>
+		<sheet>
+			<description>You can use a reaction to spend charged runes to subtract 1d6 damage per rune spent from damage that is being inflicted on you.</description>
+			<description level="9">You can use a reaction to spend charged runes to subtract 1d6 damage per rune spent from damage that is being inflicted on you. As an action you can transfer one charged rune to creature to gain the same benefits for 1 minute.</description>
+		</sheet>
+	</element>
+	<element name="Sigilic Augmentation" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_SIGILIC_AUGMENTATION">
+		<description>
+			<p>Upon reaching 6th level, you can channel your runes to temporarily bolster your physical capabilities. You can expend a charged rune as a bonus action to enhance either your Strength, Dexterity, or Constitution, granting you advantage on ability checks with the chosen ability score until the start of your next turn. You can choose to maintain this benefit additional rounds by expending a charged rune at the start of each of your following turns.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can spend a charged rune to gain advantage on either Strength, Dexterity, or Constitution checks till the start of your next turn. You can spend an additional rune at the start of your turn to maintain the benefits.</description>
+		</sheet>
+	</element>
+	<element name="Manifest Inscriptions" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_MANIFEST_INSCRIPTIONS">
+		<description>
+			<p>At 6th level, you can reveal hidden glyphs and enchantments that surround you. As an action, you can expend a charged rune to cause any hidden magical marks, runes, wards, or glyphs within 15 feet of you to reveal themselves with a glow for 1 round. This glow is considered dim light for a 5 foot radius around the mark or glyph.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can expend a charged rune to cause any hidden magical marks, runes, wards, or glyphs within 15 feet of you to reveal themselves with a glow for 1 round. This glow is considered dim light for a 5 foot radius around the mark or glyph.</description>
+		</sheet>
+	</element>
+	<element name="Runic Torrent" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_RUNIC_TORRENT">
+		<description>
+			<p>Upon reaching 14th level, you can channel your stored runic energy to instill your spells with overwhelming arcane power, bypassing even the staunchest defenses. Whenever you cast a spell, you can expend a number of charged runes equal to the spell’s level to allow it to ignore any resistance or immunity to the spell’s damage type the targets may have.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell, you can expend a number of charged runes equal to the spell’s level to allow it to ignore any resistance or immunity to the spell’s damage type the targets may have.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Examplar Form" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_CRIT_TCS_ARCHETYPE_FEATURE_RUNECHILD_ARCANE_EXAMPLAR_FORM">
+		<description>
+			<p>Beginning at 18th level, you can use a bonus action and expend 6 or more charged runes to temporarily become a being of pure magical energy. This new form lasts for 3 rounds plus 1 round for each charged rune expended over 6. While you are in your exemplar form, you gain the following benefits:</p>
+			<ul>
+				<li>You have a flying speed of 40 feet.</li>
+				<li>Your spell save DC is increased by 2.</li>
+				<li>You have resistance to damage from spells.</li>
+				<li>When you cast a spell of 1st level or higher, you regain hit points equal to the spell’s level.</li>
+			</ul>
+			<p class="indent">When your Arcane Exemplar form ends, you can’t move or take actions until after your next turn, as your body recovers from the transformation. Once you use this feature, you must finish a long rest before you can use it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can spend 6 or more runes to transform for 3 rounds + 1 round per rune over 6 spend. You gain a flying speed of 40 feet. Increase spell save DC by +2. Resistance to spell damage. Regain HP equal to a spell's level when casted. When this ends you cannot take anymore action till your next turn.</description>
+		</sheet>
+	</element>
 
 </elements>

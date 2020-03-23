@@ -4,10 +4,43 @@
 		<name>Items</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.6">
 			<file name="items.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/curse-of-strahd/items.xml" />
 		</update>
 	</info>
+
+    <element name="Monster Hunter’s Pack" type="Item" source="Curse of Strahd" id="ID_WOTC_COS_ITEM_MONSTER_HUNTERS_PACK">
+        <description>
+            <p>Includes a chest, a crowbar, a hammer, three wooden stakes, a holy symbol, a flask of holy water, a set of manacles, a steel mirror, a flask of oil, a tinderbox, and three torches.</p>
+        </description>
+        <setters>
+            <set name="category">Equipment Packs</set>
+            <set name="cost" currency="gp">33</set>
+            <set name="weight" lb="10">10 lbs.</set>
+        </setters>
+		<extract>
+			<item>ID_WOTC_PHB_ITEM_CHEST</item>
+			<item>ID_WOTC_PHB_ITEM_CROWBAR</item>
+			<item>ID_WOTC_PHB_ITEM_HAMMER</item>
+			<item amount="3">ID_WOTC_COS_ITEM_WOODEN_STAKE</item>
+			<!-- <item>ID_WOTC_PHB_ITEM_AMULET</item> -->
+			<item>ID_WOTC_PHB_ITEM_HOLYWATER_FLASK</item>
+			<item>ID_WOTC_PHB_ITEM_MANACLES</item>
+			<item>ID_WOTC_PHB_ITEM_MIRROR_STEEL</item>
+			<item>ID_WOTC_PHB_ITEM_OIL_FLASK</item>
+			<item>ID_WOTC_PHB_ITEM_TINDERBOX</item>
+			<item amount="3">ID_WOTC_PHB_ITEM_TORCH</item>
+		</extract>
+    </element>	
+    <element name="Wooden Stake" type="Item" source="Curse of Strahd" id="ID_WOTC_COS_ITEM_WOODEN_STAKE">
+        <description />
+        <setters>
+            <set name="category">Adventuring Gear</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lbs.</set>
+            <set name="stackable">true</set>
+        </setters>
+    </element>
 
 	<element name="Tome of Strahd" type="Item" source="Curse of Strahd" id="ID_WOTC_COS_MAGIC_ITEM_TOME_OF_STRAHD">		
 		<description>
@@ -28,7 +61,6 @@
 		<setters>
 			<set name="category">Magic Weapons</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="spear">Weapon</set>
 			<set name="rarity">Uncommon</set>
 			<set name="weapon">Spear</set>
@@ -45,12 +77,13 @@
 		<setters>
 			<set name="category">Staffs</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
+			<set name="weight" lb="4">4 lb.</set>
 			<set name="type">Staff</set>
 			<set name="rarity">Rare</set>
 			<set name="slot">onehand</set>
 			<set name="attunement">true</set>
 			<set name="weapon">Quarterstaff</set>
+			<set name="charges">10</set>
 		</setters>
 	</element>
 	<element name="Holy Symbol of Ravenkind" type="Magic Item" source="Curse of Strahd" id="ID_WOTC_COS_MAGIC_ITEM_HOLY_SYMBOL_OF_RAVENKIND">		
@@ -70,6 +103,7 @@
 			<set name="rarity">Legendary</set>
 			<set name="slot">neck</set>
 			<set name="attunement" addition="by a cleric or paladin of good alignment">true</set>
+			<set name="charges">10</set>
 		</setters>
 	</element>
 	<element name="Icon of Ravenloft" type="Magic Item" source="Curse of Strahd" id="ID_WOTC_COS_MAGIC_ITEM_ICON_OF_RAVENLOFT">		
@@ -103,7 +137,6 @@
 		<setters>
 			<set name="category">Magic Weapons</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="mace">Weapon</set>
 			<set name="rarity">Rare</set>
 			<set name="weapon">Mace</set>
@@ -113,7 +146,7 @@
 	<element name="Sunsword" type="Magic Item" source="Curse of Strahd" id="ID_WOTC_COS_MAGIC_ITEM_SUNSWORD">		
 		<description>
 			<p>The <em>Sunsword</em> is a unique blade once possessed by Strahd's brother, Sergei von Zarovich. In its original form, it had a platinum hilt and guard, and a thin crystal blade as strong as steel.</p>
-			<p class="indent">Strahd employed a powerful wizard named Khazan to destroy the weapon after Sergei's death. The first part of the process required the hilt and the blade to be separated, which Khazan accomplished. While Khazan was busying himself destroying the blade, his apprentice stole the hilt and fled. Khazan later located his apprentice's mutilated corpse in the Svalich Woods, but the hilt was nowhere to be fou.nd. To avoid the vampire's wrath, Khazan told Strahd that the entire weapon had been destroyed.</p>
+			<p class="indent">Strahd employed a powerful wizard named Khazan to destroy the weapon after Sergei's death. The first part of the process required the hilt and the blade to be separated, which Khazan accomplished. While Khazan was busying himself destroying the blade, his apprentice stole the hilt and fled. Khazan later located his apprentice's mutilated corpse in the Svalich Woods, but the hilt was nowhere to be found. To avoid the vampire's wrath, Khazan told Strahd that the entire weapon had been destroyed.</p>
 			<p class="indent">The hilt, which is sentient, knows that it can never be reunited with its original crystal blade. It has, however, gained the properties of a <em>sun blade</em>.</p>
 			<p class="indent"><strong><em>Sentience.</em></strong> The <em>Sunsword</em> is a sentient chaotic good weapon with an Intelligence of 11, a Wisdom of 17, and a Charisma of 16. It has hearing and normal vision out to a range of 60 feet. The weapon communicates by transmitting emotions to the creature carrying or wielding it.</p>
 			<p class="indent"><strong><em>Personality.</em></strong> The <em>Sunsword</em>'s special purpose is to destroy Strahd, not so much because it wants to free the land of Barovia from evil but because it wants revenge for the loss of its crystal blade. The weapon secretly fears its own destruction.</p>
@@ -121,11 +154,33 @@
 		<setters>
 			<set name="category">Magic Weapons</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="longsword">Weapon</set>
 			<set name="rarity">Legendary</set>
 			<set name="weapon">Longsword</set>
 			<set name="attunement">true</set>
 		</setters>
+	</element>
+	<element name="Lost Sword" type="Magic Item" source="Curse of Strahd" id="ID_WOTC_COS_MAGIC_ITEM_LOST_SWORD">		
+		<description>
+			<p>An unnamed sentient shortsword.</p>
+			<p class="indent">You gain a +1 bonus to attack and damage rolls made with this weapon.</p>
+			<p class="indent">The sword continually sheds bright light in a 15-foot radius and dim light for an additional 15 feet. Only by destroying the sword can this light be extinguished.</p>
+			<p class="indent">A lawful good creature can attune itself to the sword in 1 minute.</p>
+			<p class="indent">While attuned to the weapon, the sword’s wielder can use the sword to cast the <em>crusader’s mantle</em> spell. Once used, this property of the sword can’t be used again until the next dawn.</p>
+			<p class="indent"><strong><em>Sentience.</em></strong> The sword is a lawful good weapon with an Intelligence of 11, a Wisdom of 13, and a Charisma of 13. It has hearing and normal vision out to a range of 120 feet. The weapon communicates by transmitting emotion to the creature carrying or wielding it.</p>
+			<p class="indent"><strong><em>Personality.</em></strong> The sword’s purpose is to fight evil.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shortsword">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Shortsword</set>
+			<set name="attunement" addition="by a lawful good creature">true</set>
+		</setters>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CRUSADERS_MANTLE" requirements="ID_ALIGNMENT_LAWFUL_GOOD" />
+		</rules>
 	</element>
 </elements>
