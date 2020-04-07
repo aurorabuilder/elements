@@ -2,95 +2,86 @@
 <elements>
 	<info>
 		<name>Tiefling</name>
-		<description></description>
-		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.1">
+		<update version="0.2.2">
 			<file name="race-tiefling.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-tiefling.xml" />
 		</update>
 	</info>
 
-  <element name="Tiefling" type="Race" source="Player’s Handbook" id="ID_RACE_TIEFLING">
-    <description>
-      <p class="flavor">To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children’s children will always be held accountable.</p>
-      <h4>INFERNAL BLOODLINE</h4>
-      <p>Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance. Tieflings have large horns that take any of a variety of shapes: some have curling horns like a ram, others have straight and tall horns like a gazelle’s, and some spiral upward like an antelopes’ horns. They have thick tails, four to five feet long, which lash or coil around their legs when they get upset or nervous. Their canine teeth are sharply pointed, and their eyes are solid colors—black, red, white, silver, or gold—with no visible sclera or pupil. Their skin tones cover the full range of human coloration, but also include various shades of red. Their hair, cascading down from behind their horns, is usually dark, from black or brown to dark red, blue, or purple.</p>
-      <h4>SELF-RELIANT AND SUSPICIOUS</h4>
-      <p>Tieflings subsist in small minorities found mostly in human cities or towns, often in the roughest quarters of those places, where they grow up to be swindlers, thieves, or crime lords. Sometimes they live among other minority populations in enclaves where they are treated with more respect.</p>
-      <p class="indent">Lacking a homeland, tieflings know that they have to make their own way in the world and that they have to be strong to survive. They are not quick to trust anyone who claims to be a friend, but when a tiefling’s companions demonstrate that they trust him or her, the tiefling learns to extend the same trust to them. And once a tiefling gives someone loyalty, the tiefling is a firm friend or ally for life.</p>
-      <h4>TIEFLING NAMES</h4>
-      <p>Tiefling names fall into three broad categories. Tieflings born into another culture typically have names reflective of that culture. Some have names derived from the Infernal language, passed down through generations, that reflect their fiendish heritage. And some younger tieflings, striving to find a place in the world, adopt a name that signifies a virtue or other concept and then try to embody that concept. For some, the chosen name is a noble quest. For others, it’s a grim destiny.</p>
-      <p>
-        <span class="feature">Male Infernal Names:</span>Akmenos, Amnon, Barakas, Damakos, Ekemon, Iados, Kairon, Leucis, Melech, Mordai, Morthos, Pelaios, Skamos, Therai<br/>          
-        <span class="feature">Female Infernal Names:</span>Akta, Anakis, Bryseis, Criella, Damaia, Ea, Kallista, Lerissa, Makaria, Nemeia, Orianna, Phelaia, Rieta<br/>
-        <span class="feature">“Virtue” Names:</span>Art, Carrion, Chant, Creed, Despair, Excellence, Fear, Glory, Hope, Ideal, Music, Nowhere, Open, Poetry, Quest, Random, Reverence, Sorrow, Temerity, Torment, Weary<br/>
-      </p>
-      <h4>TIEFLING TRAITS</h4>
-      <p>Tieflings share certain racial traits as a result of their infernal descent.</p>
-      <p>
-        <span class="feature">Ability Score Increase.</span>Your Intelligence score increases by 1, and your Charisma score increases by 2.<br/>
-        <span class="feature">Age.</span>Tieflings mature at the same rate as humans but live a few years longer.<br/>
-        <span class="feature">Alignment.</span>Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment.<br/>
-        <span class="feature">Size.</span>Tieflings are about the same size and build as humans. Your size is Medium.<br/>
-        <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
-        <span class="feature">Darkvision.</span>Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.<br/>
-        <span class="feature">Hellish Resistance.</span>You have resistance to fire damage.<br/>
-        <span class="feature">Infernal Legacy.</span>You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.<br/>
-        <span class="feature">Languages.</span>You can speak, read, and write Common and Infernal.<br/>
-      </p>
-    </description>
-    <sheet display="false" />
-    <setters>
-      <set name="names" type="male">Akmenos, Amnon, Barakas, Damakos, Ekemon, Iados, Kairon, Leucis, Melech, Mordai, Morthos, Pelaios, Skamos, Therai</set>
-      <set name="names" type="female">Akta, Anakis, Bryseis, Criella, Damaia, Ea, Kallista, Lerissa, Makaria, Nemeia, Orianna, Phelaia, Rieta</set>
-      <set name="names" type="virtue">Art, Carrion, Chant, Creed, Despair, Excellence, Fear, Glory, Hope, Ideal, Music, Nowhere, Open, Poetry, Quest, Random, Reverence, Sorrow, Temerity, Torment, Weary</set>
-      <set name="names-format">{{name}} “{{virtue}}”</set>
-      <set name="height" modifier="2d8">4'9"</set>
-      <set name="weight" modifier="2d4">110 lb.</set>
-    </setters>
-    <rules>      
-      <stat name="intelligence" value="1" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
-      <stat name="charisma" value="2" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
-      <stat name="innate speed" value="30" bonus="base"/>
-      <grant type="Size" id="ID_SIZE_MEDIUM" />
-      <grant type="Vision" id="ID_VISION_DARKVISION" />
-      <grant type="Language" id="ID_LANGUAGE_COMMON" />
-      <grant type="Language" id="ID_LANGUAGE_INFERNAL" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE" />
-      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
-      <select type="Sub Race" name="Tiefling Subrace" supports="Tiefling" optional="true" /> 
-
-      <!--<select type="Race Variant" name="Tiefling Variant" supports="Tiefling" optional="true"/>-->
-    </rules>
-  </element>
-
-  <element name="Hellish Resistance" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE">
-    <description>
-      <p>You have resistance to fire damage.</p>
-    </description>
-    <sheet>
-      <description>You have resistance to fire damage.</description>
-    </sheet>
-    <rules>
-		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
-    </rules>
-  </element>
-  <element name="Infernal Legacy" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY">
-    <description>
-      <p>You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>
-    </description>
-    <sheet>
-      <description>You know the thaumaturgy cantrip. Charisma is your spellcasting ability for these spells.</description>
-      <description level="3">You know the thaumaturgy cantrip. You can cast the hellish rebuke spell once per day as a 2nd-level spell. Charisma is your spellcasting ability for these spells.</description>
-      <description level="5">You know the thaumaturgy cantrip. You can cast the hellish rebuke spell once per day as a 2nd-level spell. You can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</description>
-    </sheet>
-    <rules>
-      <grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" />
-      <grant type="Spell" id="ID_PHB_SPELL_HELLISH_REBUKE" level="3"/>
-      <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="5"/>
-    </rules>
-  </element>
-
-  <!-- an element that you should grant in a subrace so that you can override stats/infernal legacy -->
-  <element name="Tiefling Subrace" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
-
+	<element name="Tiefling" type="Race" source="Player’s Handbook" id="ID_RACE_TIEFLING">
+		<description>
+			<p class="flavor">To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children’s children will always be held accountable.</p>
+			<h4>INFERNAL BLOODLINE</h4>
+			<p>Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance. Tieflings have large horns that take any of a variety of shapes: some have curling horns like a ram, others have straight and tall horns like a gazelle’s, and some spiral upward like an antelopes’ horns. They have thick tails, four to five feet long, which lash or coil around their legs when they get upset or nervous. Their canine teeth are sharply pointed, and their eyes are solid colors—black, red, white, silver, or gold—with no visible sclera or pupil. Their skin tones cover the full range of human coloration, but also include various shades of red. Their hair, cascading down from behind their horns, is usually dark, from black or brown to dark red, blue, or purple.</p>
+			<h4>SELF-RELIANT AND SUSPICIOUS</h4>
+			<p>Tieflings subsist in small minorities found mostly in human cities or towns, often in the roughest quarters of those places, where they grow up to be swindlers, thieves, or crime lords. Sometimes they live among other minority populations in enclaves where they are treated with more respect.</p>
+			<p class="indent">Lacking a homeland, tieflings know that they have to make their own way in the world and that they have to be strong to survive. They are not quick to trust anyone who claims to be a friend, but when a tiefling’s companions demonstrate that they trust him or her, the tiefling learns to extend the same trust to them. And once a tiefling gives someone loyalty, the tiefling is a firm friend or ally for life.</p>
+			<h4>TIEFLING NAMES</h4>
+			<p>Tiefling names fall into three broad categories. Tieflings born into another culture typically have names reflective of that culture. Some have names derived from the Infernal language, passed down through generations, that reflect their fiendish heritage. And some younger tieflings, striving to find a place in the world, adopt a name that signifies a virtue or other concept and then try to embody that concept. For some, the chosen name is a noble quest. For others, it’s a grim destiny.</p>
+			<ul class="unstyled">
+				<li><strong>Male Infernal Names:</strong> Akmenos, Amnon, Barakas, Damakos, Ekemon, Iados, Kairon, Leucis, Melech, Mordai, Morthos, Pelaios, Skamos, Therai</li>
+				<li><strong>Female Infernal Names:</strong> Akta, Anakis, Bryseis, Criella, Damaia, Ea, Kallista, Lerissa, Makaria, Nemeia, Orianna, Phelaia, Rieta</li>
+				<li><strong>“Virtue” Names:</strong> Art, Carrion, Chant, Creed, Despair, Excellence, Fear, Glory, Hope, Ideal, Music, Nowhere, Open, Poetry, Quest, Random, Reverence, Sorrow, Temerity, Torment, Weary</li>
+			</ul>
+			<h4>TIEFLING TRAITS</h4>
+			<p>Tieflings share certain racial traits as a result of their infernal descent.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence score increases by 1, and your Charisma score increases by 2.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Tieflings mature at the same rate as humans but live a few years longer.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Tieflings are about the same size and build as humans. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><strong><em>Hellish Resistance.</em></strong> You have resistance to fire damage.</p>
+			<p class="indent"><strong><em>Infernal Legacy.</em></strong> You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Infernal.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Akmenos, Amnon, Barakas, Damakos, Ekemon, Iados, Kairon, Leucis, Melech, Mordai, Morthos, Pelaios, Skamos, Therai</set>
+			<set name="names" type="female">Akta, Anakis, Bryseis, Criella, Damaia, Ea, Kallista, Lerissa, Makaria, Nemeia, Orianna, Phelaia, Rieta</set>
+			<set name="names" type="virtue">Art, Carrion, Chant, Creed, Despair, Excellence, Fear, Glory, Hope, Ideal, Music, Nowhere, Open, Poetry, Quest, Random, Reverence, Sorrow, Temerity, Torment, Weary</set>
+			<set name="names-format">{{name}} “{{virtue}}”</set>
+			<set name="height" modifier="2d8">4'9"</set>
+			<set name="weight" modifier="2d4">110 lb.</set>
+		</setters>
+		<rules>
+			<stat name="intelligence" value="1" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
+			<stat name="charisma" value="2" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
+			<stat name="innate speed" value="30" bonus="base"/>
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
+			<select type="Sub Race" name="Tiefling Subrace" supports="Tiefling" optional="true" />
+		</rules>
+	</element>
+	<element name="Hellish Resistance" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE">
+		<description>
+			<p>You have resistance to fire damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to fire damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Infernal Legacy" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY">
+		<description>
+			<p>You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
+		</description>
+		<sheet>
+			<description>You know the thaumaturgy cantrip. (Charisma)</description>
+			<description level="3">You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell (1/long rest). (Charisma)</description>
+			<description level="5">You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell and the darkness spell (1/long rest). (Charisma)</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" />
+			<grant type="Spell" id="ID_PHB_SPELL_HELLISH_REBUKE" level="3"/>
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="5"/>
+		</rules>
+	</element>
+	<!-- an element that you should grant in a subrace so that you can override stats/infernal legacy -->
+	<element name="Tiefling Subrace" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
 </elements>
