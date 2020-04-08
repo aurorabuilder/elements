@@ -4,7 +4,7 @@
 		<name>Dragonborn</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.1">
+		<update version="0.2.3">
 			<file name="race-dragonborn.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-dragonborn.xml" />
 		</update>
 	</info>
@@ -65,81 +65,36 @@
 			<set name="weight" modifier="2d6">175 lb.</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="2"/>
-			<stat name="charisma" value="1"/>
+			<stat name="strength" value="2" requirements="!ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
+			<stat name="charisma" value="1" requirements="!ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
 			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_BREATH_WEAPON" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE" requirements="!ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
+			<select type="Race Variant" name="Dragonborn Variant" supports="Dragonborn" optional="true" />
 		</rules>
 	</element>
-
-
 	<element name="Draconic Ancestry" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY">
 		<description>
 			<p>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.</p>
 			<h5>DRACONIC ANCESTRY</h5>
 			<table>
 				<thead>
-					<tr>
-						<td>Dragon</td>
-						<td>Damage Type</td>
-						<td>Breath Weapon</td>
-					</tr>
+					<tr><td>Dragon</td><td>Damage Type</td><td>Breath Weapon</td></tr>
 				</thead>
-				<tr>
-					<td>Black</td>
-					<td>Acid</td>
-					<td>5 by 30 ft. line (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Blue</td>
-					<td>Lightning</td>
-					<td>5 by 30 ft. line (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Brass</td>
-					<td>Fire</td>
-					<td>5 by 30 ft. line (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Bronze</td>
-					<td>Lightning</td>
-					<td>5 by 30 ft. line (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Copper</td>
-					<td>Acid</td>
-					<td>5 by 30 ft. line (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Gold</td>
-					<td>Fire</td>
-					<td>15 ft. cone (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Green</td>
-					<td>Poison</td>
-					<td>15 ft. cone (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Red</td>
-					<td>Fire</td>
-					<td>15 ft. cone (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>Silver</td>
-					<td>Cold</td>
-					<td>15 ft. cone (Dex. save)</td>
-				</tr>
-				<tr>
-					<td>White</td>
-					<td>Cold</td>
-					<td>15 ft. cone (Dex. save)</td>
-				</tr>
+				<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Bronze</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Copper</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Gold</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
+				<tr><td>Green</td><td>Poison</td><td>15 ft. cone (Con. save)</td></tr>
+				<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
+				<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
+				<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
 			</table>
 		</description>
 		<rules>
@@ -153,7 +108,7 @@
 			<p>After you use your breath weapon, you can’t use it again until you complete a short or long rest.</p>
 		</description>
 		<sheet action="Action" usage="1/Short Rest">
-			<description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} {{draconic-ancestry:damage type}} damage in a {{draconic-ancestry:breath}}  DC {{breath-weapon:dc}}</description>
+			<description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} {{draconic-ancestry:damage type}} damage in a {{draconic-ancestry:breath}} DC {{breath-weapon:dc}}</description>
 		</sheet>
 		<rules>
 			<stat name="breath-weapon:dc" value="8" />
@@ -181,6 +136,7 @@
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_SILVER||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE" />
 		</rules>
 	</element>
+
 	<element name="Draconic Ancestry (Black)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK">
 		<supports>Draconic Ancestry</supports>
 		<description>
@@ -276,7 +232,7 @@
 		<rules>
 			<stat inline="true" name="draconic-ancestry" value="Green"/>
 			<stat inline="true" name="draconic-ancestry:damage type" value="Poison" />
-			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Dex. save)" />
+			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Con. save)" />
 		</rules>
 	</element>
 	<element name="Draconic Ancestry (Red)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_RED">
@@ -304,7 +260,7 @@
 		<rules>
 			<stat inline="true" name="draconic-ancestry" value="Silver"/>
 			<stat inline="true" name="draconic-ancestry:damage type" value="Cold" />
-			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Dex. save)" />
+			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Con. save)" />
 		</rules>
 	</element>
 	<element name="Draconic Ancestry (White)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE">
@@ -318,7 +274,7 @@
 		<rules>
 			<stat inline="true" name="draconic-ancestry" value="White"/>
 			<stat inline="true" name="draconic-ancestry:damage type" value="Cold" />
-			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Dex. save)" />
+			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Con. save)" />
 		</rules>
 	</element>
 </elements>

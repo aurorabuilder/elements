@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="wizard-graviturgy.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/explorers-guide-to-wildemount/archetypes/wizard-graviturgy.xml" />
+		</update>
+	</info>
+	<element name="Graviturgy Magic" type="Archetype" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_WIZARD_GRAVITURGY_MAGIC">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Understanding and mastering the forces that draw bodies of matter together or drive them apart, the students of te Graviturgy arcane tradition learn to further bend and manipulate the violent energy of gravity to their benefit, and the terrible detriment of their enemies.</p>
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_ADJUST_DENSITY" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_GRAVITY_WELL" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_VIOLENT_ATTRACTION" />
+			<div element="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_EVENT_HORIZON" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_ADJUST_DENSITY" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_GRAVITY_WELL" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_VIOLENT_ATTRACTION" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_EVENT_HORIZON" level="14" />
+		</rules>
+	</element>	
+	<element name="Adjust Density" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_ADJUST_DENSITY">
+		<description>
+			<p><em>2nd-level Graviturgy Magic feature</em></p>
+			<p>As an action, you can magically alter the weight of one object or creature you can see within 30 feet of you. The object or creature must be Large or smaller. The target’s weight is halved or doubled for up to 1 minute or until your concentration ends (as if you were concentrating on a spell).</p>
+			<p class="indent">While the weight of a creature is halved by this effect, the creature’s speed increases by 10 feet, it can jump twice as far as normal, and it has disadvantage on Strength checks and Strength saving throws.</p>
+			<p class="indent">Upon reaching 10th level in this class, you can target an object or a creature that is Huge or smaller.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can magically alter the weight of one object or creature you can see within 30 feet of you. The object or creature must be Large or smaller. The target’s weight is halved or doubled for up to 1 minute or until your concentration ends.
+			While the weight of a creature is halved by this effect, the creature’s speed increases by 10 feet, it can jump twice as far as normal, and it has disadvantage on Strength checks and Strength saves.</description>
+			<description level="10">You can magically alter the weight of one object or creature you can see within 30 feet of you. The object or creature must be Huge or smaller. The target’s weight is halved or doubled for up to 1 minute or until your concentration ends.
+			While the weight of a creature is halved by this effect, the creature’s speed increases by 10 feet, it can jump twice as far as normal, and it has disadvantage on Strength checks and Strength saves.</description>
+		</sheet>
+	</element>
+	<element name="Gravity Well" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_GRAVITY_WELL">
+		<description>
+			<p><em>6th-level Graviturgy Magic feature</em></p>
+			<p>You’ve learned how to manipulate gravity around a living being: whenever you cast a spell on a creature, you can move the target 5 feet to an unoccupied space of your choice if the target is willing to move, the spell hits it with an attack, or it fails a saving throw against the spell.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell on a creature, you can move the target 5 feet to an unoccupied space of your choice if the target is willing to move, the spell hits it with an attack, or it fails a save against the spell.</description>
+		</sheet>
+	</element>
+	<element name="Violent Attraction" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_VIOLENT_ATTRACTION">
+		<description>
+			<p><em>10th-level Graviturgy Magic feature</em></p>
+			<p>When another creature that you can see within 60 feet of you hits with a weapon attack, you can use your reaction to increase the attack’s velocity, causing the attack’s target to take an extra 1d10 damage of the weapon’s type.</p>
+			<p class="indent">Alternatively, if a creature within 60 feet of you takes damage from a fall, you can use your reaction to increase the fall’s damage by 2d10.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{violent attraction:usage}}/Long Rest">
+			<description>When another creature that you can see within 60 feet of you hits with a weapon attack, you can increase the attack’s velocity, causing the attack’s target to take an extra 1d10 damage of the weapon’s type.
+			Alternatively, if a creature within 60 feet of you takes damage from a fall, you can increase the fall’s damage by 2d10.</description>
+		</sheet>
+		<rules>
+			<stat name="violent attraction:usage" value="1" bonus="base" />
+			<stat name="violent attraction:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Event Horizon" type="Archetype Feature" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_ARCHETYPE_FEATURE_GRAVITURGY_EVENT_HORIZON">
+		<description>
+			<p><em>14th-level Graviturgy Magic feature</em></p>
+			<p>As an action, you can magically emit a powerful field of gravitation energy that tugs at other creatures for up to 1 minute or until your concentration ends (as if you were concentrating on a spell). For the duration, whenever a creature hostile to you starts its turn within 30 feet of you, it must make a Strength saving throw against your spell save DC. On a failed save, it takes 2d10 force damage, and its speed is reduced to 0 until the start of its next turn. On a successful save, it takes half as much damage, and every foot it moves this turn costs 2 extra feet of movement.</p>
+			<p class="indent">Once you use this feature, you can’t do so again until you finish a long rest or until you expend a spell slot of 3rd level or higher on it.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can magically emit a powerful field of gravitation energy that tugs at other creatures for up to 1 minute or until your concentration ends. For the duration, whenever a creature hostile to you starts its turn within 30 feet of you, it must make a Strength save. On a failed save, it takes 2d10 force damage, and its speed is reduced to 0 until the start of its next turn. On a successful save, it takes half as much damage, and every foot it moves this turn costs 2 extra feet of movement.
+			You regain the use of this feature when you expend a spell slot of 3rd level or higher on it.</description>
+		</sheet>
+	</element>
+</elements>

@@ -3,7 +3,7 @@
 	<info>
 		<name>Bloodhunter</name>
 		<description>2020 Version</description>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="class-bloodhunter.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/classes/class-bloodhunter.xml" />
 		</update>
 	</info>
@@ -21,7 +21,7 @@
 			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=Matthew%20Mercer">Matthew Mercer</set>
 			<set name="third-party">true</set>
 			<set name="release">20200127</set>
-			<set name="information">This is a complete redesigned version of the original Blood Hunter. Existing characters are not affected by this addition.</set>
+			<!-- <set name="updated">20200211</set> -->
 		</setters>
 	</element>
 
@@ -36,7 +36,7 @@
 			<p class="indent">Through careful study and practice, blood hunters have honed the rites of hemocraft into their combat prowess, forfeiting a facet of their health to infuse their weapons with powerful blood magic and summoning the elements to envelop their strikes.</p>
 			<p class="indent">They can sear an arcane brand into the body of their quarry that hinders their foe’s abilities and punishes their aggression, or call blood curses upon their enemies, manipulating their bodies from the inside. Willing to suffer whatever it takes to achieve victory, these adept warriors have forged themselves into a potent force against the terrors that threaten the innocent.</p>
 			<h4>A MONSTER TO FIGHT MONSTERS</h4>
-			<p>Whether driven by the wish to make a difference in a dangerous world, the need take vengeance for a great wrong they have suffered, being inspired by witnessing the strange and powerful techniques of another blood hunter in person, or just seeking a place to belong in an uncaring world, the reasons one may take up the Hunter’s Bane and choose this life are many and varied. In joining an order of blood hunters, one is also joining a tight family bound by service to each other and the common cause. For many, this is the only family they have known or have left, so the kinship felt between members of an order is a bond neigh unbreakable.</p>
+			<p>Whether driven by the wish to make a difference in a dangerous world, the need to take vengeance for a great wrong they have suffered, being inspired by witnessing the strange and powerful techniques of another blood hunter in person, or just seeking a place to belong in an uncaring world, the reasons one may take up the Hunter’s Bane and choose this life are many and varied. In joining an order of blood hunters, one is also joining a tight family bound by service to each other and the common cause. For many, this is the only family they have known or have left, so the kinship felt between members of an order is a bond neigh unbreakable.</p>
 			<p class="indent">Beyond the boundaries of the order, however, the life of a blood hunter is often not an easy one. The rituals of the Hunter’s Bane regularly leave one visibly changed and prone to unsettle common folk, and the witnessing of hemocraft can invoke a superstitious fear from even the most learned scholar. While some societies have come to accept the good deeds of the orders, many blood hunters publicly hide their nature unless absolutely necessary, feeling more comfortable in the wilds and wastes of the world where the Orders commonly train. Even so, the best work a blood hunter can do usually involves the poor and defenseless on the outskirts of society, those prone to the corrupting touch of fiends and dark intension. Braving the threat of vilification, these dark protectors wade through civilization, earning coin as mercenaries or bounty hunters, ever watching for the signs of something more nefarious beneath the surface.</p>
 			<p class="indent">In choosing this path, a blood hunter has irrevocably given a part of themselves to their cause, physically, emotionally, and sometimes morally. The orders of blood hunters practice their own unique ideals and methods, often employing techniques with dark origins that test the strength and will of these guardians. Many wrestle with the fear of losing this struggle, so a life of discipline and vigilance drives their travels as they wander the countryside in search of like-minded adventurers and whispers of dark deeds afoot.</p>
 			<h4>CREATING A BLOOD HUNTER</h4>
@@ -146,10 +146,11 @@
 			<prerequisite>Strength 13 or Dexterity 13, and Intelligence 13</prerequisite>
 			<requirements>([str:13]||[dex:13]),[int:13],!ID_CRIT_CLASS_BLOOD_HUNTER,!ID_CRIT_MULTICLASS_BLOOD_HUNTER</requirements>
 			<setters>
-				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, alchemical supplies</set>
+				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list, alchemical supplies</set>
 			</setters>
 			<rules>
 				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<select type="Proficiency" name="Skill Proficiency, Blood Hunter" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_SURVIVAL" />	
 			</rules>
 		</multiclass>
 	</element>
@@ -218,7 +219,7 @@
 		<description>
 			<p>At 2nd level, you learn to invoke a rite of hemocraft within your weapon at the cost of your own vitality. Choose one rite from the Primal Rites list below to learn.</p>
 			<P class="indent">As a bonus action, you activate a crimson rite on a single weapon with the elemental energy of a known rite of your choice that lasts until you finish a short or long rest, or if you aren’t holding the weapon at the end of your turn. When you activate a rite, you lose a number of hit points equal to one roll of your hemocraft die, as shown in the Hemocraft Die column of the Blood Hunter table.</P>
-			<P class="indent">While active, attacks from this weapon deal an additional 1d4 damage of the chosen rite’s type. This damage is magical, and increases as you gain levels as a blood hunter, as shown in the Hemocraft Die column of the Blood Hunter table.</P>
+			<P class="indent">While active, attacks from this weapon deal an additional 1d4 damage of the chosen rite’s type. This damage is magical, and increases as you gain levels as a blood hunter, as shown in the Hemocraft Die column of the Blood Hunter table. A weapon can only hold a single active rite at a time.</P>
 			<P class="indent">You learn an additional Primal Rite of your choice at 7th level, and choose an Esoteric Rite to learn at 14th level.</P>
 			<h5 class="caption">PRIMAL RITES</h5>
 			<p>Choose from the following:</p>
@@ -233,7 +234,7 @@
 		</description>
 		<sheet  action="Bonus Action">
 			<description>You activate a crimson rite on a single weapon of your choice that lasts until you finish a rest, or if you aren’t holding the weapon at the end of your turn. When you activate a rite, you lose 1d{{hemocraft:dice:size}} hp.
-			While active, attacks from this weapon deal an additional 1d{{hemocraft:dice:size}} magical damage of the chosen rite’s type.</description>
+			While active, attacks from this weapon deal an additional 1d{{hemocraft:dice:size}} magical damage of the chosen rite’s type. A weapon can only hold a single active rite at a time.</description>
 		</sheet>
 		<rules>
 			<select type="Class Feature" name="Primal Rite, Blood Hunter" supports="Blood Hunter Primal Rite v2" />
@@ -268,10 +269,10 @@
 	</element>
 	<element name="Extra Attack" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_EXTRA_ATTACK">
 		<description>
-			<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the attack action.</p>
+			<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action.</p>
 		</description>
 		<sheet>
-			<description>You can attack twice whenever you take the attack action.</description>
+			<description>You can attack twice whenever you take the Attack action.</description>
 		</sheet>
 		<rules>
 			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
@@ -435,14 +436,14 @@
 			<ul>
 				<li>Your weapon sheds bright light out to a radius of 20 feet.</li>
 				<li>You have resistance to necrotic damage.</li>
-				<li>Your weapon deals one additional hemocraft die when you hit an undead</li>
+				<li>Your weapon deals one additional hemocraft die of rite damage when you hit an undead.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>Your rite damage is radiant damage. While the rite is active, you gain the following benefits:
 			Your weapon sheds bright light out to a radius of 20 feet.
 			You have resistance to necrotic damage.
-			Your weapon deals one additional d{{hemocraft:dice:size}} when you hit an undead.</description>
+			Your weapon deals one additional d{{hemocraft:dice:size}} of rite damage when you hit an undead.</description>
 		</sheet>
 	</element>
 	<element name="Curse Specialist" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_GHOSTSLAYER_CURSE_SPECIALIST">
@@ -472,10 +473,10 @@
 	</element>
 	<element name="Brand of Sundering" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_GHOSTSLAYER_BRAND_OF_SUNDERING">
 		<description>
-			<p>Beginning at 11th level, your Brand of Castigation now exposes a fragment of your foe’s essence, leaving them vulnerable to your Crimson Rite. Whenever you damage a branded creature with your Crimson Rite, you roll one additional hemocraft die. In addition, the branded creature can’t move through creatures or objects</p>
+			<p>Beginning at 11th level, your Brand of Castigation now exposes a fragment of your foe’s essence, leaving them vulnerable to your Crimson Rite. Whenever you damage a branded creature with your Crimson Rite, your weapon deals one additional hemocraft die of rite damage. In addition, the branded creature can’t move through creatures or objects</p>
 		</description>
 		<sheet>
-			<description>Whenever you damage a branded creature with your Crimson Rite, you roll one additional hemocraft die. In addition, the branded creature can’t move through creatures or objects</description>
+			<description>Whenever you damage a branded creature with your Crimson Rite, your weapon deals one additional hemocraft die of rite damage. In addition, the branded creature can’t move through creatures or objects</description>
 		</sheet>
 	</element>
 	<element name="Blood Curse of the Exorcist" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST">
@@ -1373,20 +1374,20 @@
 	<element name="Predatory Strikes" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_HYBRID_TRANSFORMATION_PREDATORY_STRIKES">
 		<compendium display="false" />
 		<description>
-			<p>Your can apply your Crimson Rite feature to your unarmed strikes. You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes. When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.</p>
+			<p>You can apply your Crimson Rite feature to your unarmed strikes as single weapon. You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes. When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action</p>
 			<p class="indent">Your unarmed strikes deal 1d6 slashing damage. The damage increases to 1d8 at 11th level.</p>
 		</description>
 		<sheet usage="Hybrid Transformation">
-			<description>Your can apply your Crimson Rite feature to your unarmed strikes (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
+			<description>Your can apply your Crimson Rite feature to your unarmed strikes as single weapon (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
 			Your unarmed strikes deal 1d6 slashing damage.</description>
-			<description level="11">Your can apply your Crimson Rite feature to your unarmed strikes (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
+			<description level="11">Your can apply your Crimson Rite feature to your unarmed strikes as single weapon (STR/DEX). When you use the Attack action with an unarmed strike, you can make one unarmed strike as a bonus action.
 			Your unarmed strikes deal 1d8 slashing damage.</description>
 		</sheet>
 	</element>
 	<element name="Bloodlust" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_HYBRID_TRANSFORMATION_BLOODLUST">
 		<compendium display="false" />
 		<description>
-			<p>If you begin your turn with no more than half of your maximum hit points, you must succeed on a Wisdom saving throw (DC is equal to 8 + 1/3 of your blood hunter level) or move directly towards the nearest creature to you and use the Attack action against that creature. You can choose whether or not to use your Extra Attack feature for this frenzied attack. If there is more than one possible target, roll to randomly determine the target. You then regain control for the remainder of your turn.</p>
+			<p>If you begin your turn with no more than half of your maximum hit points, you must succeed on a DC 8 Wisdom saving throw or move directly towards the nearest creature to you and use the Attack action against that creature. You can choose whether or not to use your Extra Attack feature for this frenzied attack. If there is more than one possible target, roll to randomly determine the target. You then regain control for the remainder of your turn.</p>
 			<p class="indent">If you are under an effect that prevents you from concentrating (like the barbarian’s Rage feature), you automatically fail this saving throw.</p>
 		</description>
 		<sheet usage="Hybrid Transformation">
@@ -1395,13 +1396,6 @@
 		</sheet>
 		<rules>
 			<stat name="lycan bloodlust:dc" value="8" />
-			<stat name="lycan bloodlust:dc" value="1" bonus="level" level="3" />
-			<stat name="lycan bloodlust:dc" value="2" bonus="level" level="6" />
-			<stat name="lycan bloodlust:dc" value="3" bonus="level" level="9" />
-			<stat name="lycan bloodlust:dc" value="4" bonus="level" level="12" />
-			<stat name="lycan bloodlust:dc" value="5" bonus="level" level="15" />
-			<stat name="lycan bloodlust:dc" value="6" bonus="level" level="18" />
-			<!-- rounded up/down? -->
 		</rules>
 	</element>
 	<element name="Improved Predatory Strikes" type="Archetype Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_ARCHETYPE_FEATURE_LYCAN_STALKERS_PROWESS_IMPROVED_PREDATORY_STRIKES">
@@ -1433,11 +1427,11 @@
 		<supports>Blood Hunter Blood Curse v2</supports>
 		<description>
 			<p>As a bonus action, you magnify the adrenaline in the body of a creature within 30 feet of you, making them susceptible to forceful influence. Until the end of your next turn, all creatures have advantage on Charisma (Intimidation) checks directed at the target creature.</p>
-			<p class="indent"><strong><em>Amplify.</em></strong> The next Wisdom saving throw the target has to make before this curse ends has disadvantage.</p>
+			<p class="indent"><strong><em>Amplify.</em></strong> The next Wisdom saving throw the target has to make before this curse ends has disadvantage. Once you’ve amplified this blood curse, you must finish a long rest before you can amplify it again.</p>
 		</description>
-		<sheet action="Bonus Action">
+		<sheet action="Bonus Action" usage="1 Amplify/Long Rest">
 			<description>You target a creature within 30 feet of you. Until the end of your next turn, all creatures have advantage on Intimidation checks directed at the target creature.
-			Amplify: The next Wisdom saving throw the target has to make before this curse ends has disadvantage.</description>
+			Amplify: The next Wisdom save the target has to make before this curse ends has disadvantage. Once you’ve amplified this blood curse, you must finish a long rest before you can amplify it again.</description>
 		</sheet>
 	</element>
 	<element name="Blood Curse of Binding" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_BINDING">
@@ -1490,15 +1484,26 @@
 			Amplify: The creature that charmed, frightened, or possessed the target of your curse suffers 3d6 psychic damage and must make a Wisdom save or be stunned until the end of your next turn.</description>
 		</sheet>
 	</element>
+	<element name="Blood Curse of the Exposure" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_EXPOSURE">
+		<supports>Blood Hunter Blood Curse v2</supports>
+		<description>
+			<p>When a creature you can see within 30 feet is hit with an attack or spell, you can use your reaction to temporarily weaken their resilience against it. Until the end of the turn, the target loses their resistance to the damage types of the triggering attack or spell.</p>
+			<p class="indent"><strong><em>Amplify.</em></strong> The target instead loses invulnerability to the damage types of the triggering attack or spell, having resistance to them until the end of the turn.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see within 30 feet is hit with an attack or spell, you can temporarily weaken their resilience against it. Until the end of the turn, the target loses their resistance to the damage types of the triggering attack or spell.
+			Amplify: The target instead loses invulnerability to the damage types of the triggering attack or spell, having resistance to them until the end of the turn.</description>
+		</sheet>
+	</element>
 	<element name="Blood Curse of the Eyeless" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_EYELESS">
 		<supports>Blood Hunter Blood Curse v2</supports>
 		<description>
 			<p>When a creature you can see within 30 feet of you makes an attack roll, you can use your reaction to roll one hemocraft damage die and subtract the number rolled from the creature’s attack roll. You can choose to use this feature after the creature’s roll, but before the DM determines whether the attack roll succeeds. The creature is immune if it is immune to blindness.</p>
-			<p class="indent"><strong><em>Amplify.</em></strong> You apply this curse to all of the creature’s attack rolls until the end of the turn. You roll a new hemocraft damage die for each affected attack.</p>
+			<p class="indent"><strong><em>Amplify.</em></strong> You apply this curse to all of the creature’s attack rolls until the end of the turn. You roll a new hemocraft die for each affected attack.</p>
 		</description>
 		<sheet action="Reaction">
 			<description>When a creature you can see within 30 feet of you makes an attack roll, you can roll one hemocraft damage die and subtract the number rolled from the creature’s attack roll. The creature is immune if it is immune to blindness.
-			Amplify: You apply this curse to all of the creature’s attack rolls until the end of the turn. You roll a new hemocraft damage die for each affected attack.</description>
+			Amplify: You apply this curse to all of the creature’s attack rolls until the end of the turn. You roll a new hemocraft die for each affected attack.</description>
 		</sheet>
 	</element>
 	<element name="Blood Curse of the Fallen Puppet" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_FALLEN_PUPPET">
@@ -1535,11 +1540,11 @@
 	<element name="Blood Curse of the Marked" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_MARKED">
 		<supports>Blood Hunter Blood Curse v2</supports>
 		<description>
-			<p>As a bonus action, you can mark a creature within 30 feet of you. Until the end of your turn, you roll an additional hemocraft die whenever you deal rite damage to the target.</p>
+			<p>As a bonus action, you can mark a creature within 30 feet of you. Until the end of your turn, whenever you deal rite damage to the target, you deal an additional hemocraft die of rite damage.</p>
 			<p class="indent"><strong><em>Amplify.</em></strong> The next attack roll you make against the target before the end of your turn has advantage.</p>
 		</description>
 		<sheet action="Bonus Action">
-			<description>You can mark a creature within 30 feet of you. Until the end of your turn, you roll an additional hemocraft die whenever you deal rite damage to the target.
+			<description>You can mark a creature within 30 feet of you. Until the end of your turn, whenever you deal rite damage to the target, you deal an additional hemocraft die of rite damage.
 			Amplify: The next attack roll you make against the target before the end of your turn has advantage.</description>
 		</sheet>
 	</element>
@@ -1556,10 +1561,10 @@
 	</element>
 	<element name="Blood Curse of the Souleater" type="Class Feature" source="Blood Hunter (2020)" id="ID_DMSG_MMBH_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_SOULEATER">
 		<supports>Blood Hunter Blood Curse v2</supports>
-		<prerequisite>15th level, Order of the Profane Soul</prerequisite>
-		<requirements>[level:15],ID_DMSG_MMBH_ARCHETYPE_ORDER_OF_THE_PROFANE_SOUL</requirements>
+		<prerequisite>18th level, Order of the Profane Soul</prerequisite>
+		<requirements>[level:18],ID_DMSG_MMBH_ARCHETYPE_ORDER_OF_THE_PROFANE_SOUL</requirements>
 		<description>
-			<p><em>Prerequisite: 15th level, Order of the Profane Soul</em></p>
+			<p><em>Prerequisite: 18th level, Order of the Profane Soul</em></p>
 			<p>When a creature that isn’t a construct or undead is reduced to 0 hit points within 30 feet of you, you can use your reaction to usher their soul to your patron in exchange for power. Until the end of your next turn, your weapon attacks have advantage.</p>
 			<p class="indent"><strong><em>Amplify.</em></strong> In addition, you regain an expended warlock spell slot. Once you’ve amplified this blood curse, you must finish a long rest before you can amplify it again.</p>
 		</description>

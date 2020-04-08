@@ -4,7 +4,7 @@
 		<name>Sorcerer</name>
 		<description>Sorcerer from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.7">
+		<update version="0.2.8">
 			<file name="class-sorcerer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/classes/class-sorcerer.xml" />
 		</update>
 	</info>
@@ -126,7 +126,7 @@
 			<h5>CANTRIPS</h5>
 			<p>At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.</p>
 			<h5>SPELL SLOTS</h5>
-			<p>The Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+			<p>The Sorcerer table shows how many spell slots you have to cast your sorcerer spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
 			<p class="indent">For example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot.</p>
 			<h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
 			<p>You know two 1st-level spells of your choice from the sorcerer spell list.</p>
@@ -207,6 +207,7 @@
 			<h5>FLEXIBLE CASTING</h5>
 			<p>You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.</p>
 			<p class="indent"><strong><em>Creating Spell Slots.</em></strong> You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.</p>
+			<p class="indent">Any spell slot you create with this feature vanishes when you finish a long rest.</p>
 			<h5 class="caption">CREATING SPELLSLOTS</h5>
 			<table>
 				<thead>
@@ -339,7 +340,7 @@
 	<element name="Twinned Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_TWINNED_SPELL">
 		<supports>Metamagic</supports>
 		<description>
-			<p>When you cast a spell that targets only one creature and doesn’t have a range of self, you can spend a number of sorcery points equal to the spell’s level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).</p>
+			<p>When you cast a spell that targets only one creature and doesn’t have a range of self, you can spend a number of sorcery points equal to the spell’s level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip). To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level. For example, magic missile and scorching ray aren’t eligible, but ray of frost and chromatic orb are.</p>
 		</description>
 		<sheet>
 			<description>When you cast a spell that targets only one creature and doesn’t have a range of self, you can spend a number of sorcery points equal to the spell’s level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).</description>
@@ -416,10 +417,10 @@
 	<element name="Elemental Affinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_AFFINITY">
 		<supports>Draconic Bloodline</supports>
 		<description>
-			<p>Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, add your Charisma modifier to that damage. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.</p>
+			<p>Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.</p>
 		</description>
 		<sheet>
-			<description>When you cast a spell that deals {{dragon ancestor damage type}} damage, add {{charisma:modifier}} to that damage. At the same time, you can spend 1 sorcery point to gain {{dragon ancestor damage type}} resistance for 1 hour.</description>
+			<description>When you cast a spell that deals {{dragon ancestor damage type}} damage, add {{charisma:modifier}} to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain {{dragon ancestor damage type}} resistance for 1 hour.</description>
 		</sheet>
 	</element>
 	<element name="Dragon Wings" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_WINGS">
@@ -653,10 +654,10 @@
 	<element name="Wild Magic Surge" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WILD_MAGIC_SURGE">
 		<supports>Wild Magic</supports>
 		<description>
-			<p>Starting when you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect.</p>
+			<p>Starting when you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Once per turn, the DM can have you roll a d20 immediately after you cast a sorcerer spell of 1st level or higher. If you roll a 1, roll on the Wild Magic Surge table to create a magical effect. If that effect is a spell, it is too wild to be affected by your Metamagic, and if it normally requires concentration, it doesn’t require concentration in this case; the spell lasts for its full duration.</p>
 		</description>
 		<sheet>
-			<description>Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect.</description>
+			<description>Once per turn, the DM can have you roll a d20 immediately after you cast a sorcerer spell of 1st level or higher. If you roll a 1, roll on the Wild Magic Surge table to create a magical effect. If that effect is a spell, it is too wild to be affected by your Metamagic, and if it normally requires concentration, it doesn’t require concentration in this case; the spell lasts for its full duration.</description>
 		</sheet>
 	</element>
 	<element name="Tides of Chaos" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TIDES_OF_CHAOS">
