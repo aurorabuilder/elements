@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Light, Dark, Underdark!</name>
 		<description>Two new fighting styles for fighters, paladins, and rangers; the Deep Stalker ranger archetype; the shadow sorcerer; and the warlock pact of the Undying Light all offer exciting options for adventuring in the endless gloom of the Underdark.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/light-dark-underdark">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="20151102.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2015/20151102.xml" />
 		</update>
 	</info>
@@ -20,10 +20,10 @@
 			<set name="official">true</set>
 			<set name="playtest">true</set>
 			<set name="release">20151102</set>
+			<set name="incomplete">true</set>
 		</setters>
 	</element>
 
-	<!-- fighting styles -->
 	<element name="Close Quarters Shooter" type="Class Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA2015_CLASS_FEATURE_FIGHTINGSTYLE_CLOSE_QUARTERS_SHOOTER">
 		<supports>Fighting Style, Fighter, Paladin, Ranger</supports>
 		<description>
@@ -31,7 +31,7 @@
 		</description>
 		<sheet>
 			<description>When making a ranged attack while you are within 5 feet of a hostile creature, you do not have disadvantage on the attack roll. Your ranged attacks ignore half cover and three-quarters cover against targets within 30 feet of you.
-			Finally, you have a +1 bonus to attack rolls on ranged attacks.</description>
+			You have a +1 bonus to attack rolls on ranged attacks.</description>
 		</sheet>
 		<rules>
 			<stat name="ranged:attack" value="1" />
@@ -42,15 +42,120 @@
 		<description>
 			<p>You excel at defending narrow passages, doorways, and other tight spaces. As a bonus action, you can enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you can make opportunity attacks without using your reaction, and you can use your reaction to make a melee attack against a creature that moves more than 5 feet while within your reach.</p>
 		</description>
-		<sheet>
-			<description>As a bonus action, you can enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you can make opportunity attacks without using your reaction, and you can use your reaction to make a melee attack against a creature that moves more than 5 feet while within your reach.</description>
+		<sheet action="Bonus Action">
+			<description>You can enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you can make opportunity attacks without using your reaction, and you can use your reaction to make a melee attack against a creature that moves more than 5 feet while within your reach.</description>
 		</sheet>
 	</element>
 
 	<!-- deep stalker (gloom stalker in XGTE) -->
-
 	<!-- shadow sorcerer (shadow magic in XGTE) -->
-
-	<!-- the undying light (the undying in SCAG) -->
-
+	
+	<element name="The Undying Light" type="Archetype" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_THE_UNDYING_LIGHT">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your patron is not a specific entity, but the energy that radiates from the Positive Plane. Your pact allows you to experience the barest touch of the raw stuff of life that powers the multiverse. Anything more, and you would be instantly incinerated by its energy.</p>
+			<p class="indent">Contact with the Positive Plane causes subtle changes to your behavior and beliefs. You are driven to bring light to dark places, to annihilate undead creatures, and to protect all living things. At the same time, you crave the light and find total darkness a suffocating experience akin to drowning.</p>
+			<p class="indent">As an optional way to add more flavor to your character, you can pick from or roll on the following table of flaws associated with warlocks of the Undying Light.</p>
+			<h5 class="caption">Undying Light Flaws</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Flaw</td></tr>
+				</thead>
+				<tr><td>1</td><td>You are afraid of the dark, and must always have a light source at hand.</td></tr>
+				<tr><td>2</td><td>You have a nervous compulsion to keep a bright light in even the barest shadow.</td></tr>
+				<tr><td>3</td><td>You have a compulsion to enter and illuminate dark areas.</td></tr>
+				<tr><td>4</td><td>You have an overwhelming hatred of undead creatures.</td></tr>
+				<tr><td>5</td><td>You fidget and are irritable when you can’t see the sun.</td></tr>
+				<tr><td>6</td><td>In a dark area, you always carry a lit torch or lantern. Putting it down is an unbearable thought.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_EXPANDED_SPELL_LIST" />
+			<div element="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_SOUL" />
+			<div element="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_SEARING_VENGEANCE" />
+			<div element="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_RESILIENCE" />
+			<div element="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_HEALING_LIGHT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_SOUL" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_SEARING_VENGEANCE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_RESILIENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_HEALING_LIGHT" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Undying Light lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>UNDYING LIGHT EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>burning hands</em></td></tr>
+				<tr><td>2nd</td><td><em>flaming sphere</em></td></tr>
+				<tr><td>3rd</td><td><em>daylight</em></td></tr>
+				<tr><td>4th</td><td><em>fire shield</em></td></tr>
+				<tr><td>5th</td><td><em>flame strike</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Undying Light lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_BURNING_HANDS</extend>
+			<extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+			<extend>ID_PHB_SPELL_DAYLIGHT</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+		</spellcasting>
+	</element>
+	<element name="Radiant Soul" type="Archetype Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_SOUL">
+		<description>
+			<p>Starting at 1st level, your link to the Positive Plane allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant damage or fire damage, you add your Charisma modifier to that damage. Additionally, you know the sacred flame and light cantrips and can cast them at will. They don’t count against your number of cantrips known.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals radiant damage or fire damage, you add {{charisma:modifier}} to that damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_LIGHT" spellcasting="Warlock" />
+		</rules>
+	</element>
+	<element name="Searing Vengeance" type="Archetype Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_SEARING_VENGEANCE">
+		<description>
+			<p>Starting at 6th level, the radiant energy you channel allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of radiant energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 30 feet of you take 10 + your Charisma modifier radiant damage and are blinded until the end of your turn.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you would make a death saving throw, you can instead spring back to your feet with a burst of radiant energy. You immediately stand up (if you so choose), and you regain hps equal to half your hp maximum. All hostile creatures within 30 feet of you take {{ua:searing vengeance:damage}} radiant damage and are blinded until the end of your turn.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:searing vengeance:damage" value="10" />
+			<stat name="ua:searing vengeance:damage" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Radiant Resilience" type="Archetype Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_RADIANT_RESILIENCE">
+		<description>
+			<p>Starting at 10th level, you gain temporary hit points whenever you finish a long or short rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of your rest. Those creatures gain temporary hit points equal to half your warlock level + your Charisma modifier.</p>
+		</description>
+		<sheet>
+			<description>You gain {{ua:radiant resilience:temporary hp}} temporary hp whenever you finish a long or short rest. Choose up to five creatures you can see at the end of your rest. Those creatures gain {{ua:radiant resilience:creatures temporary hp}} temporary hp.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant resilience:temporary hp" value="level:warlock" />
+			<stat name="ua:radiant resilience:temporary hp" value="charisma:modifier" />
+			<stat name="ua:radiant resilience:creatures temporary hp" value="level:warlock:half" />
+			<stat name="ua:radiant resilience:creatures temporary hp" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Healing Light" type="Archetype Feature" source="Unearthed Arcana: Light, Dark, Underdark!" id="ID_WOTC_UA20151102_ARCHETYPE_FEATURE_UNDYING_LIGHT_HEALING_LIGHT">
+		<description>
+			<p>At 14th level, you gain the ability to channel the Undying Light to heal yourself and other creatures. As a bonus action, you can touch a creature and heal it. With each touch, a creature regains from 1d6 to 5d6 hit points (your choice). You have a total pool of 15d6 you can expend. Subtract the dice you use with each touch from that total.</p>
+			<p class="indent">You regain all expended dice from your pool when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="15d6/Long Rest">
+			<description>You can touch a creature and heal it. With each touch, a creature regains from 1d6 to 5d6 hit points (your choice).</description>
+		</sheet>
+	</element>
 </elements>
