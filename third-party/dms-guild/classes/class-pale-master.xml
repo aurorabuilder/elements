@@ -450,12 +450,12 @@
 		<rules>
 			<select name="Undead Servant" type="Companion" supports="Undead Servant Dust Skeleton" default="ID_DMSG_GPPM_COMPANION_DUST_SKELETON" />
 
-			<stat name="requiem of the ash:undead servant:bonus" value="proficiency" bonus="base" />
-			<stat name="requiem of the ash:undead servant:bonus" value="-2" />			
-			<stat name="companion:acrobatics:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
-			<stat name="companion:stealth:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
-			<stat name="companion:dexterity:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
-			<stat name="companion:constitution:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="undead servant proficiency:bonus" value="proficiency" bonus="base" />
+			<stat name="undead servant proficiency:bonus" value="-2" />			
+			<stat name="companion:acrobatics:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:stealth:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 
 			<stat name="companion:hp:max" value="level:pale master" />
 			<stat name="companion:hp:max" value="level:pale master" />
@@ -470,7 +470,6 @@
 
 		</rules>
 	</element>
-
 
 	<element name="Ashen Bond" type="Information" source="The Pale Master" id="ID_DMSG_GPPM_INFORMATION_ASHEN_BOND">
 		<description>
@@ -488,8 +487,7 @@
                 <br/>
                 <span class="feature">Trait.</span>I'm dauntless in the face of adversity.
                 <br/>
-                <span class="feature">Flaw.</span>I tend to lose some of the bones that were used to
-create me, forcing my master to always search for more.
+                <span class="feature">Flaw.</span>I tend to lose some of the bones that were used to create me, forcing my master to always search for more.
             </p>
 		</description>
 	</element>
@@ -505,9 +503,9 @@ create me, forcing my master to always search for more.
 			<description level="6">You graft a necrotic rune into your arm. After 24 hours, the flesh dissolves from your arm, leaving behind a skeletal appendage. Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple magical weapon that you are proficient with, which deals 1d8 necrotic damage. You can use your Strength or Intelligence modifier and you can add {{undead graft:bonus}} to attack and damage rolls with the graft.</description>
 		</sheet>
 		<rules>
-			<stat name="undead graft:bonus" value="1" bonus="base" />
-			<stat name="undead graft:bonus" value="2" bonus="base" level="12" />
-			<stat name="undead graft:bonus" value="3" bonus="base" level="16" />
+			<stat name="undead graft skeletal:bonus" value="1" bonus="base" />
+			<stat name="undead graft skeletal:bonus" value="2" bonus="base" level="12" />
+			<stat name="undead graft skeletal:bonus" value="3" bonus="base" level="16" />
 		</rules>
 	</element>
 
@@ -517,7 +515,7 @@ create me, forcing my master to always search for more.
 			<p class="indent">You can use this feature once per long rest at 6th level. You gain an additional use at 14th level. Expended uses are regained when you finish a long rest.</p>
 		</description>
 		<sheet action="Melee Attack" usage="{{paralyzing touch:uses}}/Long Rest">
-			<description>When you make a melee attack using your undead graft against a target, it can cause paralysis. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw against your spell save DC or become paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</description>
+			<description>When you make a melee attack using your undead graft against a target, it can cause paralysis. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw (DC {{spellcasting:dc:int}}) or become paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</description>
 		</sheet>
 		<rules>
 			<stat name="paralyzing touch:uses" value="1" bonus="base" />
@@ -553,6 +551,624 @@ create me, forcing my master to always search for more.
 		<rules>
 			<select type="Archetype Feature" name="Servant's Feat (Greater Undead Servant)" supports="Greater Undead Servant Feats" number="2" />
 		</rules>
+	</element>
+
+	<element name="Reanimation" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_ASH_REANIMATION">
+		<description>
+			<p>At 10th level, you gain the ability to focus your energy and reanimate your servant, forgoing the typical process. As a reaction, if your <i>dust skeleton</i> servant is within 120 feet of you and dies, you are able to return a foul mimicry of life, raising it with half of its total hit points.</p>
+			<p class="indent">Once you have used this feature, you cannot do so again until you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description>If your <i>dust skeleton</i> servant is within 120 feet of you and dies, you are able to return a foul mimicry of life, raising it with half of its total hit points.</description>
+		</sheet>
+	</element>
+
+	<element name="Ossien Armor" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_ASH_OSSIEN_ARMOR">
+		<description>
+			<p>At 14th level, a touch from your skeletal graft can momentarily encase a target in bone to mitigate damage from an incoming attack. As a reaction, you can half the damage from a single source for a willing creature or target that you can see within 5 feet.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{ossien armor:uses}}/Long Rest">
+			<description>You can half the damage from a single source for a willing creature or target that you can see within 5 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="ossien armor:uses" value="1" bonus="base" />
+			<stat name="ossien armor:uses" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<!-- Requiem of the Frigid -->
+	<element name="Requiem of the Frigid" type="Archetype" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_PALE_MASTER_REQUIEM_OF_THE_FRIGID">
+		<supports>Pale Master, Requiem of Souls</supports>
+		<description>
+			<p>Requiem of the Frigid Pale Masters bring a cold gripping death to their foes. Harnessing the chill of winter, they are able conjure ice and snow on a whim. </p>
+			<h5 class="caption">EXPANDED SPELL LIST (FRIGID)</h5>
+			<p>This requiem lets you choose from an expanded list of spells when you learn a new spell. The following spells are added to the Pale Master spell list for you.</p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spell Name</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>ray of frost, resistance, thaumaturgy</em></td></tr>
+				<tr><td>1st</td><td><em>armor of agathys, ice knife, sleep</em></td></tr>
+				<tr><td>2nd</td><td><em>gust of wind, hold person</em></td></tr>
+				<tr><td>3rd</td><td><em>sleet storm, slow</em></td></tr>
+				<tr><td>4th</td><td><em>control water, ice storm</em></td></tr>
+				<tr><td>5th</td><td><em> cone of cold, conjure elemental (water)</em></td></tr>
+				<tr><td>6th</td><td><em>freezing sphere</em></td></tr>
+				<tr><td>7th</td><td><em>simulacrum</em></td></tr>
+				<tr><td>8th</td><td><em>control weather</em></td></tr>
+			</table>
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_INFORMATION_GLACIAL_BOND" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_GRAFT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLING_TOUCH" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_GREATER_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_SPLINTER_THE_ICE" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLED_TO_THE_BONE" />
+		</description>
+		<sheet display="false">
+			<description>The gods of knowledge value learning and understanding above all.</description>
+		</sheet>
+		<spellcasting name="Pale Master" extend="true">
+			<extend>ID_PHB_SPELL_RAY_OF_FROST</extend>
+			<extend>ID_PHB_SPELL_THAUMATURGY</extend>
+			<extend>ID_PHB_SPELL_RESISTANCE</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ICE_KNIFE" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLOW" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_ELEMENTAL" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_OTILUKES_FREEZING_SPHERE" level="11" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_SIMULACRUM" level="13" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONTROL_WEATHER" level="15" spellcasting="Pale Master" />
+
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_SERVANT" level="1"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_GRAFT" level="3"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLING_TOUCH" level="6"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_GREATER_UNDEAD_SERVANT" level="8"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_SPLINTER_THE_ICE" level="17"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLED_TO_THE_BONE" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Undead Servant (Frozen Ghost)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_SERVANT">
+		<description>
+			<p>At 1st level, you forge an <i>Glacial Bond</i> with the undead, allowing you to use your magic to animate an undead servant in the form of a <i>Frozen Ghost</i>.</p>
+			<div element="ID_DMSG_GPPM_COMPANION_FROZEN_GHOST" />
+			<p class="indent">With 8 hours of work, a handful of ice and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant.</p>
+			<p class="indent">If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the ghost to undeath in this manner even if you do not possess all the remaining parts of its body.</p>
+			<div element="ID_DMSG_GPPM_INFORMATION_GLACIAL_BOND" />
+		</description>
+		<sheet>
+			<description>You forge an Glacial Bond with the undead, allowing you to use your magic to animate an undead servant in the form of a Frozen Ghost. With 8 hours of work,a handful of ice and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant. If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the ghost to undeath in this manner even if you do not possess all the remaining parts of its body.</description>
+		</sheet>
+		<rules>
+			<select name="Undead Servant" type="Companion" supports="Undead Servant Frozen Ghost" default="ID_DMSG_GPPM_COMPANION_FROZEN_GHOST" />
+
+			<stat name="undead servant proficiency:bonus" value="proficiency" bonus="base" />
+			<stat name="undead servant proficiency:bonus" value="-2" />			
+			<stat name="companion:intimidation:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:stealth:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:charisma:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (4)" supports="Ability Score Improvement,Companion" number="2" level="4" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (8)" supports="Ability Score Improvement,Companion" number="2" level="8" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (12)" supports="Ability Score Improvement,Companion" number="2" level="12" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (16)" supports="Ability Score Improvement,Companion" number="2" level="16" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (19)" supports="Ability Score Improvement,Companion" number="2" level="19" />
+
+		</rules>
+	</element>
+
+	<element name="Glacial Bond" type="Information" source="The Pale Master" id="ID_DMSG_GPPM_INFORMATION_GLACIAL_BOND">
+		<description>
+			<p><b>Undead Servant.</b> Your ghost obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your servant acts on its own.</p>
+			<p class="indent">Your ghost has abilities and game statistics determined in part by your level. Your servant uses your proficiency bonus rather than its own. The proficiency bonus applies to the areas where it would normally.
+			</p>
+			<p><b>Keeping Track of Proficiency.</b> When you gain your servant at 1st level, its proficiency bonus matches yours at +2. As you gain levels and increase your proficiency bonus, remember that your servant's proficiency bonus improves as well, and is applied to the following areas: ability saving throw DC, proficient skills, proficient saving throws, and attack bonus.
+			</p>
+			<p><b>Hit Points, Ability Scores &amp; Skill Proficiency.</b> For each pale master level you gain after 1st, your servant gains an additional hit die and increases its hit points accordingly.</p>
+			<p class="indent">Whenever you gain the Ability Score Improvement class feature, your servant's abilities also improve. Your servant can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your servant can't increase an ability score above 20.
+			</p>
+			<p><b>Alignment &amp; Personality Traits.</b> Your servant shares your alignment and ideal. Its bond, trait, and flaw are decided by you upon its creation. Here is an example:
+				<br/>
+                <span class="feature">Bond.</span>I would gladly give my life for my beloved master.
+                <br/>
+                <span class="feature">Trait.</span>I'm dauntless in the face of adversity.
+                <br/>
+                <span class="feature">Flaw.</span>I tend to lose some of the bones that were used to create me, forcing my master to always search for more.
+            </p>
+		</description>
+	</element>
+
+	<element name="Undead Graft (Frostbite)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_UNDEAD_GRAFT">
+		<description>
+			<p>Upon reaching 3rd level, you graft a necrotic rune into your arm. After 24 hours, your arm succumbs to deep frostbite, leaving behind a dead deep purple appendage.</p>
+			<p class="indent">Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</p>
+			<p class="indent">At 6th level, your graft counts as magical and gains a +1 bonus to melee attacks and damage. This increases to a +2 bonus at 12th level and a +3 bonus at 16th level.</p>
+		</description>
+		<sheet>
+			<description>You graft a necrotic rune into your arm. After 24 hours, your arm succumbs to deep frostbite, leaving behind a dead deep purple appendage. Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</description>
+			<description level="6">You graft a necrotic rune into your arm. After 24 hours, your arm succumbs to deep frostbite, leaving behind a dead deep purple appendage. Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple magical weapon that you are proficient with, which deals 1d8 necrotic damage. You can use your Strength or Intelligence modifier and you can add {{undead graft:bonus}} to attack and damage rolls with the graft.</description>
+		</sheet>
+		<rules>
+			<stat name="undead graft frostbite:bonus" value="1" bonus="base" />
+			<stat name="undead graft frostbite:bonus" value="2" bonus="base" level="12" />
+			<stat name="undead graft frostbite:bonus" value="3" bonus="base" level="16" />
+		</rules>
+	</element>
+
+	<element name="Chilling Touch" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLING_TOUCH">
+		<description>
+			<p>At 6th level, when you make a melee attack using your undead graft against a target, it can cause paralysis. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw against your spell save DC or suffer two levels of exhaustion. If the target failed its save by 10 or more, it suffers three levels of exhaustion instead.</p>
+			<p class="indent">You can use this feature once per long rest at 6th level. You gain an additional use at 14th level. Expended uses are regained when you finish a long rest.</p>
+		</description>
+		<sheet action="Melee Attack" usage="{{chilling touch:uses}}/Long Rest">
+			<description>When you make a melee attack using your undead graft against a target, it can cause paralysis. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw (DC {{spellcasting:dc:int}}) or suffer two levels of exhaustion. If the target failed its save by 10 or more, it suffers three levels of exhaustion instead.</description>
+		</sheet>
+		<rules>
+			<stat name="chilling touch:uses" value="1" bonus="base" />
+			<stat name="chilling touch:uses" value="2" bonus="base" level="14" />
+		</rules>
+	</element>
+
+	<element name="Greater Undead Servant" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_GREATER_UNDEAD_SERVANT">
+		<description>
+			<p>At 10th level, your understanding of necromantic magic allows you strengthen your servant's power. Your servant gains two feats of your choosing from the following list: Alert, Charger, Moderately Armored, Resilient, Savage Attacker, or Skulker <i>(PHB pg.165)</i>.</p>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_ALERT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_CHARGER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_MODERATELYARMORED" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SAVAGEATTACKER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SKULKER" />
+			</div>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Servant's Feat (Greater Undead Servant)" supports="Greater Undead Servant Feats" number="2" />
+		</rules>
+	</element>
+
+	<element name="Splinter the Ice" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_SPLINTER_THE_ICE">
+		<description>
+			<p>Starting at 10th level, if your <i>Frozen Ghost</i> deals damage to a creature, you may use your reaction to deal 2d6 cold damage to the target if it is within 30 feet of you. </p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{intelligence:modifier}}/Long Rest">
+			<description>If your <i>Frozen Ghost</i> deals damage to a creature, you may use your reaction to deal 2d6 cold damage to the target if it is within 30 feet of you.</description>
+		</sheet>
+	</element>
+
+	<element name="Chilled to the Bone" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_FRIGID_CHILLED_TO_THE_BONE">
+		<description>
+			<p>At 14th level, whenever you deal cold damage to a target, it must make a Constitution saving throw or have its movement speed halved until the end of its next turn. This feature happens after other movement impairing effects have been applied. </p>
+		</description>
+		<sheet>
+			<description>Whenever you deal cold damage to a target, it must make a Constitution saving throw (DC {{spellcasting:dc:int}}) or have its movement speed halved until the end of its next turn. This feature happens after other movement impairing effects have been applied.</description>
+		</sheet>
+	</element>
+
+	<!-- Requiem of the Haunt -->
+	<element name="Requiem of the Haunt" type="Archetype" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_PALE_MASTER_REQUIEM_OF_THE_HAUNT">
+		<supports>Pale Master, Requiem of Souls</supports>
+		<description>
+			<p>Requiem of the Haunt Pale Masters live in the shadows. They are able to spread their influence to snuff out light and enjoy terrifying their foes with thoughts of the unknown. </p>
+			<h5 class="caption">EXPANDED SPELL LIST (HAUNT)</h5>
+			<p>This requiem lets you choose from an expanded list of spells when you learn a new spell. The following spells are added to the Pale Master spell list for you.</p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spell Name</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>dancing lights, minor illusion, thaumaturgy </em></td></tr>
+				<tr><td>1st</td><td><em>bane, silent image, unseen servant</em></td></tr>
+				<tr><td>2nd</td><td><em>darkness, misty step</em></td></tr>
+				<tr><td>3rd</td><td><em>blink, fear</em></td></tr>
+				<tr><td>4th</td><td><em>hallucinatory terrain, phantasmal killer</em></td></tr>
+				<tr><td>5th</td><td><em> mislead, telekinesis</em></td></tr>
+				<tr><td>6th</td><td><em>wind walk</em></td></tr>
+				<tr><td>7th</td><td><em>etherealness</em></td></tr>
+				<tr><td>8th</td><td><em>feeblemind</em></td></tr>
+			</table>
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_INFORMATION_PENUMBRA_BOND" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_GRAFT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_DREADFUL_TOUCH" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_GREATER_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_TERROR_IN_THE_NIGHT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_SECRECY_OF_SHADOWS" />
+		</description>
+		<sheet display="false">
+			<description>The gods of knowledge value learning and understanding above all.</description>
+		</sheet>
+		<spellcasting name="Pale Master" extend="true">
+			<extend>ID_PHB_SPELL_DANCING_LIGHTS</extend>
+			<extend>ID_PHB_SPELL_MINOR_ILLUSION</extend>
+			<extend>ID_PHB_SPELL_THAUMATURGY</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BANE" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_UNSEEN_SERVANT" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLINK" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_FEAR" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_PHANTASMAL_KILLER" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_MISLEAD" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_WIND_WALK" level="11" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_ETHEREALNESS" level="13" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_FEEBLEMIND" level="15" spellcasting="Pale Master" />
+
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_SERVANT" level="1"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_GRAFT" level="3"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_DREADFUL_TOUCH" level="6"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_GREATER_UNDEAD_SERVANT" level="8"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_TERROR_IN_THE_NIGHT" level="17"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_SECRECY_OF_SHADOWS" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Undead Servant (Tenebrous Shadow)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_SERVANT">
+		<description>
+			<p>At 1st level, you forge an <i>Penumbra Bond</i> with the undead, allowing you to use your magic to animate an undead servant in the form of a <i>Tenebrous Shadow</i>.</p>
+			<div element="ID_DMSG_GPPM_COMPANION_TENEBROUS_SHADOW" />
+			<p class="indent">With 8 hours of work, a burning incense and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant.</p>
+			<p class="indent">If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the shadow to undeath in this manner even if you do not possess all the remaining parts of its body.</p>
+			<div element="ID_DMSG_GPPM_INFORMATION_PENUMBRA_BOND" />
+		</description>
+		<sheet>
+			<description>You forge an Penumbra Bond with the undead, allowing you to use your magic to animate an undead servant in the form of a Tenebrous Shadow. With 8 hours of work, a burning incense and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant. If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the shadow to undeath in this manner even if you do not possess all the remaining parts of its body.</description>
+		</sheet>
+		<rules>
+			<select name="Undead Servant" type="Companion" supports="Undead Servant Tenebrous Shadow" default="ID_DMSG_GPPM_COMPANION_TENEBROUS_SHADOW" />
+
+			<stat name="undead servant proficiency:bonus" value="proficiency" bonus="base" />
+			<stat name="undead servant proficiency:bonus" value="-2" />			
+			<stat name="companion:insight:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:stealth:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (4)" supports="Ability Score Improvement,Companion" number="2" level="4" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (8)" supports="Ability Score Improvement,Companion" number="2" level="8" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (12)" supports="Ability Score Improvement,Companion" number="2" level="12" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (16)" supports="Ability Score Improvement,Companion" number="2" level="16" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (19)" supports="Ability Score Improvement,Companion" number="2" level="19" />
+
+		</rules>
+	</element>
+
+	<element name="Penumbra Bond" type="Information" source="The Pale Master" id="ID_DMSG_GPPM_INFORMATION_PENUMBRA_BOND">
+		<description>
+			<p><b>Undead Servant.</b> Your shadow obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your servant acts on its own.</p>
+			<p class="indent">Your shadow has abilities and game statistics determined in part by your level. Your servant uses your proficiency bonus rather than its own. The proficiency bonus applies to the areas where it would normally.
+			</p>
+			<p><b>Keeping Track of Proficiency.</b> When you gain your servant at 1st level, its proficiency bonus matches yours at +2. As you gain levels and increase your proficiency bonus, remember that your servant's proficiency bonus improves as well, and is applied to the following areas: ability saving throw DC, proficient skills, proficient saving throws, and attack bonus.
+			</p>
+			<p><b>Hit Points, Ability Scores &amp; Skill Proficiency.</b> For each pale master level you gain after 1st, your servant gains an additional hit die and increases its hit points accordingly.</p>
+			<p class="indent">Whenever you gain the Ability Score Improvement class feature, your servant's abilities also improve. Your servant can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your servant can't increase an ability score above 20.
+			</p>
+			<p><b>Alignment &amp; Personality Traits.</b> Your servant shares your alignment and ideal. Its bond, trait, and flaw are decided by you upon its creation. Here is an example:
+				<br/>
+                <span class="feature">Bond.</span>I would gladly give my life for my beloved master.
+                <br/>
+                <span class="feature">Trait.</span>I'm dauntless in the face of adversity.
+                <br/>
+                <span class="feature">Flaw.</span>I tend to lose some of the bones that were used to create me, forcing my master to always search for more.
+            </p>
+		</description>
+	</element>
+
+	<element name="Undead Graft (Mist)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_UNDEAD_GRAFT">
+		<description>
+			<p>Upon reaching 3rd level, you graft a necrotic rune into your arm. After 24 hours, dark strands of mist seep out of the pours in your arm, lingering in the air around the appendage</p>
+			<p class="indent">Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</p>
+			<p class="indent">At 6th level, your graft counts as magical and gains a +1 bonus to melee attacks and damage. This increases to a +2 bonus at 12th level and a +3 bonus at 16th level.</p>
+		</description>
+		<sheet>
+			<description>You graft a necrotic rune into your arm. After 24 hours, dark strands of mist seep out of the pours in your arm, lingering in the air around the appendage Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</description>
+			<description level="6">You graft a necrotic rune into your arm. After 24 hours, dark strands of mist seep out of the pours in your arm, lingering in the air around the appendage Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple magical weapon that you are proficient with, which deals 1d8 necrotic damage. You can use your Strength or Intelligence modifier and you can add {{undead graft:bonus}} to attack and damage rolls with the graft.</description>
+		</sheet>
+		<rules>
+			<stat name="undead graft mist:bonus" value="1" bonus="base" />
+			<stat name="undead graft mist:bonus" value="2" bonus="base" level="12" />
+			<stat name="undead graft mist:bonus" value="3" bonus="base" level="16" />
+		</rules>
+	</element>
+
+	<element name="Dreadful Touch" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_DREADFUL_TOUCH">
+		<description>
+			<p>At 6th level, when you make a melee attack using your undead graft against a target, it can cause profound trepidation. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw against your spell save DC or its Wisdom Ability Score is reduced by 2d4 and it is blinded until the target completes a short or long rest.</p>
+			<p class="indent">You can use this feature once per long rest at 6th level. You gain an additional use at 14th level. Expended uses are regained when you finish a long rest.</p>
+		</description>
+		<sheet action="Melee Attack" usage="{{dreadful touch:uses}}/Long Rest">
+			<description>When you make a melee attack using your undead graft against a target, it can cause profound trepidation. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw (DC {{spellcasting:dc:int}}) or its Wisdom Ability Score is reduced by 2d4 and it is blinded until the target completes a short or long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="dreadful touch:uses" value="1" bonus="base" />
+			<stat name="dreadful touch:uses" value="2" bonus="base" level="14" />
+		</rules>
+	</element>
+
+	<element name="Greater Undead Servant" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_GREATER_UNDEAD_SERVANT">
+		<description>
+			<p>At 10th level, your understanding of necromantic magic allows you strengthen your servant's power. Your servant gains two feats of your choosing from the following list: Alert, Charger, Moderately Armored, Resilient, Savage Attacker, or Skulker <i>(PHB pg.165)</i>.</p>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_ALERT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_CHARGER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_MODERATELYARMORED" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SAVAGEATTACKER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SKULKER" />
+			</div>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Servant's Feat (Greater Undead Servant)" supports="Greater Undead Servant Feats" number="2" />
+		</rules>
+	</element>
+
+	<element name="Terror in the Night" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_TERROR_IN_THE_NIGHT">
+		<description>
+			<p>Starting at 10th level, if your <i>Tenebrous Shadow</i> deals damage to a creature, you may use your reaction to force the target to succeed on a Wisdom saving throw or become frightened of you until the end of its next turn if it is within 30 feet of you. </p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{intelligence:modifier}}/Long Rest">
+			<description>If your <i>Tenebrous Shadow</i> deals damage to a creature, you may use your reaction to force the target to succeed on a Wisdom saving throw (DC {{spellcasting:dc:int}}) or become frightened of you until the end of its next turn if it is within 30 feet of you.</description>
+		</sheet>
+	</element>
+
+	<element name="Secrecy of Shadows" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_HAUNT_SECRECY_OF_SHADOWS">
+		<description>
+			<p>At 14th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn. If the spell is cast using your Thrall's Boon feature, only you need to be hidden from the target, not your servant. </p>
+		</description>
+		<sheet>
+			<description>If you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn. If the spell is cast using your Thrall's Boon feature, only you need to be hidden from the target, not your servant.</description>
+		</sheet>
+	</element>
+
+	<!-- Requiem of the Torpor -->
+	<element name="Requiem of the Torpor" type="Archetype" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_PALE_MASTER_REQUIEM_OF_THE_TORPOR">
+		<supports>Pale Master, Requiem of Souls</supports>
+		<description>
+			<p>Requiem of the Torpor Pale Masters drain the very energy out of their victims while spreading death and decay upon the battle field.</p>
+			<h5 class="caption">EXPANDED SPELL LIST (TORPOR)</h5>
+			<p>This requiem lets you choose from an expanded list of spells when you learn a new spell. The following spells are added to the Pale Master spell list for you.</p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spell Name</td></tr>
+				</thead>
+				<tr><td>Cantrip</td><td><em>acid splash, poison spray, thaumaturgy</em></td></tr>
+				<tr><td>1st</td><td><em>create or destroy water, fog cloud, grease</em></td></tr>
+				<tr><td>2nd</td><td><em>acid arrow, protection from poison</em></td></tr>
+				<tr><td>3rd</td><td><em>stinking cloud, water breathing</em></td></tr>
+				<tr><td>4th</td><td><em>death ward, giant insect</em></td></tr>
+				<tr><td>5th</td><td><em> cloudkill, hallow</em></td></tr>
+				<tr><td>6th</td><td><em>disintegrate</em></td></tr>
+				<tr><td>7th</td><td><em>regenerate</em></td></tr>
+				<tr><td>8th</td><td><em>incendiary cloud</em></td></tr>
+			</table>
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_INFORMATION_PERISHING_BOND" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_GRAFT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_Weakening_TOUCH" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_GREATER_UNDEAD_SERVANT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_TERROR_IN_THE_NIGHT" />
+			<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_SECRECY_OF_SHADOWS" />
+		</description>
+		<sheet display="false">
+			<description>The gods of knowledge value learning and understanding above all.</description>
+		</sheet>
+		<spellcasting name="Pale Master" extend="true">
+			<extend>ID_PHB_SPELL_ACID_SPLASH</extend>
+			<extend>ID_PHB_SPELL_POISON_SPRAY</extend>
+			<extend>ID_PHB_SPELL_THAUMATURGY</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREASE" level="1" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_POISON" level="3" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_STINKING_CLOUD" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_WATER_BREATHING" level="5" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_GIANT_INSECT" level="7" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_HALLOW" level="9" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISINTEGRATE" level="11" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_REGENERATE" level="13" spellcasting="Pale Master" />
+			<grant type="Spell" id="ID_PHB_SPELL_INCENDIARY_CLOUD" level="15" spellcasting="Pale Master" />
+
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_SERVANT" level="1"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_GRAFT" level="3"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_WEAKENING_TOUCH" level="6"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_GREATER_UNDEAD_SERVANT" level="8"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_COHORT" level="17"/>
+			<grant type="Archetype Feature" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_BILLOWING_DECAY" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Undead Servant (Rotting Zombie)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_SERVANT">
+		<description>
+			<p>At 1st level, you forge an <i>Perishing Bond</i> with the undead, allowing you to use your magic to animate an undead servant in the form of a <i>Rotting Zombie</i>.</p>
+			<div element="ID_DMSG_GPPM_COMPANION_ROTTING_ZOMBIE" />
+			<p class="indent">With 8 hours of work, a corpse and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant.</p>
+			<p class="indent">If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the zombie to undeath in this manner even if you do not possess all the remaining parts of its body.</p>
+			<div element="ID_DMSG_GPPM_INFORMATION_PERISHING_BOND" />
+		</description>
+		<sheet>
+			<description>You forge an Perishing Bond with the undead, allowing you to use your magic to animate an undead servant in the form of a Rotting Zombie. With 8 hours of work, a corpse and a small sacrifice of your own blood, you complete a ritual that imbues the bones with a foul mimicry of life, raising it as an undead creature to become your faithful servant. If your servant is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp. worth of rare bone dust, you again enchant the pile of bones with magic to restore it to sentience. You can return the zombie to undeath in this manner even if you do not possess all the remaining parts of its body.</description>
+		</sheet>
+		<rules>
+			<select name="Undead Servant" type="Companion" supports="Undead Servant Rotting Zombie" default="ID_DMSG_GPPM_COMPANION_ROTTING_ZOMBIE" />
+
+			<stat name="undead servant proficiency:bonus" value="proficiency" bonus="base" />
+			<stat name="undead servant proficiency:bonus" value="-2" />
+			<stat name="companion:athletics:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:survival:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:strength:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
+
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+			<stat name="companion:hp:max" value="level:pale master" />
+
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (4)" supports="Ability Score Improvement,Companion" number="2" level="4" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (8)" supports="Ability Score Improvement,Companion" number="2" level="8" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (12)" supports="Ability Score Improvement,Companion" number="2" level="12" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (16)" supports="Ability Score Improvement,Companion" number="2" level="16" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement, Undead Servant (19)" supports="Ability Score Improvement,Companion" number="2" level="19" />
+
+		</rules>
+	</element>
+
+	<element name="Perishing Bond" type="Information" source="The Pale Master" id="ID_DMSG_GPPM_INFORMATION_PERISHING_BOND">
+		<description>
+			<p><b>Undead Servant.</b> Your zombie obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your servant acts on its own.</p>
+			<p class="indent">Your zombie has abilities and game statistics determined in part by your level. Your servant uses your proficiency bonus rather than its own. The proficiency bonus applies to the areas where it would normally.
+			</p>
+			<p><b>Keeping Track of Proficiency.</b> When you gain your servant at 1st level, its proficiency bonus matches yours at +2. As you gain levels and increase your proficiency bonus, remember that your servant's proficiency bonus improves as well, and is applied to the following areas: ability saving throw DC, proficient skills, proficient saving throws, and attack bonus.
+			</p>
+			<p><b>Hit Points, Ability Scores &amp; Skill Proficiency.</b> For each pale master level you gain after 1st, your servant gains an additional hit die and increases its hit points accordingly.</p>
+			<p class="indent">Whenever you gain the Ability Score Improvement class feature, your servant's abilities also improve. Your servant can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your servant can't increase an ability score above 20.
+			</p>
+			<p><b>Alignment &amp; Personality Traits.</b> Your servant shares your alignment and ideal. Its bond, trait, and flaw are decided by you upon its creation. Here is an example:
+				<br/>
+                <span class="feature">Bond.</span>I would gladly give my life for my beloved master.
+                <br/>
+                <span class="feature">Trait.</span>I'm dauntless in the face of adversity.
+                <br/>
+                <span class="feature">Flaw.</span>I tend to lose some of the bones that were used to create me, forcing my master to always search for more.
+            </p>
+		</description>
+	</element>
+
+	<element name="Undead Graft (Decay)" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_GRAFT">
+		<description>
+			<p>Upon reaching 3rd level, you graft a necrotic rune into your arm. After 24 hours, the flesh on your arm begins to rot, forming pustules on the appendage.</p>
+			<p class="indent">Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</p>
+			<p class="indent">At 6th level, your graft counts as magical and gains a +1 bonus to melee attacks and damage. This increases to a +2 bonus at 12th level and a +3 bonus at 16th level.</p>
+		</description>
+		<sheet>
+			<description>You graft a necrotic rune into your arm. After 24 hours, the flesh on your arm begins to rot, forming pustules on the appendage. Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple weapon that you are proficient with, which deals 1d8 necrotic damage. When attacking with the graft, you can use your Strength or Intelligence modifier for the attack and damage rolls.</description>
+			<description level="6">You graft a necrotic rune into your arm. After 24 hours, the flesh on your arm begins to rot, forming pustules on the appendage. Your undead graft becomes a spellcasting focus for your magic, allowing you to cast spells with it and ignore material components that do not have a cost. Also, your graft is considered to be a simple magical weapon that you are proficient with, which deals 1d8 necrotic damage. You can use your Strength or Intelligence modifier and you can add {{undead graft:bonus}} to attack and damage rolls with the graft.</description>
+		</sheet>
+		<rules>
+			<stat name="undead graft decay:bonus" value="1" bonus="base" />
+			<stat name="undead graft decay:bonus" value="2" bonus="base" level="12" />
+			<stat name="undead graft decay:bonus" value="3" bonus="base" level="16" />
+		</rules>
+	</element>
+
+	<element name="Weakening Touch" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_WEAKENING_TOUCH">
+		<description>
+			<p>At 6th level, when you make a melee attack using your undead graft against a target, it can cripple a foe. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw against your spell save DC or its Strength Ability Score is reduced by 2d4 and it is poisoned until the target completes a short or long rest. </p>
+			<p class="indent">You can use this feature once per long rest at 6th level. You gain an additional use at 14th level. Expended uses are regained when you finish a long rest.</p>
+		</description>
+		<sheet action="Melee Attack" usage="{{weakening touch:uses}}/Long Rest">
+			<description>When you make a melee attack using your undead graft against a target, it can cripple a foe. On a successful attack, the target takes an additional 2d8 necrotic damage and must succeed on a Constitution saving throw (DC {{spellcasting:dc:int}}) or its Strength Ability Score is reduced by 2d4 and it is poisoned until the target completes a short or long rest. </description>
+		</sheet>
+		<rules>
+			<stat name="weakening touch:uses" value="1" bonus="base" />
+			<stat name="weakening touch:uses" value="2" bonus="base" level="14" />
+		</rules>
+	</element>
+
+	<element name="Greater Undead Servant" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_GREATER_UNDEAD_SERVANT">
+		<description>
+			<p>At 10th level, your understanding of necromantic magic allows you strengthen your servant's power. Your servant gains two feats of your choosing from the following list: Alert, Charger, Moderately Armored, Resilient, Savage Attacker, or Skulker <i>(PHB pg.165)</i>.</p>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_ALERT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_CHARGER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_MODERATELYARMORED" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SAVAGEATTACKER" />
+			</div>
+			<div class="reference">
+				<div element="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_SKULKER" />
+			</div>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Servant's Feat (Greater Undead Servant)" supports="Greater Undead Servant Feats" number="2" />
+		</rules>
+	</element>
+
+	<element name="Undead Cohort" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_UNDEAD_COHORT">
+		<description>
+			<p>Starting at 10th level, any zombie that you create with a necromancy spell has 10 temporary hit points upon creation. </p>
+			<p class="indent">Additionally, your rotting zombie servant gains 10 temporary hit points whenever it makes an initiative roll.</p>
+		</description>
+		<sheet>
+			<description>Any zombie that you create with a necromancy spell has 10 temporary hit points upon creation. Additionally, your rotting zombie servant gains 10 temporary hit points whenever it makes an initiative roll. </description>
+		</sheet>
+	</element>
+
+	<element name="Billowing Decay" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_TORPOR_BILLOWING_DECAY">
+		<description>
+			<p>At 14th level, if a humanoid dies while standing in a cloudkill spell that you cast, they become a zombie under your control at the end of your next turn and obey your mental commands. The only action they can take is the Attack action, making one melee attack. The zombies last for 1 minute, after which time they collapse and die. </p>
+		</description>
+		<sheet>
+			<description>If a humanoid dies while standing in a cloudkill spell that you cast, they become a zombie under your control at the end of your next turn and obey your mental commands. The only action they can take is the Attack action, making one melee attack. The zombies last for 1 minute, after which time they collapse and die.</description>
+		</sheet>
 	</element>
 
 	<!-- Greater Undead Servant Feats -->
@@ -629,7 +1245,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:strength" value="1" alt="Resilient" />
 			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:strength:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:strength:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 	<element name="Resilient (Dexterity)" type="Archetype Feature" source="Player’s Handbook" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT_DEXTERITY">
@@ -643,7 +1259,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:dexterity" value="1" alt="Resilient" />
 			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:dexterity:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 	<element name="Resilient (Constitution)" type="Archetype Feature" source="Player’s Handbook" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT_CONSTITUTION">
@@ -657,7 +1273,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:constitution" value="1" alt="Resilient" />
 			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:constitution:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 	<element name="Resilient (Intelligence)" type="Archetype Feature" source="Player’s Handbook" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT_INTELLIGENCE">
@@ -671,7 +1287,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:intelligence" value="1" alt="Resilient" />
 			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:intelligence:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:intelligence:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 	<element name="Resilient (Wisdom)" type="Archetype Feature" source="Player’s Handbook" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT_WISDOM">
@@ -685,7 +1301,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:wisdom" value="1" alt="Resilient" />
 			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:wisdom:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 	<element name="Resilient (Charisma)" type="Archetype Feature" source="Player’s Handbook" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_GREATER_UNDEAD_SERVANT_RESILIENT_CHARISMA">
@@ -699,7 +1315,7 @@ create me, forcing my master to always search for more.
 		<rules>
 			<stat name="companion:charisma" value="1" alt="Resilient" />
 			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:charisma:save:proficiency" value="requiem of the ash:undead servant:bonus" bonus="character:proficiency" />
+			<stat name="companion:charisma:save:proficiency" value="undead servant proficiency:bonus" bonus="character:proficiency" />
 		</rules>
 	</element>
 
@@ -732,32 +1348,8 @@ create me, forcing my master to always search for more.
 			Dim light doesn’t impose disadvantage on servant's Wisdom (Perception) checks relying on sight.</description>
 		</sheet>
 	</element>
-	<!--/Greater Undead Servant Feats-->
 
-	<element name="Reanimation" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_ASH_REANIMATION">
-		<description>
-			<p>At 10th level, you gain the ability to focus your energy and reanimate your servant, forgoing the typical process. As a reaction, if your <i>dust skeleton</i> servant is within 120 feet of you and dies, you are able to return a foul mimicry of life, raising it with half of its total hit points.</p>
-			<p class="indent">Once you have used this feature, you cannot do so again until you finish a long rest.</p>
-		</description>
-		<sheet action="Reaction" usage="1/Long Rest">
-			<description>If your <i>dust skeleton</i> servant is within 120 feet of you and dies, you are able to return a foul mimicry of life, raising it with half of its total hit points.</description>
-		</sheet>
-	</element>
-
-	<element name="Ossien Armor" type="Archetype Feature" source="The Pale Master" id="ID_DMSG_GPPM_ARCHETYPE_FEATURE_PALE_MASTER_REQUIEM_OF_THE_ASH_OSSIEN_ARMOR">
-		<description>
-			<p>At 14th level, a touch from your skeletal graft can momentarily encase a target in bone to mitigate damage from an incoming attack. As a reaction, you can half the damage from a single source for a willing creature or target that you can see within 5 feet.</p>
-			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
-		</description>
-		<sheet action="Reaction" usage="{{ossien armor:uses}}/Long Rest">
-			<description>You can half the damage from a single source for a willing creature or target that you can see within 5 feet.</description>
-		</sheet>
-		<rules>
-			<stat name="ossien armor:uses" value="1" bonus="base" />
-			<stat name="ossien armor:uses" value="intelligence:modifier" bonus="base" />
-		</rules>
-	</element>
-
+	<!-- Companions -->
 	<element name="Dust Skeleton" type="Companion" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_DUST_SKELETON">
 		<supports>Undead Servant Dust Skeleton</supports>
 		<description>
@@ -841,6 +1433,294 @@ create me, forcing my master to always search for more.
 		</description>
 		<sheet usage="Recharge 6">
 			<description>When targeted with an attack, the skeleton can create a small dust storm around itself that lasts until the start of its next turn. While active, the dust storm imposes disadvantage on attacks made against the skeleton for the duration.</description>
+		</sheet>
+	</element>
+
+	<element name="Frozen Ghost" type="Companion" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_FROZEN_GHOST">
+		<supports>Undead Servant Frozen Ghost</supports>
+		<description>
+			<p>The Frigid Pale Master servant is a <i>Frozen Ghost</i>. Its incorporeal nature makes it unable to benefit from using equipment. The frozen ghost has the following features:</p>
+        </description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Undead</set>
+			<set name="alignment">shares master's alignment</set>
+			<set name="strength">1</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">14</set>
+			<set name="ac">12</set>
+			<set name="hp">4 (1d8)</set>
+			<set name="speed">0 ft., fly 40 ft. (hover)</set>
+			<set name="saves">Dex +4, Cha +4</set>
+			<set name="skills">Intimidation +4, Stealth +4</set>
+			<set name="vulnerabilities">fire</set>
+            <set name="resistances">acid, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks </set>
+			<set name="immunities">cold, necrotic, poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 11</set>
+			<set name="languages">Any languages it knew in life</set>
+			<set name="traits">ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_CHILLING_PRESENCE, ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_HARMONY_IN_WINTER, ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_SOUL_PHASING, ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_WARMTH_SENSITIVITY</set>
+			<set name="actions">ID_DMSG_GPPM_COMPANION_ACTION_FROZEN_GHOST_ICE_SHARD, ID_DMSG_GPPM_COMPANION_ACTION_FROZEN_GHOST_FREEZING_DRAIN</set>
+			<set name="reactions">ID_DMSG_GPPM_COMPANION_REACTION_FROZEN_GHOST_TENDANCY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" bonus="base" />
+			<stat name="companion:hp:max" value="4" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+            <stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Chilling Presence" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_CHILLING_PRESENCE">
+		<description>
+			<p>As a bonus action, the ghost can chill the air around it within 10 feet for 1 round. Small non-magical flames are extinguished in its presence and water begins to freeze. </p>
+		</description>
+		<sheet>
+			<description>As a bonus action, the ghost can chill the air around it within 10 feet for 1 round. Small non-magical flames are extinguished in its presence and water begins to freeze. </description>
+		</sheet>
+	</element>
+
+	<element name="Harmony in Winter" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_HARMONY_IN_WINTER">
+		<description>
+			<p>In snowy terrain, the ghost can cast invisibility at will as a bonus action. It can also see perfectly in snowy conditions.</p>
+		</description>
+		<sheet>
+			<description>In snowy terrain, the ghost can cast invisibility at will as a bonus action. It can also see perfectly in snowy conditions.</description>
+		</sheet>
+	</element>
+
+	<element name="Soul Phasing" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_SOUL_PHASING">
+		<description>
+			<p>The ghost can pass through enemy spaces as though they were difficult terrain, but cannot end its turn in a space occupied by another creature. </p>
+		</description>
+		<sheet>
+			<description>The ghost can pass through enemy spaces as though they were difficult terrain, but cannot end its turn in a space occupied by another creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Warmth Sensitivity" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_FROZEN_GHOST_WARMTH_SENSITIVITY">
+		<description>
+			<p>While in areas above above 100 degrees Fahrenheit, the ghost has disadvantage on attack rolls, saving throws and skill checks.</p>
+		</description>
+		<sheet>
+			<description>While in areas above above 100 degrees Fahrenheit, the ghost has disadvantage on attack rolls, saving throws and skill checks.</description>
+		</sheet>
+	</element>
+
+	<element name="Ice Shard" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_FROZEN_GHOST_ICE_SHARD">
+		<description>
+			<p>Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one creature. Hit: 4 (1d4 + 2) cold damage. </p>
+		</description>
+		<sheet>
+			<description>Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one creature. Hit: 4 (1d4 + 2) cold damage. </description>
+		</sheet>
+	</element>
+
+	<element name="Freezing Drain" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_FROZEN_GHOST_FREEZING_DRAIN">
+		<description>
+			<p>Melee Spell Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) cold damage. The ghost regains hit points equal to half the amount of cold damage dealt. </p>
+		</description>
+		<sheet usage="Recharge 6">
+			<description>Melee Spell Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) cold damage. The ghost regains hit points equal to half the amount of cold damage dealt.</description>
+		</sheet>
+	</element>
+
+	<element name="Tendancy" type="Companion Reaction" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_REACTION_FROZEN_GHOST_TENDANCY">
+		<description>
+			<p>When targeted with an attack, the ghost can briefly possess the target's mind. The attacker must succeed on a Wisdom saving throw or be unable to attack the ghost for this round; the attacker must choose a new target or else lose the attack.</p>
+		</description>
+		<sheet usage="1/Day">
+			<description>When targeted with an attack, the ghost can briefly possess the target's mind. The attacker must succeed on a Wisdom saving throw or be unable to attack the ghost for this round; the attacker must choose a new target or else lose the attack.</description>
+		</sheet>
+	</element>
+
+	<element name="Tenebrous Shadow" type="Companion" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TENEBROUS_SHADOW">
+		<supports>Undead Servant Tenebrous Shadow</supports>
+		<description>
+			<p>The Haunt Pale Master servant is a <i>Tenebrous Shadow</i>. Its amorphous nature makes it unable to benefit from using equipment. The Tenebrous Shadow has the following features:</p>
+        </description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Undead</set>
+			<set name="alignment">shares master's alignment</set>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">13</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">3 (1d8-1)</set>
+			<set name="speed">0 ft., fly 40 ft. (hover)</set>
+			<set name="saves">Dex +4, Wis +3</set>
+			<set name="skills"> Insight +3, Stealth +4</set>
+			<set name="vulnerabilities">radiant</set>
+            <set name="resistances">acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks</set>
+			<set name="immunities">necrotic, poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 11</set>
+			<set name="languages">Understands the languages of its master but can't speak</set>
+			<set name="traits">ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_AMORPHOUS, ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_SHADOW_STEALTH, ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_SUNLIGHT_SENSITIVITY</set>
+			<set name="actions">ID_DMSG_GPPM_COMPANION_ACTION_TENEBROUS_SHADOW_DARK_EMBRACE, ID_DMSG_GPPM_COMPANION_ACTION_TENEBROUS_SHADOW_SIPHON_COURAGE</set>
+			<set name="reactions">ID_DMSG_GPPM_COMPANION_REACTION_TENEBROUS_SHADOW_SHADOW_STRIDE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" bonus="base" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+            <stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Amorphous" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_AMORPHOUS">
+		<description>
+			<p>The shadow can move through a space as narrow as 1 inch wide without squeezing. </p>
+		</description>
+		<sheet>
+			<description>The shadow can move through a space as narrow as 1 inch wide without squeezing.</description>
+		</sheet>
+	</element>
+
+	<element name="Shadow Stealth" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_SHADOW_STEALTH">
+		<description>
+			<p>The shadow can take the Hide action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>The shadow can take the Hide action as a bonus action.</description>
+		</sheet>
+	</element>
+
+	<element name="Sunlight Sensitivity" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_TENEBROUS_SHADOW_SUNLIGHT_SENSITIVITY">
+		<description>
+			<p>While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws. </p>
+		</description>
+		<sheet>
+			<description>While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws. </description>
+		</sheet>
+	</element>
+
+	<element name="Dark Embrace" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_TENEBROUS_SHADOW_DARK_EMBRACE">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, +4 to hit, reach 5 ft. one target. Hit 4 (1d4 + 2) necrotic damage. </p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, +4 to hit, reach 5 ft. one target. Hit 4 (1d4 + 2) necrotic damage. </description>
+		</sheet>
+	</element>
+
+	<element name="Siphon Courage" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_TENEBROUS_SHADOW_SIPHON_COURAGE">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d6) necrotic damage. If the attack hits by 5 or more, the target must succeed on a Wisdom saving throw or become frightened until the end of its next turn. </p>
+		</description>
+		<sheet usage="Recharge 6">
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d6) necrotic damage. If the attack hits by 5 or more, the target must succeed on a Wisdom saving throw or become frightened until the end of its next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Shadow Stride" type="Companion Reaction" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_REACTION_TENEBROUS_SHADOW_SHADOW_STRIDE">
+		<description>
+			<p>When the shadow is hit by an attack that deals damage, it can engulf itself in darkness and teleport up to 30 feet to an unoccupied space that it can see.</p>
+		</description>
+		<sheet usage="1/Day">
+			<description>When the shadow is hit by an attack that deals damage, it can engulf itself in darkness and teleport up to 30 feet to an unoccupied space that it can see.</description>
+		</sheet>
+	</element>
+
+	<element name="Rotting Zombie" type="Companion" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ROTTING_ZOMBIE">
+		<supports>Undead Servant Rotting Zombie</supports>
+		<description>
+			<p>The Torpor Pale Master servant is a <i>Rotting Zombie</i>. Its decayed form makes it unable to benefit from certain equipment or wield any weapons. It may use armor granted by its proficiencies, even if they are magical in nature so long as they do not require attunment. It cannot use any other magical equipment. The Rotting Zombie has the following features:</p>
+        </description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Undead</set>
+			<set name="alignment">shares master's alignment</set>
+			<set name="strength">14</set>
+			<set name="dexterity">8</set>
+			<set name="constitution">17</set>
+			<set name="intelligence">6</set>
+			<set name="wisdom">9</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">7 (1d8+3)</set>
+			<set name="speed">20 ft.</set>
+			<set name="saves">Str +4, Con +5 </set>
+			<set name="skills">Athletics +4, Survival +1</set>
+			<set name="immunities">poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">poisoned</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 9</set>
+			<set name="languages">Understands the languages of its master but can't speak</set>
+			<set name="traits">ID_DMSG_GPPM_COMPANION_TRAIT_ROTTING_ZOMBIE_ODOR_OF_DEATH, ID_DMSG_GPPM_COMPANION_TRAIT_ROTTING_ZOMBIE_UNDEAD_FORTITUDE</set>
+			<set name="actions">ID_DMSG_GPPM_COMPANION_ACTION_ROTTING_ZOMBIE_SLAM, ID_DMSG_GPPM_COMPANION_ACTION_ROTTING_ZOMBIE_VILE_SMASH</set>
+			<set name="reactions">ID_DMSG_GPPM_COMPANION_REACTION_ROTTING_ZOMBIE_DISPARAGING_RETALIATION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" bonus="base" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Odor of Death" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_ROTTING_ZOMBIE_ODOR_OF_DEATH">
+		<description>
+			<p>As a bonus action on its turn, the zombie can rupture some of the pustules on its skin to exude a noxious odor. Each creature within 5 feet of the zombie must succeed a Constitution saving throw or become poisoned until the end of the creature's next turn. </p>
+		</description>
+		<sheet usage="1/Day">
+			<description>As a bonus action on its turn, the zombie can rupture some of the pustules on its skin to exude a noxious odor. Each creature within 5 feet of the zombie must succeed a Constitution saving throw or become poisoned until the end of the creature's next turn. </description>
+		</sheet>
+	</element>
+
+	<element name="Undead Fortitude" type="Companion Trait" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_TRAIT_ROTTING_ZOMBIE_UNDEAD_FORTITUDE">
+		<description>
+			<p>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</p>
+		</description>
+		<sheet>
+			<description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</description>
+		</sheet>
+	</element>
+
+	<element name="Slam" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_ROTTING_ZOMBIE_SLAM">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Vile Smash" type="Companion Action" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_ACTION_ROTTING_ZOMBIE_VILE_SMASH">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) poison damage. If the attack hits by 5 or more, the target becomes poisoned until the end of its next turn. Targets resistant or immune to poison damage or immune to the poisoned condition are not poisoned by this ability. </p>
+		</description>
+		<sheet usage="Recharge 6">
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) poison damage. If the attack hits by 5 or more, the target becomes poisoned until the end of its next turn. Targets resistant or immune to poison damage or immune to the poisoned condition are not poisoned by this ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Disparaging Retaliation" type="Companion Reaction" source="The Pale Master" id="ID_DMSG_GPPM_COMPANION_REACTION_ROTTING_ZOMBIE_DISPARAGING_RETALIATION">
+		<description>
+			<p>When the zombie is hit by an attack from a creature that deals critical damage, it can make a slam attack against the creature if it is within 5 feet of the zombie.</p>
+		</description>
+		<sheet>
+			<description>When the zombie is hit by an attack from a creature that deals critical damage, it can make a slam attack against the creature if it is within 5 feet of the zombie.</description>
 		</sheet>
 	</element>
 
@@ -982,4 +1862,30 @@ create me, forcing my master to always search for more.
 		<supports>Pale Master</supports>
 	</append>
 
+	<!-- Feats -->
+    <element name="Rally the Dead" type="Feat" source="The Pale Master" id="ID_DMSG_GPPM_FEAT_RALLY_THE_DEAD">
+        <description>
+            <p>Undead creatures under your control have advantage on their attacks rolls against a target if at least one of their allies is within 5 feet of the creature, is not incapacitated and is also an undead creature.</p>
+        </description>
+        <sheet>
+            <description>Undead creatures under your control have advantage on their attacks rolls against a target if at least one of their allies is within 5 feet of the creature, is not incapacitated and is also an undead creature.</description>
+        </sheet>
+    </element>
+
+    <element name="Siphon Life" type="Feat" source="The Pale Master" id="ID_DMSG_GPPM_FEAT_SIPHON_LIFE">
+		<prerequisite>The ability to cast at least one spell</prerequisite>
+		<requirements>[type:spell]</requirements>
+        <description>
+			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
+            <p>When you deal the killing blow to a foe using a necromancy spell, you gain a number of temporary Hit Points equal to your pale master level + your constitution modifier. You can use this feature a number of times equal to your Constitution modifier per long rest.</p>
+        </description>
+        <sheet usage="{{constitution:modifier}}/Long Rest">
+            <description>When you deal the killing blow to a foe using a necromancy spell, you gain {{siphon life:hp}} temporary Hit Points. You can use this feature a number of times equal to your Constitution modifier per long rest.</description>
+        </sheet>
+		<rules>
+			<stat name="siphon life:hp" value="constitution:modifier" />
+			<stat name="siphon life:hp" value="level:pale master" />
+		</rules>
+    </element>
+	
 </elements>
