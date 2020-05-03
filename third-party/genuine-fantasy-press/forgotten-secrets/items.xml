@@ -55,12 +55,15 @@
 	<element name="Arcfire Chain" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WHIP_ARCFIRE_CHAIN">
 		<description>
 			<p>This whip appears to nothing more than a thick chain covered in gruesome spikes. You can use this whip to cast hellfire lash at will, without using a spell slot. Charisma is your spellcasting ability for this spell.</p>
+			<div class="reference">
+				<div element="ID_GFP_COFSA_SPELL_HELLFIRE_LASH" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords">whip</set>
 			<set name="category">Magic Weapons</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="type" addition="whipr">Weapon</set>
+			<set name="type" addition="whip">Weapon</set>
 			<set name="rarity">Rare</set>
 			<set name="weapon">Whip</set>
 			<set name="attunement">true</set>
@@ -188,7 +191,7 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="type" addition="plate">Armor</set>
 			<set name="rarity">Legendary</set>
-			<set name="armor">Splint</set>
+			<set name="armor">Plate</set>
 			<set name="attunement">true</set>
 			<set name="slot">body</set>
 		</setters>
@@ -257,6 +260,9 @@
 	<element name="Mason's Hammer" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_MASONS_HAMMER">
 		<description>
 			<p>As an action, you can strike the ground with the simple hammer to cast wall of stone without expending a spell slot. Once you do so, the hammer can’t be used again in this way until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_WALL_OF_STONE" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -411,6 +417,10 @@
 			<set name="attunement">true</set>
 			<set name="slot">head</set>
 		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<!-- <stat name="blindsight:range" value="20" bonus="base" /> -->
+		</rules>
 	</element>
 
 	<element name="Slippery Skewer" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_DAGGER_SLIPPERY_SKEWER">
@@ -470,6 +480,9 @@
 	<element name="Infinite Inkwell" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_INFINITE_INKWELL">
 		<description>
 			<p>This inkwell is strangely heavy and seems to pull at the light around it. You can use it to cast creation at will as a 9th level spell without expending a spell slot. You can’t cast the spell again until the duration of the previous cast has elapsed.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CREATION" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -484,6 +497,9 @@
 	<element name="Ordinary Brush" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ORDINARY_BRUSH">
 		<description>
 			<p>This looks like an ordinary paintbrush. You can use it to cast the cantrip fresh paint at will. </p>
+			<div class="reference">
+				<div element="ID_GFP_COFSA_SPELL_FRESH_PAINT" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -596,6 +612,12 @@
 	<element name="Fleet Fiddle" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_FLEET_FIDDLE">
 		<description>
 			<p>The stem of this gold-plated fiddle is stylized to look like a bird’s wing. As an action while playing it, you can cast haste or fly. Charisma is your spellcasting modifier for these spells when they are cast in this way.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FLY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HASTE" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -671,6 +693,9 @@
 	<element name="Crown of the Empress" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_CROWN_OF_THE_EMPRESS">
 		<description>
 			<p>This crown is golden, spiked, and inlaid with turquoise. While wearing it, you gain advantage on all saving throws and ability checks. As an action, you can cast dominate person on any imperial without using a spell slot or maintaining concentration on the spell. Charisma is your spellcasting ability for this spell.</p>
+			<div class="reference">
+				<div element="ID_SPELL_PHB_DOMINATE_PERSON" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -739,7 +764,7 @@
 			<set name="slot">arms</set>
 		</setters>
 		<rules>
-			<stat name="speed:climb:misc" value="speed" />
+			<stat name="speed:climb" value="speed" bonus="base" />
 		</rules>
 	</element>
 
@@ -758,6 +783,7 @@
 		</setters>
 		<rules>
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="300" />
 		</rules>
 	</element>
 
@@ -799,6 +825,9 @@
 	<element name="Fujara of the Eye" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_FUJARA_OF_THE_EYE">
 		<description>
 			<p>This flute-like instrument is as tall as a human and produces a windswept, meditative sound. When played by someone with proficiency in a woodwind instrument, its soothing sounds comfort the weak and bolster the strong. While playing the fujara, you can use your action to cast the aid spell at 5th level. Once the magic has been spent, it can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AID" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -813,6 +842,9 @@
 	<element name="Kaba Gaida of Nevihta" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_CIMBALOM_OF_DAZD">
 		<description>
 			<p>This bagpipe-like instrument was made using the bones and organs of a blue dragon. When played by someone with proficiency in a woodwind instrument, it enhances their spellcasting. While playing the kaba gaida, spells you cast that deal lightning or thunder damage are cast as though using a spell slot of one level higher. Additionally, you can cast gust of wind at will without expending a spell slot. Charisma is your spellcasting ability for this spell.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_GUST_OF_WIND" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -832,22 +864,25 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 		</setters>
 	</element>
 
 	<element name="Ancient Heart (Strength +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_STRENGTH_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -857,15 +892,17 @@
 	</element>
 
 	<element name="Ancient Heart (Strength +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_STRENGTH_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -875,15 +912,17 @@
 	</element>
 
 	<element name="Ancient Heart (Strength +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_STRENGTH_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -893,15 +932,17 @@
 	</element>
 
 	<element name="Ancient Heart (Dexterity +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_DEXTERITY_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 10 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -911,15 +952,17 @@
 	</element>
 
 	<element name="Ancient Heart (Dexterity +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_DEXTERITY_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -929,15 +972,17 @@
 	</element>
 
 	<element name="Ancient Heart (Dexterity +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_DEXTERITY_THREE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -947,15 +992,17 @@
 	</element>
 
 	<element name="Ancient Heart (Constitution +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CONSTITUTION_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 10 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -965,15 +1012,17 @@
 	</element>
 
 	<element name="Ancient Heart (Constitution +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CONSTITUTION_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -983,15 +1032,17 @@
 	</element>
 
 	<element name="Ancient Heart (Constitution +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CONSTITUTION_THREE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1001,15 +1052,17 @@
 	</element>
 
 	<element name="Ancient Heart (Wisdom +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_WISDOM_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 10 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1019,15 +1072,17 @@
 	</element>
 
 	<element name="Ancient Heart (Wisdom +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_WISDOM_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1037,15 +1092,17 @@
 	</element>
 
 	<element name="Ancient Heart (Wisdom +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_WISDOM_THREE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1055,15 +1112,17 @@
 	</element>
 
 	<element name="Ancient Heart (Intelligence +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_INTELLIGENCE_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 10 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1073,15 +1132,17 @@
 	</element>
 
 	<element name="Ancient Heart (Intelligence +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_INTELLIGENCE_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1091,15 +1152,17 @@
 	</element>
 
 	<element name="Ancient Heart (Intelligence +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_INTELLIGENCE_THREE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1109,15 +1172,17 @@
 	</element>
 
 	<element name="Ancient Heart (Charisma +1)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CHARISMA_ONE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 1, you die, your corpse is transformed into an unspeakable creature of CR 10 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1127,15 +1192,17 @@
 	</element>
 
 	<element name="Ancient Heart (Charisma +2)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CHARISMA_TWO">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 2, you die, your corpse is transformed into an unspeakable creature of CR 20 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1145,15 +1212,17 @@
 	</element>
 
 	<element name="Ancient Heart (Charisma +3)" type="Magic Item" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_MAGIC_ITEM_WONDROUS_ITEM_ANCIENT_HEART_CHARISMA_THREE">
+		<compendium display="false" />
 		<description>
 			<p>This is the heart of an elder being, pulsing with eldritch power and quivering with unnatural intent. You can consume it as an action. Roll a d6. You can increase one of your ability scores by a number of points equal to half the result (rounded down) and increase the maximum by the same amount. If you roll a 3, you die, your corpse is transformed into an unspeakable creature of CR 30 or greater, and you cannot be resurrected.</p>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
+			<set name="slot">misc</set>
 			<!-- consumable items that apply rules not implemented, equip this item as alternative to activate it -->
 		</setters>
 		<rules>
@@ -1169,7 +1238,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Very Rare</set>
 			<set name="attunement">true</set>
@@ -1184,7 +1253,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Very Rare</set>
 			<set name="attunement">true</set>
@@ -1199,7 +1268,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Uncommon</set>
 			<set name="slot">onehand</set>
@@ -1213,7 +1282,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Rare</set>
 			<set name="slot">onehand</set>
@@ -1227,7 +1296,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Very Rare</set>
 			<set name="attunement">true</set>
@@ -1242,7 +1311,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Uncommon</set>
 		</setters>
@@ -1255,7 +1324,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
 			<set name="attunement" addition="by a creature associated with the Weaver of Lies">true</set>
@@ -1270,7 +1339,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Uncommon</set>
 		</setters>
@@ -1283,7 +1352,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Very Rare</set>
 			<set name="attunement" addition="by a warlock with the Pact of the Tome feature">true</set>
@@ -1298,7 +1367,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Legendary</set>
 			<set name="attunement">true</set>
@@ -1312,7 +1381,7 @@
 		<setters>
 			<set name="category">Wondrous Items</set>
 			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="5">0 lb.</set>
+			<set name="weight" lb="0">0 lb.</set>
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Very Rare</set>
 			<set name="attunement" addition="by a warlock with the Pact of the Blade feature">true</set>
