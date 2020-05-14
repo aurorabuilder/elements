@@ -57,8 +57,16 @@
 			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet usage="{{proficiency}}/Long Rest">
-			<description>Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes psychic damage equal to the roll’s total.</description>
+			<description>Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. The second creature takes {{ua:wails from the grave:count}}d{{sneak-attack:die}} psychic damage.</description>
 		</sheet>
+		<rules>
+			
+			<stat name="ua:wails from the grave:count" value="1" bonus="base" level="1" />
+			<stat name="ua:wails from the grave:count" value="2" bonus="base" level="5" />
+			<stat name="ua:wails from the grave:count" value="3" bonus="base" level="9" />
+			<stat name="ua:wails from the grave:count" value="4" bonus="base" level="13" />
+			<stat name="ua:wails from the grave:count" value="5" bonus="base" level="17" />
+		</rules>
 	</element>
 	<element name="Tokens of the Departed" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED">
 		<description>
@@ -69,9 +77,9 @@
 			<p class="indent">As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free.</p>
 		</description>
 		<sheet action="Reaction">
-			<description>When a creature you can see dies within 30 feet of you, you open your free hand and a Tiny trinket appears there, a soul trinket.
+			<description>When a creature you can see dies within 30 feet of you, you open your free hand and a tiny trinket appears there, a soul trinket.
 			While the soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws.
-			You can have a maximum number of {{proficiency}} soul trinkets, and you can’t create one while at your maximum.
+			You can have a maximum of {{proficiency}} soul trinkets, and you can’t create one while at your maximum.
 			As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free.</description>
 		</sheet>
 	</element>
@@ -171,7 +179,7 @@
 		<description>
 			<p><em>1st-level Genie feature</em></p>
 			<p>The Genie lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
-			<h5>GENIE EXPANDED SPELLS</h5>
+			<h5 class="caption">GENIE EXPANDED SPELLS</h5>
 			<table>
 				<thead>
 					<tr><td>Spell Level</td><td>Genie Spells</td><td>Dao Spells</td><td>Djinni Spells</td><td>Efreeti Spells</td><td>Marid Spells</td></tr>
@@ -417,8 +425,8 @@
 		<sheet>
 			<description>While you are holding the book, it grants you the following benefits:
 			You can use the book as a spellcasting focus for your wizard spells.
-			When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with the damage type of another spell in your spellbook, as your spellbook magically alters the spell’s formula for this casting.
-			When you cast a wizard spell as a ritual, you can use the spell’s normal casting time, rather than adding 10 minutes to it. Once you use this benefit, you can’t do so again until you finish a long rest.
+			When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with the damage type of another spell in your spellbook.
+			When you cast a wizard spell as a ritual, you can use the spell’s normal casting time, rather than adding 10 minutes to it. (1/long rest)
 			If necessary, you can replace the book over the course of a short rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you’re attuned. At the end of the rest, your spellbook’s consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages.</description>
 		</sheet>
 	</element>
@@ -445,9 +453,9 @@
 		</description>
 		<sheet action="Bonus Action">
 			<description>While the book is on your person, you can cause the mind to manifest as a tiny spectral construct, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and doesn’t occupy its space, and it sheds dim light in a 10-foot radius. The spectral mind has {{ua:manifest mind:hp}} hp, and it uses your AC and saving throw modifiers.
-			While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your concentration ends (as if concentrating on a spell).
-			Whenever you cast a wizard spell on your turn ({{proficiency}}/long rest), you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses.
-			As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from you, if it drops to 0 hit points, if you die, or if you dismiss it as a bonus action.</description>
+			While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your concentration ends.
+			Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. ({{proficiency}}/long rest)
+			As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from you, if it drops to 0 hp, if you die, or if you dismiss it as a bonus action.</description>
 		</sheet>
 		<rules>
 			<stat name="ua:manifest mind:hp" value="level:wizard" />
@@ -491,5 +499,4 @@
 			<set name="slot">onehand</set>
 		</setters>
 	</element>
-
 </elements>
