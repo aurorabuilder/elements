@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Subclasses Revisited</name>
+		<update version="0.0.1">
+			<file name="20200512.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2020/20200512.xml" />
+		</update>
+	</info>
+	<element name="Unearthed Arcana: Subclasses Revisited" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20200512">
+		<description>
+			<p>Three subclasses reappear today in Unearthed Arcana, each with a new form. After studying your feedback on the Revived, Noble Genie, and Archivist subclasses, we’ve crafted new versions for your consideration: the Phantom, the Genie, and the Order of Scribes.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20200512</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/subclasses-revisited</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20200512</set>
+		</setters>
+	</element>
+	
+	<element name="Phantom" type="Archetype" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_ROGUE_PHANTOM">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>Many rogues walk a fine line between life and death, risking their own lives and taking the lives of others. While adventuring on that line, some rogues discover a mystical connection to death itself. These rogues take knowledge from the dead and become immersed in negative energy, eventually becoming like ghosts. Thieves’ guilds value them as highly effective information gatherers and spies.</p>
+			<p class="indent">Many shadar-kai of the Shadowfell are masters of these macabre techniques, and some are willing to teach this path. In places like Thay (Forgotten Realms) and Karrnath (Eberron), where many necromancers practice their craft, a Phantom can become a wizard’s confidant and right hand. In temples of gods of death, the Phantom works as an agent to track down those who try to cheat death and to recover knowledge that might otherwise be lost to the grave.</p>
+			<p class="indent">How did you discover this grim power? Did you sleep in a graveyard and awaken to your new abilities? Or did you cultivate them in a temple or thieves’ guild dedicated to a god of death?</p>
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_DEATH_KNELL" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK" level="13" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_DEATH_KNELL" level="17" />
+		</rules>
+	</element>
+	<element name="Whispers of the Dead" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD">
+		<description>
+			<p><em>3rd-level Phantom feature</em></p>
+			<p>Echoes of those who have died begin to cling to you. Whenever you finish a short or long rest, you can gain one skill or tool proficiency of your choice, as a ghostly presence shares its knowledge with you. This proficiency lasts until you use this feature again.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a short or long rest, you can gain one skill or tool proficiency of your choice. This proficiency lasts until you use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Wails from the Grave" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE">
+		<description>
+			<p><em>3rd-level Phantom feature</em></p>
+			<p>As you nudge someone closer to the grave, you can cause deathly wails to be heard near them. Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes psychic damage equal to the roll’s total, as wails of the dead sound around them for a moment.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. The second creature takes {{ua:wails from the grave:count}}d{{sneak-attack:die}} psychic damage.</description>
+		</sheet>
+		<rules>
+			
+			<stat name="ua:wails from the grave:count" value="1" bonus="base" level="1" />
+			<stat name="ua:wails from the grave:count" value="2" bonus="base" level="5" />
+			<stat name="ua:wails from the grave:count" value="3" bonus="base" level="9" />
+			<stat name="ua:wails from the grave:count" value="4" bonus="base" level="13" />
+			<stat name="ua:wails from the grave:count" value="5" bonus="base" level="17" />
+		</rules>
+	</element>
+	<element name="Tokens of the Departed" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED">
+		<description>
+			<p><em>9th-level Phantom feature</em></p>
+			<p>When a life ends in your presence, you’re able to snatch a token from the departing soul, a sliver of its life essence that takes physical form: as a reaction when a creature you can see dies within 30 feet of you, you open your free hand and a Tiny trinket appears there, a soul trinket. The DM chooses the trinket’s form or has you roll on the Trinkets table in the Player’s Handbook to determine it.</p>
+			<p class="indent">While the soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws, as your vitality is enhanced by the life essence within the object.</p>
+			<p class="indent">You can have a maximum number of soul trinkets equal to your proficiency bonus, and you can’t create one while at your maximum.</p>
+			<p class="indent">As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see dies within 30 feet of you, you open your free hand and a tiny trinket appears there, a soul trinket.
+			While the soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws.
+			You can have a maximum of {{proficiency}} soul trinkets, and you can’t create one while at your maximum.
+			As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free.</description>
+		</sheet>
+	</element>
+	<element name="Ghost Walk" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK">
+		<description>
+			<p><em>13th-level Phantom feature</em></p>
+			<p>You can now phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.</p>
+			<p class="indent">You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.
+			You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.</description>
+		</sheet>
+	</element>
+	<element name="Death Knell" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_PHANTOM_DEATH_KNELL">
+		<description>
+			<p><em>17th-level Phantom feature</em></p>
+			<p>When you use your Wails from the Grave feature, you can now deal the psychic damage to both the first and the second creature.</p>
+		</description>
+		<sheet>
+			<description>When you use your Wails from the Grave feature, you can now deal the psychic damage to both the first and the second creature.</description>
+		</sheet>
+	</element>
+
+	<element name="The Genie" type="Archetype" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_WARLOCK_THE_GENIE">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have made a pact with one of the rarest kinds of genie, a noble genie. Such entities are rulers of vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations but are all arrogant and wield power that rivals that of lesser deities. They delight in turning the table on mortals who so love to bind genies into servitude, readily entering into pacts that expand their reach across the multiverse.</p>
+			<p class="indent">You choose your patron’s kind or determine it randomly, using the Genie Kind table. Each kind of genie is associated with a particular element, as shown in the table.</p>
+			<h5 class="caption">Genie Kind</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d4</td><td>Kind</td><td>Element</td></tr>
+				</thead>
+				<tr><td>1</td><td>Dao</td><td>Earth</td></tr>
+				<tr><td>2</td><td>Djinni</td><td>Air</td></tr>
+				<tr><td>3</td><td>Efreeti</td><td>Fire</td></tr>
+				<tr><td>4</td><td>Marid</td><td>Water</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_ELEMENTAL_GIFT" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_SANCTUARY_VESSEL" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_LIMITED_WISH" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Genie Kind" supports="UA Genie Kind" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_ELEMENTAL_GIFT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_SANCTUARY_VESSEL" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_LIMITED_WISH" level="14" />
+		</rules>
+	</element>	
+	<element name="Dao" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DAO">
+		<compendium display="false" />
+		<supports>UA Genie Kind</supports>
+		<description>
+			<p>The Genie is associated with the earth element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Genie is associated with the earth element.</description>
+		</sheet>
+	</element>
+	<element name="Djinni" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DJINNI">
+		<compendium display="false" />
+		<supports>UA Genie Kind</supports>
+		<description>
+			<p>The Genie is associated with the air element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Genie is associated with the air element.</description>
+		</sheet>
+	</element>
+	<element name="Efreeti" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_EFREETI">
+		<compendium display="false" />
+		<supports>UA Genie Kind</supports>
+		<description>
+			<p>The Genie is associated with the fire element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Genie is associated with the fire element.</description>
+		</sheet>
+	</element>
+	<element name="Marid" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_MARID">
+		<compendium display="false" />
+		<supports>UA Genie Kind</supports>
+		<description>
+			<p>The Genie is associated with the water element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Genie is associated with the water element.</description>
+		</sheet>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST">
+		<description>
+			<p><em>1st-level Genie feature</em></p>
+			<p>The Genie lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5 class="caption">GENIE EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Genie Spells</td><td>Dao Spells</td><td>Djinni Spells</td><td>Efreeti Spells</td><td>Marid Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>detect evil and good</em></td><td><em>sanctuary</em></td><td><em>thunderwave</em></td><td><em>burning hands</em></td><td><em>fog cloud</em></td></tr>
+				<tr><td>2nd</td><td><em>phantasmal force</em></td><td><em>spike growth</em></td><td><em>gust of wind</em></td><td><em>scorching ray</em></td><td><em>blur</em></td></tr>
+				<tr><td>3rd</td><td><em>create food and water</em></td><td><em>meld into stone</em></td><td><em>wind wall</em></td><td><em>fireball</em></td><td><em>sleet storm</em></td></tr>
+				<tr><td>4th</td><td><em>phantasmal killer</em></td><td><em>stone shape</em></td><td><em>greater invisibility</em></td><td><em>fire shield</em></td><td><em>control water</em></td></tr>
+				<tr><td>5th</td><td><em>creation</em></td><td><em>wall of stone</em></td><td><em>seeming</em></td><td><em>flame strike</em></td><td><em>cone of cold</em></td></tr>
+				<tr><td>9th</td><td><em>wish</em></td><td><em>—</em></td><td><em>—</em></td><td><em>—</em></td><td><em>—</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Genie lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_DETECT_EVIL_AND_GOOD</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+			<extend>ID_PHB_SPELL_CREATE_FOOD_AND_WATER</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+			<extend>ID_PHB_SPELL_CREATION</extend>
+			<extend>ID_PHB_SPELL_WISH</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_DAO" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DAO" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_DJINNI" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DJINNI" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_EFREETI" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_EFREETI" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_MARID" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_MARID" />
+		</rules>
+	</element>
+	<element name="Dao Expanded Spells" type="Grants" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_DAO">
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_SANCTUARY</extend>
+			<extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+			<extend>ID_PHB_SPELL_MELD_INTO_STONE</extend>
+			<extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_STONE</extend>
+		</spellcasting>
+	</element>
+	<element name="Djinni Expanded Spells" type="Grants" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_DJINNI">
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_GUST_OF_WIND</extend>
+			<extend>ID_PHB_SPELL_WIND_WALL</extend>
+			<extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+			<extend>ID_PHB_SPELL_SEEMING</extend>
+		</spellcasting>
+	</element>
+	<element name="Efreeti Expanded Spells" type="Grants" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_EFREETI">
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_BURNING_HANDS</extend>
+			<extend>ID_PHB_SPELL_SCORCHING_RAY</extend>
+			<extend>ID_PHB_SPELL_FIREBALL</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+		</spellcasting>
+	</element>
+	<element name="Marid Expanded Spells" type="Grants" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_EXPANDED_SPELL_LIST_MARID">
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+			<extend>ID_PHB_SPELL_BLUR</extend>
+			<extend>ID_PHB_SPELL_SLEET_STORM</extend>
+			<extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+		</spellcasting>
+	</element>
+	<element name="Genie’s Vessel" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL">
+		<description>
+			<p><em>1st-level Genie feature</em></p>
+			<p>Your patron gifts you a magical vessel that grants you a measure of the genie’s power. The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie’s Vessel table.</p>
+			<h5 class="caption">Genie’s Vessel</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Vessel</td></tr>
+				</thead>
+				<tr><td>1</td><td>Oil lamp</td></tr>
+				<tr><td>2</td><td>Urn</td></tr>
+				<tr><td>3</td><td>Ring with a compartment</td></tr>
+				<tr><td>4</td><td>Stoppered bottle</td></tr>
+				<tr><td>5</td><td>Hollow statuette</td></tr>
+				<tr><td>6</td><td>Ornate lantern</td></tr>
+			</table>
+			<p class="indent">While you are touching the vessel, you can use it in the following ways:</p>
+			<p class="indent"><strong><em>Bottled Respite.</em></strong> As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space. Once you enter the vessel, you can’t enter again until you finish a long rest.</p>
+			<p class="indent"><strong><em>Genie’s Wrath.</em></strong> Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">The vessel’s AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.</p>
+			<p class="indent">If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.</p>
+		</description>
+		<sheet>
+			<description>Your patron gifts you a tiny magical vessel ({{warlock:spellcasting:dc}} AC, {{ua:genie vessel:hp}} HP) that grants you a measure of the genie’s power. You can use it as a spellcasting focus for your warlock spells.
+			While you are touching the vessel, you can use Bottled Respite or Genie’s Wrath.
+			The vessel is immune to poison and psychic damage and when it is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes when you die.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:genie vessel:hp" value="level:warlock" />
+			<stat name="ua:genie vessel:hp" value="proficiency" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_BOTTLED_RESPITE" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_DAO" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DAO" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_DJINNI" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DJINNI" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_EFREETI" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_EFREETI" />
+			<grant type="Grants" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_MARID" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_MARID" />
+		</rules>
+	</element>
+	<element name="Bottled Respite" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_BOTTLED_RESPITE">
+		<compendium display="false" />
+		<description>
+			<p>As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space. Once you enter the vessel, you can’t enter again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to {{ua:bottled respite:hours}} hours. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:bottled respite:hours" value="proficiency" />
+			<stat name="ua:bottled respite:hours" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_DAO">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet usage="Genie’s Vessel">
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} extra bludgeoning damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_DJINNI">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet usage="Genie’s Vessel">
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} extra thunder damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_EFREETI">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet usage="Genie’s Vessel">
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} extra fire damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_GENIES_VESSEL_GENIES_WRATH_MARID">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet usage="Genie’s Vessel">
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} extra cold damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_ELEMENTAL_GIFT">
+		<description>
+			<p><em>6th-level Genie feature</em></p>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DAO" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_DJINNI" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_EFREETI" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_KIND_MARID" />		
+		</rules>
+	</element>
+	<element name="Sanctuary Vessel" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_SANCTUARY_VESSEL">
+		<description>
+			<p><em>10th-level Genie feature</em></p>
+			<p>When you enter your Genie’s Vessel via the Bottled Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.</p>
+			<p class="indent">As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or the vessel is destroyed.</p>
+			<p class="indent">In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there.</p>
+		</description>
+		<sheet>
+			<description>When you enter your Genie’s Vessel via the Bottled Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you. As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or the vessel is destroyed.
+			In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add {{proficiency}} to the number of hp they regain if they spend any Hit Dice as part of a short rest there.</description>
+		</sheet>
+	</element>
+	<element name="Limited Wish" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_GENIE_LIMITED_WISH">
+		<description>
+			<p><em>14th-level Genie feature</em></p>
+			<p>You entreat your patron to grant you a small wish. As an action, you can speak your desire to your Genie’s Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class’s spell list, and you don’t need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish 1d4 long rests.</p>
+		</description>
+		<sheet action="Action" usage="1/1d4 Long Rests">
+			<description>You can speak your desire to your Genie’s Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class’s spell list, and you don’t need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.</description>
+		</sheet>
+	</element>
+
+	<element name="Order of Scribes" type="Archetype" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_WIZARD_ORDER_OF_SCRIBES">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Magic of the book—that’s what many spellcasters call wizardry. The name is apt, given how much time wizards spend poring over their spellbooks, penning theories about the nature of magic, and exploring the farthest recesses of libraries. It’s rare to see a wizard traveling without books and scrolls sprouting from their bags, and a wizard would go to great lengths to plumb an archive of ancient knowledge.</p>
+			<p class="indent">Among wizards, the Order of Scribes is the most bookish. It takes many forms in different worlds, but its primary mission is the same everywhere: recording magical discoveries in tomes and scrolls so that wizardry can flourish. And while every wizard values their spellbook, a scribe in the Order of Scribes dedicates themself to magically awakening their book, turning it into a trusted companion. All wizards study their spellbooks, but a wizardly scribe talks to theirs!</p>
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_WIZARDLY_QUILL" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_AWAKENED_SPELLBOOK" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MASTER_SCRIVENER" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MANIFEST_MIND" />
+			<div element="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_ONE_WITH_THE_WORD" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_WIZARDLY_QUILL" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_AWAKENED_SPELLBOOK" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MASTER_SCRIVENER" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MANIFEST_MIND" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_ONE_WITH_THE_WORD" level="14" />
+		</rules>
+	</element>
+	<element name="Wizardly Quill" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_WIZARDLY_QUILL">
+		<description>
+			<p><em>2nd-level Order of Scribes feature</em></p>
+			<p>As a bonus action, you can magically create a Tiny quill in your free hand. The magic quill has the following properties:</p>
+			<ul>
+				<li>The quill doesn’t require ink. When you write with it, it produces ink in a color of your choice on the writing surface.</li>
+				<li>The gold and time you must spend to copy a spell into your spellbook are halved if you use the quill for the transcription.</li>
+				<li>You can erase anything you write with the quill if you wave the feather over the text as a bonus action, provided the text is within 5 feet of you.</li>
+			</ul>
+			<p class="indent">This quill disappears if you create another one or if you die.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can magically create a tiny quill in your free hand. The magic quill has the following properties:
+			The quill doesn’t require ink. When you write with it, it produces ink in a color of your choice on the writing surface.
+			The gold and time you must spend to copy a spell into your spellbook are halved if you use the quill for the transcription.
+			You can erase anything you write with the quill if you wave the feather over the text as a bonus action, provided the text is within 5 feet of you.
+			This quill disappears if you create another one or if you die.</description>
+		</sheet>
+	</element>
+	<element name="Awakened Spellbook" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_AWAKENED_SPELLBOOK">
+		<description>
+			<p><em>2nd-level Order of Scribes feature</em></p>
+			<p>Using specially prepared inks and ancient incantations passed down by your wizardly order, you have awakened an arcane sentience within your spellbook.</p>
+			<p class="indent">While you are holding the book, it grants you the following benefits:</p>
+			<ul>
+				<li>You can use the book as a spellcasting focus for your wizard spells.</li>
+				<li>When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with the damage type of another spell in your spellbook, as your spellbook magically alters the spell’s formula for this casting.</li>
+				<li>When you cast a wizard spell as a ritual, you can use the spell’s normal casting time, rather than adding 10 minutes to it. Once you use this benefit, you can’t do so again until you finish a long rest.</li>
+			</ul>
+			<p class="indent">If necessary, you can replace the book over the course of a short rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you’re attuned. At the end of the rest, your spellbook’s consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages.</p>
+		</description>
+		<sheet>
+			<description>While you are holding the book, it grants you the following benefits:
+			You can use the book as a spellcasting focus for your wizard spells.
+			When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with the damage type of another spell in your spellbook.
+			When you cast a wizard spell as a ritual, you can use the spell’s normal casting time, rather than adding 10 minutes to it. (1/long rest)
+			If necessary, you can replace the book over the course of a short rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you’re attuned. At the end of the rest, your spellbook’s consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages.</description>
+		</sheet>
+	</element>
+	<element name="Master Scrivener" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MASTER_SCRIVENER">
+		<description>
+			<p><em>6th-level Order of Scribes feature</em></p>
+			<p>Whenever you finish a long rest, you can create one magic scroll by touching your Wizardly Quill to a blank piece of paper or parchment and causing one spell from your Awakened Spellbook to be copied onto the scroll. The spellbook must be within 5 feet of you when you make the scroll.</p>
+			<p class="indent">The chosen spell must be of 1st or 2nd level and must have a casting time of 1 action. Once in the scroll, the spell’s power is enhanced, counting as one level higher than normal. You can cast the spell from the scroll by reading it as an action. The scroll is unintelligible to anyone else, and the spell vanishes from the scroll when you cast it or when you finish your next long rest.</p>
+			<p class="indent">You are also adept at crafting spell scrolls, which are described in chapter 7 of the Dungeon Master’s Guide. The gold and time you must spend to make such a scroll are halved if you use your Wizardly Quill.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can create one magic scroll by touching your Wizardly Quill to a blank piece of paper or parchment and causing one spell from your Awakened Spellbook to be copied onto the scroll. The spellbook must be within 5 feet of you when you make the scroll.
+			The chosen spell must be of 1st or 2nd level and must have a casting time of 1 action. Once in the scroll, the spell’s power is enhanced, counting as one level higher than normal. You can cast the spell from the scroll by reading it as an action. The scroll is unintelligible to anyone else, and the spell vanishes from the scroll when you cast it or when you finish your next long rest.
+			You are also adept at crafting spell scrolls. The gold and time you must spend to make such a scroll are halved if you use your Wizardly Quill.</description>
+		</sheet>
+	</element>
+	<element name="Manifest Mind" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_MANIFEST_MIND">
+		<description>
+			<p><em>10th-level Order of Scribes feature</em></p>
+			<p>You are now able to conjure forth the mind of your Awakened Spellbook. As a bonus action while the book is on your person, you can cause the mind to manifest as a Tiny spectral construct, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and doesn’t occupy its space, and it sheds dim light in a 10-foot radius. It looks like a ghostly tome, a cascade of text, or a scholar from the past (your choice). The spectral mind has a number of hit points equal to your wizard level plus your Intelligence modifier, and it uses your Armor Class and saving throw modifiers.</p>
+			<p class="indent">While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your concentration ends (as if concentrating on a spell).</p>
+			<p class="indent">Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from you, if it drops to 0 hit points, if you die, or if you dismiss it as a bonus action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>While the book is on your person, you can cause the mind to manifest as a tiny spectral construct, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and doesn’t occupy its space, and it sheds dim light in a 10-foot radius. The spectral mind has {{ua:manifest mind:hp}} hp, and it uses your AC and saving throw modifiers.
+			While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your concentration ends.
+			Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. ({{proficiency}}/long rest)
+			As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from you, if it drops to 0 hp, if you die, or if you dismiss it as a bonus action.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:manifest mind:hp" value="level:wizard" />
+			<stat name="ua:manifest mind:hp" value="intelligence:modifier" />
+		</rules>
+	</element>
+	<element name="One with the Word" type="Archetype Feature" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ARCHETYPE_FEATURE_ORDER_OF_SCRIBES_ONE_WITH_THE_WORD">
+		<description>
+			<p><em>14th-level Order of Scribes feature</em></p>
+			<p>Your connection to your Awakened Spellbook has become so profound that your soul has become entwined with it. While you are holding the book and its spectral mind is manifest, you can take an action to cause the two of you to teleport, swapping places. You can teleport in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Moreover, if you die but at least one spell remains in your Awakened Spellbook, you can return to life 1 minute later within 5 feet of the book. You revive with 1 hit point. Then roll 3d6. The book loses spells of your choice that have a combined spell level equal to that roll or higher. For example, if the roll’s total is 9, spells vanish from the book that have a combined level of at least 9, which could mean one 9th-level spell, three 3rd-level spells, or some other combination.</p>
+			<p class="indent">Thereafter, you are incapable of casting the lost spells, even if you find them on a scroll or in another spellbook. The only way to restore your ability to cast one of the lost spells is through the wish spell, which can restore one spell to the book per casting.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>While you are holding the book and its spectral mind is manifest, you can take an action to cause the two of you to teleport, swapping places.
+			Moreover, if you die but at least one spell remains in your Awakened Spellbook, you can return to life 1 minute later within 5 feet of the book. You revive with 1 hit point. Then roll 3d6. The book loses spells of your choice that have a combined spell level equal to that roll or higher.
+			Thereafter, you are incapable of casting the lost spells, even if you find them on a scroll or in another spellbook. The only way to restore your ability to cast one of the lost spells is through the wish spell, which can restore one spell to the book per casting.</description>
+		</sheet>
+	</element>
+
+	<element name="Genie’s Vessel" type="Item" source="Unearthed Arcana: Subclasses Revisited" id="ID_WOTC_UA20200512_ITEM_GENIES_VESSEL">
+		<description>
+			<p>A magical vessel that grants you a measure of the genie’s power. The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie’s Vessel table.</p>
+			<h5 class="caption">Genie’s Vessel</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Vessel</td></tr>
+				</thead>
+				<tr><td>1</td><td>Oil lamp</td></tr>
+				<tr><td>2</td><td>Urn</td></tr>
+				<tr><td>3</td><td>Ring with a compartment</td></tr>
+				<tr><td>4</td><td>Stoppered bottle</td></tr>
+				<tr><td>5</td><td>Hollow statuette</td></tr>
+				<tr><td>6</td><td>Ornate lantern</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Spellcasting Focus</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">onehand</set>
+		</setters>
+	</element>
+</elements>
