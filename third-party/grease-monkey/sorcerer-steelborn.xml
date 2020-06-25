@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Steel-Born</name>
+        <update version="0.0.1">
+            <file name="sorcerer-steelborn.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/sorcerer-steelborn.xml" />
+        </update>
+	</info>
+
+	<element name="Steel-Born" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_SORCERER_STEELBORN">
+		<supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic comes from the raw magical power of the arcane construct. To be able to access such magical automation power at will is a rare gift. Many with this ability can often trace their lineage back to a particular ancestor, whom became infused with construct magic after crossing paths with one of the mysterious Inevitables. The power of this automation magic transforms your physical form, making each Steel-Born different from another. Some may have skin like silvered steel, while others may only have a single eye, similar to the mysterious modrons that call Mechanus home. At your option, you can pick from or roll on the Prime-Touched Quirks table to create a quirk for your character.</p>
+			<h5>PRIME-TOUCHED SORCERER QUIRKS</h5>
+			<table>
+				<thead>
+					<tr><td>D8</td><td>Quirk</td></tr>
+				</thead>
+				<tr><td>1</td><td>Your skin is reflective like polished metal.</td></tr>
+				<tr><td>2</td><td>Your eyes glow an eerie blue in the dark.</td></tr>
+				<tr><td>3</td><td>Your hair is actually strands of thin metal wiring that stiffens when cut.</td></tr>
+				<tr><td>4</td><td>Your bones have metal fibres, increasing your weight by 25lbs.</td></tr>
+				<tr><td>5</td><td>Your body rattles like a toolbox when struck with a heavy blow.</td></tr>
+				<tr><td>6</td><td>Your heart ticks like a clock.</td></tr>
+				<tr><td>7</td><td>You have a single eye that never blinks.</td></tr>
+				<tr><td>8</td><td>You sometimes act erratically when not given clear directions by an ally.</td></tr>
+			</table>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_METALLIC_RESILIENCE" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_CONSTRUCTS_PROTECTION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_PREHENSILE_LIMBS" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_ENERGY_FORM" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_METALLIC_RESILIENCE" level="1" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_CONSTRUCTS_PROTECTION" level="6" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_PREHENSILE_LIMBS" level="14" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_ENERGY_FORM" level="18" />
+		</rules>
+	</element>
+	<element name="Metallic Resilience" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_METALLIC_RESILIENCE">
+		<description>
+			<p>As the power of Mechanus flows through your form, it transforms your physical attributes, granting you additional benefits.
+			At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.
+			In addition, whenever you cast a spell of 1st level or higher, small shards of metal and debris are drawn to you, forming a protective barrier that grants you a +1 bonus to AC until the start of your next turn. This bonus increases to a +2 at 14th level, and +3 at 18th.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell of 1st level or higher, you gain a +{{tgmhb-sorcerer-metallic resilience:ac}} bonus to AC until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="hp" value="level:sorcerer" />
+			<stat name="tgmhb-sorcerer-metallic resilience:ac" value="1" />
+			<stat name="tgmhb-sorcerer-metallic resilience:ac" value="1" level="14" />
+			<stat name="tgmhb-sorcerer-metallic resilience:ac" value="1" level="18" />
+        </rules>
+	</element>
+	<element name="Construct’s Protection" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_CONSTRUCTS_PROTECTION">
+		<description>
+			<p>By 6th level, objects and structures are more attuned to your presence, and can leap to your defence when you are attacked. For example, a particularly fragile brick wall might collapse on a wizard attempting to cast a spell, forcing them to quickly move out of the way to avoid being crushed, or an underground pipe might burst in front of a sword-wielding fighter, showering them with water to aid your escape.</p>
+			<p class="indent">When another creature you can see within 60 feet of you makes an attack roll against you or forces you to succeed on a Strength or Dexterity saving throw, you can use your reaction and spend 2 sorcery points to have an object or structure interrupt the action, causing the attack roll against you to have disadvantage, or granting you advantage on the saving throw.</p>
+			<p class="indent">You can use this feature a number of times equal to your Charisma modifier. You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{charisma:modifier}}/long rest">
+			<description>When another creature within 60 feet of you makes an attack roll against you or forces you to make a Strength or Dexterity saving throw, you can spend 2 sorcery points to have the attack roll have disadvantage, or granting you advantage on the saving throw.</description>
+		</sheet>
+	</element>
+	<element name="Prehensile Limbs" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_PREHENSILE_LIMBS">
+		<description>
+			<p>At 14th level, you can use a bonus action to manifest a pair of prehensile mechanical limbs from your back. While the limbs are present, you have a climbing speed of 30 feet, and the limbs can be used to grasp simple objects and tools. The limbs have enough strength to lift or carry you and any equipment you are carrying, and have a reach of 10 feet. You can have the limbs assist you with a physical task or project as a bonus action, granting you advantage on any ability check related to the aforementioned activity. The limbs last until you’re incapacitated, you die, or you dismiss them as a bonus action.</p>
+			<p class="indent"></p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can manifest a pair of prehensile mechanical limbs, which grant you a climbing speed of 30 feet. They can assist you with a physical project, granting you advantage on such an ability check.</description>
+		</sheet>
+	</element>
+	<element name="Energy Form" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_SORCERER_STEELBORN_ENERGY_FORM">
+		<description>
+			<p>Starting at 18th level, once per long rest, you can spend 8 sorcery points as a bonus action to magically transform yourself into a being of pure energy.</p>
+			<p class="indent">In this form, you have resistance to all damage, and have a flight speed of 30 feet. In addition, while in this form, when you take damage from a spell or magical effect, you can spend your reaction to absorb a portion of it’s residual raw magic, gaining a number of sorcery points equal to your Charisma modifier. You can use this feature once per long rest.</p>
+			<p class="indent">You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.</p>
+		</description>
+		<sheet usage="1/long rest">
+			<description>You can spend 8 sorcery points to transform as a bonus action for 1 minute. You have resistance to all damage and a flight speed of 30 feet. When you take damage from a spell or magical effect, you can spend your reaction to gain {{charisma:modifier}} sorcery points.</description>
+		</sheet>
+	</element>
+
+</elements>

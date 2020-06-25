@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>ATUM Trader</name>
+		<description>ATUM Trader Background</description>
+        <update version="0.0.1">
+			<file name="background-atumtrader.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/background-atumtrader.xml" />
+		</update>
+	</info>
+
+	<element name="ATUM Trader" type="Background" source="The Greasemonkey's Handbook" id="ID_TGMHB_BACKGROUND_ATUMTRADER">
+		<description>
+			<p>You have spent most of your life in the ATUM trade. Your natural eye for good business deals has bestowed you with a talent for making rather profitable business partnerships.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Persuasion</li>
+				<li><strong>Languages:</strong> Any one language of your choice</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (Land, ATUMs)</li>
+				<li><strong>Equipment:</strong> A set of traveller’s business clothes, a belt pouch containing 20gp, and one written business agreement from a wealthy investor.</li>
+			</ul>
+			<div element="ID_TGMHB_BACKGROUND_FEATURE_SHREWD_BUSINESS" />
+		</description>
+		<setters>
+			<set name="short">Deception, Persuasion, 1 Language, Vehicles (Land, ATUMs)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_ATUM" />
+			<select type="Language" name="Language (ATUM Trader)" number="1" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_TGMHB_BACKGROUND_FEATURE_SHREWD_BUSINESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">When I set my mind on something, it’s hard to change it.</item>
+				<item id="2">I love tinkering with new machinery and ATUM designs.</item>
+				<item id="3">Adventuring should always be a profitable venture for me.</item>
+				<item id="4">I’m well known for my work, and love to talk about it.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Determination. My talents are a gift not to be be wasted. (Any)</item>
+				<item id="2">Fairness. Just because I can, doesn’t mean I should. (Good)</item>
+				<item id="3">Greed. What can I say? I love tech, and I love money. (Evil)</item>
+				<item id="4">Adventure. I’m travelling for the experiences and the memories, both the good ones and the bad. (Neutral)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My workshop is my life. I’d be nothing without it..</item>
+				<item id="2">I was run out of town by a rival business, and I want revenge.</item>
+				<item id="3">I will be the greatest ATUM pilot this world has ever seen.</item>
+				<item id="4">A wealthy noble has given me funding for the opportunity to lead a better life, and I shouldn’t waste that.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I enjoy find the thrill of the hunt extremely addictive.</item>
+				<item id="2">ATUMs are giant, deadly, killing machines. I often forget that.</item>
+				<item id="3">I’m indebted to someone who freed me from prison. One day I know they’ll expect me to repay their generous ‘favour’.</item>
+				<item id="4">Given the option, I’m much more likely to flee and leave the fighting to my ‘allies’.</item>
+			</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Shrewd Business" type="Background Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_BACKGROUND_FEATURE_SHREWD_BUSINESS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You are a resourceful talent when it comes to finding interested parties willing to do business, and often use this to fund your adventures. When residing in a settlement, you can always find a way to contact your esteemed investors; often through the use of trade representatives in the region. You can request funding, ATUMs, or other equipment for your travels from your investors, though what level of support your investors give you depends on how profitable they feel you can make it for them.</p>
+		</description>
+		<sheet alt="Shrewd Business" />
+	</element>
+</elements>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Feats</name>
+        <description>The Feats from The Greasemonkey's Handbook</description>
+        <update version="0.0.1">
+            <file name="feats.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/feats.xml" />
+        </update>
+    </info>
+	
+    <element name="Hardware Savant" type="Feat" source="The Greasemonkey's Handbook" id="ID_TGMHB_FEAT_HARDWARE_SAVANT">
+        <description>
+            <p>You have an uncanny ability to reroute an ATUM’s power connectors and structural supports, making module installations fit and upgrades function much more efficiently.</p>
+            <p class="indent">When building or modifying an ATUM in a workshop as part of a long rest, you can spend 4 hours optimizing its internal components. When an ATUM is optimized in this way, you grant it one of the following features, shown below.</p>
+            <p class="indent">This feature lasts until you change it as part of a long rest, or until the ATUM is reduced to 0 hit points. An ATUM can only benefit from one of these features at a time. If it gains a new feature from this feat, it loses its previous benefit.</p>
+			<ul>
+				<li><b><i>Tight Structure.</i></b> The ATUM has +1 module upgrade slot, and can house 1 less crew member.</li>
+				<li><b><i>Charge Increase.</i></b> One active upgrade module of your choice gains 1 additional charge.</li>
+				<li><b><i>Shock Absorbers.</i></b> The ATUM gains +1 AC, and is resistant to fall damage.</li>
+			</ul>
+        </description>
+        <sheet>
+            <description>When building/modifying an ATUM in a workshop, you can spend 4 hours to grant one of the following benefits, which last until the ATUM is reduced to 0 hit points. 
+			(Tight Structure) The ATUM has +1 module upgrade slot, and can house 1 less crew member. 
+			(Charge Increase) One active upgrade module of your choice gains 1 additional charge. 
+			(Shock Absorbers) The ATUM gains +1 AC, and is resistant to fall damage.
+			</description>
+        </sheet>
+    </element>
+    <element name="Mechanically Enhanced" type="Feat" source="The Greasemonkey's Handbook" id="ID_TGMHB_FEAT_MECHANICALLY_ENHANCED">
+        <description>
+            <p>You are more machine than mortal. Some call you crazy, others call you inspired. Whatever your motivation was, your new parts are certainly a sight to behold.</p>
+            <p>You gain the following benefits:</p>
+            <ul>
+                <li>You have a mechanical implant, granting you increased strength, speed, toughness or observational skills. You increase your Strength, Dexterity, Constitution or Wisdom score by 1.</li>
+                <li>You become more resilient, gaining a +1 bonus to AC.</li>
+            </ul>
+			<p>You can choose this feat up to three times, gaining a +1 bonus to your AC each time you choose it, to a maximum of +3.</p>
+            <p class="indent">If you choose this feat twice, any type you have is replaced with construct. If you choose it three times, you exchange your original race for the warforged race, changing your racial traits accordingly to match your new form.</p>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to AC.</description>
+        </sheet>
+        <rules>
+			<stat name="ac:misc" value="1" />	
+			<select type="Ability Score Improvement" name="Ability Score Increase (Mechanically Enhanced)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+        </rules>
+    </element>
+	
+    <element name="Mechanically Enhanced (2)" type="Feat" source="The Greasemonkey's Handbook" id="ID_TGMHB_FEAT_MECHANICALLY_ENHANCED_2">
+		<compendium display="false" />
+		<requirements>ID_TGMHB_FEAT_MECHANICALLY_ENHANCED</requirements>
+		<description>
+            <p>You are more machine than mortal. Some call you crazy, others call you inspired. Whatever your motivation was, your new parts are certainly a sight to behold.</p>
+            <p>You gain the following benefits:</p>
+            <ul>
+                <li>You become more resilient, gaining a +1 bonus to AC.</li>
+				<li>Any type you have is replaced with construct.</li>
+            </ul>
+			<p>You can choose this feat up to three times, gaining a +1 bonus to your AC each time you choose it, to a maximum of +3.</p>
+            <p class="indent">If you choose this feat a third time you exchange your original race for the warforged race, changing your racial traits accordingly to match your new form.</p>
+		</description>
+        <sheet>
+            <description>You gain a +1 bonus to AC. Your type is replaced with construct.</description>
+        </sheet>
+        <rules>
+			<stat name="ac:misc" value="1" />
+        </rules>
+	</element>
+	
+    <element name="Mechanically Enhanced (3)" type="Feat" source="The Greasemonkey's Handbook" id="ID_TGMHB_FEAT_MECHANICALLY_ENHANCED_3">
+		<compendium display="false" />
+		<requirements>ID_TGMHB_FEAT_MECHANICALLY_ENHANCED_2</requirements>
+		<description>
+            <p>You are more machine than mortal. Some call you crazy, others call you inspired. Whatever your motivation was, your new parts are certainly a sight to behold.</p>
+            <p>You gain the following benefits:</p>
+            <ul>
+                <li>You become more resilient, gaining a +1 bonus to AC.</li>
+				<li>You exchange your original race for the warforged race, changing your racial traits accordingly to match your new form</li>
+            </ul>
+		</description>
+        <sheet>
+            <description>You gain a +1 bonus to AC. You exchange your original race for the warforged race.</description>
+        </sheet>
+        <rules>
+			<stat name="ac:misc" value="1" />
+        </rules>
+	</element>
+	
+</elements>

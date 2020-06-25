@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Prestige Class: ATUM Pilot</name>
+        <description>ATUM Pilot Prestige Class.</description>
+		<update version="0.0.1">
+			<file name="class-atumpilot.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/class-atumpilot.xml" />
+		</update>
+	</info>
+	
+    <element name="ATUM Pilot" type="Class" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_ATUMPILOT">
+            <requirements>[level:6],[dex:13],[int:13]</requirements>
+        <description>
+			<h4>PRESTIGE CLASSES</h4>
+			<p>In order to join a prestige class, you must first check with your Dungeon Master. A DM can opt to include or disallow prestige classes in the game. Typically, a prestige class requires you to undertake specific actions in the game so that your character can begin pursuing that class. If those actions aren’t already possible in your campaign, talk to your DM about integrating the prestige class that interests you. A prestige class uses the normal D&amp;D multiclassing rules (see chapter 6, “Customization Options,” in the <i>Player’s Handbook</i>). When your character is ready to advance a level, you can choose to gain a level in a prestige class. Your levels in all your classes, including prestige classes, are added together to determine your character level.</p>
+			<center>
+				<p><strong>(This Prestige Class offers only 5 levels)</strong></p>
+			</center>
+			<h4>BECOMING AN ATUM PILOT</h4>
+			<p>Pilots are special individuals trained to pilot large vehicular constructs called All Terrain Utility Machines, or ATUMs. These machines can be outfitted with various different hardpoints and upgrades, making the ATUM one of the most versatile vehicles an individual can have the luxury of calling their own. From gigantic walking trade caravans to packs of smaller constructs bristling with vicious missile launchers and deadly close combat weapons, ATUMs are used for many different scenarios, and pilots are widely sought after for contracts or bounties.</p>
+			<p class="indent">Though many individuals are capable of controlling an ATUM’s basic utilities, only a few accomplished operators have the talent to unlock the true capabilities these advanced machines are capable of. Many aspiring Nomads choose the academic route; advancing through their regional ATUM Academy before then obtaining a licence to construct basic civilian class category 1 ATUMs, usually for trade purposes or travel. Others join the military, choosing to obtain their skills through combat training and emerging on the other side grizzled veterans; their piloting skills perfected after many years of intense conflict. Particularly ambitious individuals - especially ones who aren’t fond of the law - tend to introduce themselves to the pilot life by building an ATUM from scratch in a backwater town or workshop. These pilots shirk the academies and militaristic routes in favor of a more dangerous path, filled with independance, experimentation, adventure, and freedom at the cost of academic support and government contracts.</p>
+			<h4>PREREQUISITES</h4>
+			<p>In order to advance in the ATUM pilot prestige class, you must meet the following prerequisites (in addition to the multiclassing prerequisites for your existing class):</p>
+			<ul>
+				<li><b>Dexterity 13.</b> ATUM pilots need agile fingers and quick reactions to master the speed and mobility of such large machines.</li>
+				<li><b>Intelligence 13.</b> Piloting an ATUM is not a simple task. Pilots must be quick thinking and have a comprehensive knowledge of the complex inner workings of an ATUM to be able to use one effectively.</li>
+				<li><b>Character level 5th.</b> Before you can begin the studies and practices of an ATUM pilot, you must first prove you are capable of remaining level-headed and surviving in various, potentially dangerous, situations. You must be a 5th-level character before you can gain levels in the ATUM pilot prestige class.</li>
+				<li><b>Proficiency with Vehicles.</b> ATUMs are a special class of vehicle, but share many similarities with other mechanical constructs. You must be competent with driving vehicles (land) and tinkering with them to begin to understand the complex mechanics of an ATUM.</li>
+				<li><b>Access to an ATUM.</b> You must find or build an ATUM of your own, by using a workshop to create one yourself, or purchasing a pre-built ATUM from a passing ATUM trader.</li>
+			</ul>
+            <h3>CLASS FEATURES</h3>
+            <p>As an ATUM pilot, you gain the following class features.</p>
+            <h5>HIT POINTS</h5>
+            <p>
+                <span class="emphasis">Hit Dice:</span>1d8 per ATUM pilot level.
+                <br />
+                <span class="emphasis">Hit Points per Level:</span>1d8 (or 5) + your Constitution modifier per ATUM pilot level.
+            </p>
+            <h5>PROFICIENCIES</h5>
+            <p>
+                <span class="emphasis">Tools:</span>You gain proficiency with Tinker’s Tools, if you are not proficient with them already, and your proficiency bonus is doubled for any checks you make with them.
+            </p>
+            <p>
+                <span class="emphasis">Saving Throws:</span>None 
+                <br />
+                <span class="emphasis">Skills:</span>None 
+            </p>
+            <h5>EQUIPMENT</h5>
+            <p>The ATUM pilot class does not grant any special equipment.</p>
+			<h5 class="caption">THE ATUM PILOT</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-5">Level</td><td class="left">Features</td></tr>
+				</thead>
+				<tr><td>1st</td><td class="left">Pilot Type</td></tr>
+				<tr><td>2nd</td><td class="left">Pilot Talent</td></tr>
+				<tr><td>3rd</td><td class="left">Pilot Type feature</td></tr>
+				<tr><td>4th</td><td class="left">Pilot Type feature, Ability Score Improvement</td></tr>
+				<tr><td>5th</td><td class="left">Pilot Type feature, Mark of Renown</td></tr>
+			</table>
+            <div element="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT" />
+            <div element="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_ABILITYSCOREIMPROVEMENT_ATUMPILOT" />
+            <div element="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_MARK_OF_RENOWN" />
+        </description>
+        <setters>
+            <set name="short">Special individuals trained to pilot large vehicular constructs called All Terrain Utility Machines.</set>
+            <set name="hd">d8</set>
+        </setters>
+        <sheet display="false"/>
+        <rules>
+			<select type="Archetype" name="ATUM Pilot Type" supports="ATUM Pilot Type" level="1" />
+            <grant type="Class Feature" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT" level="2" />
+			
+			<!-- A workaround for nested <select>s to have a nice looking "Features&Traits Section on the Char Sheet" -->
+            <grant type="Class Feature" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_WARRIOR_INTERNAL" requirements="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_WARRIOR" /> 
+            <grant type="Class Feature" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_TACTICIAN_INTERNAL" requirements="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_TACTICIAN" />
+			
+            <grant type="Class Feature" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_ABILITYSCOREIMPROVEMENT_ATUMPILOT" level="4" />
+            <grant type="Class Feature" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_MARK_OF_RENOWN" level="5" />
+        </rules>
+        <multiclass id="ID_TGMHB_MULTICLASS_ATUMPILOT">
+            <prerequisite>Dexterity 13, Intelligence 13, and Level 5th</prerequisite>
+            <!--<requirements>[level:6],[dex:13],[int:13]</requirements>-->
+            <setters>
+                <set name="multiclass proficiencies">Tinker’s Tools</set>
+            </setters>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+            </rules>
+        </multiclass>
+    </element>
+	
+	<!-- Level 2 Feature -->
+    <element name="Pilot Talent" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT">
+        <description>
+            <p>By 2nd level, you have developed further down the path of ATUM pilot, honing your skills to be one step further ahead than traditional adventurers. Choose one of the following talents from the list below.</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+			<select type="Class Feature" name="Pilot Talent" supports="ATUM Pilot Talent" />
+        </rules>
+    </element>
+    <element name="Mechanic" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_MECHANIC">
+        <supports>ATUM Pilot Talent</supports>
+        <description>
+            <p>You are especially talented at repairing, upgrading and modifying ATUMs; both your own, and others. You become far more proficient when effecting field repairs on your ATUM.</p>
+            <p class="indent">Whenever you roll hit dice for your ATUM when performing field repairs or patch jobs, the ATUM regains an additional 1d8 hit points per level in this class.</p>
+            <p class="indent">In addition, once per long rest, when you spend a short rest either working alone, or helping another creature to repair, upgrade or otherwise modify an ATUM, you can grant that ATUM an additional temporary bonus from the list below. An ATUM cannot benefit from more than one bonus at a time.</p>
+            <p class="indent"><b><i>Quick Fix.</i></b> The ATUM gains temporary hit points equal to 2d4 x your proficiency bonus. These temporary hit points last for 2d4 hours.</p>
+            <p class="indent"><b><i>Oiled Joints.</i></b> The ATUM gains an additional 10ft of movement speed for 2d4 hours.</p>
+            <p class="indent"><b><i>Improvised Autoloader Tweak.</i></b> One ballistic hardpoint the ATUM has an additional 2 to its reload (x) value. This bonus lasts until the end of the next encounter that hardpoint is used in. For example, a hardpoint with Reload (2) would become Reload (4) until the end of the next encounter that hardpoint is used in.</p>
+        </description>
+        <sheet>
+            <description>Whenever you roll hit dice for your ATUM, it regains additional {{level:atum pilot}}d8 hit points. Once per long rest, when you spend a short rest to repair/upgrade/modify an ATUM, you can grant it one temporary bonus: 
+			(Quick Fix) The ATUM gains 2d4 x {{proficiency}} temporary hit points, which last for 2d4 hours. 
+			(Oiled Joints) The ATUM gains an additional 10ft of movement speed for 2d4 hours. 
+			(Improvised Autoloader Tweak) One ballistic hardpoint the ATUM has an additional 2 to its reload (x) value, which lasts until the end of the next encounter that hardpoint is used in.			
+			</description>
+        </sheet>
+    </element>
+	
+	<!-- A workaround for nested <select>s to have a nice looking "Features&Traits Section on the Char Sheet" -->
+    <element name="Warrior" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_WARRIOR">
+        <supports>ATUM Pilot Talent</supports>
+        <description>
+            <p>You are a frontline fighter, specialized in close or mid range ATUM combat. Fearsome and dedicated, your ATUM is a shield and sword you wield with the grace of a dancer and the ferocity of a wolverine, outstepping your opponents in deadly duels or saturating them with overwhelming firepower.</p>
+			<p>You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.</p>
+			<h5>FIGHTING STYLE</h5>
+			<p>When piloting an ATUM, you adopt a particular style of fighting as your specialty. Choose two fighting styles from the list of optional features. You can’t take the same fighting style option more than once, even if you get to choose again later.</p>
+			<ul>
+				<li><b><i>Crack Shot.</i></b> You gain a +1 bonus to attack rolls you make with ranged hardpoints.</li>
+				<li><b><i>Defender.</i></b> While you are piloting an ATUM, that ATUM gains a +1 bonus to its AC.</li>
+				<li><b><i>Heavy Hitter.</i></b> Once per turn when you roll damage for a melee hardpoint attack, you can reroll the hardpoints damage dice and use either total.</li>
+				<li><b><i>Quick Strider.</i></b> When piloting an ATUM with the Bipedal or Quadrupedal mobility type, that ATUM’s speed increases by 10 feet.</li>
+				<li><b><i>Missile Specialist.</i></b> When you roll a 1 or 2 on a damage die for an attack you make with ranged hardpoint, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The hardpoint must have the missile property for you to gain this benefit.</li>
+				<li><b><i>Plated Combatant.</i></b> When piloting an ATUM, that ATUM’s armour plating damage threshold increases by (10).</li>
+				<li><b><i>Ballistics Specialist.</i></b> Once per long rest, you can increase the ammo box value of a ballistic hardpoint you have equipped by 1. The hardpoint retains this bonus for 8 hours, or until it’s operated by any creature other than you.</li>
+				<li><b><i>Energy Specialist.</i></b> When you make an attack roll with an energy hardpoint, you can choose to roll an additional d20 and use either result. You can choose to roll the additional die before or after you make the attack roll, but before the outcome of the roll is determined. You regain the use this feature after completing a short rest.</li>
+			</ul>
+        </description>
+        <sheet display="false"/>
+    </element>
+	<element name="Tactician" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_TACTICIAN">
+        <supports>ATUM Pilot Talent</supports>
+        <description>
+            <p>Your understanding of an ATUM’s mobility, hardpoint strength and battlefield flexibility has given you a tactical edge on the battlefield.</p>
+			<p class="indent">You gain three superiority dice, which are d8s, which you can expend when piloting an ATUM. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest. In addition, you learn two maneuvers from the maneuver list below.</p>
+			<p class="indent"><b><i>Saving Throws.</i></b> Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw DC is calculated as follows:</p>
+			<center>
+				<p><strong>Maneuver save DC</strong> = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+			</center>
+			<h5>MANEUVERS</h5>
+			<ul>
+				<li><b><i>Flanking.</i></b> When you move on your turn, you can expend a superiority die to choose a friendly pilot within 60ft of you who can see or hear you. That pilot can use its reaction to move up to half its speed towards a target of your choice.</li>
+				<li><b><i>Pinning Fire.</i></b> When you make an attack roll against a creature or ATUM using a ranged hardpoint or weapon, you can expend one superiority die to attempt to pin it in place. You add the superiority die to the attack roll, and if the attack hits, the hardpoint or weapon deals its normal damage, and the target must succeed on a Dexterity saving throw or have its speed reduced to 0ft until the end of its next turn.</li>
+				<li><b><i>Squad Support.</i></b> >As a bonus action on your turn, you can call on an ally to support you in battle. When you do so, choose a friendly pilot or crew member within 60 feet of you who can see or hear you and expend one superiority die. That pilot or crew member can immediately use its reaction to make one weapon or hardpoint attack against a target of your choice, adding the superiority die to the attack’s damage roll.</li>
+				<li><b><i>Targeting Array.</i></b> As a bonus action on your turn, you can help your allies by target-locking a creature or ATUM - making them more susceptible to missile attacks. Choose one creature within 120 feet of you that you can see and isn’t behind total cover and expend a superiority die. Make a ranged weapon attack against that target, adding the superiority die to the attack roll. On a hit, the target becomes target-locked for all allies within their missile hardpoint range until the end of your next turn, or until the lock is lost as normal.</li>
+				<li><b><i>Covering Fire.</i></b> You give covering fire to an ally as they move. As a bonus action, expend one superiority die and choose one friendly creature you can see within 60 feet of you. Until the end of your next turn, if an enemy creature makes an attack roll against that ally, you can elect to spend your reaction to take the attack action against it, rolling the superiority die and adding it to any attack rolls you make as part of that action. If you hit, the target takes the weapon of hardpoints normal damage, and has disadvantage on any attack rolls made until the end of their next turn.</li>
+				<li><b><i>Draw Fire.</i></b> You distract one creature or ATUM pilot that can see and hear you. As a bonus action, you can expend one superiority die to force that creature or pilot to make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls that do not target you, and any saving throws a friendly creature other than you makes against it have advantage until the end of your next turn. A creature with an intelligence of 16 or higher has advantage on this save.</li>
+			</ul>
+        </description>
+        <sheet display="false"/>
+    </element>
+	<element name="Warrior" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_WARRIOR_INTERNAL">
+        <description>
+			<p>When piloting an ATUM, you adopt a particular style of fighting as your specialty. Choose two fighting styles from the list of optional features. You can’t take the same fighting style option more than once, even if you get to choose again later.</p>
+			<h5 class="caption">CRACK SHOT</h5>
+			<p>You gain a +1 bonus to attack rolls you make with ranged hardpoints.</p>
+			<h5 class="caption">DEFENDER</h5>
+			<p>While you are piloting an ATUM, that ATUM gains a +1 bonus to its AC.</p>
+			<h5 class="caption">HEAVY HITTER</h5>
+			<p>Once per turn when you roll damage for a melee hardpoint attack, you can reroll the hardpoints damage dice and use either total.</p>
+			<h5 class="caption">QUICK STRIDER</h5>
+			<p>When piloting an ATUM with the Bipedal or Quadrupedal mobility type, that ATUM’s speed increases by 10 feet.</p>
+			<h5 class="caption">MISSILE SPECIALIST</h5>
+			<p>When you roll a 1 or 2 on a damage die for an attack you make with ranged hardpoint, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The hardpoint must have the missile property for you to gain this benefit.</p>
+			<h5 class="caption">PLATED COMBATANT</h5>
+			<p>When piloting an ATUM, that ATUM’s armour plating damage threshold increases by (10).</p>
+			<h5 class="caption">BALLISTICS SPECIALIST</h5>
+			<p>Once per long rest, you can increase the ammo box value of a ballistic hardpoint you have equipped by 1. The hardpoint retains this bonus for 8 hours, or until it’s operated by any creature other than you.</p>
+			<h5 class="caption">ENERGY SPECIALIST</h5>
+			<p>When you make an attack roll with an energy hardpoint, you can choose to roll an additional d20 and use either result. You can choose to roll the additional die before or after you make the attack roll, but before the outcome of the roll is determined. You regain the use this feature after completing a short rest.</p>
+        </description>
+        <sheet alt="Fighting Style (Warrior)"/>
+		<rules>
+			<select type="Class Feature" name="Fighting Style (Warrior)" supports="ATUM Pilot Fighting Style" number="2"/>
+		</rules>
+    </element>
+	<element name="Tactician" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_PILOT_TALENT_TACTICIAN_INTERNAL">
+        <description>
+            <p>Your understanding of an ATUM’s mobility, hardpoint strength and battlefield flexibility has given you a tactical edge on the battlefield.</p>
+			<p class="indent">You gain three superiority dice, which are d8s, which you can expend when piloting an ATUM. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest. In addition, you learn two maneuvers from the maneuver list below.</p>
+			<p class="indent"><b><i>Saving Throws.</i></b> Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw DC is calculated as follows:</p>
+			<center>
+				<p><strong>Maneuver save DC</strong> = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+			</center>
+        </description>
+		<sheet usage="{{tgmhb-atumpilot-superiority-dice:amount}}/short rest" alt="">
+			<description>You have {{tgmhb-atumpilot-superiority-dice:amount}} superiority dice which are d{{tgmhb-atumpilot-superiority-dice:size}}s. DC {{tgmhb-atumpilot-superiority-dice:dc}}</description>
+		</sheet>
+		<rules>
+			<stat name="tgmhb-atumpilot-superiority-dice:amount" value="3" />
+			<stat name="tgmhb-atumpilot-superiority-dice:size" value="8" bonus="size"/> <!-- superiority die size -->
+			<stat name="tgmhb-atumpilot-superiority-dice:dc" value="8" />
+			<stat name="tgmhb-atumpilot-superiority-dice:dc" value="proficiency" />
+			<!-- create selection option -->
+			<stat name="tgmhb-atumpilot-superiority-dice:dc:ability" value="strength:modifier" bonus="ability"/>
+			<stat name="tgmhb-atumpilot-superiority-dice:dc:ability" value="dexterity:modifier" bonus="ability"/>
+			<stat name="tgmhb-atumpilot-superiority-dice:dc" value="tgmhb-atumpilot-superiority-dice:dc:ability" />
+			<select type="Class Feature" name="Tactician Maneuvers" supports="Maneuver, ATUM Pilot" number="2" />
+		</rules>
+    </element>
+	
+	<!-- Level 4 Feature -->
+	<element name="Ability Score Improvement" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_ABILITYSCOREIMPROVEMENT_ATUMPILOT">
+		<compendium display="false" />
+		<description>
+			<p>When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Class Feature" name="Improvement Option (ATUM Pilot)" supports="Improvement Option,ATUM Pilot,4" level="4" />
+		</rules>
+	</element>
+
+	<!-- Level 5 Feature -->
+    <element name="Mark of Renown" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_MARK_OF_RENOWN">
+        <description>
+            <p>Choose a symbol, or insignia. This symbol becomes your ATUM’s personal identifier as your renown increases.</p>
+            <p class="indent">As part of a short rest, you can affix your ATUM with this insignia, either as a banner, flag, or painted marking. Each insignia type grants a different bonus, as shown below:</p>
+        </description>
+        <sheet display="false"/>
+        <rules>
+			<select type="Class Feature" name="Mark of Renown" supports="ATUM Pilot Mark of Renown" />
+        </rules>
+    </element>
+    <element name="Banner" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_RENOWN_BANNER">
+        <supports>ATUM Pilot Mark of Renown</supports>
+        <description>
+            <p>When in combat, friendly ATUMs that are within 60 feet of you and can see your banner gain a bonus to their saving throws equal to your proficiency bonus. This feature doesn’t stack with multiple banners. An affected pilot chooses which banner to gain the bonus from at the start of each combat.</p>
+        </description>
+        <sheet alt="Mark of Renown (Banner)">
+            <description>Friendly ATUMs that are within 60 feet of you and can see your banner gain a bonus of {{proficiency}} to their saving throws.</description>
+        </sheet>
+    </element>
+    <element name="Flag" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_RENOWN_FLAG">
+        <supports>ATUM Pilot Mark of Renown</supports>
+        <description>
+            <p>When you hit an enemy ATUM or creature with an intelligence of 10 or higher within 60 feet of you with an ATUM hardpoint or manipulator weapon and your target can see your flag, you can force it to make a Wisdom saving throw. On a failed save, the target is frightened of you and has disadvantage on all saving throws made against your ATUM’s modules until the end of your next turn.</p>
+        </description>
+        <sheet alt="Mark of Renown (Flag)">
+            <description>When you hit an enemy ATUM or creature with an intelligence of 10 or higher within 60 feet of you with an ATUM hardpoint or manipulator weapon and your target can see your flag, you can force it to make a Wisdom saving throw. On a failed save, the target is frightened of you and has disadvantage on all saving throws made against your ATUM’s modules until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Marking" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ATUMPILOT_RENOWN_MARKING">
+        <supports>ATUM Pilot Mark of Renown</supports>
+        <description>
+            <p>When a creature or enemy ATUM pilot starts its turn within 60 feet of you, if it can see your markings, it must make a Wisdom saving throw versus your ATUM’s save DC. On a failed save, it briefly panics at the sight of your ATUM on the battlefield, and its attack rolls have disadvantage until the start of its next turn. A creature or ATUM pilot can only be affected by this feature once per turn. This feature has no effect against creatures that cannot be frightened.</p>
+        </description>
+        <sheet alt="Mark of Renown (Marking)">
+            <description>When a creature or enemy ATUM pilot starts its turn within 60 feet of you, if it can see your markings, it must make a Wisdom saving throw versus your ATUM’s save DC. On a failed save, it briefly panics at the sight of your ATUM on the battlefield, and its attack rolls have disadvantage until the start of its next turn. A creature or ATUM pilot can only be affected by this feature once per turn. This feature has no effect against creatures that cannot be frightened.</description>
+        </sheet>
+    </element>
+	
+	<!-- Combat Maneuvers -->
+	<element name="Flanking" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASSE_FEATURE_MANEUVER_FLANKING">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>When you move on your turn, you can expend a superiority die to choose a friendly pilot within 60ft of you who can see or hear you. That pilot can use its reaction to move up to half its speed towards a target of your choice.</p>
+		</description>
+		<sheet>
+			<description>When you move on your turn, you can expend a superiority die to choose a friendly pilot within 60ft of you who can see or hear you. That pilot can use its reaction to move up to half its speed towards a target of your choice.</description>
+		</sheet>
+	</element>
+	<element name="Pinning Fire" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_MANEUVER_PINNING_FIRE">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>When you make an attack roll against a creature or ATUM using a ranged hardpoint or weapon, you can expend one superiority die to attempt to pin it in place.</p>
+			<p class="indent">You add the superiority die to the attack roll, and if the attack hits, the hardpoint or weapon deals its normal damage, and the target must succeed on a Dexterity saving throw or have its speed reduced to 0ft until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>When you make an attack roll against a creature or ATUM using a ranged hardpoint or weapon, you can expend one superiority die to attempt to pin it in place. You add the superiority die to the attack roll, and if the attack hits, the hardpoint or weapon deals its normal damage, and the target must succeed on a Dexterity saving throw or have its speed reduced to 0ft until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Squad Support" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_MANEUVER_SQUAD_SUPPORT">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>As a bonus action on your turn, you can call on an ally to support you in battle. When you do so, choose a friendly pilot or crew member within 60 feet of you who can see or hear you and expend one superiority die. That pilot or crew member can immediately use its reaction to make one weapon or hardpoint attack against a target of your choice, adding the superiority die to the attack’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action on your turn, you can call on a friendly pilot or crew member within 60 feet of you who can see or hear you and expend one superiority die. That pilot or crew member can immediately use its reaction to make one weapon or hardpoint attack against a target of your choice, adding the superiority die to the attack’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Targeting Array" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ACLASS_FEATURE_MANEUVER_TARGETING_ARRAY">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>As a bonus action on your turn, you can help your allies by target-locking a creature or ATUM - making them more susceptible to missile attacks.</p>
+			<p class="indent">Choose one creature within 120 feet of you that you can see and isn’t behind total cover and expend a superiority die. Make a ranged weapon attack against that target, adding the superiority die to the attack roll. On a hit, the target becomes target-locked for all allies within their missile hardpoint range until the end of your next turn, or until the lock is lost as normal.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action on your turn, you can choose one creature within 120 feet of you that you can see and isn’t behind total cover and expend a superiority die. Make a ranged weapon attack against that target, adding the superiority die to the attack roll. On a hit, the target becomes target-locked for all allies within their missile hardpoint range until the end of your next turn, or until the lock is lost as normal.</description>
+		</sheet>
+	</element>
+	<element name="Covering Fire" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_MANEUVER_COVERING_FIRE">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>You give covering fire to an ally as they move.</p>
+			<p class="indent">As a bonus action, expend one superiority die and choose one friendly creature you can see within 60 feet of you.</p>
+			<p class="indent">Until the end of your next turn, if an enemy creature makes an attack roll against that ally, you can elect to spend your reaction to take the attack action against it, rolling the superiority die and adding it to any attack rolls you make as part of that action. If you hit, the target takes the weapon of hardpoints normal damage, and has disadvantage on any attack rolls made until the end of their next turn.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action, expend one superiority die and choose one friendly creature you can see within 60 feet of you. Until the end of your next turn, if an enemy creature makes an attack roll against that ally, you can elect to spend your reaction to take the attack action against it, rolling the superiority die and adding it to any attack rolls you make as part of that action. If you hit, the target takes the weapon of hardpoints normal damage, and has disadvantage on any attack rolls made until the end of their next turn.</description>
+		</sheet>
+	</element>
+	<element name="Draw Fire" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_MANEUVER_DRAW_FIRE">
+		<supports>Maneuver, ATUM Pilot</supports>
+		<description>
+			<p>You distract one creature or ATUM pilot that can see and hear you.</p>
+			<p class="indent">As a bonus action, you can expend one superiority die to force that creature or pilot to make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls that do not target you, and any saving throws a friendly creature other than you makes against it have advantage until the end of your next turn.</p>
+			<p class="indent">A creature with an intelligence of 16 or higher has advantage on this save.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action, you can expend one superiority die to force one creature or ATUM pilot that can see and hear you to make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls that do not target you, and any saving throws a friendly creature other than you makes against it have advantage until the end of your next turn. A creature with an intelligence of 16 or higher has advantage on this save.</description>
+		</sheet>
+	</element>
+	
+	<!-- Fighting Styles -->
+	<element name="Crack Shot" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_CRACK_SHOT">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>You gain a +1 bonus to attack rolls you make with ranged hardpoints.</p>
+		</description>
+		<sheet>
+			<description>You gain a +1 bonus to attack rolls you make with ranged hardpoints.</description>
+		</sheet>
+	</element>
+	<element name="Defender" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENDER">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>While you are piloting an ATUM, that ATUM gains a +1 bonus to its AC.</p>
+		</description>
+		<sheet>
+			<description>While you are piloting an ATUM, that ATUM gains a +1 bonus to its AC.</description>
+		</sheet>
+	</element>
+	<element name="Heavy Hitter" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_HEAVY_HITTER">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>Once per turn when you roll damage for a melee hardpoint attack, you can reroll the hardpoints damage dice and use either total.</p>
+		</description>
+		<sheet>
+			<description>Once per turn when you roll damage for a melee hardpoint attack, you can reroll the hardpoints damage dice and use either total.</description>
+		</sheet>
+	</element>
+	<element name="Quick Strider" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_QUICK_STRIDER">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>When piloting an ATUM with the Bipedal or Quadrupedal mobility type, that ATUM’s speed increases by 10 feet.</p>
+		</description>
+		<sheet>
+			<description>When piloting an ATUM with the Bipedal or Quadrupedal mobility type, that ATUM’s speed increases by 10 feet.</description>
+		</sheet>
+	</element>
+	<element name="Missile Specialist" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_MISSILE_SPECIALIST">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>When you roll a 1 or 2 on a damage die for an attack you make with ranged hardpoint, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The hardpoint must have the missile property for you to gain this benefit.</p>
+		</description>
+		<sheet>
+			<description>When you roll a 1 or 2 on a damage die for an attack you make with ranged hardpoint, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The hardpoint must have the missile property for you to gain this benefit.</description>
+		</sheet>
+	</element>
+	<element name="Plated Combatant" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_PLATED_COMBATANT">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>When piloting an ATUM, that ATUM’s armour plating damage threshold increases by (10).</p>
+		</description>
+		<sheet>
+			<description>When piloting an ATUM, that ATUM’s armour plating damage threshold increases by (10).</description>
+		</sheet>
+	</element>
+	<element name="Ballistics Specialist" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_BALLISTICS_SPECIALIST">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>Once per long rest, you can increase the ammo box value of a ballistic hardpoint you have equipped by 1. The hardpoint retains this bonus for 8 hours, or until it’s operated by any creature other than you.</p>
+		</description>
+		<sheet usage="1/long rest">
+			<description>You can increase the ammo box value of a ballistic hardpoint you have equipped by 1. The hardpoint retains this bonus for 8 hours, or until it’s operated by any creature other than you.</description>
+		</sheet>
+	</element>
+	<element name="Energy Specialist" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_FIGHTINGSTYLE_ENERGY_SPECIALIST">
+		<supports>ATUM Pilot Fighting Style</supports>
+		<description>
+			<p>When you make an attack roll with an energy hardpoint, you can choose to roll an additional d20 and use either result. You can choose to roll the additional die before or after you make the attack roll, but before the outcome of the roll is determined. You regain the use this feature after completing a short rest.</p>
+		</description>
+		<sheet usage="1/short rest">
+			<description>When you make an attack roll with an energy hardpoint, you can choose to roll an additional d20 and use either result. You can choose to roll the additional die before or after you make the attack roll, but before the outcome of the roll is determined.</description>
+		</sheet>
+	</element>
+    
+	
+    <!-- Junker Archetype -->
+    <element name="Junker" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_ATUMPILOT_JUNKER">
+        <supports>ATUM Pilot Type</supports>
+        <description>
+            <p>Junkers see the world as an open oyster, always filled with financial opportunities. Known to some as mechanical merchants, travelling traders and legs for hire, Junkers are well known and, for the most part, well liked in most communities.</p>
+            <p class="indent">If an item requires transport, or an artifact needs recovering, it’s very rare for a Junker to say no - not without at least attempting to negotiate a price worth their time.</p>
+            <p class="indent">Unlike other pilots, who often seek personal thrill or exploration, Junkers often elect for the simpler things in life, be them honest or otherwise. In their eyes, the heavier the coin purse, the greater the success.</p>
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_ROOKIE" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_VETERAN" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_EXPERT" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_MASTER" />
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_ROOKIE" level="1" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_VETERAN" level="3" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_EXPERT" level="4" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_MASTER" level="5" />
+        </rules>
+    </element>
+    <element name="Rookie Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_ROOKIE">
+        <description>
+            <p>Your practise of scouring empty battlefields has given you a knack for finding objects of worth and other noteworthy features hidden in the landscape.</p>
+            <p class="indent">You have advantage on Wisdom (Perception) checks and Intelligence (Investigation) checks to find objects or hidden features.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on Wisdom (Perception) checks and Intelligence (Investigation) checks to find objects or hidden features</description>
+        </sheet>
+    </element>
+    <element name="Veteran Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_VETERAN">
+        <description>
+            <p>Your sharp tongue, persuasive nature and eye for a good deal have made you far better at finding and negotiating better prices for ATUM modules, ammo boxes and fuel.</p>
+            <p class="indent">You gain proficiency with Charisma ability checks you make to barter, sell, or find out information about a particular ATUM, module, ammo box or fuel tank, and your proficiency is doubled when making such checks. In addition, whenever you sell salvage, you can always sell it for at least the common price per lb, regardless of any negative salvage value modifiers.</p>
+        </description>
+        <sheet>
+            <description>Charisma ability checks you make to barter, sell, or find out information about a particular ATUM, module, ammo box or fuel tank have an ability modifier of {{tgmhb-atumpilot-cha-barter}}.</description>
+        </sheet>
+        <rules>
+			<stat name="tgmhb-atumpilot-cha-barter" value="charisma:modifier" />
+			<stat name="tgmhb-atumpilot-cha-barter" value="proficiency" />
+			<stat name="tgmhb-atumpilot-cha-barter" value="proficiency" />
+        </rules>
+    </element>
+    <element name="Expert Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_EXPERT">
+        <description>
+            <p>You know exactly what to salvage and how to do it. Whenever you roll a perception check to search for salvage in a junk pile, you can treat a d20 roll of 10 or lower as 11.</p>
+            <p class="indent"></p>
+        </description>
+        <sheet>
+            <description>Whenever you roll a perception check to search for salvage in a junk pile, you can treat a d20 roll of 10 or lower as 11.</description>
+        </sheet>
+    </element>
+    <element name="Master Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_JUNKER_MASTER">
+        <description>
+            <p>You have managed to successfully miniaturize the ATUM Salvaging Unit into a wearable headgear, which allows you to search for salvage outside of your ATUM. While wearing the headgear, you have darkvision out to 30 feet. If you already have darkvision, its range is instead increased by 30 feet. This feature also applies to your ATUM if you are piloting whilst wearing this special headgear.</p>
+            <p class="indent">In addition, you are more adept at taking apart enemy targets in combat. When making an attack roll against a creature or ATUM, you can target a particular hardpoint or limb you can see within range. The limb can be an arm, wing, tail, or leg. Make the attack roll with disadvantage. On a successful hit, the target takes the attack’s normal damage, and gains a wound marker on that limb. If a limb or hardpoint gains 4 wound markers, it is severed, or becomes inoperable until repaired (DM’s choice). A target loses 1 wound marker for every 10 hit points it is healed by, and loses all wound markers at the end of a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>Your ATUM Salvaging Unit grants you darkvision for up to 30 feet, or increases its range by 30 feet, if you already have darkvision. You can choose to make an attack roll against a creature or ATUM with disadvantage to target a particular hardpoint or limb. On a hit, the target takes the attack’s damage, and gains a wound marker on that limb. If a limb or hardpoint gains 4 wound markers, it is severed, or becomes inoperable.</description>
+        </sheet>
+    </element>
+	
+    <!-- Nomad Archetype -->
+    <element name="Nomad" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_ATUMPILOT_NOMAD">
+        <supports>ATUM Pilot Type</supports>
+        <description>
+            <p>Unlike Junkers, Nomads are often inwardly focused. Driven, intelligent and uncompromising, these pilots make it their life’s work to push the boundaries of exploration, understanding and development of the world around them.</p>
+            <p class="indent">The greatest joy for a Nomad pilot is discovering something new. Sometimes, that can be waking up to see the dawn from a new mountain range. Other times, it’s simply joining up with a travelling group of merchants and learning how best to apply their skills to a new situation.</p>
+            <p class="indent">Whatever they choose to pursue, Nomads always have one thing in common: their ATUM is their home. And whether they choose a life of culture, solitude or society, they will always be happiest when in their pilot seat - making new and exciting modifications to their ever expanding collection of hardpoints.</p>
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_ROOKIE" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_VETERAN" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_EXPERT" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_MASTER" />
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_ROOKIE" level="1" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_VETERAN" level="3" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_EXPERT" level="4" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_MASTER" level="5" />
+        </rules>
+    </element>
+    <element name="Rookie Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_ROOKIE">
+        <description>
+            <p>You are able to manage your fuel stores more efficiently. When journeying for more than a day, your engine’s fuel consumption speed is decreased by 1. For example, if you had a poor grade engine and travelled for a day, its fuel consumption speed would decrease from 3 days per fuel tank to 4 days.</p>
+        </description>
+        <sheet>
+            <description>When journeying for more than a day, your engine’s fuel consumption speed is decreased by 1.</description>
+        </sheet>
+    </element>
+    <element name="Veteran Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_VETERAN">
+        <description>
+            <p>Spending so much time travelling with ATUMs has made you much more adept when navigating dangerous terrain, and fending off natural predators in the wild.</p>
+            <p class="indent">You have proficiency with Wisdom (Survival) and Intelligence (History) checks to navigating dangerous terrain, recall information about any creature of size large or greater within your current local region, or to figure out directions to the nearest settlement with an ATUM workshop, and the safest or fastest route to get there. In addition, your proficiency bonus is doubled when making the aforementioned checks.</p>
+        </description>
+        <sheet>
+            <description>Your Wisdom (Survival) ability modifier is {{tgmhb-atumpilot-nomad-travel:survival}} and Intelligence (History) ability modifier is {{tgmhb-atumpilot-nomad-travel:history}} for ability checks regarding navigating dangerous terrain, recall information about any creature of size large or greater within your current local region, or to figure out directions to the nearest settlement with an ATUM workshop, and the safest or fastest route to get there.</description>
+        </sheet>
+        <rules>
+			<stat name="tgmhb-atumpilot-nomad-travel:survival" value="wisdom:modifier" />
+			<stat name="tgmhb-atumpilot-nomad-travel:survival" value="proficiency" />
+			<stat name="tgmhb-atumpilot-nomad-travel:survival" value="proficiency" />
+			<stat name="tgmhb-atumpilot-nomad-travel:history" value="intelligence:modifier" />
+			<stat name="tgmhb-atumpilot-nomad-travel:history" value="proficiency" />
+			<stat name="tgmhb-atumpilot-nomad-travel:history" value="proficiency" />
+        </rules>
+    </element>
+    <element name="Expert Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_EXPERT">
+        <description>
+            <p>Keeping an ATUM moving has always been your top priority. Whenever you or another crew member performs a patch job on an ATUM you are piloting, that ATUM doesn’t need to be stationary.</p>
+        </description>
+        <sheet>
+            <description>Whenever you or another crew member performs a patch job on an ATUM you are piloting, that ATUM doesn’t need to be stationary.</description>
+        </sheet>
+    </element>
+    <element name="Master Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_NOMAD_MASTER">
+        <description>
+            <p>To further aid you in your travels, you have created (magically or otherwise), a basic artificial intelligence, which you have installed into your ATUM via a small mechanical “brain”.</p>
+            <p class="indent">The A.I. understands your spoken commands, but cannot speak. When you are not in the pilot seat, it will allow the ATUM to operate autonomously and pilot in your stead, obeying any command you give it to the best of its ability (no action required by you). It rolls it’s own initiative during combat and acts on its own.</p>
+            <p class="indent">When acting autonomously, The A.I. grants the ATUM a Wisdom, Intelligence, Charisma and Dexterity score of 10, and a proficiency bonus of +4. The A.I. functions as simply another piece of the ATUM’s hardware, but has a personality unique to it, having an alignment similar to yours. The AI brain can’t be targeted seperately by attacks outside of the ATUM.</p>
+            <p class="indent">Any attack that would target the AI or its brain will instead target the ATUM as a whole, unless originating from inside the cockpit. The brain is a tiny object with an AC of 15, 30 hit points and is resistant to all damage. If the ATUM is destroyed, the A.I. is destroyed as well. You can create a new A.I. by spending 48 hours over the course of 1 week in a workshop and 2,000gp on materials. </p>
+            <p class="indent">The ATUM can follow simple or complex commands. For example, you could command it to guard a hallway, navigate from one location to another while you sleep inside the cockpit, pick you up and place you in the pilot’s seat, fight beside you in combat, or even help construct a building, provided it was equipped with appropriate hardpoints.</p>
+        </description>
+        <sheet>
+            <description>You can create and install an A.I. into your ATUM. It is a tiny object with 30 hit points, an AC of 15, and is resistant to all damage. If the ATUM is destroyed, the A.I. is destroyed as well. You can create a new A.I. by spending 48 hours over the course of 1 week in a workshop and 2,000gp on materials.</description>
+        </sheet>
+    </element>
+	
+    <!-- Grey Wolf Archetype -->
+    <element name="Grey Wolf" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_ATUMPILOT_GREYWOLF">
+        <supports>ATUM Pilot Type</supports>
+        <description>
+            <p>Born from a life of necessity, or one of violence and vengeance, a Grey Wolf is a fearsome opponent to face, both on and off the field of battle. Grey Wolves view ATUMs as a means to an end, often putting themselves and their constructs through great risk and danger in battle if it means granting them a cleaner kill. Grey Wolves fear little, and the trust in their ATUM skills is unmatched for good reason.</p>
+            <p class="indent">Grey Wolves are renown for their fierce loyalty when fighting in groups, and their savage ferocity when fighting alone. Many of these pilots thrive in the midst of battle; putting their skills to use as mercenaries for hire, hunting vast monsters or evasive bounties.</p>
+            <p class="indent">However, it is not the money that drives many pilots to a life of a Grey Wolf, but the thrill of the hunt, and the taste of victory at the sight of fleeing, defeated foes.</p>
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_ROOKIE" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_VETERAN" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_EXPERT" />
+            <div element="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_MASTER" />
+        </description>
+        <sheet display="false"/>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_ROOKIE" level="1" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_VETERAN" level="3" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_EXPERT" level="4" />
+            <grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_MASTER" level="5" />
+        </rules>
+    </element>
+    <element name="Rookie Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_ROOKIE">
+        <description>
+            <p>You have spent many a battle under heavy gunfire, and know how to calm your nerves in tense situations. You have advantage on saving throws against being frightened or intimidated.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against being frightened or intimidated</description>
+        </sheet>
+    </element>
+    <element name="Veteran Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_VETERAN">
+        <description>
+            <p>You have become a veteran combatant, able to keep your cool under the most pressuring of situations, while inflicting incredible damage with your weapons of choice.</p>
+            <p class="indent">While piloting your ATUM, you are immune to being charmed or frightened. If you were charmed or frightened before mounting your ATUM, the effect is supressed until you dismount.</p>
+            <p class="indent">In addition, you have advantage on initiative rolls and, once per short rest, if your ATUM would be struck by a critical hit, you can use your reaction to maneuver the ATUM to a more advantageous position, preventing any creatures inside the ATUM from taking the critical hit damage. The ATUM still takes the critical hit damage as normal.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on initiative rolls. While piloting your ATUM, you are immune to being charmed or frightened. Once per short rest, you can use your reaction to prevent any creatures inside the ATUM from taking the critical hit damage, if your ATUM would be struck by a critical hit.</description>
+        </sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+    </element>
+    <element name="Expert Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_EXPERT">
+        <description>
+            <p>You have learnt to hit with a striking, stunning force.</p>
+            <p class="indent">When you successfully hit a target with an ATUM hardpoint, you can force it to make a Strength saving throw.</p>
+            <p class="indent">On a success, the target staggers under the force of the blow and is knocked prone. On a failed save, it is also stunned until the end of your next turn. If you target an ATUM with this feature and it fails the save, the 1d3 random creatures inside the ATUM are stunned for the duration instead. You can use this feature 3 times per long rest.</p>
+        </description>
+		<sheet usage="3/long rest">
+            <description>When you hit a target with an ATUM hardpoint, you can force it to make a Strength saving throw. On a success, the target is knocked prone. On a failed save, it is also stunned until the end of your next turn. If you target an ATUM with this feature and it fails the save, 1d3 random creatures inside it are stunned instead.</description>
+        </sheet>
+    </element>
+    <element name="Master Pilot" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ATUMPILOT_GREYWOLF_MASTER">
+        <description>
+            <p>You have become a master of combat, revelling in the destruction and terror you inflict on your enemies. During a long rest, you can outfit your ATUM with a fearsome display of trophies, kill markings and sigils, ranging from intimidating spikes of scrap welded onto the chassis, to inspirational high-flying banners or a flowing cape displaying your insignia, imitating the look of a knightly order.</p>
+            <p class="indent">Choose one of the following appearances for your ATUM below. This appearance lasts until you change it for another one, or remove it during a long rest, and grant a special feature when you pilot your ATUM:</p>
+            <p class="indent"><b><i>Marauder.</i></b> An enemy creature or ATUM that starts its turn within 20-feet of you and can see your ATUM’s appearance must succeed on a wisdom saving throw versus your ATUM save DC. On a failed save, until the end of your next turn, attacks that target make against you have disadvantage, and any damage it deals to your ATUM is reduced by 3. This has no effect on a creature immune to being charmed. In addition, you score a critical hit against that target on the roll of a 19 or 20. If another feature already grants you this increase, such as a fighter’s improved critical, it instead increases this bonus by 1, to a maximum of 17-20.</p>
+            <p class="indent"><b><i>Commander.</i></b> A friendly creature that is within 30 feet of your ATUM and can see your banners cannot be frightened. If it is already frightened, the effect is suppressed while the creature remains within this range. In addition, if you attack a target, and a friendly creature or ATUM attacks the same target as you before the start of your next turn, it can roll a d4 and add the number rolled to the attack and damage roll, provided it is within 30 feet of you and can see your banners.</p>
+            <p class="indent"><b><i>Protector.</i></b> You eminate a defensive aura that radiates out from your ATUM in a 15-foot sphere. Friendly creatures and ATUMs in this radius gain a +2 bonus to their AC. This AC bonus is lost as soon as the ally leaves your aura.</p>
+        </description>
+        <sheet>
+            <description>During a long rest, you can outfit your ATUM with one fearsome or inspirational display grating the following benefits: 
+			(Marauder) An enemy target that starts its turn within 20-feet of you must succeed on a wisdom saving throw versus your ATUM save DC, unless it is immune to being charmed. On a failed save, until the end of your next turn, attacks that target make against you have disadvantage, and any damage it deals to your ATUM is reduced by 3. In addition, you score a critical hit against that target on the roll of a 19 or 20. 
+			(Commander) A friendly creature within 30 feet of your ATUM cannot be frightened. In addition, if you attack a target, and a friendly creature or ATUM attacks the same target as you before the start of your next turn, it can roll a d4 and add the number rolled to the attack and damage roll, provided it is within 30 feet of you. 
+			(Protector) Friendly creatures and ATUMs in a 15-foot radius gain a +2 bonus to their AC. 
+			</description>
+        </sheet>
+    </element>
+	
+	
+</elements>

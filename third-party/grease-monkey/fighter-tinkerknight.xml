@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Tinker Knight</name>
+        <update version="0.0.1">
+            <file name="fighter-tinkerknight.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/fighter-tinkerknight.xml" />
+        </update>
+	</info>
+	
+	<element name="Tinker Knight" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FIGHTER_TINKERKNIGHT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>A Tinker Knight excels at the creation and modification of armour and weaponry. Usually born or raised amongst dwarves or gnome tinkerers originating from the continent of Khorvaire, Tinker Knights are equally trained in the art of offensive and defensive combat. These warriors are often employed by wealthy nobles for protection, or brought along to political meetings as a statement of power. Drawn in by the lure of ancient artifacts or magical technology, a Tinker Knight will often embark on vast journeys to discover such a prize; using their impressive array of technical skills and mechanical knowledge to barter passage on ships to pastures new. Some return many years later, their armor gleaming with enhanced magical tech, while others never look back; their gaze always drawn to the next mysterious object lurking in a forgotten tomb, waiting to be discovered.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_BONUS_PROFICIENCY" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_AVID_TINKERER" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_TRAINED_SPECIALIST" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ARTIFACT_HUNTER" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ADVANCED_TINKERER" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_REACTIVE_MODIFICATIONS" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_MASTER_TINKERER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_BONUS_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_AVID_TINKERER" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_TRAINED_SPECIALIST" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ARTIFACT_HUNTER" level="7" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ADVANCED_TINKERER" level="10" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_REACTIVE_MODIFICATIONS" level="15" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_MASTER_TINKERER" level="18" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiency" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_BONUS_PROFICIENCY">
+		<description>
+			<p>When you choose this archetype at 3rd level, you gain proficiency with tinker’s tools, and your proficiency bonus is doubled for any check you make with them.</p>
+		</description>
+		<sheet alt="Proficiency with Tinker’s Tools">
+			<description>Proficiency bonus is doubled for any checks made with them.</description>
+		</sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+        </rules>
+	</element>
+	<element name="Avid Tinkerer" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_AVID_TINKERER">
+		<description>
+			<p>Starting at 3rd level, your training with modifications becomes apparent. As part of a long rest, you can spend 2 hours making modifications to one nonmagical weapon or piece of armour with which you are proficient. Choose one of the modifications from the appropriate table below. For the next 8 hours, the object gains the chosen modification and its properties.</p>
+            <h5>Modification Table (Weapons)</h5>
+            <table>
+                <thead>
+                    <tr><td>Modification</td><td>Properties</td></tr>
+                </thead>
+                <tr><td>Damage</td><td>The weapon gains a +1 to damage rolls</td></tr>
+                <tr><td>Accuracy</td><td>The weapon gains a +1 to attack rolls</td></tr>
+                <tr><td>Range</td><td>The weapon’s short and long range increases by 30 feet. If this weapon is a melee weapon, it instead gains the <i>thrown</i> property (<i>range 20/30</i>)</td></tr>
+                <tr><td>Weight</td><td>If the weapon has the <i>heavy</i> property, it loses it. If the weapon does not have the <i>heavy</i> property, it instead gains the <i>light</i> property.</td></tr>
+            </table>
+            <h5>Modification Table (Armour)</h5>
+            <table>
+                <thead>
+                    <tr><td>Modification</td><td>Properties</td></tr>
+                </thead>
+                <tr><td>Strengthened</td><td>The armor gains +1 AC</td></tr>
+                <tr><td>Lightened</td><td>The armor no longer imposes disadvantage on stealth checks, and has -1 AC</td></tr>
+                <tr><td>Reinforced</td><td>The armor grants resistance to nonmagical bludgeoning, piercing or slashing damage</td></tr>
+            </table>
+		</description>
+		<sheet>
+			<description>Spend 2 hours of a long rest to make a modification to one nonmagical weapon or piece of armour with which you are proficient.</description>
+		</sheet>
+	</element>
+	<element name="Trained Specialist" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_TRAINED_SPECIALIST">
+		<description>
+			<p>At 3rd level, you complete work on a new special equipment design which is personalized to your campaign theme. For example, a weapon could be a steampunk greathammer or magically-powered rocket launcher, while a piece of armour could be a steam-powered mechanized suit or nano-tech second skin. Work with your DM to find a weapon or armor design that bests suits your character and setting.</p>
+			<p class="indent">The special item adopts the statistics of the closest object it resembles; you become proficient with it, and it gains the <i>Specialist</i> property, if it didn’t have it already. You can modify the appearance of your special item whenever you gain a level in this class, changing its statistics to match the new design accordingly.</p>
+			<p class="indent">Your special item gains additional features as you reach higher levels in this class: If the item is a weapon, it becomes magical and gains a +2 bonus to attack and damage rolls at 10th, increasing to a +3 bonus at 15th. If the item is a piece of armour, it instead grants a +1 bonus to AC at 10th, and becomes a magical item with a +2 to AC at 15th.</p>
+		</description>
+		<sheet>
+			<description>On level-up, you can change your Special Item.</description>
+			<description level="10">On level-up, you can change your Special Item. A weapon becomes magical and gains a +{{tgmhb-fighter-trained-spec:roll}} bonus to attack and damage rolls. Armour grants a +{{tgmhb-fighter-trained-spec:ac}} bonus to AC.</description>
+			<description level="15">On level-up, you can change appearance of your Special Item. A weapon becomes magical and gains a +{{tgmhb-fighter-trained-spec:roll}} bonus to attack and damage rolls. Armour becomes magical with a +{{tgmhb-fighter-trained-spec:ac}} bonus to AC.</description>
+		</sheet>
+		<rules>
+			<stat name="tgmhb-fighter-trained-spec:roll" value="2" level="10" />
+			<stat name="tgmhb-fighter-trained-spec:roll" value="1" level="15" />
+			<stat name="tgmhb-fighter-trained-spec:ac" value="1" level="10" />
+			<stat name="tgmhb-fighter-trained-spec:ac" value="1" level="15" />
+		</rules>
+	</element>
+	<element name="Artifact Hunter" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ARTIFACT_HUNTER">
+		<description>
+			<p>Starting at 7th level, you have advantage on Intelligence (History) checks to recall information about magical items or artifacts, as well as on Wisdom (Survival) checks to track a creature you know to be in possession of one, or the artifact’s last known location.</p>
+		</description>
+		<sheet>
+			<description>Advantage on Intelligence (History) and Wisdom (Survival) checks related to a known artifact.</description>
+		</sheet>
+	</element>
+	<element name="Advanced Tinkerer" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_ADVANCED_TINKERER">
+		<description>
+			<p>At 10th level, you can apply modifications to two objects, instead of one.</p>
+		</description>
+		<sheet>
+			<description>You can apply modifications to two objects, instead of one.</description>
+		</sheet>
+	</element>
+	<element name="Reactive Modification" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_REACTIVE_MODIFICATIONS">
+		<description>
+			<p>Starting a 15th level, once when a creature wearing a piece of armor you modified takes damage, it can spend a reaction to gain resistance to that damage type for 1 hour.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>Once when a creature wearing armor you modified takes damage, it can spend a reaction to gain resistance to that damage type for 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Master Tinkerer" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_FIGHTER_TINKERKNIGHT_MASTER_TINKERER">
+		<description>
+			<p>At 18th level, you can apply modifications to three objects, instead of two.</p>
+			<p class="indent">In addition, you can attune a magical object to your special item as part of a long rest, which lasts until you attune another object in its place. While attuned in this way, the magical object doesn’t count towards the limit of items you can have attuned, and is treated as part of your special item, which moulds its appearance to represent its new magical properties accordingly.</p>
+		</description>
+		<sheet>
+			<description>You can apply modifications to three objects, instead of two. You can attune a magical object to your Special Item.</description>
+		</sheet>
+	</element>
+	
+</elements>

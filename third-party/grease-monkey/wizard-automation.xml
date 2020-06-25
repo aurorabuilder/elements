@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>School of Automation</name>
+		<update version="0.0.1">
+			<file name="wizard-automation.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/wizard-automation.xml" />
+		</update>
+	</info>
+	
+	<element name="School of Automation" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_WIZARD_AUTOMATION">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Students of the School of Automation explore the equilibrium between all magical elements; enabling them to perceive and understand the weave of raw magic down to its purest and simplest form. Some automancers use this knowledge to further magical exploration; blending the lines between science and the mystic arts. Others find employment in military forces or as part of a mercenary group; serving as an adaptable defense against spells or elemental effects that would otherwise devastate the battlefield. Automancers are considered some of the most dangerous and useful spellcasters many schools have to offer, able to manipulate the spells of enemy casters to serve their own needs and magically transform one elemental type to another. This blend of spellcraft partners well with evokers and transmuters, and it is not uncommon to see a trio of such wizards combining their talents when adventuring together.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_AUTOMATION_SAVANT" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_TABLE" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_ENHANCED_SPELLWEAVING" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_EMPOWERED_AUTOMATION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_MASTERY" />
+		</description>
+		<sheet>
+			<description>War mages act fast in battle, using their spells to seize tactical control of a situation.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_AUTOMATION_SAVANT" level="2"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING" level="2"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_ENHANCED_SPELLWEAVING" level="6"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_EMPOWERED_AUTOMATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_MASTERY" level="14"/>
+		</rules>
+	</element>
+	<element name="Automation Savant" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_AUTOMATION_SAVANT">
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy an automation spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy an automation spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Spellweaving" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING">
+		<description>
+			<p>At 2nd level, you learn the complex art of spellweaving: the blueprint for drawing raw magic from the weave.</p>
+			<p class="indent">When you or a creature you can see within 60 feet of you casts a damage-dealing spell with an instantaneous duration, you can use your reaction to spellweave that spell, altering it’s properties in a myriad of different ways. You can choose a number of properties to change from the spellweave table below equal to your intelligence modifier. The target spell replaces its original property with the new one chosen by you. For example, you could change the range of a Fireball to a range of self, causing the spell to explode on top of the caster, change its damage type from fire damage to lightning, or even change its saving throw from Dexterity to Wisdom.</p>
+			<p class="indent">Spellweaving is a taxing process, both on the mind and body. To successfully perform a spellweave, you must add together the cost of all the properties you wish to change, and expend a number of spell slots equal to the spellweave’s total cost. For example, if the spellweave has a cost of 4, you could expend one 4th-level slot, two 2nd-level slots, or one 3rd-level and one 1st-level slot.</p>
+			<p class="indent"><b>You cannot create a spellweave with a total cost higher than double your highest available spell-slot.</b></p>
+			<p class="indent">If you perform a spellweave on an unwilling spellcaster, that spellcaster can use their reaction to make a spellcasting check using their spellcasting ability modifier against your spell save DC. On a success, the spellweave fails, and the spell is cast as normal.</p>
+		</description>
+		<sheet>
+			<description>You can spellweave a damage-dealing spell with an instantaneous duration, cast by you or a creature you can see within 60 feet. An unwilling spellcaster can use their reaction to make a spellcasting check against your spell save DC. On a success, the spellweave fails.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_TABLE" level="2"/>
+		</rules>
+	</element>
+	<element name="Spellweave Table" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_TABLE">
+		<description>
+			<table>
+				<tr><td><b>Damage Type</b></td><td><b>Cost</b></td><td><b>Ability Score</b></td><td><b>Cost</b></td><td><b>AoE Type</b></td><td><b>Cost</b></td></tr>
+				<tr><td>Acid</td><td>1</td><td>Str</td><td>1</td><td>Cone</td><td>1</td></tr>
+				<tr><td>Cold</td><td>1</td><td>Dex</td><td>1</td><td>Cube</td><td>1</td></tr>
+				<tr><td>Fire</td><td>1</td><td>Con</td><td>1</td><td>Cylinder</td><td>2</td></tr>
+				<tr><td>Lightning</td><td>1</td><td>Int</td><td>3</td><td>Line</td><td>1</td></tr>
+				<tr><td>Poison</td><td>1</td><td>Wis</td><td>2</td><td>Sphere</td><td>2</td></tr>
+				<tr><td>Thunder</td><td>1</td><td>Char</td><td>2</td><td>-</td><td>-</td></tr>
+				<tr><td>Force</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+				<tr><td><b>Spell Radius/AoE</b></td><td><b>Cost</b></td><td><b>Line/Cylinder Length</b></td><td><b>Cost</b></td><td><b>Spell Range</b></td><td><b>Cost</b></td></tr>
+				<tr><td>5ft</td><td>1</td><td>10ft</td><td>1</td><td>Self</td><td>1</td></tr>
+				<tr><td>10ft</td><td>2</td><td>30ft</td><td>2</td><td>5ft</td><td>1</td></tr>
+				<tr><td>15ft</td><td>3</td><td>60ft</td><td>3</td><td>15ft</td><td>2</td></tr>
+				<tr><td>20ft</td><td>4</td><td>90ft</td><td>4</td><td>30ft</td><td>3</td></tr>
+				<tr><td>30ft</td><td>5</td><td>120ft</td><td>5</td><td>60ft</td><td>4</td></tr>
+				<tr><td>40ft</td><td>6</td><td>150ft</td><td>6</td><td>90ft</td><td>5</td></tr>
+				<tr><td>50ft</td><td>7</td><td>200ft</td><td>7</td><td>120ft</td><td>6</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You can choose {{intelligence:modifier}} properties to change from the spellweave table. Add their cost together, and expend an equal number of spell slots.</description>
+		</sheet>
+	</element>
+	<element name="Enhanced Spellweaving" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_ENHANCED_SPELLWEAVING">
+		<description>
+			<p>Beginning at 6th level, once per long rest when you perform a spellweave, you can also attempt to siphon off a small portion of that spell’s raw essence.</p>
+			<p class="indent">Make an Intelligence (Arcana) check against the spell’s save DC. On a success, you regain a number of spell slots with a combined level equal to half the spell’s level, rounded down. For example, if you attempt to spellweave a 3rd-level Burning Hands spell, you could also regain one expended 1st-level spell slot, regardless of whether the spellweave is successful or not.</p>
+		</description>
+		<sheet usage="1/long rest">
+			<description>When you perform a spellweave, make an Intelligence (Arcana) check against the spell’s save DC. On a success, you regain a number of spell slots with a combined level equal to half the spell’s level, rounded down.</description>
+		</sheet>
+	</element>
+	<element name="Empowered Automation" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_EMPOWERED_AUTOMATION">
+		<description>
+			<p>Starting at 10th level, if an automation spell would require you to target a pile of scrap or debris, you can choose to conjure the amount of scrap required directly from the plane of Mechanus instead. If the spell would manipulate this scrap in some way permanently, it instead remains for 10 minutes before vanishing.</p>
+		</description>
+		<sheet>
+			<description>If an automation spell would require you to target a pile of scrap or debris, you can choose to conjure the amount of scrap required directly from the plane of Mechanus instead.</description>
+		</sheet>
+	</element>
+	<element name="Spellweaving Mastery" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WIZARD_AUTOMATION_SPELLWEAVING_MASTERY">
+		<description>
+			<p>At 14th level, you can perform a spellweave against an innate elemental or magical effect, such as a dragon’s breath weapon or a mindflayer’s mind blast.</p>
+			<p class="indent">Instead of making a spellcasting check, an unwilling creature can use its reaction to force you to make an Intelligence saving throw versus the target effect’s DC. On a failure, the spellweave fails, and the target effect continues as normal.</p>
+			<p class="indent">In addition, once per long rest, you can use your Enhanced Spellweaving feature to siphon away part of that innate effect. Make an Intelligence (Arcana) check against the effect’s DC. On a success, you regain a number of spell slots that have a combined level equal to the effect’s save DC, divided by 3, rounded down. For example, if you chose to siphon power from a dragon’s DC 21 breath weapon, you could regain up to 7 levels worth of spell slots. You could recover one 7th level slot, or two 3rd-level slots and one 1st-level slot.</p>
+		</description>
+		<sheet>
+			<description>You can perform a spellweave against an innate elemental or magical effect. An unwilling creature can use its reaction to force you to succeed on an Intelligence saving throw versus the target effect’s DC, or the spellweave fails. Once per long rest, you can use your Enhanced Spellweaving feature to siphon away part of that innate effect.</description>
+		</sheet>
+	</element>
+	
+</elements>

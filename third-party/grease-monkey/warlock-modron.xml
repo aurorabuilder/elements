@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Modron</name>
+		<update version="0.0.1">
+			<file name="warlock-modron.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/warlock-modron.xml" />
+		</update>
+	</info>
+	
+	<element name="Modron" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_WARLOCK_MODRON">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your patron is one of the many modrons that inhabit Mechanus. Your binding pact with such a mysterious creature transforms your soul into pure, mechanical energy, allowing you to commune with objects and percieve the interworkings of the machine with absolute clarity. Being connected to such a deity can cause changes in your behaviour and beliefs. You might find yourself driven to destroy the demons of chaos and enemies of order, or developing a fascination with the finer details found in smithing and techological craftsmanship.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_EXPANDED_SPELL_LIST" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_ENERGIZED_SOUL" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_MECHANICAL_SOUL" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_PROTECTION_FROM_CHAOS" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_BLINDING_SOULFIRE" />
+		</description>
+		<sheet>
+			<description>Your patron is a powerful being of the Upper Planes.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_EXPANDED_SPELL_LIST" level="1"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_ENERGIZED_SOUL" level="1"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_MECHANICAL_SOUL" level="6"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_PROTECTION_FROM_CHAOS" level="10"/>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_BLINDING_SOULFIRE" level="14"/>
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_EXPANDED_SPELL_LIST">
+		<supports>Warlock</supports>
+		<description>
+			<p>The Primus lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5>PRIMUS EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>Prevention, Reconstruct</em></td></tr>
+				<tr><td>2nd</td><td><em>Fuse, Prosthesis</em></td></tr>
+				<tr><td>3rd</td><td><em>Metal Meld, Requisition Modrons</em></td></tr>
+				<tr><td>4th</td><td><em>Fabricate, Shape Metal</em></td></tr>
+				<tr><td>5th</td><td><em>Fabricate Clockworks, Reboot</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_TGMHB_SPELL_PREVENTION</extend>
+			<extend>ID_TGMHB_SPELL_RECONSTRUCT</extend>
+			<extend>ID_TGMHB_SPELL_FUSE</extend>
+			<extend>ID_TGMHB_SPELL_PROSTHESIS</extend>
+			<extend>ID_TGMHB_SPELL_METAL_MELD</extend>
+			<extend>ID_TGMHB_SPELL_REQUISITION_MODRONS</extend>
+			<extend>ID_PHB_SPELL_FABRICATE</extend>
+			<extend>ID_TGMHB_SPELL_SHAPE_METAL</extend>
+			<extend>ID_TGMHB_SPELL_FABRICATE_CLOCKWORKS</extend>
+			<extend>ID_TGMHB_SPELL_REBOOT</extend>
+		</spellcasting>
+	</element>
+	<element name="Energized Soul" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_ENERGIZED_SOUL">
+		<description>
+			<p>At 1st level, your soul burns with the pure energies of Primus. You can innately cast the <i>light of the primus</i> cantrip at will, without requiring verbal or somatic components.</p>
+			<p class="indent">In addition, you can choose to have the spell target yourself instead of an object. If casting the spell in this way, instead of hurling an object, the explosion of light centers on you, forcing each creature of your choice within range to make the saving throw.</p>
+		</description>
+		<sheet>
+			<description>You can cast the light of the primus cantrip at will, without verbal or somatic components. You can choose to have the spell target yourself, causing the explosion of light to center on you, forcing each creature of your choice within range to make the saving throw</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_TGMHB_SPELL_LIGHT_OF_THE_PRIMUS" level="1" spellcasting="Warlock" />
+		</rules>
+	</element>
+	<element name="Mechanical Soul" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_MECHANICAL_SOUL">
+		<description>
+			<p>At 6th level, you have learned how to project a portion of your soul into mechanical objects and inanimate constructs.</p>
+			<p class="indent">As an action, you can touch an inanimate object or construct made of metal and experience any events that have occurred within 20 feet of it within the last 24 hours.</p>
+			<p class="indent">These events you experience project around the object or construct for the next ten minutes, appearing as a ghostly, spectral recording only you can see. You see and hear the events as if you were there, but cannot use your other senses. You can pause the recording, but cannot passively speed it up or slow it down. You can, however, specify a particular time of day, such as “early morning” or “9:24pm”, or say a phrase such as “go backwards two minutes” or “forward ten minutes”, and the recording will fast-forward or rewind to that point before playing as normal.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/long rest">
+			<description>You can touch an inanimate object or construct made of metal and experience any events that have occurred within 20 feet of it within the last 24 hours.</description>
+		</sheet>
+	</element>
+	<element name="Protection From Chaos" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_PROTECTION_FROM_CHAOS">
+		<description>
+			<p>Starting at 10th level, whenever you cast the <i>light of the primus</i> cantrip on yourself, you become immune to the charmed and frightened conditions, and have advantage on saving throws against mind-altering effects, such as <i>tasha’s hideous laughter</i> or an Umber Hulk’s confusing gaze. </p>
+		</description>
+		<sheet>
+			<description>When you cast the light of the primus cantrip on yourself, you become immune to the charmed and frightened conditions, and have advantage on saving throws against mind-altering effects.</description>
+		</sheet>
+	</element>
+	<element name="Blinding Soulfire" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_WARLOCK_MODRON_BLINDING_SOULFIRE">
+		<description>
+			<p>Starting at 14th level, when you hit a creature with an attack while under the effects of your Energized Soul feature, you can transpose part of your soul into the target creature for a short time.</p>
+			<p class="indent">If the target is not a construct, it suddenly and violently emits a torrent of pure energy, taking 10d6 radiant damage and becoming blinded and incapacitated for 1 minute as your energized soul burns it from the inside out. In addition, the target eminates bright light out to 10 feet, and dim light for an additional 20 feet for the duration of the blindness.</p>
+			<p class="indent">The target can make a Constitution saving throw at the end of each of its turns, ending the effects on itself on a success.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest. </p>
+		</description>
+		<sheet usage="1/long rest">
+			<description>When you hit a creature (that is not a construct) with an attack while under the effects of your Energized Soul feature, you can have the target take 10d6 radiant damage and becoming blinded and incapacitated for 1 minute, while eminating bright light out to 10 feet, and dim light for an additional 20 feet for the duration of the blindness. The target can make a Constitution saving throw at the end of each of its turns, ending the effects on itself on a success.</description>
+		</sheet>
+	</element>
+	
+	<!-- Eldritch Invocations -->
+	<element name="Construct Communion" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ELDRITCH_INVOCATION_CONSTRUCT_COMMUNION">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level</prerequisite>
+		<requirements>[level:5]</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level</em></p>
+			<p>You can understand and commune with all constructs, regardless of whether they speak a language or not.</p>
+		</description>
+		<sheet>
+			<description>You can understand and commune with all constructs.</description>
+		</sheet>
+	</element>
+	<element name="Otherworldly Protection" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ELDRITCH_INVOCATION_OTHERWORLDLY_PROTECTION">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>You can cast <i>death ward</i> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DEATH_WARD" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast death ward once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" />
+		</rules>
+	</element>
+	<element name="Iron Warden" type="Class Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_CLASS_FEATURE_ELDRITCH_INVOCATION_IRON_WARDEN">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>15th level</prerequisite>
+		<requirements>[level:15]</requirements>
+		<description>
+			<p><em>Prerequisite: 15th level</em></p>
+			<p>You can use your action to gain resistance to bludgeoning, piercing and slashing damage from nonmagical weapons for 1 hour. Once you use this Invocation, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can gain resistance to bludgeoning, piercing and slashing damage from nonmagical weapons for 1 hour.</description>
+		</sheet>
+	</element>
+
+</elements>

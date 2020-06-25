@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Greasemonkey</name>
+		<description>Greasemonkey Background</description>
+        <update version="0.0.1">
+			<file name="background-greasemonkey.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/background-greasemonkey.xml" />
+		</update>
+	</info>
+
+	<element name="Greasemonkey" type="Background" source="The Greasemonkey's Handbook" id="ID_TGMHB_BACKGROUND_GREASEMONKEY">
+		<description>
+			<p>You grew up in workshops; maintaining, supporting and outfitting ATUMs to earn a living. You’ve witnessed the creation of colossal, military class ATUMs, endured chilling winds and snow while repairing light civilian transports trapped atop rural mountains, and spent weeks at a time working in quiet solitude, with only your tools for company.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Persuasion</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (All), Tinker’s Tools.</li>
+				<li><strong>Equipment:</strong> A set of mechanic’s overalls, a belt pouch containing 5gp, and a modified all-in-one survival toolbox; complete with a simple lamp, communication radio, camping stove, miniature fuel tank and multitude of repair tools for ATUM maintenance.</li>
+			</ul>
+			<div element="ID_TGMHB_BACKGROUND_FEATURE_HAPPY_TO_HELP" />
+		</description>
+		<setters>
+			<set name="short">Deception, Persuasion, Vehicles (All), Tinker’s Tools</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_ALL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			<grant type="Background Feature" id="ID_TGMHB_BACKGROUND_FEATURE_HAPPY_TO_HELP" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">When I set my mind on something, it’s hard to change it.</item>
+				<item id="2">I love tinkering with new machinery and ATUM designs.</item>
+				<item id="3">Adventuring should always be a profitable venture for me.</item>
+				<item id="4">I’m well known for my work, and love to talk about it.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Determination. My talents are a gift not to be be wasted. (Any)</item>
+				<item id="2">Fairness. Just because I can, doesn’t mean I should. (Good)</item>
+				<item id="3">Greed. What can I say? I love tech, and I love money. (Evil)</item>
+				<item id="4">Adventure. I’m travelling for the experiences and the memories, both the good ones and the bad. (Neutral)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My workshop is my life. I’d be nothing without it..</item>
+				<item id="2">I was run out of town by a rival business, and I want revenge.</item>
+				<item id="3">I will be the greatest ATUM pilot this world has ever seen.</item>
+				<item id="4">A wealthy noble has given me funding for the opportunity to lead a better life, and I shouldn’t waste that.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I enjoy find the thrill of the hunt extremely addictive.</item>
+				<item id="2">ATUMs are giant, deadly, killing machines. I often forget that.</item>
+				<item id="3">I’m indebted to someone who freed me from prison. One day I know they’ll expect me to repay their generous ‘favour’.</item>
+				<item id="4">Given the option, I’m much more likely to flee and leave the fighting to my ‘allies’.</item>
+			</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Happy to Help" type="Background Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_BACKGROUND_FEATURE_HAPPY_TO_HELP">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You are a talented mechanic, and can offer to help repair something for those in need in exchange for information or a place for you and your companions to stay for the night. Often this can involve fixing a leaking sink in a tavern, or repairing an ATUM that has broken down on the roadside. When strangers recognize you in a town where you performed a particularly helpful good deed, they typically take a liking to you.</p>
+		</description>
+		<sheet alt="Happy to Help" />
+	</element>
+</elements>

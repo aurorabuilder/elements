@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Hijacker</name>
+        <update version="0.0.1">
+            <file name="rogue-hijacker.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/rogue-hijacker.xml" />
+        </update>
+	</info>
+
+	<element name="Hijacker" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_ROGUE_HIJACKER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>As a Hijacker, you excel at commandeering ATUMs, constructs and even other creatures with ease. Using your exceptional intelligence, wit and a selection of specialist equipment, you are capable of moving silently while quietly taking control over your enemies, sending them to wreak havoc in your stead. Many Hijackers find themselves attached to mechanized military detachments or hired by ATUM pilots; both to protect their group from hostile hijacking attempts and to perform surgical strikes to destabilize an enemy position from within.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_BONUS_PROFICIENCY" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_HIJACK" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_CONTROLLING_HIJACKED_TARGET" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SURGICAL_INSERTION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_ADVANCED_HIJACKER_CELLS" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SABOTAGE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_BONUS_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_HIJACK" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SURGICAL_INSERTION" level="9" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_ADVANCED_HIJACKER_CELLS" level="13" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SABOTAGE" level="17" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_BONUS_PROFICIENCY">
+		<description>
+			<p>When you choose this archetype at 3rd level, you gain proficiency with vehicles and firearms.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<!--<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />-->
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_FIREARMS" />
+        </rules>
+	</element>
+	<element name="Hijack" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_HIJACK">
+		<description>
+			<p>At 3rd level, as part of a long rest, you gain the ability to create a special device, called a hijacking cell. A hijacking cell has an appearance similar to a high-tech, steampunk or magical microchip that’s around an inch in diameter.</p>
+			<p class="indent">When you hit a creature, construct or vehicle with a weapon attack that would trigger your sneak attack, instead of dealing your sneak attack damage, you can choose to hijack the target by attaching a hijacking cell to it.</p>
+			<p class="indent">You can create and store a number of Hijacking cells equal to your Intelligence modifier, and can have only one hijacking cell on a target at a time.</p>
+			<p><b><i>Saving Throws.</i></b> Some of your Hijack features require your target to make a saving throw to resist or avoid the hijacking cell’s effects. The saving throw DC is calculated as follows:</p>
+			<center>
+				<p><strong>Hijack save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier.</p>
+			</center><p></p>
+			<p><b><i>Spotting a Hijacking Cell.</i></b> To the untrained eye, a hijacking cell can easily be mistaken as a smudge of dirt, or a button on a shirt. A successful Wisdom (Perception) check against your Hijack DC will reveal the cell, which can be removed as free action by any creature upon its discovery.</p>
+			<p><b><i>Duration.</i></b> A hijacking cell remains on a target for 1 minute or until it is removed, at which point it breaks down into dust and is lost.</p>
+		</description>
+		<sheet usage="Sneak Attack">
+			<description>You have {{tgmhb-rogue-hijack:points}} hijacking cells and your Hijack DC is {{tgmhb-rogue-hijack:dc}}. Instead of dealing sneak attack damage, you can hijack the target by attaching a hijacking cell to it.</description>
+		</sheet>
+		<rules>
+			<stat name="tgmhb-rogue-hijack:points" value="intelligence:modifier" />
+			<stat name="tgmhb-rogue-hijack:dc" value="8" />
+			<stat name="tgmhb-rogue-hijack:dc" value="proficiency" />
+			<stat name="tgmhb-rogue-hijack:dc" value="intelligence:modifier" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_CONTROLLING_HIJACKED_TARGET" level="3" />
+		</rules>
+	</element>
+	<element name="Controlling a Hijacked Target" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_CONTROLLING_HIJACKED_TARGET">
+		<description>
+			<p>When within 120 feet of a hijacked target you can see, you can spend your action to attempt to take direct control of it. A creature can only be controlled in this way if its Challenge Rating is equal to half your Hijacker level, rounded down. You and the target must make contested Intelligence checks. If you succeed, the target becomes controlled by you until the start of your next turn. On a failure, the target is unaffected. If a target does not have an Intelligence of its own, such as a vehicle or an ATUM, use the Intelligence of the pilot instead. You can’t affect an ATUM or vehicle if it has no pilot or is inert.</p>
+			<p class="indent">If your fail your Intelligence check against a creature, that creature can immediately use its reaction to make a Wisdom (Insight) check versus your Hijack DC. On a success, it knows something attempted to control its actions. How well it’s deductive reasoning is, however, is down to your DM.</p>
+			<p class="indent">For example, an ogre might suspect godly intervention, while a particularly intelligent creature may quickly realize the culprit is you and the attached hijacking cell.</p>
+			<p class="indent">A controlled target takes only the actions you choose, and  doesn’t do anything you don’t allow it to do. During this time you must retain line of sight to the target, and you must concentrate on the feature as if concentrating on a spell. Each time the target takes damage, you must make an Intelligence saving throw with a DC equal to half the damage dealt, or lose your concentration. If your concentration is broken, the hijacking cell is destroyed, and you take lightning damage equal to 1d6 x half your level (rounded down).</p>
+			<p class="indent"><b><i>ATUMs and Direct Control.</i></b> If you successfully control an ATUM, you can have the ATUM move, make one attack with an installed module, or a make a single unarmed strike. As an action, the pilot of the ATUM can make an Intelligence (Investigation) check versus your Hijack DC. On a success, the pilot regains control of the ATUM and your control is lost, though the hijacking cell remains attached until removed.</p>
+		</description>
+		<sheet>
+			<description>You can use your action to attempt to take direct control of a hijacked target within 120 feet if its Challenge Rating is {{level:rogue:half}} or lower. The target must remain in line of sight, and you must concentrate as if concentrating on a spell. When the target takes damage, you must make an Intelligence saving throw with a DC equal to half the damage dealt, or lose your concentration. If concentration is broken, the hijacking cell is destroyed, and you take {{level:rogue:half}}d6 lightning damage.</description>
+		</sheet>
+	</element>
+	<element name="Surgical Insertion" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SURGICAL_INSERTION">
+		<description>
+			<p>At 9th level, your talent for quick surgical strikes has made removing attached hijacking cells much more difficult.</p>
+			<p class="indent">Removing a hijacking cell attached by you now takes an action, instead of a free action.</p>
+		</description>
+		<sheet>
+			<description>Removing your hijacking cell takes an action. </description>
+		</sheet>
+	</element>
+	<element name="Advanced Hijacker Cells" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_ADVANCED_HIJACKER_CELLS">
+		<description>
+			<p>By 13th level, your hijacking cells have become complex enough to remain on a target for up to 1 hour, instead of 1 minute.</p>
+		</description>
+		<sheet>
+			<description>Your hijacking cells remain on a target for up to 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Sabotage" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_ROGUE_HIJACKER_SABOTAGE">
+		<description>
+			<p>At 17th level, once per long rest, you can cause an attached hijacking cell to emit a lethal shockwave.</p>
+			<p class="indent">As an action, choose a hijacked target. That target’s attached cell explodes. The target, and all other creatures within 20 feet of it, must succeed on a Constitution saving throw, taking 10d10 thunder damage on a failed save, or half as much on a success. The hijacked target makes this saving throw with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>Your adapted weapon gains +1 to attack rolls. When you hit a target with it, you can make one weapon attack against that target as a bonus action.</description>
+		</sheet>
+	</element>
+
+</elements>

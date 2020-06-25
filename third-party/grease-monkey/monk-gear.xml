@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Way of the Gear</name>
+        <update version="0.0.1">
+            <file name="monk-gear.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/monk-gear.xml" />
+        </update>
+	</info>
+
+	<element name="Way of the Gear" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_MONK_GEAR">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks of the Way of the Gear learn to channel their life energies through mechanical modifications, believing the path to true enlightenment comes from being more machine than mortal. They teach that such modifications, when combined with extreme training and medititation, can unlock the latent abilities, both physical and mental, that lie dormant in all sentient creatures.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_DISCIPLE_OF_THE_MACHINE" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ARCANE_REFLECTION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_OVERCHARGE" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_PSIONIC_AUGMENTATION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ENLIGHTENED_FORM" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_DISCIPLE_OF_THE_MACHINE" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ARCANE_REFLECTION" level="6" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_OVERCHARGE" level="6" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_PSIONIC_AUGMENTATION" level="11" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ENLIGHTENED_FORM" level="17" />
+		</rules>
+	</element>
+	<element name="Disciple of the Machine" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_DISCIPLE_OF_THE_MACHINE">
+		<description>
+			<p>When you choose this tradition at 3rd level, you replace one body part, either your hand, arm or leg, with a mechanical prosthesis, which you use to better channel your ki, allowing you to magically harness the power of automation magic through a special discipline style called the Gear Discipline, described below.</p>
+			<p class="indent">The Gear discipline requires you to spend ki points each time you use it. You learn a number of automation spells when you first gain this feature, and learn more automation spells as you gain levels in this class. The number of spells you know is listed in the Gear Discipline table below. You can cast these spells at the ki point cost shown in the Spells and Ki Points table, using your mechanical prosthesis as your spellcasting focus, and Wisdom as your spellcasting modifier. See chapter 10 in the <i>Player’s Handbook</i> for the general rules of spellcasting.</p>
+			<p class="indent">Additionally, whenever you gain a level in this class, you can replace one of the automation spells you know with another automation spell of your choice, abiding by the spell level limit shown in the Gear Discipline table.</p>
+			
+			<h5 class="caption">SPELLS AND KI POINTS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Ki Cost</td></tr>
+				</thead>
+				<tr><td>1st</td><td>2</td></tr>
+				<tr><td>2nd</td><td>3</td></tr>
+				<tr><td>3rd</td><td>5</td></tr>
+				<tr><td>4th</td><td>6</td></tr>
+			</table>
+			
+			<h5 class="caption">GEAR DISCIPLINE</h5>
+			<table>
+				<thead>
+					<tr><td>Monk Levels</td><td>Spells Known</td><td>Level Limit</td><td>Ki Point Limit</td></tr>
+				</thead>
+				<tr><td>3rd</td><td>3</td><td>1st</td><td>-</td></tr>
+				<tr><td>6th</td><td>5</td><td>2nd</td><td>5</td></tr>
+				<tr><td>11th</td><td>7</td><td>3rd</td><td>7</td></tr>
+				<tr><td>17th</td><td>9</td><td>4th</td><td>9</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You can spend ki points to cast Automation spells.</description>
+		</sheet>
+		<spellcasting name="Way of the Gear" ability="Wisdom" prepare="false" allowReplace="true">
+			<list>Automation</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_SOLO" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
+			<stat name="way of the gear:spellcasting:slots:count" value="3" level="3"/>
+			<stat name="way of the gear:spellcasting:slots:count" value="2" level="5"/>
+			<stat name="way of the gear:spellcasting:slots:count" value="2" level="11"/>
+			<stat name="way of the gear:spellcasting:slots:count" value="2" level="17"/>
+
+			<stat name="way of the gear:spellcasting:slots:1" value="0" level="3" />
+			<stat name="way of the gear:spellcasting:slots:2" value="0" level="6" />
+			<stat name="way of the gear:spellcasting:slots:3" value="0" level="11" />
+			<stat name="way of the gear:spellcasting:slots:4" value="0" level="17" />
+			
+			<select type="Spell" name="Disciple of the Machine (Way of the Gear)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" number="3" spellcasting="Way of the Gear"/>
+			<select type="Spell" name="Disciple of the Machine (Way of the Gear)" supports="$(spellcasting:list),$(spellcasting:slots)" level="6" number="2" spellcasting="Way of the Gear"/>
+			<select type="Spell" name="Disciple of the Machine (Way of the Gear)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" number="2" spellcasting="Way of the Gear"/>
+			<select type="Spell" name="Disciple of the Machine (Way of the Gear)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" number="2" spellcasting="Way of the Gear"/>
+		</rules>
+	</element>
+	<element name="Arcane Reflection" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ARCANE_REFLECTION">
+		<description>
+			<p>Starting at 6th level, you can also use your <i>Deflect Missiles</i> feature when you are hit by a ranged spell attack; though you cannot attempt to catch the spell, only deflect it, using your Wisdom modifier + your proficiency bonus to make the ranged spell attack.</p>
+		</description>
+		<sheet>
+			<description>You can use your Deflect Missiles when hit by a ranged spell attack; you cannot catch the spell, only deflect it (+{{tgmhb-monk-arcane-reflection:attack}} spell attack bonus).</description>
+		</sheet>
+		<rules>
+			<stat name="tgmhb-monk-arcane-reflection:attack" value="wisdom:modifier" />
+			<stat name="tgmhb-monk-arcane-reflection:attack" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Overcharge" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_OVERCHARGE">
+		<description>
+			<p>By 6th level, you have mastered the ability of enhancing the effects of spells you can cast through your mechanical augmentation.</p>
+			<p class="indent">You can spend additional ki points to increase the level of an automation spell that you can cast, provided that the spell has an enhanced effect at a higher level, as the <i>reconstruct</i> spell does. The spell’s level increases by 1 for each additional ki point you spend. For example, if you are a 6th level monk and you cast <i>iron sphere</i>, you can spend 4 ki points to cast it as a 3rd-level spell (the spell’s base cost of 3 ki points plus 1).</p>
+			<p class="indent">The maximum number of ki points you can spend to cast a spell in this way (including its base ki point cost and any additional ki points you spend to increase its level) is determined by your Ki Point Limit, as shown in the Gear Discipline table.</p>
+		</description>
+		<sheet>
+			<description>You can spend additional ki points to increase the level of your casting of an automation spell, increasing it by 1 for each additional ki point you spend.</description>
+		</sheet>
+	</element>
+	<element name="Psionic Augmentation" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_PSIONIC_AUGMENTATION">
+		<description>
+			<p>At 11th level, you replace part of your brain with a complex system of mechanical augmentations, unlocking your latent psionic abilities.</p>
+			<p class="indent">You do not need to perform the verbal or somatic components of automation spells you cast. In addition, once per long rest, you can spend 7 ki points to cast <i>telekinesis</i>, requiring no components, and you learn the <i>mage hand</i> cantrip. The hand is invisible when cast, and has a range of 10 feet. It vanishes if it’s ever more than 10 feet away from you, or you cast the spell again.</p>
+		</description>
+		<sheet>
+			<description>You can ignore the verbal or somatic components of your automation spells. You learn the mage hand cantrip. The hand is invisible when cast, and has a range of 10 feet. Once per long rest, you can spend 7 ki points to cast telekinesis, requiring no components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+			<grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" />
+		</rules>
+	</element>
+	<element name="Enlightened Form" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_MONK_GEAR_ENLIGHTENED_FORM">
+		<description>
+			<p>By 17th level, your have attained enlightenment through your augmentations, replacing your limbs and many internal organs with mechanical counterparts to better channel your ki.</p>
+			<p class="indent">You replace your type with construct, but can be affected by magical healing and necrotic damage as normal, and your metal augments grant you a +1 bonus to AC. In addition, once per long rest, you can spend 11 ki points to cast <i>mind blank</i>, targeting yourself.</p>
+		</description>
+		<sheet>
+			<description>Your type becomes construct, but you are affected by magical healing and necrotic damage as normal, and you gain a +1 bonus to AC. Once per long rest, you can spend 11 ki points to cast mind blank on yourself</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MIND_BLANK" />
+			<stat name="ac:misc" value="1" />	
+		</rules>
+	</element>
+	
+</elements>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Tech Hunter</name>
+        <update version="0.0.1">
+            <file name="ranger-tech.xml" url="https://raw.githubusercontent.com/USERNAMEHERE/elements/master/third-party/grease-monkey/ranger-tech.xml" />
+        </update>
+	</info>
+
+	<element name="Tech Hunter" type="Archetype" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_RANGER_TECHHUNTER">
+		<supports>Ranger Archetype</supports>
+        <description>
+            <p>You have dedicated yourself to hunting down vast mechanical behemoths, be them elemental constructs, or powerful ATUMs of war. A Tech Hunter seeks out these constructs and ATUMs, often choosing to dispatch such a target through the use of ambushes and fast-acting traps. Skilled at taking apart their target using specialist techniques and adaptive weaponry, Tech Hunters are fearsome adversaries to face on the field of battle and experts at tracking, disabling and destroying mighty machines of war.</p>
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_SPELLS" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERLAY" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_WEAPON_ADAPTAION" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_HUNTERS_BLOW" />
+			<div element="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERCLOCK" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERLAY" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_WEAPON_ADAPTAION" level="3" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_HUNTERS_BLOW" level="7" />
+			<grant type="Archetype Feature" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERCLOCK" level="15" />
+		</rules>
+	</element>
+	<element name="Tech Hunter Magic" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_SPELLS">
+        <description>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Tech Hunter Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>       
+            <h5>TECH HUNTER SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spells</td></tr>
+                </thead>
+				<tr><td>3rd</td><td><em>Reconstruct</em></td></tr>
+				<tr><td>5th</td><td><em>Prosthesis</em></td></tr>
+				<tr><td>9th</td><td><em>Deconstruct</em></td></tr>
+				<tr><td>13th</td><td><em>Dimension Door</em></td></tr>
+				<tr><td>17th</td><td><em>Wall of Gears</em></td></tr>
+			</table>      
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_TGMHB_SPELL_RECONSTRUCT" level="3" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_TGMHB_SPELL_PROSTHESIS" level="5" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_TGMHB_SPELL_DECONSTRUCT" level="9" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="13" spellcasting="Ranger" prepared="true" />
+			<grant type="Spell" id="ID_TGMHB_SPELL_WALL_OF_GEARS" level="17" spellcasting="Ranger" prepared="true" />
+		</rules>
+	</element>
+	<element name="Target Overlay" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERLAY">
+		<description>
+			<p>At 3rd level, you gain the ability to mark a target you can see within 120 feet of you with a special projected overlay, that only you can see, as a bonus action on your turn. This overlay feeds you helpful information on the targets current vitals or internal components. If you use this feature against an ATUM, you also know the number of creatures currently inside it and the types of weapon modules the ATUM has installed, but not the creature’s types, current conditions or any other information pertaining to them. You can move the mark to a different target as a bonus action.</p>
+			<p class="indent">Your mark lasts for 10 minutes. For the duration, once on your turn, you can grant yourself advantage on your next weapon attack against the marked target. If the attack hits, it deals an additional 1d6 damage of the weapon’s type. You can grant yourself advantage in this way a number of times equal to your Wisdom modifier.</p>
+			<p class="indent">Once this limit has been reached, the mark ends on the target, and you cannot use this feature again until you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can mark a target you can see within 120 feet or move the mark to a different target as a bonus action. It lasts for 10 minutes and feeds you helpful information on the target. You can grant yourself up to {{wisdom:modifier}} times advantage on your next weapon attack against the marked target (once on your turn). If the attack hits, it deals an additional 1d6 damage. Once this limit has been reached, the mark ends, and cannot be used again until you finish a long rest.</description>
+		</sheet>
+	</element>
+	<element name="Weapon Adaptation" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_WEAPON_ADAPTAION">
+		<description>
+			<p>Starting at 3rd level, you learn how to adapt your weapon to best fit a particular scenario. Choose one feature from the list below. One weapon of your choice gains the benefits of this feature whenever you use it. You can change the weapon or it’s adaptation feature when you finish a long rest. You can only have one adapted weapon at a time. If you adapt a new weapon, it replaces the previous one.</p>
+			<p class="indent"><b><i>Construct-Scrambler.</i></b> When you hit a construct or ATUM using this weapon, you can use your reaction to magically scramble the target’s accuracy. The target has disadvantage on its next attack roll. You can use this feature a number of times equal to your Wisdom modifier. You regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><b><i>Spell-Breaker.</i></b> Once per short rest, when a construct you can see within 30 feet of you targets you with a spell (innately cast or otherwise), you can use your reaction to make a weapon attack against it using this weapon. On a hit, the target takes 1d6 force damage and you gain advantage on the saving throw.</p>
+			<p class="indent"><b><i>ATUM-Killer.</i></b> When you hit an ATUM using this weapon, you can spend your reaction to deal an additional 1d8 lightning damage to one random creature inside the ATUM, or have the attack bypass the ATUM’s armour plating. You can use this feature a number of times equal to your Wisdom modifier. You regain all uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You can change your weapon’s adaptation feature when you finish a long rest. 
+			(Construct-Scrambler) Up to {{wisdom:modifier}} times per long rest, when you hit a construct or ATUM using your adapted weapon, you can use your reaction to give the target disadvantage on its next attack roll. 
+			(Spell-Breaker) Once per short rest, when a construct within 30 feet of you targets you with a spell, you can use your reaction to make a weapon attack against it using your adapted weapon. On a hit, the target takes 1d6 force damage and you gain advantage on the saving throw. 
+			(ATUM-Killer) Up to {{wisdom:modifier}} times per long rest, when you hit an ATUM using your adapted weapon, you can deal an additional 1d8 lightning damage to one random creature inside the ATUM, or have the attack bypass the ATUM’s armour plating. </description>
+		</sheet>
+	</element>
+	<element name="Hunter’s Blow" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_HUNTERS_BLOW">
+		<description>
+			<p>Starting at 7th level, your adapted weapon attacks count as magical for the purposes of overcoming resistances to bludgeoning, piercing and slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Your adapted weapon attacks count as magical for the purposes of overcoming resistances to bludgeoning, piercing and slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Quickstrike" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_QUICKSTRIKE">
+		<description>
+			<p>Beginning at 11th level, your proficiency with rapid attacks grants your adapted weapon the following additional features:</p>
+			<ul>
+				<li>When you hit a target with your adapted weapon, you can make one weapon attack against that target as a bonus action.</li>
+				<li>You gain a +1 to attack rolls.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Your adapted weapon gains +1 to attack rolls. When you hit a target with it, you can make one weapon attack against that target as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Target Overclock" type="Archetype Feature" source="The Greasemonkey's Handbook" id="ID_TGMHB_ARCHETYPE_FEATURE_RANGER_TECHHUNTER_TARGET_OVERCLOCK">
+		<description>
+			<p>By 15th level, you can spend an action on your turn to overclock your Target Overlay feature. This overclocking feature lasts for 1 minute or until your Target Overlay feature ends, and grants you the following benefits:</p>
+			<ul>
+				<li>When you hit a marked target with your adapted weapon, the target takes an additional 2d8 damage of the weapon’s type.</li>
+				<li>Your weapon gains a +2 bonus to attack rolls against the marked target.</li>
+				<li>The marked target displays a vitality stage on the overlay depending on its remaining hit points, as shown on the table below:</li>
+			</ul>
+			
+			<h5 class="caption">VITALITY STAGES</h5>
+			<table>
+				<thead>
+					<tr><td>Stage</td><td>Current Hit points</td></tr>
+				</thead>
+				<tr><td>3</td><td>400 or greater</td></tr>
+				<tr><td>2</td><td>399 - 200</td></tr>
+				<tr><td>1</td><td>200 - 100</td></tr>
+				<tr><td>0</td><td> 99 or fewer</td></tr>
+			</table>
+		</description>
+		<sheet action="Action">
+			<description>You gain the following benefits against your marked target for 1 minute: 
+			You can see its vitality stage. 
+			Your weapon gains a +2 bonus to attack rolls against it. 
+			When you hit it with your adapted weapon, it takes additional 2d8 damage.</description>
+		</sheet>
+	</element>
+
+</elements>
