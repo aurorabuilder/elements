@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Athlete</name>
+		<update version="0.0.1">
+			<file name="background-athlete.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/mythic-odysseys-of-theros/background-athlete.xml" />
+		</update>
+	</info>
+	<element name="Athlete" type="Background" source="Mythic Odysseys of Theros" id="ID_WOTC_MOOT_BACKGROUND_Athlete">
+		<description>
+			<p>You strive to perfect yourself physically and in execution of everything you do. The thrill of competition lights fire in your blood, and the roar of the crowd drives you forward. Tales of your exploits precede you and might open doors or loosen tongues.</p>
+			<p class="indent">Whether in one of the poleis, between them, or among the nonhuman peoples of Theros, physical contests and those who pursue them command respect bordering on reverence. Athletes arise from all walks of life and all cultures and quite often cross paths with one another.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Acrobatics, Athletics</li>
+				<li><strong>Tool Proficiencies:</strong> Vehicles (land)</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A bronze discus or leather ball, a lucky charm or past trophy, a set of traveler's clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_MOOT_BACKGROUND_FEATURE_ECHOES_OF_VICTORY" />
+			<h4>FAVORED EVENT</h4>
+			<p>While many athletes practice various games and events, most excel at a single form of competition. Roll or choose from the options in the Favored Event table to determine the athletic event in which you excel.</p>
+			<h5 class="caption">Favored Event</h5>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Favored Event</td></tr>
+				</thead>
+				<tr><td>1</td><td>Marathon</td></tr>
+				<tr><td>2</td><td>Long-distance running</td></tr>
+				<tr><td>3</td><td>Wrestling</td></tr>
+				<tr><td>4</td><td>Boxing</td></tr>
+				<tr><td>5</td><td>Chariot or horse race</td></tr>
+				<tr><td>6</td><td>Pankration (mixed unarmed combat)</td></tr>
+				<tr><td>7</td><td>Hoplite race (racing in full armor with a unit)</td></tr>
+				<tr><td>8</td><td>Pentathlon (running, long jump, discus, javelin, wrestling)</td></tr>
+			</table>
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Competition can forge strong bonds between teammates and rivals or ignite bitter feuds that burn outside the arena. Athletes often apply lessons from their training to their lives in general.</p>
+		</description>
+		<setters>
+			<set name="short">Acrobatics, Athletics, Vehicles (Land), Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<select type="Language" name="Language, Athlete" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_MOOT_BACKGROUND_FEATURE_ECHOES_OF_VICTORY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I feel most at peace during physical exertion, be it exercise or battle.</item>
+				<item id="2">I don't like to sit idle.</item>
+				<item id="3">I have a daily exercise routine that I refuse to break.</item>
+				<item id="4">Obstacles exist to be overcome.</item>
+				<item id="5">When I see others struggling, I offer to help.</item>
+				<item id="6">I love to trade banter and gibes.</item>
+				<item id="7">Anything worth doing is worth doing best.</item>
+				<item id="8">I get irritated if people praise someone else and not me.</item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Competition. I strive to test myself in all things. (Chaotic)</item>
+				<item id="2">Triumph. The best part of winning is seeing my rivals brought low. (Evil)</item>
+				<item id="3">Camaraderie. The strongest bonds are forged through struggle. (Good)</item>
+				<item id="4">People. I strive to inspire my spectators. (Neutral)</item>
+				<item id="5">Tradition. Every game has rules, and the playing field must be level. (Lawful)</item>
+				<item id="6">Growth. Lessons hide in victory and defeat. (Any)</item>
+			</select>
+			<select type="List" name="Bond">
+				<item id="1">My teammates are my family.</item>
+				<item id="2">I will overcome a rival and prove myself their better.</item>
+				<item id="3">My mistake got someone hurt. I'll never make that mistake again.</item>
+				<item id="4">I will be the best for the honor and glory of my home.</item>
+				<item id="5">The person who trained me is the most important person in my world.</item>
+				<item id="6">I strive to live up to a specific hero's example.</item>
+			</select>
+			<select type="List" name="Flaw">
+				<item id="1">I indulge in a habit that threatens my reputation or my health.</item>
+				<item id="2">I'll do absolutely anything to win.</item>
+				<item id="3">I ignore anyone who doesn't compete and anyone who loses to me.</item>
+				<item id="4">I have lingering pain from old injuries.</item>
+				<item id="5">Any defeat or failure on my part is because my opponent cheated.</item>
+				<item id="6">I must be the captain of any group I join.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Echoes of Victory" type="Background Feature" source="Mythic Odysseys of Theros" id="ID_WOTC_MOOT_BACKGROUND_FEATURE_ECHOES_OF_VICTORY">
+		<description>
+			<p>You have attracted admiration among spectators, fellow athletes, and trainers in the region that hosted your past athletic victories. When visiting any settlement within 100 miles of where you grew up, there is a 50 percent chance you can find someone there who admires you and is willing to provide information or temporary shelter.</p>
+			<p class="indent">Between adventures, you might compete in athletic events sufficient enough to maintain a comfortable lifestyle, as per the "Practicing a Profession" downtime activity in chapter 8 of the Player's Handbook.</p>
+		</description>
+		<sheet alt="Echoes of Victory">
+			<description>You have attracted admiration among spectators, fellow athletes, and trainers in the region that hosted your past athletic victories. When visiting any settlement within 100 miles of where you grew up, there is a 50 percent chance you can find someone there who admires you and is willing to provide information or temporary shelter.
+			Between adventures, you might compete in athletic events sufficient enough to maintain a comfortable lifestyle, as per the "Practicing a Profession" downtime activity.</description>
+		</sheet>
+	</element>
+</elements>
