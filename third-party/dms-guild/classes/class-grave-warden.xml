@@ -373,7 +373,7 @@
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_ASH_REANIMATION" />
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_ASH_OSSIEN_ARMOR" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Requiem of the Ash Grave Wardens focus on the ebbs and flows of life and death.</description>
 		</sheet>
 		<rules>
@@ -579,7 +579,7 @@
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_FRIGID_SPLINTER_THE_ICE" />
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_FRIGID_CHILLED_TO_THE_BONE" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Requiem of the Frigid Grave Wardens bring a cold gripping death to their foes.</description>
 		</sheet>
 		<rules>
@@ -780,7 +780,7 @@
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_HAUNT_TERROR_IN_THE_NIGHT" />
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_HAUNT_SECRECY_OF_SHADOWS" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Requiem of the Haunt Grave Wardens live in the shadows. They are able to spread their influence to snuff out light and enjoy terrifying their foes with thoughts of the unknown.</description>
 		</sheet>
 		<rules>
@@ -981,7 +981,7 @@
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_TORPOR_UNDEAD_COHORT" />
 			<div element="ID_DMSG_GPGW_ARCHETYPE_FEATURE_GRAVE_WARDEN_REQUIEM_OF_THE_TORPOR_BILLOWING_DECAY" />
 		</description>
-		<sheet>
+		<sheet display="false">
 			<description>Requiem of the Torpor Grave Wardens drain the very energy out of their victims while spreading death and decay upon the battle field.</description>
 		</sheet>
 		<rules>
@@ -1771,13 +1771,13 @@
     </element>
     <element name="Siphon Life" type="Feat" source="The Grave Warden" id="ID_DMSG_GPGW_FEAT_SIPHON_LIFE">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
-		<requirements>[type:spell]</requirements>
+		<requirements>[type:spell],(ID_DMSG_GPGW_CLASS_GRAVE_WARDEN||ID_DMSG_GPGW_MULTICLASS_GRAVE_WARDEN)</requirements>
         <description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
             <p>When you deal the killing blow to a foe using a necromancy spell, you gain a number of temporary Hit Points equal to your grave warden level + your constitution modifier. You can use this feature a number of times equal to your Constitution modifier per long rest.</p>
         </description>
         <sheet usage="{{constitution:modifier}}/Long Rest">
-            <description>When you deal the killing blow to a foe using a necromancy spell, you gain {{siphon life:hp}} temporary Hit Points.</description>
+            <description>When you deal the killing blow to a foe using a necromancy spell, you gain {{siphon life:hp}} temporary hp.</description>
         </sheet>
 		<rules>
 			<stat name="siphon life:hp" value="constitution:modifier" />
