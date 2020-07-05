@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+		<name>Wild Card Roguish Archetype</name>
+		<description>The Wild Card Rogue from Legends of Runeterra: Dark Tides of Bilgewater</description>
+		<author url="https://www.dndbeyond.com/sources/lrdtob">D&amp;DBeyond</author>
+		<update version="0.0.1">
+			<file name="rogue-wildcard.xml" url="PLACEHOLDER" />
+		</update>
+	</info>
+    
+    <element name="Wild Card" type="Archetype" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_WILD_CARD">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Some rogues favor honing their skill and precision, others perfect a silver tongue, but you—well, you’ve always gotten a kick out of leaving things up to chance.</p>
+            <p>Rogues of the Wild Card variety thrive on the high stakes and random thrill of the game table. Armed with cunning cheats and no small amount of luck, these sly gamblers live and die by their rules, never keen to simply accept the hand fate deals them.</p>
+            <div element="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TRICKS_UP_THE_SLEEVE" />
+            <div element="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_WILD_CARDS_GAMBIT" />
+            <div element="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_SHIFTING_THE_ODDS" />
+            <div element="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TWIST_OF_FATE" />
+            <div element="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_JOKER_WILD" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TRICKS_UP_THE_SLEEVE" level="3" />
+            <grant type="Archetype Feature" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_WILD_CARDS_GAMBIT" level="3" />
+            <grant type="Archetype Feature" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_SHIFTING_THE_ODDS" level="9" />
+            <grant type="Archetype Feature" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TWIST_OF_FATE" level="13" />
+            <grant type="Archetype Feature" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_JOKER_WILD" level="17" />
+        </rules>
+    </element>
+
+    <element name="Tricks Up the Sleeve" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TRICKS_UP_THE_SLEEVE">
+        <description>
+            <p>Your penchant for games has afforded you the ability to subtly manipulate fortune to your favor. When you choose this archetype at 3rd level, you learn the guidance cantrip. Starting at 9th level, it has a range of 30 feet for you, and you can cast it as a bonus action.</p>
+        </description>
+        <sheet>
+            <description>You learn the guidance cantrip. Starting at 9th level, it has a range of 30 feet for you, and you can cast it as a bonus action.</description>
+        </sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" />
+		</rules>
+    </element>
+
+    <element name="Wild Card's Gambit" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_WILD_CARDS_GAMBIT">
+        <description>
+            <p>Also at 3rd level, you gain proficiency with one of the following gaming sets: dice set, dragonchess set, or playing card set.</p>
+            <p class="indent">The gaming set you choose grants you a Wild Card’s Gambit, as detailed below. If you are proficient in multiple types of gaming sets, you must choose which gambit to use when you gain this feature. You can change your choice of gambit whenever you gain a level in this class.</p>
+        </description>
+        <rules>
+        	<select type="Archetype Feature" name="Wild Cards Gambit" supports="Wild Cards Gambit, Wild Card Rogue" number="1" />
+        </rules>
+    </element>
+
+    <element name="Shifting the Odds" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_SHIFTING_THE_ODDS">
+        <description>
+            <p>Starting at 9th level, you are acutely aware of how to quit when you’re ahead, vanishing in a flash when the odds begin to turn against you. As a bonus action, you can disappear with a dramatic flourish. Each creature within 10 feet of you must make a Dexterity saving throw (DC 8 + your proficiency bonus + your Charisma modifier), taking 4d10 force damage on a failed save or half as much on a successful one.</p>
+            <p class="indent">You then teleport yourself to an unoccupied space that you can see within 120 feet of your original location. Once you have used this ability, you cannot use it again until you have finished a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>As a bonus action, you can disappear with a dramatic flourish. Each creature within 10 feet of you must make a Dexterity saving throw (DC 8 + your proficiency bonus + your Charisma modifier), taking 4d10 force damage on a failed save or half as much on a successful one.You then teleport yourself to an unoccupied space that you can see within 120 feet of your original location.</description>
+        </sheet>
+    </element>
+
+    <element name="Twist of Fate" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_TWIST_OF_FATE">
+        <description>
+            <p>At 13th level, your mastery over the game table hones your speed and cunning in combat. After rolling initiative but before the first turn of combat, you can choose to swap places in the initiative order with one creature you can see. If the creature is one of your allies, that ally must agree to swapping initiative with you.</p>
+        </description>
+        <sheet>
+            <description>You manifest an extra appendage when you enter your rage. As a bonus action, you can use this appendage to strike at one creature of your choice that you can see within 15 feet. The target must succeed on a Strength saving throw (DC equal to 8 + your proficiency bonus + your Strength modifier) or be pulled up to 10 feet in a straight line towards you.</description>
+        </sheet>
+    </element>
+
+    <element name="Joker Wild" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARD_JOKER_WILD">
+        <description>
+            <p>At 17th level, your mastery over chance encompasses even your own form, allowing you to exist between potential realities. As a bonus action on your turn, you can take on an incorporeal form, during which you gain the following benefits:</p>
+            <p class="indent">You regain expended power for your Wild Card’s Gambit feature.</p>
+            <p class="indent">Your movement speed is doubled.</p>
+            <p class="indent">You gain resistance to all damage, and are immune to the grappled, paralyzed, stunned, and restrained conditions.</p>
+            <p class="indent">You can move through objects and creatures as if they were difficult terrain. If you end your turn inside a creature, the creature takes 1d10 force damage and is shunted into an adjacent space within 5 feet of their original location.</p>
+            <p class="indent">This incorporeal state lasts for one minute, or until you are incapacitated. Once you use this feature, you cannot use it again until you complete a long rest.</p>
+        </description>
+        <sheet>
+            <description>As a bonus action on your turn, you can take on an incorporeal form for one minute. You regain all expended power from your Wild Card's Gambit feature, your movement speed is doubled, you have resistance to all damage, and immunity to the grappled, paralyzed, stunned, and restrained conditions, can move through objects and creatures as if they were difficult terrain, and if you end your turn inside a creature, it takes 1D10 force damgage and is shunted into an adjecent space within 5 ft of the original location. You can't use this feature again until you complete a long rest.</description>
+        </sheet>
+    </element>
+    
+    <!--Wild Card's Gambit specialisations-->
+    <element name="Loaded Dice" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARDS_GAMBIT_LOADED_DICE">
+		<supports>Wild Cards Gambit, Wild Card Rogue</supports>
+		<description>
+			<p>You gain a pool of d6s equal to the number of d6s you roll for your Sneak Attack damage. (Your pool starts with 2d6 at 3rd level, and increases to 3d6 at 5th level, and so on.)></p>
+            <p class="indent">When a creature targets you with an attack, you can use your reaction to spend one die from the pool and subtract the number rolled from the attack. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll hits or misses. Starting at 9th level you can spend up to two dice from the pool at once, and starting at 17th level you can spend up to three dice at once. You regain all expended dice from your loaded dice pool when you complete a long rest.</p>
+		</description>
+		<sheet>
+			<description>You gain a pool of {{loaded-dice:count}}d{{loaded-dice:die}}. When a creature targets you with an attack, you can use your reaction to spend up to {{{{loaded-dice:count}}}} die from the pool and subtract the number rolled from the attack. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll hits or misses. You regain all expended dice from your loaded dice pool when you complete a long rest.</description>
+		</sheet>
+        <rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DICE_SET" />
+			<stat name="loaded-dice:count" value="1" level="1" />
+			<stat name="loaded-dice:count" value="1" level="3" />
+			<stat name="loaded-dice:count" value="1" level="5" />
+			<stat name="loaded-dice:count" value="1" level="7" />
+			<stat name="loaded-dice:count" value="1" level="9" />
+			<stat name="loaded-dice:count" value="1" level="11" />
+			<stat name="loaded-dice:count" value="1" level="13" />
+			<stat name="loaded-dice:count" value="1" level="15" />
+			<stat name="loaded-dice:count" value="1" level="17" />
+			<stat name="loaded-dice:count" value="1" level="19" />
+			<stat name="loaded-dice:die" value="6" bonus="die" />
+			<stat name="loaded-dice-usage:count" value="1" level="3" />
+			<stat name="loaded-dice-usage:count" value="1" level="9" />
+			<stat name="loaded-dice-usage:count" value="1" level="17" />
+        </rules>
+	</element>
+    <element name="Dragonchess" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARDS_GAMBIT_DRAGONCHESS">
+		<supports>Wild Cards Gambit, Wild Card Rogue</supports>
+		<description>
+			<p>Your prowess of the chessboard has made you a skilled tactician on the battlefield. As a bonus action on your turn, you can execute one of the following chess maneuvers. You can use a bonus action in this way a number of times equal to your Charisma modifier (minimum of once), and regain all uses after a long rest.</p>
+            <p class="indent">Dragon. Choose a creature you can see within 30 feet of you. The first time that creature makes a successful attack roll before the start of your next turn, they deal extra damage equal to your level in this class.</p>
+            <p class="indent">Griffon. Your movement speed increases by 10 feet, and your movement does not provoke opportunity attacks. These benefits last until the start of your next turn.</p>
+            <p class="indent">Sylph. You and all friendly creatures within 5 feet of you have advantage on Dexterity saving throws until the start of your next turn.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{charisma:modifier}}/Long Rest">
+			<description>You can execute one of the following chess maneuvers: Dragon. Choose a creature you can see within 30 feet of you. The first time that creature makes a successful attack roll before the start of your next turn, they deal extra damage equal to your level in this class. Griffon. Your movement speed increases by 10 feet, and your movement does not provoke opportunity attacks. These benefits last until the start of your next turn. Sylph. You and all friendly creatures within 5 feet of you have advantage on Dexterity saving throws until the start of your next turn.</description>
+		</sheet>
+        <rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DRAGONCHESS_SET" />
+        </rules>
+	</element>
+    <element name="Playing Cards" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_BEYOND_LRDTOB_ARCHETYPE_FEATURE_WILD_CARDS_GAMBIT_PLAYING_CARDS">
+		<supports>Wild Cards Gambit, Wild Card Rogue</supports>
+		<description>
+			<p>You have developed a fighting style based around the cartomancy of the Serpent Isles. You have your own deck of enchanted cards, and can make their edges razor-sharp with a flick of your wrist. If you have not yet used your Sneak Attack this turn, you can use your action to take one of these cards and attack a creature within 30 feet with it. The attack roll for this feature uses your Dexterity modifier, and on a hit, it deals slashing damage equal 1d4 + your Dexterity modifier. When you roll for damage, look at the number rolled on the d4. The attack gains a random effect based on the number rolled, as detailed in the Wild Card Suit table below.</p>
+            <p class="indent">You can attack using a card in this manner a number of times equal to your Charisma modifier (minimum of once), and regain all uses after a long rest.</p>
+			<p><strong>Wild Card Suit Table</strong></p>
+			<table>
+				<thead>
+					<tr><td>Damage die (d4)</td><td>Suit</td></tr>
+				</thead>
+				<tr><td>1</td><td>Blade. Roll your Sneak Attack damage and add it to your razor card’s damage. At the start of its next turn, the target takes additional damage equal to half the Sneak Attack damage rolled.</td></tr>
+				<tr><td>2</td><td>Shackle. Until the start of your next turn, the target’s speed is halved. It can’t make more than one attack on its turn while its speed is reduced in this way.</td></tr>
+				<tr><td>3</td><td>Heart. Roll your Sneak Attack damage and add it to your razor card’s damage. You also immediately regain a number of hit points equal to the half the damage dealt. Any excess hit points regains become temporary hit points.</td></tr>
+				<tr><td>4</td><td>Wild Ace. This card morphs suits depending on the dealer’s wishes. Choose Blade, Shackle, or Heart. The card then immediately gains the suit’s respective effect.</td></tr>
+			</table>
+        </description>
+		<sheet>
+			<description>You have your own deck of enchanted cards, and can make their edges razor-sharp with a flick of your wrist. If you have not yet used your Sneak Attack this turn, you can use your action to take one of these cards and attack a creature within 30 feet with it. The attack roll for this feature uses your Dexterity modifier, and on a hit, it deals slashing damage equal 1d4 + {{dexterity:modifier}}. When you roll for damage, look at the number rolled on the d4. The attack gains a random effect based on the number rolled, as detailed in the Wild Card Suit table. Blade(1). Roll your Sneak Attack damage and add it to your razor card’s damage. At the start of its next turn, the target takes additional damage equal to half the Sneak Attack damage rolled. Shackle(2). Until the start of your next turn, the target’s speed is halved. It can’t make more than one attack on its turn while its speed is reduced in this way. Heart(3). Roll your Sneak Attack damage and add it to your razor card’s damage. You also immediately regain a number of hit points equal to the half the damage dealt. Any excess hit points regains become temporary hit points. Wild Ace. Choose Blade, Shackle, or Heart. The card then immediately gains the suit’s respective effect. You can attack using a card in this manner {{charisma:modifier}} times, and regain all uses after a long rest.</description>
+		</sheet>
+        <rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_PLAYING_CARD_SET" />
+        </rules>
+	</element>
+    
+</elements>
