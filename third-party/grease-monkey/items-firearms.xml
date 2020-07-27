@@ -6,385 +6,1095 @@
 			<file name="items-firearms.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/grease-monkey/items-firearms.xml" />
 		</update>
 	</info>
-
-	<!-- firearms option -->
-	<element name="Firearms" type="Option" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_OPTION_FIREARMS">
+	
+	
+	
+	<!-- Martial Weapons (Firearms) -->
+	<element name="Pistol, Compact" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_COMPACT_PISTOL">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_PROPERTY_RELOAD_1, ID_TGMHB_WEAPON_PROPERTY_CONCEALED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_COMPACT_PISTOL</supports>
 		<description>
-			<p>If you want to model the swashbuckling style of The Three Musketeers and similar tales, you can introduce gunpowder weapons to your campaign that are associated with the Renaissance. Similarly, in a campaign where a spaceship has crashed or elements of modern-day Earth are present, futuristic or modern firearms might appear.</p>
+			<p><i>Firearm (Pistol Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Light, Reload (1), Concealed, Ammunition (range 30/80).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d4 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Concealed. </i></b>You can hide a weapon with this rule on your person. Make a Dexterity (Sleight of Hand) check. The total rolled becomes the Wisdom (Perception) or Intelligence (Investigation) check DC required for another creature to notice the concealed weapon. When concealed in a coat or pocket, the weapon can be fired once while counting as hidden, granting you advantage on the attack roll.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
 		</description>
 		<setters>
-			<set name="short">You can introduce gunpowder, futuristic, or modern firearms to your campaign.</set>
-		</setters>
-	</element>
-
-	<!-- explosives -->
-	<element name="Bomb" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_BOMB">
-		<description>
-			<p>As an action, a character can light this bomb and throw it at a point up to 60 feet away. Each creature within 5 feet of that point must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.</p>
-		</description>
-		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">150</set>
-			<set name="weight" lb="1">1 lb.</set>
-			<set name="stackable">true</set>
-		</setters>
-	</element>
-	<element name="Gunpowder, Keg" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_GUNPOWDER_KEG">
-		<description>
-			<p>Gunpowder is chiefly used to propel a bu 11et out of the barrel of a pistol or rifle, or it is formed into a bomb. Gunpowder is sold in small wooden kegs and in waterresistant powder horns.</p>
-			<p class="indent">Setting fire to a container full of gunpowder can cause it to explode, dealing fire damage to creatures within 10 feet of it (3d6 for a powder horn, 7d6 for a keg). A successful DC 12 Dexterity saving throw halves the damage. Setting fire to an ounce of gunpowder causes it to flare for 1 round, s hedding br ight light in a 30-foot radius and dim light for an add itional 30 feet.</p>
-		</description>
-		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">250</set>
-			<set name="weight" lb="20">20 lb.</set>
-			<set name="stackable">true</set>
-		</setters>
-	</element>
-	<element name="Gunpowder, Powder Horn" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_GUNPOWDER_POWDER_HORN">
-		<description>
-			<p>Gunpowder is chiefly used to propel a bu 11et out of the barrel of a pistol or rifle, or it is formed into a bomb. Gunpowder is sold in small wooden kegs and in waterresistant powder horns.</p>
-			<p class="indent">Setting fire to a container full of gunpowder can cause it to explode, dealing fire damage to creatures within 10 feet of it (3d6 for a powder horn, 7d6 for a keg). A successful DC 12 Dexterity saving throw halves the damage. Setting fire to an ounce of gunpowder causes it to flare for 1 round, s hedding br ight light in a 30-foot radius and dim light for an add itional 30 feet.</p>
-		</description>
-		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">35</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">25</set>
 			<set name="weight" lb="2">2 lb.</set>
-			<set name="stackable">true</set>
+			<set name="slot">onehand</set>
+			<set name="range">30/80</set>
+			<set name="damage" type="(Ammunition)">1d4</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_COMPACT_PISTOL</set>
 		</setters>
 	</element>
-
-	<element name="Dynamite (stick)" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_DYNAMITE">
+	<element name="Revolver" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_REVOLVER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_PROPERTY_RELOAD_6, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_REVOLVER</supports>
 		<description>
-			<p>As an action, a creature can light a s tick of dynamite and throw it at a point up to 60 feet away. Each creature within 5 feet of that point must make a DC 12 Dexterity saving throw, taking 3d6 bludgeoning damage on a failed save, or half as much damage on a successful one.</p>
-			<p class="indent">A character can bind sticks of dynamite together so they explode at the same time. Each additional stick increases the damage by 1d6 (to a maximum of 10d6) and the burst radius by 5 feet (to a maximum of 20 feet).</p>
-			<p class="indent">Dynamite can be rigged with a longer fuse to explode after a set amount of time, usually 1 to 6 rounds. Roll initiative for the dynamite. After the set number of rounds goes by, the dynamite explodes on that initiative.</p>
+			<p><i>Firearm (Revolver Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Light, Reload (6), Ammunition (range 80/300).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d6 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
 		</description>
 		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="1">1 lb.</set>
-			<set name="stackable">true</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">40</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">80/300</set>
+			<set name="damage" type="(Ammunition)">1d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_REVOLVER</set>
 		</setters>
 	</element>
-	<element name="Grenade, Fragmentation" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_GRENADE_FRAGMENTATION">
+	<element name="Pistol, Semi-Auto" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_SEMI_AUTO_PISTOL">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_PROPERTY_RELOAD_4, ID_TGMHB_WEAPON_PROPERTY_ROF_2, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_GROUP_FIREARM_SEMI_AUTO_PISTOL</supports>
 		<description>
-			<p>As an action, a character can throw a grenade at a point up to 60 feet away.</p>
-			<p class="indent">Each creature within 20 feet of an exploding fragmentation grenade must make a DC 15 Dexterity saving throw, taking 5d6 piercing damage on a failed save, or half as much damage on a successful one.</p>
+			<p><i>Firearm (Pistol Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Light, Reload (4), ROF (2), Ammunition (range 80/200), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d4 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>ROF (x). </i></b>Some weapons make more than one shot or strike per attack. The number of shots or strikes a ranged weapon makes each time it is activated is shown in the brackets (x).</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
 		</description>
 		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="1">1 lb.</set>
-			<set name="stackable">true</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">120</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">80/300</set>
+			<set name="damage" type="(Ammunition)">1d4</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SEMI_AUTO_PISTOL</set>
 		</setters>
 	</element>
-	<element name="Grenade, Smoke" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_GRENADE_SMOKE">
+	<element name="Plasma Pistol" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_PLASMA_PISTOL">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_PROPERTY_PLASMA, ID_TGMHB_WEAPON_GROUP_FIREARM_PLASMA_PISTOL</supports>
 		<description>
-			<p>As an action, a character can throw a grenade at a point up to 60 feet away.</p>
-			<p class="indent">One round after a smoke grenade lands, it emits a cloud of smoke that creates a heavily obscured area in a 20-foot radius. A moderate wind (at least 10 miles per hour) disperses the smoke in 4 rounds; a strong wind (20 or more miles per hour) disperses it in 1 round.</p>
+			<p><i>Firearm (Plasma)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Light, Plasma, (range 30/60).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d6 fire.</p> 
+			
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Plasma. </i></b>Before firing this weapon roll a d20. If a natural 20 is rolled, the attack ignores resistance to fire damage, and deals an additional die of damage to the target. If a 1 is rolled, the weapon ionstead overheats, you take the attack’s damage, and it cannot be used again until you spend an action to vent the excess heat. Each time you fire, the chance for it to overheat increases by one step on the d20 roll, while spending an action to vent the excess heat resets it to 1.</p>
 		</description>
 		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">0</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">220</set>
 			<set name="weight" lb="2">2 lb.</set>
-			<set name="stackable">true</set>
+			<set name="slot">onehand</set>
+			<set name="range">30/60</set>
+			<set name="damage" type="fire">1d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_PISTOL</set>
 		</setters>
 	</element>
-	<element name="Grenade Launcher" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_GRENADE_LAUNCHER">
+	<element name="Revolver, Heavy" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_HEAVY_REVOLVER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_6, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_HEAVY_REVOLVER</supports>
 		<description>
-			<p>With a grenade launcher, the character can propel the grenade up to 120 feet away. </p>
+			<p><i>Firearm (Revolver Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Reload (6), Ammunition (range 100/300).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d8 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
 		</description>
 		<setters>
-			<set name="category">Explosives</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="7">7 lb.</set>
-			<set name="stackable">true</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">60</set>
+			<set name="weight" lb="5">5 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">100/300</set>
+			<set name="damage" type="(Ammunition)">1d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_REVOLVER</set>
 		</setters>
 	</element>
-
-
-
-	<!-- Renaissance -->
-	<element name="Pistol" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_PISTOL">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING</supports>
-		<description />
+	<element name="Rifle, Bolt" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_BOLT_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_4, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_BOLT_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Rifle Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Reload (4), Ammunition (range 200/800).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d10 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">120</set>
+			<set name="weight" lb="12">12 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">200/800</set>
+			<set name="damage" type="(Ammunition)">1d10</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_BOLT_RIFLE</set>
+		</setters>
+	</element>
+	<element name="Rifle, Assault" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_ASSAULT_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_4, ID_TGMHB_WEAPON_PROPERTY_ROF_2, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_ASSAULT_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Rifle Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Reload (6), ROF (2), Ammunition (range 200/600).</p> 
+			<p class="indent"><b><i>Damage. </i></b>2d4 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>ROF (x). </i></b>Some weapons make more than one shot or strike per attack. The number of shots or strikes a ranged weapon makes each time it is activated is shown in the brackets (x).</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+		</description>
 		<setters>
 			<set name="category">Weapons</set>
 			<set name="cost" currency="gp">250</set>
-			<set name="weight" lb="3">3 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="range">30/90</set>
-			<set name="damage" type="piercing">1d10</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_PISTOL</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET</set> -->
+			<set name="weight" lb="15">15 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">200/800</set>
+			<set name="damage" type="(Ammunition)">2d4</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ASSAULT_RIFLE</set>
 		</setters>
 	</element>
-	<element name="Musket" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_MUSKET">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
+	<element name="Shotgun" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_SHOTGUN">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_2, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_SPREAD_1, ID_TGMHB_WEAPON_PROPERTY_FLESH_BANE, ID_TGMHB_WEAPON_GROUP_FIREARM_SHOTGUN</supports>
+		<description>
+			<p><i>Firearm (Shotgun Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Reload (2), Ammunition, Spread (1) (DC 13), Flesh-Bane (DC 13).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d12 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<p class="indent"><b><i>Spread (x). </i></b>This weapon deals damage in a cone over a wide area. Creatures caught in the cone must succeed on a Dexterity saving throw, taking the weapon’s noted damage on a failure, or half as much on a success. Each spread range falls into a particular value, shown in the brackets (x): (1) 15-foot Cone, (2) 30-foot Cone, (3) 60-foot Cone.</p>
+			<p class="indent"><b><i>Flesh-Bane. </i></b>Whenever an unarmoured creature takes damage from this weapon, they must succeed on a Constitution saving throw or have their armour class reduced by 1, to a minimum of 10, until the end of their next turn. This AC reduction can be stacked on a single target up to 4 times. This does not affect constructs or creatures without flesh, such as wind elementals.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">125</set>
+			<set name="weight" lb="10">10 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">15-foot Cone</set>
+			<set name="damage" type="(Ammunition)">1d12</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SHOTGUN</set>
+		</setters>
+	</element>
+	<element name="Sniper Rifle" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_SNIPER_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_2, ID_TGMHB_WEAPON_PROPERTY_ARMOUR_PIERCING, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_SNIPER_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Sniper Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Heavy, Two-Handed, Reload (2), Armour-Piercing, Ammunition (500/1200).</p> 
+			<p class="indent"><b><i>Damage. </i></b>2d6 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Armour-Piercing. </i></b>This weapon ignores armour plating and resistances to nonmagical piercing damage.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+		</description>
 		<setters>
 			<set name="category">Weapons</set>
 			<set name="cost" currency="gp">500</set>
+			<set name="weight" lb="20">20 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">500/1200</set>
+			<set name="damage" type="(Ammunition)">2d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SNIPER_RIFLE</set>
+		</setters>
+	</element>
+	<element name="Sniper Rifle, Heavy" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_HEAVY_SNIPER_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_2, ID_TGMHB_WEAPON_PROPERTY_ARMOUR_PIERCING, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_GROUP_FIREARM_HEAVY_SNIPER_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Heavy Sniper Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Heavy, Two-Handed, Reload (2), Armour-Piercing, Ammunition (700/1000), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>2d8 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Armour-Piercing. </i></b>This weapon ignores armour plating and resistances to nonmagical piercing damage.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">700</set>
+			<set name="weight" lb="25">25 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">700/1000</set>
+			<set name="damage" type="(Ammunition)">2d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_SNIPER_RIFLE</set>
+		</setters>
+	</element>
+	<element name="Machine-Gun, Light" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_LMG">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_8, ID_TGMHB_WEAPON_PROPERTY_ROF_2, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_LMG</supports>
+		<description>
+			<p><i>Firearm (Machine-Gun Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Reload (8), ROF (2), Ammunition (range 450/800).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d6 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>ROF (x). </i></b>Some weapons make more than one shot or strike per attack. The number of shots or strikes a ranged weapon makes each time it is activated is shown in the brackets (x).</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">200</set>
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">twohand</set>
-			<set name="range">40/120</set>
-			<set name="damage" type="piercing">1d12</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_MUSKET</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET</set> -->
+			<set name="range">450/800</set>
+			<set name="damage" type="(Ammunition)">1d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LMG</set>
 		</setters>
 	</element>
-	<element name="Bullet" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_BULLET">
+	<element name="Machine-Gun, Heavy" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_HMG">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_10, ID_TGMHB_WEAPON_PROPERTY_ROF_3, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_GROUP_FIREARM_HMG</supports>
 		<description>
-			<p>The ammunition of a renaissance firearm is destroyed upon use.</p>
+			<p><i>Firearm (Machine-Gun Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Heavy, Reload (10), ROF (3), Ammunition (range 350/800), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d8 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>ROF (x). </i></b>Some weapons make more than one shot or strike per attack. The number of shots or strikes a ranged weapon makes each time it is activated is shown in the brackets (x).</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
 		</description>
 		<setters>
-			<set name="category">Ammunition</set>
-			<set name="cost" currency="sp">3</set>
-			<set name="weight" lb="0.2">1/5 lb.</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="weight" lb="40">40 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">350/800</set>
+			<set name="damage" type="(Ammunition)">1d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HMG</set>
+		</setters>
+	</element>
+	<element name="Heavy Flamer" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_HEAVY_FLAMER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_TGMHB_WEAPON_PROPERTY_RELOAD_3, ID_TGMHB_WEAPON_PROPERTY_SPREAD_1, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_PROPERTY_FLAMETHROWERS, ID_TGMHB_WEAPON_GROUP_FIREARM_FLAMETHROWER</supports>
+		<description>
+			<p><i>Firearm (Fire)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Heavy, Reload (3), Spread (1) (DC 15), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>3d6 fire.</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Flamethrower. </i></b>These weapons draw briefly on the power of the elemental plane of fire, sending forth a burst of flames towards their unfortunate opponents before rapidly cooling in order to repeat the process anew.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Spread (x). </i></b>This weapon deals damage in a cone over a wide area. Creatures caught in the cone must succeed on a Dexterity saving throw, taking the weapon’s noted damage on a failure, or half as much on a success. Each spread range falls into a particular value, shown in the brackets (x): (1) 15-foot Cone, (2) 30-foot Cone, (3) 60-foot Cone.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
+			<p class="indent"><b><i>Flamethrowers. </i></b>This weapon draws power from the elemental plane of fire.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">450</set>
+			<set name="weight" lb="40">40 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">15-foot Cone</set>
+			<set name="damage" type="fire">3d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_FLAMER</set>
+		</setters>
+	</element>
+	<element name="Laser Rifle" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_LASER_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_LASERS, ID_TGMHB_WEAPON_GROUP_FIREARM_LASER_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Laser)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Laser, (range 120).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d4 fire.</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Lasers. </i></b>Lasers deal more damage the more the same target is hit with a laser weapon. If the weapon hits the same target on the following turn, its damage die increases by one step (d3 -> d4 -> d6 -> d8 -> d10 -> d12 -> 2d6 -> 2d8 -> 2d10 -> 2d12). This effect can stack up to 6 times, but the stacked effects are lost if the weapon misses its target, or doesn’t continue to attack the same target on subsequent rounds. </p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">450</set>
+			<set name="weight" lb="8">8 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">120</set>
+			<set name="damage" type="fire">1d4</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LASER_RIFLE</set>
+		</setters>
+	</element>
+	<element name="Plasma Rifle" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_PLASMA_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_TGMHB_WEAPON_PROPERTY_PLASMA, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_GROUP_FIREARM_PLASMA_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Plasma)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Heavy, Plasma, (range 60/120), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d8 fire.</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Plasma. </i></b>Before firing this weapon roll a d20. If a natural 20 is rolled, the attack ignores resistance to fire damage, and deals an additional die of damage to the target. If a 1 is rolled, the weapon ionstead overheats, you take the attack’s damage, and it cannot be used again until you spend an action to vent the excess heat. Each time you fire, the chance for it to overheat increases by one step on the d20 roll, while spending an action to vent the excess heat resets it to 1.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">600</set>
+			<set name="weight" lb="12">12 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">60/120</set>
+			<set name="damage" type="fire">1d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_RIFLE</set>
+		</setters>
+	</element>
+	<element name="Twin-Barrel Missile Launcher" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_TBML">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_TGMHB_WEAPON_PROPERTY_RELOAD_2, ID_TGMHB_WEAPON_PROPERTY_MT_00, ID_TGMHB_WEAPON_PROPERTY_MISSILE, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_GROUP_FIREARM_MISSILE_LAUNCHER</supports>
+		<description>
+			<p><i>Firearm (MT-00 Missile)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Heavy, Reload (2), MT-00, Missile (no target lock required), Ammunition (range 80/200).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d12 fire.</p> 
+			
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>MT-00. </i></b>Missile Type: 5ft. explosion radius, 4d6 fire damage, DC 12 + Proficiency bonus (Saturation mode).</p>
+			<p class="indent"><b><i>Missile. </i></b>Missiles have two different fire modes. In <i>Targeted</i> mode, you can fire the missile at the target, dealing the weapon’s noted damage on a hit. In <i>Saturation</i> mode, you can instead fill an area with the entire armed and ready ammunition at your disposal. To do so, choose a point within range and consult the missile properties to work out the radius and damage dealt. Each creature in that radius must succeed on a Dexterity saving throw, taking the Missiles’s noted damage on a failed save, or half as much on a success.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<!-- Honestly, this weapon is confusing. I am assuming that you use the same DC calculation as for a hardpoint for the Saturation mode Dex saving throw. Perhaps only the targeted fire mode is intended, but I can't find an explicit statement for this. -->
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">800</set>
+			<set name="weight" lb="40">40 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">80/200</set>
+			<set name="damage" type="fire">1d12</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_TBML</set>
+		</setters>
+	</element>
+	<element name="Anti-Tank Rifle" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_FIREARM_ANTI_TANK_RIFLE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_TGMHB_WEAPON_PROPERTY_RELOAD_2, ID_TGMHB_WEAPON_PROPERTY_ARMOUR_PIERCING, ID_TGMHB_WEAPON_PROPERTY_DEMOLISHER, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_SPECIALIST, ID_TGMHB_WEAPON_GROUP_FIREARM_ANTI_TANK_RIFLE</supports>
+		<description>
+			<p><i>Firearm (Anti-Tank Ammunition)</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Two-Handed, Heavy, Reload (2), Armour-Piercing, Demolisher, Ammunition (range 300/1200), Specialist.</p> 
+			<p class="indent"><b><i>Damage. </i></b>2d8 (Ammunition).</p> 
+			
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Two-Handed. </i></b>This weapon requires two hands to use.</p>
+			<p class="indent"><b><i>Reload (x). </i></b>This weapon must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p class="indent"><b><i>Armour-Piercing. </i></b>This weapon ignores armour plating and resistances to nonmagical piercing damage.</p>
+			<p class="indent"><b><i>Demolisher. </i></b>Weapons with this rule deal double damage when rolling damage against structures. In addition, when dealing damage to constructs or creatures made of earth, stone or metal, the hardpoint deals an additional die of damage.</p>
+			<p class="indent"><b><i>Ammunition. </i></b>Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire. A weapon with no damage type uses the damage type of it’s ammunition.</p>
+			<p class="indent"><b><i>Specialist. </i></b>Weapons with this rule require specialist training to use and cannot be used by someone who is not proficient with them.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">700</set>
+			<set name="weight" lb="25">25 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="range">700/1000</set>
+			<set name="damage" type="(Ammunition)">2d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ANTI_TANK_RIFLE</set>
+		</setters>
+	</element>
+	
+	<!-- Explosives -->
+	<element name="Firebox" type="Item" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_EXPLOSIVE_FIREBOX">
+		<description>
+			<p><i>Thrown Explosive (20/60).</i></p>
+			
+			<p>When thrown at a point within range, it explodes in a 5-foot radius sphere. Creatures in the area must succeed on a Dexterity saving throw (DC equal to 10 + your prof bonus), taking 3d6 fire damage on a failed save, or half as much on a success.</p>
+		</description>
+		<setters>
+			<set name="category">Explosives</set>
+			<set name="cost" currency="gp">25</set>
+			<set name="weight" lb="1">1 lb.</set>
 			<set name="stackable">true</set>
 		</setters>
 	</element>
-
-	<!-- Modern -->
-	<element name="Pistol, Automatic" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_PISTOL_AUTOMATIC">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="3">3 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="range">50/150</set>
-			<set name="damage" type="piercing">2d6</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_PISTOL_AUTOMATIC</set>
-			<set name="reload">15</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
-		</setters>
-	</element>
-	<element name="Revolver" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_REVOLVER">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="3">3 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="range">40/120</set>
-			<set name="damage" type="piercing">2d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_REVOLVER</set>
-			<set name="reload">6</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
-		</setters>
-	</element>
-	<element name="Rifle, Hunting" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_RIFLE_HUNTING">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="8">8 lb.</set>
-			<set name="slot">twohand</set>
-			<set name="range">80/240</set>
-			<set name="damage" type="piercing">2d10</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE</set>
-			<set name="reload">5</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
-		</setters>
-	</element>
-	<element name="Rifle, Automatic" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_RIFLE_AUTOMATIC">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_BURST_FIRE, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="8">8 lb.</set>
-			<set name="slot">twohand</set>
-			<set name="range">80/240</set>
-			<set name="damage" type="piercing">2d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE</set>
-			<set name="reload">30</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
-		</setters>
-	</element>
-	<element name="Shotgun" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_SHOTGUN">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="7">7 lb.</set>
-			<set name="slot">twohand</set>
-			<set name="range">30/90</set>
-			<set name="damage" type="piercing">2d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_SHOTGUN</set>
-			<set name="reload">2</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
-		</setters>
-	</element>
-	<element name="Bullet" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_BULLET_MODERN">
+	
+	<!-- Martial Melee Weapons -->
+	<element name="Energy Blade" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_MARTIAL_MELEE_ENERGY_BLADE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_FIRE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_TGMHB_WEAPON_PROPERTY_FLESH_BANE, ID_TGMHB_WEAPON_GROUP_MELEE_ENERGY_BLADE</supports>
 		<description>
-			<p>The ammunition of a modern firearm is destroyed upon use.</p>
+			<p><i>Martial Melee Weapon</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Finesse, Light, Versatile (1d8), Flesh-Bane (DC 13).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d6 Fire.</p> 
+			
+			<p class="indent"><b><i>Finesse. </i></b>When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Versatile. </i></b>This weapon can be used with one or two hands. A damage value in parentheses appears with the property - the damage when the weapon is used with two hands to make a melee attack.</p>
+			<p class="indent"><b><i>Flesh-Bane. </i></b>Whenever an unarmoured creature takes damage from this weapon, they must succeed on a Constitution saving throw or have their armour class reduced by 1, to a minimum of 10, until the end of their next turn. This AC reduction can be stacked on a single target up to 4 times. This does not affect constructs or creatures without flesh, such as wind elementals.</p>
 		</description>
 		<setters>
-			<set name="category">Ammunition</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0.1">1/10 lb.</set>
-			<set name="stackable">true</set>
-		</setters>
-	</element>
-
-	<!-- Futuristic -->
-	<element name="Laser Pistol" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_LASER_PISTOL">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<description />
-		<setters>
 			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
+			<set name="cost" currency="gp">250</set>
 			<set name="weight" lb="2">2 lb.</set>
 			<set name="slot">onehand</set>
-			<set name="range">40/120</set>
-			<set name="damage" type="radiant">3d6</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASTER_PISTOL</set>
-			<set name="reload">50</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_ENERGY_CELL</set> -->
+			<set name="damage" type="fire">1d6</set>
+			<set name="versatile">1d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_BLADE</set>
 		</setters>
 	</element>
-	<element name="Antimatter Rifle" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_ANTIMATTER_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="10">10 lb.</set>
-			<set name="slot">twohand</set>
-			<set name="range">120/360</set>
-			<set name="damage" type="necrotic">6d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_ANTIMATTER_RIFLE</set>
-			<set name="reload">2</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_ENERGY_CELL</set> -->
-		</setters>
-	</element>
-	<element name="Laser Rifle" type="Weapon" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_WEAPON_LASER_RIFLE">
-		<supports>ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<description />
-		<setters>
-			<set name="category">Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="7">7 lb.</set>
-			<set name="slot">twohand</set>
-			<set name="range">100/300</set>
-			<set name="damage" type="radiant">3d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASER_RIFLE</set>
-			<set name="reload">30</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_ENERGY_CELL</set> -->
-		</setters>
-	</element>
-	<element name="Energy Cell" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ITEM_ENERGY_CELL">
+	<element name="Energy Dagger" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_MARTIAL_MELEE_ENERGY_DAGGER">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_FIRE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_GROUP_MELEE_ENERGY_DAGGER</supports>
 		<description>
-			<p>Futuristic firearms are powered by a special type of ammunition called energy cells. An energy cell contains enough power for all the shots its firearm can make.</p>
+			<p><i>Martial Melee Weapon</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Finesse, Light.</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d4 Fire.</p> 
+			
+			<p class="indent"><b><i>Finesse. </i></b>When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
 		</description>
 		<setters>
-			<set name="category">Ammunition</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0.3125">5 oz.</set>
-			<set name="stackable">true</set>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">140</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="fire">1d4</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_DAGGER</set>
 		</setters>
 	</element>
+	<element name="Power Gauntlet" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_MARTIAL_MELEE_POWER_GAUNTLET">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_TGMHB_WEAPON_PROPERTY_POWERFUL_BLOW, ID_TGMHB_WEAPON_PROPERTY_DEMOLISHER, ID_TGMHB_WEAPON_GROUP_MELEE_POWER_GAUNTLET</supports>
+		<description>
+			<p><i>Martial Melee Weapon</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Heavy, Powerful Blow (DC 13), Demolisher.</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d8 Bludgeoning.</p> 
+			
+			<p class="indent"><b><i>Heavy. </i></b>Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.</p>
+			<p class="indent"><b><i>Powerful Blow. </i></b>A weapon with this rule ignores resistance to bludgeoning damage. In addition, if the attack roll exceeds the target’s AC by 5 or more, it must succeed on a Strength saving throw or be pushed back 5 feet per damage die and knocked prone.</p>
+			<p class="indent"><b><i>Demolisher. </i></b>Weapons with this rule deal double damage when rolling damage against structures. In addition, when dealing damage to constructs or creatures made of earth, stone or metal, the hardpoint deals an additional die of damage.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">300</set>
+			<set name="weight" lb="30">30 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="bludgeoning">1d8</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_POWER_GAUNTLET</set>
+		</setters>
+	</element>
+	<element name="Tesla Glove" type="Weapon" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_MARTIAL_MELEE_TESLA_GLOVE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_TGMHB_WEAPON_PROPERTY_ARC_LIGHTNING_1, ID_TGMHB_WEAPON_PROPERTY_TESLA_POWER, ID_TGMHB_WEAPON_GROUP_MELEE_TESLA_GLOVE</supports>
+		<description>
+			<p><i>Martial Melee Weapon</i></p>
+			
+			<p class="indent"><b><i>Properties. </i></b>Light, Arc Lightning (1) (DC 13).</p> 
+			<p class="indent"><b><i>Damage. </i></b>1d6 Lightning.</p> 
+			
+			<p class="indent"><b><i>Light. </i></b>A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.</p>
+			<p class="indent"><b><i>Arc Lightning (X). </i></b>Whenever a weapon with this rule hits a target, the lightning arcs towards a number of objects or creatures shown in the brackets that are within 5 feet of the original target. The lightning jumps to the object or creature closest to the original target (aside from you). The targets must succeed on a Dexterity saving throw, taking the half the attack’s initial lightning damage on a failed save, or no damage on a successful one.</p>
+			<p class="indent"><b><i>Tesla Power. </i></b>This weapon is charged with magical energy from the elemental planes.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">175</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="lightning">1d6</set>
+			<set name="proficiency">ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_TESLA_GLOVE</set>
+		</setters>
+	</element>
+	
+	
+	<!-- weapon groups -->
+	<!-- <element name="Weapon Group (Firearms)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARMS" /> -->
+	<element name="Weapon Group (Anti-Tank Rifle)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_ANTI_TANK_RIFLE" />
+	<element name="Weapon Group (Laser Rifle)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_LASER_RIFLE" />
+	<element name="Weapon Group (Machine-Gun, Heavy)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_HMG" />
+	<element name="Weapon Group (Machine-Gun, Light)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_LMG" />
+	<element name="Weapon Group (Pistol, Compact)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_COMPACT_PISTOL" />
+	<element name="Weapon Group (Pistol, Semi-Auto)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_SEMI_AUTO_PISTOL" />
+	<element name="Weapon Group (Plasma Pistol)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_PLASMA_PISTOL" />
+	<element name="Weapon Group (Plasma Rifle)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_PLASMA_RIFLE" />
+	<element name="Weapon Group (Revolver)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_REVOLVER" />
+	<element name="Weapon Group (Revolver, Heavy)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_HEAVY_REVOLVER" />
+	<element name="Weapon Group (Rifle, Assault)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_ASSAULT_RIFLE" />
+	<element name="Weapon Group (Rifle, Bolt)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_BOLT_RIFLE" />
+	<element name="Weapon Group (Shotgun)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_SHOTGUN" />
+	<element name="Weapon Group (Sniper Rifle)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_SNIPER_RIFLE" />
+	<element name="Weapon Group (Sniper Rifle, Heavy)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_HEAVY_SNIPER_RIFLE" />
+	<element name="Weapon Group (Missile Launcher)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_MISSILE_LAUNCHER" />
+	<element name="Weapon Group (Flamethrower)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_FIREARM_FLAMETHROWER" />
 
-
-
+	<element name="Weapon Group (Energy Blade)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_MELEE_ENERGY_BLADE" />
+	<element name="Weapon Group (Energy Dagger)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_MELEE_ENERGY_DAGGER" />
+	<element name="Weapon Group (Power Gauntlet)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_MELEE_POWER_GAUNTLET" />
+	<element name="Weapon Group (Tesla Glove)" type="Weapon Group" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_GROUP_MELEE_TESLA_GLOVE" />
+	
+	
 	<!-- proficiencies -->
-	<element name="Weapon Proficiency (Firearms)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FIREARMS">
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+	<element name="Weapon Proficiency (Firearms)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_FIREARMS">
 		<sheet alt="Firearms" />
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_PISTOL" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_MUSKET" />
-
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_PISTOL_AUTOMATIC" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_REVOLVER" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_SHOTGUN" />
-
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASTER_PISTOL" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_ANTIMATTER_RIFLE" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASER_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_COMPACT_PISTOL" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_REVOLVER" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SEMI_AUTO_PISTOL" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_PISTOL" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_REVOLVER" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_BOLT_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ASSAULT_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SHOTGUN" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SNIPER_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_SNIPER_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LMG" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HMG" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_FLAMER" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LASER_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_RIFLE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_TBML" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ANTI_TANK_RIFLE" />
 		</rules>
 	</element>
-
-	<!-- todo: create renaissance/modern/futuristic proficiencies -->
-
-	<element name="Weapon Proficiency (Pistol)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_PISTOL">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Pistol" />
-	</element>
-	<element name="Weapon Proficiency (Musket)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_RENAISSANCE_FIREARMS_MUSKET">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Musket" />
+	<!-- For the Specialist property. Currently unused. -->
+	<element name="Weapon Proficiency (Specialist)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_SPECIALIST">
+		<sheet alt="Specialist" />
 	</element>
 
-	<element name="Weapon Proficiency (Pistol, Automatic)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_PISTOL_AUTOMATIC">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Automatic Pistol" />
+	<element name="Weapon Proficiency (Compact Pistol)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_COMPACT_PISTOL">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD, ID_TGMHB_WEAPON_PROPERTY_CONCEALED</supports>
+		<sheet alt="Compact Pistol" />
 	</element>
-	<element name="Weapon Proficiency (Revolver)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_REVOLVER">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+	<element name="Weapon Proficiency (Revolver)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_REVOLVER">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
 		<sheet alt="Revolver" />
 	</element>
-	<element name="Weapon Proficiency (Rifle)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Rifle" />
+	<element name="Weapon Proficiency (Semi-Auto Pistol)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SEMI_AUTO_PISTOL">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Semi-Auto Pistol" />
 	</element>
-	<element name="Weapon Proficiency (Shotgun)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_SHOTGUN">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+	<element name="Weapon Proficiency (Plasma Pistol)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_PISTOL">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</supports>
+		<sheet alt="Plasma Pistol" />
+	</element>
+	<element name="Weapon Proficiency (Heavy Revolver)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_REVOLVER">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Heavy Revolver" />
+	</element>
+	<element name="Weapon Proficiency (Bolt Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_BOLT_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Bolt Rifle" />
+	</element>
+	<element name="Weapon Proficiency (Assault Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ASSAULT_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Assault Rifle" />
+	</element>
+	<element name="Weapon Proficiency (Shotgun)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SHOTGUN">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
 		<sheet alt="Shotgun" />
 	</element>
-
-	<element name="Weapon Proficiency (Laster Pistol)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASTER_PISTOL">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Laster Pistol" />
+	<element name="Weapon Proficiency (Sniper Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_SNIPER_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Sniper Rifle" />
 	</element>
-	<element name="Weapon Proficiency (Antimatter Rifle)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_ANTIMATTER_RIFLE">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
-		<sheet alt="Antimatter Rifle" />
+	<element name="Weapon Proficiency (Heavy Sniper Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_SNIPER_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Heavy Sniper Rifle" />
 	</element>
-	<element name="Weapon Proficiency (Laser Rifle)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASER_RIFLE">
-		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
-		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+	<element name="Weapon Proficiency (Light Machine-Gun)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LMG">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Light Machine-Gun" />
+	</element>
+	<element name="Weapon Proficiency (Heavy Machine-Gun)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HMG">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Heavy Machine-Gun" />
+	</element>
+	<element name="Weapon Proficiency (Heavy Flamer)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_HEAVY_FLAMER">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_TGMHB_WEAPON_PROPERTY_FIREARM_RELOAD</supports>
+		<sheet alt="Heavy Flamer" />
+	</element>
+	<element name="Weapon Proficiency (Laser Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_LASER_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</supports>
 		<sheet alt="Laser Rifle" />
 	</element>
-
-
+	<element name="Weapon Proficiency (Plasma Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_PLASMA_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</supports>
+		<sheet alt="Plasma Rifle" />
+	</element>
+	<element name="Weapon Proficiency (Twin-Barrel Missile Launcher)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_TBML">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</supports>
+		<sheet alt="Twin-Barrel Missile Launcher" />
+	</element>
+	<element name="Weapon Proficiency (Anti-Tank Rifle)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_FIREARM_ANTI_TANK_RIFLE">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</supports>
+		<sheet alt="Anti-Tank Rifle" />
+	</element>
+	
+	<element name="Weapon Proficiency (Energy Blade)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_BLADE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_FIRE, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE</supports>
+		<sheet alt="Energy Blade" />
+	</element>
+	<element name="Weapon Proficiency (Energy Dagger)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_DAGGER">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_FIRE</supports>
+		<sheet alt="Energy Dagger" />
+	</element>
+	<element name="Weapon Proficiency (Power Gauntlet)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_POWER_GAUNTLET">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING</supports>
+		<sheet alt="Power Gauntlet" />
+	</element>
+	<element name="Weapon Proficiency (Tesla Glove)" type="Proficiency" source="The Greasemonkey's Handbook" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_TESLA_GLOVE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</supports>
+		<sheet alt="Tesla Glove" />
+	</element>
+	
 	<!-- properties -->
-	<element name="Ammunition" type="Weapon Property" source="Internal" id="ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION">
+	<!-- some of these properties are only about ATUM hardpoints. this might have to be rearranged in future, if ATUMs/hardpoints can be supported by Aurora (in some capacity). -->
+	<element name="Ammunition" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FIREARM_AMMUNITION">
 		<description>
-			<p>The ammunition of a firearm is destroyed upon use. Renaissance and modern firearms use bullets. Futuristic firearms are powered by a special type of ammunition called energy cells. An energy cell contains enough power for all the shots its firearm can make.</p>
+			<p>Some ranged weapons listed on TGMHB page 33 have ammunition requirements. Unlike conventional ammunition, all firearm ammunition is purchased in magazines, or clips, instead of individual rounds. A weapon’s magazine lasts for as long as the Reload (x) property listed on its profile, regardless of the amount of shots the weapon might actually fire.</p>
+			<p>When a creature reloads a weapon, that magazine clip is assumed to be empty, and can either be discarded, or refilled at a weapons dealer, armoury, ATUM Workshop or an appropriate blacksmiths.</p>
+			<table>
+				<thead>
+					<tr><td>Weapon Type</td><td><center>Cost Per</center></td><td>Properties</td></tr>
+					<tr><td> </td><td><center>Magazine</center></td><td> </td></tr>
+				</thead>
+				<tr><td>Pistol</td><td><center>1gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>Revolver</td><td><center>1gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>Rifle</td><td><center>2gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>Shotgun</td><td><center>1gp</center></td><td>Deals slashing damage</td></tr>
+				<tr><td>Sniper</td><td><center>1gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>Heavy Sniper</td><td><center>5gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>Machine Gun</td><td><center>5gp</center></td><td>Deals piercing damage</td></tr>
+				<tr><td>MT-00 Missile</td><td><center>20gp</center></td><td>See <i>Missile</i> special rule</td></tr>
+				<tr><td>Anti Tank</td><td><center>25gp</center></td><td>Deals piercing damage</td></tr>
+			</table>
 		</description>
 	</element>
-	<element name="Burst Fire" type="Weapon Property" source="Internal" id="ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_BURST_FIRE">
+	<element name="Flamethrowers" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FLAMETHROWERS">
 		<description>
-			<p>A weapon that has the burst fire property can make a normal single-target attack, or it can spray a 10-foot-cube area within normal range with shots. Each creature in the area must succeed on a DC 15 Dexterity saving throw or take the weapon's normal damage. This action uses ten pieces of ammunition.</p>
+			<p>In a similar style to Tesla weaponry, compact, hand held flamethrower designs don’t require ammunition in order to function. Instead, these weapons draw briefly on the power of the elemental plane of fire, sending forth a burst of flames towards their unfortunate opponents before rapidly cooling in order to repeat the process anew.</p>
 		</description>
 	</element>
-	<element name="Reload" type="Weapon Property" source="Internal" id="ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD">
+	<element name="Tesla Power" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_TESLA_POWER">
 		<description>
-			<p>A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice).</p>
+			<p>Tesla weaponry utilizes arcs of powerful lightning or electricity; unleashing in a sparking volley of dancing violence that can jump from one creature to the damge, should they be close enough. This close range proximity has meant their use is mainly focused on melee combat weapons, where the booming arcs of short range electrical energy can be most effective.</p>
+			<p>Advanced elements of Tesla technology use battery cells or solar charges in order to maintain functionality. More primitive or steampunk designs are frequently seen using powerful static metal nodes, charged with magical energy from the elemental planes to achieve the same result.</p>
+		</description>
+	</element>
+	
+	<element name="Ammo Box (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_AMMO_BOX">
+		<description>
+			<p>A hardpoint with this rule is assumed to hold enough ammo to be used in a certain number of encounters before needing to be reloaded. For example, a hardpoint with an ammo box of (2) can only be used in 2 different encounters before the ammunition for it runs out and it needs to be reloaded.</p>
+			<p>An ammo box holds ammo for a single type of module. For example, if you have three light MGs installed, they all use the same ammo box. If you have three different modules, such as a light MG, heavy MG and a light autocannon, each module will require its own ammo box.</p>
+			<h5 class="caption">Storing Ammo Boxes</h5>
+			<p>Each chassis can hold a number of ammo boxes equal to half its module slots, rounded down. Certain upgrades can allow for additional ammo boxes to be stored.</p>
+			<h5 class="caption">Reloading Ammo Boxes</h5>
+			<p>Unlike conventional reloading, an ammo box takes 10 minutes to reload, and must be reloaded by hand unless in a workshop.</p>
+			<h5 class="caption">Buying Additional Ammo Boxes</h5>
+			<p>Additional or replacement ammo boxes can be purchased from town or city weaponsmiths. Consult the table below for prices and general availability when in a settlement.</p>
+			<h5 class="caption">Ammo Box Availability and Costs</h5>
+			<table>
+				<thead>
+					<tr><td>Location</td><td><center>Ammo Boxes Available</center></td><td><right>Cost Per Box</right></td></tr>
+				</thead>
+				<tr><td>Village</td><td><center>1d4-1</center></td><td><right>120gp</right></td></tr>
+				<tr><td>Town</td><td><center>2d4</center></td><td><right>85gp</right></td></tr>
+				<tr><td>City</td><td><center>3d4+1</center></td><td><right>50gp</right></td></tr>
+				<tr><td>Military Base</td><td><center>5d4+5</center></td><td><right>25gp</right></td></tr>
+			</table>
+		</description>
+	</element>
+	<element name="Arc Lightning (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARC_LIGHTNING">
+		<description>
+			<p>Whenever a hardpoint or weapon with this rule hits a target, the lightning arcs towards a number of objects or creatures shown in the brackets that are within 15 feet of the original target. If this property is on a melee weapon, the range is 5 feet instead. The lightning jumps to the object or creature closest to the original target (aside from you).</p>
+			<p>The targets must succeed on a Dexterity saving throw, taking the half the attack’s initial lightning damage on a failed save, or no damage on a successful one.</p>
+		</description>
+	</element>
+	<element name="Arm Mount" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARM_MOUNT">
+		<description>
+			<p>Weapons with this rule must be mounted on a manipulator arm. They still require an action to fire, but the manipulator can also carry a weapon or be used as normal when an arm mount is equipped.</p>
+		</description>
+	</element>
+	<element name="Armour-Cutter" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARMOUR_CUTTER">
+		<description>
+			<p>Armour-Cutters are powerful heat based hardpoints designed for shearing off metal plating or heavy armour.</p>
+			<p>A hardpoint with this rule can choose to deal all damage directly to the armour plating of a target, regardless of its threshold. If this damage would reduce the armour plating’s hit points to 0, or the target has no armour plating to begin with, it must succeed on a Constitution saving throw or have its AC reduced by 1, to a minimum of 10. A creature’s worn armour is destroyed if its AC value is reduced to 10.</p>
+			<p>This reduction lasts until the target repairs the damage during a short or long rest, or is healed with the <i>reconstruct</i> spell.</p>
+			<p><b>This rule has no effect on organic targets, or creatures not wearing armour.</b></p>
+		</description>
+	</element>
+	<element name="Armour-Piercing" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARMOUR_PIERCING">
+		<description>
+			<p>Weapons or hardpoints with this rule ignore armour plating and resistances to nonmagical piercing damage.</p>
+		</description>
+	</element>
+	<element name="Artillery" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARTILLERY">
+		<description>
+			<p>An artillery hardpoint is a set of cannons, often used to blanket large areas with sustained fire. These cannons range from pairs of short, rapid firing howitzers to long, multi-barrelled batteries mounted on the back of category 1 ATUMs. Artillery hardpoints have a special set of ranges, called a range band, shown below.</p>
+			<p>Artillery hardpoints cannot depress far enough to reliably direct-fire at a target. <b>To represent this, an artillery hardpoint cannot shoot a target that is within 40 feet of it.</b></p>
+			<p>To fire artillery, you must spend your action and choose a target point within one of these three ranges, consulting the range band table below to find out the explosion radius. This radius is measured in feet from the chosen target point.</p>
+			<p>Each creature in the selected radius must succeed on a Dexterity saving throw, taking the artillery module's noted damage on a failed save, or half as much on a success.</p>
+			<p><b>An artillery hardpoint module can never be activated more than once per turn, regardless of upgrades.</b></p>
+			<table>
+				<thead>
+					<tr><td><center>Range Band</center></td><td><center>Range</center></td><td><center>Explosion Radius</center></td></tr>
+				</thead>
+				<tr><td><center>1</center></td><td><center>40ft - 240ft</center></td><td><center>15 ft</center></td></tr>
+				<tr><td><center>2</center></td><td><center>241ft - 500ft</center></td><td><center>30 ft</center></td></tr>
+				<tr><td><center>3</center></td><td><center>501ft - 1 Mile</center></td><td><center>60 ft</center></td></tr>
+			</table>
+		</description>
+	</element>
+	<element name="Charge (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_CHARGE">
+		<description>
+			<p>Modules with the charge rule can be activated or used a number of times equal to the number in the brackets. Once expended, these modules must be reloaded, or have new charges installed by visiting a workshop.</p>
+		</description>
+	</element>
+	<element name="Chassis Resistance (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_CHASSIS_RESISTANCE">
+		<description>
+			<p>ATUMs with this rule are hardier than most, and build to withstand punishment. As a reaction when the ATUM takes damage, the pilot can use their reaction to roll the die shown in brackets next to the chassis resistance rule (x), reducing the incoming damage by the value shown on the dice.</p>
+			<p>For example, if an ATUM would be hit by a weapon that dealt 20 piercing damage and had a chassis resistance of (1d12), the pilot could use their reaction to roll the die and reduce that damage by 1d12.</p>
+		</description>
+	</element>
+	<element name="Co-Axial" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_COAXIAL">
+		<description>
+			<p>Ballistic or energy hardpoints with this rule can be mounted alongside another ranged hardpoint at the cost of one module slot, instead of their normal cost, and their damage dice is reduced by one step. For example, a Light MG would have its damage die reduced from 1d10 to 1d8.</p>
+			<p>Whenever the main hardpoint is used, you can fire the co-axial hardpoint at the same target as a bonus action on your turn. A hardpoint module can only have one co-axial hardpoint attached at a time.</p>
+		</description>
+	</element>
+	<element name="Concealed" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_CONCEALED">
+		<description>
+			<p>You can hide a weapon with this rule on your person. Make a Dexterity (Sleight of Hand) check. The total rolled becomes the Wisdom (Perception) or Intelligence (Investigation) check DC required for another creature to notice the concealed weapon. When concealed in a coat or pocket, the weapon can be fired once while counting as hidden, granting you advantage on the attack roll.</p>
+		</description>
+	</element>
+	<element name="Crane" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_CRANE">
+		<description>
+			<p>Cranes are extending hardpoints attached to either a hook, lifting winch, or wrecking ball. As a bonus action, the crane’s reach can be extended by 15 feet, to a maximum of 60 feet. When extended further than 30 feet in this way, the ATUM’s movement speed is reduced to 0.</p>
+			<h5 class="caption">Using the Hook or Winch</h5>
+			<p>If using the winch or hook, the crane can be used to either move an object not being carried by another creature within its reach as an action, or can be swung at a target, dealing 1d10 bludgeoning damage on a hit.</p>
+			<p>A Hook or Winch can lift an object weighing up to 2 tons if attached to a light ATUM. This limit increases to 4 tons if the hardpoint is attached to a medium ATUM, or 6 tons if attached to a heavy ATUM.</p>
+			<h5 class="caption">Using the Wrecking Ball</h5>
+			<p>If using the wrecking ball, as an action you can swing it in a 10-foot wide, 15-foot long arc. Creatures in the arc must succeed on a Dexterity saving throw, taking 4d10 bludgeoning damage and being knocked prone on a failed save, or half as much damage and not being knocked prone on a successful one. This damage increases by 1d10 when used by a medium ATUM, and 2d10 when used by a heavy ATUM.</p>
+		</description>
+	</element>
+	<element name="Demolisher" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_DEMOLISHER">
+		<description>
+			<p>Hardpoints with this rule deal double damage when rolling damage against structures. In addition, when dealing damage to constructs or creatures made of earth, stone or metal, the hardpoint deals an additional die of damage.</p>
+		</description>
+	</element>
+	<element name="Excavation" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_EXCAVATION">
+		<description>
+			<p>A hardpoint with this rule can reshape dirt, sand or clay in an area no bigger than 20 feet on any side in any manner. You can choose to raise or lower the area’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such change can’t exceed half the area’s largest dimension.</p>
+			<p>So if you affect a 20-foot square, you can create a pillar up to 10 feet high, raise or lower the square’s elevation by up to 10 feet, dig a trench up to 10 feet deep, and so on.</p>
+			<p>It takes 10 minutes for these changes to complete.</p>
+		</description>
+	</element>
+	<element name="Experimental" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_EXPERIMENTAL">
+		<description>
+			<p>Hardpoints with this rule are dangerous, sporadic and often unstable. These hardpoints are not sold at normal markets, but instead require a quest from your Dungeon Master in order to obtain, and rarely will there be more than one or two in the world, due to their complexity. In addition, these hardpoints can be used solely at your Dungeon Master’s discretion. It should be noted that before using any experimental hardpoint, the user must first roll on the experimental hardpoint table.</p>
+			<h5 class="caption">Experimental Hardpoint Table</h5>
+			<table>
+				<thead>
+					<tr><td><center>1d8</center></td><td><center>Effect</center></td><td>Description</td></tr>
+				</thead>
+				<tr><td><center>1 - 5</center></td><td><center>Nothing</center></td><td>The module activates as normal.</td></tr>
+				<tr><td><center>6 - 7</center></td><td><center>Misfire</center></td><td>The module fails to activate and your action is wasted.</td></tr>
+				<tr><td><center>8</center></td><td><center>BANG!</center></td><td>Something explodes! Your ATUM takes 5d8 force damage. Immediately re-roll, ignoring a result of 8.</td></tr>
+			</table>
+		</description>
+	</element>
+	<element name="Faulty" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FAULTY">
+		<description>
+			<p>Whenever you use/activate this module you must first roll a d20. If you roll a 1 then you must immediately roll on the Module Fault table. If this weapon also has the Plasma rule, roll the d20 for this rule first.</p>
+			<h5 class="caption">Fault Table</h5>
+			<table>
+				<thead>
+					<tr><td><center>1d8</center></td><td><center>Effect</center></td><td>Description</td></tr>
+				</thead>
+				<tr><td><center>1</center></td><td><center>Nothing</center></td><td>Nothing happens.</td></tr>
+				<tr><td><center>2</center></td><td><center>Misfire</center></td><td>The module fails to activate, and the action fails.</td></tr>
+				<tr><td><center>3</center></td><td><center>Jammed</center></td><td>If the module is a hardpoint it is jammed and requires an action to clear before it can be used again. If it is not a hardpoint then immediately re-roll, ignoring a result of 3.</td></tr>
+				<tr><td><center>4</center></td><td><center>Emergency Shutdown</center></td><td>The module is cannot be used for 1d4 rounds.</td></tr>
+				<tr><td><center>5</center></td><td><center>Module Damage</center></td><td>The module’s quality drops by one category.</td></tr>
+				<tr><td><center>6</center></td><td><center>Module Break</center></td><td>Something inside the module breaks. The module quality becomes <i>Broken</i>.</td></tr>
+				<tr><td><center>7</center></td><td><center>Internal Combustion</center></td><td>Something catches fire inside the module! At the start of each of your turns, your ATUM takes 2d6 fire damage until you spend an action to extinguish the fire.</td></tr>
+				<tr><td><center>8</center></td><td><center>Boom!</center></td><td>Something inside the module explodes! Your ATUM takes 3d10 thunder damage from the force of the explosion. Immediately re-roll on this table, ignoring a result of 8.</td></tr>
+			</table>
+		</description>
+	</element>
+	<element name="Flak" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FLAK">
+		<description>
+			<p>Flak hardpoints fire shredding rounds that explode mid air, scattering the are around it with fuselage-tearing shrapnel. When firing a hardpoint module with this rule, choose a target you can see within range. Each creature in a 15-foot cube (including and centered on the target) must succeed on a Dexterity saving throw, taking the flak module’s noted damage on a failed save, or half as much on a success.</p>
+		</description>
+	</element>
+	<element name="Flesh-Bane" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FLESH_BANE">
+		<description>
+			<p>Whenever an unarmoured creature takes damage from this weapon, they must succeed on a Constitution saving throw or have their armour class reduced by 1, to a minimum of 10, until the end of their next turn. This AC reduction can be stacked on a single target up to 4 times. This does not affect constructs or creatures without flesh, such as wind elementals.</p>
+		</description>
+	</element>
+	<element name="Forward Facing" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_FORWARD_FACING">
+		<description>
+			<p>Modules with this rule can only be fixed facing forwards, and has a 45 degree firing arc. The ATUM must turn to face its target if it wishes to fire a forward firing hardpoint.</p>
+		</description>
+	</element>
+	<element name="Lasers" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_LASERS">
+		<description>
+			<p>Lasers are concentrated beams of heat that deal damage through pinpoint accuracy instead of traditional ballistic rounds. Lasers deal more damage the more the same target is hit with the ranged weapon or hardpoint module. When a module with this rule hits a target, it begins burning into the target, slowly increasing the damage dealt. If the module hits the same target on the following turn (regardless of which crew member fired it), its damage die increases by one step. The dice steps are shown below. </p>
+			<p>This effect can stack up to 6 times, but the stacked effects are lost if the module misses its target, or doesn’t continue to attack the same target on subsequent rounds. </p>
+			<p><b>Damage Dice Steps</b></p>
+			<p>d3 -> d4 -> d6 -> d8 -> d10 -> d12 -> 2d6 -> 2d8 -> 2d10 -> 2d12</p>
+		</description>
+	</element>
+	
+	<element name="MT-00" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_MT_00">
+		<description>
+			<p>Missile Type: 5ft. explosion radius, 4d6 fire damage.</p>
+		</description>
+	</element>
+	<element name="Missile" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_MISSILE">
+		<description>
+			<p>Missiles take many forms, from huge batteries of clustered warheads to smaller, piercing explosive shells, and are a popular shoulder mounted addition to many bipedal ATUMs. Missiles have two different fire modes, Targeted and Saturation.</p>
+			<p class="indent"><b><i>Targeted. </i></b>When firing a missile hardpoint in this mode, you must spend a bonus action to lock onto a target that you can see within the hardpoint’s range. The target remains locked for one minute, or until it is successfully hit by the hardpoint or leaves the hardpoint’s range. A pilot does not require line of sight when firing a missile hardpoint at a locked target. Once locked, you can fire the hardpoint at the target as an action on your turn, dealing the hardpoint’s noted damage on a hit.</p>
+			<p class="indent"><b><i>Saturation. </i></b>Instead of firing missiles at a single target, you can instead spend your action to fill an area with the entire armed and ready ammunition at your disposal. To do so, choose a point within range and consult the missile table below to work out the radius and damage dealt. Each creature in that radius must succeed on a Dexterity saving throw, taking the table’s noted damage on a failed save, or half as much on a success.</p>
+			<p class="indent">Once fired in this manner, a missile hardpoint will need to be reloaded before it can be fired again.</p>
+			<h5 class="caption">Missile Table</h5>
+			<table>
+				<thead>
+					<tr><td>Missile Type</td><td><center>Explosion Radius</center></td><td><right>Damage</right></td></tr>
+				</thead>
+				<tr><td>MT-00</td><td><center>5ft</center></td><td><right>4d6 fire</right></td></tr>
+				<tr><td>MT-01</td><td><center>10ft</center></td><td><right>6d6 fire</right></td></tr>
+				<tr><td>MT-02</td><td><center>20ft</center></td><td><right>12d6 fire</right></td></tr>
+				<tr><td>MT-03</td><td><center>60ft</center></td><td><right>18d6 fire</right></td></tr>
+				<tr><td>MT-04</td><td><center>120ft</center></td><td><right>26d6 fire</right></td></tr>
+			</table>
 		</description>
 	</element>
 
-	<!-- append to firearms proficiency to martial ranged -->
-	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS">
+	<element name="Multi-Rockets" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_MULTI_ROCKETS">
+		<description>
+			<p>Multi-rockets are batteries of small but deadly missiles that can be individually locked onto many different targets at a time as part of a single bonus action. These missiles are often called ‘hornets’ due to their swarming nature when being fired. When using a multi-rocket, you can lock onto a number of targets in range equal to the hardpoints ROF value as a bonus action. You can choose the same target more than once, or different ones. Make a single attack roll for all targets. Each target takes the noted damage in the hardpoints entry. For every additional missile locked onto a single target, that target takes an extra die of the hardpoint’s damage.</p>
+			<h5 class="caption">Multi-Rockets and Ammunition</h5>
+			<p>Unlike other ROF hardpoints, when you fire a multi-rocket hardpoint, all locked missiles fire at once, and you make a single attack and damage roll against all locked targets. When calculating when to reload, a multi rocket hardpoint only counts as making one attack per action, regardless of its ROF value, unless it uses the saturation fire mode above.</p>
+		</description>
+	</element>
+	<element name="Pintle Mount" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_PINTLE_MOUNT">
+		<description>
+			<p>A pintle mount is a fixed mount that allows a weapon to be freely traversed and/or elevated while keeping it in one fixed position. The hardpoint is always two-handed, and requires a crew member other than the pilot to operate it. In addition, a pintle mount must be attached to either the front, back, left, right or top of the ATUM. If attached to the top, it has a domed arc of fire, and can shoot 360 degrees. If attached elsewhere, the hardpoint has a 180 degree firing arc. Passengers can fire pintle mounts.</p>
+		</description>
+	</element>
+	<element name="Plasma" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_PLASMA">
+		<description>
+			<p>Plasma weapons and hardpoints fire a highly corrosive, concentrated burst of heat that explode briefly on impact, causing even creatures with innate resistances to such high heat extreme damage, at the risk of overheating.</p>
+			<h5 class="caption">Overheating and Extreme Damage</h5>
+			<p>Before firing a module or ranged weapon with this rule, roll a d20. If a 1 is rolled, the hardpoint overheats, and cannot be used until you spend an action to vent the excess heat. In addition, roll the attack’s damage. If the attack came from a hardpoint, your ATUM then takes half of this damage, which ignores resistance. If the attack came from a ranged weapon held by you, you instead take the damage.</p>
+			<p>If a natural 20 is rolled, the attack instead ignores resistance to fire damage, and deals an additional die of damage to the target. Each time you fire a hardpoint or ranged weapon with this rule, the chance for it to overheat increases by one step on the d20 roll. For example, if you fire a hardpoint once, it will overheat on the roll of a 1. If you fire it twice, the second shot will overheat on a 1 or 2, and so forth.</p>
+			<h5 class="caption">Venting Heat</h5>
+			<p>You can use an action on your turn to vent all heat build-up from a plasma hardpoint or ranged weapon. This resets the overheating d20 roll back to 1.</p>
+		</description>
+	</element>
+	<element name="Powerful Blow" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_POWERFUL_BLOW">
+		<description>
+			<p>A hardpoint or weapon with this rule ignores resistance to bludgeoning damage. In addition, if the attack roll exceeds the target’s AC by 5 or more, it must succeed on a Strength saving throw or be pushed back 5 feet per damage die and knocked prone.</p>
+		</description>
+	</element>
+	<element name="Ram" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RAM">
+		<description>
+			<p>A ram is a reinforced slab of armour plating, steel or other protective covering that is mounted on the front of the ATUM. If an ATUM with this rule moves at least 20 feet towards a target and hits it with an unarmed strike on the same turn, the target takes an extra 1d10 bludgeoning damage per 10 feet it moved. If the target is a creature, it must succeed on a Strength saving throw or be knocked prone. If the target cannot be knocked prone, it is instead pushed 10 feet away from the ATUM in a straight line.</p>
+		</description>
+	</element>
+	<element name="Rate of Fire (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ROF">
+		<description>
+			<p>All hardpoints (apart from manipulators, their ranged weapons and adventuring equipment) require your action to activate. Some hardpoints and weapons, however, make more than one attack (called a shot, or strike) when activated. The number of shots or strikes a hardpoint or ranged weapon makes each time it is activated is shown under the rate of fire column, or in brackets, abbreviated as ROF (x).</p>
+			<p>For example, a melee hardpoint with ROF (2) would make 2 strikes when activated, making separate attack rolls for both. An ordinary ranged weapon, such as an assault rifle with ROF(2), would instead make 2 separate shots each time a character took the attack action with it. So a fighter with 2 attacks would make 4 shots.</p>
+		</description>
+	</element>
+	<element name="Reload (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD">
+		<description>
+			<p>If a weapon has this rule, it must be reloaded after it has made a number of shots or strikes equal to the value shown in the brackets (x). It takes an action to reload a module or ranged weapon.</p>
+			<p>For example, if a weapon has Reload (3), the weapon can make 3 shots before needing to be reloaded.</p>
+		</description>
+	</element>
+	<element name="Single Use" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SINGLE_USE">
+		<description>
+			<p>A hardpoint with this rule can be fired once before needing to be reloaded with a new ammo box.</p>
+		</description>
+	</element>
+	<element name="Specialist" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SPECIALIST">
+		<description>
+			<p>Weapons with this rule require specialist training to use. Unlike other weapons, <b>specialist weapons cannot be used by someone who is not proficient with them.</b></p>
+			<p>You can become proficient in a specific specialist weapon by finding an instructor willing to teach you, and spending 4 hours a day for 100 days training with the weapon with your instructor. The training costs 2gp per day. After you spend the requisite amount of time and money, you gain proficiency with that specialist weapon.</p>
+		</description>
+	</element>
+	<element name="Spread (X)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SPREAD">
+		<description>
+			<p>Spread modules deal damage in a cone over a wide area. Creatures caught in the cone must succeed on a Dexterity saving throw, taking the module’s noted damage on a failure, or half as much on a success. Each spread range falls into a particular value, shown in the brackets next to the rule. Compare the value to the table below to find out the range of the module.</p>
+			<table>
+				<thead>
+					<tr><td><center>Value</center></td><td><center>Range</center></td></tr>
+				</thead>
+				<tr><td><center>1</center></td><td><center>15-foot Cone</center></td></tr>
+				<tr><td><center>2</center></td><td><center>30-foot Cone</center></td></tr>
+				<tr><td><center>3</center></td><td><center>60-foot Cone</center></td></tr>
+			</table>
+			<p>Some hardpoints have the ability to fire a globule towards a target which then explodes on impact, showering the area with damage. This is shown by the module also having a range on it’s profile.</p>
+			<p><b>If the module has a range, the cone can be placed anywhere within that range, with the short end facing towards you.</b></p>
+		</description>
+	</element>
+	<element name="Stomp" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_STOMP">
+		<description>
+			<p>An ATUM with this rule can perform a special melee weapon attack, called a stomp. As a bonus action, the pilot can elect to kick or crush one target it can see within 5-feet of it that is of it’s size category or smaller with the ATUM’s foot.</p>
+			<p>Make a melee weapon attack against the target, using the ATUM chassis Strength modifier for the attack and damage rolls. On a hit, the target takes 1d10 bludgeoning damage. This damage increases to 2d10 if the ATUM has a medium chassis, or 3d10 if the ATUM has a heavy chassis.</p>
+			<h5 class="caption">Trample</h5>
+			<p>If an ATUM performs a stomp attack on a prone creature and successfully hits it, that creature takes an additional 2d10 bludgeoning damage.</p>
+		</description>
+	</element>
+	<element name="Storage and Storage Trailers" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_STORAGE">
+		<description>
+			<p>Storage crates are always considered to be accessible both internally and externally, unless the pilot specifies otherwise when installing the upgrade module. Anything stored in crates still counts towards the ATUM’s carrying capacity, if the carrying capacity rules are in effect.</p>
+			<h5 class="caption">Storage Trailers</h5>
+			<p>Trailers are upgrade modules pulled by ATUMs, much like a conventional trailer. Each trailer can store up to 500lbs of equipment or materials, and has a single module slot, which can be used to attach another trailer, hardpoint, upgrade module or one additional fuel tank of any size. Unlike other modules, trailers can be targeted directly by attacks. If reduced to 0 hit points, trailers are reduced to a small scrap pile, and any separated trailers must be reattached to an ATUM before they can be moved again or the ATUM has access to any modules installed on them. Trailers have an AC of 15, 55 (10d10) hit points, and increase the length of the ATUM by 10 feet per trailer.</p>
+			<p>When a trailer is installed, you must also install an additional mobility type for it. The ATUM does not benefit from any features of this mobility type, and can only ever move at the lowest speed available to it.</p>
+			<p>An ATUM can pull a number of trailers at the same time equal to its chassis Strength modifier.</p>
+		</description>
+	</element>
+	<element name="Titan Shields" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_TITAN_SHIELDS">
+		<description>
+			<p>These shields are huge towering sheets of armour plate designed to take the heaviest of blows. Some are held using manipulators, while the largest of them are built directly onto an arm from the chassis. A shield grants an ATUM special features, shown below. In addition to these features, a shield can be used to make a special melee weapon attack called a slam. You cannot benefit from more than one shield at a time.</p>
+			<p>As a bonus action, make a melee weapon attack against a creature you can see within range. On a hit, that creature takes the titan shield’s noted damage and must succeed on a strength saving throw or be shoved 10ft away from the ATUM in a straight line.</p>
+			<h5 class="caption">Shield Features Table</h5>
+			<table>
+				<thead>
+					<tr><td>Shield Type</td><td><center>AC bonus</center></td><td>Features</td></tr>
+				</thead>
+				<tr><td>Tower Shield</td><td><center>+3</center></td><td>As a bonus action, you can dig the shield into the ground. While dug-in, your movement becomes 0, and you count as being behind three-quarters cover. You can spend a bonus action again to raise the shield and return to normal.</td></tr>
+				<tr><td>Energy Field</td><td><center>+1</center></td><td>As a reaction when you would be hit by an attack, you can flare up the shield, adding a +3 bonus to your AC for that attack. You can use this feature twice. You regain all expended uses after a short rest.</td></tr>
+				<tr><td>Arm Shield</td><td><center>+1</center></td><td>This shield has the Arm Mount special rule, but is limited to one handed weapons only. You cannot wield a weapon in two hands while using this shield.</td></tr>
+				<tr><td>Kite Shield</td><td><center>+2</center></td><td>None.</td></tr>
+				<tr><td>Energy Shield</td><td><center>+2</center></td><td>This shield can be doffed or donned as a bonus action. When you take damage other than psychic, bludgeoning, piercing or slashing damage, you can use your reaction to have the energy shield absorb half the damage dealt to you. The shield then loses its AC bonus, damage, and features until you finish a short rest.</td></tr>
+				<tr><td>Reflector Shield</td><td><center>+2</center></td><td>When you would be hit by a ranged attack, you can spend your reaction to deflect that attack towards a target you can see within 10-feet of you. That target must succeed on a Dexterity saving throw or be hit by the deflected attack.</td></tr>
+			</table>
+		</description>
+	</element>
+	<element name="Twin Shot" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_TWIN_SHOT">
+		<description>
+			<p>If you have two of these hardpoint modules or weapons equipped and take the attack action on your turn, before making the attack roll, you can declare to fire both weapons at the same target simultaneously, as part of the same action.</p>
+			<p>Make one attack roll for both modules. On a hit, the target takes the combined damage from both weapons or hardpoint modules, adding your Strength or Dexterity modifier to the total. This expends ammunition from both hardpoints at the same time.</p>
+			<p>You can also reload both weapons or modules as part of the same reload action.</p>
+		</description>
+	</element>
+	
+	
+	<!-- temporary custom property elements -->
+	<element name="Arc Lightning (1)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ARC_LIGHTNING_1">
+		<compendium display="false" />
+		<description>
+			<p>This weapon causes lightning arcs towards 1 object/creature.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_ARC_LIGHTNING" />
+		</description>
+	</element>
+	
+	<element name="Reload (1)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_1">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 1 shot/strike.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (2)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_2">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 2 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (3)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_3">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 3 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (4)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_4">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 4 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (6)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_6">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 6 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (8)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_8">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 8 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	<element name="Reload (10)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_RELOAD_10">
+		<compendium display="false" />
+		<description>
+			<p>This weapon needs to be reloaded after 10 shots/strikes.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_RELOAD" />
+		</description>
+	</element>
+	
+
+	<element name="ROF (2)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ROF_2">
+		<compendium display="false" />
+		<description>
+			<p>This weapon makes 2 shots/strikes per attack.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_ROF" />
+		</description>
+	</element>
+	<element name="ROF (3)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_ROF_3">
+		<compendium display="false" />
+		<description>
+			<p>This weapon makes 3 shots/strikes per attack.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_ROF" />
+		</description>
+	</element>
+	
+	<element name="Spread (1)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SPREAD_1">
+		<compendium display="false" />
+		<description>
+			<p>This weapon’s spread range is a 15-foot Cone.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_SPREAD" />
+		</description>
+	</element>
+	<element name="Spread (2)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SPREAD_2">
+		<compendium display="false" />
+		<description>
+			<p>This weapon’s spread range is a 30-foot Cone.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_SPREAD" />
+		</description>
+	</element>
+	<element name="Spread (3)" type="Weapon Property" source="The Greasemonkey's Handbook" id="ID_TGMHB_WEAPON_PROPERTY_SPREAD_3">
+		<compendium display="false" />
+		<description>
+			<p>This weapon’s spread range is a 60-foot Cone.</p>
+			<div element="ID_TGMHB_WEAPON_PROPERTY_SPREAD" />
+		</description>
+	</element>
+	
+	
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS">
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FIREARMS" requirements="ID_WOTC_DMG_OPTION_FIREARMS" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_BLADE" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_ENERGY_DAGGER" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_POWER_GAUNTLET" />
+			<grant type="Proficiency" id="ID_TGMHB_PROFICIENCY_WEAPON_MARTIAL_MELEE_TESLA_GLOVE" />
 		</rules>
 	</append>
 
