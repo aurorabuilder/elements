@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of the Forged</name>
+		<description>The Circle of the Forged from Exploring Eberron.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker </author>
+		<update version="0.0.1">
+			<file name="druid-forged-circle.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/exloring-eberron/classes/druid-forged-circle.xml" />
+		</update>
+	</info>
+
+	<element name="Circle of the Forged" type="Archetype" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_CIRCLE_OF_THE_FORGED">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>What is truly natural? The warforged are living creatures, despite being constructed from wood and steel. Druids who embrace the Circle of the Forged explore the potential of the warforged form, blending animal shapes with warforged durability. This is a young path, pioneered by a handful of warforged who sought a greater understanding of their role in the world. Over the last few decades, a number of warforged have embraced the Circle of the Forged; however, it isn’t limited to warforged; a Cannith heir or an aspiring artificer might pursue primal power as a way to transcend the limited flesh they were born with.</p>
+			<p class="indent">Only a handful of druids follow this Circle. Did you learn these techniques from a mentor? Are you driven by instinct, still learning what you’re capable of? Or, if you’re a warforged, were you designed with the potential to assume multiple forms . . . and if so, who created you, and why?</p>
+			<div element="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CIRCLE_FORMS" />
+			<div element="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_SKIN_OF_STEEL" />
+			<div element="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ELEMENTAL_FURY" />
+			<div element="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ADAMANTINE_HIDE" />
+			<div element="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CONSTRUCTED_PERFECTION" />
+		</description>
+		<sheet display="false">
+			<description>Druids who embrace the Circle of the Forged explore the potential of the warforged form, blending animal shapes with warforged durability.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CIRCLE_FORMS" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_SKIN_OF_STEEL" level="2" />
+			<grant type="Archetype Feature" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ELEMENTAL_FURY" level="6" />
+			<grant type="Archetype Feature" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ADAMANTINE_HIDE" level="10" />
+			<grant type="Archetype Feature" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CONSTRUCTED_PERFECTION" level="14" />
+		</rules>
+	</element>
+	<element name="Circle Forms" type="Archetype Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CIRCLE_FORMS">
+		<description>
+			<p>The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1 (you ignore the Max. CR column of the Beast Shapes table, but must abide by the other limitations there).</p>
+			<p class="indent">Starting at 6th level, you can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.</p>
+		</description>
+		<sheet>
+			<description>You can use your Wild Shape to transform into a beast with a CR as high as {{circle forms:cr}}.</description>
+		</sheet>
+		<rules>
+			<stat name="circle forms:cr" value="1" bonus="base" />
+			<stat name="circle forms:cr" value="2" level="6" bonus="base" />
+			<stat name="circle forms:cr" value="3" level="9" bonus="base" />
+			<stat name="circle forms:cr" value="4" level="12" bonus="base" />
+			<stat name="circle forms:cr" value="5" level="15" bonus="base" />
+			<stat name="circle forms:cr" value="6" level="18" bonus="base" />
+		</rules>
+	</element>
+	<element name="Skin of Steel" type="Archetype Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_SKIN_OF_STEEL">
+		<description>
+			<p>Starting at 2nd level, while you are transformed by Wild Shape, you gain the following benefits:</p>
+			<ul>
+				<li>You gain +2 bonus to Armour Class</li>
+				<li>You have advantage on saving throws against being poisoned, and you have resistance to poison damage.</li>
+				<li>You don't need to eat, drink or breathe.</li>
+				<li>You are immune to disease.</li>
+				<li>You don't need to sleep, and magic can't put you to sleep.</li>
+			</ul>
+			<p class="indent">While in beast form, your body is made from the same materials as a warforged; your muscles are rootlike tendrils protected by armored plates. It’s obvious to an observer that you are not a normal animal.</p>
+		</description>
+			<sheet>
+				<description>
+					<p>While you are transformed by Wild Shape you gain +2 bonus to Armour Class. In addition, you gain advantage on saving throws against being poisoned, and have resistance to poison damage. Furthermore you don't need to eat, drink or breathe and are immune to disease. You also don't need to sleep, and magic can't put you to sleep.</p>
+				</description>
+			</sheet>
+	</element>
+	<element name="Elemental Fury" type="Archetype Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ELEMENTAL_FURY">
+		<description>
+			<p>Starting at 6th level, you gain the ability to imbue your attacks with elemental damage—charging your claws with electricity or unleashing flames from your fangs. When you use Wild Shape, choose one of the following damage types: acid, cold, fire, or lightning. While in your beast form, the first time you hit a creature with a melee attack on your turn, you can expend one spell slot to deal extra damage of that type to the target, in addition to the normal damage of the attack. The extra damage is 1d6 per level of the spell slot expended, to a maximum of 5d6.</p>
+			<p class="indent">When you use this ability on a creature, your attack has an additional effect, determined by which damage type you selected when you used Wild Shape. If a creature is affected by this ability again in subsequent rounds, the effects do not stack, and the new duration replaces the old.</p>
+			<p class="indent"><b><i>Acid.</i></b> The target must make a Constitution saving throw against your druid spell save DC. On a failed save, its AC is reduced for one minute by an amount equal to half your Wisdom modifier (minimum of 1). At the start of each of its turns for the next minute, the target can make another Constitution saving throw. On a successful save, the effect ends.</p>
+			<p class="indent"><b><i>Cold.</i></b> At the start of each of its turns for 1 minute, the target must make a Constitution saving throw against your druid spell save DC. On a failed save, their movement speed is reduced to 0 and they have disadvantage on Strength and Dexterity checks. On a successful save, the effect ends.</p>
+			<p class="indent"><b><i>Fire.</i></b> At the start of each of its turns for 1 minute, the target must make a Constitution saving throw against your druid spell save DC. On a failed save, it takes fire damage equal to your Wisdom modifier. On a successful save, the fire goes out. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the effect ends.</p>
+			<p class="indent"><b><i>Lightning.</i></b> At the start of each of its turns for 1 minute, the target must make a Constitution saving throw against your druid spell save DC. On a failed save, it loses its reaction until the start of its next turn and the first attack that it makes on its turn is made at disadvantage. On a successful save, the effect ends.</p>
+		</description>
+		<sheet>
+			<description>
+				<p>When you use Wild Shape, choose one of the following damage types: acid, cold, fire, or lightning. While in your beast form, the first time you hit a creature with a melee attack on your turn, you can expend one spell slot to deal extra damage of that type to the target, in addition to the normal damage of the attack. The extra damage is 1d6 per level of the spell slot expended, to a maximum of 5d6. Acid: The target must make a Constitution saving throw (DC {{spellcasting:dc:wis}}). On a failed save, its AC is reduced by {{wisdom:modifier:half}} for one minute. At the start of each of its turns for the next minute, the target can make another Constitution saving throw. On a successful save, the effect ends. Cold: At the start of each of its turns for 1 minute, the target must make a Constitution saving throw (DC {{spellcasting:dc:wis}}). On a failed save, their movement speed is reduced to 0 and they have disadvantage on Strength and Dexterity checks. On a successful save, the effect ends. Fire: At the start of each of its turns for 1 minute, the target must make a Constitution saving throw (DC {{spellcasting:dc:wis}}). On a failed save, it takes {{wisdom:modifier}} fire damage. On a successful save, the fire goes out. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the effect ends. Lightning: At the start of each of its turns for 1 minute, the target must make a Constitution saving throw (DC {{spellcasting:dc:wis}}). On a failed save, it loses its reaction until the start of its next turn and the first attack that it makes on its turn is made at disadvantage. On a successful save, the effect ends.</p>
+			</description>
+		</sheet>
+	</element>
+	<element name="Adamantine Hide" type="Archetype Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_ADAMANTINE_HIDE">
+		<description>
+			<p>Starting at 10th level, while you are transformed by Wild Shape, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks. In addition, you gain the ability to use Wild Shape as a reaction when you take damage, and the damage from that attack is applied to the hit points of your beast form.</p>
+		</description>
+		<sheet>
+			<description>
+				<p>While you are transformed by Wild Shape, you gain resistance to bludgeoning, piercing and slashing damage from nonmagical attacks. Additionally you can Wild Shape as a reaction when you take damage, and the damage from that attack is applied to the hit points of your beast form.</p>
+			</description>
+		</sheet>
+	</element>
+	<element name="Constructed Perfection" type="Archetype Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_ARCHETYPE_FEATURE_CIRCLE_FORGED_CONSTRUCTED_PERFECTION">
+		<description>
+			<p>Starting at 14th level, while you are transformed by Wild Shape, you can’t be charmed, frightened, paralyzed, petrified, or poisoned. In addition, you are immune to poison damage.</p>
+		</description>
+		<sheet>
+			<description>While you are transformed by Wild Shape, you can’t be charmed, frightened, paralyzed, petrified, or poisoned. In addition, you are immune to poison damage.</description>
+		</sheet>
+	</element>
+</elements>
