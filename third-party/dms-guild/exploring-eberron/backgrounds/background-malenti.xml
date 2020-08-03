@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Malenti</name>
+		<description>The Malenti Background from Exploring Eberron.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker </author>
+		<update version="0.0.1">
+			<file name="background-malenti.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/exloring-eberron/backgrounds/background-malenti.xml" />
+		</update>
+	</info>
+	
+	<element name="Malenti" type="Background" source="Exploring Eberron" id="ID_DMSG_EXEB_BACKGROUND_MALENTI">
+		<description>
+			<p>You were born a Sahuagin in the Eternal Dominion of the Thunder Sea, but ritual magic and the blood of the kar’lassa allowed you to consume and replace a surface dweller. You can never regain your original form; for all intents and purposes, you are who you appear to be. You’re physically indistinguishable from them, and you have enough of their memories to fool even their family and friends. But you have the mind of a Sahuagin, and you’re loyal to the Dominion. </p>
+			<p class="indent">As a malenti, the first question is why the Dominion chose to replace this particular person, and how your mission relates to your activities as an adventurer. It’s possible that your only mission is to observe the dryskins and occasionally provide information to a Sahuagin spymaster, or you might have a specific goal that drives your actions during your adventures. The Suggested Characteristics tables provide information about your mission. </p>
+			<p class="indent">You’re physically identical to the creature you appear to be; you are an elf, or a kalashtar, or whatever race you replaced. It is up to you and your DM to decide how widespread malenti are in Khorvaire. It could be that the Dominion has placed many malenti in the Five Nations, or you might be one of the first. If this is the case, you may be the first malenti to duplicate a creature of this particular race or species. This could be particularly interesting with a kalashtar—you’ve inherited the spiritual bond with a quori, but what does that mean for you? Will the tie to the alien spirit change you? Similarly, if you possess a dragonmark, it seems to function normally, but will there be strange consequences in your future?</p>
+			<p class="indent">It’s possible that your abilities reflect additional Dominion magebreeding or skills from your Sahuagin side. If you’re a barbarian, does your rage reflect the blood frenzy of the Sahuagin? If you’re a sorcerer, is spellcasting a gift your victim already possessed, or is it the result of Sahuagin modification? And how has the integration of the new personality affected you? Are you still a true Sahuagin, devoted to the Dominion? Or are the victim’s memories and experiences causing you to question your mission?</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Deception, Insight</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves’ tools, poisoner’s kit, or forgery kit</li>
+				<li><strong>Languages</strong> Sahuagin</li>
+				<li><strong>Equipment:</strong> A seashell, a set of traveler’s clothes, and a purse containing 30 gp, which can be used on equipment needed to match your victim’s identity</li>
+			</ul>
+			<h5>TOUR OF DUTY</h5>
+			<p>As a malenti, you’ve stolen the identity of a surface dweller. But when did this occur? How long have you been playing this role, and how comfortable are you with it?</p>
+			<table>
+				<thead>
+					<tr><td class="col-20">d6</td><td>Tour of Duty</td></tr>
+				</thead>
+				<tr><td>1</td><td>You replaced your victim in their youth, and have a wellestablished relationship with family and friends.</td></tr>
+				<tr><td>2</td><td>You replaced your victim during the Last War, and may have fought in some of the battles yourself. </td></tr>
+				<tr><td>3</td><td>Your victim was lost at sea years ago and presumed dead; you have only just “miraculously” returned. </td></tr>
+				<tr><td>4</td><td>Your victim’s parents or siblings also been replaced by malenti, and are serving as spies in a major city. </td></tr>
+				<tr><td>5</td><td>You replaced your victim only a month ago, as they returned from a trip to Stormreach. </td></tr>
+				<tr><td>6</td><td>You replaced your victim a year ago, but the circumstances were difficult and some of your old acquaintances are still suspicious.</td></tr>
+			</table>
+			<div element="ID_DMSG_EXEB_BACKGROUND_FEATURE_STOLEN_IDENTITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Malenti are deep cover spies. Becoming a malenti means sacrificing the Sahuagin world you’ve known your whole life; it requires strong will and devotion. But malenti are a blend of Sahuagin spy and the person they appear to be; they still have the memories and the mannerisms of the victim, and this can cause the Sahuagin personality to erode or evolve.</p>
+		</description>
+		<setters>
+			<set name="short">Deception, Insight, Thieves’ Tools/Poisoner's Kit/Forgery Kit, Sahuagin</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Language" id="ID_DMSG_EXEB_LANGUAGE_SAHUAGIN" />
+			<select type="Proficiency" name="Tool Proficiency (Malenti)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+			<grant type="Background Feature" id="ID_DMSG_EXEB_BACKGROUND_FEATURE_STOLEN_IDENTITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Tour of Duty" optional="true">
+				<item id="1">You replaced your victim in their youth, and have a wellestablished relationship with family and friends.</item>
+				<item id="2">You replaced your victim during the Last War, and may have fought in some of the battles yourself. </item>
+				<item id="3">Your victim was lost at sea years ago and presumed dead; you have only just “miraculously” returned.</item>
+				<item id="4">Your victim’s parents or siblings also been replaced by malenti, and are serving as spies in a major city.</item>
+				<item id="5">You replaced your victim only a month ago, as they returned from a trip to Stormreach.</item>
+				<item id="6">You replaced your victim a year ago, but the circumstances were difficult and some of your old acquaintances are still suspicious.</item>
+			</select>
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I love to eat and I’m always eager to try new forms of food and drink. </item>
+				<item id="2">I express many concepts using aquatic metaphors.</item>
+				<item id="3">I won’t indulge weakness, especially in myself.</item>
+				<item id="4">When it comes to romance, I’m a fish out of water </item>
+				<item id="5">I’m insatiably curious and always asking questions. </item>
+				<item id="6">I love the water and never pass up a chance for a swim. </item>
+				<item id="7">I’m always taking notes on the people I meet and things I see. </item>
+				<item id="8">I consider the people of Khorvaire to be primitive barbarians. Even though I’m one of them. Really. </item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Victory. I’ll use any means necessary to defeat my enemy. (Neutral to Evil)</item>
+				<item id="2">The Mission. My mission means more to me than my friends or my life. (Lawful)</item>
+				<item id="3">Strength. Life is a struggle, and only the strong will survive. I must be strong. (Any)</item>
+				<item id="4">Commitment. Once I commit to a task, I always see it through. (Lawful)</item>
+				<item id="5">Knowledge. I’ve given up my previous life to gain information for my people. (Neutral) </item>
+				<item id="6">Victim’s Ideals. I find myself drawn to the ideals of my victim, which could include strange ideas of honor or compassion. (Any)</item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">I need to learn as much as possible about the nations and cultures of the surface.</item>
+				<item id="2">I’m supposed to protect and observe one of the other player characters, but I don’t know why.</item>
+				<item id="3">I’m searching for information on one of the fiendish overlords and fighting its agents. </item>
+				<item id="4">I want to study all ancient surface civilizations, like the giants, demons, and goblins. </item>
+				<item id="5">I want to study the magical capabilities of the Five Nations and to investigate the Mourning. </item>
+				<item id="6">I’m interested in manifest zones and planar exploration.</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I don’t understand the concepts of charity or mercy.</item>
+				<item id="2">I have trouble expressing gentle emotions. </item>
+				<item id="3">I view everyone as a possible enemy and am always considering ways to defeat them. </item>
+				<item id="4">I often need to help my victim’s family or friends. </item>
+				<item id="5">I feel torn between my loyalty to the Dominion and the values of my victim. </item>
+				<item id="6">I’ve inherited the consequences of my victim’s terrible mistakes.</item>
+				</select>
+		</rules>			
+	</element>
+	
+	<element name="Feature: The Right Stolen Identity" type="Background Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_BACKGROUND_FEATURE_STOLEN_IDENTITY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>As a malenti, you’ve assumed the identity and memories of a dryskin, and this provides you with the benefits of their position. Choose one of the following background features: By Popular Demand (entertainer), Criminal Contact (criminal), Military Rank (soldier), Position of Privilege (noble), or Shelter of the Faithful (acolyte). Once made, you cannot change this choice. This is who you are now, and the background feature suggests what people will expect of you. If you have Shelter of the Faithful, it’s because you’ve taken the place of an acolyte, and people of your assumed faith expect you to live up to that role.</p>
+		</description>
+		<sheet alt="The Right Stolen Identity" />
+	</element>
+
+	<element name="Sahuagin" type="Language" source="Exploring Eberron" id="ID_DMSG_EXEB_LANGUAGE_SAHUAGIN">
+		<supports>Exotic</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers"></set>
+			<set name="script"></set>
+		</setters>
+	</element>
+
+</elements>

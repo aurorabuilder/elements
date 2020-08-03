@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Changling Traveller</name>
+		<description>The Changeling Traveller Background from Exploring Eberron.</description>
+		<author url="https://www.dmsguild.com/browse.php?author=Keith%20Baker">Keith Baker </author>
+		<update version="0.0.1">
+			<file name="background-changeling-traveller.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/exloring-eberron/backgrounds/background-changeling-traveller.xml" />
+		</update>
+	</info>
+	
+	<element name="Changeling Traveller" type="Background" source="Exploring Eberron" id="ID_DMSG_EXEB_BACKGROUND_CHANGELING_TRAVELLER">
+		<description>
+			<p>You’re an urban nomad, wandering from city to city, a force for change—much like the Traveler who bestowed you with your supernatural gifts. You spent your childhood traveling with your family, using your abilities to evade your enemies and ensure the single-skins give you whatever you need. Your family is part of a wider network of changeling clans, and you can take advantage of the havens, traditions, and personas your people have sowed across the lands. Most travelers are changelings. If you’re not a changeling, you were born to a changeling parent and grew up around them; you may even use a disguise kit or illusion magic to mimic their abilities.</p>
+			<p class="indent">As a traveler, you’re most comfortable on the move and dislike staying in any one place for too long. Your people’s traditions predate the laws of Galifar, and you have little attachment to any concept of nation or property; your first loyalty is to your family and your friends. Some travelers ignore the laws of the Five Nations, or even see tricking single-skins as a sport and enjoy defying them. However, most respect the people around them; if they acquire an item from a single-skin, they’ll compensate with something of equal value. Some sow chaos in the name of the Traveler, while others seek to understand people and serve as a bridge between cultures. What path do you follow?</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> Deception, Insight</li>
+				<li><strong>Tool Proficiencies:</strong> Thieves’ Tools</li>
+				<li><strong>Languages</strong> Skin Cant</li>
+				<li><strong>Equipment:</strong> A shiftweave garment (capable of shifting between five different outfits), one trinket of special significance, and a belt pouch containing 5 gp.</li>
+			</ul>
+			<h5>FLEDGLING PERSONA</h5>
+			<p>Personas are important tools for traveler clans. Every clan has a set of shared personas, identities that have an established role in a particular region. But these personas need to be refreshed over time, and it’s your duty to develop a new persona that can be useful to the clan. Over the course of your adventuring career, you’re expected to establish useful connections and build a positive reputation for this identity. You can select your persona from the Personas table or roll randomly, then add details to develop them into a unique identity.</p>
+			<table>
+				<thead>
+					<tr><td class="col-20">d8</td><td>Persona</td></tr>
+				</thead>
+				<tr><td>1</td><td>Traveling merchant</td></tr>
+				<tr><td>2</td><td>Charismatic outlaw</td></tr>
+				<tr><td>3</td><td>Itinerant tinker</td></tr>
+				<tr><td>4</td><td>Wandering priest</td></tr>
+				<tr><td>5</td><td>Investigative reporter</td></tr>
+				<tr><td>6</td><td>Bounty hunter</td></tr>
+				<tr><td>7</td><td>Grim mercenary</td></tr>
+				<tr><td>8</td><td>Beloved storyteller</td></tr>
+			</table>
+			<div element="ID_DMSG_EXEB_BACKGROUND_FEATURE_THE_RIGHT_FACE_FOR_THE_JOB" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>While changeling travelers can be tricksters and agents of chaos, others strive to support strangers and have a positive influence wherever they go. Are you a charming scoundrel, a devotee of the Traveler, or just trying to stay out of trouble?</p>
+		</description>
+		<setters>
+			<set name="short">Deception, Insight, Thieves’ Tools, Skin Cant</set>
+		</setters>			
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Language" id="ID_DMSG_EXEB_LANGUAGE_SKIN_CANT" />
+			<grant type="Background Feature" id="ID_DMSG_EXEB_BACKGROUND_FEATURE_THE_RIGHT_FACE_FOR_THE_JOB" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Persona" optional="true">
+				<item id="1">Traveling merchant</item>
+				<item id="2">Charismatic outlaw</item>
+				<item id="3">Itinerant tinker</item>
+				<item id="4">Wandering priest</item>
+				<item id="5">Investigative reporter</item>
+				<item id="6">Bounty hunter</item>
+				<item id="7">Grim mercenary</item>
+				<item id="8">Beloved storyteller</item>
+			</select>
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I love people and seek the stories of each stranger I meet. </item>
+				<item id="2">I embrace all beliefs, trying a new religion every few days.</item>
+				<item id="3">I feel obliged to humiliate arrogant and entitled people. </item>
+				<item id="4">Whenever I come to a new place, I collect local rumors and spread gossip. </item>
+				<item id="5">I thrive on change and hate standing still. </item>
+				<item id="6">I don’t just want to defeat my enemies; I want to make them look foolish.</item>
+				<item id="7">I’m always looking for weaknesses in others to exploit.</item>
+				<item id="8">I love uncovering secrets, whether arcane lore or mere gossip. </item>
+			</select>
+			<select type="List" name="Ideal">
+				<item id="1">Freedom. I go wherever I please and don’t let rules or laws limit my actions. (Chaotic)</item>
+				<item id="2">Survival. I will do whatever it takes to ensure the survival and prosperity of myself and the people I care about. (Neutral)</item>
+				<item id="3">Empathy. I try to understand everyone that I meet, to imagine what it would be like to live their lives. (Good)</item>
+				<item id="4">Change. We should challenge every tradition and always strive for innovation. (Chaotic)</item>
+				<item id="5">Predator. Anyone I can deceive deserves their fate. (Evil)</item>
+				<item id="6">Knowledge. Secrets are the only currency that matters. (Any) </item>
+				</select>
+			<select type="List" name="Bond">
+				<item id="1">Someone died saving my life, but they live on through me as one of my personas.</item>
+				<item id="2">I’ve inherited the persona of a great folk hero, but I’m afraid I can’t live up to their reputation.</item>
+				<item id="3">I’ve inherited a persona that’s become known as an infamous villain, and I’m determined to redeem the identity. </item>
+				<item id="4">My family was betrayed by a rival changeling clan, and I’m determined to avenge them. </item>
+				<item id="5">I joined a criminal gang to learn useful skills, then abandoned the identity; I still care about my old comrades, but I’m afraid to go back. </item>
+				<item id="6">I embarrassed a powerful noble I once served; their hired thugs are looking for me, but someone I love is still in their employ</item>
+				</select>
+			<select type="List" name="Flaw">
+				<item id="1">I don’t really understand the concept of “personal property.” </item>
+				<item id="2">I consider a good story to be more important than the truth, and I’ll always add a little flair. </item>
+				<item id="3">I’m suspicious of everyone and everything. </item>
+				<item id="4">I live in the moment and never plan for the future. </item>
+				<item id="5">If someone wrongs me, I won’t rest until I’ve taken revenge. </item>
+				<item id="6">It’s difficult for me to be honest, even with my closest friends.</item>
+				</select>
+		</rules>			
+	</element>
+	
+	<element name="Feature: The Right Face for The Job" type="Background Feature" source="Exploring Eberron" id="ID_DMSG_EXEB_BACKGROUND_FEATURE_THE_RIGHT_FACE_FOR_THE_JOB">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Traveler clans use well-established personas to secure shelter and information wherever they go. This could be a priest who will receive sustenance at the local temple, a folk hero who will be sheltered by the common people, or a veteran soldier who can always get a bed at the local garrison. When you’re approaching a new community, work with the DM to determine if there could be a persona with roots in that place; as long as you play that role, you can usually obtain modest food and lodging and gain access to local gossip.</p>
+			<p class="indent">In addition, when you encounter other members of your clan, you can ask them for help or information, provided this doesn’t place them at risk. However, this is a two-way street; if another member of your clan approaches you with a reasonable request, you’re expected to provide assistance. </p>
+		</description>
+		<sheet alt="The Right Face for The Job" />
+	</element>
+
+	<element name="Skin Cant" type="Language" source="Exploring Eberron" id="ID_DMSG_EXEB_LANGUAGE_SKIN_CANT">
+		<supports>Exotic</supports>
+		<description>
+			<p>As a traveler, you have learned a secret language that allows you to silently convey messages to fellow changelings. This is an exotic language that can only be “spoken” by changelings, though members of other species can learn to understand it. Skin cant uses shifting patterns of scars, tattoos, and pigment. This allows you to convey a short message—a concept that can be expressed in six words or less—to anyone who knows the language and who can see you. Typically the message is something you maintain as part of your appearance; for example, in crafting your image, you might add a pattern of scars that tells other changeling travelers, “I need help” or “Everything I say is a lie.”</p>
+			<p class="indent">You can also use this language to have a conversation— typically by manifesting symbols on the palm of your hand— with someone who is within 60 feet and able to see you. The shifting patterns can be noticed by other observers within 60 feet; if you wish to keep the conversation discrete, you can hide it with a Charisma (Deception) check opposed by the observer’s Wisdom (Perception or Insight) check. If you fail, it means the observer notices your shifting patterns, though they don’t understand the meaning unless they also know skin cant.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers"></set>
+			<set name="script"></set>
+		</setters>
+	</element>
+
+</elements>
