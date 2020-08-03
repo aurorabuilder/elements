@@ -1,13 +1,1419 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <elements>
-	<info>
-		<name>Familiars</name>
-		<description>COFSA Familiars</description>
-		<author url="www.genfantasypress.com">Genuine Fantasy Press</author>
-		<update version="0.0.1">
+    <info>
+        <name>Familiars</name>
+		<update version="0.0.2">
 			<file name="familiars.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/genuine-fantasy-press/forgotten-secrets/familiars.xml" />
 		</update>
-	</info>
-	
-	<!-- TODO: Add Familiars -->
-	
+	</info>	
+	<element name="Animate Image" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ANIMATE_IMAGE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The animate image is a small, two-dimensional work of sentient art that shifts and changes to suit its environment. They’re created as servants and spies by warlocks of the Gray Portrait, and by other skillful artisans and craftsmen who spill blood in the name of their art. These images are mischievous and cruel, delighting in taunting former friends into harming one another and making rude gestures to amuse and insult. Most are humanoid, but some are of fantastical animals, imaginary beasts, and even landscapes or scenery. They can change their appearance quite dramatically as suits their mood, and tend to try to occupy picture frames or the exteriors of statues whenever possible.</p>
+			<p class="indent">The creation of an animate image is an unusual one, directly related to the art of shadow puppetry. While images can be of any color or form, they are simple when first created. The artist must stand before a burning brazier and establish an eldritch connection with the flame, calling upon it to cast light more fervently. Once done, they will place their hands on the far side of the fire, casting a shadow on the wall or ground. While chanting the eerie words and phrases required by this mystical rite, they will use their hands to make a shadow puppet. The chanting corresponds with a story fitting for the personality of the animate image that they desire to summon. </p>
+			<p class="indent">A story of loss and betrayal will call forth an image that takes the shapes of monsters and assassins, while a pleasant story with happy ending will create one that is more mischievous than hateful. Over the course of the ritual, the shadow puppet will solidify, no longer moving with the hands of the artist. At the culmination of the event, the warlock will cut a fingertip and place a single drop of blood on the shadow, infusing it with life, soul, and obedience to its creator. </p>
+        </description>
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">11</set>
+			<set name="ac">16</set>
+			<set name="hp">22 (5d6 + 5)</set>
+			<set name="speed">30 ft., special</set>
+			<set name="saves">Dex +5</set>
+			<set name="skills">Perception +4, Performance +4</set>
+			<set name="immunities">damage from nonmagical sources</set>
+			<set name="conditionImmunities">blinded, deafened, exhaustion, poisoned, restrained</set>
+			<set name="senses">blindsight 5 ft., passive Perception 18</set>
+			<set name="languages">Understands those known by its master but can’t speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Small</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_ON_YOUR_SKIN,ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_TWO_DIMENSIONAL</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_IMAGE_PAPERCUT,ID_WOTC_MM_COMPANION_ACTION_IMP_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_MAGIC_RESISTANCE">
+		<description>
+			<p>The animate image has advantage on saving throws against spells and other magical effects. </p>
+		</description>
+		<sheet>
+			<description>The animate image has advantage on saving throws against spells and other magical effects. </description>
+		</sheet>
+	</element>
+	<element name="On Your Skin" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_ON_YOUR_SKIN">
+		<description>
+			<p>Any attack that targets and hits the animate image inflicts full damage to the surface or creature that the image is covering, even if the image takes no damage.</p>
+		</description>
+		<sheet>
+			<description>Any attack that targets and hits the animate image inflicts full damage to the surface or creature that the image is covering, even if the image takes no damage.</description>
+		</sheet>
+	</element>
+	<element name="Two Dimensional" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_IMAGE_TWO_DIMENSIONAL">
+		<description>
+			<p>The animate image cannot stand on its own, but it can cover any surface without being harmed. Whenever it is touching a creature or object that moves, the image goes with it. The image can slide through cracks as thin as paper without suffering ill effect. If the image is located on an object held in midair that isn’t touching anything else, as though by levitation, it is trapped and cannot move. The animate image does not occupy a space.</p>
+		</description>
+		<sheet>
+			<description>The animate image cannot stand on its own, but it can cover any surface without being harmed. Whenever it is touching a creature or object that moves, the image goes with it. The image can slide through cracks as thin as paper without suffering ill effect. If the image is located on an object held in midair that isn’t touching anything else, as though by levitation, it is trapped and cannot move. The animate image does not occupy a space.</description>
+		</sheet>
+	</element>
+	<element name="Papercut" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_IMAGE_PAPERCUT">
+		<description>
+			<p>Melee Weapon Attack: +8 to hit, reach 0 ft., one target. Hit: 5 slashing damage. If the animate image can’t see its master, it can’t use this attack.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +8 to hit, reach 0 ft., one target. Hit: 5 slashing damage. If the animate image can’t see its master, it can’t use this attack.</description>
+		</sheet>
+	</element>
+	<element name="Inscribe" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_IMAGE_INSCRIBE">
+		<description>
+			<p>The image burns a copy of itself onto the surface it is covering, dealing 1 acid damage.</p>
+		</description>
+		<sheet>
+			<description>The image burns a copy of itself onto the surface it is covering, dealing 1 acid damage.</description>
+		</sheet>
+	</element>
+	<element name="Animate Shield" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ANIMATE_SHIELD">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Animate shields are summoned from the long-silent forges of the Eternal Citadel, made ages ago to defend the servants of the massive fortress from any invader. They rest silently when not addressed or in combat, but are always wary of attackers to the point of paranoia. Most are hesitant to leave the sight of their charge, and will only do so by direct order. They also seem to have a cutting sense of humor, mocking opponents and striking at their minds with subtle magics whenever they are attacked. They have a strange rivalry with other magical objects, especially magical weapons, which they view with disdain and distrust due to their opposing purpose. They are fond of gifts of art and masonry, and adore being painted and encrusted with gemstones when done as a show of ownership and affection.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">construct</set>
+			<set name="alignment">lawful neutral</set>
+			<set name="strength">14</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">11</set>
+			<set name="ac">16</set>
+			<set name="hp">16 (3d6+3)</set>
+			<set name="speed">0 ft., fly 45 ft. (hover)</set>
+			<set name="saves">Con +4</set>
+			<set name="skills">Perception +5</set>
+			<set name="resistances">bludgeoning, piercing, and slashing</set>
+			<set name="immunities">poison, radiant</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">blinded, charmed, frightened, poisoned, exhaustion</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 16</set>
+			<set name="languages">Common and those known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_DURABLE,ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_EQUIPMENT,ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_STALWARD_DEFENSE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_SHIELD_BASH,ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_SHIELD_GUARD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="16" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+            <stat name="companion:speed:fly" value="45" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Durable" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_DURABLE">
+		<description>
+			<p>Whenever the animate shield would take damage from an attack, reduce that damage by 3. Additionally, it has advantage on Constitution saving throws.</p>
+		</description>
+		<sheet>
+			<description>Whenever the animate shield would take damage from an attack, reduce that damage by 3. Additionally, it has advantage on Constitution saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Equipment" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_EQUIPMENT">
+		<description>
+			<p>The animate shield can be equipped as a shield and the bearer is always considered proficient in its use. The only action it can take while it is equipped is to remove itself from the bearer. While equipped, it is treated as an object and does not take damage from attacks or other effects.</p>
+		</description>
+		<sheet>
+			<description>The animate shield can be equipped as a shield and the bearer is always considered proficient in its use. The only action it can take while it is equipped is to remove itself from the bearer. While equipped, it is treated as an object and does not take damage from attacks or other effects.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_MAGIC_RESISTANCE">
+		<description>
+			<p>The animate shield has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The animate shield has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Stalwart Defense" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_ANIMATE_SHIELD_STALWARD_DEFENSE">
+		<description>
+			<p>Whenever an enemy attacks the animate shield, they take 2 psychic damage.</p>
+		</description>
+		<sheet>
+			<description>Whenever an enemy attacks the animate shield, they take 2 psychic damage.</description>
+		</sheet>
+	</element>
+	<element name="Bash" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_SHIELD_BASH">
+		<description>
+			<p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage and the target is pushed back 5 feet.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage and the target is pushed back 5 feet.</description>
+		</sheet>
+	</element>
+	<element name="Guard" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_ANIMATE_SHIELD_GUARD">
+		<description>
+			<p>As an action, the animate shield hovers around an ally within 5 feet of it and moves with the ally. The next time that ally is hit with an attack before the start of the shield’s next turn, the animate shield is hit by the attack instead. The shield cannot be forcibly moved during this time. If the ally teleports, the shield also teleports with them.</p>
+		</description>
+		<sheet>
+			<description>As an action, the animate shield hovers around an ally within 5 feet of it and moves with the ally. The next time that ally is hit with an attack before the start of the shield’s next turn, the animate shield is hit by the attack instead. The shield cannot be forcibly moved during this time. If the ally teleports, the shield also teleports with them.</description>
+		</sheet>
+	</element>
+	<element name="Bloodless Wanderer" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_BLOODLESS_WANDERER">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Not all who have torn their hearts away in the Blackthorn Grove survive their adventures. Some fall in battle, dying before their quests have been completed. For many, this is the end, but for some, it offers a new beginning. Each bloodless wanderer is the blackthorn heart of one of these fallen heroes, whose ambitions and desires were never fulfilled. The heart tears itself from the chest of the fallen adventurer, seeking still to fulfill its quest. They are intelligent and possessed of clear purpose, but cannot speak or write. Many construct masks of wood and decorate them to be reminiscent of the person who they once lived within. All of them require blood to continue to survive, and will feast upon the fallen, drinking deeply of their still-fresh fluids. </p>
+            <p class="indent">As companions, they are wise and insightful, possessed of much of the experiences of their former owners. They are often referred to as spirits of the dead, though this is not technically correct. They are plants, living and come to life once more. They desire little more than to find new companions who can assist them on their lifelong quest, but are patient and capable of understanding the bigger picture when required. The one thing that will cause a wanderer to attempt disobedience is the sight of their killer. If a bloodless wanderer is placed within a corpse, it can animate the body to act and move, but it will still lack the ability to communicate beyond gestures and cryptic behavior.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">plant</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">10</set>
+			<set name="ac">16</set>
+			<set name="hp">31 (6d6+12)</set>
+			<set name="speed">30 ft., climb 30 ft.</set>
+			<set name="saves">Con +4</set>
+			<set name="resistances">bludgeoning, piercing, and slashing from nonmagical attacks, cold, poison, radiant</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">exhausted, frightened</set>			
+			<set name="senses">blindsight 10 ft., darkvision 60 ft., passive Perception 11</set>
+			<set name="languages">Understands those known by its master but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_BLOODSUCKING_VINES,ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_CORPSE_THIEF,ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_GRIM_MASK,ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_NATURAL_VISAGE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_BLOODLESS_WANDERER_VINE_LASH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="31" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Bloodsucking Vines" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_BLOODSUCKING_VINES">
+		<description>
+			<p>Whenever the bloodless wanderer deals slashing or piercing damage, it recovers hit points equal to the damage dealt. This does not apply if the target is a construct</p>
+		</description>
+		<sheet>
+			<description>Whenever the bloodless wanderer deals slashing or piercing damage, it recovers hit points equal to the damage dealt. This does not apply if the target is a construct</description>
+		</sheet>
+	</element>
+	<element name="Corpse Thief" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_CORPSE_THIEF">
+		<description>
+			<p>When the wanderer is touching the corpse of a beast or humanoid with a CR of 2 or less, it can use an action to enter and animate the body like a puppet. While inside, it gains temporary hit points equal to half the maximum hit points of the dead creature. When these temporary hit points are reduced to zero, the corpse is destroyed and the wanderer is ejected. The wanderer can choose to leave as a bonus action. </p>
+		</description>
+		<sheet>
+			<description>When the wanderer is touching the corpse of a beast or humanoid with a CR of 2 or less, it can use an action to enter and animate the body like a puppet. While inside, it gains temporary hit points equal to half the maximum hit points of the dead creature. When these temporary hit points are reduced to zero, the corpse is destroyed and the wanderer is ejected. The wanderer can choose to leave as a bonus action. </description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_MAGIC_RESISTANCE">
+		<description>
+			<p>The bloodless wanderer has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The bloodless wanderer has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Grim Mask" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_GRIM_MASK">
+		<description>
+			<p>Melee attacks targeting the bloodless wanderer are made with disadvantage. When a creature makes a melee attack targeting it and misses, it takes 1d6 slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee attacks targeting the bloodless wanderer are made with disadvantage. When a creature makes a melee attack targeting it and misses, it takes 1d6 slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Natural Visage" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_BLOODLESS_WANDERER_NATURAL_VISAGE">
+		<description>
+			<p>When the bloodless wanderer is still, it is indistinguishable from an ordinary plant. The wanderer is unimpeded by difficult terrain caused by plants, and can take the Hide action as a bonus action. It can hide while only lightly obscured.</p>
+		</description>
+		<sheet>
+			<description>When the bloodless wanderer is still, it is indistinguishable from an ordinary plant. The wanderer is unimpeded by difficult terrain caused by plants, and can take the Hide action as a bonus action. It can hide while only lightly obscured.</description>
+		</sheet>
+	</element>
+	<element name="Vine Lash" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_BLOODLESS_WANDERER_VINE_LASH">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 15 ft., one target. Hit: 8 (1d10 + 3) slashing damage plus 5 (1d4 +3) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 15 ft., one target. Hit: 8 (1d10 + 3) slashing damage plus 5 (1d4 +3) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Dimcat" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_DIMCAT">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The dimcat is a small feline creature that cloaks itself in shadow, and feeds on the nightmares of the unwary. Servants of the Shadowcat, the dimcats are sent out into the world to safeguard children and guide them away from dangerous situations, often appearing in very small ways to influence events so that the child is unaware of the danger in the first place. While the Shadowcat and its reflections feed on nightmares, those of children are bitter and unworthy of their elegant and refined taste.</p>
+            <p class="indent">Creatures that draw their ire find themselves wreathed in blinding blackness before being bitten by the cat, filling their minds with a psychic onslaught of nightmares. The dimcat feeds on the doubts, fears, and nightmares of sleeping mortal adults, sitting upon them with mouth outstretched to catch the fever dreams as they rise in a black mist. </p>
+            <p class="indent">Those who awaken only see the stark blue eyes shining down at them, and are paralyzed by the strange power of the dimcat. When at rest, they are silent and watchful, seeming to enjoy batting out burning candles and other sources of light. Warlocks who have sworn themselves to the Shadowcat often take them as familiars, typically treating the dimcat as an extension of their patron itself. In a certain sense, they really are: each dimcat is a reflection of the Shadowcat that was created when this enigmatic entity consumed and converted a lesser nightmare, twisting the old horror into a new form with a new purpose. </p>
+            <p class="indent">Dimcats speak in a wide variety of voices and have many strange and enigmatic personalities, but most can be described as one might expect: haughty, overbearing, demanding, sly, clever, charming, affectionate, enigmatic, mysterious, deceptive, curious, and practically any other term one might use to describe an actual cat.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">fey</set>
+			<set name="alignment">chaotic neutral</set>
+			<set name="strength">6</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">14</set>
+			<set name="ac">15</set>
+			<set name="hp">14 (4d4+4)</set>
+			<set name="speed">30 ft., climb 30 ft.</set>
+			<set name="saves">Dex +6</set>
+			<set name="skills">Perception +5, Stealth +6</set>
+			<set name="resistances">bludgeoning, piercing, and slashing</set>
+			<set name="challenge">1</set>
+			<set name="senses">darkvision 120 ft., passive Perception 15</set>
+			<set name="languages">Common and those known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_EYES_OF_THE_HUNTER,ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_NIGHTMARE_FEAST,ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_SHADOW_DWELLER</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_DIMCAT_BITE,ID_GFP_COFSA_COMPANION_ACTION_DIMCAT_SHADOW_HOP</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" bonus="base" />
+			<stat name="companion:hp:max" value="14" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Eyes of the Hunter" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_EYES_OF_THE_HUNTER">
+		<description>
+			<p>Magical darkness doesn’t impede the dimcat’s darkvision, and it treats all locations as though they were brightly lit for the purposes of perceiving objects and creatures.</p>
+		</description>
+		<sheet>
+			<description>Magical darkness doesn’t impede the dimcat’s darkvision, and it treats all locations as though they were brightly lit for the purposes of perceiving objects and creatures.</description>
+		</sheet>
+	</element>
+	<element name="Nightmare Feast" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_NIGHTMARE_FEAST">
+		<description>
+			<p>Whenever the dimcat is touching a creature that is unconscious, the creature is paralyzed until the dimcat is no longer touching it, even if the creature wakes.</p>
+		</description>
+		<sheet>
+			<description>Whenever the dimcat is touching a creature that is unconscious, the creature is paralyzed until the dimcat is no longer touching it, even if the creature wakes.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_MAGIC_RESISTANCE">
+		<description>
+			<p>The dimcat has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The dimcat has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Dweller" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_DIMCAT_SHADOW_DWELLER">
+		<description>
+			<p>The dimcat is always considered to be lightly obscured by magical darkness, unless it chooses to allow a creature to see through this effect. Whenever the dimcat enters the space of a hostile creature, the creature’s eyes are covered by this magical dimness until the dimcat is no longer within its space.</p>
+		</description>
+		<sheet>
+			<description>The dimcat is always considered to be lightly obscured by magical darkness, unless it chooses to allow a creature to see through this effect. Whenever the dimcat enters the space of a hostile creature, the creature’s eyes are covered by this magical dimness until the dimcat is no longer within its space.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_DIMCAT_BITE">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage plus 2 (1d4) psychic damage. If the target is prone, it must make a DC 12 Wisdom saving throw. If it fails, it falls unconscious until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage plus 2 (1d4) psychic damage. If the target is prone, it must make a DC 12 Wisdom saving throw. If it fails, it falls unconscious until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Hop" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_DIMCAT_SHADOW_HOP">
+		<description>
+			<p>The dimcat teleports to a point that it can see within 15 feet of it, becoming heavily obscured by magical darkness until the start of its next turn.</p>
+		</description>
+		<sheet>
+			<description>The dimcat teleports to a point that it can see within 15 feet of it, becoming heavily obscured by magical darkness until the start of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Emberborn" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_EMBERBORN">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>An emberborn is a small, canine-like creature created from ash and burning embers built around a core of molten metal. They are birthed from the pyres of creatures sacrificed to the Ashen Wolf, yet they are often friendly and pleasant to mortals. When provoked, they unleash a blast of ash and smoke before closing in with teeth like red-hot pokers. When at rest, they often sleep within fireplaces and other areas where fires are commonly stoked. They feast on raw meat whenever the opportunity presents itself, and enjoy being presented with gifts of metal and rare wood, as they enjoy devouring both in large quantities.</p>
+            <p class="indent">Some say that the emberborn are the children of the Ashen Wolf, and that it cares for them as though they were its own. There are no reliable records that can prove this belief, but as intelligent elementals they are capable of speech and can thus be asked. As an emberborn feeds and ages, they will grow larger and larger. Some eldritch scholars hypothesize that the Ashen Wolf was once an emberborn, strangely enough.</p>
+            <p class="indent">When summoning an emberborn deliberately, a brazier filled with wood and rare metal is presented and the blood of a sacrificed beast is poured over the open flame as the summoner performs the eldritch incantation. The fire will burn quickly, and when it is reduced to coals, the emberborn will begin to take shape. It will emerge from the fire and demand to be fed. If the summoner provides a drop of their blood to the newly born beast without hesitation, then the emberborn will smile and swear loyalty to their new master. If the summoner does not, then the emberborn will vanish into smoke and seek a forest to ignite instead.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">elemental</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">14</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">31 (7d6+7)</set>
+			<set name="speed">35 ft.</set>
+			<set name="saves">Dex +4</set>
+			<set name="skills">Perception +5</set>
+			<set name="immunities">fire, necrotic, poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">poisoned, exhausted</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 15</set>
+			<set name="languages">Primordial and those known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_FORM_OF_ASH,ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_LIVING_EMBER,ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_PACK_TACTICS</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_EMBERBORN_BITE,ID_GFP_COFSA_COMPANION_ACTION_EMBERBORN_BURST</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="31" bonus="base" />
+			<stat name="companion:speed" value="35" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Form of Ash" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_FORM_OF_ASH">
+		<description>
+			<p>The emberborn can pass through openings as small as a 1-inch square without being slowed or hindered. Opportunity attacks against the emberborn are made with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>The emberborn can pass through openings as small as a 1-inch square without being slowed or hindered. Opportunity attacks against the emberborn are made with disadvantage.</description>
+		</sheet>
+	</element>
+	<element name="Living Ember" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_LIVING_EMBER">
+		<description>
+			<p>Hostile creatures that grapple the emberborn or target it with melee attacks take 2 fire damage at the end of their turn. The emberborn has advantage on checks made to escape a grapple.</p>
+		</description>
+		<sheet>
+			<description>Hostile creatures that grapple the emberborn or target it with melee attacks take 2 fire damage at the end of their turn. The emberborn has advantage on checks made to escape a grapple.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_MAGIC_RESISTANCE">
+		<description>
+			<p>The emberborn has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The emberborn has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EMBERBORN_PACK_TACTICS">
+		<description>
+			<p>The emberborn has advantage on attack rolls against a creature if at least one of the emberborn’s allies is within 5 feet of the creature and the ally isn’t incapacitated. </p>
+		</description>
+		<sheet>
+			<description>The emberborn has advantage on attack rolls against a creature if at least one of the emberborn’s allies is within 5 feet of the creature and the ally isn’t incapacitated. </description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_EMBERBORN_BITE">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit:6 (1d6 + 2) piercing damage plus 3 (1d6) fire damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit:6 (1d6 + 2) piercing damage plus 3 (1d6) fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Burst" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_EMBERBORN_BURST">
+		<description>
+			<p>The emberborn blasts ash and cinders from its body. Creatures within 10 feet of the emberborn must make a DC 12 Dexterity saving throw. If they fail, they are blinded until the end of their next turn and take 7 (2d6) fire damage. If they succeed, they are unaffected.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>The emberborn blasts ash and cinders from its body. Creatures within 10 feet of the emberborn must make a DC 12 Dexterity saving throw. If they fail, they are blinded until the end of their next turn and take 7 (2d6) fire damage. If they succeed, they are unaffected.</description>
+		</sheet>
+	</element>
+	<element name="Eyeless Wanderer" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_EYELESS_WANDERER">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The eyeless watcher is a tentacled horror with small wings that speaks in whispers, often repeating the grimmest word it has most recently heard. A new one is born with each secret the Keeper of the Depths learns, and they emerge from the deep dreams of its mind to grace the mortal world with their presence. The watchers are praised and reviled for their unceasing usefulness, but their tentacles bear a poison far deadlier than their servitude. </p>
+            <p class="indent">They enjoy causing fear and concern, but seem to do so out of habit more than any actual malice. When at rest, they tend to immerse themselves in water, and flutter their tendrils out to the edges of whatever body of water they have occupied. Most are seemingly brilliant to the minds of ordinary mortals, and whisper secrets from worlds and lifetimes beyond those of any who are present now. They have an interesting rivalry with the Archive’s record-hunters, and seek to safeguard their secrets from being cataloged in such a mundane fashion as literature. Instead, they hold oral traditions as the highest form of knowledge, and seek to share them in the dreams they visit on the nights of a full moon. </p>
+            <p class="indent">These horrors are suspected to have been first created as the result the work of the Keeper’s first collection: a series of ancient artifacts found buried within the ruins of a civilization lost to the tides upon a distant world. With these, it called the seas to rise above the land and swallow the entire planet, though the artifacts were destroyed in the process. Countless thousands died that day, and those that remained lived among the corpses and the surf amidst the highest mountaintops. Over time, the Keeper’s unshakable influence over the world grew ever greater, twisting once noble folk into imitations of themselves. They performed rituals over the dead, taking the flesh of their fallen and consuming it themselves. They offered their broken bodies and minds to the Keeper, and it grew ever more powerful.</p>
+            <p class="indent">In the end, it discovered that hearing the whispers of those who worshiped it was pleasing, and so it turned its mind to the lost and ancient arts that allowed one to sculpt life from flesh and sentience from dreams. Thus, the eyeless watchers were born, forever whispering the secrets of those who have come and gone for the entertainment of their inhuman master.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">aberration</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">4</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">16</set>
+			<set name="wisdom">16</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">14 (4d4+4)</set>
+			<set name="speed">5 ft., fly 30 ft., swim 30 ft.</set>
+			<set name="skills">Perception +8</set>
+			<set name="resistances"> bludgeoning, piercing, and slashing from nonmagical attacks</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">blinded</set>			
+			<set name="senses">blindsight 60 ft., passive Perception 18</set>
+			<set name="languages">Those known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_AMPHIBIOUS,ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_DREAM_VISITOR,ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_IMPROVED_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_EERIE_WHISPERS</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_EYELESS_WANDERER_DISTURBING_TOUCH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="14" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+            <stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_AMPHIBIOUS">
+		<description>
+			<p>The eyeless watcher can breathe both air and water.</p>
+		</description>
+		<sheet>
+			<description>The eyeless watcher can breathe both air and water.</description>
+		</sheet>
+	</element>
+	<element name="Dream Visitor" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_DREAM_VISITOR">
+		<description>
+			<p>When the moon is full, the eyeless watcher can visit the dreams of a creature within 10 miles of it during a long rest. It can observe and speak with the dreamer in their dreamscape, but otherwise cannot interact. </p>
+		</description>
+		<sheet>
+			<description>When the moon is full, the eyeless watcher can visit the dreams of a creature within 10 miles of it during a long rest. It can observe and speak with the dreamer in their dreamscape, but otherwise cannot interact. </description>
+		</sheet>
+	</element>
+	<element name="Improved Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_IMPROVED_MAGIC_RESISTANCE">
+		<description>
+			<p>The eyeless watcher has advantage on saving throws against spells and other magical effects, and has resistance to damage from spells. </p>
+		</description>
+		<sheet>
+			<description>The eyeless watcher has advantage on saving throws against spells and other magical effects, and has resistance to damage from spells. </description>
+		</sheet>
+	</element>
+	<element name="Eerie Whispers" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_EYELESS_WANDERER_EERIE_WHISPERS">
+		<description>
+			<p>The eyeless watcher can take the Help action at a range of 10 feet.</p>
+		</description>
+		<sheet>
+			<description>The eyeless watcher can take the Help action at a range of 10 feet.</description>
+		</sheet>
+	</element>
+	<element name="Disturbing Touch" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_EYELESS_WANDERER_DISTURBING_TOUCH">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d8) bludgeoning damage plus 8 (1d8 + 3) poison damage and the creature must make a DC 11 Constitution saving throw or be incapacitated for 1 round. </p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d8) bludgeoning damage plus 8 (1d8 + 3) poison damage and the creature must make a DC 11 Constitution saving throw or be incapacitated for 1 round. </description>
+		</sheet>
+	</element>
+	<element name="Harrowing Hawk" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_HARROWING_HAWK">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The harrowing hawk is a large bird with stone-cold eyes that is infused with merciless ice. Bred as hunting birds by the Wild Huntsman, these creatures are far deadlier than their cruel visage belies. When they swoop down to attack their prey, they freeze the edges of their wings and slash with the ice-coated feathers, leaving the frost in the wound to slow their victim. As the ice builds, they let out a piercing cry to summon their master to strike down the target from afar. When at rest, they tend to rest upon the shoulders of their masters and gaze menacingly at those around them. They enjoy gifts of carved bone and scrimshaw, which they use to make their nests, and feast upon frozen meat with gusto. </p>
+            <p class="indent">Harrowing hawks are typically solitary creatures, and rarely cooperate with one another while hunting prey. However, mated pairs are known to hunt together to devastating effect, with one scouting for the other, finding an enticing meal, then letting out a shrill cry. Before the prey can react, the second crashes down with the force of a thunderbolt, slaying the beast instantly. Then the two will perch upon the body until the snow has taken the heat from it, beginning their feast when the blood begins to freeze.</p>
+            <p class="indent">When in the service to a warlock aligned to the Huntsman, they serve as scouts and harbingers to the hounds who pursue the prey, seeking to drive them into the clutches of their master. They have a strong bond with the other beasts of the Huntsman’s stable, though are haughty and typically view themselves as the most favored of beasts. The steeds may carry, and the hounds may enjoy the master’s affections, but the hawks were the first, and the hawks will be the last. Their pride will lead them to seemingly impossible feats of nighsuicidal bravery, such as tearing the eyes from sorcerers and diving down the throats of dragons to cleave about with their razor-sharp wings.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">beast</set>
+			<set name="alignment">lawful neutral</set>
+			<set name="strength">4</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">12</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">10</set>
+			<set name="ac">15</set>
+			<set name="hp">13 (3d6+3)</set>
+			<set name="speed">10 ft., fly 50 ft.</set>
+			<set name="saves">Dex +5</set>
+			<set name="skills">Intimidation +4, Perception +8</set>
+			<set name="resistances"> bludgeoning, piercing, and slashing from nonmagical attacks</set>
+			<set name="immunities">cold</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 18</set>
+			<set name="languages">Understands those known by its master but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_CHILL_WIND,ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_EXECUTIONERS_DIVE,ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_HUNTERS_SHRIEK</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_HARROWING_HAWK_FROZEN_PINIONS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="16" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+            <stat name="companion:speed:fly" value="45" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Chill Wind" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_CHILL_WIND">
+		<description>
+			<p>Ranged weapon attacks against the hawk are made with disadvantage. The hawk can take the Disengage action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>Ranged weapon attacks against the hawk are made with disadvantage. The hawk can take the Disengage action as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Executioner's Dive" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_EXECUTIONERS_DIVE">
+		<description>
+			<p>The harrowing hawk can move straight downward without expending movement. Whenever the hawk moves more than 100 feet during its turn, its first attack before the start of its next turn inflicts 2d10 force damage</p>
+		</description>
+		<sheet>
+			<description>The harrowing hawk can move straight downward without expending movement. Whenever the hawk moves more than 100 feet during its turn, its first attack before the start of its next turn inflicts 2d10 force damage</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_MAGIC_RESISTANCE">
+		<description>
+			<p>The harrowing hawk has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The harrowing hawk has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Hunter's Shriek" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HARROWING_HAWK_HUNTERS_SHRIEK">
+		<description>
+			<p>The hawk can let out a piercing cry as a bonus action, alerting all creatures within 500 feet to its exact location.</p>
+		</description>
+		<sheet>
+			<description>The hawk can let out a piercing cry as a bonus action, alerting all creatures within 500 feet to its exact location.</description>
+		</sheet>
+	</element>
+	<element name="Frozen Pinions" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_HARROWING_HAWK_FROZEN_PINIONS">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage plus 5 (1d4 +3) cold damage and the target’s movement speed is reduced by 10 feet during its next turn. Each time the target is hit after the first, the movement speed reduction increases by 5 feet. This resets after one minute.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage plus 5 (1d4 +3) cold damage and the target’s movement speed is reduced by 10 feet during its next turn. Each time the target is hit after the first, the movement speed reduction increases by 5 feet. This resets after one minute.</description>
+		</sheet>
+	</element>
+	<element name="Haunted Crow" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_HAUNTED_CROW">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Animals on the verge of death sometimes wander into the Forbidden Graveyard, and the carrion birds who come to hover over them are often drawn in as well. As familiar as they are with those on the border of life and death, spirits of the dead occasionally wander back in their grasp, infusing the carrion birds with sinister energies. Their eyes glow with an eerie light, their wings beat silently, and a trail of horrible shadow filled with the grasping hands of those the beast has consumed follows the bird with malevolent intent. They speak in the voices of dead relatives and take pride in their foul mockery of the living, yet often offer wise advice and dangerous secrets to those who have defied death.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">construct</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">5</set>
+			<set name="dexterity">18</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="ac">14</set>
+			<set name="hp">17 (5d4+5)</set>
+			<set name="speed">10 ft., fly 50 ft.</set>
+			<set name="saves">Dex +6</set>
+			<set name="skills">Perception +4, Stealth +8</set>
+			<set name="resistances"> bludgeoning, piercing, and slashing from nonmagical attacks</set>
+			<set name="immunities">necrotic</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, frightened</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 14</set>
+			<set name="languages">Common and those known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_CRUEL_MIMICRY,ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_FLYBY,ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_SHROUDED_DANCE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_HAUNTED_CROW_PECK,ID_GFP_COFSA_COMPANION_ACTION_HAUNTED_CROW_SHRIEK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="17" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Cruel Mimicry" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_CRUEL_MIMICRY">
+		<description>
+			<p>The haunted crow can eerily copy voices that it has heard within the past day, and any of the voices of those that it has watched die. A DC 17 Wisdom (Insight) check reveals that the sound is false.</p>
+		</description>
+		<sheet>
+			<description>The haunted crow can eerily copy voices that it has heard within the past day, and any of the voices of those that it has watched die. A DC 17 Wisdom (Insight) check reveals that the sound is false.</description>
+		</sheet>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_FLYBY">
+		<description>
+			<p>The crow does not provoke opportunity attacks when it flies out of an enemy’s reach.</p>
+		</description>
+		<sheet>
+			<description>The crow does not provoke opportunity attacks when it flies out of an enemy’s reach.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_MAGIC_RESISTANCE">
+		<description>
+			<p>The haunted crow has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The haunted crow has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Shrouded Dance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_HAUNTED_CROW_SHROUDED_DANCE">
+		<description>
+			<p>The haunted crow leaves a trail of dark shadow behind it as it flies that remains until the start of its next turn. Whenever it attacks using Peck, it can choose to attack from any point along that shadow trail.</p>
+		</description>
+		<sheet>
+			<description>The haunted crow leaves a trail of dark shadow behind it as it flies that remains until the start of its next turn. Whenever it attacks using Peck, it can choose to attack from any point along that shadow trail.</description>
+		</sheet>
+	</element>
+	<element name="Peck" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_HAUNTED_CROW_PECK">
+		<description>
+			<p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d4 + 4) piercing damage plus 3 (1d6) necrotic damage. </p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d4 + 4) piercing damage plus 3 (1d6) necrotic damage. </description>
+		</sheet>
+	</element>
+	<element name="Shriek" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_HAUNTED_CROW_SHRIEK">
+		<description>
+			<p>The crow unleashes a terrifying scream. Hostile creatures within 40 feet of the crow must make a DC 12 Wisdom saving throw. If they fail, they are frightened for 1 minute. They can repeat this saving throw at the end of each of their turns, ending the effect on a success.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>The crow unleashes a terrifying scream. Hostile creatures within 40 feet of the crow must make a DC 12 Wisdom saving throw. If they fail, they are frightened for 1 minute. They can repeat this saving throw at the end of each of their turns, ending the effect on a success.</description>
+		</sheet>
+	</element>
+	<element name="Imperial Cobra" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_IMPERIAL_COBRA">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The imperial cobra is one of the deadliest venomous snakes, and their bloodline has been infused with the magic of the Serpent Empress, granting them speech and cunning. Hatched from a long lineage bred to be spies, assassins, and assistants to courtiers, these cobras are malicious and devious. Their venom is potent and infused with powerful magic that enables it to harm even those protected against such toxins. When at rest, they seek out small animals, such as rats or birds, and torment them for entertainment, gradually injecting small amounts of venom until the creature dies in horrible agony. These cobras enjoy flattery as well as games of wit and chance, and gleefully accept gifts of precious gemstones, jewelery, mirrors, exotic meats, and eggs from reptiles and birds alike. </p>
+            <p class="indent">Summoning an imperial cobra is easier said than done. The proper incantations and utterances are difficult to pronounce without a forked tongue, and so it is rarely done by any who are not servants of the Empress. As the ritual proceeds, the summoner must inscribe a small, fang-shaped mark upon their hand before holding it over the fire of a brazier, offering it to the cobra. The beast will emerge from within the fire initially as a serpent of green flame, coiling and hissing with malicious intent. The flaming snake will strike at the offered hand, burning a thin line through the inscribed fang. If the summoner remains calm and still through this process, they will succeed in the rite, gifting the serpent with life and causing it to become corporeal. If they express emotion or pain, then an agonizing toxin will flood their veins and the ritual will be disrupted.</p>
+            <p class="indent">Most servants of the Empress will offer the imperial cobra some form of identifying jewelry, so that it may more clearly express its superiority over all lesser creatures. It serves its master as an equal, subservient only to their wishes by the fact of the magic binding them rather than any true loyalty. The oath of a snake means little, except when it is made to the ruler of the Endless Empire.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">beast</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">10</set>
+			<set name="dexterity">20</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">14</set>
+			<set name="ac">15</set>
+			<set name="hp">22 (5d6+5)</set>
+			<set name="speed">30 ft., climb 30 ft.</set>
+			<set name="saves">Dex +7</set>
+			<set name="skills">Deception +4, Perception +3, Persuasion +4, Stealth +7</set>
+			<set name="immunities">poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, frightened, petrified, poisoned, prone</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 13</set>
+			<set name="languages">Common and those known by its master, can communicate with other reptiles regardless of language. </set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_FAVORED_SERVANT,ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_EQUIPMENT,ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_SLIPPERY_SCALES</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_IMPERIAL_COBRA_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" bonus="base" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:deception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:persuasion:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Favored Servant" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_FAVORED_SERVANT">
+		<description>
+			<p> Poison damage the cobra deals treats immunity to poison as resistance to poison. Creatures immune to the poisoned condition are considered not immune, but they do have advantage on any saving throw against being poisoned by the cobra.</p>
+		</description>
+		<sheet>
+			<description> Poison damage the cobra deals treats immunity to poison as resistance to poison. Creatures immune to the poisoned condition are considered not immune, but they do have advantage on any saving throw against being poisoned by the cobra.</description>
+		</sheet>
+	</element>
+	<element name="Forked Words" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_FORKED_WORDS">
+		<description>
+			<p>Whenever the cobra is touching a friendly creature, both the cobra and the other creature gain advantage on Deception checks.</p>
+		</description>
+		<sheet>
+			<description>Whenever the cobra is touching a friendly creature, both the cobra and the other creature gain advantage on Deception checks.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_MAGIC_RESISTANCE">
+		<description>
+			<p>The imperial cobra has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The imperial cobra has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Slippery Scales" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_IMPERIAL_COBRA_SLIPPERY_SCALES">
+		<description>
+			<p>The imperial cobra can take the Disengage or Dash actions as bonus actions. The cobra also has advantage on checks to escape a grapple.</p>
+		</description>
+		<sheet>
+			<description>The imperial cobra can take the Disengage or Dash actions as bonus actions. The cobra also has advantage on checks to escape a grapple.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_IMPERIAL_COBRA_BITE">
+		<description>
+			<p>Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d4 + 5) piercing damage and the creature must make a DC 12 Constitution saving throw or take 3 (1d6) poison damage and be poisoned for one minute. The creature can repeat this saving throw at the start of each of its turns, ending the effect on a success. </p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d4 + 5) piercing damage and the creature must make a DC 12 Constitution saving throw or take 3 (1d6) poison damage and be poisoned for one minute. The creature can repeat this saving throw at the start of each of its turns, ending the effect on a success. </description>
+		</sheet>
+	</element>
+	<element name="Luminous Shard" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_LUMINOUS_SHARD">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The luminous shard is a small humanoid construct made from the crystallized starlight of the Fallen Exile’s tears that were shed when it witnessed the execution of its mortal love. These shards appear as small faceless statues that vaguely resemble the paramour, and are given as a reminder of the grim purpose that drives the servants of this fallen star. They glow with radiant power in the darkness of the night, and drive back the shadows that would hide the lost artifacts and rituals needed to complete their task. These shards are singleminded in their quest, and cannot be turned aside by danger. When their charge is threatened, they willingly sacrifice themselves as the Exile was willing to, seeking to save their fallen comrade at the cost of their own lives. They still bear that spark of scorn for mortality that their originator once held, however, and strike with malevolent light whenever they witness the fall of a mortal foe.</p>
+            <p class="indent">Summoning a luminous shard is fairly simple, by comparison to some of the other familiars. One must simply stand before the brazier, ignite it, and speak passionately about something they desire or something they have lost. The tongues of flame will begin to burn a warm blue and gold while moving together into a humanoid figure. The summoner must then gently offer a hand, and assist the tiny entity out of the brazier. As it exits, it will solidify into a luminous shard. The summoner must then declare their purpose in life, as they see it at that moment. If they are truthful, then the shard will swear loyalty in a series of gestures and serve faithfully as a familiar from then on. If they are deceptive, then the shard will shed a tear of molten crystal, shatter into fragments, and rejoin the Exile in the skies above.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">construct</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">12</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">26 (4d6+12)</set>
+			<set name="speed">30 ft.</set>
+			<set name="resistances">bludgeoning, piercing, and slashing from nonmagical sources </set>
+			<set name="immunities">cold, fire, poison, psychic, radiant</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, exhaustion, frightened, paralyzed, petrified, poisoned</set>			
+			<set name="senses">passive Perception 10</set>
+			<set name="languages">Common and those known by its master, but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_STARSHINE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_LUMINOUS_SHARD_DAZZLE</set>
+            <set name="reactions">ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_BITTER_SPITE,ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_NAMELESS_LOVE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="26" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bitter Spite" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_BITTER_SPITE">
+		<description>
+			<p> Whenever a hostile creature within 30 feet of the shard is reduced to 0 hit points, it can use a reaction to lance out with a fragment of its being, dealing 1d8 radiant damage to a target of its choosing within 30 feet.</p>
+		</description>
+		<sheet>
+			<description> Whenever a hostile creature within 30 feet of the shard is reduced to 0 hit points, it can use a reaction to lance out with a fragment of its being, dealing 1d8 radiant damage to a target of its choosing within 30 feet.</description>
+		</sheet>
+	</element>
+	<element name="Nameless Lova" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_NAMELESS_LOVE">
+		<description>
+			<p>Whenever an ally within 30 feet of the shard would be reduced to 0 hit points, the shard can use a reaction to sacrifice itself, restoring that ally to 1 hit point and destroying the shard.</p>
+		</description>
+		<sheet>
+			<description>Whenever an ally within 30 feet of the shard would be reduced to 0 hit points, the shard can use a reaction to sacrifice itself, restoring that ally to 1 hit point and destroying the shard.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_MAGIC_RESISTANCE">
+		<description>
+			<p>The luminous shard has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The luminous shard has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Starshine" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_LUMINOUS_SHARD_STARSHINE">
+		<description>
+			<p>The shard can choose to generate an aura of bright light in a 20-foot radius around it and dim light in another 20-foot radius beyond that. It can toggle this aura as a bonus action. Also, it can cast the light cantrip. These light sources count as natural sunlight.</p>
+		</description>
+		<sheet>
+			<description>The shard can choose to generate an aura of bright light in a 20-foot radius around it and dim light in another 20-foot radius beyond that. It can toggle this aura as a bonus action. Also, it can cast the light cantrip. These light sources count as natural sunlight.</description>
+		</sheet>
+	</element>
+	<element name="Dazzle" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_LUMINOUS_SHARD_DAZZLE">
+		<description>
+			<p>Ranged Spell Attack: +10 to hit, range 30 ft., one target. Hit: 1 radiant damage and the target must make a DC 15 Constitution saving throw or be blinded until the end of their next turn. </p>
+		</description>
+		<sheet>
+			<description>Ranged Spell Attack: +10 to hit, range 30 ft., one target. Hit: 1 radiant damage and the target must make a DC 15 Constitution saving throw or be blinded until the end of their next turn. </description>
+		</sheet>
+	</element>
+	<element name="Record-Hunter" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_RECORD_HUNTER">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The record-hunter is a small, featureless humanoid constructed entirely of paper covered in runic script, generated by the will of the Accursed Archive. These tiny origami figures move with great stealth to avoid the unwanted attentions of the Silent One. Able to track down even the most obscure sources of information, they act as invaluable allies to the archivists. When threatened, they fold into the shapes of fantastical beasts and fly high into the air, their runic scripts pulsing with power as they lash at the minds of their aggressors to silence them and preserve the sanctity of the Accursed Archive. </p>
+            <p class="indent">When a record-hunter discovers a new secret, it will peel open, find a quill and ink, and begin to write in tiny, scrawling script on the inside of itself, inscribing the hidden knowledge into its form. When the master of a record-hunter dies, it will return to the Archive and begin a grim and emotionless work. The record-hunter will unfold itself, revealing the countless layers and pages within its body, all covered in the secrets that it has revealed. It will then begin to tear itself apart, silently writhing in agony as it binds itself into a book or scroll. </p>
+            <p class="indent">The new tome of secrets will be picked up by the other record-hunters and placed with reverence upon the shelves of the Archive, and a new record-hunter will be manufactured from blood, ink, and eldritch parchment. It is in this way that the Accursed Archive grows and spreads, constantly seeking new archivists to carry its record-hunters forth. The Silent One acts in defiance of these strange constructs, guarding the knowledge of the Archive while acting in a way that will discourage future additions to the collection. Once a written work is within the Archive, it cannot be destroyed.</p>
+            <p class="indent">Those who take forbidden tomes from the Archive or bear weapons covered in dark script often act in different capacities, either spreading ruin directly or seeking out ancient writings that have managed to somehow escape the attentions of the Archive.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">construct</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">8</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">16</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">11</set>
+			<set name="ac">16</set>
+			<set name="hp">21 (6d4+6)</set>
+			<set name="speed">10 ft., fly 30 ft. (hover)</set>
+			<set name="skills">Perception +3, Stealth +8</set>
+			<set name="resistances">damage from nonmagical sources, poison, necrotic</set>
+			<set name="immunities">psychic</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, frightened, poisoned, exhausted, deafened, blinded</set>			
+			<set name="senses">blindsight 10 ft., passive Perception 13</set>
+			<set name="languages">Understands those known by its master but can’t speak. Can read and write in all languages.</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_FOLDING_FIGURE,ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_LIVING_PAPER,ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_SEEK_KNOWLEDGE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_RECORD_HUNTER_SILENT_SECRET</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="21" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Folding Figure" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_FOLDING_FIGURE">
+		<description>
+			<p>The record-hunter can fold itself into an origami figure of any shape or creature. Its statistics remain the same in any form. </p>
+		</description>
+		<sheet>
+			<description>The record-hunter can fold itself into an origami figure of any shape or creature. Its statistics remain the same in any form. </description>
+		</sheet>
+	</element>
+	<element name="Living Paper" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_LIVING_PAPER">
+		<description>
+			<p>While the record-hunter remains motionless, it is indistinguishable from an ordinary origami figurine or pile of papers.</p>
+		</description>
+		<sheet>
+			<description>While the record-hunter remains motionless, it is indistinguishable from an ordinary origami figurine or pile of papers.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_MAGIC_RESISTANCE">
+		<description>
+			<p>The record-hunter has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The record-hunter has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Seek Knowledge" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_RECORD_HUNTER_SEEK_KNOWLEDGE">
+		<description>
+			<p>The record-hunter intuitively knows the layout of any mundane library it enters, and the location of all written works within libraries other than the Archive. </p>
+		</description>
+		<sheet>
+			<description>The record-hunter intuitively knows the layout of any mundane library it enters, and the location of all written works within libraries other than the Archive. </description>
+		</sheet>
+	</element>
+	<element name="Silent Secret" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_RECORD_HUNTER_SILENT_SECRET">
+		<description>
+			<p>Ranged Spell Attack: +5 to hit, range 30 ft., one target. Hit: 8 (1d10 + 3) psychic damage and the target must make a DC 13 Wisdom saving throw or become unable to speak or cast spells that require verbal components until the start of the record-hunter’s next turn. </p>
+		</description>
+		<sheet>
+			<description>Ranged Spell Attack: +5 to hit, range 30 ft., one target. Hit: 8 (1d10 + 3) psychic damage and the target must make a DC 13 Wisdom saving throw or become unable to speak or cast spells that require verbal components until the start of the record-hunter’s next turn. </description>
+		</sheet>
+	</element>
+	<element name="Scribeant Swarm" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_SCRIBEANT_SWARM">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The scribeant swarm is a mass of scarab-like insectoid constructs, each covered in delicate hieroglyphic writing and embedded with a large central gemstone.</p>
+            <p class="indent">Created ages ago by servants of the Warrior-Saint, these little machines act as record-keepers of all the events that happen in the multiverse. They act in perfect concert, and move with an eerie buzzing noise that can disturb the cowardly. Individual scribeants are relatively harmless and are unable to cause damage, but when they are in a swarm, they can channel their eldritch power to produce startling shocks to those that they are touching.</p>
+            <p class="indent">When threatened, they will move with perfect precision to unleash a ray of radiant light from their gemstones, all targeting a single point on their enemy to sear their body and soul. They can also use this light for more mundane purposes, creating murals and inscriptions of things that they have recorded, or simply displaying what they have witnessed and heard. This makes them invaluable to justiciars, as they can display evidence of wrongdoing that is inalterable and unquestionable.</p>
+            <p class="indent">To summon a swarm, the brazier is lit and the appropriate oaths are made. The summoner will then begin to play the brazier like a drum, striking the outside with a hand or rod. Unharmed by the flames, they will imitate the buzzing of the scribeant swarm, and when performed properly, it will appear from within the fire ready to serve its purpose.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">swarm of Tiny constructs</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">6</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">12</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">21 (6d6)</set>
+			<set name="speed">10 ft., fly 30 ft.</set>
+			<set name="saves">Con +4</set>
+			<set name="skills">Perception +5</set>
+			<set name="resistances">bludgeoning, piercing, and slashing</set>
+			<set name="immunities">necrotic, poison, psychic, radiant</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, diseased, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained, stunned </set>			
+			<set name="senses">blindsight 5 ft., passive Perception 15</set>
+			<set name="languages">Understands Common and those known by its master, but can’t speak.</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_BEAUTIFUL_CRAFTWORK,ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_FEARSOME_BUZZ,ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_STALWARD_PERFECT_RECORD,ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_STALWARD_SWARM_CONSTRUCT</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_SCRIBEANT_SWARM_GEM_LIGHT_LANCE,ID_GFP_COFSA_COMPANION_ACTION_SCRIBEANT_SWARM_HIEROGLYPHIC_SPARK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="21" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Beautiful Craftwork" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_BEAUTIFUL_CRAFTWORK">
+		<description>
+			<p>When immobile, the swarm is indistinguishable from a collection of cunningly-made statuettes or jewelry.</p>
+		</description>
+		<sheet>
+			<description>When immobile, the swarm is indistinguishable from a collection of cunningly-made statuettes or jewelry.</description>
+		</sheet>
+	</element>
+	<element name="Fearsome Buzz" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_FEARSOME_BUZZ">
+		<description>
+			<p>The swarm’s orderly yet chaotic humming can cause fear in the hearts of lesser creatures. Whenever a creature with a CR of 1/4th or lower is in a space occupied by the swarm, it is frightened of the swarm and must attempt to move out of the swarm’s space during its next turn.</p>
+		</description>
+		<sheet>
+			<description>The swarm’s orderly yet chaotic humming can cause fear in the hearts of lesser creatures. Whenever a creature with a CR of 1/4th or lower is in a space occupied by the swarm, it is frightened of the swarm and must attempt to move out of the swarm’s space during its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_MAGIC_RESISTANCE">
+		<description>
+			<p>The scribieant swarm has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The scribieant swarm has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Perfect Record" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_STALWARD_PERFECT_RECORD">
+		<description>
+			<p>The swarm records everything it sees and experiences within an internal crystalline matrix, and can display images and sounds from this memory by projecting them onto a surface within 10 feet as an action. It can inscribe an image onto an appropriate surface using its Gem-light Lance over the course of 5 minutes.</p>
+		</description>
+		<sheet>
+			<description>The swarm records everything it sees and experiences within an internal crystalline matrix, and can display images and sounds from this memory by projecting them onto a surface within 10 feet as an action. It can inscribe an image onto an appropriate surface using its Gem-light Lance over the course of 5 minutes.</description>
+		</sheet>
+	</element>
+	<element name="Swarm Construct" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SCRIBEANT_SWARM_STALWARD_SWARM_CONSTRUCT">
+		<description>
+			<p>The scribeant swarm can occupy another creature’s space and vice versa, and the swarm can move through any opening large enough for a tiny scarab. The swarm can regain hit points from magic and resting, or from the mending cantrip at a rate of 1 hit point per casting.</p>
+		</description>
+		<sheet>
+			<description>The scribeant swarm can occupy another creature’s space and vice versa, and the swarm can move through any opening large enough for a tiny scarab. The swarm can regain hit points from magic and resting, or from the mending cantrip at a rate of 1 hit point per casting.</description>
+		</sheet>
+	</element>
+	<element name="Gem-light Lance" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SCRIBEANT_SWARM_GEM_LIGHT_LANCE">
+		<description>
+			<p>Ranged Spell Attack: +5 to hit, range 30 ft., one target. Hit: 13 (4d6) radiant damage, or 7 (2d6) radiant damage if the swarm has half its hit points or fewer.</p>
+		</description>
+		<sheet>
+			<description>Ranged Spell Attack: +5 to hit, range 30 ft., one target. Hit: 13 (4d6) radiant damage, or 7 (2d6) radiant damage if the swarm has half its hit points or fewer.</description>
+		</sheet>
+	</element>
+	<element name="Hieroglyphic Spark" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SCRIBEANT_SWARM_HIEROGLYPHIC_SPARK">
+		<description>
+			<p>Melee Spell Attack: +5 to hit, reach 0 ft., one target within the swarm’s space. Hit: 8 (2d8) lightning damage, or 4 (1d8) lightning damage if the swarm has half its hit points or fewer. </p>
+		</description>
+		<sheet>
+			<description>Melee Spell Attack: +5 to hit, reach 0 ft., one target within the swarm’s space. Hit: 8 (2d8) lightning damage, or 4 (1d8) lightning damage if the swarm has half its hit points or fewer. </description>
+		</sheet>
+	</element>
+	<element name="Shade Widow" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_SHADE_WIDOW">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The shade widow is an eerily silent spider-shaped construct made entirely of animate webbing and shaped obsidian. Created by the Weaver of Lies as assassins, these deadly objects are used to tie up loose ends wherever they arise. They’ll often lie in wait under the beds of unsuspecting victims before emerging to bite with fangs coated in magical poison. Acolytes of the Weaver are fond of them due to their ability to create massive webs, making them invaluable while fleeing from an angry mob after the lies they’ve spun fall to tatters.</p>
+			<p class="indent">Summoning a shade widow is a perilous task. After lighting the brazier, the warlock must begin to chant and incant with perfect inaccuracy, deliberately twisting the normal ritual of summoning into something exactly wrong. This process causes eldritch pain to those not accustomed to lying with every breath, burning away at a fragment of the summoner’s soul in order to give life to something false. During this, the summoner will throw sand into the brazier to magically heat, and then pour the resulting glass into the correct form of the shade widow. </p>
+			<p class="indent">A final sprinkle of blood is the last ingredient. This blood will become a strange poison that changes the glass to spider web obsidian and grants life and malice to the shade widow. Once it is summoned, the warlock must lie to it once more, claiming to be its true master before all others. Both the warlock and the widow know this to be false, for the shade widows will always be servants to the foul nightmare known as the Weaver of Lies. </p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">construct</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">10</set>
+			<set name="dexterity">18</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">11</set>
+			<set name="ac">14</set>
+			<set name="hp">7 (2d4 + 2)</set>
+			<set name="speed">30 ft., climb 30 ft.</set>
+			<set name="saves">Dex +6</set>
+			<set name="skills">Perception +4, Stealth +8</set>
+			<set name="resistances">bludgeoning, piercing, and slashing from nonmagical sources</set>
+			<set name="immunities">poison, psychic</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, exhaustion, frightened, paralyzed, petrified, poisoned</set>			
+			<set name="senses">blindsight 10 ft., darkvision 60 ft., passive Perception 14</set>
+			<set name="languages">Understands Common and those known by its master but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_ARACHNIDS_GRACE,ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_WEB_SENSE,ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_WEB_WEAVER</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_SHADE_WIDOW_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="7" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Arachnid’s Grace" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_ARACHNIDS_GRACE">
+		<description>
+			<p>The shade widow can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check, and it ignores movement restrictions or difficult terrain caused by webbing.</p>
+		</description>
+		<sheet>
+			<description>The shade widow can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check, and it ignores movement restrictions or difficult terrain caused by webbing.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_MAGIC_RESISTANCE">
+		<description>
+			<p>The shadow widow has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The shade widow has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Web Sense" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_WEB_SENSE">
+		<description>
+			<p>While in contact with a web, the shade widow knows the exact location of any other creature in contact with the same web.</p>
+		</description>
+		<sheet>
+			<description>While in contact with a web, the shade widow knows the exact location of any other creature in contact with the same web.</description>
+		</sheet>
+	</element>
+	<element name="Web Weaver" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SHADE_WIDOW_WEB_WEAVER">
+		<description>
+			<p>The shade widow can produce enough natural webbing per minute to cover a 10-foot radius. This webbing adheres to creatures and objects. If a creature falls prone in a space covered in webbing, or is shoved into a wall covered in webbing, its movement speed is halved until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>The shade widow can produce enough natural webbing per minute to cover a 10-foot radius. This webbing adheres to creatures and objects. If a creature falls prone in a space covered in webbing, or is shoved into a wall covered in webbing, its movement speed is halved until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SHADE_WIDOW_BITE">
+		<description>
+			<p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. 6 (1d4 + 4) piercing damage plus 11 (2d6 + 4) poison damage and the creature must make a DC 12 Constitution saving throw or be poisoned for 1 minute. The target can repeat this saving throw at the beginning of each of their turns, ending the effect on a success.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. 6 (1d4 + 4) piercing damage plus 11 (2d6 + 4) poison damage and the creature must make a DC 12 Constitution saving throw or be poisoned for 1 minute. The target can repeat this saving throw at the beginning of each of their turns, ending the effect on a success.</description>
+		</sheet>
+	</element>
+	<element name="Spark Seeker" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_SPARK_SEEKER">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The spark seeker is a small, manta-ray-like creature that floats on the winds and uses them for defense. Once parasites that crawled upon the hide of the Storm Lord, the spark seekers have been touched by the legendary power of the godlike being and have grown and changed, gaining the ability to wield magical energies in exchange for service to the Lord. When threatened, they craft a shard of crystal by compressing the dust in the air around them and firing it at their target after charging it with electricity. When at rest, they scuttle along at a slow pace, finding a nook in some stone to lie in on a side that is exposed to the wind and elements. They enjoy gifts of meat and perfumes, and chirp excitedly when they are carried around. At night, colonies of spark seekers perform elaborate mating dances, lighting up the sky with flashes of lightning and strong gusts of wind. An entire colony of them working in concert can start a summon a massive and terrible storm, making them dangerous when near civilized areas.</p>
+			<p class="indent">Summoning one is simple: light the brazier, chant the proper words and praises to the Lord of Storms, extinguish the brazier with water, and then your desired spark seeker will appear from within the resulting fog and steam.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">beast</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">4</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">14 (4d4 + 4)</set>
+			<set name="speed">5 ft., fly 45 ft.</set>
+			<set name="skills">Perception +6</set>
+			<set name="immunities">lightning, thunder</set>
+			<set name="challenge">1</set>			
+			<set name="senses">darkvision 120 ft., passive Perception 16</set>
+			<set name="languages">Understands those known by its master but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_FLUTTERBY,ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_SKYWARD_GRASP,ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_STALWARD_DEFENSE</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_SPARK_SEEKER_SPIKESHARD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="14" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+            <stat name="companion:speed:fly" value="45" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Durable" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_FLUTTERBY">
+		<description>
+			<p>The spark seeker can take the Disengage action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>The spark seeker can take the Disengage action as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_MAGIC_RESISTANCE">
+		<description>
+			<p>The spark seeker has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The spark seeker has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Skyward Grasp" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_SKYWARD_GRASP">
+		<description>
+			<p>The spark seeker can cast either levitate or gust of wind (spell save DC 13) without expending a spell slot. Once it does so, it can’t do so again until it finishes a short or long rest. </p>
+		</description>
+		<sheet>
+			<description>The spark seeker can cast either levitate or gust of wind (spell save DC 13) without expending a spell slot. Once it does so, it can’t do so again until it finishes a short or long rest. </description>
+		</sheet>
+	</element>
+	<element name="Storm Shield" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SPARK_SEEKER_STORM_SHIELD">
+		<description>
+			<p>Ranged attacks targeting the spark seeker are always made with disadvantage and cannot gain advantage from any source.</p>
+		</description>
+		<sheet>
+			<description>Ranged attacks targeting the spark seeker are always made with disadvantage and cannot gain advantage from any source.</description>
+		</sheet>
+	</element>
+	<element name="Spikeshard" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SPARK_SEEKER_SPIKESHARD">
+		<description>
+			<p>Ranged Weapon Attack: +5 to hit, range 30 ft., one target. Hit: 3 (1d6) piercing damage plus 6 (1d4 +3) lightning damage.</p>
+		</description>
+		<sheet>
+			<description>Ranged Weapon Attack: +5 to hit, range 30 ft., one target. Hit: 3 (1d6) piercing damage plus 6 (1d4 +3) lightning damage.</description>
+		</sheet>
+	</element>
+	<element name="Symphonic Songbird" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_SYMPHONIC_SONGBIRD">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The symphonic songbird is a colorful avian creature that mimics the voices of others, and can produce a beautiful melody fit for any occasion. They seem to originate from birds that have fallen for the allure of the Perfect Chord and have been touched by the magical emanations that constantly flow from it. Infused with choral power, they speak and sing with the voices of any sounds they have heard. Oddly enough, they seem to prefer being exposed to a constant onslaught of sound when at rest, and will seek out the noisiest place around to build their nests. </p>
+			<p class="indent">Colonies of songbirds will form full orchestral symphonies, to the delight of the rare few who are granted an audience. When threatened, they dazzle and strike with wicked beaks, inspiring one another to fight with fervor and fury against all aggressors. They enjoy gifts of fruit and shiny objects, which they use to build elaborate nests. Their songs are legendary for leading travelers astray, however, and they are often viewed with mistrust and suspicion by folk in less civilized lands. </p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">fey</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">4</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">16</set>
+			<set name="ac">14</set>
+			<set name="hp">14 (4d4 + 4)</set>
+			<set name="speed">10 ft., fly 50 ft.</set>
+			<set name="skills">Perception +5, Performance + 7</set>
+			<set name="immunities">thunder</set>
+			<set name="challenge">1</set>			
+			<set name="senses">passive Perception 15</set>
+			<set name="languages">All known by its master</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_FLUTTERBY,ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_PERFECT_MIMICRY,ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_SHINING_FEATHERS</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_SYMPHONIC_SONGBIRD_PECK,ID_GFP_COFSA_COMPANION_ACTION_SYMPHONIC_SONGBIRD_FITTING_TUNE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:hp:max" value="14" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Flutterby" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_FLUTTERBY">
+		<description>
+			<p>The symphonic songbird can take the Disengage action as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>The symphonic songbird can take the Disengage action as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_MAGIC_RESISTANCE">
+		<description>
+			<p>The symphonic songbird has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The symphonic songbird has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Perfect Mimicry" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_PERFECT_MIMICRY">
+		<description>
+			<p>The songbird can perfectly replicate any sound that it has heard. A DC 20 Perception check reveals that the sound is falsified.</p>
+		</description>
+		<sheet>
+			<description>The songbird can perfectly replicate any sound that it has heard. A DC 20 Perception check reveals that the sound is falsified.</description>
+		</sheet>
+	</element>
+	<element name="Shining Feathers" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_SYMPHONIC_SONGBIRD_SHINING_FEATHERS">
+		<description>
+			<p>Hostile creatures that attack the songbird must make a DC 12 Charisma saving throw. If they fail, the attack misses.</p>
+		</description>
+		<sheet>
+			<description>Hostile creatures that attack the songbird must make a DC 12 Charisma saving throw. If they fail, the attack misses.</description>
+		</sheet>
+	</element>
+	<element name="Peck" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SYMPHONIC_SONGBIRD_PECK">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, range 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage and 2 (1d4) psychic damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, range 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage and 2 (1d4) psychic damage.</description>
+		</sheet>
+	</element>
+	<element name="Fitting Tune" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_SYMPHONIC_SONGBIRD_FITTING_TUNE">
+		<description>
+			<p>(Recharges after a short or long rest). The symphonic songbird chirps a beautiful song. Allied creatures within 30 feet gain advantage on their next attack roll, saving throw, or ability check.</p>
+		</description>
+		<sheet>
+			<description>(Recharges after a short or long rest). The symphonic songbird chirps a beautiful song. Allied creatures within 30 feet gain advantage on their next attack roll, saving throw, or ability check.</description>
+		</sheet>
+	</element>
+	<element name="Karensee" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_WEALTH_MIMIC">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>A deadly thing that lurks in the pockets of countless saints and villains alike, money is a tool that brings both salvation and misery. Not all funds can be trusted, however. The Currency Conspiracy has been gradually replacing the original currencies of the world with karensee, colloquially known as wealth mimics. They can take an endless number of forms, but they are restricted, unlike their larger kin. These mimics can only choose to turn into objects that appear to be of value. A gold coin, a bill, a gemstone, a necklace of pearls: all of these things are potential wealth mimics. Most of them are asleep, trapped in a singular form. They feign damage or other ill effects while they are sleeping, behaving exactly like natural materials. However, when they are awakened by eldritch magic, they come to life and attack those who sought to own them. Members of the Currency conspiracy often call and awaken wealth mimics using a ritualistic rite, but any warlock of sufficient power and knowledge can summon one.</p>
+			<p class="indent">The first steps are relatively easy. The summoner must ignite the brazier and stand adjacent to it, speaking the correct incantations. Once the fire has burned down to embers, the summoner must insert a single object of value that a wealth mimic could imitate, such as a coin or bank note.</p>
+			<p class="indent">Next, the warlock must offer blood. When a few drops are applied to the object within the brazier, the flames will flare to life once more, consuming the object and then disappearing. The ashes will begin to form together into a shape identical to that of the object, and a new wealth mimic will be born. It will speak a single word, giving itself a name. So long as that name is known by its master, it will obey perfectly, changing shape and killing on command.</p>
+			<p class="indent">Wealth mimics enjoy being fed other currency. Some scholars whisper that this is intended to give them power, but others suspect that they are simply innately cannibalistic. Those in the Conspiracy are believed to have created the wealth mimics with a built-in safety measure, in case something goes wrong with the final plan. In that instance, they would consume one another in a frenzy after being deprived of other flesh, rendering them harmless to those they could not reach.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">monstrosity</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">16</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">18</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">10</set>
+			<set name="ac">16</set>
+			<set name="hp">24 (4d4 + 16)</set>
+			<set name="speed">15 ft.</set>
+			<set name="skills">Stealth +8</set>
+			<set name="resistances">bludgeoning, piercing, and slashing from nonmagical sources</set>
+			<set name="immunities">acid, poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">charmed, exhaustion, frightened, paralyzed, petrified, poisoned</set>			
+			<set name="senses">darkvision 120 ft., passive Perception 10</set>
+			<set name="languages">Understands those known by its master but can’t speak or write</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_AGGRESSIVE_ADHESION,ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_MASTERFUL_MIMICRY,ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_STALWARD_POCKET_JUMP</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_WEALTH_MIMIC_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" bonus="base" />
+			<stat name="companion:hp:max" value="24" bonus="base" />
+			<stat name="companion:speed" value="15" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Aggressive Adhesion" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_AGGRESSIVE_ADHESION">
+		<description>
+			<p>Whenever the karensee touches a creature, it can choose to adhere to them as a reaction. If it does, it sticks to the target. A creature can make a DC 13 Strength (Athletics) check to scrape the karensee off of them. While a karensee is adhered to a creature, it has advantage on attack rolls against that target.</p>
+		</description>
+		<sheet>
+			<description>Whenever the karensee touches a creature, it can choose to adhere to them as a reaction. If it does, it sticks to the target. A creature can make a DC 13 Strength (Athletics) check to scrape the karensee off of them. While a karensee is adhered to a creature, it has advantage on attack rolls against that target.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_MAGIC_RESISTANCE">
+		<description>
+			<p>The karensee has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The karensee has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Masterful Mimicry" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_MASTERFUL_MIMICRY">
+		<description>
+			<p>When the karensee touches another unit of wealth, it can use a reaction to become an identical copy of that wealth. It can attack and perform actions regardless of form or appearance, but on a turn that it has taken no actions it is immune to damage and cannot be detected by any means short of truesight.</p>
+		</description>
+		<sheet>
+			<description>When the karensee touches another unit of wealth, it can use a reaction to become an identical copy of that wealth. It can attack and perform actions regardless of form or appearance, but on a turn that it has taken no actions it is immune to damage and cannot be detected by any means short of truesight.</description>
+		</sheet>
+	</element>
+	<element name="Pocket Jump" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WEALTH_MIMIC_STALWARD_POCKET_JUMP">
+		<description>
+			<p>The wealth mimic can teleport up to 15 feet as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>The wealth mimic can teleport up to 15 feet as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_WEALTH_MIMIC_BITE">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, range 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage plus 3 (1d4) acid damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, range 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage plus 3 (1d4) acid damage.</description>
+		</sheet>
+	</element>
+	<element name="Wiggly Cube" type="Companion" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_WIGGLY_CUBE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The wiggly cube is a small, colorful, semi-transparent ooze that gently dissolves a little of everything it touches in a quest to experience all the flavors of the multiverse. They are sent down by the greater cubes within the Convocation to learn and grow before eventually returning to the space between the planes where the Gelatinous Convocation makes its home. They’re surprisingly expressive for a simple square of slime, and often bounce and jiggle to express their feelings on a topic. They enjoy consuming corpses and other dead organic material, as they learn more and more about the universe with each meal. When threatened, the cube will resort to violence with an intimidating glee, lashing out with its pseudopods and trying to goad the attacker into engaging in melee combat. Against foes smaller than itself, the cube will rush them and attempt to engulf and consume them. They speak to the minds around them with a childlike innocence even as they feast on dead mortals and beasts alike. When at rest, the cube will seek a stone surface to rest upon, and will wobble slowly back and forth in a pattern seemingly designed to entice the unwary into touching it.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">ooze</set>
+			<set name="alignment">neutral</set>
+			<set name="strength">14</set>
+			<set name="dexterity">6</set>
+			<set name="constitution">18</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">14</set>
+			<set name="ac">8</set>
+			<set name="hp">45 (6d6 + 24)</set>
+			<set name="speed">25 ft.</set>
+			<set name="immunities">acid, cold, bludgeoning, poison</set>
+			<set name="challenge">1</set>
+			<set name="conditionImmunities">blinded, charmed, deafened, exhaustion, frightened, poisoned, prone</set>			
+			<set name="senses">blindsight 10 ft., darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">Understands Common and those known by its master, and can speak telepathically to creatures within 10 feet of it, but can’t speak or write otherwise.</set>
+			<set name="traits">ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_CORROSIVE_FORM,ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_OOZE_CUBE,ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_MAGIC_RESISTANCE,ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_SQUISHY,ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_TRANSPARENT</set>
+			<set name="actions">ID_GFP_COFSA_COMPANION_ACTION_WIGGLY_CUBE_PSEUDOPOD,ID_GFP_COFSA_COMPANION_ACTION_WIGGLY_CUBE_ENGULF</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="8" bonus="base" />
+			<stat name="companion:hp:max" value="45" bonus="base" />
+			<stat name="companion:speed" value="25" bonus="base" />
+		</rules>
+	</element>
+	<element name="Corrosive Form" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_CORROSIVE_FORM">
+		<description>
+			<p>A creature that hits the cube with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. The cube can eat through 1-inch-thick nonmagical wood or metal in one round.</p>
+		</description>
+		<sheet>
+			<description>A creature that hits the cube with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. The cube can eat through 1-inch-thick nonmagical wood or metal in one round.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_MAGIC_RESISTANCE">
+		<description>
+			<p>The wiggly cube has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The wiggly cube has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Ooze Cube" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_OOZE_CUBE">
+		<description>
+			<p> The cube occupies its entire space whenever it is Medium or larger. Other creatures can enter the space, but a creature that does so is subjected to the cube’s Engulf and has disadvantage on the saving throw. Creatures inside the cube can be seen but have total cover. A creature within 5 feet of the cube can take an action to pull a creature or object out of the cube. Doing so requires a successful DC 12 Strength check, and the creature making the attempt takes 4 (1d8) acid damage. The cube can only hold one creature equal to its size, or four creatures of one size or more smaller than itself.</p>
+		</description>
+		<sheet>
+			<description> The cube occupies its entire space whenever it is Medium or larger. Other creatures can enter the space, but a creature that does so is subjected to the cube’s Engulf and has disadvantage on the saving throw. Creatures inside the cube can be seen but have total cover. A creature within 5 feet of the cube can take an action to pull a creature or object out of the cube. Doing so requires a successful DC 12 Strength check, and the creature making the attempt takes 4 (1d8) acid damage. The cube can only hold one creature equal to its size, or four creatures of one size or more smaller than itself.</description>
+		</sheet>
+	</element>
+	<element name="Squishy" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_SQUISHY">
+		<description>
+			<p>The cube is immune to falling damage.</p>
+		</description>
+		<sheet>
+			<description>The cube is immune to falling damage.</description>
+		</sheet>
+	</element>
+	<element name="Transparent" type="Companion Trait" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_TRAIT_WIGGLY_CUBE_TRANSPARENT">
+		<description>
+			<p>Even when the cube is in plain sight, it takes a successful DC 15 Wisdom (Perception) check to spot a cube that has neither moved or attacked. A creature that tries to enter the cubes space while unaware of it is surprised by the cube.</p>
+		</description>
+		<sheet>
+			<description>Even when the cube is in plain sight, it takes a successful DC 15 Wisdom (Perception) check to spot a cube that has neither moved or attacked. A creature that tries to enter the cubes space while unaware of it is surprised by the cube.</description>
+		</sheet>
+	</element>
+	<element name="Pseudopod" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_WIGGLY_CUBE_PSEUDOPOD">
+		<description>
+			<p>Melee Weapon Attack: +2 to hit, range 5 ft., one target. Hit: 5 (1d6+2) acid damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +2 to hit, range 5 ft., one target. Hit: 5 (1d6+2) acid damage.</description>
+		</sheet>
+	</element>
+	<element name="Engulf" type="Companion Action" source="The Compendium of Forgotten Secrets" id="ID_GFP_COFSA_COMPANION_ACTION_WIGGLY_CUBE_ENGULF">
+		<description>
+			<p>The cube moves up to its speed. While it does so, it can enter the spaces of other creatures. Whenever the cube enters the space of a hostile creature, and the creature is of the same size or smaller than the cube, it must make a DC 12 Dexterity saving throw. If it succeeds, it can choose to be pushed 5 feet back or to the side of the cube. A creature that chooses not to be pushed suffers the consequences of a failed saving throw. On a failed save, the cube enters the creature’s space, and the creature takes 4 (1d8) acid damage and is engulfed. The engulfed creature can’t breathe, is restrained, and takes 14 (3d8) acid damage at the start of each of the cube’s turns. When the cube moves, the engulfed creature moves with it. An engulfed creature can try to escape by taking an action to make a DC 12 Strength check. On a success, the creature escapes and enters a space of its choice within 5 feet of the cube.</p>
+		</description>
+		<sheet>
+			<description>The cube moves up to its speed. While it does so, it can enter the spaces of other creatures. Whenever the cube enters the space of a hostile creature, and the creature is of the same size or smaller than the cube, it must make a DC 12 Dexterity saving throw. If it succeeds, it can choose to be pushed 5 feet back or to the side of the cube. A creature that chooses not to be pushed suffers the consequences of a failed saving throw. On a failed save, the cube enters the creature’s space, and the creature takes 4 (1d8) acid damage and is engulfed. The engulfed creature can’t breathe, is restrained, and takes 14 (3d8) acid damage at the start of each of the cube’s turns. When the cube moves, the engulfed creature moves with it. An engulfed creature can try to escape by taking an action to make a DC 12 Strength check. On a success, the creature escapes and enters a space of its choice within 5 feet of the cube.</description>
+		</sheet>
+	</element>
 </elements>
