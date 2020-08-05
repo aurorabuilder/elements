@@ -45,8 +45,11 @@
 			<p>You can reach out to spirits to guide you and others. You learn the guidance cantrip, which doesn’t count against the number of bard cantrips you know. For you, it has a range of 60 feet when you cast it.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You learn the guidance cantrip, it has a range of 60 feet when you cast it.</description>
 		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" spellcasting="Bard" />
+		</rules>
 	</element>
 	<element name="Spiritual Focus" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_COLLEGE_OF_SPIRITS_SPIRITUAL_FOCUS">
 		<description>
@@ -55,7 +58,9 @@
 			<p class="indent">At 6th level, when you cast a bard spell that deals damage or restores hit points through the Spiritual Focus, roll a d6, and you gain a bonus to one roll of the spell equal to the number rolled.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You can use the following objects as a spellcasting focus for your bard spells: a candle, a crystal ball, a talking board, a tarokka deck, or a skull.</description>
+			<description level="6">You can use the following objects as a spellcasting focus for your bard spells: a candle, a crystal ball, a talking board, a tarokka deck, or a skull.
+			When you cast a bard spell that deals damage or restores hp through the Spiritual Focus, you gain a d6 bonus to one roll of the spell.</description>
 		</sheet>
 	</element>
 	<element name="Tales from Beyond" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_COLLEGE_OF_SPIRITS_TALES_FROM_BEYOND">
@@ -68,7 +73,7 @@
 			<h5 class="caption">Spirits’ Tales</h5>
 			<table>
 				<thead>
-					<tr><td>Bardic Insp. Die</td><td>Tale</td></tr>
+					<tr><td class="col-10">Bardic Insp. Die</td><td>Tale</td></tr>
 				</thead>
 				<tr><td>1</td><td><strong>Beast.</strong> You recite the tale of a clever animal. For 1 minute, the target has advantage on Wisdom (Perception) checks and advantage on attack rolls against a creature if another enemy is within 5 feet of it, and that enemy isn’t incapacitated.</td></tr>
 				<tr><td>2</td><td><strong>Warrior.</strong> You recount the story of a renowned duelist. Make a melee spell attack against the target as an attacking spectral warrior briefly appears in an unoccupied space within 5 feet of the target before vanishing. On a hit, the target takes force damage equal to two rolls of your Bardic Inspiration die + your Charisma modifier.</td></tr>
@@ -84,8 +89,10 @@
 				<tr><td>12</td><td><strong>Unknown.</strong> You utter an incomprehensible fable from a being beyond the stars. Choose a creature you can see within 30 feet of you. The target must succeed on an Intelligence saving throw or take psychic damage equal to three rolls of your Bardic Inspiration die, and the target is unable to speak any language for 1 minute.</td></tr>
 			</table>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action">
+			<description>While you are holding your Spiritual Focus, you can expend one use of your Bardic Inspiration and roll on the Spirits’ Tales table using your Bardic Inspiration die to determine the tale told. You retain the tale in mind until you bestow the tale’s effect or you finish a short or long rest.
+			You can use an action to choose one creature you can see within 30 feet of you to be the target of the tale’s effect. Once you do so, you can’t bestow the tale’s effect again until you roll it again.
+			You can retain only one of these tales in mind at a time, and rolling on the Spirits’ Tales table immediately ends the effect of the previous tale.</description>
 		</sheet>
 	</element>
 	<element name="Spirit Session" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_COLLEGE_OF_SPIRITS_SPIRIT_SESSION">
@@ -96,8 +103,9 @@
 			<p class="indent">The spell you choose must be of a level equal to the number of creatures that conducted the ritual or less, the spell must of a level you can cast, and it must be in the school of divination or necromancy. The chosen spell counts as a bard spell for you but doesn’t count against the number of bard spells you know.</p>
 			<p class="indent">Once you perform the ritual, you can’t do so again until you start a long rest, and you know the chosen spell until you start a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet usage="1/Long Rest">
+			<description>You can conduct an hour-long ritual, with {{proficiency}} creatures, channeling spirits using your Spiritual Focus. At the end of the ritual, you temporarily learn one spell of your choice from any class.
+			The spell you choose must be of a level equal to the number of creatures that conducted the ritual or less, the spell must of a level you can cast, and it must be in the school of divination or necromancy.</description>
 		</sheet>
 	</element>
 	<element name="Mystical Connection" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_COLLEGE_OF_SPIRITS_MYSTICAL_CONNECTION">
@@ -106,7 +114,7 @@
 			<p>Your connection to spirits has become semi-permanent. Whenever you use your Tales from Beyond feature, you can roll a d6 and use it instead of expending a Bardic Inspiration die. You still use your Bardic Inspiration die for the tale’s effect, without expending it.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>Whenever you use your Tales from Beyond feature, you can roll a d6 and use it instead of expending a Bardic Inspiration die. You still use your Bardic Inspiration die for the tale’s effect, without expending it.</description>
 		</sheet>
 	</element>
 
@@ -173,8 +181,11 @@
 			<p>You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 			<p class="indent">The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your face might transform into bat-like features due to your vampire patron.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You transform for 1 minute. You gain the following benefits while transformed:
+			You gain 1d10+{{level:warlock}} temporary hp.
+			Once during each of your turns, when you hit a creature with an attack, you can force it to make a Wisdom save, and if the save fails, the target is frightened of you until the end of your next turn.
+			You are immune to the frightened condition.</description>
 		</sheet>
 	</element>
 	<element name="Grave Touched" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_THE_UNDEAD_GRAVE_TOUCHED">
@@ -184,7 +195,8 @@
 			<p class="indent">In addition, when you hit a creature with an attack and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>You don’t need to eat, drink, or breathe.
+			When you hit a creature with an attack and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes.</description>
 		</sheet>
 	</element>
 	<element name="Mortal Husk" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_THE_UNDEAD_MORTAL_HUSK">
@@ -194,8 +206,12 @@
 			<p class="indent">In addition, when you are reduced to 0 hit points, you can cause your body to explode. Each creature within 30 feet of you takes necrotic damage equal to 2d10 + your warlock level. You then revive with 1 hit point in your previous space, along with your gear, and you gain 1 level of exhaustion. Once you revive this way, you can’t do so again until you finish 1d4 long rests.</p>
 		</description>
 		<sheet>
-			<description></description>
+			<description>If you are transformed using your Form of Dread, you become immune to necrotic damage.
+			When you are reduced to 0 hp, you can cause your body to explode. Each creature within 30 feet of you takes 2d10+{{level:warlock}} necrotic damage. You then revive with 1 hp in your previous space, along with your gear, and you gain 1 level of exhaustion. Once you revive this way, you can’t do so again until you finish 1d4 long rests.</description>
 		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
 	</element>
 	<element name="Spirit Projection" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 4" id="ID_WOTC_UA20200805_ARCHETYPE_FEATURE_THE_UNDEAD_SPIRIT_PROJECTION">
 		<description>
@@ -211,8 +227,14 @@
 			</ul>
 			<p class="indent">Once you use this feature, you can’t do so again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can project your spirit from your body. The body you leave behind is unconscious and in a state of suspended animation.
+			Your spirit can remain outside your body for up to 1 hour or until your concentration is broken. When your projection ends, your spirit returns to your body or your body magically teleports to your spirit’s space.
+			While projecting your spirit, you gain the following benefits:
+			Your spirit and body gain resistance to bludgeoning, piercing, and slashing damage.
+			When you cast a spell of the conjuration or necromancy school, the spell doesn’t require verbal, somatic, or material components that lack a gold cost.
+			You have a flying speed of {{speed}} and can hover. You can move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.
+			While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hp equal to half the amount of necrotic damage dealt.</description>
 		</sheet>
 	</element>
 </elements>
