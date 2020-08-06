@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Swordmage</name>
+		<update version="0.0.1">
+			<file name="class-swordmage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/dms-guild/classes/class-swordmage.xml" />
+		</update>
+	</info>
+	<element name="The Swordmage" type="Source" source="Core" id="ID_DMSG_AA_SOURCE_THE_SWORDMAGE">
+		<description>
+			<p>Spellsword. Battlemage. Magus. There are a lot of different names to describe characters who wield martial weapons and arcane spells in tandem. This class concept is a personal favorite of mine, and though 5e has a lot of options to bring players close to the concept (like the eldritch knight or bladesinger), neither is the true arcane half-caster that most people wish existed.</p>
+			<p>My class, which I've named the Swordmage in honor of the 4e class, takes a few cues from that edition, including the strong weapon bond and the third level abilities that two of the archetypes receive. But it's also something a bit new, and borrows some mechanics from Pathfinder's magus class. While designing it I tried to keep it similar to the paladin, which many already feel is a fantastic example of a half-caster and a sort of divine sister class to what a swordmage would be. But I also tried to make it different. Instead of the ability to sense divine beings and undead, the swordmage can sense the presence of magic. Instead of getting smite, the swordmage can infuse their weapon with arcane power for extended periods, and channel the strength of full-powered spells through weapon strikes.</p>
+			<p>The three archetypes presented are designed to reflect the ways I feel a weapon-bonding arcane fighter would choose to focus their abilities.</p>
+			<p>The battlemage is the heavy-armored battle wizard. They are designed to take punishment and simultaneously dish it out with spell-and-swordplay, and can help their allies by making an enemy more inclined to attack them.</p>
+			<p>The spellsword is more a lightly armored skirmishes, and more focused on hitting with arcanely-powered sword strikes. They are better able to strike spells into a target and can momentarily teleport to take advantage of an opponent's openings.</p>
+			<p>The third archetype, the eldritch archer, can do many of the things that other swordmages can do but at a longer range. Arcane Archer is coming out as an official class in Xanathar's Guide to Everything, but for now I feel that my own "arcane archer" archetype will differ enough from the fighter archetype Wizards is releasing to justify its existence.</p>		
+		</description>
+		<setters>
+			<set name="abbreviation">AASM</set>
+			<set name="url">https://www.dmsguild.com/product/224413/Swordmage-A-True-Arcane-HalfCaster-for-5e</set>
+			<set name="image">https://www.dmsguild.com/images/8957/224413.png</set>
+			<set name="author" abbreviation="DMSG" url="https://www.dmsguild.com/browse.php?author=The%20Arcane%20Athenaeum">The Arcane Athenaeum</set>
+			<set name="third-party">true</set>
+			<set name="release">20171019</set>
+		</setters>
+	</element>
+	<element name="Swordmage" type="Class" source="The Swordmage" id="ID_DMSG_AASM_CLASS_SWORDMAGE">
+		<description>
+			<p>An elf nocks an arrow made of spectral blue energy into her bow. She takes careful aim, mutters a short incantation, and lets the arrow fly toward the group of orcs rushing towards her. The arrow slams into the lead orc, then shatters as it explodes into flames and engulfs their ranks.</p>
+			<p class="indent">A human mutters words of arcane power under his breath, causing his warhammer to crackle alight with electricity.</p>
+			<p class="indent">Turning the corner, he rushes toward a surprised hobgoblin with a cry, and brings the hammer down on its head with a burst of lightning.</p>
+			<p class="indent">A guard shoves a captured half-elf ahead of him, leading her deeper into the king's dungeon. She quickly concentrates as the guard turns to regard another inmate, and with a flash buries her newly materialized blade into the man's back.</p>
+			<p class="indent">Swordmages are practicioners of both martial combat and arcane magic. To a swordmage, fighters are uncivilized brutes whose only answer to conflict is to hit things harder, while wizards are overly delicate and more at home in a library than the battlefield. Swordmages seek to combine the best of both worlds, seamlessly merging their knowledge of the arcane into battle disciplines which no pure knight or mage could hope to achieve.</p>
+			<h4>A MYSTICAL BOND</h4>
+			<p>The term "swordmage" is in many respects a misnomer; the weapon employed can range from a blade to a hammer to a crossbow. What most defines a swordmage is the unshakable bond that is formed with that particular weapon. Other individuals are able to form similar arcane bonds, but the one between a swordmage and her chosen weapon goes even further.</p>
+			<p class="indent">A bonded weapon is like an extension of a swordmage's own body. It is nearly impossible to rob a swordmage of it, and they are able to sense its location no matter how distant, and call it to their hand from any similar range. Some believe that each weapon contains its own minute soul, one equally capable of communicating with the Weave that surrounds everything. By forging this bond, a swordmage's capability to affect the Weave is increased.</p>
+			<h4>MAGIC AND MIGHT</h4>
+			<p>Without their martial training, a swordmage would still be a formidable (though much less enigmatic) wizard. The meditations and trainings they undertake allow them to comprehend the workings of the Weave, plucking at it to create varied magical effects. Many utilize their spells to augment their own martial ability, while others instead rely on them as their primary methods of combat. Regardless of the specifics, all swordmages channel magic through their weapons, needing no other focus to cast spells.</p>
+			<p class="indent">Without their magic, a swordmage would still be a practiced fighter. Some spend years practicing combat styles and martial arts, learning to intimately understand the swing of a sword or the drawing of a bow. While many wizards sharpen only their minds, swordmages ensure that their bodies become as powerful a weapon as any spell.</p>
+			<h4>CREATING A SWORDMAGE</h4>
+			<p>When you create a swordmage character you should consider why you've chosen the complex path of mixing martial combat and magic arts. Were you a squire under the service of a knight who discovered a gift for magic? Were you once a wizard's apprentice, but found yourself drawn to practice with cold steel instead of properly studying?</p>
+			<p class="indent">Why have you gone out into the greater world? Do you wish to prove your unorthodox lifestyle as effective as any other?</p>
+			<p class="indent">Are you on a personal mission to collect some arcane secret or ancient artifact? Or perhaps you simply want to put your skills to the test.</p>		
+			<h5 class="caption">QUICK BUILD</h5>
+			<p>You can make a Swordmage quickly by following these suggestions. First, make Strength or Dexterity your highest ability score, followed by Intelligence. Second, choose the soldier background.</p>
+			<h2>CLASS FEATURES</h2>
+			<p>As an Swordmage, you gain the following class features.</p>
+			<h5 class="caption">HIT POINTS</h5>
+			<ul class="unstyled">
+				<li><strong>Hit Dice:</strong> 1d10 per Swordmage level</li>
+				<li><strong>Hit Points at 1st Level:</strong> 10 + your Constitution modifier</li>
+				<li><strong>Hit Points at Higher Levels:</strong> 1d10 (or 6) + your Constitution modifier per Swordmage level after 1st</li>
+			</ul>
+			<h5 class="caption">PROFICIENCIES</h5>
+			<ul class="unstyled mb">
+				<li><strong>Armor:</strong> Light armor, medium armor</li>
+				<li><strong>Weapons:</strong> Simple weapons, martial weapons</li>
+				<li><strong>Tools:</strong> None</li>
+			</ul>
+			<ul class="unstyled">
+				<li><strong>Saving Throws:</strong> Constitution, Intelligence</li>
+				<li><strong>Skills:</strong> Choose two from Acrobatics, Athletics, Arcana, History, Insight, Intimidation, Perception, and Persuasion</li>
+			</ul>
+			<h5 class="caption">EQUIPMENT</h5>
+			<p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+			<ul>
+				<li>(a) a martial weapon or (b) a longbow and a quiver of 20 arrows</li>
+				<li>(a) a martial weapon or (b) two simple weapons</li>
+				<li>(a) scale mail or (b) leather armor</li>
+				<li>(a) a dungeoneer's pack or (b) an explorer's pack</li>
+			</ul>
+			<h5 class="caption">THE SWORDMAGE</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-5">Level</td><td class="col-60 left">Features</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td><td>5th</td></tr>
+				</thead>
+				<tr><td> 1st</td><td class="left">Swordmage Bond, Magic Sense</td><td>—</td> <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 2nd</td><td class="left">Fighting Style, Spellcasting, Arcane Infusion</td><td>2</td> <td>2</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 3rd</td><td class="left">Spell Strike, Swordmage Discipline</td><td>3</td> <td>3</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 4th</td><td class="left">Ability Score Improvement</td><td>3</td> <td>3</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 5th</td><td class="left">Extra Attack</td><td>4</td> <td>4</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 6th</td><td class="left">Eldritch Might</td><td>4</td> <td>4</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 7th</td><td class="left">Swordmage Discipline feature</td><td>5</td> <td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 8th</td><td class="left">Ability Score Improvement</td><td>5</td> <td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 9th</td><td class="left">—</td><td>6</td> <td>4</td><td>3</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>10th</td><td class="left">Guiding Strike</td><td>6</td> <td>4</td><td>3</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>11th</td><td class="left">Swordmage Discipline feature</td><td>7</td> <td>4</td><td>3</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>12th</td><td class="left">Ability Score Improvement</td><td>7</td> <td>4</td><td>3</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>13th</td><td class="left">—</td><td>8</td> <td>4</td><td>3</td><td>3</td><td>1</td><td>—</td></tr>
+				<tr><td>14th</td><td class="left">Magic Ward</td><td>8</td> <td>4</td><td>3</td><td>3</td><td>1</td><td>—</td></tr>
+				<tr><td>15th</td><td class="left">Swordmage Discipline feature</td><td>9</td> <td>4</td><td>3</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>16th</td><td class="left">Ability Score Improvement</td><td>9</td> <td>4</td><td>3</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>17th</td><td class="left">—</td><td>10</td><td>4</td><td>3</td><td>3</td><td>3</td><td>1</td></tr>
+				<tr><td>18th</td><td class="left">Empowered Spell Strike</td><td>10</td><td>4</td><td>3</td><td>3</td><td>3</td><td>1</td></tr>
+				<tr><td>19th</td><td class="left">Ability Score Improvement</td><td>11</td><td>4</td><td>3</td><td>3</td><td>3</td><td>2</td></tr>
+				<tr><td>20th</td><td class="left">Archblade</td><td>11</td><td>4</td><td>3</td><td>3</td><td>3</td><td>2</td></tr>
+			</table>
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_BOND" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_SENSE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELLCASTING" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCANE_INFUSION" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELL_STRIKE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_DISCIPLINE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ABILITY_SCORE_IMPROVEMENT" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EXTRA_ATTACK" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ELDRITCH_MIGHT" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_GUIDING_STRIKE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_WARD" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EMPOWERED_SPELL_STRIKE" />
+			<div element="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCHBLADE" />
+		</description>
+		<setters>
+			<set name="hd">d10</set>
+			<set name="short">A practicioner of both martial combat and arcane magic.</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_DMSG_AASM_MULTICLASS_SWORDMAGE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_DMSG_AASM_MULTICLASS_SWORDMAGE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_DMSG_AASM_MULTICLASS_SWORDMAGE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_DMSG_AASM_MULTICLASS_SWORDMAGE" />
+			<select type="Proficiency" name="Skill Proficiency, Swordmage" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERSUASION" number="2" requirements="!ID_DMSG_AASM_MULTICLASS_SWORDMAGE" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_BOND" level="1" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_SENSE" level="1" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE" level="2" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELLCASTING" level="2" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCANE_INFUSION" level="2" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELL_STRIKE" level="3" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_DISCIPLINE" level="3" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ABILITY_SCORE_IMPROVEMENT" level="4" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EXTRA_ATTACK" level="5" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ELDRITCH_MIGHT" level="6" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_GUIDING_STRIKE" level="10" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_WARD" level="14" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EMPOWERED_SPELL_STRIKE" level="18" />
+			<grant type="Class Feature" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCHBLADE" level="20" />
+		</rules>
+		<multiclass id="ID_DMSG_AASM_MULTICLASS_SWORDMAGE">
+			<prerequisite>Strength 13 or Dexterity 13, and Intelligence 13</prerequisite>
+			<requirements>([str:13]||[dex:13]),[int:13]</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Light armor, martial weapons</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+			</rules>
+		</multiclass>
+	</element>
+	<element name="Swordmage Bond" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_BOND">
+		<description>
+			<p>You know a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the end of which you touch the weapon and forge the bond.</p>
+			<p class="indent">Once you have bonded a weapon to yourself, you can’t be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand. As long as it is on the same plane as you, you also know its precise location at all times.</p>
+			<p class="indent">If your bonded weapon is broken or damaged, you can spend 1 hour of meditation to recreate the weapon from a fragment. This can be done during a short rest. This process automatically destroys any other fragments of the weapon in existence, so you can’t use it to create multiple copies of a broken weapon.</p>
+			<p class="indent">If you attempt to bond with a second weapon, you must break the bond with your existing weapon.</p>
+		</description>
+		<sheet>
+			<description>You know a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the end of which you touch the weapon and forge the bond.
+			Once you have bonded a weapon to yourself, you can’t be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand. As long as it is on the same plane as you, you also know its precise location at all times.
+			If your bonded weapon is broken or damaged, you can spend 1 hour of meditation to recreate the weapon from a fragment. This can be done during a short rest. This process automatically destroys any other fragments of the weapon in existence, so you can’t use it to create multiple copies of a broken weapon.
+			If you attempt to bond with a second weapon, you must break the bond with your existing weapon.</description>
+		</sheet>
+	</element>
+	<element name="Magic Sense" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_SENSE">
+		<description>
+			<p>As an action, you can open yourself to the Weave, allowing you to feel the magical power of objects around you. Until the end of your next turn, you can sense any magic items within 60 feet of you that are not behind total cover. You can sense the presence of a magic item hidden on a person, such as in a pocket or tucked into a boot, so long as the person is not behind total cover. You cannot sense an item contained in an extradimensional space, such as in a bag of holding. You also cannot sense an object protected from divination magic, such as through the spell nondetection, or one affected by a spell such as Nystul's magic aura which hides its magical nature. A thin sheet of lead also blocks your magic sense.</p>
+			<p class="indent">When you use this feature, you can select one of the magic items you sense and learn its rarity (common, uncommon, rare, very rare, legendary, or artifact) and its magic item category (whether it is armor, a potion, a ring, a rod, a scroll, a staff, a wand, a weapon, or a wondrous item). Your magic sense has no effect on objects which bear magic but are not magic items.</p>
+			<p class="indent">You can use this feature a number of times equal to 1 + your Intelligence modifier (minimum of 1). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{aasm:magic sense:usage}}/Short Rest">
+			<description>You can feel the magical power of objects around you. Until the end of your next turn, you can sense any magic items within 60 feet of you that are not behind total cover. You can sense the presence of a magic item hidden on a person, so long as the person is not behind total cover. You cannot sense an item contained in an extradimensional space. You also cannot sense an object protected from divination magic. A thin sheet of lead also blocks your magic sense.
+			When you use this feature, you can select one of the magic items you sense and learn its rarity and its magic item category. Your magic sense has no effect on objects which bear magic but are not magic items.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:magic sense:usage" value="1" bonus="base" />
+			<stat name="aasm:magic sense:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Fighting Style" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE">
+		<description>
+			<p>At 2nd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.</p>
+			<h5>ARCANE WARRIOR</h5>
+			<p>Arcane Warrior You learn two cantrips of your choice from the wizard spell list. They count as swordmage spells for you, and Intelligence is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the wizard spell list.</p>
+			<h5>ARCHERY</h5>
+			<p>You gain a +2 bonus to attack rolls you make with ranged weapons.</p>
+			<h5>DEFENSE</h5>
+			<p>While you are wearing armor, you gain a +1 bonus to AC.</p>
+			<h5>DUELING</h5>
+			<p>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
+			<h5>GREAT WEAPON FIGHTING</h5>
+			<p>When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the twohanded or versatile property for you to gain this benefit.</p>			
+			<h5>PROTECTION</h5>
+			<p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Class Feature" name="Fighting Style, Swordmage" supports="Fighting Style, AASM_Swordmage" />
+		</rules>
+	</element>
+	<element name="Spellcasting" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELLCASTING">
+		<description>
+			<p>Your time spent learning the intricacies of magic allows you to create greater effects beyond the form of your weapon, giving you the ability to cast spells at 2nd level.</p>
+			<h5>SPELL SLOTS</h5>
+			<p>The Swordmage table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher.</p>
+			<p class="indent">You regain all expended spell slots when you finish a long rest.</p>
+			<h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
+			<p>You know two 1st-level spells of your choice from the swordmage spell list (which appears at the end of this document).</p>
+			<p class="indent">The Spells Known column of the Swordmage table shows when you learn more swordmage spells of your choice from this feature. Each of these spells must be of a level for which you have spell slots on the Swordmage table.</p>
+			<p class="indent">Additionally, when you gain a level in this class, you can choose one of the swordmage spells you know from this feature and replace it with another spell from the swordmage spell list. The new spell must also be of a level for which you have spell slots on the Swordmage table.</p>
+			<h5>SPELLCASTING ABILITY</h5>
+			<p>Intelligence is your spellcasting ability for your swordmage spells; your understanding of the theory behind magic allows you to wield these spells with superior skill. You use your Intelligence whenever a swordmage spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a swordmage spell you cast and when making an attack roll with one.</p>			
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+			</center>
+			<h5>SPELLCASTING FOCUS</h5>
+			<p>You can use your bonded weapon as a spellcasting focus for your swordmage spells.</p>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Swordmage" ability="Intelligence" allowReplace="true">
+			<list>AASM_Swordmage</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS" />			
+			<stat name="swordmage:spellcasting:slots:1" value="2" level="2" />
+			<stat name="swordmage:spellcasting:slots:1" value="1" level="3" />
+			<stat name="swordmage:spellcasting:slots:1" value="1" level="5" />
+			<stat name="swordmage:spellcasting:slots:2" value="2" level="5" />
+			<stat name="swordmage:spellcasting:slots:2" value="1" level="7" />
+			<stat name="swordmage:spellcasting:slots:3" value="2" level="9" />
+			<stat name="swordmage:spellcasting:slots:3" value="1" level="11" />
+			<stat name="swordmage:spellcasting:slots:4" value="1" level="13" />
+			<stat name="swordmage:spellcasting:slots:4" value="1" level="15" />
+			<stat name="swordmage:spellcasting:slots:4" value="1" level="17" />
+			<stat name="swordmage:spellcasting:slots:5" value="1" level="17" />
+			<stat name="swordmage:spellcasting:slots:5" value="1" level="19" />	
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" number="2" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Swordmage" />
+			<select type="Spell" name="Spell, Swordmage" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Swordmage" />
+		</rules>
+	</element>
+	<element name="Arcane Infusion" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCANE_INFUSION">
+		<description>
+			<p>Beginning at 2nd level, you gain the ability to infuse your bonded weapon with arcane energy. As a bonus action, while holding your bonded weapon you can expend one spell slot, infusing your weapon for ten minutes. While infused, your weapon deals additional force damage equal to 1 + the level of the spell slot you expended, to a maximum of 4. If your weapon is not already magical, it becomes magical for the duration.</p>
+			<p class="indent">Instead of force damage, when you apply your arcane infusion you can choose to have it deal another type of damage. The damage must be one which you can deal using a swordmage spell that you know (for example, if you know the spell burning hands, your infusion can deal fire damage) but cannot be bludgeoning, piercing, or slashing damage.</p>
+			<p class="indent">This effect ends early if your bonded weapon is more than 5 feet away from you for 1 minute or more, if you fall unconscious, or if you choose to end it (no action required).</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>While holding your bonded weapon you can expend one spell slot, infusing your weapon for ten minutes. While infused, your weapon deals additional force damage equal to 1 + the level of the spell slot you expended, to a maximum of 4. If your weapon is not already magical, it becomes magical for the duration.
+			Instead of force damage, when you apply your arcane infusion you can choose to have it deal another type of damage. The damage must be one which you can deal using a swordmage spell that you know but cannot be bludgeoning, piercing, or slashing damage.
+			This effect ends early if your bonded weapon is more than 5 feet away from you for 1 minute or more, if you fall unconscious, or if you choose to end it.</description>
+		</sheet>
+	</element>
+	<element name="Spell Strike" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SPELL_STRIKE">
+		<description>
+			<p>Starting at 3rd level, you can use an action on your turn to attempt a spell strike, concentrating a spell into your weapon and using the strike to cast it onto a target. Choose a spell you know of 1st level or higher with a casting time of one action, and spend a spell slot as if you were casting it as normal. The spell must be capable of targeting a hostile creature or have an area of effect in the shape of a cone, cube, cylinder, line, or sphere.</p>
+			<p class="indent">As part of the action, you then make a single weapon attack with your bonded weapon. If the attack hits, the target suffers the attack's normal effects and the effects of the spell. The target has disadvantage on all saving throws made against the spell (if any), and automatically fails Dexterity saving throws. If the spell has an area of effect, it instead only affects the target. Whether the weapon attack hits or misses, the spell slot is expended and the magic fades from your weapon.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of 1), expending a use when you successfully hit your target. You regain expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{aasm:spell strike:usage}}/Long Rest">
+			<description>You can on your turn to attempt a spell strike, concentrating a spell into your weapon and using the strike to cast it onto a target. Choose a spell you know of 1st level or higher with a casting time of one action, and spend a spell slot as if you were casting it as normal. The spell must be capable of targeting a hostile creature or have an area of effect in the shape of a cone, cube, cylinder, line, or sphere.
+			As part of the action, you then make a single weapon attack with your bonded weapon. If the attack hits, the target suffers the attack's normal effects and the effects of the spell. The target has disadvantage on all saves made against the spell (if any), and automatically fails Dexterity saves. If the spell has an area of effect, it instead only affects the target. Whether the weapon attack hits or misses, the spell slot is expended and the magic fades from your weapon.
+			You expend a use of this feature when you successfully hit your target.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:spell strike:usage" value="1" bonus="base" />
+			<stat name="aasm:spell strike:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Swordmage Discipline" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_DISCIPLINE">
+		<description>
+			<p>At 3rd level, you focus your martial and arcane prowess into a particular discipline, Battlemage, Eldritch Archer, or Spellsword, each of which are detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype" name="Swordmage Discipline" supports="AASM Swordmage Discipline" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ABILITY_SCORE_IMPROVEMENT">
+		<description>
+			<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Class Feature" name="Improvement Option, Swordmage (4)" supports="Improvement Option,Swordmage,4" level="4" />
+			<select type="Class Feature" name="Improvement Option, Swordmage (8)" supports="Improvement Option,Swordmage,8" level="8" />
+			<select type="Class Feature" name="Improvement Option, Swordmage (12)" supports="Improvement Option,Swordmage,12" level="12" />
+			<select type="Class Feature" name="Improvement Option, Swordmage (16)" supports="Improvement Option,Swordmage,16" level="16" />
+			<select type="Class Feature" name="Improvement Option, Swordmage (19)" supports="Improvement Option,Swordmage,19" level="19" />
+		</rules>
+	</element>
+	<element name="Extra Attack" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EXTRA_ATTACK">
+		<description>
+			<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+		</rules>
+	</element>
+	<element name="Eldritch Might" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ELDRITCH_MIGHT">
+		<description>
+			<p>Beginning at 6th level, you can add half your Intelligence modifier (round up) to any Strength, Dexterity, or Constitution ability check you make.</p>
+		</description>
+		<sheet>
+			<description>You can add {{intelligence:modifier:half:up}} to any Strength, Dexterity, or Constitution ability check you make.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:eldritch might:bonus" value="intelligence:modifier:half:up" bonus="base" />
+			<stat name="initiative" value="aasm:eldritch might:bonus" />
+			<stat name="acrobatics:misc" value="aasm:eldritch might:bonus" />
+			<stat name="athletics:misc" value="aasm:eldritch might:bonus" />
+			<stat name="sleight of hand:misc" value="aasm:eldritch might:bonus" />
+			<stat name="stealth:misc" value="aasm:eldritch might:bonus" />
+		</rules>
+	</element>
+	<element name="Guiding Strike" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_GUIDING_STRIKE">
+		<description>
+			<p>Starting at 10th level, your Spell Strikes leave behind traces of glimmering magic. When you successfully hit a creature with the weapon attack made with your Spell Strike feature, the next attack roll made against the target before the end of your next turn has advantage.</p>
+		</description>
+		<sheet>
+			<description>When you successfully hit a creature with the weapon attack made with your Spell Strike feature, the next attack roll made against the target before the end of your next turn has advantage.</description>
+		</sheet>
+	</element>
+	<element name="Magic Ward" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_MAGIC_WARD">
+		<description>
+			<p>Beginning at 14th level, the magic of your bond projects a constant ward against magic. Whenever you suffer damage from a spell or other magical effect and you are wielding your bonded weapon, you can reduce the damage by an amount equal to your Intelligence modifier.</p>
+		</description>
+		<sheet>
+			<description>Whenever you suffer damage from a spell or other magical effect and you are wielding your bonded weapon, you can reduce the damage by {{intelligence:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Empowered Spell Strike" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_EMPOWERED_SPELL_STRIKE">
+		<description>
+			<p>Beginning at 18th level, when you roll dice for the spell you used for your Spell Strike, you can reroll a number of the dice up to your Intelligence modifier (minimum of one). You must use the new rolls.</p>
+		</description>
+		<sheet>
+			<description>When you roll dice for the spell you used for your Spell Strike, you can reroll up to {{aasm:empowered spell strike:reroll}} dice. You must use the new rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:empowered spell strike:reroll" value="1" bonus="base" />
+			<stat name="aasm:empowered spell strike:reroll" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Archblade" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCHBLADE">
+		<description>
+			<p>At 20th level, the bond with your weapon becomes even stronger. Your bonded weapon gains a +1 bonus to attack and damage rolls. Additionally, while wielding your bonded weapon you gain a +1 bonus to your spell attack modifier and your spell save DC increases by 1.</p>
+		</description>
+		<sheet>
+			<description>Your bonded weapon gains a +1 bonus to attack and damage rolls. Additionally, while wielding your bonded weapon you gain a +1 bonus to your spell attack modifier and your spell save DC increases by 1.</description>
+		</sheet>
+		<!-- todo: -->
+	</element>
+	
+	<element name="Battlemage" type="Archetype" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_SWORDMAGE_BATTLEMAGE">
+		<supports>AASM Swordmage Discipline</supports>
+		<description>
+			<p>Battlemages wear heavy armor and stride onto the battlefield with little worry for potential dangers. They, more than other swordmages, delve deep enough into the workings of magics to learn the same sorts of spells that wizards do. With this knowledge they wield their spells in flashy and destructive ways, while protecting their allies from harm.</p>
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_BATTLEMAGE_MAGIC" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_STUDIED_SOLDIER" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ARCANE_AEGIS" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_HARDENED_MIND" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ELEMENTAL_PROTECTION" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_WAR_MAGE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_BATTLEMAGE_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_STUDIED_SOLDIER" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ARCANE_AEGIS" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_HARDENED_MIND" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ELEMENTAL_PROTECTION" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_WAR_MAGE" level="15" />
+		</rules>
+	</element>
+	<element name="Battlemage Magic" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_BATTLEMAGE_MAGIC">
+		<description>
+			<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Battlemage Spells table. The spell counts as a swordmage spell for you, but it doesn’t count against the number of swordmage spells you know.</p>
+			<h5 class="caption">Battlemage Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Swordmage Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>protection from evil and good</em></td></tr>
+				<tr><td>5th</td><td><em>warding bond</em></td></tr>
+				<tr><td>9th</td><td><em>enemies abound</em></td></tr>
+				<tr><td>13th</td><td><em>Otiluke's resilient sphere</em></td></tr>
+				<tr><td>17th</td><td><em>circle of power</em></td></tr>
+			</table>      
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" level="3" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" level="5" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ENEMIES_ABOUND" level="9" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE" level="13" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="17" spellcasting="Swordmage" />
+		</rules>
+	</element>
+	<element name="Studied Soldier" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_STUDIED_SOLDIER">
+		<description>
+			<p>When you choose this discipline at 3rd level, you gain proficiency in heavy armor and shields.</p>
+			<p class="indent">When your Spellcasting feature lets you learn or replace a swordmage spell of 1st level or higher, you can choose the new spell from the swordmage spell list or the wizard spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a swordmage spell for you.</p>
+		</description>
+		<sheet display="false">
+			<description>When your Spellcasting feature lets you learn or replace a swordmage spell of 1st level or higher, you can choose the new spell from the swordmage spell list or the wizard spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a swordmage spell for you.</description>
+		</sheet>
+		<spellcasting name="Swordmage" extend="true">
+			<extend>Wizard</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+		</rules>
+	</element>
+	<element name="Arcane Aegis" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ARCANE_AEGIS">
+		<description>
+			<p>When you choose this discipline at 3rd level, you gain the ability to disrupt a single target's attacks against your allies.</p>
+			<p class="indent">As an action you can target a single creature within 30 feet of you that you can see. That creature makes a Wisdom saving throw versus your spell save DC. On a failure you mark the creature until your concentration is broken (as if you are concentrating on a spell). A creature marked by you has disadvantage on any attack roll that doesn't target you.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier. You regain expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{intelligence:modifier}}/Long Rest">
+			<description>You can target a single creature within 30 feet of you that you can see. That creature makes a DC{{swordmage:spellcasting:dc}} Wisdom save. On a failure you mark the creature until your concentration is broken. A creature marked by you has disadvantage on any attack roll that doesn't target you.</description>
+		</sheet>
+	</element>
+	<element name="Hardened Mind" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_HARDENED_MIND">
+		<description>
+			<p>Starting at 7th level, you gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell or your Arcane Aegis feature. The bonus is equal to half your Intelligence modifier (rounded up, minimum of +1).</p>
+		</description>
+		<sheet>
+			<description>You gain a +{{aasm:hardend mind:bonus}} bonus to any Constitution save you make to maintain your concentration on a spell or your Arcane Aegis feature.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:hardend mind:bonus" value="1" bonus="base" />
+			<stat name="aasm:hardend mind:bonus" value="intelligence:modifier:half:up" bonus="base" />
+		</rules>
+	</element>
+	<element name="Elemental Protection" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_ELEMENTAL_PROTECTION">
+		<description>
+			<p>Beginning at 11th level, you can manipulate the energy infused into your weapon to protect you from harm. While you have an active Arcane Infusion, you gain resistance to the damage type of the infusion. You must be wielding your bonded weapon to gain the benefits of this feature.</p>
+		</description>
+		<sheet>
+			<description>While you have an active Arcane Infusion, you gain resistance to the damage type of the infusion. You must be wielding your bonded weapon to gain the benefits of this feature.</description>
+		</sheet>
+	</element>
+	<element name="War Mage" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_BATTLEMAGE_WAR_MAGE">
+		<description>
+			<p>At 15th level, channeling magic invigorates you in combat.</p>
+			<p class="indent">After you use an action to cast a spell, or while you maintain concentration on a spell or your Arcane Aegis feature, you can make a single weapon attack as a bonus action. You cannot use this feature if you use your action to make a weapon attack in the same turn.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>After you use an action to cast a spell, or while you maintain concentration on a spell or your Arcane Aegis feature, you can make a single weapon attack. You cannot use this feature if you use your action to make a weapon attack in the same turn.</description>
+		</sheet>
+	</element>
+	
+	<element name="Eldritch Archer" type="Archetype" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_SWORDMAGE_ELDRITCH_ARCHER">
+		<supports>AASM Swordmage Discipline</supports>
+		<description>
+			<p>Eldritch Archers specialize in ranged weaponry, weaving magic into their shots and uing their weapons to extend the lethal range of their spells.</p>
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_MAGIC" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_AMMUNITION" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_INCREASED_CASTING_RANGE" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_PHASING_SHOT" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_BEACON" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ELDRITCH_ACCURACY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_AMMUNITION" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_INCREASED_CASTING_RANGE" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_PHASING_SHOT" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_BEACON" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ELDRITCH_ACCURACY" level="15" />
+		</rules>
+	</element>
+	<element name="Eldritch Archer Magic" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_MAGIC">
+		<description>
+			<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Eldritch Archer Spells table. The spell counts as a swordmage spell for you, but it doesn’t count against the number of swordmage spells you know.</p>
+			<h5 class="caption">Eldritch Archer Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Swordmage Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>zephyr strike</em></td></tr>
+				<tr><td>5th</td><td><em>cordon of arrows</em></td></tr>
+				<tr><td>9th</td><td><em>wind wall</em></td></tr>
+				<tr><td>13th</td><td><em>elemental bane</em></td></tr>
+				<tr><td>17th</td><td><em>swift quiver</em></td></tr>
+			</table>  
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_ZEPHYR_STRIKE" level="3" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_CORDON_OF_ARROWS" level="5" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_WIND_WALL" level="9" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_XGTE_SPELL_ELEMENTAL_BANE" level="13" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_SWIFT_QUIVER" level="17" spellcasting="Swordmage" />
+		</rules>
+	</element>
+	<element name="Arcane Ammunition" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_AMMUNITION">
+		<description>
+			<p>When you choose this discipline at 3rd level, you gain the ability to spontaneously create ammunition from nothing.</p>
+			<p class="indent">When you make an attack with your bonded weapon you can choose to create a piece of ammunition (such as an arrow or bolt) in your hand as part of the attack. The ammunition lasts until the end of the turn or until it hits or misses a target.</p>
+			<p class="indent">Though the ammunition is made magically, it is not considered magical.</p>
+		</description>
+		<sheet>
+			<description>When you make an attack with your bonded weapon you can choose to create a piece of ammunition in your hand as part of the attack. The ammunition lasts until the end of the turn or until it hits or misses a target.
+			Though the ammunition is made magically, it is not considered magical.</description>
+		</sheet>
+	</element>
+	<element name="Increased Casting Range" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_INCREASED_CASTING_RANGE">
+		<description>
+			<p>When you choose this discipline at 3rd level, you gain the ability to extend the range of your swordmage spells through your bonded weapon. When you cast a spell that has a range of 10 feet or greater, you can use the normal range of your bonded weapon to determine the spell's range. A spell cannot have a range of Self to be used with this feature, your bonded weapon must be a ranged weapon, and you must be wielding your bonded weapon to use this feature.</p>
+			<p class="indent">At 15th level you can use the long range of your bonded weapon to determine the spell's range.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that has a range of 10 feet or greater, you can use the normal range of your bonded weapon to determine the spell's range. A spell cannot have a range of Self to be used with this feature, your bonded weapon must be a ranged weapon, and you must be wielding your bonded weapon to use this feature.</description>
+			<description level="15">When you cast a spell that has a range of 10 feet or greater, you can use the long range of your bonded weapon to determine the spell's range. A spell cannot have a range of Self to be used with this feature, your bonded weapon must be a ranged weapon, and you must be wielding your bonded weapon to use this feature.</description>
+		</sheet>
+	</element>
+	<element name="Phasing Shot" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_PHASING_SHOT">
+		<description>
+			<p>Starting at 7th level, you learn how to briefly phase your ammunition into the ethereal plane. When you make a ranged attack using your bonded weapon you can choose to make the attack a Phasing Shot. Phasing shots ignore all cover, including total cover, when fired, and ignore obstacles during their flight as long as the obstacle does not extend into the ethereal plane. You still suffer disadvantage when attacking creatures that are heavily obscured from you.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier. You regain expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{intelligence:modifier}}/Long Rest">
+			<description>When you make a ranged attack using your bonded weapon you can choose to make the attack a Phasing Shot. Phasing shots ignore all cover, including total cover, when fired, and ignore obstacles during their flight as long as the obstacle does not extend into the ethereal plane. You still suffer disadvantage when attacking creatures that are heavily obscured from you.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Beacon" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ARCANE_BEACON">
+		<description>
+			<p>Beginning at 11th level, you can use a bonus action to concentrate on a piece of ammunition in your hand (as if concentrating on a spell). If you choose to concentrate on a piece of ammunition made through your Arcane Ammunition feature, the ammunition persists until your concentration ends, at which point it disappears.</p>
+			<p class="indent">While concentrating, you know the location of your ammunition as long as it remains on the same plane of existence as you. You can use a bonus action to change your perception to that of the ammunition until the start of your next turn. While doing so, you can see and hear through the ammunition as if you were there. During this time, you are deaf and blind with regard to your own senses.</p>
+			<p class="indent">Your concentration ends early if the ammunition is ever destroyed. A creature can use its action to snap the ammunition and destroy it.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain expended uses of this feature when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{aasm:arcane beacon:usage}}/Long Rest">
+			<description>You can concentrate on a piece of ammunition in your hand. If you choose to concentrate on a piece of ammunition made through your Arcane Ammunition feature, the ammunition persists until your concentration ends, at which point it disappears.
+			While concentrating, you know the location of your ammunition as long as it remains on the same plane of existence as you. You can use a bonus action to change your perception to that of the ammunition until the start of your next turn. While doing so, you can see and hear through the ammunition as if you were there. During this time, you are deaf and blind with regard to your own senses.
+			Your concentration ends early if the ammunition is ever destroyed. A creature can use its action to snap the ammunition and destroy it.</description>
+		</sheet>
+		<rules>
+			<stat name="aasm:arcane beacon:usage" value="1" bonus="base" />
+			<stat name="aasm:arcane beacon:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Eldritch Accuracy" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_ELDRITCH_ARCHER_ELDRITCH_ACCURACY">
+		<description>
+			<p>Beginning at 15th level, when you use your Arcane Infusion feature, rather than dealing extra damage you can choose to have the infusion grant a bonus to attack rolls made with your bonded weapon. The bonus is equal to the infusion's extra damage. On subsequent turns you can use a bonus action to swap the infusion between dealing damage or granting the bonus to attack rolls.</p>
+		</description>
+		<sheet>
+			<description>When you use your Arcane Infusion feature, rather than dealing extra damage you can choose to have the infusion grant a bonus to attack rolls made with your bonded weapon. The bonus is equal to the infusion's extra damage. On subsequent turns you can use a bonus action to swap the infusion between dealing damage or granting the bonus to attack rolls.</description>
+		</sheet>
+	</element>
+	
+	<element name="Spellsword" type="Archetype" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_SWORDMAGE_SPELLSWORD">
+		<supports>AASM Swordmage Discipline</supports>
+		<description>
+			<p>Spellswords are fast-moving skirmishers. Masters at navigating a battlefield, they use their magic to approach their enemies, deal empowered strikes with their weapons, then quickly reposition to a more favorable location.</p>
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_SPELLSWORD_MAGIC" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_INFUSION_SURGE" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_COUNTER" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_RECURSIVE_STRIKE" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_ADVANCE" />
+			<div element="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ENHANCED_COUNTER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_SPELLSWORD_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_INFUSION_SURGE" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_COUNTER" level="3" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_RECURSIVE_STRIKE" level="7" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_ADVANCE" level="11" />
+			<grant type="Archetype Feature" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ENHANCED_COUNTER" level="15" />
+		</rules>
+	</element>
+	<element name="Spellsword Magic" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_SPELLSWORD_MAGIC">
+		<description>
+			<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Spellsword Spells table. The spell counts as a swordmage spell for you, but it doesn’t count against the number of swordmage spells you know.</p>
+			<h5 class="caption">Spellsword Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Swordmage Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>longstrider</em></td></tr>
+				<tr><td>5th</td><td><em>blur</em></td></tr>
+				<tr><td>9th</td><td><em>haste</em></td></tr>
+				<tr><td>13th</td><td><em>freedom of movement</em></td></tr>
+				<tr><td>17th</td><td><em>far step</em></td></tr>
+			</table>  
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" level="3" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLUR" level="5" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_HASTE" level="9" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="13" spellcasting="Swordmage" />
+			<grant type="Spell" id="ID_XGTE_SPELL_FAR_STEP" level="17" spellcasting="Swordmage" />
+		</rules>
+	</element>
+	<element name="Infusion Surge" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_INFUSION_SURGE">
+		<description>
+			<p>Starting when you choose this discipline at 3rd level, once per turn when you hit with an attack using your bonded weapon and you have an active Arcane Infusion, you can double the damage dealt by the infusion.</p>
+		</description>
+		<sheet>
+			<description>Once per turn when you hit with an attack using your bonded weapon and you have an active Arcane Infusion, you can double the damage dealt by the infusion.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Counter" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_COUNTER">
+		<description>
+			<p>When you choose this discipline at 3rd level, you gain the ability to teleport short distances and take advantage of openings your opponents make. When a creature within 30 feet of you hits an ally with a melee attack, you can use your reaction to teleport and appear in an unoccupied space within five feet of the attacking creature. As part of the reaction, you can make a single melee weapon attack against the creature. The triggering creature must be beyond your reach when it hits your ally for you to be able to use this feature.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature within 30 feet of you hits an ally with a melee attack, you can teleport and appear in an unoccupied space within 5 feet of the attacking creature. As part of the reaction, you can make a single melee weapon attack against the creature. The triggering creature must be beyond your reach when it hits your ally for you to be able to use this feature.</description>
+		</sheet>
+	</element>
+	<element name="Recursive Strike" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_RECURSIVE_STRIKE">
+		<description>
+			<p>Beginning at 7th level, after you use your Spell Strike feature you can immediately make a single weapon attack against the same target as a bonus action. If the Spell Strike missed, you can attempt the same Spell Strike again with this bonus action attack before the magic fades from your weapon.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>After you use your Spell Strike feature you can immediately make a single weapon attack against the same target. If the Spell Strike missed, you can attempt the same Spell Strike again with this bonus action attack before the magic fades from your weapon.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Advance" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ARCANE_ADVANCE">
+		<description>
+			<p>Starting at 11th level, when you hit a creature with a melee weapon attack you can use a bonus action to teleport up to 10 feet to an unoccupied space you can see. You must teleport immediately after the hit, but can do so before making additional attacks.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you hit a creature with a melee weapon attack you can teleport up to 10 feet to an unoccupied space you can see. You must teleport immediately after the hit, but can do so before making additional attacks.</description>
+		</sheet>
+	</element>
+	<element name="Enhanced Counter" type="Archetype Feature" source="The Swordmage" id="ID_DMSG_AASM_ARCHETYPE_FEATURE_SPELLSWORD_ENHANCED_COUNTER">
+		<description>
+			<p>Beginning at 15th level, when you use your Arcane Counter ability you gain advantage on the attack roll against the triggering creature.</p>
+		</description>
+		<sheet>
+			<description>When you use your Arcane Counter ability you gain advantage on the attack roll against the triggering creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Arcane Warrior" type="Class Feature" source="The Swordmage" id="ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_ARCANE_WARRIOR">
+		<supports>Fighting Style, AASM_Swordmage</supports>
+		<requirements>ID_DMSG_AASM_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE</requirements>
+		<description>
+			<p>You learn two cantrips of your choice from the wizard spell list. They count as swordmage spells for you, and Intelligence is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the wizard spell list.</p>
+		</description>
+		<sheet>
+			<description>Your learned cantrips count as swordmage spells for you and Intelligence is your spellcasting ability for them.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip, Arcane Warrior" supports="0,Wizard" spellcasting="Swordmage" number="2" />
+		</rules>
+	</element>	
+	<append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_GREAT_WEAPON_FIGHTING">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_PROTECTION">
+		<supports>AASM_Swordmage</supports>
+	</append>
+
+	<append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BURNING_HANDS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CHROMATIC_ORB">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DETECT_MAGIC">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FAERIE_FIRE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FALSE_LIFE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEATHER_FALL">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FOG_CLOUD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ICE_KNIFE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_IDENTIFY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_JUMP">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_MISSILE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_RAY_OF_SICKNESS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHIELD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEEP">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_THUNDERWAVE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WITCH_BOLT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ZEPHYR_STRIKE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_AGANAZZARS_SCORCHER">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLINDNESS_DEAFNESS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLUR">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKNESS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DARKVISION">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ENLARGE_REDUCE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HOLD_PERSON">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_INVISIBILITY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LEVITATE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_OBJECT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_WEAPON">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MELFS_ACID_ARROW">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MIRROR_IMAGE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MISTY_STEP">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SCORCHING_RAY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SHATTER">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SNILLOCS_SNOWBALL_SWARM">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SPIDER_CLIMB">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_COUNTERSPELL">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DISPEL_MAGIC">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FEAR">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIREBALL">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_FLAME_ARROWS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GLYPH_OF_WARDING">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_HASTE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LIGHTNING_BOLT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MAGIC_CIRCLE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_MELFS_MINUTE_METEORS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLEET_STORM">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_SLOW">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_STINKING_CLOUD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_BLIGHT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONFUSION">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_DIMENSION_DOOR">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_ELEMENTAL_BANE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FIRE_SHIELD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREATER_INVISIBILITY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ICE_STORM">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LOCATE_CREATURE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_STONESKIN">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_VITRIOLIC_SPHERE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_ANIMATE_OBJECTS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CLOUDKILL">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONE_OF_COLD">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_CONJURE_VOLLEY">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_IMMOLATION">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_SKILL_EMPOWERMENT">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_XGTE_SPELL_STEEL_WIND_STRIKE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TELEKINESIS">
+		<supports>AASM_Swordmage</supports>
+	</append>
+	<append id="ID_PHB_SPELL_TELEPORTATION_CIRCLE">
+		<supports>AASM_Swordmage</supports>
+	</append>
+
+</elements>
