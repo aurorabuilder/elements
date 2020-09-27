@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Cleric, Druid, and Wizard</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="20191003.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana/2019/20191003.xml" />
 		</update>
 	</info>		
@@ -259,6 +259,9 @@
 			In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the Dash, Disengage, Help, or Hide action.
 			The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again.</description>
 		</sheet>
+		<rules>
+			<select type="Companion" name="Wildfire Spirit" supports="Wildfire Spirit" default="ID_WOTC_UA20191003_COMPANION_WILDFIRE_SPIRIT" />
+		</rules>
 	</element>
 	<element name="Enhanced Bond" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_ENHANCED_BOND">
 		<description>
@@ -301,6 +304,92 @@
 			<stat name="blazing endurance:temporary hp" value="level:druid" />
 			<stat name="blazing endurance:temporary hp" value="level:druid" />
 		</rules>
+	</element>
+
+	<!-- Companion -->
+	<element name="Wildfire Spirit" type="Companion" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_COMPANION_WILDFIRE_SPIRIT">
+		<supports>Wildfire Spirit</supports>
+		<requirements>ID_WOTC_UA20191003_ARCHETYPE_CIRCLE_OF_WILDFIRE</requirements>
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">13</set>
+			<set name="wisdom">15</set>
+			<set name="charisma">11</set>
+			<set name="ac">13</set>
+			<set name="hp">equal the wildfire spirit’s Constitution modifier + your Wisdom modifier + five times your level in this class</set>
+			<set name="speed">20 ft., fly 30 ft. (hover)</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="saves">Dex +4, Con +4, Wis +4</set>
+			<set name="skills">Nature +4</set>
+			<set name="immunities">fire</set>
+			<set name="conditionImmunities">charmed, frightened, grappled, prone, restrained</set>
+			<set name="type">Elemental</set>
+			<set name="size">Small</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="alignment">any chaotic alignment</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_UA20191003_COMPANION_TRAIT_WILDFIRE_SPIRIT_SOUL_BOND</set>
+			<set name="actions">ID_WOTC_UA20191003_COMPANION_ACTION__WILDFIRE_SPIRIT_FLAME_SEED,ID_WOTC_UA20191003_COMPANION_ACTION_WILDFIRE_SPIRIT_FIERY_TELEPORTATION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:nature:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:nature:misc" value="1"/>
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<grant type="Companion Trait" id="ID_WOTC_UA20191003_COMPANION_TRAIT_WILDFIRE_SPIRIT_SOUL_BOND" />
+			<!-- wildfire spirit’s Constitution modifier + your Wisdom modifier + five times your level in this class -->
+			<stat name="alternative:hp:max" value="companion:constitution:modifier" bonus="spirit-CON Mod" />
+			<stat name="alternative:hp:max" value="wisdom:modifier" bonus="WIS Mod" />
+			<stat name="alternative:hp:max" value="level:druid" />
+			<stat name="alternative:hp:max" value="level:druid" />
+			<stat name="alternative:hp:max" value="level:druid" />
+			<stat name="alternative:hp:max" value="level:druid" />
+			<stat name="alternative:hp:max" value="level:druid" />
+			<stat name="companion:hp:max" value="alternative:hp:max" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Soul Bond" type="Companion Trait" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_COMPANION_TRAIT_WILDFIRE_SPIRIT_SOUL_BOND">
+		<description>
+			<p>The following numbers increase by 1 when your proficiency bonus increases by 1: the spirit’s skill and saving throw bonuses above, the bonuses to hit and damage of its Flame Seed, and the bonus to damage of its Fiery Teleportation.</p>
+		</description>
+		<sheet>
+			<description>The following numbers increase by 1 when your proficiency bonus increases by 1: the spirit’s skill and saving throw bonuses above, the bonuses to hit and damage of its Flame Seed, and the bonus to damage of its Fiery Teleportation.</description>
+		</sheet>
+		<rules>
+			<stat name="soul bond:bonus" value="proficiency" bonus="base" />
+			<stat name="soul bond:bonus" value="-2" />			
+			<stat name="companion:nature:misc" value="soul bond:bonus" />
+			<stat name="companion:dexterity:save:misc" value="soul bond:bonus" />
+			<stat name="companion:constitution:save:misc" value="soul bond:bonus" />
+			<stat name="companion:wisdom:save:misc" value="soul bond:bonus" />
+		</rules>
+	</element>
+
+	<element name="Flame Seed" type="Companion Action" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_COMPANION_ACTION__WILDFIRE_SPIRIT_FLAME_SEED">
+		<description>
+			<p>Requires Your Bonus Action. Ranged Weapon Attack: +4 to hit, range 30 ft., one target you can see. Hit: 1d6 + 2 fire damage.</p>
+		</description>
+		<sheet>
+			<description>Requires Your Bonus Action. Ranged Weapon Attack: +4 to hit, range 30 ft., one target you can see. Hit: 1d6 + 2 fire damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Fiery Teleportation (Recharges after a Short or Long Rest)" type="Companion Action" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_COMPANION_ACTION_WILDFIRE_SPIRIT_FIERY_TELEPORTATION">
+		<description>
+			<p>Requires Your Bonus Action. The spirit and each willing creature of your choice within 5 feet of it teleport up to 30 feet to unoccupied spaces you can see. Each creature within 10 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + 2 fire damage.</p>
+		</description>
+		<sheet>
+			<description>Requires Your Bonus Action. The spirit and each willing creature of your choice within 5 feet of it teleport up to 30 feet to unoccupied spaces you can see. Each creature within 10 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + 2 fire damage.</description>
+		</sheet>
 	</element>
 
 	<element name="Onomancy" type="Archetype" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_ONOMANCY">
