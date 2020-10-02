@@ -2,9 +2,7 @@
 <elements>
   <info>
     <name>Monstrous Adventurers</name>
-    <description>The monstrous-adventurers from Volo’s Guide to Monsters.</description>
-    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/volos-guide-to-monsters">Wizards of the Coast</author>
-    <update version="0.1.2">
+    <update version="0.1.3">
       <file name="monstrous-adventurers.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/monstrous-adventurers.xml" />
     </update>
   </info>
@@ -48,7 +46,6 @@
       <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_SURPRISE_ATTACK" />
     </rules>
   </element>
-
   <element name="Long-Limbed" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_BUGBEAR_LONG_LIMBED">
     <description>
       <p>When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.</p>
@@ -201,7 +198,7 @@
         <h4>KOBOLD TRAITS</h4>
         <p>Your kobold character has the following racial traits.</p>
         <p>
-        <span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2, and your Strength score is reduced by 2.<br/>
+        <span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2.<br/>
         <span class="feature">Age.</span>Kobolds reach adulthood at age 6 and can live up to 120 years but rarely do so.<br/>
         <span class="feature">Alignment.</span>Kobolds are fundamentally selfish, making them evil, but their reliance on the strength of their group makes them trend toward law.<br/>
         <span class="feature">Size.</span>Kobolds are between 2 and 3 feet tall and weigh between 25 and 35 pounds. Your size is Small.<br/>
@@ -221,7 +218,6 @@
     </setters>
     <rules>
       <stat name="dexterity" value="2" />
-      <stat name="strength" value="-2" />
       <stat name="innate speed" value="30" bonus="base" />
       <grant type="Size" id="ID_SIZE_SMALL" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
@@ -263,7 +259,7 @@
         <h4>ORC TRAITS</h4>
         <p>Your orc character has the following racial traits.</p>
         <p>
-        <span class="feature">Ability Score Increase.</span>Your Strength score increases by 2, your Constitution score increases by 1, and your Intelligence score is reduced by 2.<br/>
+        <span class="feature">Ability Score Increase.</span>Your Strength score increases by 2, your Constitution score increases by 1.<br/>
         <span class="feature">Age.</span>Orcs reach adulthood at age 12 and live up to 50 years. <br/>
         <span class="feature">Alignment.</span>Orcs are vicious raiders, who believe that the world should be theirs. They also respect strength above all else and believe the strong must bully the weak to ensure that weakness does not spread like a disease. They are usually chaotic evil.<br/>
         <span class="feature">Size.</span>Orcs are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.<br/>
@@ -286,14 +282,13 @@
     <rules>
       <stat name="strength" value="2" />
       <stat name="constitution" value="1" />
-      <stat name="intelligence" value="-2" />
       <stat name="innate speed" value="30" bonus="base" />
       <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
       <grant type="Language" id="ID_LANGUAGE_COMMON" />
       <grant type="Language" id="ID_LANGUAGE_ORC" />
       <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE" />
-      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING" />
+      <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_PRIMAL_INTUITION" />
       <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
     </rules>
   </element>
@@ -305,6 +300,7 @@
       <description>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
     </sheet>
   </element>
+  <!-- menacing element obsolete due to errata -->
   <element name="Menacing" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING">
     <description>
       <p>You are trained in the Intimidation skill.</p>
@@ -314,6 +310,17 @@
     </sheet>
     <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+    </rules>
+  </element>
+  <element name="Primal Intuition" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_PRIMAL_INTUITION">
+    <description>
+      <p>You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.</p>
+    </description>
+    <sheet display="false">
+      <description>You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.</description>
+    </sheet>
+    <rules>
+      <select type="Proficiency" name="Skill Proficiency, Primal Intuition" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
     </rules>
   </element>
   <element name="Powerful Build" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD">
@@ -365,8 +372,7 @@
       <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_MAGIC_RESISTANCE" />
       <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_POISON_IMMUNITY" />
     </rules>
-  </element>
-   
+  </element>   
   <element name="Innate Spellcasting" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_YUANTIPUREBLOOD_INNATE_SPELLCASTING">
     <description>
       <p>You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it. Starting at 3rd level, you can also cast suggestion with this trait. Once you cast it, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells.</p>
